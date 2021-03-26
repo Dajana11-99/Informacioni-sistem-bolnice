@@ -1,17 +1,16 @@
 /***********************************************************************
  * Module:  Pol.cs
- * Author:  filip
- * Purpose: Definition of the Class Model.Pol
+ * Author:  dajan
+ * Purpose: Definition of the Enum Model.Pol
  ***********************************************************************/
 
 using System;
 
 namespace Model
 {
-   public class Pol
+   public enum Pol
    {
-      private EnumConstant Muski;
-      private EnumConstant Zenski;
-   
+      Muski,
+      Zenski
    }
 }

@@ -1,18 +1,17 @@
 /***********************************************************************
  * Module:  TipSale.cs
- * Author:  filip
- * Purpose: Definition of the Class Model.TipSale
+ * Author:  dajan
+ * Purpose: Definition of the Enum Model.TipSale
  ***********************************************************************/
 
 using System;
 
 namespace Model
 {
-   public class TipSale
+   public enum TipSale
    {
-      private EnumConstant Operaciona;
-      private EnumConstant Pregled;
-      private EnumConstant SobeOdmor;
-   
+      Operaciona,
+      Pregled,
+      SobeOdmor
    }
 }

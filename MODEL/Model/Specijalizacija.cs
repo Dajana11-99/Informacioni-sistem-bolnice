@@ -1,22 +1,21 @@
 /***********************************************************************
  * Module:  Specijalizacija.cs
- * Author:  filip
- * Purpose: Definition of the Class Model.Specijalizacija
+ * Author:  dajan
+ * Purpose: Definition of the Enum Model.Specijalizacija
  ***********************************************************************/
 
 using System;
 
 namespace Model
 {
-   public class Specijalizacija
+   public enum Specijalizacija
    {
-      private EnumConstant Kardiolog;
-      private EnumConstant Stomatolog;
-      private EnumConstant Dermatolog;
-      private EnumConstant Hirurg;
-      private EnumConstant Neurohirurg;
-      private EnumConstant Pedijatar;
-      private EnumConstant Ostapraksa;
-   
+      Kardiolog,
+      Stomatolog,
+      Dermatolog,
+      Hirurg,
+      Neurohirurg,
+      Pedijatar,
+      Ostapraksa
    }
 }

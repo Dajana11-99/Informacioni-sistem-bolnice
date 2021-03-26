@@ -1,19 +1,18 @@
 /***********************************************************************
  * Module:  Uloga.cs
- * Author:  filip
- * Purpose: Definition of the Class Model.Uloga
+ * Author:  dajan
+ * Purpose: Definition of the Enum Model.Uloga
  ***********************************************************************/
 
 using System;
 
 namespace Model
 {
-   public class Uloga
+   public enum Uloga
    {
-      private EnumConstant Lekar;
-      private EnumConstant Pacijent;
-      private EnumConstant Sekretar;
-      private EnumConstant Upravnik;
-   
+      Lekar,
+      Pacijent,
+      Sekretar,
+      Upravnik
    }
 }

@@ -1,17 +1,16 @@
 /***********************************************************************
  * Module:  TipTermina.cs
- * Author:  filip
- * Purpose: Definition of the Class Model.TipTermina
+ * Author:  dajan
+ * Purpose: Definition of the Enum Model.TipTermina
  ***********************************************************************/
 
 using System;
 
 namespace Model
 {
-   public class TipTermina
+   public enum TipTermina
    {
-      private int Operacija;
-      private int Pregled;
-   
+      Operacija,
+      Pregled
    }
 }

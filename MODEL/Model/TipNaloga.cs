@@ -1,17 +1,16 @@
 /***********************************************************************
  * Module:  TipNaloga.cs
- * Author:  filip
- * Purpose: Definition of the Class Model.TipNaloga
+ * Author:  dajan
+ * Purpose: Definition of the Enum Model.TipNaloga
  ***********************************************************************/
 
 using System;
 
 namespace Model
 {
-   public class TipNaloga
+   public enum TipNaloga
    {
-      private int Obican;
-      private int Gostujuci;
-   
+      Obican,
+      Gostujuci
    }
 }
