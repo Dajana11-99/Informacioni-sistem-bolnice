@@ -11,8 +11,16 @@ namespace Model
    public class Sala
    {
       public TipSale TipSale;
-      public int Id;
-      public Boolean Zauzeta;
-   
-   }
+      public String Id;
+      public bool Zauzeta;
+        public int sprat;
+        float kvadratura;
+
+        public Sala(TipSale tipSale, string id)
+        {
+            TipSale = tipSale;
+            Id = id;
+        }
+    }
+
 }

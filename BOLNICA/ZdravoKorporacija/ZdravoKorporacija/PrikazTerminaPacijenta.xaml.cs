@@ -11,39 +11,36 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Model;
-using PoslovnaLogika;
 
 namespace ZdravoKorporacija
 {
     /// <summary>
-    /// Interaction logic for ZakaziPregled.xaml
+    /// Interaction logic for Prikaz.xaml
     /// </summary>
-    public partial class ZakaziPregled : Window
-
+    public partial class Prikaz : Window
     {
-        
-        public ZakaziPregled()
+        public Prikaz()
         {
             InitializeComponent();
         }
 
-      
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-           
-            this.Close();
-           
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
 
+        }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
 
+        }
 
-
-
-
-
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
 
         }
     }

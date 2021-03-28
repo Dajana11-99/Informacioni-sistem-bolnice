@@ -1,0 +1,43 @@
+﻿<Window x:Class="ZdravoKorporacija.Prikaz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="PrikazTerminaPacijenta" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Zakazani termini</Label>
+            <DataGrid x:Name="TerminiPacijenta" ItemsSource="{Binding Termini}" IsReadOnly="true"
+                  SelectionMode="Single"  Margin="20,10,20.4,20" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="300">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}"/>
+                    <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" />
+                    <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.korisnickoIme}"/>
+                    <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.korisnickoIme }"/>
+                    <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"/>
+                    <DataGridTextColumn Header="Pocetak termina" Binding="{Binding PocetnoVreme}"/>
+                    <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}"/>
+                    <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Height="39" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="20,0,15,5"  Grid.Column="0" Content="Zakazivanje termina"   Click="Button_Click"  />
+                <Button Margin="20,0,15,5"  Grid.Column="1"  Content="Izmena termina"        Click="Button_Click_1"/>
+                <Button Margin="20,0,15,5"  Grid.Column="2" Content="Otkazivanje termina"    Click="Button_Click_2"/>
+                <Button Margin="20,0,20.4,5" Grid.Column="3" Content="Vrati se"              Click="Button_Click_3"  />
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</Window>

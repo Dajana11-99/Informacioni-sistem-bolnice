@@ -5,91 +5,91 @@
  ***********************************************************************/
 
 using System;
+using System.ComponentModel;
 
 namespace Model
 {
-    public class Termin
+    public class Termin : INotifyPropertyChanged
 
     {
 
-        public DateTime vreme;
-        public DateTime Vreme
+
+        public String Vreme
         {
-            get { return vreme; }
-            set { this.vreme = value; }
+            get;
+            set;
         }
-        public TipTermina tipTermina;
+
+        public double trajanjeTermina
+        {
+            get;
+            set;
+        }
+
+        public String Datum
+        {
+
+            get;
+            set;
+
+        }
+
+
         public TipTermina TipTermina
+
         {
-            get { return tipTermina; }
-            set { this.tipTermina = value; }
+            get;
+            set;
         }
-        public String idTrmina;
+
+
         public String IdTermina
+
         {
-            get { return idTrmina; }
-            set { this.idTrmina = value; }
+            get;
+            set;
         }
-        public Sala sala;
+
+
         public Sala Sala
         {
-            get { return sala; }
-            set { this.sala = value; }
+            get;
+            set;
         }
-        public Lekar lekar;
-
-        /// <pdGenerated>default parent getter</pdGenerated>
-        public Lekar GetLekar()
+        public Lekar lekar
         {
-            return lekar;
+            get;
+            set;
         }
 
-        /// <pdGenerated>default parent setter</pdGenerated>
-        /// <param>newLekar</param>
-        public void SetLekar(Lekar newLekar)
+        public Pacijent pacijent
         {
-            if (this.lekar != newLekar)
+            get;
+            set;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string name) 
+        { 
+            if(PropertyChanged != null)
             {
-                if (this.lekar != null)
-                {
-                    Lekar oldLekar = this.lekar;
-                    this.lekar = null;
-                    oldLekar.RemoveTermin(this);
-                }
-                if (newLekar != null)
-                {
-                    this.lekar = newLekar;
-                    this.lekar.AddTermin(this);
-                }
-            }
-        }
-        public Pacijent pacijent;
-
-        /// <pdGenerated>default parent getter</pdGenerated>
-        public Pacijent GetPacijent()
-        {
-            return pacijent;
-        }
-
-        /// <pdGenerated>default parent setter</pdGenerated>
-        /// <param>newPacijent</param>
-        public void SetPacijent(Pacijent newPacijent)
-        {
-            if (this.pacijent != newPacijent)
-            {
-                if (this.pacijent != null)
-                {
-                    Pacijent oldPacijent = this.pacijent;
-                    this.pacijent = null;
-                    oldPacijent.RemoveTermin(this);
-                }
-                if (newPacijent != null)
-                {
-                    this.pacijent = newPacijent;
-                    this.pacijent.AddTermin(this);
-                }
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
 
+       public Termin(String id, TipTermina tip, String vreme,double trajanje,String datum,Sala sala,Pacijent p,Lekar l)
+        
+        {
+            IdTermina = id;
+            TipTermina = tip;
+            Vreme = vreme;
+            trajanjeTermina = trajanje;
+            Datum = datum;
+            Sala = sala;
+            pacijent = p;
+            lekar = l;
+
+
+        }
     }
 }

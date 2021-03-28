@@ -72,13 +72,10 @@
     <Compile Include="Model\Uloga.cs" />
     <Compile Include="Model\Upravnik.cs" />
     <Compile Include="Model\ZahtevUpravniku.cs" />
-    <Compile Include="PacijentWindow.xaml.cs">
-      <DependentUpon>PacijentWindow.xaml</DependentUpon>
+    <Compile Include="PrikazTerminaPacijenta.xaml.cs">
+      <DependentUpon>PrikazTerminaPacijenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="RadSaDatotekama\RukovanjeDatotekama2.cs" />
-    <Compile Include="ZakaziPregled.xaml.cs">
-      <DependentUpon>ZakaziPregled.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,11 +88,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PacijentWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ZakaziPregled.xaml">
+    <Page Include="PrikazTerminaPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

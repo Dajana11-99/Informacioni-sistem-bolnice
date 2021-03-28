@@ -12,51 +12,44 @@ namespace PoslovnaLogika
 {
    public class RukovanjeTerminima
    {
-       public List<Termin> zakazani = new List<Termin>();
+       public static List<Termin> zakazani = new List<Termin>();
       public bool ZakaziPregled(Termin terminT)
-      {
-            // TODO: implement
-            zakazani.Add(terminT);
+      { 
+
             return false;
         }
       
-      public List<Termin> PrikaziPregled()
+      public static List<Termin> PrikaziSveTermine()
       {
-         // TODO: implement
-         return null;
+
+            return zakazani;
       }
       
-      public bool ZakaziOperaciju()
+      public bool ZakaziTermin()
+      {
+           
+            return false;
+        }
+      
+      public bool OtkaziTermin(String idTermina)
+      {
+            
+            return false;
+        }
+    
+      public bool IzmenaPregleda(String idTermina)
       {
             // TODO: implement
             return false;
         }
       
-      public bool OtkaziOperaciju(int idTermina)
+      public bool IzmenaTermina(String idTermina)
       {
             // TODO: implement
             return false;
         }
       
-      public List<Termin> PrikaziZakazanihOperacija()
-      {
-         // TODO: implement
-         return null;
-      }
-      
-      public bool PomeranjePregleda(int idTermina)
-      {
-            // TODO: implement
-            return false;
-        }
-      
-      public bool PomeranjeOperacija(int idTermina)
-      {
-            // TODO: implement
-            return false;
-        }
-      
-      public bool OtkaziPregled(int idTermina)
+      public bool OtkaziPregled(String idTermina)
       {
             // TODO: implement
             return false;
@@ -64,7 +57,13 @@ namespace PoslovnaLogika
       
       public Termin PretragaPoId(String idTermina)
       {
-            // TODO: implement
+            foreach (Termin t in zakazani)
+            {
+                if (t.IdTermina.Equals(idTermina))
+                {
+                    return t;
+                }
+            }
             return null;
         }
       
