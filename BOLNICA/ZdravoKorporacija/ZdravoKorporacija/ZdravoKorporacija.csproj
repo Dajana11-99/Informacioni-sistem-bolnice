@@ -79,10 +79,16 @@
     <Compile Include="Otkazivanje.xaml.cs">
       <DependentUpon>Otkazivanje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PriakzSala.xaml.cs">
+      <DependentUpon>PriakzSala.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrikazTerminaPacijenta.xaml.cs">
       <DependentUpon>PrikazTerminaPacijenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="RadSaDatotekama\RukovanjeDatotekama2.cs" />
+    <Compile Include="UpravnikPocetna.xaml.cs">
+      <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ZakaziPregledPacijent.xaml.cs">
       <DependentUpon>ZakaziPregledPacijent.xaml</DependentUpon>
     </Compile>
@@ -106,7 +112,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PriakzSala.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrikazTerminaPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpravnikPocetna.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

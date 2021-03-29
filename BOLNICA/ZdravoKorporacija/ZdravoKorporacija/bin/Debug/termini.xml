@@ -7,9 +7,9 @@
     <TipTermina>Pregled</TipTermina>
     <IdTermina>1</IdTermina>
     <Sala>
+      <TipSale>Pregled</TipSale>
       <Zauzeta>false</Zauzeta>
       <sprat>0</sprat>
-      <TipSale>Pregled</TipSale>
     </Sala>
     <Lekar>
       <termin />
@@ -30,16 +30,19 @@
     <TipTermina>Pregled</TipTermina>
     <IdTermina>2</IdTermina>
     <Sala>
+      <TipSale>Pregled</TipSale>
       <Zauzeta>false</Zauzeta>
       <sprat>0</sprat>
-      <TipSale>Pregled</TipSale>
     </Sala>
     <Lekar>
+      <termin />
+      <zahtevUpravniku />
       <Zauzet>false</Zauzet>
       <Specijalizacija>Kardiolog</Specijalizacija>
       <idZaposlenog>Nikola Nikolic </idZaposlenog>
     </Lekar>
     <Pacijent>
+      <termin />
       <idPacijenta>scsdcsc</idPacijenta>
     </Pacijent>
   </Termin>

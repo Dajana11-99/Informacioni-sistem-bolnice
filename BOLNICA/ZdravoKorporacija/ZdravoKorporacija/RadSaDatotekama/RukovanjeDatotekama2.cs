@@ -15,6 +15,7 @@ namespace RadSaDatotekama
 {
     public class RukovanjeDatotekama2
    {
+
       public List<ZahtevUpravniku> UcitajZahetev()
       {
          // TODO: implement
@@ -27,13 +28,42 @@ namespace RadSaDatotekama
             return false;
         }
 
-        public List<Sala> UcitajSale()
+        public static List<Sala> InicijalizujSale()
+        {
+            var inicijalneSale = new List<Sala>();
+            var sala1 = new Sala();
+
+            sala1.Id = "1";
+            sala1.sprat = 1;
+            sala1.Zauzeta = false;
+            sala1.TipSale = TipSale.Operaciona;
+            inicijalneSale.Add(sala1);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sala>));
+            TextWriter tw = new StreamWriter("sale.xml");
+            xmlSerializer.Serialize(tw, inicijalneSale);
+            tw.Close();
+            return inicijalneSale;
+        }
+
+        public static List<Sala> UcitajSale()
       {
-         // TODO: implement
-         return null;
-      }
-      
-      public bool UpisiSale(List<Sala> saleP)
+            if (!File.Exists("sale.xml") || File.ReadAllText("sale.xml").Trim().Equals(""))
+            {
+                return new List<Sala>();
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead("sale.xml");
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sala>));
+                var sale = (List<Sala>)xmlSerializer.Deserialize(fileStream);
+                fileStream.Close();
+                return sale;
+
+            }
+
+        }
+
+        public bool UpisiSale(List<Sala> saleP)
       {
             // TODO: implement
             return false;

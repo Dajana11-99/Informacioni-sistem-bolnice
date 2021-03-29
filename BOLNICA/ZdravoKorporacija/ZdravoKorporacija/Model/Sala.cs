@@ -12,8 +12,8 @@ namespace Model
    {
       public TipSale TipSale { get; set; }
         public String Id { get; set; }
-        public bool Zauzeta;
-        public int sprat;
+        public bool Zauzeta { get; set; }
+        public int sprat { get; set; }
         float kvadratura;
 
         public Sala(TipSale tipSale, string id)

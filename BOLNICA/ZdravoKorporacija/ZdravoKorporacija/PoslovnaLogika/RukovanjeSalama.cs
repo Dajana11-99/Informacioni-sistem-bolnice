@@ -41,19 +41,17 @@ namespace PoslovnaLogika
          // TODO: implement
          return null;
       }
-   
-      public System.Collections.ArrayList sala;
+
+        public List<Sala> sala = new List<Sala>();
       
       /// <pdGenerated>default getter</pdGenerated>
-      public System.Collections.ArrayList GetSala()
+      public List<Sala> GetSala()
       {
-         if (sala == null)
-            sala = new System.Collections.ArrayList();
          return sala;
       }
       
       /// <pdGenerated>default setter</pdGenerated>
-      public void SetSala(System.Collections.ArrayList newSala)
+      public void SetSala(List<Sala> newSala)
       {
          RemoveAllSala();
          foreach (Model.Sala oSala in newSala)
@@ -66,7 +64,7 @@ namespace PoslovnaLogika
          if (newSala == null)
             return;
          if (this.sala == null)
-            this.sala = new System.Collections.ArrayList();
+            this.sala = new List<Sala>();
          if (!this.sala.Contains(newSala))
             this.sala.Add(newSala);
       }

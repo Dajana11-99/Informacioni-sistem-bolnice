@@ -22,6 +22,7 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static RukovanjeSalama RukovanjeSalama = new RukovanjeSalama();
         public MainWindow()
         {
             InitializeComponent();
@@ -49,7 +50,10 @@ namespace ZdravoKorporacija
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
+            RukovanjeDatotekama2.InicijalizujSale();
+            RukovanjeSalama.SetSala(RukovanjeDatotekama2.UcitajSale());
+            UpravnikPocetna pocetna = new UpravnikPocetna();
+            pocetna.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
