@@ -25,15 +25,36 @@ namespace PoslovnaLogika
             }
             return false;
         }
-        public static String pronadji(String P)
+        public static String pronadji()
         {
-            int brojac = 0;
-            foreach(Termin t in zakazani)
+            String povratni = null;
+            bool postoji=false;
+           int broj  = 1;
+            for (int i = 1; i <= zakazani.Count; i++)
             {
-                if (t.IdTermina.Contains(P))
-                    brojac++;
+
+                foreach (Termin t in zakazani)
+                {
+                    if (t.IdTermina.Equals( broj.ToString()))
+
+                    {
+                        postoji = true;
+                        break;
+                    }
+
+
+                }
+                 
+                if (!postoji) 
+                    return broj.ToString();
+                postoji = false;
+                broj++;
+             
+
             }
-            return P + brojac.ToString();
+            return  broj.ToString() ;
+           
+           
         }
       
       public static List<Termin> PrikaziSveTermine()
@@ -66,13 +87,18 @@ namespace PoslovnaLogika
             return false;
         }
       
-      public bool OtkaziPregled(String idTermina)
+      public  static bool OtkaziPregled(String idTermina)
       {
-            // TODO: implement
-            return false;
+            Termin t = PretragaPoId(idTermina);
+            zakazani.Remove(t);
+            PrikazTerminaPacijenta.TerminiPacijenta.Remove(t);
+            if (zakazani.Contains(t)) 
+                return false;
+            return true;
+                
         }
       
-      public Termin PretragaPoId(String idTermina)
+      public  static Termin PretragaPoId(String idTermina)
       {
             foreach (Termin t in zakazani)
             {

@@ -29,7 +29,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            String id =RukovanjeTerminima.pronadji("P");
+            String id =RukovanjeTerminima.pronadji();
             Lekar l = new Lekar(lekar.Text);
             Pacijent p = new Pacijent(pacijent.Text);
             Sala sala = new Sala(TipSale.Pregled, null);

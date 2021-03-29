@@ -8,12 +8,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
 using PoslovnaLogika;
+
 
 namespace ZdravoKorporacija
 {
@@ -45,7 +47,17 @@ namespace ZdravoKorporacija
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            if (TerminiPacijentaa.SelectedIndex != -1)
+            {
 
+                Otkazivanje otkazivanje = new Otkazivanje(((Termin)TerminiPacijentaa.SelectedItem).IdTermina);
+                otkazivanje.Show();
+                
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Otkazivanje termina", "Izaberite termin za otkazivanje!");
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
