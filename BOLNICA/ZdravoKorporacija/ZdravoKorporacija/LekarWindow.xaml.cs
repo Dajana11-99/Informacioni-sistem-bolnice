@@ -47,7 +47,11 @@ namespace ZdravoKorporacija
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            if (TerminiLekaraa.SelectedIndex != -1) 
+            {
+                OtkazivanjeTerminaLekara otkazii = new OtkazivanjeTerminaLekara(((Termin)TerminiLekaraa.SelectedItem).IdTermina);
+                otkazii.Show();
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

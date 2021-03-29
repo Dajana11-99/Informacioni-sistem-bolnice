@@ -101,10 +101,15 @@ namespace PoslovnaLogika
             }
             return false;
         }
-        public bool OtkaziTermin(String idTermina)
+        public static bool OtkaziTermin(String idTermina)
         {
 
-            return false;
+            Termin t = PretragaPoId(idTermina);
+            zakazani.Remove(t);
+            LekarWindow.TerminiLekara.Remove(t);
+            if (zakazani.Contains(t))
+                return false;
+            return true;
         }
 
         public static bool IzmenaPregleda(String idTermina, String lekar, String datum, String vreme)

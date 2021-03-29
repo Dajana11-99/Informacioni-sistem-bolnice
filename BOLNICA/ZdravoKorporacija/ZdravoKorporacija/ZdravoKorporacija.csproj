@@ -82,6 +82,9 @@
     <Compile Include="Otkazivanje.xaml.cs">
       <DependentUpon>Otkazivanje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OtkazivanjeTerminaLekara.xaml.cs">
+      <DependentUpon>OtkazivanjeTerminaLekara.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PriakzSala.xaml.cs">
       <DependentUpon>PriakzSala.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Otkazivanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OtkazivanjeTerminaLekara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
