@@ -12,8 +12,6 @@ namespace Model
     public class Termin : INotifyPropertyChanged
 
     {
-
-
         public String Vreme
         {
             get;
@@ -56,17 +54,34 @@ namespace Model
             get;
             set;
         }
-        public Lekar lekar
+        public Lekar Lekar
         {
             get;
             set;
         }
 
-        public Pacijent pacijent
+        public Pacijent Pacijent
         {
             get;
             set;
         }
+
+        public Termin(String id, TipTermina tip, String vreme, double trajanje, String datum, Sala sala, Pacijent p, Lekar l)
+
+        {
+            IdTermina = id;
+            TipTermina = tip;
+            Vreme = vreme;
+            trajanjeTermina = trajanje;
+            Datum = datum;
+            Sala = sala;
+            Pacijent = p;
+            Lekar = l;
+
+
+        }
+
+    
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name) 
@@ -77,19 +92,6 @@ namespace Model
             }
         }
 
-       public Termin(String id, TipTermina tip, String vreme,double trajanje,String datum,Sala sala,Pacijent p,Lekar l)
-        
-        {
-            IdTermina = id;
-            TipTermina = tip;
-            Vreme = vreme;
-            trajanjeTermina = trajanje;
-            Datum = datum;
-            Sala = sala;
-            pacijent = p;
-            lekar = l;
-
-
-        }
+     
     }
 }

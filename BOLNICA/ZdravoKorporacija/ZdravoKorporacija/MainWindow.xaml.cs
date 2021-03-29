@@ -28,7 +28,7 @@ namespace ZdravoKorporacija
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            Prikaz prikaz = new Prikaz();
+            PrikazTerminaPacijenta prikaz = new PrikazTerminaPacijenta();
             prikaz.Show();
         }
 

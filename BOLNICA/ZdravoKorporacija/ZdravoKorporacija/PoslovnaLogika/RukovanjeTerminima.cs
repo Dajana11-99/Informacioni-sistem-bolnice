@@ -7,16 +7,33 @@
 using System;
 using System.Collections.Generic;
 using Model;
+using ZdravoKorporacija;
 
 namespace PoslovnaLogika
 {
    public class RukovanjeTerminima
    {
        public static List<Termin> zakazani = new List<Termin>();
-      public bool ZakaziPregled(Termin terminT)
-      { 
+      public static bool ZakaziPregled(Termin terminT)
+      {
 
+            zakazani.Add(terminT);
+            PrikazTerminaPacijenta.TerminiPacijenta.Add(terminT);
+            if (zakazani.Contains(terminT))
+            {
+                return true;
+            }
             return false;
+        }
+        public static String pronadji(String P)
+        {
+            int brojac = 0;
+            foreach(Termin t in zakazani)
+            {
+                if (t.IdTermina.Contains(P))
+                    brojac++;
+            }
+            return P + brojac.ToString();
         }
       
       public static List<Termin> PrikaziSveTermine()

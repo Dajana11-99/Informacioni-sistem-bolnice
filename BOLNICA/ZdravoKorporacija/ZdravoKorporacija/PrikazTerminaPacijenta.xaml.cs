@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,22 +12,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Model;
+using PoslovnaLogika;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for Prikaz.xaml
-    /// </summary>
-    public partial class Prikaz : Window
+  
+    public partial class PrikazTerminaPacijenta : Window
     {
-        public Prikaz()
+        public static ObservableCollection <Termin> TerminiPacijenta { get; set; }
+        public PrikazTerminaPacijenta()
         {
+
             InitializeComponent();
+            this.DataContext = this;
+            TerminiPacijenta = new ObservableCollection<Termin>();
+            foreach (Termin t in RukovanjeTerminima.PrikaziSveTermine())
+                TerminiPacijenta.Add(t);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ZakaziPregledPacijent zakazi = new ZakaziPregledPacijent();
+            zakazi.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -41,7 +50,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

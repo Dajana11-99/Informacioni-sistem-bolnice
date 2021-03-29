@@ -53,3 +53,5 @@ C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\Zd
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazTerminaPacijenta.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazTerminaPacijenta.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakaziPregledPacijent.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakaziPregledPacijent.baml

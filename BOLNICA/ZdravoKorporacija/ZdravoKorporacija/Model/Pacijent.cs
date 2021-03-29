@@ -12,11 +12,12 @@ namespace Model
    {
       public Karton karton;
       public System.Collections.ArrayList termin;
-        public int IdPacijenta;
+        public String idPacijenta { get; set; }
+       
 
-        public Pacijent(int idPacijenta)
+        public Pacijent(String idPacijenta)
         {
-            IdPacijenta = idPacijenta;
+            this.idPacijenta = idPacijenta;
         }
     }
 }

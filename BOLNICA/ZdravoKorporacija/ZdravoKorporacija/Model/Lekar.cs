@@ -13,19 +13,23 @@ namespace Model
       public System.Collections.ArrayList termin;
         public System.Collections.ArrayList zahtevUpravniku;
 
-        public String IdZaposlenog;
+        public String idZaposlenog { get; set; }
         public Boolean Zauzet;
         public Specijalizacija Specijalizacija;
 
+        public Lekar()
+        {
+
+        }
         public Lekar(String idZaposlenog)
         {
-            IdZaposlenog = idZaposlenog;
+            this.idZaposlenog = idZaposlenog;
         }
 
         public Lekar(String idZaposlenog, bool zauzet, Specijalizacija specijalizacija) 
 
         {
-            this.IdZaposlenog = idZaposlenog;
+            this.idZaposlenog = idZaposlenog;
             Zauzet = zauzet;
             Specijalizacija = specijalizacija;
         }

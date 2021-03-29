@@ -10,9 +10,9 @@ namespace Model
 {
    public class Sala
    {
-      public TipSale TipSale;
-      public String Id;
-      public bool Zauzeta;
+      public TipSale TipSale { get; set; }
+        public String Id { get; set; }
+        public bool Zauzeta;
         public int sprat;
         float kvadratura;
 
