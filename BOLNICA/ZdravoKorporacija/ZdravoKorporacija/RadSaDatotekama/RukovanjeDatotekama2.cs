@@ -84,7 +84,7 @@ namespace RadSaDatotekama
 
         public static List<Termin> ucitajTermine()
         {
-            if (File.ReadAllText("termini.xml").Trim().Equals(""))
+            if (!File.Exists("termini.xml") || File.ReadAllText("termini.xml").Trim().Equals(""))
             {
                 return RukovanjeTerminima.zakazani;
             }
