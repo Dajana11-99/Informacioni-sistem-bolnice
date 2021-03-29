@@ -59,6 +59,9 @@
     <Compile Include="IzmenaPacijenta.xaml.cs">
       <DependentUpon>IzmenaPacijenta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekarWindow.xaml.cs">
+      <DependentUpon>LekarWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\BracniStatusE.cs" />
     <Compile Include="Model\Karton.cs" />
     <Compile Include="Model\Korisnik.cs" />
@@ -87,6 +90,10 @@
       <DependentUpon>ZakaziPregledPacijent.xaml</DependentUpon>
     </Compile>
     <Page Include="IzmenaPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LekarWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

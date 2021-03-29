@@ -35,11 +35,14 @@
       <TipSale>Pregled</TipSale>
     </Sala>
     <Lekar>
+      <termin />
+      <zahtevUpravniku />
       <Zauzet>false</Zauzet>
       <Specijalizacija>Kardiolog</Specijalizacija>
       <idZaposlenog>Nikola Nikolic </idZaposlenog>
     </Lekar>
     <Pacijent>
+      <termin />
       <idPacijenta>scsdcsc</idPacijenta>
     </Pacijent>
   </Termin>
