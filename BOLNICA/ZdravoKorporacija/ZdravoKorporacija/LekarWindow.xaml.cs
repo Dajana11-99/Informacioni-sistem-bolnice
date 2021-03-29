@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Model;
+using PoslovnaLogika;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +22,22 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class LekarWindow : Window
     {
+
+        public static ObservableCollection<Termin> TerminiLekara { get; set; }
+
         public LekarWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
+            TerminiLekara = new ObservableCollection<Termin>();
+            foreach (Termin t in RukovanjeTerminima.PrikaziSveTermine())
+                TerminiLekara.Add(t);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ZakazivanjeTerminaLekara zakazi = new ZakazivanjeTerminaLekara();
+            zakazi.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

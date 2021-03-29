@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel>
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Zakazani termini</Label>
-            <DataGrid x:Name="TerminiPacijentaa" ItemsSource="{Binding TerminiPacijenta}" IsReadOnly="true"
+            <DataGrid x:Name="TerminiLekaraa" ItemsSource="{Binding TerminiLekara}" IsReadOnly="true"
                   SelectionMode="Single"  Margin="20,10,20.4,20" 
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="300">
                 <DataGrid.Columns>
