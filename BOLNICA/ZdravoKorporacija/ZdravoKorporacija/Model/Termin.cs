@@ -92,6 +92,6 @@ namespace Model
             }
         }
 
-     
+      public Termin() { }
     }
 }

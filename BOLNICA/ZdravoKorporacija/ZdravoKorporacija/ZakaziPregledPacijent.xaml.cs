@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +22,37 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class ZakaziPregledPacijent : Window
     {
+
+       public List<Lekar> Lekari { get; set; }
         public ZakaziPregledPacijent()
         {
+
+          
+
             InitializeComponent();
+            bindcombo();
+           
+
+
+
 
         }
 
+        public void bindcombo()
+        {
+            List<Lekar> pomocna = new List<Lekar>();
+        
+            foreach(Lekar l in RukovanjeTerminima.pom)
+            {
+                if (l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
+                {
+                    pomocna.Add(l);
+                }
+            }
+
+            Lekari = pomocna;
+            DataContext = Lekari;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             String id =RukovanjeTerminima.pronadji();
@@ -37,11 +63,16 @@ namespace ZdravoKorporacija
             DateTime? datum = this.datum.SelectedDate;
             String formatirano = null;
             if (datum.HasValue)
-                formatirano = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             String v = vreme.Text;
             Double trajanje = 30;
             Termin t = new Termin(id, tip, v, trajanje, formatirano, sala, p, l);
-
+            if(this.lekar.SelectedIndex == -1  || !datum.HasValue || vreme.SelectedIndex == -1 || pacijent.Equals(""))
+            {
+               
+               System.Windows.Forms.MessageBox.Show("Sva polja su obavezna!!", "Upozorenje", (System.Windows.Forms.MessageBoxButtons)MessageBoxButton.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                return;
+            }
             RukovanjeTerminima.ZakaziPregled(t);
             this.Close();
 
@@ -52,5 +83,6 @@ namespace ZdravoKorporacija
         {
             this.Close();
         }
+
     }
 }

@@ -21,6 +21,8 @@ namespace Model
             TipSale = tipSale;
             Id = id;
         }
+
+        public Sala() { }
     }
 
 }

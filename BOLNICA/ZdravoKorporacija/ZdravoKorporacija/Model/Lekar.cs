@@ -5,6 +5,8 @@
  ***********************************************************************/
 
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Model
 {
@@ -21,6 +23,7 @@ namespace Model
         {
 
         }
+
         public Lekar(String idZaposlenog)
         {
             this.idZaposlenog = idZaposlenog;
@@ -33,6 +36,8 @@ namespace Model
             Zauzet = zauzet;
             Specijalizacija = specijalizacija;
         }
+
+       
 
         public void setSpecijalizacija(Specijalizacija s)
         {
@@ -54,5 +59,9 @@ namespace Model
         {
             Zauzet = z;
         }
+
+      
+
+      
     }
 }

@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
 using PoslovnaLogika;
-
+using RadSaDatotekama;
 
 namespace ZdravoKorporacija
 {
@@ -31,6 +31,7 @@ namespace ZdravoKorporacija
             TerminiPacijenta = new ObservableCollection<Termin>();
             foreach (Termin t in RukovanjeTerminima.PrikaziSveTermine())
                 TerminiPacijenta.Add(t);
+           
 
         }
 
@@ -42,7 +43,14 @@ namespace ZdravoKorporacija
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            if (TerminiPacijentaa.SelectedIndex != -1)
+            {
+                IzmenaPacijenta izmena = new IzmenaPacijenta(((Termin)TerminiPacijentaa.SelectedItem));
+                izmena.Show();
+            }
+            else
+                System.Windows.MessageBox.Show("Izaberite termin pregleda za izmenu!", "Upozorenje", MessageBoxButton.OK);
+            return;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -62,7 +70,13 @@ namespace ZdravoKorporacija
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            RukovanjeDatotekama2.upisiTermine();
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            RukovanjeDatotekama2.upisiTermine();
         }
     }
 }

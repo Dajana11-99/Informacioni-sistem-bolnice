@@ -57,3 +57,5 @@ C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\Zd
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakaziPregledPacijent.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\Otkazivanje.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\Otkazivanje.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaPacijenta.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaPacijenta.baml

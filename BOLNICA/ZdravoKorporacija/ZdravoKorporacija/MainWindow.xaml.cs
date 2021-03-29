@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PoslovnaLogika;
+using RadSaDatotekama;
 
 namespace ZdravoKorporacija
 {
@@ -23,11 +25,14 @@ namespace ZdravoKorporacija
         public MainWindow()
         {
             InitializeComponent();
+            RukovanjeTerminima.inicijalizuj();
+            
+            RukovanjeDatotekama2.ucitajTermine();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            RukovanjeDatotekama2.ucitajTermine();
             PrikazTerminaPacijenta prikaz = new PrikazTerminaPacijenta();
             prikaz.Show();
         }
@@ -45,6 +50,12 @@ namespace ZdravoKorporacija
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            RukovanjeDatotekama2.upisiTermine();
         }
     }
 }

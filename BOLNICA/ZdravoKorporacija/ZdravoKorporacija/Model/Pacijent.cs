@@ -19,5 +19,6 @@ namespace Model
         {
             this.idPacijenta = idPacijenta;
         }
+        public Pacijent() { }
     }
 }
