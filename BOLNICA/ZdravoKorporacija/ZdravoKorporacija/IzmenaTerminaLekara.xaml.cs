@@ -36,8 +36,8 @@ namespace ZdravoKorporacija
             cmbPacijent.Text = t.Pacijent.idPacijenta;
             txtPredvidjenoVremeTermina.Text = t.trajanjeTermina.ToString();
            // cmbHMin.Text = 
-            cmbBrojSale.Text = t.Sala.Id;
-            cmbTipSale.Text = t.Sala.TipSale.ToString();
+            cmbBrojSale.Text= t.Sala.Id;
+            
             cmbVrstaTermina.Text = t.TipTermina.ToString();
             
 
@@ -58,7 +58,7 @@ namespace ZdravoKorporacija
                 formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
 
-            RukovanjeTerminima.IzmenaTermina(id,formatirano,cmbZakazivanjeTerminaVreme.Text,cmbLekar.Text,txtPredvidjenoVremeTermina.Text,cmbBrojSale.Text,cmbTipSale.Text,cmbVrstaTermina.Text);
+            RukovanjeTerminima.IzmenaTermina(id,formatirano,cmbZakazivanjeTerminaVreme.Text,cmbLekar.Text,txtPredvidjenoVremeTermina.Text,cmbBrojSale.Text,cmbVrstaTermina.Text);
             this.Close();
         }
 

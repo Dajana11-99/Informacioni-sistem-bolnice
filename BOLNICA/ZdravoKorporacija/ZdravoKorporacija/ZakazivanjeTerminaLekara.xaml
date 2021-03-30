@@ -53,7 +53,7 @@
         </ComboBox>
 
         <Label Content="Tip sale" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="54" Margin="69,390,0,0" VerticalAlignment="Top" Width="266" FontSize="16"/>
-        <ComboBox Name="cmbTipSale" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="119.8,394,0,0" VerticalAlignment="Top" Width="296">
+        <ComboBox Name="cmbTipSale" Grid.Column="1"  HorizontalAlignment="Left" Height="37" Margin="119.8,394,0,0" VerticalAlignment="Top" Width="296">
             <ComboBoxItem>Operaciona</ComboBoxItem>
             <ComboBoxItem>Pregled</ComboBoxItem>
 

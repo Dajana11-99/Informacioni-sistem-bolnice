@@ -134,7 +134,7 @@ namespace PoslovnaLogika
 
         }
 
-        public static bool IzmenaTermina(String idTermina, String datum, String vreme, String lekar, String predvidjenoVreme, String BrOperaioneSale, String tipSale, String vrstaTerminaOperacije)
+        public static bool IzmenaTermina(String idTermina, String datum, String vreme, String lekar, String predvidjenoVreme, String BrOperaioneSale,  String vrstaTerminaOperacije)
         {
             Termin t = PretragaPoId(idTermina);
             if (!t.Lekar.idZaposlenog.Equals(lekar))
@@ -152,22 +152,14 @@ namespace PoslovnaLogika
             if (!t.trajanjeTermina.Equals(predvidjenoVreme))
             {
                 t.trajanjeTermina = double.Parse(predvidjenoVreme);
+
             }
-            if (!t.Sala.Id.Equals(BrOperaioneSale))
-            {
-                t.Sala.Id = BrOperaioneSale;
-            }
-            if (!t.Sala.TipSale.Equals(tipSale))
-            {
-                if (tipSale.Equals(TipSale.Operaciona))
-                {
-                    t.Sala.TipSale = TipSale.Operaciona;
-                }
-                else if (tipSale.Equals(TipSale.Pregled))
-                {
-                    t.Sala.TipSale = TipSale.Pregled;
-                }
-            }
+           
+          
+                t.Sala = RukovanjeSalama.PretraziPoId(BrOperaioneSale);
+            
+
+           
             if (!t.TipTermina.Equals(vrstaTerminaOperacije))
             {
                 if (vrstaTerminaOperacije.Equals(TipTermina.Operacija))

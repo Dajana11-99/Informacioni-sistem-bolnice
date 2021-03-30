@@ -33,7 +33,7 @@ namespace RadSaDatotekama
             var inicijalneSale = new List<Sala>();
             var sala1 = new Sala();
 
-            sala1.Id = "1";
+            sala1.Id = "A1";
             sala1.sprat = 1;
             sala1.Zauzeta = false;
             sala1.TipSale = TipSale.Operaciona;

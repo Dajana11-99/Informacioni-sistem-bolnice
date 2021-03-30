@@ -12,6 +12,12 @@ namespace PoslovnaLogika
 {
    public class RukovanjeSalama
    {
+       public RukovanjeSalama()
+        {
+            sala.Add(new Sala(TipSale.Pregled, "A1"));
+            sala.Add(new Sala(TipSale.Operaciona, "A2"));
+            sala.Add(new Sala(TipSale.Pregled, "A3"));
+        }
       public bool DodajSalu(Model.Sala unetaSala)
       {
          // TODO: implement
@@ -24,25 +30,32 @@ namespace PoslovnaLogika
          return null;
       }
       
-      public bool Izmena(int id)
+      public bool Izmena(String id)
       {
             // TODO: implement
             return false;
         }
       
-      public bool BrisanjeSala(int id)
+      public bool BrisanjeSala(String id)
       {
             // TODO: implement
             return false;
         }
       
-      public Sala PretraziPoId(int id)
+      public  static Sala PretraziPoId(String id)
       {
-         // TODO: implement
-         return null;
+           foreach(Sala s in sala)
+            {
+                if (s.Id.Equals(id))
+                {
+                    return s;
+                }
+            }
+            return null;
       }
 
-        public List<Sala> sala = new List<Sala>();
+        public  static List<Sala> sala = new List<Sala>();
+      
       
       /// <pdGenerated>default getter</pdGenerated>
       public List<Sala> GetSala()
@@ -59,14 +72,16 @@ namespace PoslovnaLogika
       }
       
       /// <pdGenerated>default Add</pdGenerated>
-      public void AddSala(Model.Sala newSala)
+      public static void AddSala(Model.Sala newSala)
       {
          if (newSala == null)
             return;
-         if (this.sala == null)
-            this.sala = new List<Sala>();
-         if (!this.sala.Contains(newSala))
-            this.sala.Add(newSala);
+         if (sala == null)
+            sala = new List<Sala>();
+         if (!sala.Contains(newSala))
+             sala.Add(newSala);
+
+         
       }
       
       /// <pdGenerated>default Remove</pdGenerated>
@@ -74,9 +89,9 @@ namespace PoslovnaLogika
       {
          if (oldSala == null)
             return;
-         if (this.sala != null)
-            if (this.sala.Contains(oldSala))
-               this.sala.Remove(oldSala);
+         if (sala != null)
+            if (sala.Contains(oldSala))
+               sala.Remove(oldSala);
       }
       
       /// <pdGenerated>default removeAll</pdGenerated>

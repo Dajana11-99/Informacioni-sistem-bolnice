@@ -33,7 +33,7 @@
         <TextBox Name="txtPredvidjenoVremeTermina" HorizontalAlignment="Left" Background="Transparent" Height="37" Margin="119.8,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Grid.Column="1"/>
         <Button Content="Potvrdi" Background="Transparent" Click="btnPotvrdiZakazivanjeTermina_Click"  Name="btnPotvrdiZakazivanjeTermina" HorizontalAlignment="Left" Height="46" Margin="70,494,0,0" VerticalAlignment="Top" Width="216" FontSize="18" FontWeight="Bold"/>
         <Button Content="Odustani" Name="btnOdustani" Background="Transparent" HorizontalAlignment="Left" Height="46" Margin="154.8,494,0,0" VerticalAlignment="Top" Width="216" Click="btnOdustani_Click"  FontSize="18" FontWeight="Bold" Grid.Column="1"/>
-        <Label Content="Broj operacione sale:" Name="lblBrojOperacioeSale" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="72,342,0,0" VerticalAlignment="Top" Width="339" FontSize="16" Grid.ColumnSpan="2" Height="32"/>
+        <Label Content=" operacione sale:" Name="lblBrojOperacioeSale" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="72,342,0,0" VerticalAlignment="Top" Width="339" FontSize="16" Grid.ColumnSpan="2" Height="32"/>
         <ComboBox HorizontalAlignment="Left" Name="cmbBrojSale" Height="36" Margin="119.8,342,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1">
             <ComboBoxItem>A1</ComboBoxItem>
             <ComboBoxItem>A2</ComboBoxItem>
@@ -45,19 +45,14 @@
             <ComboBoxItem>Vasilije Dojcinov</ComboBoxItem>
             <ComboBoxItem>Luka Lukic</ComboBoxItem>
         </ComboBox>
-        <Label Content="Vrsta termina:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="41" Margin="70,448,0,0" VerticalAlignment="Top" Width="265" FontSize="16"/>
-        <ComboBox Name="cmbVrstaTermina" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="119.8,448,0,0" VerticalAlignment="Top" Width="296">
+        <Label Content="Vrsta termina:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="41" Margin="72,421,0,0" VerticalAlignment="Top" Width="265" FontSize="16"/>
+        <ComboBox Name="cmbVrstaTermina" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="119.8,421,0,0" VerticalAlignment="Top" Width="296">
             <ComboBoxItem>Pregled</ComboBoxItem>
             <ComboBoxItem>Operacija</ComboBoxItem>
 
         </ComboBox>
 
-        <Label Content="Tip sale" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="54" Margin="69,390,0,0" VerticalAlignment="Top" Width="266" FontSize="16"/>
-        <ComboBox Name="cmbTipSale" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="119.8,394,0,0" VerticalAlignment="Top" Width="296">
-            <ComboBoxItem>Operaciona</ComboBoxItem>
-            <ComboBoxItem>Pregled</ComboBoxItem>
-
-        </ComboBox>
+       
         <ComboBox  Name="cmbHMin" Grid.Column="1" HorizontalAlignment="Left" Height="36" Margin="340.8,295,0,0" VerticalAlignment="Top" Width="75">
             <ComboBoxItem>h</ComboBoxItem>
             <ComboBoxItem>min</ComboBoxItem>
