@@ -24,16 +24,20 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Grid Height="39" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="20,0,15,5"  Grid.Column="0" Content="Zakazivanje termina"   />
-                <Button Margin="20,0,15,5"  Grid.Column="1"  Content="Izmena termina"      />
-                <Button Margin="20,0,15,5"  Grid.Column="2" Content="Otkazivanje termina"  />
-                <Button Margin="20,0,20.4,5" Grid.Column="3" Content="Vrati se"              />
+                <Button Margin="20,0,15,5"  Grid.Column="0" Content="Dodaj Salu" Grid.RowSpan="2" Click="Button_Click"   />
+                <Button Margin="20,0,15,5"  Grid.Column="1"  Content="Izmeni salu" Grid.RowSpan="2"      />
+                <Button Margin="20,0,15,5"  Grid.Column="2" Content="Izbrisi salu" Grid.RowSpan="2"  />
+                <Button Margin="20,0,20,5" Grid.Column="3" Content="Vrati se" Grid.RowSpan="2" Click="Button_Click_1"              />
             </Grid>
 
 

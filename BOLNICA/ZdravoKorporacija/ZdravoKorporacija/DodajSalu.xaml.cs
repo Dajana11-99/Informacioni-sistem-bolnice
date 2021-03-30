@@ -1,0 +1,60 @@
+﻿using Model;
+using PoslovnaLogika;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace ZdravoKorporacija
+{
+    /// <summary>
+    /// Interaction logic for DodajSalu.xaml
+    /// </summary>
+    public partial class DodajSalu : Window
+    {
+        public DodajSalu()
+        {
+            InitializeComponent();
+
+        }
+
+        private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
+        {
+            TipSale tipS;
+            String id = RukovanjeSalama.pronadji();
+            String tipSale = cmbTipSale.Text;
+            if (tipSale.Equals(TipSale.Pregled))
+            {
+                tipS = TipSale.Pregled;
+            }
+            else
+            {
+                tipS = TipSale.Operaciona;
+            }
+
+            String sprat = txtSprat.Text;
+            
+
+            Sala s = new Sala(tipS, id);
+            s.sprat = Int32.Parse(sprat);
+
+            RukovanjeSalama.DodajSalu(s);
+            Close();
+
+        }
+
+        private void btnOdustani_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+    }
+}

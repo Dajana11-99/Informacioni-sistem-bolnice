@@ -6,28 +6,39 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using Model;
+using RadSaDatotekama;
 
 namespace PoslovnaLogika
 {
    public class RukovanjeSalama
    {
-       public RukovanjeSalama()
+       public static void inicijalizuj() 
         {
             sala.Add(new Sala(TipSale.Pregled, "A1"));
             sala.Add(new Sala(TipSale.Operaciona, "A2"));
             sala.Add(new Sala(TipSale.Pregled, "A3"));
         }
-      public bool DodajSalu(Model.Sala unetaSala)
+      public static bool DodajSalu(Model.Sala unetaSala)
       {
-         // TODO: implement
-         return false;
+         if (sala.Contains(unetaSala))
+            {
+                return false;
+            }
+         else
+            {
+                sala.Add(unetaSala);
+                RukovanjeDatotekama2.UpisiSale();
+                OsveziKolekciju();
+                return true;
+            }
       }
       
-      public List<Sala> PrikaziSale()
+      public static List<Sala> PrikaziSale()
       {
-         // TODO: implement
-         return null;
+         return sala;
       }
       
       public bool Izmena(String id)
@@ -38,8 +49,20 @@ namespace PoslovnaLogika
       
       public bool BrisanjeSala(String id)
       {
-            // TODO: implement
-            return false;
+            List<Sala> saleBezIzbrisane = new List<Sala>();
+            bool nadjena = false;
+            foreach (Sala s in sala)
+            {
+                if (s.Id.Equals(id))
+                {
+                    nadjena = true;
+                } else
+                {
+                    saleBezIzbrisane.Add(s);
+                }
+            }
+            sala = saleBezIzbrisane;
+            return nadjena;
         }
       
       public  static Sala PretraziPoId(String id)
@@ -55,10 +78,17 @@ namespace PoslovnaLogika
       }
 
         public  static List<Sala> sala = new List<Sala>();
-      
-      
-      /// <pdGenerated>default getter</pdGenerated>
-      public List<Sala> GetSala()
+        public static ObservableCollection<Sala> observableSala = new ObservableCollection<Sala>();
+
+        public static void OsveziKolekciju()
+        {
+            observableSala.Clear();
+            foreach (Sala sala in sala)
+                observableSala.Add(sala);
+        }
+
+        /// <pdGenerated>default getter</pdGenerated>
+        public List<Sala> GetSala()
       {
          return sala;
       }
@@ -76,12 +106,11 @@ namespace PoslovnaLogika
       {
          if (newSala == null)
             return;
-         if (sala == null)
-            sala = new List<Sala>();
-         if (!sala.Contains(newSala))
-             sala.Add(newSala);
 
-         
+            DodajSalu(newSala);
+
+
+
       }
       
       /// <pdGenerated>default Remove</pdGenerated>
@@ -100,6 +129,40 @@ namespace PoslovnaLogika
          if (sala != null)
             sala.Clear();
       }
-   
-   }
+
+
+        public static String pronadji()
+        {
+
+            bool postoji = false;
+            int broj = 1;
+            for (int i = 1; i <= sala.Count; i++)
+            {
+
+                foreach (Sala t in sala)
+                {
+                    if (t.Id.Equals(broj.ToString()))
+
+                    {
+                        postoji = true;
+                        break;                    }
+
+
+                }
+
+                if (!postoji)
+                    return broj.ToString();
+                postoji = false;
+                broj++;
+
+
+
+            }
+            return broj.ToString();
+
+
+        }
+
+
+    }
 }

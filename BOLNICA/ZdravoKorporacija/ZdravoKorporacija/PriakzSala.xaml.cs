@@ -1,4 +1,5 @@
 ﻿using Model;
+using PoslovnaLogika;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,10 +29,20 @@ namespace ZdravoKorporacija
             InitializeComponent();
             DataContext = this;
 
-            ListSala = new ObservableCollection<Sala>();
-            foreach (Sala sala in MainWindow.RukovanjeSalama.GetSala())
-                ListSala.Add(sala);
+            ListSala = RukovanjeSalama.observableSala;
+    
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DodajSalu dodaj = new DodajSalu();
+            dodaj.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -33,16 +33,21 @@ namespace RadSaDatotekama
             var inicijalneSale = new List<Sala>();
             var sala1 = new Sala();
 
+
             sala1.Id = "A1";
             sala1.sprat = 1;
             sala1.Zauzeta = false;
             sala1.TipSale = TipSale.Operaciona;
             inicijalneSale.Add(sala1);
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sala>));
-            TextWriter tw = new StreamWriter("sale.xml");
-            xmlSerializer.Serialize(tw, inicijalneSale);
-            tw.Close();
+            RukovanjeSalama.AddSala(sala1);
+       
+
             return inicijalneSale;
+        }
+
+        internal static void upisiSale(List<Sala> sala)
+        {
+            throw new NotImplementedException();
         }
 
         public static List<Sala> UcitajSale()
@@ -63,10 +68,13 @@ namespace RadSaDatotekama
 
         }
 
-        public bool UpisiSale(List<Sala> saleP)
+        public static bool UpisiSale()
       {
-            // TODO: implement
-            return false;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sala>));
+            TextWriter tw = new StreamWriter("sale.xml");
+            xmlSerializer.Serialize(tw, RukovanjeSalama.sala);
+            tw.Close();
+            return true;
         }
       
       public List<Pacijent> UcitajPacijente()

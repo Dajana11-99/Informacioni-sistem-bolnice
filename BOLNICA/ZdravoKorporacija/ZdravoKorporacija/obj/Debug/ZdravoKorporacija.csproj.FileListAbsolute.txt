@@ -72,3 +72,44 @@ C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\Zdrav
 C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.pdb
 C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajZahtevWindow.g.cs
 C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajZahtevWindow.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ZdravoKorporacija.exe.config
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ZdravoKorporacija.exe
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ZdravoKorporacija.pdb
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csprojAssemblyReference.cache
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajZahtevWindow.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaPacijenta.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaTerminaLekara.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\LekarWindow.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\MainWindow.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\Otkazivanje.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeTerminaLekara.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PriakzSala.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazTerminaPacijenta.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\UpravnikPocetna.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZahtevZaSlobodneDaneWindow.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakaziPregledPacijent.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakazivanjeTerminaLekara.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\App.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija_MarkupCompile.cache
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija_MarkupCompile.lref
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajZahtevWindow.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaPacijenta.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaTerminaLekara.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\LekarWindow.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\MainWindow.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\Otkazivanje.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeTerminaLekara.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PriakzSala.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazTerminaPacijenta.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\UpravnikPocetna.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZahtevZaSlobodneDaneWindow.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakaziPregledPacijent.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakazivanjeTerminaLekara.baml
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.g.resources
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.Properties.Resources.resources
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.GenerateResource.cache
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.exe
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.pdb
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajSalu.g.cs
+C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajSalu.baml

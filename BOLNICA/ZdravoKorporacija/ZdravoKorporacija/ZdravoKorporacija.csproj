@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DodajSalu.xaml.cs">
+      <DependentUpon>DodajSalu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajZahtevWindow.xaml.cs">
       <DependentUpon>DodajZahtevWindow.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
     <Compile Include="ZakazivanjeTerminaLekara.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekara.xaml</DependentUpon>
     </Compile>
+    <Page Include="DodajSalu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajZahtevWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -203,9 +210,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="termini.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="termini.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
