@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\App.xaml
-14-1799600642
+16-455347963
 
-41-1838325413
+43-2002857094
 14-1290796308
-DodajSalu.xaml;DodajZahtevWindow.xaml;IzmenaPacijenta.xaml;IzmenaTerminaLekara.xaml;LekarWindow.xaml;MainWindow.xaml;Otkazivanje.xaml;OtkazivanjeTerminaLekara.xaml;PriakzSala.xaml;PrikazTerminaPacijenta.xaml;UpravnikPocetna.xaml;ZahtevZaSlobodneDaneWindow.xaml;ZakaziPregledPacijent.xaml;ZakazivanjeTerminaLekara.xaml;
+BrisanjeSale.xaml;DodajSalu.xaml;DodajZahtevWindow.xaml;IzmenaPacijenta.xaml;IzmenaTerminaLekara.xaml;IzmeniSalu.xaml;LekarWindow.xaml;MainWindow.xaml;Otkazivanje.xaml;OtkazivanjeTerminaLekara.xaml;PriakzSala.xaml;PrikazTerminaPacijenta.xaml;UpravnikPocetna.xaml;ZahtevZaSlobodneDaneWindow.xaml;ZakaziPregledPacijent.xaml;ZakazivanjeTerminaLekara.xaml;
 
 True
 

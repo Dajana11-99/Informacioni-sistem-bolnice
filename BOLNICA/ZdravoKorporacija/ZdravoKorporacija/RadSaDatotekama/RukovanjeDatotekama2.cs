@@ -45,11 +45,6 @@ namespace RadSaDatotekama
             return inicijalneSale;
         }
 
-        internal static void upisiSale(List<Sala> sala)
-        {
-            throw new NotImplementedException();
-        }
-
         public static List<Sala> UcitajSale()
       {
             if (!File.Exists("sale.xml") || File.ReadAllText("sale.xml").Trim().Equals(""))

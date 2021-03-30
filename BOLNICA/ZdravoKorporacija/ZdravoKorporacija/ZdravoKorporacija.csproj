@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BrisanjeSale.xaml.cs">
+      <DependentUpon>BrisanjeSale.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajSalu.xaml.cs">
       <DependentUpon>DodajSalu.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,9 @@
     </Compile>
     <Compile Include="IzmenaTerminaLekara.xaml.cs">
       <DependentUpon>IzmenaTerminaLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniSalu.xaml.cs">
+      <DependentUpon>IzmeniSalu.xaml</DependentUpon>
     </Compile>
     <Compile Include="LekarWindow.xaml.cs">
       <DependentUpon>LekarWindow.xaml</DependentUpon>
@@ -113,6 +119,10 @@
     <Compile Include="ZakazivanjeTerminaLekara.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekara.xaml</DependentUpon>
     </Compile>
+    <Page Include="BrisanjeSale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajSalu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmenaTerminaLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniSalu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

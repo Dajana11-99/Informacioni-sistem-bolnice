@@ -11,6 +11,7 @@
       <Id>A1</Id>
       <Zauzeta>false</Zauzeta>
       <sprat>0</sprat>
+      <kvadratura>0</kvadratura>
     </Sala>
     <Lekar>
       <termin />

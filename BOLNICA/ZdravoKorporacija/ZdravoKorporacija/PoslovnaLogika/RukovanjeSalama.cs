@@ -35,19 +35,33 @@ namespace PoslovnaLogika
                 return true;
             }
       }
-      
-      public static List<Sala> PrikaziSale()
+
+
+        public static List<Sala> PrikaziSale()
       {
          return sala;
       }
       
-      public bool Izmena(String id)
+      public static bool Izmena(Sala salaZaIzmenu)
       {
-            // TODO: implement
-            return false;
+            foreach (Sala s in sala)
+            {
+                if (s.Id.Equals(salaZaIzmenu.Id))
+                {
+                    s.sprat = salaZaIzmenu.sprat;
+                    s.TipSale = salaZaIzmenu.TipSale;
+                    s.Zauzeta = salaZaIzmenu.Zauzeta;
+
+                }
+              
+            }
+            RukovanjeDatotekama2.UpisiSale();
+            OsveziKolekciju();
+
+            return true;
         }
       
-      public bool BrisanjeSala(String id)
+      public static bool BrisanjeSala(String id)
       {
             List<Sala> saleBezIzbrisane = new List<Sala>();
             bool nadjena = false;
@@ -62,6 +76,8 @@ namespace PoslovnaLogika
                 }
             }
             sala = saleBezIzbrisane;
+            OsveziKolekciju();
+            RukovanjeDatotekama2.UpisiSale();
             return nadjena;
         }
       

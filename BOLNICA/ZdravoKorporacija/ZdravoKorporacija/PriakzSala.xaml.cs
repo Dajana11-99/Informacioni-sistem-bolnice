@@ -44,5 +44,23 @@ namespace ZdravoKorporacija
         {
             Close();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (SpisakSala.SelectedIndex != -1)
+            {
+                BrisanjeSale brisaje = new BrisanjeSale(((Sala)SpisakSala.SelectedItem).Id);
+                brisaje.Show();
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (SpisakSala.SelectedIndex != -1)
+            {
+                IzmeniSalu izmena = new IzmeniSalu(((Sala)SpisakSala.SelectedItem));
+                izmena.Show();
+            }
+        }
     }
 }

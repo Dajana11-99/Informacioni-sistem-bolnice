@@ -17,20 +17,24 @@ using System.Windows.Shapes;
 namespace ZdravoKorporacija
 {
     /// <summary>
-    /// Interaction logic for DodajSalu.xaml
+    /// Interaction logic for IzmeniSalu.xaml
     /// </summary>
-    public partial class DodajSalu : Window
+    public partial class IzmeniSalu : Window
     {
-        public DodajSalu()
+        Sala salaZaIzmenu;
+        public IzmeniSalu(Sala sala)
         {
             InitializeComponent();
+            salaZaIzmenu = sala;
+            txtSprat.Text = "" + sala.sprat;
+            cmbTipSale.Text = sala.TipSale.ToString();
+            chkboxZauzeta.IsChecked = sala.Zauzeta;
 
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             TipSale tipS;
-            String id = RukovanjeSalama.pronadji();
             String tipSale = cmbTipSale.Text;
             if (tipSale.Equals(TipSale.Pregled.ToString()))
             {
@@ -42,12 +46,12 @@ namespace ZdravoKorporacija
             }
 
             String sprat = txtSprat.Text;
-            
 
-            Sala s = new Sala(tipS, id);
-            s.sprat = Int32.Parse(sprat);
+            salaZaIzmenu.sprat = Int32.Parse(sprat);
+            salaZaIzmenu.Zauzeta = chkboxZauzeta.IsChecked.Value;
+            salaZaIzmenu.TipSale = tipS;
 
-            RukovanjeSalama.DodajSalu(s);
+            RukovanjeSalama.Izmena(salaZaIzmenu);
             Close();
 
         }
@@ -55,6 +59,11 @@ namespace ZdravoKorporacija
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
