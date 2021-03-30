@@ -134,12 +134,58 @@ namespace PoslovnaLogika
 
         }
 
-        public bool IzmenaTermina(String idTermina)
+        public static bool IzmenaTermina(String idTermina, String datum, String vreme, String lekar, String predvidjenoVreme, String BrOperaioneSale, String tipSale, String vrstaTerminaOperacije)
         {
-            // TODO: implement
-            return false;
-        }
+            Termin t = PretragaPoId(idTermina);
+            if (!t.Lekar.idZaposlenog.Equals(lekar))
+            {
+                t.Lekar = PretragaLekaraPoID(lekar);
+            }
+            if (!t.Datum.Equals(datum))
+            {
+                t.Datum = datum;
+            }
+            if (!t.Vreme.Equals(vreme))
+            {
+                t.Vreme = vreme;
+            }
+            if (!t.trajanjeTermina.Equals(predvidjenoVreme))
+            {
+                t.trajanjeTermina = double.Parse(predvidjenoVreme);
+            }
+            if (!t.Sala.Id.Equals(BrOperaioneSale))
+            {
+                t.Sala.Id = BrOperaioneSale;
+            }
+            if (!t.Sala.TipSale.Equals(tipSale))
+            {
+                if (tipSale.Equals(TipSale.Operaciona))
+                {
+                    t.Sala.TipSale = TipSale.Operaciona;
+                }
+                else if (tipSale.Equals(TipSale.Pregled))
+                {
+                    t.Sala.TipSale = TipSale.Pregled;
+                }
+            }
+            if (!t.TipTermina.Equals(vrstaTerminaOperacije))
+            {
+                if (vrstaTerminaOperacije.Equals(TipTermina.Operacija))
+                {
+                    t.TipTermina = TipTermina.Operacija;
+                }
+                else
+                {
+                    t.TipTermina = TipTermina.Pregled;
+                }
 
+
+                int ind = LekarWindow.TerminiLekara.IndexOf(t);
+                LekarWindow.TerminiLekara.RemoveAt(ind);
+                LekarWindow.TerminiLekara.Insert(ind, t);
+            }
+                return true;
+        }
         public static bool OtkaziPregled(String idTermina)
         {
             Termin t = PretragaPoId(idTermina);

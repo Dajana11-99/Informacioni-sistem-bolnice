@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -42,7 +43,17 @@ namespace ZdravoKorporacija
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (TerminiLekaraa.SelectedIndex != -1)
+            {
 
+
+                IzmenaTerminaLekara izmena = new IzmenaTerminaLekara(((Termin)TerminiLekaraa.SelectedItem));
+                izmena.Show();
+            }
+            else 
+            {
+                System.Windows.MessageBox.Show("Morate selektovati termin!","Izmena termina lekara", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Warning);
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

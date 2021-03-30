@@ -21,6 +21,8 @@
                     <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Vreme}"/>
                     <DataGridTextColumn Header="Trajanje termina" Binding="{Binding trajanjeTermina}"/>
                     <DataGridTextColumn Header="Sala" Binding="{Binding Sala.Id}"/>
+                    <DataGridTextColumn Header="Tip sale" Binding="{Binding Sala.TipSale}"/>
+                    
 
                 </DataGrid.Columns>
             </DataGrid>
