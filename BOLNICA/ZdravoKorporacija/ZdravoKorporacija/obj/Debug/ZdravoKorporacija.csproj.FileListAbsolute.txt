@@ -33,3 +33,42 @@ C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\Zd
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaTerminaLekara.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeTerminaLekara.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakazivanjeTerminaLekara.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ZdravoKorporacija.exe.config
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ZdravoKorporacija.exe
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ZdravoKorporacija.pdb
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csprojAssemblyReference.cache
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaPacijenta.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaTerminaLekara.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\LekarWindow.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\MainWindow.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\Otkazivanje.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeTerminaLekara.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PriakzSala.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazTerminaPacijenta.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\UpravnikPocetna.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZahtevZaSlobodneDaneWindow.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakaziPregledPacijent.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakazivanjeTerminaLekara.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\App.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija_MarkupCompile.cache
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija_MarkupCompile.lref
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaPacijenta.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaTerminaLekara.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\LekarWindow.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\MainWindow.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\Otkazivanje.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeTerminaLekara.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PriakzSala.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazTerminaPacijenta.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\UpravnikPocetna.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakaziPregledPacijent.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZakazivanjeTerminaLekara.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZahtevZaSlobodneDaneWindow.baml
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.g.resources
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.Properties.Resources.resources
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.GenerateResource.cache
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.exe
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.pdb
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajZahtevWindow.g.cs
+C:\Users\Vasilije\Desktop\simsProjekat\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajZahtevWindow.baml

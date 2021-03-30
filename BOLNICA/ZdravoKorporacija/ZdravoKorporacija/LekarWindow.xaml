@@ -21,8 +21,8 @@
                     <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Vreme}"/>
                     <DataGridTextColumn Header="Trajanje termina" Binding="{Binding trajanjeTermina}"/>
                     <DataGridTextColumn Header="Sala" Binding="{Binding Sala.Id}"/>
-                  
-                    
+
+
 
                 </DataGrid.Columns>
             </DataGrid>
@@ -33,10 +33,11 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="20,0,15,5"  Grid.Column="0" Content="Zakazivanje termina"   Click="Button_Click"  />
-                <Button Margin="20,0,15,5"  Grid.Column="1"  Content="Izmena termina"        Click="Button_Click_1"/>
-                <Button Margin="20,0,15,5"  Grid.Column="2" Content="Otkazivanje termina"    Click="Button_Click_2"/>
+                <Button Margin="20,0,66.4,5"  Grid.Column="0" Content="Zakazivanje termina"   Click="Button_Click"  />
+                <Button Margin="164,0,120.8,5"  Content="Izmena termina"        Click="Button_Click_1" Grid.ColumnSpan="2"/>
+                <Button Margin="110.6,0,175.2,5"  Grid.Column="1" Content="Otkazivanje termina"    Click="Button_Click_2" Grid.ColumnSpan="2"/>
                 <Button Margin="20,0,20.4,5" Grid.Column="3" Content="Vrati se"              Click="Button_Click_3" />
+                <Button Content="Zahtev upravniku" Name="btnZahtevUpravniku" Click="btnZahtevUpravniku_Click"  Grid.Column="2" HorizontalAlignment="Left" Height="34" Margin="49.2,0,0,0" VerticalAlignment="Top" Width="112"/>
             </Grid>
 
 

@@ -1,0 +1,41 @@
+﻿<Window x:Class="ZdravoKorporacija.ZahtevZaSlobodneDaneWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="ZahtevZaSlobodneDaneWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Zakazani termini</Label>
+            <DataGrid   ItemsSource="{Binding zahtevs}" IsReadOnly="true"
+                SelectionMode="Single"  Margin="20,10,20.4,20" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="300" Name="poslatiZahtevi">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID Zahteva" Binding="{Binding idZahteva}"/>
+                    <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.idZaposlenog}" />
+                    <DataGridTextColumn Header="Opis zahteva" Binding="{Binding opisZahteva}"/>
+                    <DataGridTextColumn Header="Pocetak odmora" Binding="{Binding pocetakOdmora}"/>
+                    <DataGridTextColumn Header="Kraj odmora" Binding="{Binding krajOdmora}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Height="39" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="20,0,66.4,5"  Grid.Column="0" Content="Dodaj zahtev"   Click="btnDodajZahtev_Click"  />
+                <Button Margin="143.6,0,141.2,5"  Content="Izmena zahtev"        Click="btnIzmeniZahtev_Click"  Grid.ColumnSpan="2" Grid.Column="1"/>
+                <Button Margin="9.8,0,77.6,5"  Grid.Column="3" Content=" Otkazi zahtev"    Click="btnOdustaniOdZahteva_Click"/>
+
+
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</Window>

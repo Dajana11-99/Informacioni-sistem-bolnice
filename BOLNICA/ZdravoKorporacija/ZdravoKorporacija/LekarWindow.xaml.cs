@@ -69,5 +69,12 @@ namespace ZdravoKorporacija
         {
 
         }
+
+        private void btnZahtevUpravniku_Click(object sender, RoutedEventArgs e)
+        {
+            ZahtevZaSlobodneDaneWindow zahtev = new ZahtevZaSlobodneDaneWindow();
+            
+            zahtev.Show();
+        }
     }
 }
