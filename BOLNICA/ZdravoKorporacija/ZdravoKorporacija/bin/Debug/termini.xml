@@ -14,6 +14,8 @@
       <kvadratura>0</kvadratura>
     </Sala>
     <Lekar>
+      <termin />
+      <zahtevUpravniku />
       <Zauzet>false</Zauzet>
       <Specijalizacija>Stomatolog</Specijalizacija>
       <idZaposlenog> Petar Petrovic</idZaposlenog>
