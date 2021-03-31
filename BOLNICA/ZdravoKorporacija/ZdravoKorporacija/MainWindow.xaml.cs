@@ -40,6 +40,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            RukovanjeDatotekama2.ucitajTermine();
             LekarWindow lekar = new LekarWindow();
             lekar.Show();
         }
