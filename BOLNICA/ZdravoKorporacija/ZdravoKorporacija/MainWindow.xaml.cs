@@ -27,7 +27,7 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             RukovanjeTerminima.inicijalizuj();
-            
+            UpravljanjePacijentima.TestMethod();
             RukovanjeDatotekama2.ucitajTermine();
         }
 
@@ -47,7 +47,8 @@ namespace ZdravoKorporacija
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            PrikazPacijenata PrikazPravi = new PrikazPacijenata();
+            PrikazPravi.Show();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

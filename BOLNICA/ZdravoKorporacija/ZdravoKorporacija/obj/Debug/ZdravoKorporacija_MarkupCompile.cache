@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Markoviccc\Desktop\sims-proj\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\
+C:\Users\filip\Desktop\SIMS4\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\
 ZdravoKorporacija
 none
 false
 DEBUG;TRACE
-C:\Users\Markoviccc\Desktop\sims-proj\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\App.xaml
-17440816405
+C:\Users\filip\Desktop\SIMS4\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\App.xaml
+21-351338405
 
-431925343458
+4793678039
 14-1290796308
-BrisanjeSale.xaml;DodajSalu.xaml;DodajZahtevWindow.xaml;IzmenaPacijenta.xaml;IzmenaTerminaLekara.xaml;IzmeniSalu.xaml;LekarWindow.xaml;MainWindow.xaml;Otkazivanje.xaml;OtkazivanjeTerminaLekara.xaml;OtkazivanjeZahteva.xaml;PriakzSala.xaml;PrikazTerminaPacijenta.xaml;UpravnikPocetna.xaml;ZahtevZaSlobodneDaneWindow.xaml;ZakaziPregledPacijent.xaml;ZakazivanjeTerminaLekara.xaml;
+BrisanjeSale.xaml;DodajSalu.xaml;DodajZahtevWindow.xaml;IzbrisiPacijenta.xaml;IzmenaNalogaPacijentu.xaml;IzmenaPacijenta.xaml;IzmenaTerminaLekara.xaml;IzmeniSalu.xaml;LekarWindow.xaml;MainWindow.xaml;Otkazivanje.xaml;OtkazivanjeTerminaLekara.xaml;OtkazivanjeZahteva.xaml;PacijentNoviNalog.xaml;PriakzSala.xaml;PrikazPacijenata.xaml;PrikazTerminaPacijenta.xaml;UpravnikPocetna.xaml;ZahtevZaSlobodneDaneWindow.xaml;ZakaziPregledPacijent.xaml;ZakazivanjeTerminaLekara.xaml;
 
 False
 

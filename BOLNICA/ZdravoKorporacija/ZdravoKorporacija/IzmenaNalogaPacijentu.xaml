@@ -1,0 +1,39 @@
+﻿<Window x:Class="ZdravoKorporacija.IzmenaNalogaPacijentu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="IzmenaNalogaPacijentu" Height="450" Width="800">
+    <Grid Margin="10,0,-6.4,0" >
+        <StackPanel Margin="60 50">
+            <Label HorizontalAlignment="Center" FontSize="20">Nalog Pacijenta</Label>
+
+            <Label>Ime Pacijenta</Label>
+            <TextBox Name="ImeTEXTBOX1"></TextBox>
+
+            <Label>Prezime Pacijenta</Label>
+            <TextBox Name="PrezimeTEXTBOX1"></TextBox>
+
+            <Label>Jmbg</Label>
+            <TextBox Name="JmbgTEXTBOX1"></TextBox>
+
+            <Label>Email</Label>
+            <TextBox Name="EmailTEXTBOX1"></TextBox>
+
+            <Label>Adresa</Label>
+            <TextBox Name="AdresaTEXTBOX1"></TextBox>
+
+            <Label>KARTON!!!!!!</Label>
+
+
+            <StackPanel Orientation="Horizontal">
+                <Button  Width="150" Click="PotvrdaAction"  Margin="150 0 20 00">Potvrdi</Button>
+                <Button Width="150"  Click="OdustaniAction"  Margin="20 00 00 00" >Odustani</Button>
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</Window>

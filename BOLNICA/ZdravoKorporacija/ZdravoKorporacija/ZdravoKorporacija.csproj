@@ -65,6 +65,12 @@
     <Compile Include="DodajZahtevWindow.xaml.cs">
       <DependentUpon>DodajZahtevWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzbrisiPacijenta.xaml.cs">
+      <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaNalogaPacijentu.xaml.cs">
+      <DependentUpon>IzmenaNalogaPacijentu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzmenaPacijenta.xaml.cs">
       <DependentUpon>IzmenaPacijenta.xaml</DependentUpon>
     </Compile>
@@ -103,8 +109,14 @@
     <Compile Include="OtkazivanjeZahteva.xaml.cs">
       <DependentUpon>OtkazivanjeZahteva.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PacijentNoviNalog.xaml.cs">
+      <DependentUpon>PacijentNoviNalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PriakzSala.xaml.cs">
       <DependentUpon>PriakzSala.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazPacijenata.xaml.cs">
+      <DependentUpon>PrikazPacijenata.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazTerminaPacijenta.xaml.cs">
       <DependentUpon>PrikazTerminaPacijenta.xaml</DependentUpon>
@@ -131,6 +143,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DodajZahtevWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzbrisiPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmenaNalogaPacijentu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,7 +194,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentNoviNalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PriakzSala.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazPacijenata.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

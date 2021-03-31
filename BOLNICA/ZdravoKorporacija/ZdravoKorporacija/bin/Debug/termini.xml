@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <Vreme>11:00</Vreme>
-    <trajanjeTermina>34</trajanjeTermina>
-    <Datum>03/15/2021</Datum>
+    <Vreme>09:00</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>03/17/2021</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>2</IdTermina>
+    <IdTermina>1</IdTermina>
     <Sala>
-      <TipSale>Operaciona</TipSale>
-      <Id>B5</Id>
+      <TipSale>Pregled</TipSale>
       <Zauzeta>false</Zauzeta>
       <sprat>0</sprat>
       <kvadratura>0</kvadratura>
@@ -17,12 +16,37 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Stomatolog</Specijalizacija>
-      <idZaposlenog> Petar Petrovic</idZaposlenog>
+      <Specijalizacija>Kardiolog</Specijalizacija>
+      <idZaposlenog>Nikola Nikolic </idZaposlenog>
     </Lekar>
     <Pacijent>
       <termin />
-      <idPacijenta>Vasilije Dojcinov</idPacijenta>
+      <idPacijenta>asd</idPacijenta>
+    </Pacijent>
+  </Termin>
+  <Termin>
+    <Vreme>8:30</Vreme>
+    <trajanjeTermina>20700</trajanjeTermina>
+    <Datum>03/18/2021</Datum>
+    <TipTermina>Operacija</TipTermina>
+    <IdTermina>2</IdTermina>
+    <Sala>
+      <TipSale>Operaciona</TipSale>
+      <Id>34</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>0</sprat>
+      <kvadratura>0</kvadratura>
+    </Sala>
+    <Lekar>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Kardiolog</Specijalizacija>
+      <idZaposlenog> Milan Djenic</idZaposlenog>
+    </Lekar>
+    <Pacijent>
+      <termin />
+      <idPacijenta>Mika Mikic</idPacijenta>
     </Pacijent>
   </Termin>
 </ArrayOfTermin>

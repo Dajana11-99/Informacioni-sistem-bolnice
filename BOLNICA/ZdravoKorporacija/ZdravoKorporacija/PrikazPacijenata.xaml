@@ -1,0 +1,47 @@
+﻿<Window x:Class="ZdravoKorporacija.PrikazPacijenata"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="PrikazPacijenata" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="64*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Pacijenti</Label>
+            <DataGrid x:Name="PacijenitXName"  IsReadOnly="true"
+                  SelectionMode="Single"  Margin="20,10,20.4,20" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="300">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID Pacijenta" Binding="{Binding idPacijenta}" />
+                    <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" />
+                    <DataGridTextColumn Header="Jmbg" Binding="{Binding Jmbg}"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Adresa Stanovanja" Binding="{Binding AdresaStanovanja}"/>
+                    <DataGridTextColumn Header="Karton"/>
+
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Height="39" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="20,0,15,5"  Grid.Column="0" Content="Kreiraj Nalog Pacijentu"   Click="KreirajNalogAction"  />
+                <Button Margin="20,0,15,5"  Grid.Column="1"  Content="Izmena Naloga"        Click="IzmenaNalogaAction"/>
+                <Button Margin="20,0,15,5"  Grid.Column="2" Content="Brisanje Naloga"    Click="BrisanjeNalogaAction"/>
+                <Button Margin="20,0,20.4,5" Grid.Column="3" Content="Vrati se"              Click="VratiSeAction"  />
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</Window>
