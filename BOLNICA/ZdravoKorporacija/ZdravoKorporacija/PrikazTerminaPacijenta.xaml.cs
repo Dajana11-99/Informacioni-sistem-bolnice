@@ -64,7 +64,7 @@ namespace ZdravoKorporacija
             }
             else
             {
-                System.Windows.MessageBox.Show("Otkazivanje termina", "Izaberite termin za otkazivanje!");
+                System.Windows.MessageBox.Show( "Izaberite termin za otkazivanje!","Otkazivanje termina");
             }
         }
 

@@ -67,7 +67,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnZahtevUpravniku_Click(object sender, RoutedEventArgs e)

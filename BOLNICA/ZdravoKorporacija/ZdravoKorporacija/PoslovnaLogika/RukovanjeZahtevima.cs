@@ -78,13 +78,31 @@ namespace PoslovnaLogika
             return false;
         }
       
-      public bool Obrisi(int iDZahetva)
+      public static bool Obrisi(String iDZahetva)
       {
-            // TODO: implement
-            return false;
+
+            ZahtevUpravniku z = PretragaPoId(iDZahetva);
+            zahtevi.Remove(z);
+            ZahtevZaSlobodneDaneWindow.zahtevs.Remove(z);
+            if (zahtevi.Contains(z))
+                return false;
+            return true;
         }
-      
-      public bool PretraziZahtev(int iDZahteva)
+
+
+        public static ZahtevUpravniku PretragaPoId(String idZahteva)
+        {
+            foreach (ZahtevUpravniku z in zahtevi)
+            {
+                if (z.idZahteva.Equals(idZahteva))
+                {
+                    return z;
+                }
+            }
+            return null;
+        }
+
+        public bool PretraziZahtev(int iDZahteva)
       {
             // TODO: implement
             return false;

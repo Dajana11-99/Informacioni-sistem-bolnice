@@ -43,7 +43,12 @@ namespace ZdravoKorporacija
 
         private void btnOdustaniOdZahteva_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (poslatiZahtevi.SelectedIndex != -1)
+            {
+                OtkazivanjeZahteva otkazivanje = new OtkazivanjeZahteva(((ZahtevUpravniku)poslatiZahtevi.SelectedItem).idZahteva);
+                otkazivanje.Show();
+               
+            }
         }
 
         private void btnDodajZahtev_Click(object sender, RoutedEventArgs e)
@@ -54,7 +59,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
