@@ -22,6 +22,7 @@ namespace Model
             Id = id;
         }
 
+       
         public Sala() { }
     }
 

@@ -154,9 +154,12 @@ namespace PoslovnaLogika
                 t.trajanjeTermina = double.Parse(predvidjenoVreme);
 
             }
-           
-          
-                t.Sala = RukovanjeSalama.PretraziPoId(BrOperaioneSale);
+
+
+            if (!t.Sala.Id.Equals(BrOperaioneSale))
+            {
+                t.Sala.Id = BrOperaioneSale;
+            }
             
 
            

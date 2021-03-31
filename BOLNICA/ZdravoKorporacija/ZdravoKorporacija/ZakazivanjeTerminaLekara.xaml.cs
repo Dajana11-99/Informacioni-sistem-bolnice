@@ -52,7 +52,7 @@ namespace ZdravoKorporacija
             String id = RukovanjeTerminima.pronadji();
             Lekar l = new Lekar(cmbLekar.Text);
             Pacijent p = new Pacijent(cmbPacijent.Text);
-            String idSale = cmbBrojSale.Text;
+            String idSale = brojSale.Text;
             String vr = cmbZakazivanjeTerminaVreme.Text;
 
 
@@ -67,18 +67,19 @@ namespace ZdravoKorporacija
                 tipP = TipTermina.Operacija;
             }
 
-            TipSale tipS;
-            String tipSale = cmbTipSale.Text;
-            if (tipSale.Equals(TipSale.Pregled))
+          
+           
+            Sala s = null;
+            if (tipP.Equals(TipTermina.Pregled))
             {
-                tipS = TipSale.Pregled;
-            }
-            else
+                s = new Sala(TipSale.Pregled, brojSale.Text);
+            }else
             {
-                tipS = TipSale.Operaciona;
+                s = new Sala(TipSale.Operaciona, brojSale.Text);
             }
+           
 
-            Sala s = new Sala(tipS, idSale);
+           
 
             DateTime? datum = datePickerZakazivanjeTermina.SelectedDate;
             String formatirano = null;

@@ -34,11 +34,9 @@
         <Button Content="Potvrdi" Background="Transparent" Click="btnPotvrdiZakazivanjeTermina_Click"  Name="btnPotvrdiZakazivanjeTermina" HorizontalAlignment="Left" Height="46" Margin="70,494,0,0" VerticalAlignment="Top" Width="216" FontSize="18" FontWeight="Bold"/>
         <Button Content="Odustani" Name="btnOdustani" Background="Transparent" HorizontalAlignment="Left" Height="46" Margin="154.8,494,0,0" VerticalAlignment="Top" Width="216" Click="btnOdustani_Click"  FontSize="18" FontWeight="Bold" Grid.Column="1"/>
         <Label Content=" operacione sale:" Name="lblBrojOperacioeSale" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="72,342,0,0" VerticalAlignment="Top" Width="339" FontSize="16" Grid.ColumnSpan="2" Height="32"/>
-        <ComboBox HorizontalAlignment="Left" Name="cmbBrojSale" Height="36" Margin="119.8,342,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1">
-            <ComboBoxItem>A1</ComboBoxItem>
-            <ComboBoxItem>A2</ComboBoxItem>
-            <ComboBoxItem>A3</ComboBoxItem>
-        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Name="brojSale" Height="36" Margin="119.8,342,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1">
+
+        </TextBox>
         <Label Content="Pacijent:" Name="pacijent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Margin="72,234,0,0" VerticalAlignment="Top" Width="265" FontSize="16"/>
         <ComboBox Grid.Column="1" HorizontalAlignment="Left" IsEditable="True" Name="cmbPacijent" Height="31" Margin="119.8,248,0,0" VerticalAlignment="Top" Width="296">
             <ComboBoxItem>Mika Mikic</ComboBoxItem>

@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <Vreme>10:30</Vreme>
-    <trajanjeTermina>30</trajanjeTermina>
-    <Datum>03/18/2021</Datum>
+    <Vreme>11:00</Vreme>
+    <trajanjeTermina>34</trajanjeTermina>
+    <Datum>03/15/2021</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>1</IdTermina>
+    <IdTermina>2</IdTermina>
     <Sala>
-      <TipSale>Pregled</TipSale>
-      <Id>A1</Id>
+      <TipSale>Operaciona</TipSale>
+      <Id>B5</Id>
       <Zauzeta>false</Zauzeta>
       <sprat>0</sprat>
       <kvadratura>0</kvadratura>
     </Sala>
     <Lekar>
-      <termin />
-      <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Neurohirurg</Specijalizacija>
-      <idZaposlenog>Stefan Markovic </idZaposlenog>
+      <Specijalizacija>Stomatolog</Specijalizacija>
+      <idZaposlenog> Petar Petrovic</idZaposlenog>
     </Lekar>
     <Pacijent>
       <termin />
-      <idPacijenta>DAjana</idPacijenta>
+      <idPacijenta>Vasilije Dojcinov</idPacijenta>
     </Pacijent>
   </Termin>
 </ArrayOfTermin>

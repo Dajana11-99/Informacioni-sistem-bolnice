@@ -117,3 +117,13 @@ C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorpo
 C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeSale.baml
 C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniSalu.g.cs
 C:\Users\User\Desktop\New folder\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniSalu.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeSale.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajSalu.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajZahtevWindow.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniSalu.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZahtevZaSlobodneDaneWindow.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeSale.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajSalu.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajZahtevWindow.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniSalu.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS NOVI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZahtevZaSlobodneDaneWindow.baml
