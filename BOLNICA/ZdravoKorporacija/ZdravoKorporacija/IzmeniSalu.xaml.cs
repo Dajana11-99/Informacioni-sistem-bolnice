@@ -36,7 +36,7 @@ namespace ZdravoKorporacija
         {
             TipSale tipS;
             String tipSale = cmbTipSale.Text;
-            if (tipSale.Equals(TipSale.Pregled.ToString()))
+            if (tipSale.Equals(TipSale.Pregled))
             {
                 tipS = TipSale.Pregled;
             }
