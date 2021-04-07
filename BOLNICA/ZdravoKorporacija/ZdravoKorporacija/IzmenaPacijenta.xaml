@@ -11,7 +11,7 @@
             <Label HorizontalAlignment="Center" FontSize="20">Izmeni pregled</Label>
             <Label>Lekar</Label>
 
-            <ComboBox Name="lekar"  ItemsSource="{Binding}" DisplayMemberPath="idZaposlenog" SelectedValuePath="idZaposlenog"/>
+            <ComboBox Name="lekar"  ItemsSource="{Binding}" DisplayMemberPath="CeloIme" SelectedValuePath="CeloIme"/>
             <Label>Pacijent</Label>
 
             <TextBox  Name="pacijent" IsReadOnly="True"></TextBox>

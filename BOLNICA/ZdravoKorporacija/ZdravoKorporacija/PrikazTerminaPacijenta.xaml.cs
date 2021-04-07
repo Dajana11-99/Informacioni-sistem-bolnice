@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Model;
 using PoslovnaLogika;
 using RadSaDatotekama;
+using ZdravoKorporacija.RadSaDatotekama;
 
 namespace ZdravoKorporacija
 {
@@ -70,13 +71,15 @@ namespace ZdravoKorporacija
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            RukovanjeDatotekama2.upisiTermine();
+            SkladisteTermina.upisiTermine();
+            SkladisteLekara.upisiLekare();
             this.Close();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeDatotekama2.upisiTermine();
+            SkladisteTermina.upisiTermine();
+            SkladisteLekara.upisiLekare();
         }
     }
 }

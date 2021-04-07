@@ -15,7 +15,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}"/>
                     <DataGridTextColumn Header="Tip termina" Binding="{Binding TipTermina}" />
-                    <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.idZaposlenog}"/>
+                    <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.CeloIme}"/>
                     <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.idPacijenta}"/>
                     <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"/>
                     <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Vreme}"/>

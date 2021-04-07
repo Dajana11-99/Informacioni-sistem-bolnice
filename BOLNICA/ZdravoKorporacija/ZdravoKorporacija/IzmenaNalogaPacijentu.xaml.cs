@@ -33,7 +33,8 @@ namespace ZdravoKorporacija
             PrezimeTEXTBOX1.Text = P.Prezime;
             JmbgTEXTBOX1.Text = P.Jmbg;
             EmailTEXTBOX1.Text = P.Email;
-            AdresaTEXTBOX1.Text = P.AdresaStanovanja;
+       
+            AdresaTEXTBOX1.Text = P.adresaStanovanja.Ulica;
 
             KojegMenjam = P;
 
@@ -46,7 +47,7 @@ namespace ZdravoKorporacija
             KojegMenjam.Jmbg = JmbgTEXTBOX1.Text;
 
             KojegMenjam.Email = EmailTEXTBOX1.Text;
-            KojegMenjam.AdresaStanovanja = AdresaTEXTBOX1.Text;
+            KojegMenjam.adresaStanovanja.Ulica = AdresaTEXTBOX1.Text;
             UpravljanjePacijentima.IzmeniPostojeciNalog(KojegMenjam.idPacijenta);
 
 

@@ -30,7 +30,7 @@ namespace ZdravoKorporacija
             bindcombo();
             id = t.IdTermina;
 
-            cmbLekar.SelectedIndex = konstruisi_combo(t.Lekar.idZaposlenog);
+            cmbLekar.SelectedIndex = konstruisi_combo(t.Lekar.CeloIme);
             datePickerZakazivanjeTermina.SelectedDate = DateTime.ParseExact(t.Datum, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             cmbZakazivanjeTerminaVreme.Text = t.Vreme;
             cmbPacijent.Text = t.Pacijent.idPacijenta;
@@ -66,7 +66,7 @@ namespace ZdravoKorporacija
         {
             for (int i = 0; i < Lekari.Count; i++)
             {
-                if (Lekari[i].idZaposlenog.Equals(id))
+                if (Lekari[i].CeloIme.Equals(id))
                     return i;
             }
             return 0;

@@ -37,7 +37,7 @@ namespace Model
 
 
 
-        public Pacijent(string id, string ime, string prezime, string jmbg, string email, string adresaStanovanja) : base(ime, prezime, jmbg, email, adresaStanovanja)
+        public Pacijent(string id, string ime, string prezime, string jmbg, string email, AdresaStanovanja adresaStanovanja) : base(ime, prezime, jmbg, email, adresaStanovanja)
         {
             idPacijenta = id;
         }

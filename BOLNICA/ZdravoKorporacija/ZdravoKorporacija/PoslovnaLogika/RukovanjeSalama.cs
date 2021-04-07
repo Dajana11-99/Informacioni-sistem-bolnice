@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Model;
 using RadSaDatotekama;
+using ZdravoKorporacija.RadSaDatotekama;
 
 namespace PoslovnaLogika
 {
@@ -30,7 +31,7 @@ namespace PoslovnaLogika
          else
             {
                 sala.Add(unetaSala);
-                RukovanjeDatotekama2.UpisiSale();
+                SkladisteSala.UpisiSale();
                 OsveziKolekciju();
                 return true;
             }
@@ -55,7 +56,7 @@ namespace PoslovnaLogika
                 }
               
             }
-            RukovanjeDatotekama2.UpisiSale();
+            SkladisteSala.UpisiSale();
             OsveziKolekciju();
 
             return true;
@@ -77,7 +78,7 @@ namespace PoslovnaLogika
             }
             sala = saleBezIzbrisane;
             OsveziKolekciju();
-            RukovanjeDatotekama2.UpisiSale();
+            SkladisteSala.UpisiSale();
             return nadjena;
         }
       

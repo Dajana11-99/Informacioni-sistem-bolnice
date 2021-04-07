@@ -10,7 +10,7 @@ namespace Model
 {
    public class Sekretara : Osoba
    {
-      public int IdZaposlenog;
+      public String IdZaposlenog;
    
    }
 }

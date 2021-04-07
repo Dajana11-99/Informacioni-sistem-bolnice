@@ -21,7 +21,8 @@
                     <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" />
                     <DataGridTextColumn Header="Jmbg" Binding="{Binding Jmbg}"/>
                     <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
-                    <DataGridTextColumn Header="Adresa Stanovanja" Binding="{Binding AdresaStanovanja}"/>
+                    <DataGridTextColumn Header="Adresa Stanovanja" Binding="{Binding adresaStanovanja.Ulica}"/>
+                   
                     <DataGridTextColumn Header="Karton"/>
 
 

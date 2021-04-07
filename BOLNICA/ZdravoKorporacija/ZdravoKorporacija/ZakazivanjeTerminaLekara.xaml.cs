@@ -50,7 +50,9 @@ namespace ZdravoKorporacija
         private void btnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
         {
             String id = RukovanjeTerminima.pronadji();
-            Lekar l = new Lekar(cmbLekar.Text);
+            string[] pom = cmbLekar.Text.Split(' ');
+            Lekar l = new Lekar(pom[0], pom[1]);
+           
             Pacijent p = new Pacijent(cmbPacijent.Text);
             String idSale = brojSale.Text;
             String vr = cmbZakazivanjeTerminaVreme.Text;

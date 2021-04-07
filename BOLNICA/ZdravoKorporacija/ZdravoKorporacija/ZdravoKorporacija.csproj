@@ -83,10 +83,13 @@
     <Compile Include="LekarWindow.xaml.cs">
       <DependentUpon>LekarWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AdresaStanovanja.cs" />
     <Compile Include="Model\BracniStatusE.cs" />
+    <Compile Include="Model\Drzava.cs" />
     <Compile Include="Model\Karton.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Lekar.cs" />
+    <Compile Include="Model\Mesto.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Pacijent.cs" />
     <Compile Include="Model\Pol.cs" />
@@ -121,7 +124,11 @@
     <Compile Include="PrikazTerminaPacijenta.xaml.cs">
       <DependentUpon>PrikazTerminaPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RadSaDatotekama\RukovanjeDatotekama2.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteLekara.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteNalogaPacijent.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteSala.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteTermina.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteZahteva.cs" />
     <Compile Include="UpravnikPocetna.xaml.cs">
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>

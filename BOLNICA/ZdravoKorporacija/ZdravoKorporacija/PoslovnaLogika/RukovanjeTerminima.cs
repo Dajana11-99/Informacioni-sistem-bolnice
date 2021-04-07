@@ -19,12 +19,12 @@ namespace PoslovnaLogika
         public static void inicijalizuj()
         {
 
-            pom.Add(new Lekar("Dajana Zlokapa", false, Specijalizacija.Ostapraksa));
-            pom.Add(new Lekar("Stefan Markovic ", false, Specijalizacija.Neurohirurg));
-            pom.Add(new Lekar("Nikola Nikolic ", false, Specijalizacija.Ostapraksa));
-            pom.Add(new Lekar(" Marko Markovic", false, Specijalizacija.Ostapraksa));
-            pom.Add(new Lekar(" Milan Djenic", false, Specijalizacija.Kardiolog));
-            pom.Add(new Lekar(" Petar Petrovic", false, Specijalizacija.Stomatolog));
+            pom.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa,"Dajana","Zlokapa","2711999105018","dajanazlokapa@gmail.com", new AdresaStanovanja("Ljubice Ravasi","2A")));
+            pom.Add(new Lekar("L2 ", false, Specijalizacija.Neurohirurg,"Stefan","Markovic","3008997181967","stefan.markovic@gmail.com", new AdresaStanovanja("Laze Lazarevica", " 43")));
+            pom.Add(new Lekar("L3 ", false, Specijalizacija.Ostapraksa,"Nikola","Nikolic","2401965194820","nikola.nikolic@gmail.com", new AdresaStanovanja("Patrijarha Pavla"," 23")));
+            pom.Add(new Lekar("L4", false, Specijalizacija.Ostapraksa, "Marko", "Markovic", "65395728557", "marko.markovic@gmail.com", new AdresaStanovanja("Mihajla Pupina"," 12")));
+            pom.Add(new Lekar("L5", false, Specijalizacija.Kardiolog,"Milan","Djenic","5686323676","milan.djenic@gmail.com", new AdresaStanovanja("Narodnih heroja","32")));
+            pom.Add(new Lekar("l6", false, Specijalizacija.Stomatolog,"Petar","Petrovic","6583892377523","petar.petrovic@gmail.com", new AdresaStanovanja("Ustanicka", "8")));
 
         }
 
@@ -38,6 +38,25 @@ namespace PoslovnaLogika
                     return l;
                 }
 
+            }
+            return null;
+        }
+        public static Lekar PretragaPoLekaru(String ime,String prezime)
+        {
+            bool pomocni=false;
+            foreach(Lekar l in pom)
+            {
+                if (l.Ime.Equals(ime) && l.Prezime.Equals(prezime))
+                {
+
+                    return l;
+                    break;
+                }
+
+               
+
+               
+              
             }
             return null;
         }
@@ -115,9 +134,13 @@ namespace PoslovnaLogika
         public static bool IzmenaPregleda(String idTermina, String lekar, String datum, String vreme)
         {
             Termin t = PretragaPoId(idTermina);
-            if (!t.Lekar.idZaposlenog.Equals(lekar))
+            String[] pomm = lekar.Split(' ');
+            Termin tp = PretragaPoId(idTermina);
+            tp.Lekar= PretragaPoLekaru(pomm[0], pomm[1]);
+
+            if (!t.Lekar.idZaposlenog.Equals(tp.Lekar.idZaposlenog))
             {
-                t.Lekar = PretragaLekaraPoID(lekar);
+                t.Lekar = PretragaLekaraPoID(tp.Lekar.idZaposlenog);
             }
             if (!t.Datum.Equals(datum))
             {
@@ -137,10 +160,15 @@ namespace PoslovnaLogika
         public static bool IzmenaTermina(String idTermina, String datum, String vreme, String lekar, String predvidjenoVreme, String BrOperaioneSale,  String vrstaTerminaOperacije)
         {
             Termin t = PretragaPoId(idTermina);
-            if (!t.Lekar.idZaposlenog.Equals(lekar))
+            String[] pomm = lekar.Split(' ');
+            Termin tp = PretragaPoId(idTermina);
+            tp.Lekar = PretragaPoLekaru(pomm[0], pomm[1]);
+
+            if (!t.Lekar.idZaposlenog.Equals(tp.Lekar.idZaposlenog))
             {
-                t.Lekar = PretragaLekaraPoID(lekar);
+                t.Lekar = PretragaLekaraPoID(tp.Lekar.idZaposlenog);
             }
+           
             if (!t.Datum.Equals(datum))
             {
                 t.Datum = datum;

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PoslovnaLogika;
 using RadSaDatotekama;
+using ZdravoKorporacija.RadSaDatotekama;
 
 namespace ZdravoKorporacija
 {
@@ -28,19 +29,22 @@ namespace ZdravoKorporacija
             InitializeComponent();
             RukovanjeTerminima.inicijalizuj();
             UpravljanjePacijentima.TestMethod();
-            RukovanjeDatotekama2.ucitajTermine();
+            SkladisteTermina.ucitajTermine();
+            SkladisteLekara.ucitajLekare();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            RukovanjeDatotekama2.ucitajTermine();
+            SkladisteTermina.ucitajTermine();
+            SkladisteLekara.ucitajLekare();
             PrikazTerminaPacijenta prikaz = new PrikazTerminaPacijenta();
             prikaz.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeDatotekama2.ucitajTermine();
+            SkladisteTermina.ucitajTermine();
+            SkladisteLekara.ucitajLekare();
             LekarWindow lekar = new LekarWindow();
             lekar.Show();
         }
@@ -53,8 +57,8 @@ namespace ZdravoKorporacija
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            RukovanjeDatotekama2.InicijalizujSale();
-            RukovanjeSalama.SetSala(RukovanjeDatotekama2.UcitajSale());
+            //.InicijalizujSale();
+            //RukovanjeSalama.SetSala(RukovanjeDatotekama2.UcitajSale());
             UpravnikPocetna pocetna = new UpravnikPocetna();
             pocetna.Show();
         }
@@ -62,7 +66,8 @@ namespace ZdravoKorporacija
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
-            RukovanjeDatotekama2.upisiTermine();
+            SkladisteTermina.upisiTermine();
+           SkladisteLekara.upisiLekare();
         }
     }
 }

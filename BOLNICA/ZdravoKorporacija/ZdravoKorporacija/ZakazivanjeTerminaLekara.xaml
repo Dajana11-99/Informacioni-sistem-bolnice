@@ -27,7 +27,7 @@
             <ComboBoxItem>11:30</ComboBoxItem>
             <ComboBoxItem>12:00</ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="cmbLekar" HorizontalAlignment="Left" Height="37" Margin="119.8,192,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1" ItemsSource="{Binding}" DisplayMemberPath="idZaposlenog" SelectedValuePath="idZaposlenog"/>
+        <ComboBox Name="cmbLekar" HorizontalAlignment="Left" Height="37" Margin="119.8,192,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1" ItemsSource="{Binding}" DisplayMemberPath="CeloIme" SelectedValuePath="CeloIme"/>
 
 
         <TextBox Name="txtPredvidjenoVremeTermina" HorizontalAlignment="Left" Background="Transparent" Height="37" Margin="119.8,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Grid.Column="1"/>

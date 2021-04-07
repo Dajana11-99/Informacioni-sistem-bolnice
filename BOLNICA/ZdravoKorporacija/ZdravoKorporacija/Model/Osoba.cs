@@ -5,31 +5,48 @@
  ***********************************************************************/
 
 using System;
+using System.ComponentModel;
 
 namespace Model
 {
-    public class Osoba
+    public class Osoba : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
         public Korisnik korisnik;
 
-        public Osoba(string ime, string prezime, string jmbg, string email, string adresaStanovanja)
+        public Osoba(string ime, string prezime, string jmbg, string email,AdresaStanovanja adresaStanovanja)
         {
             Ime = ime;
             Prezime = prezime;
             Jmbg = jmbg;
             Email = email;
-            AdresaStanovanja = adresaStanovanja;
+            this.adresaStanovanja = adresaStanovanja;
         }
         public Osoba()
         {
 
         }
 
+        public Osoba(string ime, string prezime)
+        {
+            Ime = ime;
+            Prezime = prezime;
+        }
+
+      
         public String Ime { get; set; }
         public String Prezime { get; set; }
         public String Jmbg { get; set; }
         public String Email { get; set; }
-        public String AdresaStanovanja { get; set; }
+        public String CeloIme { get; set; }
+        public AdresaStanovanja adresaStanovanja { get; set; }
 
     }
 }

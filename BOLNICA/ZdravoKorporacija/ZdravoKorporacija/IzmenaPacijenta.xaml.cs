@@ -24,24 +24,30 @@ namespace ZdravoKorporacija
         public List<Lekar> Lekari { get; set; }
 
         public String id = null;
+        public String idpom = null;
         public IzmenaPacijenta(Termin t)
         {
+           
             InitializeComponent();
             bindcombo();
             id = t.IdTermina;
-
-            lekar.SelectedIndex = konstruisi_combo(t.Lekar.idZaposlenog);
+            lekar.SelectedIndex = konstruisi_combo(t.Lekar.CeloIme);
             pacijent.Text = t.Pacijent.idPacijenta;
             datum.SelectedDate = DateTime.ParseExact(t.Datum, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             vreme.Text = t.Vreme;
 
         }
+    
         public int konstruisi_combo(String id)
         {
             for(int i = 0; i < Lekari.Count; i++)
             {
-                if (Lekari[i].idZaposlenog.Equals(id))
+                if (Lekari[i].CeloIme.Equals(id)) 
+                   
                     return i;
+             
+                
+
             }
             return 0;
 

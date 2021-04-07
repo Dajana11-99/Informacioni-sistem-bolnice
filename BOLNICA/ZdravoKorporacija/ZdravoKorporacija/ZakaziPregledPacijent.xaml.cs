@@ -56,7 +56,8 @@ namespace ZdravoKorporacija
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             String id =RukovanjeTerminima.pronadji();
-            Lekar l = new Lekar(lekar.Text);
+            string[] pom = lekar.Text.Split(' ');
+            Lekar l = new Lekar(pom[0],pom[1]);
             Pacijent p = new Pacijent(pacijent.Text);
             Sala sala = new Sala(TipSale.Pregled, null);
             TipTermina tip = TipTermina.Pregled;

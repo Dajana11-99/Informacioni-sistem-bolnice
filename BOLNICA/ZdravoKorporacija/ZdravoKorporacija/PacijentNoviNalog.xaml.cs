@@ -29,7 +29,8 @@ namespace ZdravoKorporacija
 
         private void PotvrdaAction(object sender, RoutedEventArgs e)
         {
-            Pacijent novi = new Pacijent(IDPacijenta.ToString(), ImeTEXTBOX.Text, PrezimeTEXTBOX.Text, JmbgTEXTBOX.Text, EmailTEXTBOX.Text, AdresaTEXTBOX.Text);
+            AdresaStanovanja adresa = new AdresaStanovanja(AdresaTEXTBOX.Text, null);
+            Pacijent novi = new Pacijent(IDPacijenta.ToString(), ImeTEXTBOX.Text, PrezimeTEXTBOX.Text, JmbgTEXTBOX.Text, EmailTEXTBOX.Text, adresa);
             IDPacijenta++;
             PrikazPacijenata.UbaciUListu(novi);
             UpravljanjePacijentima.NapraviNoviNalogPacijentu(novi);

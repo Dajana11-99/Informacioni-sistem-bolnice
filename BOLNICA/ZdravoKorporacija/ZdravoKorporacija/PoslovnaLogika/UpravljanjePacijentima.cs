@@ -67,7 +67,7 @@ namespace PoslovnaLogika
             return false;
         }
 
-        public static bool Blokira(int iDPacijenta)
+        public static bool Blokira(String iDPacijenta)
         {
             // TODO: implement
             return false;

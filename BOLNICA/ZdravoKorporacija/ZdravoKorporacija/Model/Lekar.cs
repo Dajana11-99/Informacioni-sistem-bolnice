@@ -16,8 +16,9 @@ namespace Model
         public System.Collections.ArrayList zahtevUpravniku;
 
         public String idZaposlenog { get; set; }
-        public Boolean Zauzet;
+        public bool Zauzet;
         public Specijalizacija Specijalizacija;
+
 
         public Lekar()
         {
@@ -37,8 +38,19 @@ namespace Model
             Specijalizacija = specijalizacija;
         }
 
-       
+        public Lekar(String idZaposlenog, bool zauzet, Specijalizacija specijalizacija,string ime, string prezime, string jmbg, string email, AdresaStanovanja adresaStanovanja) : base(ime, prezime, jmbg, email, adresaStanovanja)
+        {
+            this.idZaposlenog = idZaposlenog;
+            Zauzet = zauzet;
+            Specijalizacija = specijalizacija;
+            CeloIme = ime + " " + prezime;
+        }
 
+        public Lekar(String ime, String prezime) : base(ime, prezime)
+        {
+            CeloIme = ime + " " + prezime;
+        }
+      
         public void setSpecijalizacija(Specijalizacija s)
         {
             Specijalizacija = s;

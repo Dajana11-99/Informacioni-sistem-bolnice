@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <Vreme>09:00</Vreme>
+    <Vreme>09:30</Vreme>
     <trajanjeTermina>30</trajanjeTermina>
-    <Datum>03/17/2021</Datum>
+    <Datum>04/14/2021</Datum>
     <TipTermina>Pregled</TipTermina>
     <IdTermina>1</IdTermina>
     <Sala>
@@ -13,40 +13,76 @@
       <kvadratura>0</kvadratura>
     </Sala>
     <Lekar>
+      <Ime>Nikola</Ime>
+      <Prezime>Nikolic</Prezime>
+      <Jmbg>2401965194820</Jmbg>
+      <Email>nikola.nikolic@gmail.com</Email>
+      <CeloIme>Nikola Nikolic</CeloIme>
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
-      <idZaposlenog>Nikola Nikolic </idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L3 </idZaposlenog>
     </Lekar>
     <Pacijent>
       <termin />
-      <idPacijenta>asd</idPacijenta>
+      <idPacijenta>rgrgrg</idPacijenta>
     </Pacijent>
   </Termin>
   <Termin>
-    <Vreme>8:30</Vreme>
-    <trajanjeTermina>20700</trajanjeTermina>
-    <Datum>03/18/2021</Datum>
-    <TipTermina>Operacija</TipTermina>
+    <Vreme>9:00</Vreme>
+    <trajanjeTermina>56</trajanjeTermina>
+    <Datum>04/01/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
     <IdTermina>2</IdTermina>
     <Sala>
       <TipSale>Operaciona</TipSale>
-      <Id>34</Id>
+      <Id>y76</Id>
       <Zauzeta>false</Zauzeta>
       <sprat>0</sprat>
       <kvadratura>0</kvadratura>
     </Sala>
     <Lekar>
+      <Ime>Stefan</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>3008997181967</Jmbg>
+      <Email>stefan.markovic@gmail.com</Email>
+      <CeloIme>Stefan Markovic</CeloIme>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Neurohirurg</Specijalizacija>
+      <idZaposlenog>L2 </idZaposlenog>
+    </Lekar>
+    <Pacijent>
+      <termin />
+      <idPacijenta>Vasilije Dojcinov</idPacijenta>
+    </Pacijent>
+  </Termin>
+  <Termin>
+    <Vreme>08:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>04/14/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>3</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Zauzeta>false</Zauzeta>
+      <sprat>0</sprat>
+      <kvadratura>0</kvadratura>
+    </Sala>
+    <Lekar>
+      <Ime>Marko</Ime>
+      <Prezime>Markovic</Prezime>
+      <CeloIme>Marko Markovic</CeloIme>
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
       <Specijalizacija>Kardiolog</Specijalizacija>
-      <idZaposlenog> Milan Djenic</idZaposlenog>
     </Lekar>
     <Pacijent>
       <termin />
-      <idPacijenta>Mika Mikic</idPacijenta>
+      <idPacijenta>sasas</idPacijenta>
     </Pacijent>
   </Termin>
 </ArrayOfTermin>

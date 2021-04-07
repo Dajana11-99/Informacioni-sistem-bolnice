@@ -73,7 +73,7 @@ namespace PoslovnaLogika
             return zahtevi;
       }
       
-      public bool IzmeniZahtev(int iDZahteva)
+      public bool IzmeniZahtev(String iDZahteva)
       {
             return false;
         }
@@ -102,7 +102,7 @@ namespace PoslovnaLogika
             return null;
         }
 
-        public bool PretraziZahtev(int iDZahteva)
+        public bool PretraziZahtev(String iDZahteva)
       {
             // TODO: implement
             return false;
