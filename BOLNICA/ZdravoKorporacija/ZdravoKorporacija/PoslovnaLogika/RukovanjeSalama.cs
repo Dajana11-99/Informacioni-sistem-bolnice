@@ -103,50 +103,6 @@ namespace PoslovnaLogika
                 observableSala.Add(sala);
         }
 
-        /// <pdGenerated>default getter</pdGenerated>
-        public List<Sala> GetSala()
-      {
-         return sala;
-      }
-      
-      /// <pdGenerated>default setter</pdGenerated>
-      public void SetSala(List<Sala> newSala)
-      {
-         RemoveAllSala();
-         foreach (Model.Sala oSala in newSala)
-            AddSala(oSala);
-      }
-      
-      /// <pdGenerated>default Add</pdGenerated>
-      public static void AddSala(Model.Sala newSala)
-      {
-         if (newSala == null)
-            return;
-
-            DodajSalu(newSala);
-
-
-
-      }
-      
-      /// <pdGenerated>default Remove</pdGenerated>
-      public void RemoveSala(Model.Sala oldSala)
-      {
-         if (oldSala == null)
-            return;
-         if (sala != null)
-            if (sala.Contains(oldSala))
-               sala.Remove(oldSala);
-      }
-      
-      /// <pdGenerated>default removeAll</pdGenerated>
-      public void RemoveAllSala()
-      {
-         if (sala != null)
-            sala.Clear();
-      }
-
-
         public static String pronadji()
         {
 

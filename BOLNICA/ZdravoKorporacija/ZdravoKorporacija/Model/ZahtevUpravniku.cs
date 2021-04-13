@@ -53,13 +53,19 @@ namespace Model
             set;
         }
 
-        public ZahtevUpravniku(Lekar lekar, string opisZahteva, string pocetakOdmora, string krajOdmora, string idZahteva)
+        public StatusZahteva status
+        {
+            get;
+            set;
+        }
+        public ZahtevUpravniku(Lekar lekar, string opisZahteva, string pocetakOdmora, string krajOdmora, string idZahteva, StatusZahteva status = StatusZahteva.Nov)
         {
             Lekar = lekar;
             this.opisZahteva = opisZahteva;
             this.pocetakOdmora = pocetakOdmora;
             this.krajOdmora = krajOdmora;
             this.idZahteva = idZahteva;
+            this.status = status;
         }
     }
 

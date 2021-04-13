@@ -11,11 +11,11 @@
             <ColumnDefinition Width="137*"/>
             <ColumnDefinition Width="64*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.ColumnSpan="2">
+        <StackPanel Grid.ColumnSpan="2" Margin="0,36,0,-36">
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Pregled Sala</Label>
             <DataGrid x:Name="SpisakSala" ItemsSource="{Binding ListSala}" IsReadOnly="true"
-                  SelectionMode="Single"  Margin="20,10,20.4,20" 
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="300">
+                  SelectionMode="Single"  Margin="20,10,20,20" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="223">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Sprat" Binding="{Binding sprat}" />
@@ -34,10 +34,12 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="20,0,15,5"  Grid.Column="0" Content="Dodaj Salu" Grid.RowSpan="2" Click="Button_Click"   />
-                <Button Margin="20,0,15,5"  Grid.Column="1"  Content="Izmeni salu" Grid.RowSpan="2" Click="Button_Click_3"      />
-                <Button Margin="20,0,15,5"  Grid.Column="2" Content="Izbrisi salu" Grid.RowSpan="2" Click="Button_Click_2"  />
-                <Button Margin="20,0,20,5" Grid.Column="3" Content="Vrati se" Grid.RowSpan="2" Click="Button_Click_1"              />
+                <Button Margin="20,4,15,-31"  Grid.Column="0" Content="Dodaj Salu" Click="Button_Click" Grid.Row="1"   />
+                <Button Margin="20,4,15,-31"  Grid.Column="1"  Content="Izmeni salu" Click="Button_Click_3" Grid.Row="1"      />
+                <Button Margin="20,4,15,-31"  Grid.Column="2" Content="Izbrisi salu" Click="Button_Click_2" Grid.Row="1"  />
+                <Button Margin="20,4,20,-31" Grid.Column="3" Content="Vrati se" Click="Button_Click_1" Grid.Row="1"              />
+                <Button Margin="20,4,20,-31" Grid.Column="3" Content="ODSUSTVA" Grid.Row="1" Click="Button_Click_4"              />
+
             </Grid>
 
 

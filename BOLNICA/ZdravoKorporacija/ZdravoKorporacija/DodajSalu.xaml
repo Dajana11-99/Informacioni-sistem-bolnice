@@ -17,6 +17,10 @@
             <ComboBoxItem>Pregled</ComboBoxItem>
 
         </ComboBox>
+
+        <Label Content="ID" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="10,54,0,0" VerticalAlignment="Top" Width="283" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBox Name="txtId" HorizontalAlignment="Left" Height="42" Margin="333,54,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="292" Grid.Column="1"/>
+
         
         <Label Content="Sprat" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="10,126,0,0" VerticalAlignment="Top" Width="283" FontSize="18" Grid.ColumnSpan="2"/>
         <TextBox Name="txtSprat" HorizontalAlignment="Left" Height="42" Margin="333.135,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="292" Grid.Column="1"/>

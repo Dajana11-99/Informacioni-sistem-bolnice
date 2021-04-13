@@ -30,7 +30,14 @@ namespace ZdravoKorporacija
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             TipSale tipS;
-            String id = RukovanjeSalama.pronadji();
+            String id = txtId.Text;
+            Sala postojecaSala = RukovanjeSalama.PretraziPoId(id);
+            if (postojecaSala != null)
+            {
+                MessageBox.Show($"Postoji vec sala sa ID-em:{id}");
+                return;
+            }
+
             String tipSale = cmbTipSale.Text;
             if (tipSale.Equals(TipSale.Pregled.ToString()))
             {

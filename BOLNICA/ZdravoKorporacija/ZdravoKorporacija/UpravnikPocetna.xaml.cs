@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Model;
+using PoslovnaLogika;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +22,19 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class UpravnikPocetna : Window
     {
+        public static List<ZahtevUpravniku> ZahteviZaSlobodneDane { get; set; }
+
         public UpravnikPocetna()
         {
             InitializeComponent();
+            var sviZahtevi = RukovanjeZahtevima.zahtevi;
+
+            ZahteviZaSlobodneDane = new List<ZahtevUpravniku>();
+            foreach (var zahtev in sviZahtevi)
+            {
+                ZahteviZaSlobodneDane.Add(zahtev);
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

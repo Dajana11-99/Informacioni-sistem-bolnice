@@ -96,6 +96,7 @@
     <Compile Include="Model\Sala.cs" />
     <Compile Include="Model\Sekretara.cs" />
     <Compile Include="Model\Specijalizacija.cs" />
+    <Compile Include="Model\StatusZahteva.cs" />
     <Compile Include="Model\Termin.cs" />
     <Compile Include="Model\TipNaloga.cs" />
     <Compile Include="Model\TipSale.cs" />
@@ -103,6 +104,9 @@
     <Compile Include="Model\Uloga.cs" />
     <Compile Include="Model\Upravnik.cs" />
     <Compile Include="Model\ZahtevUpravniku.cs" />
+    <Compile Include="OdusustvaUpravnik.xaml.cs">
+      <DependentUpon>OdusustvaUpravnik.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Otkazivanje.xaml.cs">
       <DependentUpon>Otkazivanje.xaml</DependentUpon>
     </Compile>
@@ -189,6 +193,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OdusustvaUpravnik.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Otkazivanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
