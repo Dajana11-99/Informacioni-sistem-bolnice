@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\
 ZdravoKorporacija
 none
 false
 DEBUG;TRACE
-C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\App.xaml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\App.xaml
 21-351338405
 
 55885315438
 14-1290796308
 BrisanjeSale.xaml;DodajSalu.xaml;DodajZahtevWindow.xaml;IzbrisiPacijenta.xaml;IzmenaNalogaPacijentu.xaml;IzmenaPacijenta.xaml;IzmenaTerminaLekara.xaml;IzmeniSalu.xaml;LekarWindow.xaml;MainWindow.xaml;Otkazivanje.xaml;OtkazivanjeTerminaLekara.xaml;OtkazivanjeZahteva.xaml;PacijentNoviNalog.xaml;PriakzSala.xaml;PrikazPacijenata.xaml;PrikazTerminaPacijenta.xaml;UpravnikPocetna.xaml;ZahtevZaSlobodneDaneWindow.xaml;ZakaziPregledPacijent.xaml;ZakazivanjeTerminaLekara.xaml;
 
-False
+True
 

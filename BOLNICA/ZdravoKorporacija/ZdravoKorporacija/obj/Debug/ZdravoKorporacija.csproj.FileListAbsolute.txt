@@ -329,3 +329,13 @@ C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.exe
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.pdb
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzbrisiPacijenta.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaNalogaPacijentu.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeZahteva.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentNoviNalog.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazPacijenata.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzbrisiPacijenta.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmenaNalogaPacijentu.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeZahteva.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentNoviNalog.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazPacijenata.baml

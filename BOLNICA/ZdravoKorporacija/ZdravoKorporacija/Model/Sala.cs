@@ -13,7 +13,7 @@ namespace Model
       public TipSale TipSale { get; set; }
         public String Id { get; set; }
         public bool Zauzeta { get; set; }
-        public int sprat { get; set; }
+        public string sprat { get; set; }
         public float kvadratura { get; set; }
 
         public Sala(TipSale tipSale, string id)

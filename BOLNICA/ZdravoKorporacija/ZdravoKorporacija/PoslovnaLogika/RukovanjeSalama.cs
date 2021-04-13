@@ -18,9 +18,8 @@ namespace PoslovnaLogika
    {
        public static void inicijalizuj() 
         {
-            sala.Add(new Sala(TipSale.Pregled, "A1"));
-            sala.Add(new Sala(TipSale.Operaciona, "A2"));
-            sala.Add(new Sala(TipSale.Pregled, "A3"));
+            sala = SkladisteSala.UcitajSale();
+            OsveziKolekciju();
         }
       public static bool DodajSalu(Model.Sala unetaSala)
       {

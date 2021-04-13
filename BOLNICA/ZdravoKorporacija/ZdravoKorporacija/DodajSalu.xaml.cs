@@ -45,7 +45,7 @@ namespace ZdravoKorporacija
             
 
             Sala s = new Sala(tipS, id);
-            s.sprat = Int32.Parse(sprat);
+            s.sprat = sprat;
 
             RukovanjeSalama.DodajSalu(s);
             Close();

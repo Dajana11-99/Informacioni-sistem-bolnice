@@ -47,7 +47,7 @@ namespace ZdravoKorporacija
 
             String sprat = txtSprat.Text;
 
-            salaZaIzmenu.sprat = Int32.Parse(sprat);
+            salaZaIzmenu.sprat = sprat;
             salaZaIzmenu.Zauzeta = chkboxZauzeta.IsChecked.Value;
             salaZaIzmenu.TipSale = tipS;
 

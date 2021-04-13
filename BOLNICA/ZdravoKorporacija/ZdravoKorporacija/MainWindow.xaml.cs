@@ -28,6 +28,7 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             RukovanjeTerminima.inicijalizuj();
+            RukovanjeSalama.inicijalizuj();
             UpravljanjePacijentima.TestMethod();
             SkladisteTermina.ucitajTermine();
             SkladisteLekara.ucitajLekare();
@@ -57,8 +58,6 @@ namespace ZdravoKorporacija
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            //.InicijalizujSale();
-            //RukovanjeSalama.SetSala(RukovanjeDatotekama2.UcitajSale());
             UpravnikPocetna pocetna = new UpravnikPocetna();
             pocetna.Show();
         }

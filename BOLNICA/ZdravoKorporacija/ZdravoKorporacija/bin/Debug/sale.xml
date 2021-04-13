@@ -2,9 +2,9 @@
 <ArrayOfSala xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Sala>
     <TipSale>Operaciona</TipSale>
-    <Id>A1</Id>
+    <Id>1</Id>
     <Zauzeta>false</Zauzeta>
-    <sprat>1</sprat>
+    <sprat>sdsad</sprat>
     <kvadratura>0</kvadratura>
   </Sala>
 </ArrayOfSala>

@@ -19,7 +19,7 @@
         </ComboBox>
         
         <Label Content="Sprat" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="10,126,0,0" VerticalAlignment="Top" Width="283" FontSize="18" Grid.ColumnSpan="2"/>
-        <TextBox Name="txtSprat" HorizontalAlignment="Left" Height="42" Margin="333.135,126,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292" Grid.Column="1"/>
+        <TextBox Name="txtSprat" HorizontalAlignment="Left" Height="42" Margin="333.135,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="292" Grid.Column="1"/>
         <Button Content="Odustani" Name="btnOdustani"  HorizontalAlignment="Left" Height="44" Margin="348.135,354,0,0" VerticalAlignment="Top" Width="227" FontSize="18" Grid.Column="1" Click="btnOdustani_Click"/>
         <Button Content="Potvrdi"  Name="btnPotvrdi" HorizontalAlignment="Left" Height="44" Margin="73,354,0,0" VerticalAlignment="Top" Width="220" FontSize="18" Grid.ColumnSpan="2" Click="btnPotvrdi_Click"/>
 
