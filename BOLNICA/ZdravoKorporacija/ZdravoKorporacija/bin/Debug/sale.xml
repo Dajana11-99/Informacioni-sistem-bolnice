@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfSala xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Sala>
-    <TipSale>Operaciona</TipSale>
-    <Id>1</Id>
+    <TipSale>Pregled</TipSale>
+    <Id>A1</Id>
     <Zauzeta>false</Zauzeta>
-    <sprat>sdsad</sprat>
+    <sprat>2</sprat>
     <kvadratura>0</kvadratura>
   </Sala>
 </ArrayOfSala>

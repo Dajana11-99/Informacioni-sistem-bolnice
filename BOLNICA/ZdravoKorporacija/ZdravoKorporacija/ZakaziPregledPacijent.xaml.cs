@@ -59,7 +59,10 @@ namespace ZdravoKorporacija
             string[] pom = lekar.Text.Split(' ');
             Lekar l = new Lekar(pom[0],pom[1]);
             Pacijent p = new Pacijent(pacijent.Text);
-            Sala sala = new Sala(TipSale.Pregled, null);
+
+            Sala sala = RukovanjeSalama.PretraziPoTipu(TipSale.Pregled);
+            Console.WriteLine("*************" + sala.Id);
+            
             TipTermina tip = TipTermina.Pregled;
             DateTime? datum = this.datum.SelectedDate;
             String formatirano = null;

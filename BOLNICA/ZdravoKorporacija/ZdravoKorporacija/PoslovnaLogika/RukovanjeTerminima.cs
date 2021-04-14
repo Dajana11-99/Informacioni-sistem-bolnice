@@ -16,7 +16,7 @@ namespace PoslovnaLogika
         public static List<Termin> zakazani = new List<Termin>();
 
         public static List<Lekar> pom = new List<Lekar>();
-        public static void inicijalizuj()
+       /* public static void inicijalizuj()
         {
 
             pom.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa,"Dajana","Zlokapa","2711999105018","dajanazlokapa@gmail.com", new AdresaStanovanja("Ljubice Ravasi","2A")));
@@ -26,7 +26,7 @@ namespace PoslovnaLogika
             pom.Add(new Lekar("L5", false, Specijalizacija.Kardiolog,"Milan","Djenic","5686323676","milan.djenic@gmail.com", new AdresaStanovanja("Narodnih heroja","32")));
             pom.Add(new Lekar("l6", false, Specijalizacija.Stomatolog,"Petar","Petrovic","6583892377523","petar.petrovic@gmail.com", new AdresaStanovanja("Ustanicka", "8")));
 
-        }
+        }*/
 
 
         public static Lekar PretragaLekaraPoID(String id)

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.RadSaDatotekama;
 
 namespace ZdravoKorporacija
 {
@@ -55,7 +56,9 @@ namespace ZdravoKorporacija
             s.sprat = sprat;
 
             RukovanjeSalama.DodajSalu(s);
+            SkladisteSala.UpisiSale();
             Close();
+
 
         }
 

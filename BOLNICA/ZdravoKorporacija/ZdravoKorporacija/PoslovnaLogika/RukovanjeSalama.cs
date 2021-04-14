@@ -21,6 +21,24 @@ namespace PoslovnaLogika
             sala = SkladisteSala.UcitajSale();
             OsveziKolekciju();
         }
+        public static Sala PretraziPoTipu(TipSale tip)
+        {
+            Sala salaa = null;
+            foreach (Sala s in sala)
+            {
+
+                if (s.TipSale.Equals(tip))
+                    salaa = s;
+                break;
+               
+            }
+
+            return salaa;
+                
+            
+
+           
+        }
       public static bool DodajSalu(Model.Sala unetaSala)
       {
          if (sala.Contains(unetaSala))

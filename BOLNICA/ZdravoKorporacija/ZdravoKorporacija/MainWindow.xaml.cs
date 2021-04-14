@@ -27,11 +27,12 @@ namespace ZdravoKorporacija
         public MainWindow()
         {
             InitializeComponent();
-            RukovanjeTerminima.inicijalizuj();
+            //RukovanjeTerminima.inicijalizuj();
             RukovanjeSalama.inicijalizuj();
             UpravljanjePacijentima.TestMethod();
             SkladisteTermina.ucitajTermine();
             SkladisteLekara.ucitajLekare();
+            SkladisteSala.UcitajSale();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -59,12 +60,13 @@ namespace ZdravoKorporacija
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             UpravnikPocetna pocetna = new UpravnikPocetna();
+            SkladisteSala.UcitajSale();
             pocetna.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            SkladisteSala.UpisiSale();
             SkladisteTermina.upisiTermine();
            SkladisteLekara.upisiLekare();
         }

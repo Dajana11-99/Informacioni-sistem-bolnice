@@ -3,86 +3,25 @@
   <Termin>
     <Vreme>09:30</Vreme>
     <trajanjeTermina>30</trajanjeTermina>
-    <Datum>04/14/2021</Datum>
+    <Datum>04/23/2021</Datum>
     <TipTermina>Pregled</TipTermina>
     <IdTermina>1</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
+      <Id>A1</Id>
       <Zauzeta>false</Zauzeta>
-      <sprat>0</sprat>
+      <sprat>2</sprat>
       <kvadratura>0</kvadratura>
     </Sala>
     <Lekar>
-      <Ime>Nikola</Ime>
-      <Prezime>Nikolic</Prezime>
-      <Jmbg>2401965194820</Jmbg>
-      <Email>nikola.nikolic@gmail.com</Email>
-      <CeloIme>Nikola Nikolic</CeloIme>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
-      <idZaposlenog>L3 </idZaposlenog>
-    </Lekar>
-    <Pacijent>
-      <termin />
-      <idPacijenta>rgrgrg</idPacijenta>
-    </Pacijent>
-  </Termin>
-  <Termin>
-    <Vreme>9:00</Vreme>
-    <trajanjeTermina>56</trajanjeTermina>
-    <Datum>04/01/2021</Datum>
-    <TipTermina>Pregled</TipTermina>
-    <IdTermina>2</IdTermina>
-    <Sala>
-      <TipSale>Operaciona</TipSale>
-      <Id>y76</Id>
-      <Zauzeta>false</Zauzeta>
-      <sprat>0</sprat>
-      <kvadratura>0</kvadratura>
-    </Sala>
-    <Lekar>
-      <Ime>Stefan</Ime>
-      <Prezime>Markovic</Prezime>
-      <Jmbg>3008997181967</Jmbg>
-      <Email>stefan.markovic@gmail.com</Email>
-      <CeloIme>Stefan Markovic</CeloIme>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Neurohirurg</Specijalizacija>
-      <idZaposlenog>L2 </idZaposlenog>
-    </Lekar>
-    <Pacijent>
-      <termin />
-      <idPacijenta>Vasilije Dojcinov</idPacijenta>
-    </Pacijent>
-  </Termin>
-  <Termin>
-    <Vreme>08:30</Vreme>
-    <trajanjeTermina>30</trajanjeTermina>
-    <Datum>04/14/2021</Datum>
-    <TipTermina>Pregled</TipTermina>
-    <IdTermina>3</IdTermina>
-    <Sala>
-      <TipSale>Pregled</TipSale>
-      <Zauzeta>false</Zauzeta>
-      <sprat>0</sprat>
-      <kvadratura>0</kvadratura>
-    </Sala>
-    <Lekar>
-      <Ime>Marko</Ime>
-      <Prezime>Markovic</Prezime>
-      <CeloIme>Marko Markovic</CeloIme>
-      <termin />
-      <zahtevUpravniku />
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <CeloIme>Dajana Zlokapa</CeloIme>
       <Zauzet>false</Zauzet>
       <Specijalizacija>Kardiolog</Specijalizacija>
     </Lekar>
     <Pacijent>
-      <termin />
-      <idPacijenta>sasas</idPacijenta>
+      <idPacijenta>Nikola Nikolic</idPacijenta>
     </Pacijent>
   </Termin>
 </ArrayOfTermin>
