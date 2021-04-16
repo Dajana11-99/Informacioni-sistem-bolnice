@@ -17,11 +17,38 @@
       <Ime>Dajana</Ime>
       <Prezime>Zlokapa</Prezime>
       <CeloIme>Dajana Zlokapa</CeloIme>
+      <termin />
+      <zahtevUpravniku />
       <Zauzet>false</Zauzet>
       <Specijalizacija>Kardiolog</Specijalizacija>
     </Lekar>
     <Pacijent>
+      <termin />
       <idPacijenta>Nikola Nikolic</idPacijenta>
+    </Pacijent>
+  </Termin>
+  <Termin>
+    <Vreme>09:00</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>04/28/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>2</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A1</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+    </Sala>
+    <Lekar>
+      <Ime>Nikola</Ime>
+      <Prezime>Nikolic</Prezime>
+      <CeloIme>Nikola Nikolic</CeloIme>
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Kardiolog</Specijalizacija>
+    </Lekar>
+    <Pacijent>
+      <idPacijenta>neko</idPacijenta>
     </Pacijent>
   </Termin>
 </ArrayOfTermin>

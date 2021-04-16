@@ -7,4 +7,11 @@
     <sprat>2</sprat>
     <kvadratura>0</kvadratura>
   </Sala>
+  <Sala>
+    <TipSale>Pregled</TipSale>
+    <Id>A2</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>4</sprat>
+    <kvadratura>0</kvadratura>
+  </Sala>
 </ArrayOfSala>
