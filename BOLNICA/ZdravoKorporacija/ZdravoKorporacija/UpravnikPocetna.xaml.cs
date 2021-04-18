@@ -42,5 +42,16 @@ namespace ZdravoKorporacija
             PriakzSala prikaz = new PriakzSala();
             prikaz.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            PrikazStatickeOpreme prikaz = new PrikazStatickeOpreme();
+            prikaz.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

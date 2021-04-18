@@ -59,8 +59,14 @@
     <Compile Include="BrisanjeSale.xaml.cs">
       <DependentUpon>BrisanjeSale.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BrisanjeStatickeOpreme.xaml.cs">
+      <DependentUpon>BrisanjeStatickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajSalu.xaml.cs">
       <DependentUpon>DodajSalu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DodajStatickuOpremu.xaml.cs">
+      <DependentUpon>DodajStatickuOpremu.xaml</DependentUpon>
     </Compile>
     <Compile Include="DodajZahtevWindow.xaml.cs">
       <DependentUpon>DodajZahtevWindow.xaml</DependentUpon>
@@ -80,11 +86,15 @@
     <Compile Include="IzmeniSalu.xaml.cs">
       <DependentUpon>IzmeniSalu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzmeniStatickuOpremu.xaml.cs">
+      <DependentUpon>IzmeniStatickuOpremu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekarWindow.xaml.cs">
       <DependentUpon>LekarWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\AdresaStanovanja.cs" />
     <Compile Include="Model\BracniStatusE.cs" />
+    <Compile Include="Model\DinamickaOprema.cs" />
     <Compile Include="Model\Drzava.cs" />
     <Compile Include="Model\Karton.cs" />
     <Compile Include="Model\Korisnik.cs" />
@@ -96,6 +106,7 @@
     <Compile Include="Model\Sala.cs" />
     <Compile Include="Model\Sekretara.cs" />
     <Compile Include="Model\Specijalizacija.cs" />
+    <Compile Include="Model\StatickaOprema.cs" />
     <Compile Include="Model\StatusZahteva.cs" />
     <Compile Include="Model\Termin.cs" />
     <Compile Include="Model\TipNaloga.cs" />
@@ -119,11 +130,15 @@
     <Compile Include="PacijentNoviNalog.xaml.cs">
       <DependentUpon>PacijentNoviNalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PoslovnaLogika\RukovanjeStatickomOpremom.cs" />
     <Compile Include="PriakzSala.xaml.cs">
       <DependentUpon>PriakzSala.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazPacijenata.xaml.cs">
       <DependentUpon>PrikazPacijenata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazStatickeOpreme.xaml.cs">
+      <DependentUpon>PrikazStatickeOpreme.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazTerminaPacijenta.xaml.cs">
       <DependentUpon>PrikazTerminaPacijenta.xaml</DependentUpon>
@@ -131,6 +146,7 @@
     <Compile Include="RadSaDatotekama\SkladisteLekara.cs" />
     <Compile Include="RadSaDatotekama\SkladisteNalogaPacijent.cs" />
     <Compile Include="RadSaDatotekama\SkladisteSala.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteStatickeOpreme.cs" />
     <Compile Include="RadSaDatotekama\SkladisteTermina.cs" />
     <Compile Include="RadSaDatotekama\SkladisteZahteva.cs" />
     <Compile Include="UpravnikPocetna.xaml.cs">
@@ -149,7 +165,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BrisanjeStatickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajSalu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajStatickuOpremu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniSalu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniStatickuOpremu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazPacijenata.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazStatickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -275,6 +307,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="termini.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="statickaOprema.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

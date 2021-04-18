@@ -16,15 +16,15 @@ using System.Windows.Shapes;
 namespace ZdravoKorporacija
 {
     /// <summary>
-    /// Interaction logic for BrisanjeSale.xaml
+    /// 
     /// </summary>
-    public partial class BrisanjeSale : Window
+    public partial class BrisanjeStatickeOpreme : Window
     {
-        string statickaOpremaId;
-        public BrisanjeSale(string id)
+        string salaId;
+        public BrisanjeStatickeOpreme(string id)
         {
             InitializeComponent();
-            statickaOpremaId = id;
+            salaId = id;
         }
 
 
@@ -35,8 +35,9 @@ namespace ZdravoKorporacija
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeStatickomOpremom.ObrisiStatickuOpremu(statickaOpremaId);
+            RukovanjeSalama.BrisanjeSala(salaId);
             this.Close();
         }
     }
 }
+

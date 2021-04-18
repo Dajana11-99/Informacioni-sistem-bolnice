@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dajan\OneDrive\Desktop\SIMS MIRJANA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\
 ZdravoKorporacija
 none
 false
 DEBUG;TRACE
-C:\Users\dajan\OneDrive\Desktop\SIMS MIRJANA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\App.xaml
-22-1210936170
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\App.xaml
+26-1024563211
 
-561413963102
+64-1404808383
 14-1290796308
-BrisanjeSale.xaml;DodajSalu.xaml;DodajZahtevWindow.xaml;IzbrisiPacijenta.xaml;IzmenaNalogaPacijentu.xaml;IzmenaPacijenta.xaml;IzmenaTerminaLekara.xaml;IzmeniSalu.xaml;LekarWindow.xaml;MainWindow.xaml;OdusustvaUpravnik.xaml;Otkazivanje.xaml;OtkazivanjeTerminaLekara.xaml;OtkazivanjeZahteva.xaml;PacijentNoviNalog.xaml;PriakzSala.xaml;PrikazPacijenata.xaml;PrikazTerminaPacijenta.xaml;UpravnikPocetna.xaml;ZahtevZaSlobodneDaneWindow.xaml;ZakaziPregledPacijent.xaml;ZakazivanjeTerminaLekara.xaml;
+BrisanjeSale.xaml;BrisanjeStatickeOpreme.xaml;DodajSalu.xaml;DodajStatickuOpremu.xaml;DodajZahtevWindow.xaml;IzbrisiPacijenta.xaml;IzmenaNalogaPacijentu.xaml;IzmenaPacijenta.xaml;IzmenaTerminaLekara.xaml;IzmeniSalu.xaml;IzmeniStatickuOpremu.xaml;LekarWindow.xaml;MainWindow.xaml;OdusustvaUpravnik.xaml;Otkazivanje.xaml;OtkazivanjeTerminaLekara.xaml;OtkazivanjeZahteva.xaml;PacijentNoviNalog.xaml;PriakzSala.xaml;PrikazPacijenata.xaml;PrikazStatickeOpreme.xaml;PrikazTerminaPacijenta.xaml;UpravnikPocetna.xaml;ZahtevZaSlobodneDaneWindow.xaml;ZakaziPregledPacijent.xaml;ZakazivanjeTerminaLekara.xaml;
 
 False
 

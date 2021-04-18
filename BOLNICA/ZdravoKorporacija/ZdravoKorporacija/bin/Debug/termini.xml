@@ -44,10 +44,13 @@
       <Ime>Nikola</Ime>
       <Prezime>Nikolic</Prezime>
       <CeloIme>Nikola Nikolic</CeloIme>
+      <termin />
+      <zahtevUpravniku />
       <Zauzet>false</Zauzet>
       <Specijalizacija>Kardiolog</Specijalizacija>
     </Lekar>
     <Pacijent>
+      <termin />
       <idPacijenta>neko</idPacijenta>
     </Pacijent>
   </Termin>

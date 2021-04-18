@@ -398,3 +398,11 @@ C:\Users\dajan\OneDrive\Desktop\SIMS MIRJANA\Informacioni-sistem-bolnice\BOLNICA
 C:\Users\dajan\OneDrive\Desktop\SIMS MIRJANA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
 C:\Users\dajan\OneDrive\Desktop\SIMS MIRJANA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.exe
 C:\Users\dajan\OneDrive\Desktop\SIMS MIRJANA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.pdb
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeStatickeOpreme.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajStatickuOpremu.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniStatickuOpremu.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazStatickeOpreme.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeStatickeOpreme.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajStatickuOpremu.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniStatickuOpremu.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazStatickeOpreme.baml

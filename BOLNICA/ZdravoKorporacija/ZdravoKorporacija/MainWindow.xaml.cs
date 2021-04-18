@@ -33,6 +33,7 @@ namespace ZdravoKorporacija
             SkladisteTermina.ucitajTermine();
             SkladisteLekara.ucitajLekare();
             SkladisteSala.UcitajSale();
+            RukovanjeStatickomOpremom.inicijalizuj();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
