@@ -53,5 +53,11 @@ namespace ZdravoKorporacija
         {
 
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            RasporedjivanjeStatickeOpreme rasporedjivanje = new RasporedjivanjeStatickeOpreme();
+            rasporedjivanje.Show();
+        }
     }
 }

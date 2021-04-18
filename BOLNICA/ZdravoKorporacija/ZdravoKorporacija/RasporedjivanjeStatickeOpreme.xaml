@@ -1,0 +1,50 @@
+﻿<Window x:Class="ZdravoKorporacija.RasporedjivanjeStatickeOpreme"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="RasporedjivanjeStatickeOpreme" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="64*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Margin="0,36,0,-36">
+            <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Rasporedjivanje staticke opreme po prostorijama</Label>
+            <DataGrid x:Name="SpisakRaspodela" ItemsSource="{Binding ListSala}" IsReadOnly="true"
+                  SelectionMode="Single"  Margin="20,10,20,20" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="223">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="StatickaOpremaId" Binding="{Binding StatickaOpremaId}" />
+                    <DataGridTextColumn Header="ProstorijaId" Binding="{Binding ProstorijaId}"/>
+                    <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}"/>
+
+                    <DataGridTextColumn Header="RasporedjenoOd" Binding="{Binding RasporedjenoOd}"/>
+                    <DataGridTextColumn Header="RasporedjenoDo" Binding="{Binding RasporedjenoDo}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Height="39" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="20,4,15,-31"  Grid.Column="0" Content="Dodaj Salu" Click="Button_Click" Grid.Row="1"   />
+                <Button Margin="20,4,15,-31"  Grid.Column="1"  Content="Izmeni salu" Click="Button_Click_3" Grid.Row="1"      />
+                <Button Margin="20,4,15,-31"  Grid.Column="2" Content="Izbrisi salu" Click="Button_Click_2" Grid.Row="1"  />
+                <Button Margin="20,4,20,-31" Grid.Column="3" Content="Vrati se" Click="Button_Click_1" Grid.Row="1"              />
+
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</Window>

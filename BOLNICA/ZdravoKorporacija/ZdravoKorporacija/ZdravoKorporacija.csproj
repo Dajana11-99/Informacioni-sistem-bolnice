@@ -62,6 +62,9 @@
     <Compile Include="BrisanjeStatickeOpreme.xaml.cs">
       <DependentUpon>BrisanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DodajRasporedjivanjeStatickeOpreme.xaml.cs">
+      <DependentUpon>DodajRasporedjivanjeStatickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajSalu.xaml.cs">
       <DependentUpon>DodajSalu.xaml</DependentUpon>
     </Compile>
@@ -74,6 +77,9 @@
     <Compile Include="IzbrisiPacijenta.xaml.cs">
       <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzbrisiRasporedjivanjeStatickeOpreme.xaml.cs">
+      <DependentUpon>IzbrisiRasporedjivanjeStatickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzmenaNalogaPacijentu.xaml.cs">
       <DependentUpon>IzmenaNalogaPacijentu.xaml</DependentUpon>
     </Compile>
@@ -82,6 +88,9 @@
     </Compile>
     <Compile Include="IzmenaTerminaLekara.xaml.cs">
       <DependentUpon>IzmenaTerminaLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniRasporedjivanjeStatickeOpreme.xaml.cs">
+      <DependentUpon>IzmeniRasporedjivanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmeniSalu.xaml.cs">
       <DependentUpon>IzmeniSalu.xaml</DependentUpon>
@@ -107,6 +116,7 @@
     <Compile Include="Model\Sekretara.cs" />
     <Compile Include="Model\Specijalizacija.cs" />
     <Compile Include="Model\StatickaOprema.cs" />
+    <Compile Include="Model\StatickaOpremaProstorija.cs" />
     <Compile Include="Model\StatusZahteva.cs" />
     <Compile Include="Model\Termin.cs" />
     <Compile Include="Model\TipNaloga.cs" />
@@ -130,6 +140,7 @@
     <Compile Include="PacijentNoviNalog.xaml.cs">
       <DependentUpon>PacijentNoviNalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PoslovnaLogika\RukovanjeStatickaOpremaProstorija.cs" />
     <Compile Include="PoslovnaLogika\RukovanjeStatickomOpremom.cs" />
     <Compile Include="PriakzSala.xaml.cs">
       <DependentUpon>PriakzSala.xaml</DependentUpon>
@@ -146,9 +157,13 @@
     <Compile Include="RadSaDatotekama\SkladisteLekara.cs" />
     <Compile Include="RadSaDatotekama\SkladisteNalogaPacijent.cs" />
     <Compile Include="RadSaDatotekama\SkladisteSala.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteStatickaOpremaProstorija.cs" />
     <Compile Include="RadSaDatotekama\SkladisteStatickeOpreme.cs" />
     <Compile Include="RadSaDatotekama\SkladisteTermina.cs" />
     <Compile Include="RadSaDatotekama\SkladisteZahteva.cs" />
+    <Compile Include="RasporedjivanjeStatickeOpreme.xaml.cs">
+      <DependentUpon>RasporedjivanjeStatickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpravnikPocetna.xaml.cs">
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>
@@ -169,6 +184,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DodajRasporedjivanjeStatickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajSalu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IzbrisiRasporedjivanjeStatickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IzmenaNalogaPacijentu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -194,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmenaTerminaLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniRasporedjivanjeStatickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -254,6 +281,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazTerminaPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RasporedjivanjeStatickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
