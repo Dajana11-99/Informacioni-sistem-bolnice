@@ -1,0 +1,24 @@
+﻿<Window x:Class="ZdravoKorporacija.IzmeniDinamickuOpremu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="IzmeniDinamickuOpremu" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="39*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Naziv" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="10,126,0,0" VerticalAlignment="Top" Width="283" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBox Name="txtNaziv" HorizontalAlignment="Left" Height="42" Margin="333.135,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" Grid.Column="1"/>
+
+        <Button Content="Odustani" Name="btnOdustani"  HorizontalAlignment="Left" Height="44" Margin="348.135,354,0,0" VerticalAlignment="Top" Width="227" FontSize="18" Grid.Column="1" Click="btnOdustani_Click"/>
+        <Button Content="Potvrdi"  Name="btnPotvrdi" HorizontalAlignment="Left" Height="44" Margin="73,354,0,0" VerticalAlignment="Top" Width="220" FontSize="18" Grid.ColumnSpan="2" Click="btnPotvrdi_Click"/>
+        <Label Content="Kolicina" Grid.Column="1" HorizontalAlignment="Left" Margin="34,206,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.181,0.334" FontSize="18" Width="73" Height="33"/>
+        <TextBox Name="txtKolicina" Grid.Column="1" HorizontalAlignment="Left" Margin="333,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="42" Width="292" />
+
+
+    </Grid>
+</Window>

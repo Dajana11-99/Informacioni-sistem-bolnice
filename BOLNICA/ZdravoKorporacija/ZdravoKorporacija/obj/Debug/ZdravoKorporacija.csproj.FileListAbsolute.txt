@@ -414,3 +414,11 @@ C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzbrisiRasporedjivanjeStatickeOpreme.baml
 C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniRasporedjivanjeStatickeOpreme.baml
 C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\RasporedjivanjeStatickeOpreme.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeDinamickeOpreme.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajDinamickuOpremu.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniDinamickuOpremu.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazDinamickeOpreme.g.cs
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeDinamickeOpreme.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajDinamickuOpremu.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniDinamickuOpremu.baml
+C:\Users\User\Desktop\New folder (2)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazDinamickeOpreme.baml

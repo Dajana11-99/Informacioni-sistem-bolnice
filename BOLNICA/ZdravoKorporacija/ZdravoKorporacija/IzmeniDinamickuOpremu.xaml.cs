@@ -19,15 +19,15 @@ namespace ZdravoKorporacija
     /// <summary>
     /// Interaction logic for IzmeniSalu.xaml
     /// </summary>
-    public partial class IzmeniStatickuOpremu : Window
+    public partial class IzmeniDinamickuOpremu : Window
     {
-        StatickaOprema statickaOpremaZaIzmenu;
-        public IzmeniStatickuOpremu(StatickaOprema staticka)
+        DinamickaOprema dinamickaOpremaZaIzmenu;
+        public IzmeniDinamickuOpremu(DinamickaOprema dinamicka)
         {
             InitializeComponent();
-            statickaOpremaZaIzmenu = staticka;
-            txtNaziv.Text = "" + staticka.naziv;
-            txtKolicina.Text = "" + staticka.kolicina;
+            dinamickaOpremaZaIzmenu = dinamicka;
+            txtNaziv.Text = "" + dinamicka.naziv;
+            txtKolicina.Text = "" + dinamicka.kolicina;
 
         }
 
@@ -48,10 +48,10 @@ namespace ZdravoKorporacija
                 return;
             }
 
-            statickaOpremaZaIzmenu.naziv = naziv;
-            statickaOpremaZaIzmenu.kolicina = kolicina;
+            dinamickaOpremaZaIzmenu.naziv = naziv;
+            dinamickaOpremaZaIzmenu.kolicina = kolicina;
 
-            RukovanjeStatickomOpremom.IzmeniStatickuOpremu(statickaOpremaZaIzmenu);
+            RukovanjeDinamickomOpremom.IzmeniDinamickuOpremu(dinamickaOpremaZaIzmenu);
             Close();
 
         }

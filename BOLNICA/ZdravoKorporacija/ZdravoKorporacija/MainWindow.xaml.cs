@@ -34,7 +34,7 @@ namespace ZdravoKorporacija
             SkladisteLekara.ucitajLekare();
             SkladisteSala.UcitajSale();
             RukovanjeStatickomOpremom.inicijalizuj();
-            
+            RukovanjeDinamickomOpremom.inicijalizuj();
             RukovanjeStatickaOpremaProstorija.inicijalizuj();
         }
 

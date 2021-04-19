@@ -35,7 +35,7 @@ namespace ZdravoKorporacija
             StatickaOprema postojecaStatickaOprema = RukovanjeStatickomOpremom.PretraziPoId(id);
             if (postojecaStatickaOprema != null)
             {
-                MessageBox.Show($"Postoji vec sala sa ID-em:{id}");
+                MessageBox.Show($"Postoji vec oprema sa ID-em:{id}");
                 return;
             }
 

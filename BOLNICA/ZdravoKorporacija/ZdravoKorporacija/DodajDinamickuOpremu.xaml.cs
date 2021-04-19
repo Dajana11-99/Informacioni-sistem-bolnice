@@ -13,26 +13,31 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.RadSaDatotekama;
 
 namespace ZdravoKorporacija
 {
     /// <summary>
-    /// Interaction logic for IzmeniSalu.xaml
+    /// Interaction logic for DodajSalu.xaml
     /// </summary>
-    public partial class IzmeniStatickuOpremu : Window
+    public partial class DodajDinamickuOpremu : Window
     {
-        StatickaOprema statickaOpremaZaIzmenu;
-        public IzmeniStatickuOpremu(StatickaOprema staticka)
+        public DodajDinamickuOpremu()
         {
             InitializeComponent();
-            statickaOpremaZaIzmenu = staticka;
-            txtNaziv.Text = "" + staticka.naziv;
-            txtKolicina.Text = "" + staticka.kolicina;
 
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
+
+            String id = txtId.Text;
+            DinamickaOprema postojecaDinamickaOprema = RukovanjeDinamickomOpremom.PretraziPoId(id);
+            if (postojecaDinamickaOprema != null)
+            {
+                MessageBox.Show($"Postoji vec oprema sa ID-em:{id}");
+                return;
+            }
 
             String naziv = txtNaziv.Text;
 
@@ -44,15 +49,19 @@ namespace ZdravoKorporacija
             }
             catch
             {
-                MessageBox.Show($"Kolicina mora biti ceo broj!!");
+                MessageBox.Show($"Kolicina mora biti coe broj!!");
                 return;
             }
 
-            statickaOpremaZaIzmenu.naziv = naziv;
-            statickaOpremaZaIzmenu.kolicina = kolicina;
 
-            RukovanjeStatickomOpremom.IzmeniStatickuOpremu(statickaOpremaZaIzmenu);
+
+            DinamickaOprema so = new DinamickaOprema(id);
+            so.naziv = naziv;
+            so.kolicina = kolicina;
+            RukovanjeDinamickomOpremom.DodajDinamickuOpremu(so);
+            SkladisteDinamickeOpreme.UpisiDinamickuOpremu();
             Close();
+
 
         }
 
@@ -60,11 +69,5 @@ namespace ZdravoKorporacija
         {
             Close();
         }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
-

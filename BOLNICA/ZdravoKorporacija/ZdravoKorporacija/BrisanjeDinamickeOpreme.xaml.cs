@@ -18,13 +18,13 @@ namespace ZdravoKorporacija
     /// <summary>
     /// 
     /// </summary>
-    public partial class BrisanjeStatickeOpreme : Window
+    public partial class BrisanjeDinamickeOpreme : Window
     {
-        string statickaOpremaId;
-        public BrisanjeStatickeOpreme(string id)
+        string dinamickaOpremaId;
+        public BrisanjeDinamickeOpreme(string id)
         {
             InitializeComponent();
-            statickaOpremaId = id;
+            dinamickaOpremaId = id;
         }
 
 
@@ -35,7 +35,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeStatickaOpremaProstorija.ObrisiStatickuOpremu(statickaOpremaId);
+            RukovanjeDinamickomOpremom.ObrisiDinamickuOpremu(dinamickaOpremaId);
             this.Close();
         }
     }

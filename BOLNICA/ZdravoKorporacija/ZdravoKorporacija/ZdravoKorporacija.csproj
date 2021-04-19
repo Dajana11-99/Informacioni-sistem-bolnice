@@ -56,11 +56,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BrisanjeDinamickeOpreme.xaml.cs">
+      <DependentUpon>BrisanjeDinamickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BrisanjeSale.xaml.cs">
       <DependentUpon>BrisanjeSale.xaml</DependentUpon>
     </Compile>
     <Compile Include="BrisanjeStatickeOpreme.xaml.cs">
       <DependentUpon>BrisanjeStatickeOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DodajDinamickuOpremu.xaml.cs">
+      <DependentUpon>DodajDinamickuOpremu.xaml</DependentUpon>
     </Compile>
     <Compile Include="DodajRasporedjivanjeStatickeOpreme.xaml.cs">
       <DependentUpon>DodajRasporedjivanjeStatickeOpreme.xaml</DependentUpon>
@@ -88,6 +94,9 @@
     </Compile>
     <Compile Include="IzmenaTerminaLekara.xaml.cs">
       <DependentUpon>IzmenaTerminaLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniDinamickuOpremu.xaml.cs">
+      <DependentUpon>IzmeniDinamickuOpremu.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmeniRasporedjivanjeStatickeOpreme.xaml.cs">
       <DependentUpon>IzmeniRasporedjivanjeStatickeOpreme.xaml</DependentUpon>
@@ -140,10 +149,14 @@
     <Compile Include="PacijentNoviNalog.xaml.cs">
       <DependentUpon>PacijentNoviNalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PoslovnaLogika\RukovanjeDinamickomOpremom.cs" />
     <Compile Include="PoslovnaLogika\RukovanjeStatickaOpremaProstorija.cs" />
     <Compile Include="PoslovnaLogika\RukovanjeStatickomOpremom.cs" />
     <Compile Include="PriakzSala.xaml.cs">
       <DependentUpon>PriakzSala.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazDinamickeOpreme.xaml.cs">
+      <DependentUpon>PrikazDinamickeOpreme.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazPacijenata.xaml.cs">
       <DependentUpon>PrikazPacijenata.xaml</DependentUpon>
@@ -154,6 +167,7 @@
     <Compile Include="PrikazTerminaPacijenta.xaml.cs">
       <DependentUpon>PrikazTerminaPacijenta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RadSaDatotekama\SkladisteDinamickeOpreme.cs" />
     <Compile Include="RadSaDatotekama\SkladisteLekara.cs" />
     <Compile Include="RadSaDatotekama\SkladisteNalogaPacijent.cs" />
     <Compile Include="RadSaDatotekama\SkladisteSala.cs" />
@@ -176,11 +190,19 @@
     <Compile Include="ZakazivanjeTerminaLekara.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekara.xaml</DependentUpon>
     </Compile>
+    <Page Include="BrisanjeDinamickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BrisanjeSale.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BrisanjeStatickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajDinamickuOpremu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,6 +239,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmenaTerminaLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniDinamickuOpremu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -269,6 +295,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PriakzSala.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazDinamickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -341,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="statickaOprema.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dinamickaOprema.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

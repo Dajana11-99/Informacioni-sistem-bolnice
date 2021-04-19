@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("statickaoprema.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dinamickaoprema.xml")]
 
 
