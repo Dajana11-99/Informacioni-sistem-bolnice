@@ -35,7 +35,14 @@ namespace ZdravoKorporacija
             SkladisteSala.UcitajSale();
             RukovanjeStatickomOpremom.inicijalizuj();
             RukovanjeDinamickomOpremom.inicijalizuj();
-            RukovanjeStatickaOpremaProstorija.inicijalizuj();
+            RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.inicijalizuj();
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.inicijalizuj();
+
+            // Izvrsi zahteve automatski 
+            RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.IzvrsiZahteveZaDanas();
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.IzvrsiZahteveZaDanas();
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

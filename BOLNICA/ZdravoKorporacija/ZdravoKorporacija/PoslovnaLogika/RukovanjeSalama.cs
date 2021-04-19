@@ -69,6 +69,8 @@ namespace PoslovnaLogika
                     s.sprat = salaZaIzmenu.sprat;
                     s.TipSale = salaZaIzmenu.TipSale;
                     s.Zauzeta = salaZaIzmenu.Zauzeta;
+                    s.RasporedjenaDinamickaOprema = salaZaIzmenu.RasporedjenaDinamickaOprema;
+                    s.RasporedjenaStatickaOprema = salaZaIzmenu.RasporedjenaStatickaOprema;
 
                 }
               

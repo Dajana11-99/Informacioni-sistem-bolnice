@@ -5,6 +5,7 @@
  ***********************************************************************/
 
 using System;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -15,6 +16,13 @@ namespace Model
         public bool Zauzeta { get; set; }
         public string sprat { get; set; }
         public float kvadratura { get; set; }
+
+        public List<RasporedjenaStatickaOprema> RasporedjenaStatickaOprema { get; set; }
+        public List<RasporedjenaDinamickaOprema> RasporedjenaDinamickaOprema { get; set; }
+
+
+
+
 
         public Sala(TipSale tipSale, string id)
         {

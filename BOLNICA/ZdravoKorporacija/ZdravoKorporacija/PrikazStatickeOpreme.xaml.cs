@@ -24,12 +24,31 @@ namespace ZdravoKorporacija
     {
 
         public static ObservableCollection<StatickaOprema> ListStatickaOprema { get; set; }
-        public PrikazStatickeOpreme()
+        public bool CRUDStatickeOpreme { get; set; }
+
+        public PrikazStatickeOpreme(ObservableCollection<RasporedjenaStatickaOprema> rasporedjenaOprema = null)
         {
             InitializeComponent();
             DataContext = this;
+            if (rasporedjenaOprema == null)
+            {
+                CRUDStatickeOpreme = true;
+                ListStatickaOprema = RukovanjeStatickomOpremom.observableStatickaOprema;
 
-            ListStatickaOprema = RukovanjeStatickomOpremom.observableStatickaOprema;
+            } else
+            {
+                CRUDStatickeOpreme = false;
+                ObservableCollection<StatickaOprema> opremaIzSale = new ObservableCollection<StatickaOprema>();
+                foreach(var oprema in rasporedjenaOprema)
+                {
+                    StatickaOprema staticka = new StatickaOprema(oprema.statickaOprema.Id);
+                    staticka.kolicina = oprema.Kolicina;
+                    staticka.naziv = oprema.statickaOprema.naziv;
+                    opremaIzSale.Add(staticka);
+                }
+                ListStatickaOprema = opremaIzSale;
+
+            }
 
 
         }
@@ -65,8 +84,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            OdusustvaUpravnik odsustvoUpravnik = new OdusustvaUpravnik();
-            odsustvoUpravnik.Show();
+            this.Close();
         }
     }
 }

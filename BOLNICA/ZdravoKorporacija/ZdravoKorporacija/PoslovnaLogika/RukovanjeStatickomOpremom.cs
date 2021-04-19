@@ -122,6 +122,18 @@ namespace PoslovnaLogika
             observableStatickaOprema.Clear();
             foreach (StatickaOprema so in statickaOprema)
                 observableStatickaOprema.Add(so);
-        }     
+        }   
+        
+
+        public static List<RasporedjenaStatickaOprema> NadjiSvuRasporedjenuPoSalama()
+        {
+            List<RasporedjenaStatickaOprema> rasoredjeno = new List<RasporedjenaStatickaOprema>();
+            foreach(Sala s in RukovanjeSalama.sala)
+            {
+                rasoredjeno.AddRange(s.RasporedjenaStatickaOprema);
+            }
+
+            return rasoredjeno;
+        }
 }
 }

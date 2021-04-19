@@ -23,7 +23,6 @@
                     <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}"/>
 
                     <DataGridTextColumn Header="RasporedjenoOd" Binding="{Binding RasporedjenoOd}"/>
-                    <DataGridTextColumn Header="RasporedjenoDo" Binding="{Binding RasporedjenoDo}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Grid Height="39" >
@@ -37,10 +36,11 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="20,4,15,-31"  Grid.Column="0" Content="Dodaj Salu" Click="Button_Click" Grid.Row="1"   />
-                <Button Margin="20,4,15,-31"  Grid.Column="1"  Content="Izmeni salu" Click="Button_Click_3" Grid.Row="1"      />
-                <Button Margin="20,4,15,-31"  Grid.Column="2" Content="Izbrisi salu" Click="Button_Click_2" Grid.Row="1"  />
+                <Button Margin="20,4,15,-31"  Grid.Column="0" Content="Dodaj zahtev za rasp st op" Click="Button_Click" Grid.Row="1"   />
+                <Button Margin="20,4,15,-31"  Grid.Column="1"  Content="Izmeni zahtev" Click="Button_Click_3" Grid.Row="1"      />
+                <Button Margin="20,4,15,-31"  Grid.Column="2" Content="Izbrisi zahtev" Click="Button_Click_2" Grid.Row="1"  />
                 <Button Margin="20,4,20,-31" Grid.Column="3" Content="Vrati se" Click="Button_Click_1" Grid.Row="1"              />
+                <Button Margin="20,4,15,-31"  Grid.Column="0" Content="Dodaj zahtev za rasp st op" Click="Button_Click" Grid.Row="1"   />
 
             </Grid>
 

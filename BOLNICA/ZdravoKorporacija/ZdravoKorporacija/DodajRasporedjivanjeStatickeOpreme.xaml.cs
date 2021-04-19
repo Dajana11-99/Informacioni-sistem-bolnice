@@ -30,6 +30,7 @@ namespace ZdravoKorporacija
             InitializeComponent();
             cmbStatickaOprema.ItemsSource = RukovanjeStatickomOpremom.statickaOprema;
             cmbProstorija.ItemsSource = RukovanjeSalama.sala;
+            cmbProstorijaIz.ItemsSource = RukovanjeSalama.sala;
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
@@ -42,21 +43,14 @@ namespace ZdravoKorporacija
             }
 
 
-            DateTime? rasporedjenoDo = this.datePickerRasporedjenoDo.SelectedDate;
-            if (!rasporedjenoDo.HasValue)
-            {
-                MessageBox.Show("Datum do nije unet");
-                return;
-            }
-
-            StatickaOpremaProstorija sop = new StatickaOpremaProstorija();
-            sop.Id = RukovanjeStatickaOpremaProstorija.pronadji();
-            sop.Kolicina = 4; // txtKolicina.Text;
-            sop.RasporedjenoOd = rasporedjenoOd.Value;
-            sop.RasporedjenoDo = rasporedjenoDo.Value;
-            sop.ProstorijaId = (string)cmbProstorija.SelectedValue;
-            sop.StatickeOpremaId = (string)cmbStatickaOprema.SelectedValue;
-            RukovanjeStatickaOpremaProstorija.DodajStatickuOpremuProstorija(sop);
+                ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
+            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.pronadji();
+            zahtev.Kolicina = 4; // txtKolicina.Text;
+            zahtev.RasporedjenoOd = rasporedjenoOd.Value;
+            zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
+            zahtev.IzProstorijaId = (string)cmbProstorijaIz.SelectedValue;
+            zahtev.StatickeOpremaId = (string)cmbStatickaOprema.SelectedValue;
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.DodajStatickuOpremuProstorija(zahtev);
 
         }
 

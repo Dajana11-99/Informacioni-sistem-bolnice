@@ -67,8 +67,39 @@ namespace PoslovnaLogika
             return false;
         }
 
+        public static ObservableCollection<StatickaOprema> NadjiRasporedjenuStatickuOpremuZaSalu(Sala salaCijaSeOpremaPrikazuje)
+        {
+            ObservableCollection<StatickaOprema> rasporedjenaOprema = new ObservableCollection<StatickaOprema>();
+            List<string> spisakNadjeneOpreme = new List<string>();
+                
+            // vezna tabela koja govori 
+            // AKO je datum raspodele u proslosti, onda to smatramo da je vec IZVRSEN zahtev / dodeljeno
+            // AKO JE DATUM rasorelde u BUDUCNOSTI , onda ovaj zahtev tek treba da se "izvrsi" kobajagi
+            foreach (StatickaOpremaProstorija s in statickaOpremaProstorija)
+            {
+                if (!salaCijaSeOpremaPrikazuje.Id.Equals(s.ProstorijaId))
+                {
+                    continue;
+                }
 
-        public static List<StatickaOpremaProstorija> PrikaziStatickuOpremu()
+                if (s.RasporedjenoOd <= DateTime.Now && s.RasporedjenoDo > DateTime.Now)
+                {
+                    spisakNadjeneOpreme.Add(s.StatickeOpremaId);
+                }
+            }
+
+            foreach(StatickaOprema so in RukovanjeStatickomOpremom.observableStatickaOprema)
+            {
+
+            }
+
+
+
+
+            return rasporedjenaOprema;
+        }
+
+    public static List<StatickaOpremaProstorija> PrikaziStatickuOpremu()
         {
             return statickaOpremaProstorija;
         }

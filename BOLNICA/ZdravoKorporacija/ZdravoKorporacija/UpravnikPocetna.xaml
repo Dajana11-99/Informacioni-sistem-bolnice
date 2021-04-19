@@ -10,7 +10,8 @@
         <Button Content="Sala" HorizontalAlignment="Left" Margin="328,118,0,0" VerticalAlignment="Top" Width="130" Click="Button_Click"/>
         <Button Content="Staticka oprema" HorizontalAlignment="Left" Margin="328,170,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click_1"/>
         <Button Content="Dinamicka oprem" HorizontalAlignment="Left" Margin="331,222,0,0" VerticalAlignment="Top" Width="127" Click="Button_Click_2"/>
-        <Button Content="Rasporedjivanje staticke opreme" HorizontalAlignment="Left" Margin="328,271,0,0" VerticalAlignment="Top" Width="127" Click="Button_Click_3" />
+        <Button Content="Rasporedjivanje staticke opreme iz skladista/drugih sala" HorizontalAlignment="Left" Margin="328,271,0,0" VerticalAlignment="Top" Width="276" Click="Button_Click_3" />
+        <Button Content="Rasporedjivanje dinamicke opreme" HorizontalAlignment="Left" Margin="322,354,0,0" VerticalAlignment="Top" Width="276" Click="Button_Click_3" />
 
 
 

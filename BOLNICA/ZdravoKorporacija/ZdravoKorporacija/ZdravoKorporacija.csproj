@@ -65,8 +65,14 @@
     <Compile Include="BrisanjeStatickeOpreme.xaml.cs">
       <DependentUpon>BrisanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml.cs">
+      <DependentUpon>BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajDinamickuOpremu.xaml.cs">
       <DependentUpon>DodajDinamickuOpremu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DodajRasporedjivanjeDinamickeOpreme.xaml.cs">
+      <DependentUpon>DodajRasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
     </Compile>
     <Compile Include="DodajRasporedjivanjeStatickeOpreme.xaml.cs">
       <DependentUpon>DodajRasporedjivanjeStatickeOpreme.xaml</DependentUpon>
@@ -98,6 +104,9 @@
     <Compile Include="IzmeniDinamickuOpremu.xaml.cs">
       <DependentUpon>IzmeniDinamickuOpremu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzmeniRasporedjivanjeDinamickeOpreme.xaml.cs">
+      <DependentUpon>IzmeniRasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzmeniRasporedjivanjeStatickeOpreme.xaml.cs">
       <DependentUpon>IzmeniRasporedjivanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
@@ -121,6 +130,8 @@
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Pacijent.cs" />
     <Compile Include="Model\Pol.cs" />
+    <Compile Include="Model\RasporedjenaDinamickaOprema.cs" />
+    <Compile Include="Model\RasporedjenaStatickaOprema.cs" />
     <Compile Include="Model\Sala.cs" />
     <Compile Include="Model\Sekretara.cs" />
     <Compile Include="Model\Specijalizacija.cs" />
@@ -134,6 +145,8 @@
     <Compile Include="Model\Uloga.cs" />
     <Compile Include="Model\Upravnik.cs" />
     <Compile Include="Model\ZahtevUpravniku.cs" />
+    <Compile Include="Model\ZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
+    <Compile Include="Model\ZahtevZaRasporedjivanjeStatickeOpreme.cs" />
     <Compile Include="OdusustvaUpravnik.xaml.cs">
       <DependentUpon>OdusustvaUpravnik.xaml</DependentUpon>
     </Compile>
@@ -150,7 +163,8 @@
       <DependentUpon>PacijentNoviNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="PoslovnaLogika\RukovanjeDinamickomOpremom.cs" />
-    <Compile Include="PoslovnaLogika\RukovanjeStatickaOpremaProstorija.cs" />
+    <Compile Include="PoslovnaLogika\RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
+    <Compile Include="PoslovnaLogika\RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.cs" />
     <Compile Include="PoslovnaLogika\RukovanjeStatickomOpremom.cs" />
     <Compile Include="PriakzSala.xaml.cs">
       <DependentUpon>PriakzSala.xaml</DependentUpon>
@@ -171,10 +185,14 @@
     <Compile Include="RadSaDatotekama\SkladisteLekara.cs" />
     <Compile Include="RadSaDatotekama\SkladisteNalogaPacijent.cs" />
     <Compile Include="RadSaDatotekama\SkladisteSala.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteStatickaOpremaProstorija.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
+    <Compile Include="RadSaDatotekama\SkladisteZahtevZaRasporedjivanjeStatickeOpreme.cs" />
     <Compile Include="RadSaDatotekama\SkladisteStatickeOpreme.cs" />
     <Compile Include="RadSaDatotekama\SkladisteTermina.cs" />
     <Compile Include="RadSaDatotekama\SkladisteZahteva.cs" />
+    <Compile Include="RasporedjivanjeDinamickeOpreme.xaml.cs">
+      <DependentUpon>RasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RasporedjivanjeStatickeOpreme.xaml.cs">
       <DependentUpon>RasporedjivanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
@@ -202,7 +220,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajDinamickuOpremu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajRasporedjivanjeDinamickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniDinamickuOpremu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniRasporedjivanjeDinamickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -311,6 +341,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazTerminaPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RasporedjivanjeDinamickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

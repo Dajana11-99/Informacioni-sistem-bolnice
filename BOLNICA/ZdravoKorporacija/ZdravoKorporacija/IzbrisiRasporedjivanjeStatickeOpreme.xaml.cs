@@ -23,5 +23,15 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
         }
+
+        private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnOdustani_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

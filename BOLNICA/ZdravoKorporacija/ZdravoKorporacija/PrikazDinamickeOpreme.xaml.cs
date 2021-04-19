@@ -65,8 +65,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            OdusustvaUpravnik odsustvoUpravnik = new OdusustvaUpravnik();
-            odsustvoUpravnik.Show();
+            this.Close();
         }
     }
 }
