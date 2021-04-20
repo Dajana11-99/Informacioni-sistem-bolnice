@@ -23,62 +23,19 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static SalaServis RukovanjeSalama = new SalaServis();
+      
+
         public MainWindow()
         {
             InitializeComponent();
-            //RukovanjeTerminima.inicijalizuj();
-            SalaServis.inicijalizuj();
-           NaloziPacijenataServis.TestMethod();
-            TerminRepozitorijum.ucitajTermine();
-            LekarRepozitorijum.ucitajLekare();
-            SalaRepozitorijum.UcitajSale();
-            RukovanjeStatickomOpremomServis.inicijalizuj();
-            RukovanjeDinamickomOpremomServis.inicijalizuj();
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.inicijalizuj();
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.inicijalizuj();
-
-            // Izvrsi zahteve automatski 
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
+            ProzorLogovanje log = new ProzorLogovanje();
+            log.Show();
+            this.Close();
+            
 
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            TerminRepozitorijum.ucitajTermine();
-            LekarRepozitorijum.ucitajLekare();
-            PrikazTerminaPacijenta prikaz = new PrikazTerminaPacijenta();
-            prikaz.Show();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            TerminRepozitorijum.ucitajTermine();
-            LekarRepozitorijum.ucitajLekare();
-            LekarWindow lekar = new LekarWindow();
-            lekar.Show();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            PrikazPacijenata PrikazPravi = new PrikazPacijenata();
-            PrikazPravi.Show();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            UpravnikPocetna pocetna = new UpravnikPocetna();
-            SalaRepozitorijum.UcitajSale();
-            pocetna.Show();
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            SalaRepozitorijum.UpisiSale();
-            TerminRepozitorijum.upisiTermine();
-           LekarRepozitorijum.upisiLekare();
-        }
+       
     }
 }

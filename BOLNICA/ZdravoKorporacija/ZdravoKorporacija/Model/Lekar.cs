@@ -46,6 +46,14 @@ namespace Model
             CeloIme = ime + " " + prezime;
         }
 
+        public Lekar(String idZaposlenog, bool zauzet, Specijalizacija specijalizacija, string ime, string prezime, string jmbg, string email, AdresaStanovanja adresaStanovanja,Korisnik korisnik) : base(ime, prezime, jmbg, email, adresaStanovanja,korisnik)
+        {
+            this.idZaposlenog = idZaposlenog;
+            Zauzet = zauzet;
+            Specijalizacija = specijalizacija;
+     
+        }
+
         public Lekar(String ime, String prezime) : base(ime, prezime)
         {
             CeloIme = ime + " " + prezime;

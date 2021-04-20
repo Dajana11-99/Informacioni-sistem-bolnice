@@ -1,0 +1,18 @@
+﻿<Window x:Class="ZdravoKorporacija.ProzorLogovanje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="ProzorLogovanje" Height="450" Width="800">
+    <StackPanel Margin="100">
+
+        <Label  >Korisnicko ime</Label>
+        <TextBox x:Name="korisnickoIme"></TextBox>
+        <Label  >Lozinka</Label>
+        <PasswordBox x:Name="Lozinka"></PasswordBox>
+        <Button x:Name="potvrdi" Click="potvrdi_Click">Potvrdi</Button>
+
+    </StackPanel>
+</Window>

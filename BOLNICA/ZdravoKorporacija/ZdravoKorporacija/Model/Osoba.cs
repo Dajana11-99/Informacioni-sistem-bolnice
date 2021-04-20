@@ -33,7 +33,15 @@ namespace Model
         {
 
         }
-
+        public Osoba(string ime, string prezime, string jmbg, string email, AdresaStanovanja adresaStanovanja,Korisnik korisnik)
+        {
+            Ime = ime;
+            Prezime = prezime;
+            Jmbg = jmbg;
+            Email = email;
+            this.adresaStanovanja = adresaStanovanja;
+            this.korisnik = korisnik;
+        }
         public Osoba(string ime, string prezime)
         {
             Ime = ime;
