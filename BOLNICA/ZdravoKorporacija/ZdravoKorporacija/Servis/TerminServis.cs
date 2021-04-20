@@ -275,32 +275,25 @@ namespace Servis
             return true;
         }
 
-      /*  public static bool IzmenaPregleda(String idTermina, String lekar, String datum, String vreme)
+        public static void PomeriPregled(String idTermina)
         {
-            Termin t = PretragaPoId(idTermina);
-            String[] pomm = lekar.Split(' ');
-            Termin tp = PretragaPoId(idTermina);
-            tp.Lekar= PretragaPoLekaru(pomm[0], pomm[1]);
+            // PrikazTerminaPacijent.TerminZaPomeranje.Pacijent=null;
+            Pacijent p = NaloziPacijenataServis.PretragaPoId(RasporedTermina.TerminZaPomeranje.IdTermina);
+            p = null;
+            Termin novi = pretraziSlobodnePoId(idTermina);
+            novi.Pacijent = NaloziPacijenataServis.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
 
-            if (!t.Lekar.idZaposlenog.Equals(tp.Lekar.idZaposlenog))
-            {
-                t.Lekar = PretragaLekaraPoID(tp.Lekar.idZaposlenog);
-            }
-            if (!t.Datum.Equals(datum))
-            {
-                t.Datum = datum;
-            }
-            if (!t.Vreme.Equals(vreme))
-            {
-                t.Vreme = vreme;
-            }
-            int ind = PrikazTerminaPacijenta.TerminiPacijenta.IndexOf(t);
-            PrikazTerminaPacijenta.TerminiPacijenta.RemoveAt(ind);
-            PrikazTerminaPacijenta.TerminiPacijenta.Insert(ind, t);
-            return true;
+            zakazani.Remove(RasporedTermina.TerminZaPomeranje);
+            zakazani.Add(novi);
+            SlobodniTermini.Remove(novi);
+            SlobodniTermini.Add(RasporedTermina.TerminZaPomeranje);
+
+            int indeks = RasporedTermina.TerminiPacijenta.IndexOf(RasporedTermina.TerminZaPomeranje);
+            RasporedTermina.TerminiPacijenta.RemoveAt(indeks);
+            RasporedTermina.TerminiPacijenta.Insert(indeks, novi);
+            RasporedTermina.TerminZaPomeranje = null;
 
         }
-      */
         public static bool IzmenaTermina(String idTermina, String datum, String vreme, String lekar, String predvidjenoVreme, String BrOperaioneSale,  String vrstaTerminaOperacije)
         {
             Termin t = PretragaPoId(idTermina);
@@ -367,6 +360,68 @@ namespace Servis
 
         }
 
+        public static bool ProveriMogucnostPomeranjaDatum(string datumPregleda)
+        {
+            DateTime trenutni1 = DateTime.Now;
+            DateTime trenutni = trenutni1.AddDays(1);
+
+            String[] sadasnji = trenutni.ToString().Split(' ');
+
+            String KONACNI = "";
+
+            String[] brojevi = sadasnji[0].Split('/');
+
+            if (brojevi[1].Length == 1)
+                KONACNI += "0" + brojevi[1] + "/";
+            else
+                KONACNI += brojevi[1] + "/";
+
+
+
+            if (brojevi[0].Length == 1)
+                KONACNI += "0" + brojevi[0] + "/";
+            else
+                KONACNI += brojevi[0] + "/";
+
+
+
+
+
+            KONACNI += brojevi[2];
+           
+            if (datumPregleda.Equals(KONACNI))
+                return true;
+
+
+
+            return false;
+        }
+
+        public static bool ProveriMogucnostPomeranjaVreme(String vreme)
+        {
+
+            String sadasnji = DateTime.Now.ToString("HH:mm");
+            Console.WriteLine(sadasnji);
+           
+            string[] splits2 = sadasnji.Split(':');
+
+            string[] pregled = vreme.Split(':');
+            int sat = Int32.Parse(splits2[0]);
+            int minut = Int32.Parse(splits2[1]);
+            int satPregleda = Int32.Parse(pregled[0]);
+            int minutPregleda = Int32.Parse(pregled[1]);
+
+            if (satPregleda < sat)
+                return false;
+            else if (satPregleda == sat && minut == minutPregleda)
+                return false;
+            else if (satPregleda == sat && minut > minutPregleda)
+                return false;
+
+
+
+            return true;
+        }
         public static Termin PretragaPoId(String idTermina)
         {
             foreach (Termin t in zakazani)

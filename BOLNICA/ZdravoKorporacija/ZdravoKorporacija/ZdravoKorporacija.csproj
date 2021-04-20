@@ -181,6 +181,9 @@
     <Compile Include="PacijentPrikaz\DatumiKodSvihLekara.xaml.cs">
       <DependentUpon>DatumiKodSvihLekara.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PacijentPrikaz\IzmenaTermina.xaml.cs">
+      <DependentUpon>IzmenaTermina.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PacijentPrikaz\Obavestenja.xaml.cs">
       <DependentUpon>Obavestenja.xaml</DependentUpon>
     </Compile>
@@ -190,8 +193,17 @@
     <Compile Include="PacijentPrikaz\PacijentGlavniProzor.xaml.cs">
       <DependentUpon>PacijentGlavniProzor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PacijentPrikaz\PotvrdiPomeranje.xaml.cs">
+      <DependentUpon>PotvrdiPomeranje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PacijentPrikaz\PotvrdiZakazivanje.xaml.cs">
       <DependentUpon>PotvrdiZakazivanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PrikazDatumaZaPomeranjeKodLekara.xaml.cs">
+      <DependentUpon>PrikazDatumaZaPomeranjeKodLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PrikazVremenaZaPomeranje.xaml.cs">
+      <DependentUpon>PrikazVremenaZaPomeranje.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\RasporedTermina.xaml.cs">
       <DependentUpon>RasporedTermina.xaml</DependentUpon>
@@ -382,6 +394,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentPrikaz\IzmenaTermina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentPrikaz\Obavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -394,7 +410,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentPrikaz\PotvrdiPomeranje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentPrikaz\PotvrdiZakazivanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PrikazDatumaZaPomeranjeKodLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PrikazVremenaZaPomeranje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

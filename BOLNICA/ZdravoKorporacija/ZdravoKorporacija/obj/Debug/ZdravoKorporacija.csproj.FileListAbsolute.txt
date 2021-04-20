@@ -824,3 +824,11 @@ C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNI
 C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\ZakazivanjeVremena.baml
 C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OtkazivanjeTermina.g.cs
 C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OtkazivanjeTermina.baml
+C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzmenaTermina.g.cs
+C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PotvrdiPomeranje.g.cs
+C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PrikazDatumaZaPomeranjeKodLekara.g.cs
+C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PrikazVremenaZaPomeranje.g.cs
+C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzmenaTermina.baml
+C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PotvrdiPomeranje.baml
+C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PrikazDatumaZaPomeranjeKodLekara.baml
+C:\Users\dajan\OneDrive\Desktop\aaaaaaaaaaaaaa\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PrikazVremenaZaPomeranje.baml

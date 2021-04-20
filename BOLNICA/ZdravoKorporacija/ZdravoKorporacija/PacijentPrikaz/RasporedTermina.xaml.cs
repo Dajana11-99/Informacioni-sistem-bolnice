@@ -26,6 +26,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
     {
 
+        public static Termin TerminZaPomeranje = null;
         public static ObservableCollection<Termin> TerminiPacijenta { get; set; }
         public RasporedTermina()
         {
@@ -43,11 +44,26 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void izmenaTermina_Click(object sender, RoutedEventArgs e)
         {
-
+            if (TerminiPacijentaa.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite termin za izmenu");
+                return;
+            }
+            TerminZaPomeranje = (Termin)TerminiPacijentaa.SelectedItem;
+            IzmenaTermina izmeni = new IzmenaTermina(TerminZaPomeranje);
+            izmeni.Show();
+            
         }
 
         private void OtkazivanjeTermina_Click(object sender, RoutedEventArgs e)
+
         {
+
+            if (TerminiPacijentaa.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite termin za otkazivanje");
+                return;
+            }
             OtkazivanjeTermina otk = new OtkazivanjeTermina(((Termin)TerminiPacijentaa.SelectedItem).IdTermina);
             otk.Show();
             

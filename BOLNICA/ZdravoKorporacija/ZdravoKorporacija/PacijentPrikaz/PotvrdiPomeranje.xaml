@@ -1,0 +1,43 @@
+﻿<Window x:Class="ZdravoKorporacija.PacijentPrikaz.PotvrdiPomeranje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+        mc:Ignorable="d"
+        Title="PotvrdiPomeranje" Height="450" Width="800">
+    <Grid Margin="60,50,60.4,62" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.RowSpan="2" Margin="47,-27,57.4,-29.6" Width="356" Height="275" VerticalAlignment="Top">
+            <Label HorizontalAlignment="Left"  FontSize="18">Zakazi pregled</Label>
+            <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                <Label FontSize="15" Margin="-6,0,-0.4,0" Content="Lekar" RenderTransformOrigin="0.598,0.478" Height="27"/>
+
+                <TextBlock x:Name="lekar" Margin="70 10 10 10" Width="213" Height="25"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="15" Margin="-6,0,-0.4,0" Height="32">Datum</Label>
+                <TextBlock x:Name="datum" Margin="70 10 10 10" Width="213" Height="25"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="15" Margin="-6,0,-0.4,0" Height="32">Vreme</Label>
+                <TextBlock x:Name="vreme" Margin="70 10 10 10" Width="213" Height="25"/>
+            </StackPanel>
+
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Height="21" Margin="0,0,4.6,0" Width="204">
+                <Button  Width="150"  x:Name="potvrdiIzmenu" Click="potvrdiIzmenu_Click"   Margin="0,0,20,-0.2">Potvrdi</Button>
+
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</Window>
