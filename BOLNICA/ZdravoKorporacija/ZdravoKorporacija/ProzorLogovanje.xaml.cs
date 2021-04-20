@@ -34,14 +34,13 @@ namespace ZdravoKorporacija
             Sekretari.Add(new Sekretara("S1", "Filip", "Nikolic", "1234567891012", "filip.nikolic@gmail.com", new AdresaStanovanja("Adresa", "1"), new Korisnik("filip.nikolic", "filip.nikolic")));
             Upravnici.Add(new Upravnik("U1", "Mirjana", "Jovanov", "1234567891082", "mirjana.jovanov@gmail.com", new AdresaStanovanja("Adresa", "2"), new Korisnik("mirjana.jovanov", "mirjana.jovanov")));
             Lekari.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa, "Stefan", "Markovic", "1234567899082", "stefan.markovic@gmail.com", new AdresaStanovanja("Adresa", "3"), new Korisnik("stefan.markovic", "stefan.markovic")));
-            Pacijenti.Add(new Pacijent("P1", "Dajana", "Zlokapa", "2711999105018", "dajana.zlokapa@gmail.com", new AdresaStanovanja("Adresa", "4"), new Korisnik("dajana.zlokapa", "dajana.zlokapa")));
+          //  Pacijenti.Add(new Pacijent("P1", "Dajana", "Zlokapa", "2711999105018", "dajana.zlokapa@gmail.com", new AdresaStanovanja("Adresa", "4"), new Korisnik("dajana.zlokapa", "dajana.zlokapa")));
 
             Lozinka.PasswordChar = '*';
             Lozinka.MaxLength = 15;
 
             //RukovanjeTerminima.inicijalizuj();
             SalaServis.inicijalizuj();
-            NaloziPacijenataServis.TestMethod();
             TerminRepozitorijum.ucitajTermine();
             LekarRepozitorijum.ucitajLekare();
             SalaRepozitorijum.UcitajSale();
@@ -53,6 +52,9 @@ namespace ZdravoKorporacija
             // Izvrsi zahteve automatski 
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
             RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
+
+           // NaloziPacijenataServis.inic();
+            NaloziPacijenataRepozitorijum.UcitajPacijente();
         }
 
         private void potvrdi_Click(object sender, RoutedEventArgs e)
@@ -163,6 +165,7 @@ namespace ZdravoKorporacija
             SalaRepozitorijum.UpisiSale();
             TerminRepozitorijum.upisiTermine();
             LekarRepozitorijum.upisiLekare();
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
         }
     }
 }

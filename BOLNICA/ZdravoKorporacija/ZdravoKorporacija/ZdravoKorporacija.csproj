@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AnamnezaWindow.xaml.cs">
+      <DependentUpon>AnamnezaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BrisanjeDinamickeOpreme.xaml.cs">
       <DependentUpon>BrisanjeDinamickeOpreme.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,9 @@
     <Compile Include="IzbrisiRasporedjivanjeStatickeOpreme.xaml.cs">
       <DependentUpon>IzbrisiRasporedjivanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzdavanjeRecepataWindow.xaml.cs">
+      <DependentUpon>IzdavanjeRecepataWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzmenaNalogaPacijentu.xaml.cs">
       <DependentUpon>IzmenaNalogaPacijentu.xaml</DependentUpon>
     </Compile>
@@ -127,11 +133,13 @@
       <DependentUpon>LekarWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\AdresaStanovanja.cs" />
+    <Compile Include="Model\Anamneza.cs" />
     <Compile Include="Model\BracniStatusE.cs" />
     <Compile Include="Model\DinamickaOprema.cs" />
     <Compile Include="Model\Drzava.cs" />
     <Compile Include="Model\Karton.cs" />
     <Compile Include="Model\Korisnik.cs" />
+    <Compile Include="Model\Lek.cs" />
     <Compile Include="Model\Lekar.cs" />
     <Compile Include="Model\Mesto.cs" />
     <Compile Include="Model\Osoba.cs" />
@@ -139,6 +147,7 @@
     <Compile Include="Model\Pol.cs" />
     <Compile Include="Model\RasporedjenaDinamickaOprema.cs" />
     <Compile Include="Model\RasporedjenaStatickaOprema.cs" />
+    <Compile Include="Model\Recept.cs" />
     <Compile Include="Model\Sala.cs" />
     <Compile Include="Model\Sekretara.cs" />
     <Compile Include="Model\Specijalizacija.cs" />
@@ -221,6 +230,13 @@
     <Compile Include="ZakazivanjeTerminaLekara.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekara.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ZdravstevniKartonPacijenta.xaml.cs">
+      <DependentUpon>ZdravstevniKartonPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AnamnezaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BrisanjeDinamickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -266,6 +282,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzbrisiRasporedjivanjeStatickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzdavanjeRecepataWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -386,6 +406,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ZakazivanjeTerminaLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZdravstevniKartonPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

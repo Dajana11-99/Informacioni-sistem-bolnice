@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Xml.Serialization;
 using Model;
 using Servis;
-
+using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
@@ -40,8 +41,24 @@ namespace ZdravoKorporacija
 
         }
 
+        private void PreuzmiSvePacijente()
+        {
+            List<Pacijent> pacijenti = NaloziPacijenataServis.ListaPacijenata;
+            foreach (Pacijent p in pacijenti)
+            {
+                ComboBoxItem cbi = new ComboBoxItem();
+                cbi.Tag = p.idPacijenta;
+                cbi.Content = p.Ime + " " + p.Prezime;
+                cmbPacijent.Items.Add(cbi);
+            }
+        }
+
+
+
         private void btnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
         {
+
+           
             String id = TerminServis.pronadji();
             string[] pom = cmbLekar.Text.Split(' ');
             Lekar l = new Lekar(pom[0], pom[1]);

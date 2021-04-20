@@ -16,7 +16,7 @@ namespace Model
         public Karton karton;
         public System.Collections.ArrayList termin;
         public String idPacijenta { get; set; }
-
+        public String Anamneza { get; set; }
 
         public Pacijent(String idPacijenta)
         {

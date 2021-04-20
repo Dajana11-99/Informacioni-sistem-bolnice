@@ -39,9 +39,7 @@
         </TextBox>
         <Label Content="Pacijent:" Name="pacijent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Margin="72,234,0,0" VerticalAlignment="Top" Width="265" FontSize="16"/>
         <ComboBox Grid.Column="1" HorizontalAlignment="Left" Name="cmbPacijent" Height="31" Margin="119.8,248,0,0" VerticalAlignment="Top" Width="296">
-            <ComboBoxItem>Mika Mikic</ComboBoxItem>
-            <ComboBoxItem>Vasilije Dojcinov</ComboBoxItem>
-            <ComboBoxItem>Luka Lukic</ComboBoxItem>
+          
         </ComboBox>
         <Label Content="Vrsta termina:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="41" Margin="72,421,0,0" VerticalAlignment="Top" Width="265" FontSize="16"/>
         <ComboBox Name="cmbVrstaTermina" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="119.8,421,0,0" VerticalAlignment="Top" Width="296">

@@ -17,6 +17,7 @@ using System.Collections.ObjectModel;
 using Model;
 using System.ComponentModel;
 using Servis;
+using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
@@ -103,6 +104,11 @@ namespace ZdravoKorporacija
         private void VratiSeAction(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
         }
     }
 }

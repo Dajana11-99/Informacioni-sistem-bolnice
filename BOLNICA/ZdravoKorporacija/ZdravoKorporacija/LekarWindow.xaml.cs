@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
@@ -75,6 +76,23 @@ namespace ZdravoKorporacija
             ZahtevZaSlobodneDaneWindow zahtev = new ZahtevZaSlobodneDaneWindow();
             
             zahtev.Show();
+        }
+
+        private void btnPregledKartona_Click(object sender, RoutedEventArgs e)
+        {
+            if (TerminiLekaraa.SelectedIndex == -1)
+            {
+                System.Windows.MessageBox.Show("Morate selektovati termin!", "Nedostatak informacija", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Warning);
+                return;
+            }
+            Termin t = (Termin)TerminiLekaraa.SelectedItem;
+            ZdravstevniKartonPacijenta zkp = new ZdravstevniKartonPacijenta(t.Pacijent.idPacijenta);
+            zkp.Show();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
         }
     }
 }

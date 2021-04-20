@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija"
         mc:Ignorable="d"
-        Title="LekarWindow" Height="450" Width="800">
+        Title="LekarWindow" Height="450" Width="800"
+        Closing="Window_Closing"                    >
+        
     <Grid>
         <StackPanel>
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Zakazani termini</Label>
@@ -38,6 +40,7 @@
                 <Button Margin="110.6,0,175.2,5"  Grid.Column="1" Content="Otkazivanje termina"    Click="Button_Click_2" Grid.ColumnSpan="2"/>
                 <Button Margin="20,0,20.4,5" Grid.Column="3" Content="Vrati se"              Click="Button_Click_3" />
                 <Button Content="Zahtev upravniku" Name="btnZahtevUpravniku" Click="btnZahtevUpravniku_Click"  Grid.Column="2" HorizontalAlignment="Left" Height="34" Margin="49.2,0,0,0" VerticalAlignment="Top" Width="112"/>
+                <Button Margin="169.2,-365,20.6,369" Grid.Column="2" Content="Pregled zdravstvenog kartona" Name="btnPregledKartona" Click="btnPregledKartona_Click"  Grid.ColumnSpan="2" />
             </Grid>
 
 
