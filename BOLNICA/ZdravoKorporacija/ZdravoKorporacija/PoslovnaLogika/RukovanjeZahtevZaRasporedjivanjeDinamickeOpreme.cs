@@ -27,22 +27,22 @@ namespace PoslovnaLogika
 
 
 
-        public static bool DodajDinamickuOpremuProstorija(ZahtevZaRasporedjivanjeDinamickeOpreme unetaStatickaOprema)
+        public static bool DodajDinamickuOpremuProstorija(ZahtevZaRasporedjivanjeDinamickeOpreme zahtevZaRasporedjivanjeDinamicke)
         {
             // da li je ta oprema vec u tom rasponu negde rasporedjena?
             // da li ima dovoljno kolicine prvo?
             // 
-            var statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(unetaStatickaOprema.Id);
+            var dinamickaOprema = RukovanjeDinamickomOpremom.PretraziPoId(zahtevZaRasporedjivanjeDinamicke.DinamickaOpremaId);
 
-            if (statickaOprema.kolicina - unetaStatickaOprema.Kolicina < 0)
+            if (dinamickaOprema.kolicina - zahtevZaRasporedjivanjeDinamicke.Kolicina < 0)
             {
                 MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine opreme");
                 return false;
             }
             
-            statickaOprema.kolicina -= unetaStatickaOprema.Kolicina;
-            RukovanjeStatickomOpremom.IzmeniStatickuOpremu(statickaOprema);
-            ZahtevZaRasporedjivanjeDinamickeOpreme.Add(unetaStatickaOprema);
+            dinamickaOprema.kolicina -= zahtevZaRasporedjivanjeDinamicke.Kolicina;
+            RukovanjeDinamickomOpremom.IzmeniDinamickuOpremu(dinamickaOprema);
+            ZahtevZaRasporedjivanjeDinamickeOpreme.Add(zahtevZaRasporedjivanjeDinamicke);
             OsveziKolekciju();
             SkladisteZahtevZaRasporedjivanjeDinamickeOpreme.UpisiZahtevZaRasporedjivanjeDinamickeOpreme();
             return true;
@@ -61,7 +61,7 @@ namespace PoslovnaLogika
             var s = PretraziPoId(dinamickaOpremaZaIzmenu.Id);
  
 
-            var dinamickaOprema = RukovanjeDinamickomOpremom.PretraziPoId(s.Id);
+            var dinamickaOprema = RukovanjeDinamickomOpremom.PretraziPoId(s.DinamickaOpremaId);
             var dodato = dinamickaOpremaZaIzmenu.Kolicina > s.Kolicina;
             var razlikaUKoliciniDodato = dinamickaOpremaZaIzmenu.Kolicina - s.Kolicina;
             if (dodato)
@@ -152,11 +152,34 @@ namespace PoslovnaLogika
                 {
                     sala.RasporedjenaDinamickaOprema = new List<RasporedjenaDinamickaOprema>();
                 }
-                var rasporedjenaDinamickaOprema = new RasporedjenaDinamickaOprema();
-                rasporedjenaDinamickaOprema.Kolicina = zahtev.Kolicina;
-                rasporedjenaDinamickaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
-                rasporedjenaDinamickaOprema.dinamickaOprema = RukovanjeDinamickomOpremom.PretraziPoId(zahtev.DinamickaOpremaId);
-                sala.RasporedjenaDinamickaOprema.Add(rasporedjenaDinamickaOprema);
+
+                // 
+                // da li je ovaj tip/vrsta opreme vec tu?
+                // ako jeste samo uvecaj kolicinu
+                RasporedjenaDinamickaOprema rasporedjenaOprema = null;
+                foreach (var rasporedjena in sala.RasporedjenaDinamickaOprema)
+                {
+                    if (rasporedjena.dinamickaOprema.Id == zahtev.DinamickaOpremaId)
+                    {
+                        rasporedjenaOprema = rasporedjena;
+                        break;
+                    }
+                }
+                // ako smo je nasli
+                // onda dodamo kolicinu iz zahteva
+                if (rasporedjenaOprema != null)
+                {
+                    rasporedjenaOprema.Kolicina += zahtev.Kolicina;
+                }
+                else
+                {
+                    // u suprotnom je ovo nova oprema
+                    rasporedjenaOprema = new RasporedjenaDinamickaOprema();
+                    rasporedjenaOprema.Kolicina = zahtev.Kolicina;
+                    sala.RasporedjenaDinamickaOprema.Add(rasporedjenaOprema);
+                }
+                rasporedjenaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
+                rasporedjenaOprema.dinamickaOprema = RukovanjeDinamickomOpremom.PretraziPoId(zahtev.DinamickaOpremaId);
                 SkladisteSala.UpisiSale();
             }
 

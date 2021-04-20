@@ -33,11 +33,10 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="20,4,15,-31"  Grid.Column="0" Content="Dodaj dinamicki materijal" Click="Button_dodaj" Grid.Row="1"   />
-                <Button Margin="20,4,15,-31"  Grid.Column="1"  Content="Izmeni dinamicki materijal" Click="Button_izmeni" Grid.Row="1"      />
-                <Button Margin="20,4,15,-31"  Grid.Column="2" Content="Izbrisi dinamicki materijal" Click="Button_obrisi" Grid.Row="1"  />
-                <Button Margin="20,4,20,-31" Grid.Column="3" Content="Vrati se" Click="Button_vrati_se" Grid.Row="1"              />
-                <Button Margin="20,4,20,-31" Grid.Column="3" Content="ODSUSTVA" Grid.Row="1" Click="Button_Click_4"              />
+                <Button IsEnabled="{Binding CRUDDinamickeOpreme}" Margin="20,4,15,-31"  Grid.Column="0" Content="Dodaj dinamicki materijal" Click="Button_dodaj" Grid.Row="1"   />
+                <Button IsEnabled="{Binding CRUDDinamickeOpreme}" Margin="20,4,15,-31"  Grid.Column="1"  Content="Izmeni dinamicki materijal" Click="Button_izmeni" Grid.Row="1"      />
+                <Button IsEnabled="{Binding CRUDDinamickeOpreme}" Margin="20,4,15,-31"  Grid.Column="2" Content="Izbrisi dinamicki materijal" Click="Button_obrisi" Grid.Row="1"  />
+                <Button  Margin="20,4,20,-31" Grid.Column="3" Content="Vrati se" Click="Button_vrati_se" Grid.Row="1"              />
 
             </Grid>
 

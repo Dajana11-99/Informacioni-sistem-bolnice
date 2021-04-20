@@ -81,7 +81,7 @@ namespace PoslovnaLogika
             // da li je ta oprema vec u tom rasponu negde rasporedjena?
             // da li ima dovoljno kolicine prvo?
             // 
-            var statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(zahtev.Id);
+            var statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(zahtev.StatickeOpremaId);
 
             if (statickaOprema.kolicina - zahtev.Kolicina < 0)
             {
@@ -110,7 +110,7 @@ namespace PoslovnaLogika
             var s = PretraziPoId(statickaOpremaZaIzmenu.Id);
  
 
-            var statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(s.Id);
+            var statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(s.StatickeOpremaId);
             var dodato = statickaOpremaZaIzmenu.Kolicina > s.Kolicina;
             var razlikaUKoliciniDodato = statickaOpremaZaIzmenu.Kolicina - s.Kolicina;
             if (dodato)
@@ -153,6 +153,7 @@ namespace PoslovnaLogika
                 if (s.Id.Equals(id))
                 {
                     nadjena = true;
+
                 }
                 else
                 {
@@ -201,11 +202,32 @@ namespace PoslovnaLogika
                 {
                     sala.RasporedjenaStatickaOprema = new List<RasporedjenaStatickaOprema>();
                 }
-                var rasporedjenaOprema = new RasporedjenaStatickaOprema();
-                rasporedjenaOprema.Kolicina = zahtev.Kolicina;
+                // da li je ovaj tip/vrsta opreme vec tu?
+                // ako jeste samo uvecaj kolicinu
+                RasporedjenaStatickaOprema rasporedjenaOprema = null;
+                foreach(var rasporedjena in sala.RasporedjenaStatickaOprema)
+                {
+                    if (rasporedjena.statickaOprema.Id == zahtev.StatickeOpremaId)
+                    {
+                        rasporedjenaOprema = rasporedjena;
+                        break;
+                    }
+                }
+                // ako smo je nasli
+                // onda dodamo kolicinu iz zahteva
+                if (rasporedjenaOprema != null)
+                {
+                    rasporedjenaOprema.Kolicina += zahtev.Kolicina;
+                } 
+                else
+                {
+                    // u suprotnom je ovo nova oprema
+                    rasporedjenaOprema = new RasporedjenaStatickaOprema();
+                    rasporedjenaOprema.Kolicina = zahtev.Kolicina;
+                    sala.RasporedjenaStatickaOprema.Add(rasporedjenaOprema);
+                }
                 rasporedjenaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
                 rasporedjenaOprema.statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(zahtev.StatickeOpremaId);
-                sala.RasporedjenaStatickaOprema.Add(rasporedjenaOprema);
                 SkladisteSala.UpisiSale();
             }
 

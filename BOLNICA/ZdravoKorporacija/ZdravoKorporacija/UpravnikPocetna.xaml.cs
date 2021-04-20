@@ -43,22 +43,34 @@ namespace ZdravoKorporacija
             prikaz.Show();
         }
 
+        private void btnIzvrsiZahteve_Odmah(object sender, RoutedEventArgs e)
+        {
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.IzvrsiZahteveZaDanas();
+            RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.IzvrsiZahteveZaDanas();
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             PrikazStatickeOpreme prikaz = new PrikazStatickeOpreme();
             prikaz.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void btnPrikaziDinamicke_Click(object sender, RoutedEventArgs e)
         {
-            PrikazDinamickeOpreme prikazDinamickeOpreme = new PrikazDinamickeOpreme();
-            prikazDinamickeOpreme.Show();
+            RasporedjivanjeDinamickeOpreme rasporedjivanje = new RasporedjivanjeDinamickeOpreme();
+            rasporedjivanje.Show();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             RasporedjivanjeStatickeOpreme rasporedjivanje = new RasporedjivanjeStatickeOpreme();
             rasporedjivanje.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            PrikazDinamickeOpreme prikazDinamickeOpreme = new PrikazDinamickeOpreme();
+            prikazDinamickeOpreme.Show();
         }
     }
 }

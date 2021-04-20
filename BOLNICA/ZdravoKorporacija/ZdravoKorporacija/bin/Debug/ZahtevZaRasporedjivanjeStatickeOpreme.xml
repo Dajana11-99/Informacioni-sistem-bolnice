@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfZahtevZaRasporedjivanjeStatickeOpreme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ZahtevZaRasporedjivanjeStatickeOpreme>
+    <Id>1</Id>
+    <StatickeOpremaId>2</StatickeOpremaId>
+    <ProstorijaId>A1</ProstorijaId>
+    <RasporedjenoOd>2021-04-30T00:00:00</RasporedjenoOd>
+    <Kolicina>80</Kolicina>
+  </ZahtevZaRasporedjivanjeStatickeOpreme>
+</ArrayOfZahtevZaRasporedjivanjeStatickeOpreme>

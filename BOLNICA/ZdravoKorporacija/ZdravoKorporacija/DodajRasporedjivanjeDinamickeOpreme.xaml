@@ -5,16 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija"
         mc:Ignorable="d"
-        Title="DodajRasporedjivanjeDinamickeOpreme" Height="450" Width="800">
+        Title="DodajRasporedjivanjeDinamickeOpreme" Height="550" Width="800">
     <Grid>
         <Button Content="Potvrdi"  Name="btnPotvrdi" Click="btnPotvrdi_Click" HorizontalAlignment="Left" Height="44" Margin="73,435,0,0" VerticalAlignment="Top" Width="220" FontSize="18"/>
         <Button Content="Odustani" Name="btnOdustani" Click="btnOdustani_Click" HorizontalAlignment="Left" Height="44" Margin="438,435,0,0" VerticalAlignment="Top" Width="227" FontSize="18"/>
-        <Label Content="Pocetak odmora:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="23,288,0,0" VerticalAlignment="Top" Width="270" FontSize="18"/>
-        <Label Content="Kraj odmora:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="43" Margin="23,362,0,0" VerticalAlignment="Top" Width="270" FontSize="18"/>
+        <Label Content="Datum rasporedjivanja" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="23,288,0,0" VerticalAlignment="Top" Width="270" FontSize="18"/>
         <DatePicker Name="datePickerRasporedjenoOd" HorizontalAlignment="Left" Height="42" Margin="423,288,0,0" VerticalAlignment="Top" Width="292"/>
-        <DatePicker Name="datePickerRasporedjenoDo" HorizontalAlignment="Left" Height="43" Margin="423,362,0,0" VerticalAlignment="Top" Width="292"/>
-        <Label Content="Opis zahteva:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="10,207,0,0" VerticalAlignment="Top" Width="283" FontSize="18"/>
-        <TextBox Name="Kolicina" HorizontalAlignment="Left" Height="42" Margin="423,207,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292"/>
+        <Label Content="Kolicina" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="10,207,0,0" VerticalAlignment="Top" Width="283" FontSize="18"/>
+        <TextBox Name="txtKolicina" HorizontalAlignment="Left" Height="42" Margin="423,207,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="292"/>
 
         <ComboBox Name="cmbDinamicka" HorizontalAlignment="Left" Height="37" Margin="419,45,0,0" VerticalAlignment="Top" Width="296"  DisplayMemberPath="naziv" SelectedValuePath="Id"/>
         <ComboBox Name="cmbProstorija" HorizontalAlignment="Left" Height="37" Margin="419,121,0,0" VerticalAlignment="Top" Width="296"  DisplayMemberPath="Id" SelectedValuePath="Id"/>

@@ -12,6 +12,8 @@
       <Zauzeta>false</Zauzeta>
       <sprat>2</sprat>
       <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
       <Ime>Dajana</Ime>
@@ -39,6 +41,8 @@
       <Zauzeta>false</Zauzeta>
       <sprat>2</sprat>
       <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
       <Ime>Nikola</Ime>

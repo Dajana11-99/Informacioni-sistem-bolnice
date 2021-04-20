@@ -27,6 +27,7 @@ namespace ZdravoKorporacija
         public RasporedjivanjeDinamickeOpreme()
         {
             InitializeComponent();
+            DataContext = this;
             ListRasporedele = RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.observableZahtevZaRasporedjivanjeDinamickeOpreme;
 
         }
@@ -56,7 +57,8 @@ namespace ZdravoKorporacija
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            DodajRasporedjivanjeDinamickeOpreme dodaj = new DodajRasporedjivanjeDinamickeOpreme();
+            dodaj.Show();
         }
     }
 }

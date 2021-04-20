@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2" Margin="0,36,0,-36">
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00" Content="Rasporedjivanje dinamicke opreme po prostorijama"/>
-            <DataGrid x:Name="SpisakRaspodela" ItemsSource="{Binding ListSala}" IsReadOnly="true"
+            <DataGrid x:Name="SpisakRaspodela" ItemsSource="{Binding ListRasporedele}" IsReadOnly="true"
                   SelectionMode="Single"  Margin="20,10,20,20" 
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="223">
                 <DataGrid.Columns>
@@ -36,9 +36,9 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="25,26,10,-21"  Grid.Column="0" Content="Dodaj zahtev za rasp st op" Click="Button_Click" Grid.RowSpan="2"   />
-                <Button Margin="20,4,15,-31"  Grid.Column="1"  Content="Izmeni zahtev" Click="Button_Click_3" Grid.Row="1"      />
-                <Button Margin="20,4,15,-31"  Grid.Column="2" Content="Izbrisi zahtev" Click="Button_Click_2" Grid.Row="1"  />
+                <Button Margin="25,26,10,-21"  Grid.Column="0" Content="Dodaj zahtev za rasp din op" Click="Button_Click" Grid.RowSpan="2"   />
+                <!--<Button Margin="20,4,15,-31"  Grid.Column="1"  Content="Izmeni zahtev" Click="Button_Click_3" Grid.Row="1"      />
+                <Button Margin="20,4,15,-31"  Grid.Column="2" Content="Izbrisi zahtev" Click="Button_Click_2" Grid.Row="1"  />-->
                 <Button Margin="20,4,20,-31" Grid.Column="3" Content="Vrati se" Click="Button_Click_1" Grid.Row="1"              />
 
             </Grid>

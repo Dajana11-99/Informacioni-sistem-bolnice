@@ -38,21 +38,29 @@ namespace ZdravoKorporacija
             }
 
 
-            DateTime? rasporedjenoDo = this.datePickerRasporedjenoDo.SelectedDate;
-            if (!rasporedjenoDo.HasValue)
-            {
-                MessageBox.Show("Datum do nije unet");
-                return;
-            }
-
             ZahtevZaRasporedjivanjeDinamickeOpreme zahtev = new ZahtevZaRasporedjivanjeDinamickeOpreme();
             zahtev.Id = RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.pronadji();
-            zahtev.Kolicina = 4; // txtKolicina.Text;
+            int kolicina = 0;
+            try
+            {
+                kolicina = Int32.Parse(txtKolicina.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Uneta kolciina mora biti >= 1");
+                return;
+            }
+            if (kolicina <= 0)
+            {
+                MessageBox.Show("Uneta kolciina mora biti >= 1");
+                return;
+            }
+            zahtev.Kolicina = kolicina; // txtKolicina.Text;
             zahtev.RasporedjenoOd = rasporedjenoOd.Value;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.DinamickaOpremaId = (string)cmbDinamicka.SelectedValue;
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.DodajDinamickuOpremuProstorija(zahtev);
-
+            Close();
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

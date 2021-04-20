@@ -12,10 +12,10 @@
             <ColumnDefinition Width="64*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2" Margin="0,36,0,-36">
-            <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Pregled Sala</Label>
+            <Label HorizontalAlignment="Center" FontSize="20 " Margin="336,10,336,0">Pregled Sala</Label>
             <DataGrid x:Name="SpisakSala" ItemsSource="{Binding ListSala}" IsReadOnly="true"
                   SelectionMode="Single"  Margin="20,10,20,20" 
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="223">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="169">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Sprat" Binding="{Binding sprat}" />
@@ -23,7 +23,7 @@
                     <DataGridTextColumn Header="Zauzeta" Binding="{Binding Zauzeta}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Grid Height="39" >
+            <Grid Height="53" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32*"/>
                     <RowDefinition Height="7*"/>
@@ -31,17 +31,19 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="95*"/>
                     <ColumnDefinition Width="103*"/>
-                    <ColumnDefinition Width="198*"/>
-                    <ColumnDefinition Width="198*"/>
+                    <ColumnDefinition Width="196*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="190*"/>
+                    <ColumnDefinition Width="8*"/>
                     <ColumnDefinition Width="198*"/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="25,0,10,-27"  Grid.Column="0" Content="Dodaj Salu" Click="Button_Click" Grid.Row="1" Grid.ColumnSpan="2"   />
-                <Button Margin="20,4,15,-31"  Grid.Column="2"  Content="Izmeni salu" Click="Button_Click_3" Grid.Row="1"      />
-                <Button Margin="20,4,15,-31"  Grid.Column="3" Content="Izbrisi salu" Click="Button_Click_2" Grid.Row="1"  />
-                <Button Margin="20,4,20,-31" Grid.Column="4" Content="Vrati se" Click="Button_Click_1" Grid.Row="1"              />
-                <Button Margin="20,4,20,-31" Grid.Column="4" Content="ODSUSTVA" Grid.Row="1" Click="Button_Click_4"              />
-                <Button Margin="0,-12,35,10"  Grid.Column="2" Content="Prikaz rasporedjene staticke opreme" Click="Button_Click_5"  />
-                <Button Margin="20,-12,15,10"  Grid.Column="3" Content="Prikaz rasporedjene dinamicke opreme" Click="Button_Click_6"    />
+                <Button Margin="0,10,82,-37"  Grid.Column="0" Content="Dodaj Salu" Click="Button_Click" Grid.Row="1" Grid.ColumnSpan="2"   />
+                <Button Margin="63,10,100,-37"  Grid.Column="1"  Content="Izmeni salu" Click="Button_Click_3" Grid.Row="1" Grid.ColumnSpan="2" RenderTransformOrigin="0.801,1.568"      />
+                <Button Margin="146,10,109,-37"  Grid.Column="2" Content="Izbrisi salu" Click="Button_Click_2" Grid.Row="1" Grid.ColumnSpan="3"  />
+                <Button Margin="10,10,30,-37" Grid.Column="6" Content="Vrati se" Click="Button_Click_1" Grid.Row="1"              />
+
+                <Button Margin="0,-5,177,10"  Grid.Column="2" Content="Prikaz rasporedjene staticke opreme" Click="btnPregledStatickeOpreme_Click" Grid.ColumnSpan="3"  />
+                <Button Margin="47,-5,128,11"  Grid.Column="4" Content="Prikaz rasporedjene dinamicke opreme" Click="btnPregledDinamickeOpreme_Click" Grid.ColumnSpan="3"    />
 
             </Grid>
 

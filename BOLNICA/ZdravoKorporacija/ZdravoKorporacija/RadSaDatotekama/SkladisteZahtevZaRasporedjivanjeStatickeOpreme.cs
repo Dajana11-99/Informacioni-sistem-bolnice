@@ -33,9 +33,9 @@ namespace RadSaDatotekama
 
         public static bool UpisiZahtevZaRasporedjivanjeStatickeOpreme()
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<StatickaOprema>));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ZahtevZaRasporedjivanjeStatickeOpreme>));
             TextWriter tw = new StreamWriter("ZahtevZaRasporedjivanjeStatickeOpreme.xml");
-            xmlSerializer.Serialize(tw, RukovanjeStatickomOpremom.statickaOprema);
+            xmlSerializer.Serialize(tw, RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.ZahtevZaRasporedjivanjeStatickeOpreme);
             tw.Close();
             return true;
         }
