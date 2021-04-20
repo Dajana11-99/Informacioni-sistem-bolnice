@@ -1,4 +1,5 @@
 ﻿using Model;
+using PoslovnaLogika;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -52,10 +53,11 @@ namespace ZdravoKorporacija
 
 
            //////----------------------
-            //SalaServis.inicijalizuj();
             
-            
-            
+
+
+
+            SalaServis.inicijalizuj();
             RukovanjeStatickomOpremomServis.inicijalizuj();
             RukovanjeDinamickomOpremomServis.inicijalizuj();
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.inicijalizuj();

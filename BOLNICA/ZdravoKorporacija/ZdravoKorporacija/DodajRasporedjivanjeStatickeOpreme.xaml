@@ -13,7 +13,7 @@
         <DatePicker Name="datePickerRasporedjenoOd" HorizontalAlignment="Left" Height="42" Margin="423,374,0,0" VerticalAlignment="Top" Width="292"/>
 
         <Label Content="Kolicina:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="10,293,0,0" VerticalAlignment="Top" Width="283" FontSize="18"/>
-        <TextBox Name="Kolicina" HorizontalAlignment="Left" Height="42" Margin="423,293,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292"/>
+        <TextBox Name="txtKolicina" HorizontalAlignment="Left" Height="42" Margin="423,293,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292"/>
 
         <ComboBox Name="cmbStatickaOprema" HorizontalAlignment="Left" Height="37" Margin="419,45,0,0" VerticalAlignment="Top" Width="296"  DisplayMemberPath="naziv" SelectedValuePath="Id"/>
         <ComboBox Name="cmbProstorija" HorizontalAlignment="Left" Height="37" Margin="419,121,0,0" VerticalAlignment="Top" Width="296"  DisplayMemberPath="Id" SelectedValuePath="Id"/>

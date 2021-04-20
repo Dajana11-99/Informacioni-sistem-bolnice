@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Model;
+using PoslovnaLogika;
 using Servis;
 
 namespace ZdravoKorporacija.Repozitorijum
@@ -32,9 +33,10 @@ namespace ZdravoKorporacija.Repozitorijum
 
         public static bool UpisiZahtevZaRasporedjivanjeDinamickeOpreme()
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<StatickaOprema>));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ZahtevZaRasporedjivanjeDinamickeOpreme>));
             TextWriter tw = new StreamWriter("ZahtevZaRasporedjivanjeDinamickeOpreme.xml");
-            xmlSerializer.Serialize(tw, RukovanjeStatickomOpremomServis.statickaOprema);
+           // xmlSerializer.Serialize(tw, RukovanjeStatickomOpremomServis.statickaOprema);
+            xmlSerializer.Serialize(tw, RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.ZahtevZaRasporedjivanjeDinamickeOpreme);
             tw.Close();
             return true;
         }

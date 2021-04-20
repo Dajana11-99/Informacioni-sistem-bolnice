@@ -16,6 +16,7 @@ namespace ZdravoKorporacija
         public RasporedjivanjeStatickeOpreme()
         {
             InitializeComponent();
+            DataContext = this;
             ListRasporedele = RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.observableZahtevZaRasporedjivanjeStatickeOpreme;
 
         }

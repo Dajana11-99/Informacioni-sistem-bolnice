@@ -5,4 +5,14 @@
     <kolicina>4</kolicina>
     <naziv>dfgdf</naziv>
   </StatickaOprema>
+  <StatickaOprema>
+    <Id>1</Id>
+    <kolicina>1</kolicina>
+    <naziv>krevet</naziv>
+  </StatickaOprema>
+  <StatickaOprema>
+    <Id>2</Id>
+    <kolicina>896</kolicina>
+    <naziv>stolica</naziv>
+  </StatickaOprema>
 </ArrayOfStatickaOprema>

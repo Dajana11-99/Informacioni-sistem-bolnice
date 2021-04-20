@@ -1,4 +1,5 @@
 ﻿using Model;
+using PoslovnaLogika;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace ZdravoKorporacija
         public RasporedjivanjeDinamickeOpreme()
         {
             InitializeComponent();
+            DataContext = this;
             ListRasporedele = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.observableZahtevZaRasporedjivanjeDinamickeOpreme;
 
         }
@@ -56,7 +58,8 @@ namespace ZdravoKorporacija
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            DodajRasporedjivanjeDinamickeOpreme dodaj = new DodajRasporedjivanjeDinamickeOpreme();
+            dodaj.Show();
         }
     }
 }

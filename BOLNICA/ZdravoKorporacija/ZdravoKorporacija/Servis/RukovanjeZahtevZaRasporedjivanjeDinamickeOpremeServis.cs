@@ -10,9 +10,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Model;
+using Servis;
 using ZdravoKorporacija.Repozitorijum;
 
-namespace Servis
+namespace PoslovnaLogika
 {
     public class RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis
     {
@@ -26,41 +27,41 @@ namespace Servis
 
 
 
-        public static bool DodajDinamickuOpremuProstorija(ZahtevZaRasporedjivanjeDinamickeOpreme unetaStatickaOprema)
+        public static bool DodajDinamickuOpremuProstorija(ZahtevZaRasporedjivanjeDinamickeOpreme zahtevZaRasporedjivanjeDinamicke)
         {
             // da li je ta oprema vec u tom rasponu negde rasporedjena?
             // da li ima dovoljno kolicine prvo?
             // 
-            var statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(unetaStatickaOprema.Id);
+            var dinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(zahtevZaRasporedjivanjeDinamicke.DinamickaOpremaId);
 
-            if (statickaOprema.kolicina - unetaStatickaOprema.Kolicina < 0)
+            if (dinamickaOprema.kolicina - zahtevZaRasporedjivanjeDinamicke.Kolicina < 0)
             {
                 MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine opreme");
                 return false;
             }
-            
-            statickaOprema.kolicina -= unetaStatickaOprema.Kolicina;
-            RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOprema);
-            ZahtevZaRasporedjivanjeDinamickeOpreme.Add(unetaStatickaOprema);
+
+            dinamickaOprema.kolicina -= zahtevZaRasporedjivanjeDinamicke.Kolicina;
+            RukovanjeDinamickomOpremomServis.IzmeniDinamickuOpremu(dinamickaOprema);
+            ZahtevZaRasporedjivanjeDinamickeOpreme.Add(zahtevZaRasporedjivanjeDinamicke);
             OsveziKolekciju();
             SkladisteZahtevZaRasporedjivanjeDinamickeOpreme.UpisiZahtevZaRasporedjivanjeDinamickeOpreme();
             return true;
         }
 
 
-    public static List<ZahtevZaRasporedjivanjeDinamickeOpreme> PrikaziDinamickuOpremu()
+        public static List<ZahtevZaRasporedjivanjeDinamickeOpreme> PrikaziDinamickuOpremu()
         {
             return ZahtevZaRasporedjivanjeDinamickeOpreme;
         }
 
         public static bool IzmeniDinamickuOpremu(ZahtevZaRasporedjivanjeDinamickeOpreme dinamickaOpremaZaIzmenu)
         {
-           
+
 
             var s = PretraziPoId(dinamickaOpremaZaIzmenu.Id);
- 
 
-            var dinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(s.Id);
+
+            var dinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(s.DinamickaOpremaId);
             var dodato = dinamickaOpremaZaIzmenu.Kolicina > s.Kolicina;
             var razlikaUKoliciniDodato = dinamickaOpremaZaIzmenu.Kolicina - s.Kolicina;
             if (dodato)
@@ -71,7 +72,8 @@ namespace Servis
                     return false;
                 }
                 dinamickaOprema.kolicina -= razlikaUKoliciniDodato;
-            } else
+            }
+            else
             {
                 // manja kolicina rasporedjna, ostatak se vraca u magacin
                 var razlikaUKoliciniOduzeto = s.Kolicina - dinamickaOpremaZaIzmenu.Kolicina;
@@ -151,15 +153,38 @@ namespace Servis
                 {
                     sala.RasporedjenaDinamickaOprema = new List<RasporedjenaDinamickaOprema>();
                 }
-                var rasporedjenaDinamickaOprema = new RasporedjenaDinamickaOprema();
-                rasporedjenaDinamickaOprema.Kolicina = zahtev.Kolicina;
-                rasporedjenaDinamickaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
-                rasporedjenaDinamickaOprema.dinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(zahtev.DinamickaOpremaId);
-                sala.RasporedjenaDinamickaOprema.Add(rasporedjenaDinamickaOprema);
+
+                // 
+                // da li je ovaj tip/vrsta opreme vec tu?
+                // ako jeste samo uvecaj kolicinu
+                RasporedjenaDinamickaOprema rasporedjenaOprema = null;
+                foreach (var rasporedjena in sala.RasporedjenaDinamickaOprema)
+                {
+                    if (rasporedjena.dinamickaOprema.Id == zahtev.DinamickaOpremaId)
+                    {
+                        rasporedjenaOprema = rasporedjena;
+                        break;
+                    }
+                }
+                // ako smo je nasli
+                // onda dodamo kolicinu iz zahteva
+                if (rasporedjenaOprema != null)
+                {
+                    rasporedjenaOprema.Kolicina += zahtev.Kolicina;
+                }
+                else
+                {
+                    // u suprotnom je ovo nova oprema
+                    rasporedjenaOprema = new RasporedjenaDinamickaOprema();
+                    rasporedjenaOprema.Kolicina = zahtev.Kolicina;
+                    sala.RasporedjenaDinamickaOprema.Add(rasporedjenaOprema);
+                }
+                rasporedjenaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
+                rasporedjenaOprema.dinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(zahtev.DinamickaOpremaId);
                 SalaRepozitorijum.UpisiSale();
             }
 
-                
+
         }
 
 

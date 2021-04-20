@@ -2993,9 +2993,9 @@ MULA 0 Arial,8,N</a:FontList>
 </o:AssociationSymbol>
 <o:AssociationSymbol Id="o19">
 <a:CreationDate>1616697366</a:CreationDate>
-<a:ModificationDate>1616764822</a:ModificationDate>
-<a:Rect>((-23145,-2867), (700,5514))</a:Rect>
-<a:ListOfPoints>((-23145,4290),(-9115,4290),(-9115,-1644),(700,-1644))</a:ListOfPoints>
+<a:ModificationDate>1618947861</a:ModificationDate>
+<a:Rect>((-23145,-2367), (1375,5464))</a:Rect>
+<a:ListOfPoints>((-23145,4290),(-9115,4290),(-9115,-1194),(1375,-1194))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -3268,7 +3268,7 @@ MULA 0 Arial,8,N</a:FontList>
 <a:Rect>((1501,-9735), (11513,-2812))</a:Rect>
 <a:ListOfPoints>((1538,-2812),(1538,-8512),(11513,-8512))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
-<a:ArrowStyle>8</a:ArrowStyle>
+<a:ArrowStyle>3592</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N
@@ -3502,9 +3502,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o20">
 <a:CreationDate>1616603927</a:CreationDate>
-<a:ModificationDate>1617098963</a:ModificationDate>
+<a:ModificationDate>1618947861</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-6839,-5057), (2791,2959))</a:Rect>
+<a:Rect>((-6164,-4607), (3466,3409))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3812,9 +3812,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o55">
 <a:CreationDate>1618748585</a:CreationDate>
-<a:ModificationDate>1618750175</a:ModificationDate>
+<a:ModificationDate>1618947931</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((10599,2715), (18529,8783))</a:Rect>
+<a:Rect>((9849,9615), (17779,15683))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3834,9 +3834,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o58">
 <a:CreationDate>1618748586</a:CreationDate>
-<a:ModificationDate>1618750206</a:ModificationDate>
+<a:ModificationDate>1618948288</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((11072,-11059), (19002,-4991))</a:Rect>
+<a:Rect>((17897,-11659), (25827,-5591))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3856,9 +3856,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o100">
 <a:CreationDate>1618851124</a:CreationDate>
-<a:ModificationDate>1618851145</a:ModificationDate>
+<a:ModificationDate>1618947934</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((9235,-18673), (19867,-10657))</a:Rect>
+<a:Rect>((11850,-3448), (23916,4568))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3872,6 +3873,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:BrushStyle>6</a:BrushStyle>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
+<a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
 <o:Class Ref="o101"/>
 </c:Object>
@@ -4213,7 +4215,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Sala</a:Code>
 <a:CreationDate>1616603927</a:CreationDate>
 <a:Creator>filip</a:Creator>
-<a:ModificationDate>1618750151</a:ModificationDate>
+<a:ModificationDate>1618948108</a:ModificationDate>
 <a:Modifier>User</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -4955,7 +4957,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>StatickaOprema</a:Code>
 <a:CreationDate>1618748585</a:CreationDate>
 <a:Creator>User</a:Creator>
-<a:ModificationDate>1618751675</a:ModificationDate>
+<a:ModificationDate>1618948255</a:ModificationDate>
 <a:Modifier>User</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -4997,7 +4999,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>DinamickiOprema</a:Code>
 <a:CreationDate>1618748586</a:CreationDate>
 <a:Creator>User</a:Creator>
-<a:ModificationDate>1618751683</a:ModificationDate>
+<a:ModificationDate>1618948283</a:ModificationDate>
 <a:Modifier>User</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -5035,11 +5037,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Class>
 <o:Class Id="o101">
 <a:ObjectID>86403019-C7C6-45EC-ABBC-CB9C8F2B7AF7</a:ObjectID>
-<a:Name>StatickaOpremaProstorija</a:Name>
-<a:Code>StatickaOpremaProstorija</a:Code>
+<a:Name>RasporedjenaStatickaOprema</a:Name>
+<a:Code>RasporedjenaStatickaOprema</a:Code>
 <a:CreationDate>1618851124</a:CreationDate>
 <a:Creator>User</a:Creator>
-<a:ModificationDate>1618851345</a:ModificationDate>
+<a:ModificationDate>1618948255</a:ModificationDate>
 <a:Modifier>User</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -5436,8 +5438,30 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Association12</a:Code>
 <a:CreationDate>1618749981</a:CreationDate>
 <a:Creator>User</a:Creator>
-<a:ModificationDate>1618750130</a:ModificationDate>
+<a:ModificationDate>1618948255</a:ModificationDate>
 <a:Modifier>User</a:Modifier>
+<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{D1E2D0BE-98BB-4413-890E-9D790F33B4DC},C#,128={4924442A-1CC4-4978-8C47-6FFB5B1F8052},roleAContainer,6=&lt;None&gt;
+{B8A5F791-6EAB-45F1-A2F3-FC70018D8884},roleBContainer,6=&lt;None&gt;
+
+</a:ExtendedAttributesText>
+<c:Object1>
+<o:Class Ref="o91"/>
+</c:Object1>
+<c:Object2>
+<o:Class Ref="o93"/>
+</c:Object2>
+</o:Association>
+<o:Association Id="o57">
+<a:ObjectID>F0AEF8D2-AF6B-4885-8C5F-5E552CA35834</a:ObjectID>
+<a:Name>Association_14</a:Name>
+<a:Code>Association14</a:Code>
+<a:CreationDate>1618947887</a:CreationDate>
+<a:Creator>User</a:Creator>
+<a:ModificationDate>1618948077</a:ModificationDate>
+<a:Modifier>User</a:Modifier>
+<a:RoleAIndicator>C</a:RoleAIndicator>
 <a:RoleAMultiplicity>1..1</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
 <a:ExtendedAttributesText>{D1E2D0BE-98BB-4413-890E-9D790F33B4DC},C#,64={4924442A-1CC4-4978-8C47-6FFB5B1F8052},roleAContainer,6=&lt;None&gt;
@@ -5454,10 +5478,11 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ObjectID>B16E60A1-FA53-4C56-966F-00CE98CEF541</a:ObjectID>
 <a:Name>Association_13</a:Name>
 <a:Code>Association13</a:Code>
-<a:CreationDate>1618749984</a:CreationDate>
+<a:CreationDate>1618947990</a:CreationDate>
 <a:Creator>User</a:Creator>
-<a:ModificationDate>1618750151</a:ModificationDate>
+<a:ModificationDate>1618948108</a:ModificationDate>
 <a:Modifier>User</a:Modifier>
+<a:RoleAIndicator>C</a:RoleAIndicator>
 <a:RoleAMultiplicity>1..1</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
 <a:ExtendedAttributesText>{D1E2D0BE-98BB-4413-890E-9D790F33B4DC},C#,64={4924442A-1CC4-4978-8C47-6FFB5B1F8052},roleAContainer,6=&lt;None&gt;
@@ -6574,8 +6599,8 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>PrikaziSale</a:Code>
 <a:CreationDate>1616604965</a:CreationDate>
 <a:Creator>filip</a:Creator>
-<a:ModificationDate>1616698914</a:ModificationDate>
-<a:Modifier>filip</a:Modifier>
+<a:ModificationDate>1618933612</a:ModificationDate>
+<a:Modifier>User</a:Modifier>
 <a:ReturnType>List&lt;Sala&gt;</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>

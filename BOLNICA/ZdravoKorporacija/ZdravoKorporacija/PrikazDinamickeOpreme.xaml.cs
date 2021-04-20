@@ -25,13 +25,32 @@ namespace ZdravoKorporacija
     {
 
         public static ObservableCollection<DinamickaOprema> ListDinamickaOprema { get; set; }
-        public PrikazDinamickeOpreme()
+        public bool CRUDDinamickeOpreme { get; set; }
+
+        public PrikazDinamickeOpreme(ObservableCollection<RasporedjenaDinamickaOprema> rasporedjenaOprema = null)
         {
             InitializeComponent();
             DataContext = this;
 
-            ListDinamickaOprema = RukovanjeDinamickomOpremomServis.observableDinamickaOprema;
+         if (rasporedjenaOprema == null)
+            {
+                CRUDDinamickeOpreme = true;
+                ListDinamickaOprema = RukovanjeDinamickomOpremomServis.observableDinamickaOprema;
 
+            } else
+            {
+                CRUDDinamickeOpreme = false;
+                ObservableCollection<DinamickaOprema> opremaIzSale = new ObservableCollection<DinamickaOprema>();
+                foreach(var oprema in rasporedjenaOprema)
+                {
+                    DinamickaOprema dinamicka = new DinamickaOprema(oprema.dinamickaOprema.Id);
+                    dinamicka.kolicina = oprema.Kolicina;
+                    dinamicka.naziv = oprema.dinamickaOprema.naziv;
+                    opremaIzSale.Add(dinamicka);
+                }
+                ListDinamickaOprema = opremaIzSale;
+
+            }
 
         }
 
@@ -48,6 +67,7 @@ namespace ZdravoKorporacija
 
         private void Button_obrisi(object sender, RoutedEventArgs e)
         {
+
             if (SpisakDinamickeOpreme.SelectedIndex != -1)
             {
                 BrisanjeDinamickeOpreme brisaje = new BrisanjeDinamickeOpreme(((DinamickaOprema)SpisakDinamickeOpreme.SelectedItem).Id);

@@ -69,8 +69,8 @@ namespace ZdravoKorporacija
             OdusustvaUpravnik odsustvoUpravnik = new OdusustvaUpravnik();
             odsustvoUpravnik.Show();
         }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
+        
+        private void btnPregledStatickeOpreme_Click(object sender, RoutedEventArgs e)
         {
             if (SpisakSala.SelectedIndex != -1)
             {
@@ -80,13 +80,23 @@ namespace ZdravoKorporacija
                 ObservableCollection<RasporedjenaStatickaOprema> opremaKol = 
                         new ObservableCollection<RasporedjenaStatickaOprema>(oprema);
                 PrikazStatickeOpreme prikz = new PrikazStatickeOpreme(opremaKol);
+                prikz.Show();
             }
            
         }
 
-        private void Button_Click_6(object sender, RoutedEventArgs e)
+        private void btnPregledDinamickeOpreme_Click(object sender, RoutedEventArgs e)
         {
-            // dinamicke
+            if (SpisakSala.SelectedIndex != -1)
+            {
+                Sala salaCijaSeOpremaPrikazuje = (Sala)SpisakSala.SelectedItem;
+                // staticvke
+                List<RasporedjenaDinamickaOprema> oprema = salaCijaSeOpremaPrikazuje.RasporedjenaDinamickaOprema;
+                ObservableCollection<RasporedjenaDinamickaOprema> opremaKol =
+                  new ObservableCollection<RasporedjenaDinamickaOprema>(oprema);
+                PrikazDinamickeOpreme prikz = new PrikazDinamickeOpreme(opremaKol);
+                prikz.Show();
+            }
         }
     }
 }

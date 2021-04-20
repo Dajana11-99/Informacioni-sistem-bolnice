@@ -43,20 +43,35 @@ namespace ZdravoKorporacija
             }
 
 
-                ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
+          ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
             zahtev.Id = RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.pronadji();
-            zahtev.Kolicina = 4; // txtKolicina.Text;
+            int kolicina = 0;
+            try
+            {
+                kolicina = Int32.Parse(txtKolicina.Text);
+            } catch
+            {
+                MessageBox.Show("Uneta kolciina mora biti >= 1");
+                return;
+            }
+            if (kolicina <=0 )
+            {
+                MessageBox.Show("Uneta kolciina mora biti >= 1");
+                return;
+            }
+            zahtev.Kolicina = kolicina; 
             zahtev.RasporedjenoOd = rasporedjenoOd.Value;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.IzProstorijaId = (string)cmbProstorijaIz.SelectedValue;
             zahtev.StatickeOpremaId = (string)cmbStatickaOprema.SelectedValue;
             RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuProstorija(zahtev);
 
+            Close();
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
