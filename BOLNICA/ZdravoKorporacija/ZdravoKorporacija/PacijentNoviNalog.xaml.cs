@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +33,7 @@ namespace ZdravoKorporacija
             Pacijent novi = new Pacijent(IDPacijenta.ToString(), ImeTEXTBOX.Text, PrezimeTEXTBOX.Text, JmbgTEXTBOX.Text, EmailTEXTBOX.Text, adresa);
             IDPacijenta++;
             PrikazPacijenata.UbaciUListu(novi);
-            UpravljanjePacijentima.NapraviNoviNalogPacijentu(novi);
+            NaloziPacijenataServis.NapraviNoviNalogPacijentu(novi);
 
         }
 

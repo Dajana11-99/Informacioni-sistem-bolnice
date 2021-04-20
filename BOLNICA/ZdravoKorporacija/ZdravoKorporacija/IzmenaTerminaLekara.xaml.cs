@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,7 +58,7 @@ namespace ZdravoKorporacija
                 formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
 
-            RukovanjeTerminima.IzmenaTermina(id,formatirano,cmbZakazivanjeTerminaVreme.Text,cmbLekar.Text,txtPredvidjenoVremeTermina.Text, brojSale.Text, cmbVrstaTermina.Text);
+            TerminServis.IzmenaTermina(id,formatirano,cmbZakazivanjeTerminaVreme.Text,cmbLekar.Text,txtPredvidjenoVremeTermina.Text, brojSale.Text, cmbVrstaTermina.Text);
             this.Close();
         }
 
@@ -76,7 +76,7 @@ namespace ZdravoKorporacija
         {
             List<Lekar> pomocna = new List<Lekar>();
 
-            foreach (Lekar l in RukovanjeTerminima.pom)
+            foreach (Lekar l in TerminServis.pom)
             {
                 if (!l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
                 {

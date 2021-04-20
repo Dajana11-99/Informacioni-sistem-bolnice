@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,11 +44,11 @@ namespace ZdravoKorporacija
             if (datum1.HasValue)
                 foramtirano2 = datum1.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-            string ID = RukovanjeZahtevima.nadjiIDZahteva();
+            string ID = ZahtevServis.nadjiIDZahteva();
 
             ZahtevUpravniku Zahtev= new ZahtevUpravniku(l, opis, foramtirano1, foramtirano2, ID);
 
-            RukovanjeZahtevima.KreirajZahtev(Zahtev);
+            ZahtevServis.KreirajZahtev(Zahtev);
 
             this.Close();
 

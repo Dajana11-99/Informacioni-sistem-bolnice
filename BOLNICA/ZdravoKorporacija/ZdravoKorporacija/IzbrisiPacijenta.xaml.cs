@@ -1,4 +1,5 @@
-﻿using PoslovnaLogika;
+﻿
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace ZdravoKorporacija
 
         private void BRISI(object sender, RoutedEventArgs e)
         {
-            UpravljanjePacijentima.ObriseNalog(sacuvaj);
+            NaloziPacijenataServis.ObriseNalog(sacuvaj);
             this.Close();
         }
 

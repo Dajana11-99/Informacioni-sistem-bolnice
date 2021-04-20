@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Model;
-using PoslovnaLogika;
+using Servis;
 
-namespace ZdravoKorporacija.RadSaDatotekama
+
+namespace ZdravoKorporacija.Repozitorijum
 {
-    class SkladisteSala
+    public class SalaRepozitorijum
     {
         public static List<Sala> UcitajSale()
         {
@@ -34,7 +32,7 @@ namespace ZdravoKorporacija.RadSaDatotekama
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sala>));
             TextWriter tw = new StreamWriter("sale.xml");
-            xmlSerializer.Serialize(tw, RukovanjeSalama.sala);
+            xmlSerializer.Serialize(tw, SalaServis.sala);
             tw.Close();
             return true;
         }

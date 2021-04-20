@@ -10,12 +10,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Model;
-using RadSaDatotekama;
-using ZdravoKorporacija.RadSaDatotekama;
+using ZdravoKorporacija.Repozitorijum;
 
-namespace PoslovnaLogika
+namespace Servis
 {
-    public class RukovanjeZahtevZaRasporedjivanjeStatickeOpreme
+    public class RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis
     {
         public static List<ZahtevZaRasporedjivanjeStatickeOpreme> ZahtevZaRasporedjivanjeStatickeOpreme = new List<ZahtevZaRasporedjivanjeStatickeOpreme>();
         public static ObservableCollection<ZahtevZaRasporedjivanjeStatickeOpreme> observableZahtevZaRasporedjivanjeStatickeOpreme = new ObservableCollection<ZahtevZaRasporedjivanjeStatickeOpreme>();
@@ -27,7 +26,7 @@ namespace PoslovnaLogika
 
         private static bool DodajZahtevIzDrugeSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
-            var sala = RukovanjeSalama.PretraziPoId(zahtev.IzProstorijaId);
+            var sala = SalaServis.PretraziPoId(zahtev.IzProstorijaId);
             var rasporedjeno = sala.RasporedjenaStatickaOprema;
             if (rasporedjeno == null)
             {
@@ -58,7 +57,7 @@ namespace PoslovnaLogika
             }
 
             taOpremaUTojSali.Kolicina -= zahtev.Kolicina;
-            RukovanjeSalama.Izmena(sala);
+            SalaServis.Izmena(sala);
             ZahtevZaRasporedjivanjeStatickeOpreme.Add(zahtev);
             OsveziKolekciju();
             SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UpisiZahtevZaRasporedjivanjeStatickeOpreme();
@@ -70,7 +69,7 @@ namespace PoslovnaLogika
         {
 
             // DA Li JE IZ DRUGE PROSTORIJE?
-            if(!String.IsNullOrEmpty(zahtev.IzProstorijaId))
+            if (!String.IsNullOrEmpty(zahtev.IzProstorijaId))
             {
                 return DodajZahtevIzDrugeSale(zahtev);
             }
@@ -81,7 +80,7 @@ namespace PoslovnaLogika
             // da li je ta oprema vec u tom rasponu negde rasporedjena?
             // da li ima dovoljno kolicine prvo?
             // 
-            var statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(zahtev.Id);
+            var statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.Id);
 
             if (statickaOprema.kolicina - zahtev.Kolicina < 0)
             {
@@ -90,7 +89,7 @@ namespace PoslovnaLogika
             }
 
             statickaOprema.kolicina -= zahtev.Kolicina;
-            RukovanjeStatickomOpremom.IzmeniStatickuOpremu(statickaOprema);
+            RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOprema);
             ZahtevZaRasporedjivanjeStatickeOpreme.Add(zahtev);
             OsveziKolekciju();
             SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UpisiZahtevZaRasporedjivanjeStatickeOpreme();
@@ -98,19 +97,19 @@ namespace PoslovnaLogika
         }
 
 
-    public static List<ZahtevZaRasporedjivanjeStatickeOpreme> PrikaziStatickuOpremu()
+        public static List<ZahtevZaRasporedjivanjeStatickeOpreme> PrikaziStatickuOpremu()
         {
             return ZahtevZaRasporedjivanjeStatickeOpreme;
         }
 
         public static bool IzmeniStatickuOpremu(ZahtevZaRasporedjivanjeStatickeOpreme statickaOpremaZaIzmenu)
         {
-           
+
 
             var s = PretraziPoId(statickaOpremaZaIzmenu.Id);
- 
 
-            var statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(s.Id);
+
+            var statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(s.Id);
             var dodato = statickaOpremaZaIzmenu.Kolicina > s.Kolicina;
             var razlikaUKoliciniDodato = statickaOpremaZaIzmenu.Kolicina - s.Kolicina;
             if (dodato)
@@ -121,7 +120,8 @@ namespace PoslovnaLogika
                     return false;
                 }
                 statickaOprema.kolicina -= razlikaUKoliciniDodato;
-            } else
+            }
+            else
             {
                 // manja kolicina rasporedjna, ostatak se vraca u magacin
                 var razlikaUKoliciniOduzeto = s.Kolicina - statickaOpremaZaIzmenu.Kolicina;
@@ -133,7 +133,7 @@ namespace PoslovnaLogika
                 MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine opreme");
                 return false;
             }
-            RukovanjeStatickomOpremom.IzmeniStatickuOpremu(statickaOprema);
+            RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOprema);
 
             s.Kolicina = statickaOpremaZaIzmenu.Kolicina;
             s.ProstorijaId = statickaOpremaZaIzmenu.ProstorijaId;
@@ -196,7 +196,7 @@ namespace PoslovnaLogika
                 }
 
                 ObrisiZahtevZaRasporedjivanjeStatickeOpreme(zahtev.Id);
-                var sala = RukovanjeSalama.PretraziPoId(zahtev.ProstorijaId);
+                var sala = SalaServis.PretraziPoId(zahtev.ProstorijaId);
                 if (sala.RasporedjenaStatickaOprema == null)
                 {
                     sala.RasporedjenaStatickaOprema = new List<RasporedjenaStatickaOprema>();
@@ -204,12 +204,12 @@ namespace PoslovnaLogika
                 var rasporedjenaOprema = new RasporedjenaStatickaOprema();
                 rasporedjenaOprema.Kolicina = zahtev.Kolicina;
                 rasporedjenaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
-                rasporedjenaOprema.statickaOprema = RukovanjeStatickomOpremom.PretraziPoId(zahtev.StatickeOpremaId);
+                rasporedjenaOprema.statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
                 sala.RasporedjenaStatickaOprema.Add(rasporedjenaOprema);
-                SkladisteSala.UpisiSale();
+                SalaRepozitorijum.UpisiSale();
             }
 
-                
+
         }
 
 

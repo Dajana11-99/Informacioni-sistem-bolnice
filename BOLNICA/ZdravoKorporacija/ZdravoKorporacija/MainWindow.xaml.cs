@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Servis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PoslovnaLogika;
-using RadSaDatotekama;
-using ZdravoKorporacija.RadSaDatotekama;
+
+using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
@@ -23,40 +23,40 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static RukovanjeSalama RukovanjeSalama = new RukovanjeSalama();
+        public static SalaServis RukovanjeSalama = new SalaServis();
         public MainWindow()
         {
             InitializeComponent();
             //RukovanjeTerminima.inicijalizuj();
-            RukovanjeSalama.inicijalizuj();
-            UpravljanjePacijentima.TestMethod();
-            SkladisteTermina.ucitajTermine();
-            SkladisteLekara.ucitajLekare();
-            SkladisteSala.UcitajSale();
-            RukovanjeStatickomOpremom.inicijalizuj();
-            RukovanjeDinamickomOpremom.inicijalizuj();
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.inicijalizuj();
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.inicijalizuj();
+            SalaServis.inicijalizuj();
+           NaloziPacijenataServis.TestMethod();
+            TerminRepozitorijum.ucitajTermine();
+            LekarRepozitorijum.ucitajLekare();
+            SalaRepozitorijum.UcitajSale();
+            RukovanjeStatickomOpremomServis.inicijalizuj();
+            RukovanjeDinamickomOpremomServis.inicijalizuj();
+            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.inicijalizuj();
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.inicijalizuj();
 
             // Izvrsi zahteve automatski 
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.IzvrsiZahteveZaDanas();
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.IzvrsiZahteveZaDanas();
+            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
 
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SkladisteTermina.ucitajTermine();
-            SkladisteLekara.ucitajLekare();
+            TerminRepozitorijum.ucitajTermine();
+            LekarRepozitorijum.ucitajLekare();
             PrikazTerminaPacijenta prikaz = new PrikazTerminaPacijenta();
             prikaz.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            SkladisteTermina.ucitajTermine();
-            SkladisteLekara.ucitajLekare();
+            TerminRepozitorijum.ucitajTermine();
+            LekarRepozitorijum.ucitajLekare();
             LekarWindow lekar = new LekarWindow();
             lekar.Show();
         }
@@ -70,15 +70,15 @@ namespace ZdravoKorporacija
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             UpravnikPocetna pocetna = new UpravnikPocetna();
-            SkladisteSala.UcitajSale();
+            SalaRepozitorijum.UcitajSale();
             pocetna.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            SkladisteSala.UpisiSale();
-            SkladisteTermina.upisiTermine();
-           SkladisteLekara.upisiLekare();
+            SalaRepozitorijum.UpisiSale();
+            TerminRepozitorijum.upisiTermine();
+           LekarRepozitorijum.upisiLekare();
         }
     }
 }

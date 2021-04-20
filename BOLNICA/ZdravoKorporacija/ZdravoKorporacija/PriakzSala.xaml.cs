@@ -1,5 +1,6 @@
 ﻿using Model;
-using PoslovnaLogika;
+
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,7 +30,7 @@ namespace ZdravoKorporacija
             InitializeComponent();
             DataContext = this;
 
-            ListSala = RukovanjeSalama.observableSala;
+            ListSala = SalaServis.observableSala;
     
 
         }

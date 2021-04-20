@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 
-namespace ZdravoKorporacija.RadSaDatotekama
+namespace ZdravoKorporacija.Repozitorijum
 {
-    class SkladisteNalogaPacijent
+   public class ZahtevRepozitorijum
     {
-        public List<Pacijent> UcitajPacijente()
+        public List<ZahtevUpravniku> UcitajZahetev()
         {
             // TODO: implement
             return null;
         }
 
-        public void UpisiPacijente()
+        public void UpisiZahteve()
         {
             // TODO: implement
            

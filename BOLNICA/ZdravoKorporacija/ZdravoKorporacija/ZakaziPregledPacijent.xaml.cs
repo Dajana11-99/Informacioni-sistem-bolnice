@@ -13,7 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
-using PoslovnaLogika;
+
+using Servis;
 
 namespace ZdravoKorporacija
 {
@@ -42,7 +43,7 @@ namespace ZdravoKorporacija
         {
             List<Lekar> pomocna = new List<Lekar>();
         
-            foreach(Lekar l in RukovanjeTerminima.pom)
+            foreach(Lekar l in TerminServis.pom)
             {
                 if (l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
                 {
@@ -55,12 +56,12 @@ namespace ZdravoKorporacija
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            String id =RukovanjeTerminima.pronadji();
+            String id =TerminServis.pronadji();
             string[] pom = lekar.Text.Split(' ');
             Lekar l = new Lekar(pom[0],pom[1]);
             Pacijent p = new Pacijent(pacijent.Text);
 
-            Sala sala = RukovanjeSalama.PretraziPoTipu(TipSale.Pregled);
+            Sala sala = SalaServis.PretraziPoTipu(TipSale.Pregled);
             Console.WriteLine("*************" + sala.Id);
             
             TipTermina tip = TipTermina.Pregled;
@@ -77,7 +78,7 @@ namespace ZdravoKorporacija
                System.Windows.Forms.MessageBox.Show("Sva polja su obavezna!!", "Upozorenje", (System.Windows.Forms.MessageBoxButtons)MessageBoxButton.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 return;
             }
-            RukovanjeTerminima.ZakaziPregled(t);
+            TerminServis.ZakaziPregled(t);
             this.Close();
 
 

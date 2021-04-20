@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,7 +27,7 @@ namespace ZdravoKorporacija
         public UpravnikPocetna()
         {
             InitializeComponent();
-            var sviZahtevi = RukovanjeZahtevima.zahtevi;
+            var sviZahtevi = ZahtevServis.zahtevi;
 
             ZahteviZaSlobodneDane = new List<ZahtevUpravniku>();
             foreach (var zahtev in sviZahtevi)

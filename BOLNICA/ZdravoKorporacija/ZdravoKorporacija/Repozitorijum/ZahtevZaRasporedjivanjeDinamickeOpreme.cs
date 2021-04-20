@@ -6,10 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Model;
-using PoslovnaLogika;
+using Servis;
 
-
-namespace RadSaDatotekama
+namespace ZdravoKorporacija.Repozitorijum
 {
     public class SkladisteZahtevZaRasporedjivanjeDinamickeOpreme
     {
@@ -35,7 +34,7 @@ namespace RadSaDatotekama
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<StatickaOprema>));
             TextWriter tw = new StreamWriter("ZahtevZaRasporedjivanjeDinamickeOpreme.xml");
-            xmlSerializer.Serialize(tw, RukovanjeStatickomOpremom.statickaOprema);
+            xmlSerializer.Serialize(tw, RukovanjeStatickomOpremomServis.statickaOprema);
             tw.Close();
             return true;
         }

@@ -11,9 +11,10 @@ using Model;
 using ZdravoKorporacija;
 
 
-namespace PoslovnaLogika
+namespace Servis
+
 {
-    public class UpravljanjePacijentima
+    public class NaloziPacijenataServis
     {
         public static List<Pacijent> ListaPacijenata = new List<Pacijent>();
 
@@ -85,6 +86,6 @@ namespace PoslovnaLogika
             return null;
         }
 
-
+        public ZdravoKorporacija.Repozitorijum.NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum;
     }
 }

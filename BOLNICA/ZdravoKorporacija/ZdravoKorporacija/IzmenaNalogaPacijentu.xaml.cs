@@ -1,4 +1,5 @@
 ﻿using Model;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Model;
-using PoslovnaLogika;
+
+
 
 namespace ZdravoKorporacija
 {
@@ -48,7 +49,7 @@ namespace ZdravoKorporacija
 
             KojegMenjam.Email = EmailTEXTBOX1.Text;
             KojegMenjam.adresaStanovanja.Ulica = AdresaTEXTBOX1.Text;
-            UpravljanjePacijentima.IzmeniPostojeciNalog(KojegMenjam.idPacijenta);
+           NaloziPacijenataServis.IzmeniPostojeciNalog(KojegMenjam.idPacijenta);
 
 
             this.Close();

@@ -12,6 +12,8 @@
       <Zauzeta>false</Zauzeta>
       <sprat>2</sprat>
       <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
       <Ime>Dajana</Ime>
@@ -39,6 +41,8 @@
       <Zauzeta>false</Zauzeta>
       <sprat>2</sprat>
       <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
       <Ime>Nikola</Ime>
@@ -52,6 +56,61 @@
     <Pacijent>
       <termin />
       <idPacijenta>neko</idPacijenta>
+    </Pacijent>
+  </Termin>
+  <Termin>
+    <Vreme>10:00</Vreme>
+    <trajanjeTermina>3</trajanjeTermina>
+    <TipTermina>Operacija</TipTermina>
+    <IdTermina>3</IdTermina>
+    <Sala>
+      <TipSale>Operaciona</TipSale>
+      <Id>gh</Id>
+      <Zauzeta>false</Zauzeta>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <Ime>Milan</Ime>
+      <Prezime>Djenic</Prezime>
+      <CeloIme>Milan Djenic</CeloIme>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Kardiolog</Specijalizacija>
+    </Lekar>
+    <Pacijent>
+      <termin />
+      <idPacijenta>Vasilije Dojcinov</idPacijenta>
+    </Pacijent>
+  </Termin>
+  <Termin>
+    <Vreme>10:00</Vreme>
+    <trajanjeTermina>34</trajanjeTermina>
+    <Datum>04/20/2021</Datum>
+    <TipTermina>Operacija</TipTermina>
+    <IdTermina>4</IdTermina>
+    <Sala>
+      <TipSale>Operaciona</TipSale>
+      <Id>ggg</Id>
+      <Zauzeta>false</Zauzeta>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <Ime>Petar</Ime>
+      <Prezime>Petrovic</Prezime>
+      <CeloIme>Petar Petrovic</CeloIme>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Kardiolog</Specijalizacija>
+    </Lekar>
+    <Pacijent>
+      <termin />
+      <idPacijenta>Vasilije Dojcinov</idPacijenta>
     </Pacijent>
   </Termin>
 </ArrayOfTermin>

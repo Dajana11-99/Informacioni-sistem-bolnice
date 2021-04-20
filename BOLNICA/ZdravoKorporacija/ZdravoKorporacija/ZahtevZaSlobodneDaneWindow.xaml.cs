@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,7 +29,7 @@ namespace ZdravoKorporacija
             InitializeComponent();
             this.DataContext = this;
             zahtevs = new ObservableCollection<ZahtevUpravniku>();
-            foreach(ZahtevUpravniku zahtev in RukovanjeZahtevima.PrikaziZahteve()) 
+            foreach(ZahtevUpravniku zahtev in ZahtevServis.PrikaziZahteve()) 
             {
                 zahtevs.Add(zahtev);
 

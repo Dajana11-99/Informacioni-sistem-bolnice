@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using PoslovnaLogika;
+
+using Servis;
 
 namespace ZdravoKorporacija
 {
@@ -31,7 +32,7 @@ namespace ZdravoKorporacija
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            RukovanjeTerminima.OtkaziPregled(id);
+            TerminServis.OtkaziPregled(id);
             this.Close();
 
         }

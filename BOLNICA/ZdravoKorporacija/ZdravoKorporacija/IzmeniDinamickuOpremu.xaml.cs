@@ -1,5 +1,6 @@
 ﻿using Model;
-using PoslovnaLogika;
+
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace ZdravoKorporacija
             dinamickaOpremaZaIzmenu.naziv = naziv;
             dinamickaOpremaZaIzmenu.kolicina = kolicina;
 
-            RukovanjeDinamickomOpremom.IzmeniDinamickuOpremu(dinamickaOpremaZaIzmenu);
+            RukovanjeDinamickomOpremomServis.IzmeniDinamickuOpremu(dinamickaOpremaZaIzmenu);
             Close();
 
         }

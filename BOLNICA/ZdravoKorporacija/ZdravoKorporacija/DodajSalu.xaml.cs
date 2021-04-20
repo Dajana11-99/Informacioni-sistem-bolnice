@@ -1,5 +1,6 @@
 ﻿using Model;
-using PoslovnaLogika;
+
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ZdravoKorporacija.RadSaDatotekama;
+using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
@@ -32,7 +33,7 @@ namespace ZdravoKorporacija
         {
             TipSale tipS;
             String id = txtId.Text;
-            Sala postojecaSala = RukovanjeSalama.PretraziPoId(id);
+            Sala postojecaSala = SalaServis.PretraziPoId(id);
             if (postojecaSala != null)
             {
                 MessageBox.Show($"Postoji vec sala sa ID-em:{id}");
@@ -55,8 +56,8 @@ namespace ZdravoKorporacija
             Sala s = new Sala(tipS, id);
             s.sprat = sprat;
 
-            RukovanjeSalama.DodajSalu(s);
-            SkladisteSala.UpisiSale();
+            SalaServis.DodajSalu(s);
+            SalaRepozitorijum.UpisiSale();
             Close();
 
 

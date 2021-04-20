@@ -8,10 +8,11 @@ using System;
 using System.Collections.Generic;
 using Model;
 using ZdravoKorporacija;
+using ZdravoKorporacija.Repozitorijum;
 
-namespace PoslovnaLogika
+namespace Servis
 {
-    public class RukovanjeTerminima
+    public class TerminServis
     {
         public static List<Termin> zakazani = new List<Termin>();
 
@@ -238,5 +239,7 @@ namespace PoslovnaLogika
             return null;
         }
 
+
+        public TerminRepozitorijum terminRepozitorijum;
     }
 }

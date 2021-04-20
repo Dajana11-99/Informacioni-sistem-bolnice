@@ -6,6 +6,8 @@
     <Zauzeta>false</Zauzeta>
     <sprat>2</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
   </Sala>
   <Sala>
     <TipSale>Pregled</TipSale>
@@ -13,5 +15,7 @@
     <Zauzeta>false</Zauzeta>
     <sprat>4</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
   </Sala>
 </ArrayOfSala>

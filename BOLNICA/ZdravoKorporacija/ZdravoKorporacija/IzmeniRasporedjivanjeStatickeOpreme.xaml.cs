@@ -1,5 +1,6 @@
 ﻿using Model;
-using PoslovnaLogika;
+
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -20,9 +21,9 @@ namespace ZdravoKorporacija
         public IzmeniRasporedjivanjeStatickeOpreme(ZahtevZaRasporedjivanjeStatickeOpreme selectedItem)
         {
             InitializeComponent();
-            cmbStatickaOprema.ItemsSource = RukovanjeStatickomOpremom.statickaOprema;
-            cmbProstorija.ItemsSource = RukovanjeSalama.sala;
-            cmbProstorijaIz.ItemsSource = RukovanjeSalama.sala;
+            cmbStatickaOprema.ItemsSource = RukovanjeStatickomOpremomServis.statickaOprema;
+            cmbProstorija.ItemsSource = SalaServis.sala;
+            cmbProstorijaIz.ItemsSource = SalaServis.sala;
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
@@ -36,13 +37,13 @@ namespace ZdravoKorporacija
 
 
             ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
-            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.pronadji();
+            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.pronadji();
             zahtev.Kolicina = 4; // txtKolicina.Text;
             zahtev.RasporedjenoOd = rasporedjenoOd.Value;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.IzProstorijaId = (string)cmbProstorijaIz.SelectedValue;
             zahtev.StatickeOpremaId = (string)cmbStatickaOprema.SelectedValue;
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.DodajStatickuOpremuProstorija(zahtev);
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuProstorija(zahtev);
 
         }
 

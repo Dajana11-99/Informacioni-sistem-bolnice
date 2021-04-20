@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-Z:\FNTNN\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\
+C:\Users\dajan\OneDrive\Desktop\MIRJANA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\
 ZdravoKorporacija
 none
 false
 DEBUG;TRACE
-Z:\FNTNN\ZdravoKorporacija\ZdravoKorporacija\App.xaml
+C:\Users\dajan\OneDrive\Desktop\MIRJANA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\App.xaml
 38958498643
 
-88516894702
+95595922284
 14-1290796308
 BrisanjeDinamickeOpreme.xaml;BrisanjeSale.xaml;BrisanjeStatickeOpreme.xaml;BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml;DodajDinamickuOpremu.xaml;DodajRasporedjivanjeDinamickeOpreme.xaml;DodajRasporedjivanjeStatickeOpreme.xaml;DodajSalu.xaml;DodajStatickuOpremu.xaml;DodajZahtevWindow.xaml;IzbrisiPacijenta.xaml;IzbrisiRasporedjivanjeStatickeOpreme.xaml;IzmenaNalogaPacijentu.xaml;IzmenaPacijenta.xaml;IzmenaTerminaLekara.xaml;IzmeniDinamickuOpremu.xaml;IzmeniRasporedjivanjeDinamickeOpreme.xaml;IzmeniRasporedjivanjeStatickeOpreme.xaml;IzmeniSalu.xaml;IzmeniStatickuOpremu.xaml;LekarWindow.xaml;MainWindow.xaml;OdusustvaUpravnik.xaml;Otkazivanje.xaml;OtkazivanjeTerminaLekara.xaml;OtkazivanjeZahteva.xaml;PacijentNoviNalog.xaml;PriakzSala.xaml;PrikazDinamickeOpreme.xaml;PrikazPacijenata.xaml;PrikazStatickeOpreme.xaml;PrikazTerminaPacijenta.xaml;RasporedjivanjeDinamickeOpreme.xaml;RasporedjivanjeStatickeOpreme.xaml;UpravnikPocetna.xaml;ZahtevZaSlobodneDaneWindow.xaml;ZakaziPregledPacijent.xaml;ZakazivanjeTerminaLekara.xaml;
 
-True
+False
 

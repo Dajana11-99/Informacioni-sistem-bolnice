@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             zahtevs = new List<ZahtevUpravniku>();
-            foreach (ZahtevUpravniku zahtev in RukovanjeZahtevima.PrikaziZahteve())
+            foreach (ZahtevUpravniku zahtev in ZahtevServis.PrikaziZahteve())
             {
                 zahtevs.Add(zahtev);
 

@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ZdravoKorporacija.RadSaDatotekama;
+using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
@@ -32,7 +32,7 @@ namespace ZdravoKorporacija
         {
             
             String id = txtId.Text;
-            StatickaOprema postojecaStatickaOprema = RukovanjeStatickomOpremom.PretraziPoId(id);
+            StatickaOprema postojecaStatickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(id);
             if (postojecaStatickaOprema != null)
             {
                 MessageBox.Show($"Postoji vec oprema sa ID-em:{id}");
@@ -57,8 +57,8 @@ namespace ZdravoKorporacija
             StatickaOprema so = new StatickaOprema(id);
             so.naziv = naziv;
             so.kolicina = kolicina;
-            RukovanjeStatickomOpremom.DodajStatickuOpremu(so);
-            SkladisteStatickeOpreme.UpisiStatickuOpremu();
+            RukovanjeStatickomOpremomServis.DodajStatickuOpremu(so);
+            StatickeOpremeRepozitorijum.UpisiStatickuOpremu();
             Close();
 
 

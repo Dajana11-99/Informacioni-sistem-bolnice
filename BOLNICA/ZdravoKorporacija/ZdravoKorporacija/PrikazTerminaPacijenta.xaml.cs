@@ -14,9 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
-using PoslovnaLogika;
-using RadSaDatotekama;
-using ZdravoKorporacija.RadSaDatotekama;
+using Servis;
+using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
@@ -30,7 +29,7 @@ namespace ZdravoKorporacija
             InitializeComponent();
             this.DataContext = this;
             TerminiPacijenta = new ObservableCollection<Termin>();
-            foreach (Termin t in RukovanjeTerminima.PrikaziSveTermine())
+            foreach (Termin t in TerminServis.PrikaziSveTermine())
                 TerminiPacijenta.Add(t);
            
 
@@ -71,15 +70,15 @@ namespace ZdravoKorporacija
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            SkladisteTermina.upisiTermine();
-            SkladisteLekara.upisiLekare();
+            TerminRepozitorijum.upisiTermine();
+            LekarRepozitorijum.upisiLekare();
             this.Close();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            SkladisteTermina.upisiTermine();
-            SkladisteLekara.upisiLekare();
+            TerminRepozitorijum.upisiTermine();
+            LekarRepozitorijum.upisiLekare();
         }
     }
 }

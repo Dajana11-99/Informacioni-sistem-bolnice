@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,7 @@ namespace ZdravoKorporacija
 
         private void btnPotvrdiOtkazivanje_Click(object sender, RoutedEventArgs e)
         {
-            RukovanjeZahtevima.Obrisi(idZ);
+            ZahtevServis.Obrisi(idZ);
             this.Close();
         }
 

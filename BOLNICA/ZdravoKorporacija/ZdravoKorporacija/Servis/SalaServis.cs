@@ -9,16 +9,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Model;
-using RadSaDatotekama;
-using ZdravoKorporacija.RadSaDatotekama;
+using ZdravoKorporacija;
+using ZdravoKorporacija.Repozitorijum;
 
-namespace PoslovnaLogika
+namespace Servis
 {
-   public class RukovanjeSalama
+   public class SalaServis
    {
        public static void inicijalizuj() 
         {
-            sala = SkladisteSala.UcitajSale();
+            sala = SalaRepozitorijum.UcitajSale();
             OsveziKolekciju();
         }
         public static Sala PretraziPoTipu(TipSale tip)
@@ -48,7 +48,7 @@ namespace PoslovnaLogika
          else
             {
                 sala.Add(unetaSala);
-                SkladisteSala.UpisiSale();
+                SalaRepozitorijum.UpisiSale();
                 OsveziKolekciju();
                 return true;
             }
@@ -75,7 +75,7 @@ namespace PoslovnaLogika
                 }
               
             }
-            SkladisteSala.UpisiSale();
+            SalaRepozitorijum.UpisiSale();
             OsveziKolekciju();
 
             return true;
@@ -97,7 +97,7 @@ namespace PoslovnaLogika
             }
             sala = saleBezIzbrisane;
             OsveziKolekciju();
-            SkladisteSala.UpisiSale();
+            SalaRepozitorijum.UpisiSale();
             return nadjena;
         }
       
@@ -155,6 +155,6 @@ namespace PoslovnaLogika
 
         }
 
-
+        public ZdravoKorporacija.Repozitorijum.SalaRepozitorijum salaRepozitorijum;
     }
 }

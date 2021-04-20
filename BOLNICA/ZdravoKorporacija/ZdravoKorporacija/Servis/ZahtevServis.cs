@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using Model;
 using ZdravoKorporacija;
 
-namespace PoslovnaLogika
+namespace Servis
 {
-   public class RukovanjeZahtevima
+   public class ZahtevServis
    {
         public static List<ZahtevUpravniku> zahtevi = new List<ZahtevUpravniku>();
 
@@ -107,6 +107,7 @@ namespace PoslovnaLogika
             // TODO: implement
             return false;
         }
-   
-   }
+
+        public ZdravoKorporacija.Repozitorijum.ZahtevRepozitorijum zahtevRepozitorijum;
+    }
 }

@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Model;
-using PoslovnaLogika;
+using Servis;
 
-namespace ZdravoKorporacija.RadSaDatotekama
+namespace ZdravoKorporacija.Repozitorijum
 {
-    class SkladisteDinamickeOpreme
+    public class DinamickeOpremeRepozitorijum
     {
         public static List<DinamickaOprema> UcitajDinamickuOpremu()
         {
@@ -34,7 +34,7 @@ namespace ZdravoKorporacija.RadSaDatotekama
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<DinamickaOprema>));
             TextWriter tw = new StreamWriter("dinamickaOprema.xml");
-            xmlSerializer.Serialize(tw, RukovanjeDinamickomOpremom.dinamickaOprema);
+            xmlSerializer.Serialize(tw, RukovanjeDinamickomOpremomServis.dinamickaOprema);
             tw.Close();
             return true;
         }

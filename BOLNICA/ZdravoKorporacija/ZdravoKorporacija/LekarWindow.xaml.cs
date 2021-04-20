@@ -1,5 +1,5 @@
 ﻿using Model;
-using PoslovnaLogika;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,7 +31,7 @@ namespace ZdravoKorporacija
             InitializeComponent();
             this.DataContext = this;
             TerminiLekara = new ObservableCollection<Termin>();
-            foreach (Termin t in RukovanjeTerminima.PrikaziSveTermine())
+            foreach (Termin t in TerminServis.PrikaziSveTermine())
                 TerminiLekara.Add(t);
         }
 

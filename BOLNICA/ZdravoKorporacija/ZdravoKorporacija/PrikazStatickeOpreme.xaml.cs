@@ -1,5 +1,6 @@
 ﻿using Model;
-using PoslovnaLogika;
+
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -33,7 +34,7 @@ namespace ZdravoKorporacija
             if (rasporedjenaOprema == null)
             {
                 CRUDStatickeOpreme = true;
-                ListStatickaOprema = RukovanjeStatickomOpremom.observableStatickaOprema;
+                ListStatickaOprema = RukovanjeStatickomOpremomServis.observableStatickaOprema;
 
             } else
             {

@@ -9,18 +9,17 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Model;
-using RadSaDatotekama;
-using ZdravoKorporacija.RadSaDatotekama;
+using ZdravoKorporacija.Repozitorijum;
 
-namespace PoslovnaLogika
+namespace Servis
 {
-    public class RukovanjeStatickomOpremom
+    public class RukovanjeStatickomOpremomServis
     {
         public static List<StatickaOprema> statickaOprema = new List<StatickaOprema>();
         public static ObservableCollection<StatickaOprema> observableStatickaOprema = new ObservableCollection<StatickaOprema>();
         public static void inicijalizuj()
         {
-            statickaOprema = SkladisteStatickeOpreme.UcitajStatickuOpremu();
+            statickaOprema = StatickeOpremeRepozitorijum.UcitajStatickuOpremu();
             OsveziKolekciju();
         }
         
@@ -52,7 +51,7 @@ namespace PoslovnaLogika
             else
             {
                 statickaOprema.Add(unetaStatickaOprema);
-                SkladisteStatickeOpreme.UpisiStatickuOpremu();
+                StatickeOpremeRepozitorijum.UpisiStatickuOpremu();
                 OsveziKolekciju();
                 return true;
             }
@@ -75,7 +74,7 @@ namespace PoslovnaLogika
                 }
 
             }
-            SkladisteStatickeOpreme.UpisiStatickuOpremu();
+            StatickeOpremeRepozitorijum.UpisiStatickuOpremu();
             OsveziKolekciju();
 
             return true;
@@ -98,7 +97,7 @@ namespace PoslovnaLogika
             }
             statickaOprema = statickaOpremaBezIzbrisane;
             OsveziKolekciju();
-            SkladisteStatickeOpreme.UpisiStatickuOpremu();
+            StatickeOpremeRepozitorijum.UpisiStatickuOpremu();
             return nadjena;
         }
 
@@ -128,12 +127,14 @@ namespace PoslovnaLogika
         public static List<RasporedjenaStatickaOprema> NadjiSvuRasporedjenuPoSalama()
         {
             List<RasporedjenaStatickaOprema> rasoredjeno = new List<RasporedjenaStatickaOprema>();
-            foreach(Sala s in RukovanjeSalama.sala)
+            foreach(Sala s in SalaServis.sala)
             {
                 rasoredjeno.AddRange(s.RasporedjenaStatickaOprema);
             }
 
             return rasoredjeno;
         }
-}
+
+        public ZdravoKorporacija.Repozitorijum.StatickeOpremeRepozitorijum statickeOpremeRepozitorijum;
+    }
 }

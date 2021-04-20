@@ -1,5 +1,6 @@
 ﻿using Model;
-using PoslovnaLogika;
+
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,8 @@ namespace ZdravoKorporacija
         public DodajRasporedjivanjeDinamickeOpreme()
         {
             InitializeComponent();
-            cmbDinamicka.ItemsSource = RukovanjeDinamickomOpremom.dinamickaOprema;
-            cmbProstorija.ItemsSource = RukovanjeSalama.sala;
+            cmbDinamicka.ItemsSource = RukovanjeDinamickomOpremomServis.dinamickaOprema;
+            cmbProstorija.ItemsSource = SalaServis.sala;
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
@@ -46,12 +47,12 @@ namespace ZdravoKorporacija
             }
 
             ZahtevZaRasporedjivanjeDinamickeOpreme zahtev = new ZahtevZaRasporedjivanjeDinamickeOpreme();
-            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.pronadji();
+            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.pronadji();
             zahtev.Kolicina = 4; // txtKolicina.Text;
             zahtev.RasporedjenoOd = rasporedjenoOd.Value;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.DinamickaOpremaId = (string)cmbDinamicka.SelectedValue;
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.DodajDinamickuOpremuProstorija(zahtev);
+            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.DodajDinamickuOpremuProstorija(zahtev);
 
         }
 

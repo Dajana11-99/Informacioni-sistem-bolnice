@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
-using PoslovnaLogika;
+
+using Servis;
 
 namespace ZdravoKorporacija
 {
@@ -56,7 +57,7 @@ namespace ZdravoKorporacija
         {
             List<Lekar> pomocna = new List<Lekar>();
            
-            foreach (Lekar l in RukovanjeTerminima.pom)
+            foreach (Lekar l in TerminServis.pom)
             {
                 if (l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
                 {
@@ -81,7 +82,7 @@ namespace ZdravoKorporacija
                 return;
             }
 
-            RukovanjeTerminima.IzmenaPregleda(id, lekar.Text, formatirano, vreme.Text);
+            TerminServis.IzmenaPregleda(id, lekar.Text, formatirano, vreme.Text);
             this.Close();
         }
 

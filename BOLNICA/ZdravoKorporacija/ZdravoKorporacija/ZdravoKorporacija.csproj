@@ -116,6 +116,13 @@
     <Compile Include="IzmeniStatickuOpremu.xaml.cs">
       <DependentUpon>IzmeniStatickuOpremu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Kontroler\DinamickaOpremaKontroler.cs" />
+    <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
+    <Compile Include="Kontroler\OpremaProstorijaKontroler.cs" />
+    <Compile Include="Kontroler\SalaKontroler.cs" />
+    <Compile Include="Kontroler\StatickaOpremaKontroler.cs" />
+    <Compile Include="Kontroler\TerminKontroler.cs" />
+    <Compile Include="Kontroler\ZahteviKontroler.cs" />
     <Compile Include="LekarWindow.xaml.cs">
       <DependentUpon>LekarWindow.xaml</DependentUpon>
     </Compile>
@@ -162,10 +169,10 @@
     <Compile Include="PacijentNoviNalog.xaml.cs">
       <DependentUpon>PacijentNoviNalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PoslovnaLogika\RukovanjeDinamickomOpremom.cs" />
-    <Compile Include="PoslovnaLogika\RukovanjeZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
-    <Compile Include="PoslovnaLogika\RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.cs" />
-    <Compile Include="PoslovnaLogika\RukovanjeStatickomOpremom.cs" />
+    <Compile Include="Servis\RukovanjeDinamickomOpremomServis.cs" />
+    <Compile Include="Servis\RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.cs" />
+    <Compile Include="Servis\RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.cs" />
+    <Compile Include="Servis\RukovanjeStatickomOpremomServis.cs" />
     <Compile Include="PriakzSala.xaml.cs">
       <DependentUpon>PriakzSala.xaml</DependentUpon>
     </Compile>
@@ -181,15 +188,15 @@
     <Compile Include="PrikazTerminaPacijenta.xaml.cs">
       <DependentUpon>PrikazTerminaPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RadSaDatotekama\SkladisteDinamickeOpreme.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteLekara.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteNalogaPacijent.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteSala.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteZahtevZaRasporedjivanjeStatickeOpreme.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteStatickeOpreme.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteTermina.cs" />
-    <Compile Include="RadSaDatotekama\SkladisteZahteva.cs" />
+    <Compile Include="Repozitorijum\DinamickeOpremeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\LekarRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\NaloziPacijenataRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\SalaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\ZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
+    <Compile Include="Repozitorijum\SkladisteZahtevZaRasporedjivanjeStatickeOpreme.cs" />
+    <Compile Include="Repozitorijum\StatickeOpremeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\TerminRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\ZahtevRepozitorijum.cs" />
     <Compile Include="RasporedjivanjeDinamickeOpreme.xaml.cs">
       <DependentUpon>RasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
     </Compile>
@@ -370,10 +377,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PoslovnaLogika\RukovanjeSalama.cs" />
-    <Compile Include="PoslovnaLogika\RukovanjeTerminima.cs" />
-    <Compile Include="PoslovnaLogika\RukovanjeZahtevima.cs" />
-    <Compile Include="PoslovnaLogika\UpravljanjePacijentima.cs" />
+    <Compile Include="Servis\SalaServis.cs" />
+    <Compile Include="Servis\TerminServis.cs" />
+    <Compile Include="Servis\ZahtevServis.cs" />
+    <Compile Include="Servis\NaloziPacijenataServis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

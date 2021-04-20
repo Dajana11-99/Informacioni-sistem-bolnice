@@ -9,18 +9,18 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Model;
-using RadSaDatotekama;
-using ZdravoKorporacija.RadSaDatotekama;
 
-namespace PoslovnaLogika
+using ZdravoKorporacija.Repozitorijum;
+
+namespace Servis
 {
-    public class RukovanjeDinamickomOpremom
+    public class RukovanjeDinamickomOpremomServis
     {
         public static List<DinamickaOprema> dinamickaOprema = new List<DinamickaOprema>();
         public static ObservableCollection<DinamickaOprema> observableDinamickaOprema = new ObservableCollection<DinamickaOprema>();
         public static void inicijalizuj()
         {
-            dinamickaOprema = SkladisteDinamickeOpreme.UcitajDinamickuOpremu();
+            dinamickaOprema = DinamickeOpremeRepozitorijum.UcitajDinamickuOpremu();
             OsveziKolekciju();
         }
 
@@ -52,7 +52,7 @@ namespace PoslovnaLogika
             else
             {
                 dinamickaOprema.Add(unetaDinamickaOprema);
-                SkladisteDinamickeOpreme.UpisiDinamickuOpremu();
+              DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
                 OsveziKolekciju();
                 return true;
             }
@@ -75,7 +75,7 @@ namespace PoslovnaLogika
                 }
 
             }
-            SkladisteDinamickeOpreme.UpisiDinamickuOpremu();
+         DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             OsveziKolekciju();
 
             return true;
@@ -98,7 +98,7 @@ namespace PoslovnaLogika
             }
             dinamickaOprema = dinamickaOpremaBezIzbrisane;
             OsveziKolekciju();
-            SkladisteDinamickeOpreme.UpisiDinamickuOpremu();
+           DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             return nadjena;
         }
 
@@ -122,5 +122,7 @@ namespace PoslovnaLogika
             foreach (DinamickaOprema so in dinamickaOprema)
                 observableDinamickaOprema.Add(so);
         }
+
+        public ZdravoKorporacija.Repozitorijum.DinamickeOpremeRepozitorijum dinamickeOpremeRepozitorijum;
     }
 }

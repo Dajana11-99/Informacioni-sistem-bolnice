@@ -1,5 +1,6 @@
 ﻿using Model;
-using PoslovnaLogika;
+
+using Servis;
 using System.Collections.ObjectModel;
 using System.Windows;
 
@@ -15,7 +16,7 @@ namespace ZdravoKorporacija
         public RasporedjivanjeStatickeOpreme()
         {
             InitializeComponent();
-            ListRasporedele = RukovanjeZahtevZaRasporedjivanjeStatickeOpreme.observableZahtevZaRasporedjivanjeStatickeOpreme;
+            ListRasporedele = RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.observableZahtevZaRasporedjivanjeStatickeOpreme;
 
         }
 

@@ -13,9 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using System.Collections.ObjectModel;
-using PoslovnaLogika;
+
 using Model;
 using System.ComponentModel;
+using Servis;
 
 namespace ZdravoKorporacija
 {
@@ -30,7 +31,7 @@ namespace ZdravoKorporacija
         public PrikazPacijenata()
         {
             InitializeComponent();
-            ListaPacijenataXMAL = new ObservableCollection<Pacijent>(UpravljanjePacijentima.ListaPacijenata);
+            ListaPacijenataXMAL = new ObservableCollection<Pacijent>(NaloziPacijenataServis.ListaPacijenata);
             //this.DataContext = this;
             //ListaPacijenataXMAL = (ObservableCollection)UpravljanjePacijentima.ListaPacijenata;
             /* foreach(Pacijent P in UpravljanjePacijentima.ListaPacijenata)

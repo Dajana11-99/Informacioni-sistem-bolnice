@@ -6,25 +6,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Model;
-using PoslovnaLogika;
+using Servis;
 
-namespace ZdravoKorporacija.RadSaDatotekama
+namespace ZdravoKorporacija.Repozitorijum
 {
-    class SkladisteLekara
+    class LekarRepozitorijum
     {
         public static List<Lekar> ucitajLekare()
         {
             if (!File.Exists("lekari.xml") || File.ReadAllText("lekari.xml").Trim().Equals(""))
             {
-                return RukovanjeTerminima.pom;
+                return TerminServis.pom;
             }
             else
             {
                 FileStream fileStream = File.OpenRead("lekari.xml");
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
-                RukovanjeTerminima.pom = (List<Lekar>)xmlSerializer.Deserialize(fileStream);
+                TerminServis.pom = (List<Lekar>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
-                return RukovanjeTerminima.pom;
+                return TerminServis.pom;
 
             }
 
@@ -34,7 +34,7 @@ namespace ZdravoKorporacija.RadSaDatotekama
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
             TextWriter tw = new StreamWriter("lekari.xml");
-            xmlSerializer.Serialize(tw, RukovanjeTerminima.pom);
+            xmlSerializer.Serialize(tw, TerminServis.pom);
             tw.Close();
 
         }

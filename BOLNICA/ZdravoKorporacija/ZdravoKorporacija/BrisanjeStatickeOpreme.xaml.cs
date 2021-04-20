@@ -1,4 +1,5 @@
-﻿using PoslovnaLogika;
+﻿
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeStatickomOpremom.ObrisiStatickuOpremu(statickaOpremaId);
+            RukovanjeStatickomOpremomServis.ObrisiStatickuOpremu(statickaOpremaId);
             this.Close();
         }
     }

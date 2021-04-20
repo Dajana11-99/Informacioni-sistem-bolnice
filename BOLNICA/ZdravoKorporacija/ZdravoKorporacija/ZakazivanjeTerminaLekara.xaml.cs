@@ -1,18 +1,11 @@
-﻿using Model;
-using PoslovnaLogika;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Xml.Serialization;
+using Model;
+using Servis;
+
 
 namespace ZdravoKorporacija
 {
@@ -34,7 +27,7 @@ namespace ZdravoKorporacija
         {
             List<Lekar> pomocna = new List<Lekar>();
 
-            foreach (Lekar l in RukovanjeTerminima.pom)
+            foreach (Lekar l in TerminServis.pom)
             {
                 if (!l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
                 {
@@ -49,7 +42,7 @@ namespace ZdravoKorporacija
 
         private void btnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
         {
-            String id = RukovanjeTerminima.pronadji();
+            String id = TerminServis.pronadji();
             string[] pom = cmbLekar.Text.Split(' ');
             Lekar l = new Lekar(pom[0], pom[1]);
            
@@ -103,7 +96,7 @@ namespace ZdravoKorporacija
 
             Termin t = new Termin(id, tipP, vr, predvidjenoVreme, formatirano, s, p, l);
 
-            RukovanjeTerminima.ZakaziTermin(t);
+            TerminServis.ZakaziTermin(t);
             this.Close();
 
 

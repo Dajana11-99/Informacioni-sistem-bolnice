@@ -1,4 +1,5 @@
-﻿using PoslovnaLogika;
+﻿
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeTerminima.OtkaziTermin(id);
+            TerminServis.OtkaziTermin(id);
             this.Close();
         }
     }
