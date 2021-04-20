@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.RasporedTermina"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="582">
+    <Grid Margin="0,0,0.2,9.6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="64*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Margin="0,0,0.2,0.6" Grid.RowSpan="2">
+            <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Raspored termina</Label>
+            <DataGrid x:Name="TerminiPacijentaa" ItemsSource="{Binding TerminiPacijenta}" IsReadOnly="true"
+                  SelectionMode="Single"  Margin="15,5,0,20" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="195" HorizontalAlignment="Left" Width="544">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}"/>
+                    <DataGridTextColumn Header="Tip termina" Binding="{Binding TipTermina}" />
+                    <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.CeloIme}"/>
+                    <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"/>
+                    <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Vreme}"/>
+                    <DataGridTextColumn Header="Trajanje termina" Binding="{Binding trajanjeTermina}"/>
+                    <DataGridTextColumn Header="Sala" Binding="{Binding Sala.Id}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Height="39" >
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Margin="20,0,15,5"  Grid.Column="0"  Content="Izmena termina"     x:Name="izmenaTermina"   Click="izmenaTermina_Click"/>
+                <Button Margin="19.8,0,10.4,5"  Grid.Column="1" Content="Otkazivanje termina"  x:Name="OtkazivanjeTermina"  Click="OtkazivanjeTermina_Click"/>
+                <Button Margin="20,0,26.2,5" Grid.Column="2" Content="Izveštaj o terminima"  x:Name="Izvestaj" Click="Izvestaj_Click"  />
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

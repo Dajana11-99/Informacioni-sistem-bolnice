@@ -82,7 +82,7 @@ namespace ZdravoKorporacija
                 return;
             }
 
-            TerminServis.IzmenaPregleda(id, lekar.Text, formatirano, vreme.Text);
+          //  TerminServis.IzmenaPregleda(id, lekar.Text, formatirano, vreme.Text);
             this.Close();
         }
 

@@ -1,2 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pacijent>
+    <korisnik>
+      <KorisnickoIme>jova.jovic</KorisnickoIme>
+      <Sifra>jova.jovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Jova</Ime>
+    <Prezime>Jovic</Prezime>
+    <Jmbg>1234567891234</Jmbg>
+    <Email>jova@gmail.com</Email>
+    <adresaStanovanja>
+      <Broj>23</Broj>
+      <Ulica>Koste Pavlovica</Ulica>
+    </adresaStanovanja>
+    <karton>
+      <recept />
+      <OdeljenjeNaPrijemu>O1</OdeljenjeNaPrijemu>
+      <Ime>Jova</Ime>
+      <Prezime>Jovic</Prezime>
+      <ImeRoditelja>Milan</ImeRoditelja>
+      <DatumRodjenja>1996-10-03T00:00:00</DatumRodjenja>
+      <Pol>Muski</Pol>
+      <Telefon>555-222</Telefon>
+      <BrojKartona>15624</BrojKartona>
+      <BracniStatus>Neozenjen</BracniStatus>
+      <Anamneza>
+        <Simptomi />
+        <IzvestajLekara />
+      </Anamneza>
+    </karton>
+    <termin />
+    <idPacijenta>1</idPacijenta>
+  </Pacijent>
+  <Pacijent>
+    <korisnik>
+      <KorisnickoIme>pera.peric</KorisnickoIme>
+      <Sifra>pera.peric</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Pera</Ime>
+    <Prezime>Peric</Prezime>
+    <Jmbg>4321432143215</Jmbg>
+    <Email>pera@gmail.com</Email>
+    <adresaStanovanja>
+      <Broj>24</Broj>
+      <Ulica>Veselina Maslese</Ulica>
+    </adresaStanovanja>
+    <karton>
+      <recept />
+      <OdeljenjeNaPrijemu>O2</OdeljenjeNaPrijemu>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <ImeRoditelja>Kosta</ImeRoditelja>
+      <DatumRodjenja>2000-07-12T00:00:00</DatumRodjenja>
+      <Pol>Muski</Pol>
+      <Telefon>064 3575975</Telefon>
+      <BrojKartona>12345</BrojKartona>
+      <BracniStatus>Udovac</BracniStatus>
+      <Anamneza>
+        <Simptomi />
+        <IzvestajLekara />
+      </Anamneza>
+    </karton>
+    <termin />
+    <idPacijenta>2</idPacijenta>
+  </Pacijent>
+  <Pacijent>
+    <korisnik>
+      <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+      <Sifra>dajana.zlokapa</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Dajana</Ime>
+    <Prezime>Zlokapa</Prezime>
+    <Jmbg>2711999105018</Jmbg>
+    <Email>dajana.zlokapa@gmail.com</Email>
+    <adresaStanovanja>
+      <Broj>4</Broj>
+      <Ulica>Adresa</Ulica>
+    </adresaStanovanja>
+    <termin />
+    <idPacijenta>P1</idPacijenta>
+  </Pacijent>
+</ArrayOfPacijent>

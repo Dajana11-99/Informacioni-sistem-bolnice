@@ -24,7 +24,7 @@ namespace Servis
                 ListaPacijenata.Add(new Pacijent(i.ToString()));
         }
 
-        public static Pacijent PretragaPoId(string Id)
+        public static Pacijent PretragaPoId(String Id)
         {
             foreach (Pacijent P in ListaPacijenata)
             {
@@ -90,9 +90,15 @@ namespace Servis
             return false;
         }
 
-        public static Pacijent PretragaPoId(int iDPacijenta)
+      public static Pacijent pretraziPoKorisnickom(String korisnicko)
         {
-            // TODO: implement
+            foreach(Pacijent p in ListaPacijenata)
+            {
+                if (p.korisnik.KorisnickoIme.Equals(korisnicko))
+                {
+                    return p;
+                }
+            }
             return null;
         }
 

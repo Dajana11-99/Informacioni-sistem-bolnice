@@ -49,7 +49,35 @@ namespace ZdravoKorporacija.Repozitorijum
 
         }
 
-       
+
+        public static List<Termin> ucitajSlobodneTermine()
+        {
+            if (!File.Exists("slobodniTermini.xml") || File.ReadAllText("slobodniTermini.xml").Trim().Equals(""))
+            {
+                return TerminServis.SlobodniTermini;
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead("slobodniTermini.xml");
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
+                TerminServis.SlobodniTermini = (List<Termin>)xmlSerializer.Deserialize(fileStream);
+                fileStream.Close();
+                return TerminServis.SlobodniTermini;
+
+            }
+
+        }
+
+        public static void upisiSlobodneTermine()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
+            TextWriter tw = new StreamWriter("slobodniTermini.xml");
+            xmlSerializer.Serialize(tw, TerminServis.SlobodniTermini);
+            tw.Close();
+
+        }
+
+
 
 
     }

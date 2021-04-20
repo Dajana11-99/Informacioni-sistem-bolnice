@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLekar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Lekar>
-    <Ime>Dajana</Ime>
-    <Prezime>Zlokapa</Prezime>
+    <korisnik>
+      <KorisnickoIme>pera.peric</KorisnickoIme>
+      <Sifra>pera.peric</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Pera</Ime>
+    <Prezime>Peric</Prezime>
     <Jmbg>2711999105018</Jmbg>
     <Email>dajanazlokapa@gmail.com</Email>
-    <CeloIme>Dajana Zlokapa</CeloIme>
+    <CeloIme>Pera Peric</CeloIme>
     <adresaStanovanja>
       <Broj>2A</Broj>
       <Ulica>Ljubice Ravasi</Ulica>
@@ -17,6 +23,12 @@
     <idZaposlenog>L1</idZaposlenog>
   </Lekar>
   <Lekar>
+    <korisnik>
+      <KorisnickoIme>stefan.markovic</KorisnickoIme>
+      <Sifra>stefan.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
     <Ime>Stefan</Ime>
     <Prezime>Markovic</Prezime>
     <Jmbg>3008997181967</Jmbg>
@@ -29,10 +41,16 @@
     <termin />
     <zahtevUpravniku />
     <Zauzet>false</Zauzet>
-    <Specijalizacija>Neurohirurg</Specijalizacija>
-    <idZaposlenog>L2 </idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
+    <idZaposlenog>L2</idZaposlenog>
   </Lekar>
   <Lekar>
+    <korisnik>
+      <KorisnickoIme>nikola.markovic</KorisnickoIme>
+      <Sifra>nikola.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
     <Ime>Nikola</Ime>
     <Prezime>Nikolic</Prezime>
     <Jmbg>2401965194820</Jmbg>
@@ -46,9 +64,15 @@
     <zahtevUpravniku />
     <Zauzet>false</Zauzet>
     <Specijalizacija>Ostapraksa</Specijalizacija>
-    <idZaposlenog>L3 </idZaposlenog>
+    <idZaposlenog>L3</idZaposlenog>
   </Lekar>
   <Lekar>
+    <korisnik>
+      <KorisnickoIme>marko.markovic</KorisnickoIme>
+      <Sifra>marko.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
     <Ime>Marko</Ime>
     <Prezime>Markovic</Prezime>
     <Jmbg>65395728557</Jmbg>
@@ -65,6 +89,12 @@
     <idZaposlenog>L4</idZaposlenog>
   </Lekar>
   <Lekar>
+    <korisnik>
+      <KorisnickoIme>milan.markovic</KorisnickoIme>
+      <Sifra>milan.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
     <Ime>Milan</Ime>
     <Prezime>Djenic</Prezime>
     <Jmbg>5686323676</Jmbg>
@@ -81,6 +111,12 @@
     <idZaposlenog>L5</idZaposlenog>
   </Lekar>
   <Lekar>
+    <korisnik>
+      <KorisnickoIme>petar.markovic</KorisnickoIme>
+      <Sifra>petar.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
     <Ime>Petar</Ime>
     <Prezime>Petrovic</Prezime>
     <Jmbg>6583892377523</Jmbg>

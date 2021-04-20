@@ -1,12 +1,12 @@
-﻿<Window x:Class="ZdravoKorporacija.Otkazivanje"
+﻿<Window x:Class="ZdravoKorporacija.PacijentPrikaz.OtkazivanjeTermina"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ZdravoKorporacija"
+        xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="Otkazivanje" Height="250" Width="400">
-    <Grid>
+        Title="OtkazivanjeTermina" Height="250" Width="400">
+    <Grid >
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,9 +18,9 @@
         </Grid.RowDefinitions>
 
         <Label Grid.ColumnSpan="2" Content="Da li ste sigurni da želite da otkažete termin?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"/>
-        <Button Grid.Row="1" Grid.Column="0" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="70 30 00 00" Width="70" Height="30" Click="Button_Click"/>
-        <Button Grid.Row="1" Grid.Column="1" Content="Odustani" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="00 30 70 00"  Width="70" Height="30" Click="Button_Click_1"/>
-        
+
+        <Button Click="Button_Click"  Grid.Row="1" Grid.Column="0" Content="Odustani" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="30,10" Width="70" Height="30" Background="WhiteSmoke"/>
+        <Button Click="Button_Click_1"  Grid.Row="1" Grid.Column="1" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,10" Width="70" Height="30" Background="WhiteSmoke"/>
 
     </Grid>
 </Window>

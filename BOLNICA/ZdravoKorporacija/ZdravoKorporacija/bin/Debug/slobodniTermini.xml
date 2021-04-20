@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Termin>
+    <Vreme>18:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>22/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>8</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L1</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>23/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>9</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L1</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>26/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>10</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L1</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>18:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>21/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>2</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A2</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>marko.markovic</KorisnickoIme>
+        <Sifra>marko.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Marko</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>65395728557</Jmbg>
+      <Email>marko.markovic@gmail.com</Email>
+      <CeloIme>Marko Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 12</Broj>
+        <Ulica>Mihajla Pupina</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L4</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>18:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>22/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>3</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A2</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>marko.markovic</KorisnickoIme>
+        <Sifra>marko.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Marko</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>65395728557</Jmbg>
+      <Email>marko.markovic@gmail.com</Email>
+      <CeloIme>Marko Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 12</Broj>
+        <Ulica>Mihajla Pupina</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L4</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>23/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>4</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A2</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>marko.markovic</KorisnickoIme>
+        <Sifra>marko.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Marko</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>65395728557</Jmbg>
+      <Email>marko.markovic@gmail.com</Email>
+      <CeloIme>Marko Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 12</Broj>
+        <Ulica>Mihajla Pupina</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L4</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>26/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>5</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A2</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>marko.markovic</KorisnickoIme>
+        <Sifra>marko.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Marko</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>65395728557</Jmbg>
+      <Email>marko.markovic@gmail.com</Email>
+      <CeloIme>Marko Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 12</Broj>
+        <Ulica>Mihajla Pupina</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L4</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>21/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>11</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A1</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>stefan.markovic</KorisnickoIme>
+        <Sifra>stefan.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Stefan</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>3008997181967</Jmbg>
+      <Email>stefan.markovic@gmail.com</Email>
+      <CeloIme>Stefan Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 43</Broj>
+        <Ulica>Laze Lazarevica</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L2</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>18:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>21/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>12</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A1</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>stefan.markovic</KorisnickoIme>
+        <Sifra>stefan.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Stefan</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>3008997181967</Jmbg>
+      <Email>stefan.markovic@gmail.com</Email>
+      <CeloIme>Stefan Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 43</Broj>
+        <Ulica>Laze Lazarevica</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L2</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>18:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>22/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>13</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A1</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>stefan.markovic</KorisnickoIme>
+        <Sifra>stefan.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Stefan</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>3008997181967</Jmbg>
+      <Email>stefan.markovic@gmail.com</Email>
+      <CeloIme>Stefan Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 43</Broj>
+        <Ulica>Laze Lazarevica</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L2</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>23/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>14</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A1</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>stefan.markovic</KorisnickoIme>
+        <Sifra>stefan.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Stefan</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>3008997181967</Jmbg>
+      <Email>stefan.markovic@gmail.com</Email>
+      <CeloIme>Stefan Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 43</Broj>
+        <Ulica>Laze Lazarevica</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L2</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>26/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>15</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>A1</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>stefan.markovic</KorisnickoIme>
+        <Sifra>stefan.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Stefan</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>3008997181967</Jmbg>
+      <Email>stefan.markovic@gmail.com</Email>
+      <CeloIme>Stefan Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 43</Broj>
+        <Ulica>Laze Lazarevica</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L2</idZaposlenog>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>21/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>6</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L1</idZaposlenog>
+    </Lekar>
+  </Termin>
+</ArrayOfTermin>

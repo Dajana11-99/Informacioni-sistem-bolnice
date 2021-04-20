@@ -1,43 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <Vreme>09:30</Vreme>
+    <Vreme>18:30</Vreme>
     <trajanjeTermina>30</trajanjeTermina>
-    <Datum>04/23/2021</Datum>
+    <Datum>21/04/2021</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>7</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>2</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L1</idZaposlenog>
+    </Lekar>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <idPacijenta>P1</idPacijenta>
+    </Pacijent>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>21/04/2021</Datum>
     <TipTermina>Pregled</TipTermina>
     <IdTermina>1</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
-      <Id>A1</Id>
+      <Id>A2</Id>
       <Zauzeta>false</Zauzeta>
-      <sprat>2</sprat>
+      <sprat>4</sprat>
       <kvadratura>0</kvadratura>
       <RasporedjenaStatickaOprema />
       <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
+      <korisnik>
+        <KorisnickoIme>marko.markovic</KorisnickoIme>
+        <Sifra>marko.markovic</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Marko</Ime>
+      <Prezime>Markovic</Prezime>
+      <Jmbg>65395728557</Jmbg>
+      <Email>marko.markovic@gmail.com</Email>
+      <CeloIme>Marko Markovic</CeloIme>
+      <adresaStanovanja>
+        <Broj> 12</Broj>
+        <Ulica>Mihajla Pupina</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L4</idZaposlenog>
+    </Lekar>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
       <Ime>Dajana</Ime>
       <Prezime>Zlokapa</Prezime>
-      <CeloIme>Dajana Zlokapa</CeloIme>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
       <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
-    </Lekar>
-    <Pacijent>
-      <termin />
-      <idPacijenta>Nikola Nikolic</idPacijenta>
+      <idPacijenta>P1</idPacijenta>
     </Pacijent>
   </Termin>
   <Termin>
-    <Vreme>09:00</Vreme>
+    <Vreme>16:30</Vreme>
     <trajanjeTermina>30</trajanjeTermina>
-    <Datum>04/28/2021</Datum>
+    <Datum>21/04/2021</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>2</IdTermina>
+    <IdTermina>6</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
-      <Id>A1</Id>
+      <Id>a3</Id>
       <Zauzeta>false</Zauzeta>
       <sprat>2</sprat>
       <kvadratura>0</kvadratura>
@@ -45,72 +128,44 @@
       <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
-      <Ime>Nikola</Ime>
-      <Prezime>Nikolic</Prezime>
-      <CeloIme>Nikola Nikolic</CeloIme>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L1</idZaposlenog>
     </Lekar>
     <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
       <termin />
-      <idPacijenta>neko</idPacijenta>
-    </Pacijent>
-  </Termin>
-  <Termin>
-    <Vreme>10:00</Vreme>
-    <trajanjeTermina>3</trajanjeTermina>
-    <TipTermina>Operacija</TipTermina>
-    <IdTermina>3</IdTermina>
-    <Sala>
-      <TipSale>Operaciona</TipSale>
-      <Id>gh</Id>
-      <Zauzeta>false</Zauzeta>
-      <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
-      <RasporedjenaDinamickaOprema />
-    </Sala>
-    <Lekar>
-      <Ime>Milan</Ime>
-      <Prezime>Djenic</Prezime>
-      <CeloIme>Milan Djenic</CeloIme>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
-    </Lekar>
-    <Pacijent>
-      <termin />
-      <idPacijenta>Vasilije Dojcinov</idPacijenta>
-    </Pacijent>
-  </Termin>
-  <Termin>
-    <Vreme>10:00</Vreme>
-    <trajanjeTermina>34</trajanjeTermina>
-    <Datum>04/20/2021</Datum>
-    <TipTermina>Operacija</TipTermina>
-    <IdTermina>4</IdTermina>
-    <Sala>
-      <TipSale>Operaciona</TipSale>
-      <Id>ggg</Id>
-      <Zauzeta>false</Zauzeta>
-      <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
-      <RasporedjenaDinamickaOprema />
-    </Sala>
-    <Lekar>
-      <Ime>Petar</Ime>
-      <Prezime>Petrovic</Prezime>
-      <CeloIme>Petar Petrovic</CeloIme>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
-    </Lekar>
-    <Pacijent>
-      <termin />
-      <idPacijenta>Vasilije Dojcinov</idPacijenta>
+      <idPacijenta>P1</idPacijenta>
     </Pacijent>
   </Termin>
 </ArrayOfTermin>

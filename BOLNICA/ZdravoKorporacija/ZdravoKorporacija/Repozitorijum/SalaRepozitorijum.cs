@@ -14,15 +14,15 @@ namespace ZdravoKorporacija.Repozitorijum
         {
             if (!File.Exists("sale.xml") || File.ReadAllText("sale.xml").Trim().Equals(""))
             {
-                return new List<Sala>();
+                return SalaServis.sala;
             }
             else
             {
                 FileStream fileStream = File.OpenRead("sale.xml");
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sala>));
-                var sale = (List<Sala>)xmlSerializer.Deserialize(fileStream);
+                SalaServis.sala = (List<Sala>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
-                return sale;
+                return SalaServis.sala;
 
             }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Servis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,33 +13,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using Servis;
-
-namespace ZdravoKorporacija
+namespace ZdravoKorporacija.PacijentPrikaz
 {
     /// <summary>
-    /// Interaction logic for Otkazivanje.xaml
+    /// Interaction logic for OtkazivanjeTermina.xaml
     /// </summary>
-    public partial class Otkazivanje : Window
+    public partial class OtkazivanjeTermina : Window
     {
-        String id = null;
-        public Otkazivanje(String idTermina)
+        String izabran = null;
+        public OtkazivanjeTermina(String idTermina)
         {
-            id = idTermina;
             InitializeComponent();
-
+            izabran = idTermina;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            TerminServis.OtkaziPregled(id);
             this.Close();
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            TerminServis.OtkaziPregled(izabran);
             this.Close();
         }
     }

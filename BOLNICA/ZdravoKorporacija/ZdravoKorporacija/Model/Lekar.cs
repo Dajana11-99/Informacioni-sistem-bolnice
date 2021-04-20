@@ -51,7 +51,7 @@ namespace Model
             this.idZaposlenog = idZaposlenog;
             Zauzet = zauzet;
             Specijalizacija = specijalizacija;
-     
+            CeloIme = ime + " " + prezime;
         }
 
         public Lekar(String ime, String prezime) : base(ime, prezime)

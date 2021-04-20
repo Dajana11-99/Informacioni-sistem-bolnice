@@ -39,11 +39,23 @@ namespace ZdravoKorporacija
             Lozinka.PasswordChar = '*';
             Lozinka.MaxLength = 15;
 
-            //RukovanjeTerminima.inicijalizuj();
-            SalaServis.inicijalizuj();
+            SalaRepozitorijum.UcitajSale();
+            //Dajana
             TerminRepozitorijum.ucitajTermine();
             LekarRepozitorijum.ucitajLekare();
-            SalaRepozitorijum.UcitajSale();
+           
+          // TerminServis.inicijalizuj(); //Inicijalizacija lekara
+            //TerminServis.inicijalizujSlobodneTermine();
+           TerminRepozitorijum.ucitajSlobodneTermine();
+
+
+
+
+           //////----------------------
+            //SalaServis.inicijalizuj();
+            
+            
+            
             RukovanjeStatickomOpremomServis.inicijalizuj();
             RukovanjeDinamickomOpremomServis.inicijalizuj();
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.inicijalizuj();
@@ -53,8 +65,11 @@ namespace ZdravoKorporacija
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
             RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
 
-           // NaloziPacijenataServis.inic();
+            //NaloziPacijenataServis.inic();
             NaloziPacijenataRepozitorijum.UcitajPacijente();
+
+
+            
         }
 
         private void potvrdi_Click(object sender, RoutedEventArgs e)
@@ -130,14 +145,14 @@ namespace ZdravoKorporacija
                     }
                 }
             }
-            foreach (Pacijent u in Pacijenti)
+            foreach (Pacijent u in NaloziPacijenataServis.ListaPacijenata)
             {
                 if (u.korisnik.KorisnickoIme.Equals(korisnickoIme.Text))
                 {
                     if (u.korisnik.Sifra.Equals(Lozinka.Password))
                     {
 
-                        PacijentGlavniProzor pg = new PacijentGlavniProzor();
+                        PacijentGlavniProzor pg = new PacijentGlavniProzor(korisnickoIme.Text);
                         pg.Show();
                         this.Close();
                         nasao = true;
@@ -166,6 +181,7 @@ namespace ZdravoKorporacija
             TerminRepozitorijum.upisiTermine();
             LekarRepozitorijum.upisiLekare();
             NaloziPacijenataRepozitorijum.UpisiPacijente();
+            TerminRepozitorijum.upisiSlobodneTermine();
         }
     }
 }

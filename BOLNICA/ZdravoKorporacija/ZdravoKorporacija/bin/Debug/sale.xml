@@ -18,4 +18,11 @@
     <RasporedjenaStatickaOprema />
     <RasporedjenaDinamickaOprema />
   </Sala>
+  <Sala>
+    <TipSale>Pregled</TipSale>
+    <Id>a3</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>2</sprat>
+    <kvadratura>0</kvadratura>
+  </Sala>
 </ArrayOfSala>
