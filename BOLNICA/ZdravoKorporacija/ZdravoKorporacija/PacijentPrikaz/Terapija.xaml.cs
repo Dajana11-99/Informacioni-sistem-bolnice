@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,21 @@ namespace ZdravoKorporacija.PacijentPrikaz
     /// </summary>
     public partial class Terapija : UserControl
     {
+        public static ObservableCollection<Recept> ReceptiPropisani { get; set; }
         public Terapija()
         {
             InitializeComponent();
+            this.DataContext = this;
+            
+            ReceptiPropisani = new ObservableCollection<Recept>();
+            
+            foreach (Recept r in PacijentGlavniProzor.ulogovan.karton.recepti)
+            {
+                Console.WriteLine("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-NASAO"+r.lek.ImeLeka);
+                ReceptiPropisani.Add(r);
+            }
+            
+
         }
     }
 }

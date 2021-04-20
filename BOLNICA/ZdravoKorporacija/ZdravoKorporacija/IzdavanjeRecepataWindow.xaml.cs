@@ -28,11 +28,9 @@ namespace ZdravoKorporacija
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Recept = new Recept(txtKolicinaLeka.Text, datePickerPocetak.SelectedDate.Value, datePickerKraj.SelectedDate.Value, double.Parse(txtPeriodUzimanja.Text));
-            Lek l = new Lek();
-            l.ImeLeka = txtNazivLeka.Text;
-            l.IdLeka = "";
-            Recept.lek = l;
+
+            Recept = new Recept(txtKolicinaLeka.Text, datePickerPocetak.SelectedDate.Value, datePickerKraj.SelectedDate.Value, double.Parse(txtPeriodUzimanja.Text),new Lek(idLeka.Text,txtNazivLeka.Text));
+           
             this.Close();
         }
 

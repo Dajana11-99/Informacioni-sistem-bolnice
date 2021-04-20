@@ -16,7 +16,7 @@
       <Ulica>Koste Pavlovica</Ulica>
     </adresaStanovanja>
     <karton>
-      <recept />
+      <recepti />
       <OdeljenjeNaPrijemu>O1</OdeljenjeNaPrijemu>
       <Ime>Jova</Ime>
       <Prezime>Jovic</Prezime>
@@ -31,7 +31,6 @@
         <IzvestajLekara />
       </Anamneza>
     </karton>
-    <termin />
     <idPacijenta>1</idPacijenta>
   </Pacijent>
   <Pacijent>
@@ -50,7 +49,7 @@
       <Ulica>Veselina Maslese</Ulica>
     </adresaStanovanja>
     <karton>
-      <recept />
+      <recepti />
       <OdeljenjeNaPrijemu>O2</OdeljenjeNaPrijemu>
       <Ime>Pera</Ime>
       <Prezime>Peric</Prezime>
@@ -65,7 +64,6 @@
         <IzvestajLekara />
       </Anamneza>
     </karton>
-    <termin />
     <idPacijenta>2</idPacijenta>
   </Pacijent>
   <Pacijent>
@@ -83,7 +81,32 @@
       <Broj>4</Broj>
       <Ulica>Adresa</Ulica>
     </adresaStanovanja>
-    <termin />
+    <karton>
+      <recepti>
+        <Recept>
+          <lek>
+            <IdLeka>123</IdLeka>
+            <ImeLeka>Paracetamol</ImeLeka>
+          </lek>
+          <KolicinaTerapije>1</KolicinaTerapije>
+          <PocetakTerapije>2021-04-21T00:00:00</PocetakTerapije>
+          <PeroidUzimanjaUSatima>8</PeroidUzimanjaUSatima>
+        </Recept>
+      </recepti>
+      <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <ImeRoditelja>Sinisa</ImeRoditelja>
+      <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+      <Pol>Zenski</Pol>
+      <Telefon>064 87956163</Telefon>
+      <BrojKartona>123</BrojKartona>
+      <BracniStatus>Neudata</BracniStatus>
+      <Anamneza>
+        <Simptomi />
+        <IzvestajLekara />
+      </Anamneza>
+    </karton>
     <idPacijenta>P1</idPacijenta>
   </Pacijent>
 </ArrayOfPacijent>

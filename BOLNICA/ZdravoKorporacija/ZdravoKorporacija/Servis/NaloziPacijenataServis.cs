@@ -54,6 +54,7 @@ namespace Servis
             p2.karton = k2;
             Karton k3 = new Karton("03", "Dajana", "Zlokapa","Sinisa", new DateTime(1999,11,11),Pol.Zenski,"064 87956163","123",BracniStatusE.Neudata,new Anamneza());
             Pacijent p3 = new Pacijent("P1", "Dajana", "Zlokapa", "2711999105018", "dajana.zlokapa@gmail.com", new AdresaStanovanja("Adresa", "4"), new Korisnik("dajana.zlokapa", "dajana.zlokapa"));
+            p3.karton = k3;
             ListaPacijenata.Add(p1);
             ListaPacijenata.Add(p2);
             ListaPacijenata.Add(p3);

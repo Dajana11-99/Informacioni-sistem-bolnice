@@ -22,6 +22,7 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             bindcombo();
+            PreuzmiSvePacijente();
         }
 
         public void bindcombo()
@@ -48,7 +49,7 @@ namespace ZdravoKorporacija
             {
                 ComboBoxItem cbi = new ComboBoxItem();
                 cbi.Tag = p.idPacijenta;
-                cbi.Content = p.Ime + " " + p.Prezime;
+                cbi.Content = p.idPacijenta;
                 cmbPacijent.Items.Add(cbi);
             }
         }

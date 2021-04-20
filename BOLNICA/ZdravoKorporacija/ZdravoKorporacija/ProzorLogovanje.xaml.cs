@@ -67,8 +67,8 @@ namespace ZdravoKorporacija
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
             RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
 
-            //NaloziPacijenataServis.inic();
-            NaloziPacijenataRepozitorijum.UcitajPacijente();
+            NaloziPacijenataServis.inic();
+            //NaloziPacijenataRepozitorijum.UcitajPacijente();
 
 
             

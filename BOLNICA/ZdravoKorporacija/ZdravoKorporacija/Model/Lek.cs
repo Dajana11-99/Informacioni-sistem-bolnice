@@ -10,8 +10,16 @@ namespace Model
 {
     public class Lek
     {
-        public  String IdLeka;
-        public String ImeLeka;
+        public String IdLeka { get; set; }
+        public String ImeLeka { get; set; }
+
+        public Lek() { }
+
+        public Lek(String id,String ime)
+        {
+            IdLeka = id;
+            ImeLeka = ime;
+        }
 
     }
 }

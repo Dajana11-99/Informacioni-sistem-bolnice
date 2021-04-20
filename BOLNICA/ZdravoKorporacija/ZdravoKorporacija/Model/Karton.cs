@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -26,12 +27,12 @@ namespace Model
         public Anamneza Anamneza { get; set; }
 
         public AdresaStanovanja adresaStanovanja { get; set; }
-        public Recept recept;
+        public List<Recept> recepti { get; set; }
 
         public Karton()
         {
             Anamneza = new Anamneza();
-            recept = new Recept();
+            recepti=new List<Recept>();
         }
         public Karton(String odeljenje, String ime, String prezime, String imeRoditelja, DateTime datumRodjenja, Pol pol, String telefon, String brojKartona, BracniStatusE bracniStatus, Anamneza anamneza)
         {
@@ -45,7 +46,8 @@ namespace Model
             BrojKartona = brojKartona;
             BracniStatus = bracniStatus;
             Anamneza = anamneza;
-            recept = new Recept();
+            recepti = new List<Recept>();
+
         }
 
         ///// <pdGenerated>default getter</pdGenerated>

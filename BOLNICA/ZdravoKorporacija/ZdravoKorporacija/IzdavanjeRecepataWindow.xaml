@@ -19,6 +19,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Content="Izdavanje recepta" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="20"/>
         <Label Content="Naziv leka:" Grid.Row="1" Grid.Column="0" FontSize="20" />
@@ -26,8 +27,10 @@
         <Label Content="Kraj terapije:" Grid.Row="3" Grid.Column="0" FontSize="20" />
         <Label Content="Kolicina leka:" Grid.Row="4" Grid.Column="0" FontSize="20" />
         <Label Content="Period uzimanja:" Grid.Row="5" Grid.Column="0" FontSize="20" />
-        <Button Content="Potvrdi" Name="btnPotvrdi" Click="btnPotvrdi_Click" Grid.Row="6" Grid.Column="0" FontSize="20" Margin="10 5 20 5" />
-        <Button Content="Odustani" Name="btnOdustani" Click="btnOdustani_Click" Grid.Row="6" Grid.Column="1" FontSize="20" Margin="10 5 20 5"/>
+        <Label Content="id leka" Grid.Row="6" Grid.Column="0" FontSize="20"></Label>
+        <TextBox x:Name="idLeka"  Grid.Row="6" Grid.Column="1" Margin="10 5 20 5" ></TextBox>
+        <Button Content="Potvrdi" Name="btnPotvrdi" Click="btnPotvrdi_Click" Grid.Row="7" Grid.Column="0" FontSize="20" Margin="10 5 20 5" />
+        <Button Content="Odustani" Name="btnOdustani" Click="btnOdustani_Click" Grid.Row="7" Grid.Column="1" FontSize="20" Margin="10 5 20 5"/>
         <TextBox Name="txtNazivLeka" Grid.Column="1" Grid.Row="1" Margin="10 5 20 5" />
         <DatePicker Name="datePickerPocetak" Grid.Column="1" Grid.Row="2" Margin="10 5 20 5" />
         <DatePicker Name="datePickerKraj" Grid.Column="1" Grid.Row="3" Margin="10 5 20 5" />

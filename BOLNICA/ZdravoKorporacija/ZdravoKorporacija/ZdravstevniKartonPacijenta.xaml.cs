@@ -45,12 +45,18 @@ namespace ZdravoKorporacija
 
         private void btnAnamneza_Click(object sender, RoutedEventArgs e)
         {
+            AnamnezaWindow anamnezaWindow = new AnamnezaWindow(pacijent.karton.BrojKartona);
+            anamnezaWindow.ShowDialog();
 
+            pacijent.karton.Anamneza = anamnezaWindow.Anamneza;
         }
 
         private void btnIzdavanjeRecepta_Click(object sender, RoutedEventArgs e)
         {
-
+            IzdavanjeRecepataWindow irw = new IzdavanjeRecepataWindow();
+            irw.ShowDialog();
+            if (irw.Recept != null)
+                pacijent.karton.recepti.Add(irw.Recept);
         }
     }
 }
