@@ -15,5 +15,7 @@ namespace ZdravoKorporacija.Kontroler
             return ObavestenjaServis.SvaObavestenja();
         }
 
+
+
     }
 }

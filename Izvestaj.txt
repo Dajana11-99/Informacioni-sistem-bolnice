@@ -1,0 +1,65 @@
+Funkcionalnosti za KT3:
+-----------------------------------------------------------------------------
+-Pacijent
+1.)Pomeranje termina sa maksimalnim pomeranje +-48h -URAĐENO
+2.)Zakazivanje sa prioritetom - URAĐENO
+3.)Obaveštenja o terapiji-Urađena obavestenja na osnovu prepisane terapije
+tako da se jednom dnevno salje obavestenje o dnevnoj dozi i kolicini lekova
+(Koliko lekova na koliko sati) 
+4.)Logovanje-URAĐENO
+
+-Lekar
+1.)Prikaz krtona-URAĐENO
+2.)Lekar vidi svoje termine-NIJE URAĐENO
+3.)Kreira i ažurira anamnezi selektovanog pacijenta-URAĐENO
+4.)Izdavanje recepta selektovanom pacijentu-URAĐENO
+
+-Upravnik
+1.)CRUD staticke opreme-URAĐENO
+2.)CRUD dinamicke opreme-URAĐENO
+3.)Rasporedjivanje staticke opreme po prostorijama putem zakazivanja upravnik
+zakaze premestaj stolice u drugu sobu. 
+
+-Sekretar
+-ODUSTAO
+
+-Peti clan
+-ODUSTAO
+-------------------------------------------------------------------------------
+POPRAVLJENE FUNKCIONALNOSTI ZA KT2
+-------------------------------------------------------------------------------
+-Pacijent
+1.)Ucitani Lekari u datoteku
+2.)Prikaz slobodnih sala na osnovu tipa termina prilkom zakazivanja
+3.)Popravljen class dijagram uvedene klase za Adresu,Mesto i Drzavu.
+4.)Popravljena serijalizacija Sala
+-Lekar
+1.)Popravljen Class diagram i dodate nove klase potrebne za izradu
+Anamneza,Lek i Recept
+2.Izmenjen karton dodate klase za Adresu,Mesto i Drzavu.
+3.)Popravljena serijalizacija Pacijenata
+-Upravnik
+1.)Omogucen unos ID Prostorije.
+---------------------------------------------------------------------------------
+
+
+
+Mirjana Jovanov-SequenceDiagram
+Pregleda:Dajana Zlokapa
+----------------------------------------------------------------------------------
+Komentar:
+Dijagram koleginice Mirjane je  uredan i čitljiv.Lako sam se snašla prilikom
+pregledanja diagrama.Diagram je korektno odrađen jedino što je koleginica zaboravila
+da promeni poruku iz Message-1.
+----------------------------------------------------------------------------------
+
+
+
+Mirjana Jovanov-SequenceDiagram
+Pregleda Stefan Markovic
+----------------------------------------------------------------------------------
+Komentar:
+Dijagram sekvence koleginici Mirjane je korektno odradjen jedino sto bih joj zamerio
+mozda za nedostajanje parametara u funkcijama ukoliko je to potrebno (posto se ne vidi)
+Sve ostalo je u najboljem redu.
+------------------------------------------------------------------------------------
