@@ -31,7 +31,6 @@
       </Anamneza>
       <recepti />
     </karton>
-    <termin />
     <idPacijenta>1</idPacijenta>
   </Pacijent>
   <Pacijent>
@@ -65,7 +64,6 @@
       </Anamneza>
       <recepti />
     </karton>
-    <termin />
     <idPacijenta>2</idPacijenta>
   </Pacijent>
   <Pacijent>
@@ -105,11 +103,12 @@
           </Lek1>
           <KolicinaTerapije>1</KolicinaTerapije>
           <PocetakTerapije>04/21/2021</PocetakTerapije>
-          <PeroidUzimanjaUSatima>7</PeroidUzimanjaUSatima>
+          <KrajTerapije>04/23/2021</KrajTerapije>
+          <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+          <idPacijenta>P1</idPacijenta>
         </Recept>
       </recepti>
     </karton>
-    <termin />
     <idPacijenta>P1</idPacijenta>
   </Pacijent>
 </ArrayOfPacijent>

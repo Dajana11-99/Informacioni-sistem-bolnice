@@ -14,8 +14,11 @@ namespace Model
 
         public String KolicinaTerapije { get; set; }
         public String PocetakTerapije { get; set; }
-        private String KrajTerapije { get; set; }
+        public String KrajTerapije { get; set; }
         public double PeroidUzimanjaUSatima { get; set; }
+
+        public String idPacijenta { get; set; }
+
 
 
         public Recept()
@@ -23,13 +26,14 @@ namespace Model
 
         }
 
-        public Recept(String kolicinaTerapije, String pocetakTerapije, String krajTarapije, double periodUzimanja,Lek lek)
+        public Recept(String kolicinaTerapije, String pocetakTerapije, String krajTarapije, double periodUzimanja,Lek lek,String pac)
         {
             KolicinaTerapije = kolicinaTerapije;
             PocetakTerapije = pocetakTerapije;
             KrajTerapije = krajTarapije;
             PeroidUzimanjaUSatima = periodUzimanja;
             this.Lek1 = lek;
+            idPacijenta = pac;
         }
 
     }

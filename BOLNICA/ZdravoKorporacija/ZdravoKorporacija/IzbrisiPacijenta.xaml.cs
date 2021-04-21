@@ -1,4 +1,5 @@
 ﻿
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,8 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class IzbrisiPacijenta : Window
     {
-        Model.Pacijent sacuvaj;
-        public IzbrisiPacijenta(Model.Pacijent P)
+        Pacijent sacuvaj;
+        public IzbrisiPacijenta(Pacijent P)
         {
             InitializeComponent();
             sacuvaj = P;

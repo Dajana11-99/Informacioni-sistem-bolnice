@@ -48,7 +48,7 @@ namespace ZdravoKorporacija
             PacijenitXName.ItemsSource = ListaPacijenataXMAL;
 
         }
-        public static void UbaciUListu(Model.Pacijent Pako)
+        public static void UbaciUListu(Pacijent Pako)
         {
             ListaPacijenataXMAL.Add(Pako);
         }

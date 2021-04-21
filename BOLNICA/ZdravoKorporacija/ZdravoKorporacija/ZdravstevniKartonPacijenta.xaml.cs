@@ -21,7 +21,7 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class ZdravstevniKartonPacijenta : Window
     {
-        Pacijent pacijent;
+      public static  Pacijent pacijent=null;
         public ZdravstevniKartonPacijenta(String idPacijenta)
         {
             InitializeComponent();

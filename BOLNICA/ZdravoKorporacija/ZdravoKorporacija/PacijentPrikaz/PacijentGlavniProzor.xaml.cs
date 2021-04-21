@@ -26,6 +26,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public PacijentGlavniProzor(String id)
         {
             InitializeComponent();
+            ObavestenjaRepozitorijum.Ucitaj();
             ulogovan = NaloziPacijenataServis.pretraziPoKorisnickom(id);
             imePacijenta.Content = ulogovan.korisnik.KorisnickoIme;
         }
@@ -81,7 +82,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void obavestenja_Click(object sender, RoutedEventArgs e)
         {
-            Obavestenja ob = new Obavestenja();
+            PrikazObavestenja ob = new PrikazObavestenja();
             ob.Show();
 
         }
@@ -104,6 +105,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             LekarRepozitorijum.upisiLekare();
             TerminRepozitorijum.upisiSlobodneTermine();
             TerminRepozitorijum.upisiTermine();
+            ObavestenjaRepozitorijum.Sacuvaj();
 
         }
     }

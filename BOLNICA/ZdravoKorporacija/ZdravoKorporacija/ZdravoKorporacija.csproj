@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="Kontroler\DinamickaOpremaKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
+    <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
     <Compile Include="Kontroler\OpremaProstorijaKontroler.cs" />
     <Compile Include="Kontroler\SalaKontroler.cs" />
     <Compile Include="Kontroler\StatickaOpremaKontroler.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="Model\Lek.cs" />
     <Compile Include="Model\Lekar.cs" />
     <Compile Include="Model\Mesto.cs" />
+    <Compile Include="Model\Obavestenja.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Pacijent.cs" />
     <Compile Include="Model\Pol.cs" />
@@ -181,9 +183,6 @@
     <Compile Include="PacijentPrikaz\IzmenaTermina.xaml.cs">
       <DependentUpon>IzmenaTermina.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PacijentPrikaz\Obavestenja.xaml.cs">
-      <DependentUpon>Obavestenja.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PacijentPrikaz\OtkazivanjeTermina.xaml.cs">
       <DependentUpon>OtkazivanjeTermina.xaml</DependentUpon>
     </Compile>
@@ -198,6 +197,9 @@
     </Compile>
     <Compile Include="PacijentPrikaz\PrikazDatumaZaPomeranjeKodLekara.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjeKodLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PrikazObavestenja.xaml.cs">
+      <DependentUpon>PrikazObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\PrikazVremenaZaPomeranje.xaml.cs">
       <DependentUpon>PrikazVremenaZaPomeranje.xaml</DependentUpon>
@@ -217,6 +219,8 @@
     <Compile Include="ProzorLogovanje.xaml.cs">
       <DependentUpon>ProzorLogovanje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
+    <Compile Include="Servis\ObavestenjaServis.cs" />
     <Compile Include="Servis\RukovanjeDinamickomOpremomServis.cs" />
     <Compile Include="Servis\RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.cs" />
     <Compile Include="Servis\RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.cs" />
@@ -388,10 +392,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PacijentPrikaz\Obavestenja.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PacijentPrikaz\OtkazivanjeTermina.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -409,6 +409,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PacijentPrikaz\PrikazDatumaZaPomeranjeKodLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PrikazObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

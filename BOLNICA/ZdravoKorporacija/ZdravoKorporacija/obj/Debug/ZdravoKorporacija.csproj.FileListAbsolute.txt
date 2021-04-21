@@ -898,7 +898,6 @@ C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sist
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodIzabranogLekara.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodSvihLekara.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzmenaTermina.g.cs
-C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\Obavestenja.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OtkazivanjeTermina.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PacijentGlavniProzor.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PotvrdiPomeranje.g.cs
@@ -953,7 +952,6 @@ C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sist
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodIzabranogLekara.baml
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodSvihLekara.baml
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzmenaTermina.baml
-C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\Obavestenja.baml
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OtkazivanjeTermina.baml
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PacijentGlavniProzor.baml
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PotvrdiPomeranje.baml
@@ -981,3 +979,5 @@ C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sist
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.exe
 C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.pdb
+C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PrikazObavestenja.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMSS PROVERAAAAAAAAAAAAAAAAAA\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PrikazObavestenja.baml
