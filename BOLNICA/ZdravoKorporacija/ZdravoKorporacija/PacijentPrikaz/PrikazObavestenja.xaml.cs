@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Servis;
 
@@ -28,7 +29,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             InitializeComponent();
             obavestenjaPacijenta = new ObservableCollection<Obavestenja>();
 
-            List<Obavestenja> datumi = ObavestenjaServis.svaObavestenja.OrderByDescending(user => user.Datum).ToList();
+            List<Obavestenja> datumi = ObavestenjaKontroler.svaObavestenja().OrderByDescending(user => user.Datum).ToList();
 
             foreach (Obavestenja o in datumi)//Izmeniti kada je u pitanju personalizacija obavestenja
             {

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
             DateTime konacni = new DateTime(Int32.Parse(delovi[2]), Int32.Parse(delovi[0]), Int32.Parse(delovi[1]), 0, 0, 0);
 
-            Termin t = TerminServis.PretragaPoId(izabran);
+            Termin t = TerminKontroler.PretragaPoId(izabran);
             DateTime pregled = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
 
@@ -58,7 +59,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
                 return;
             }
-            TerminServis.OtkaziPregled(izabran);
+            TerminKontroler.OtkaziPregled(izabran);
             this.Close();
         }
     }

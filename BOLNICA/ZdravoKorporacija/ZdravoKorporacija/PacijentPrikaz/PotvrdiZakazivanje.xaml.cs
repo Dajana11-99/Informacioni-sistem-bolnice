@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public PotvrdiZakazivanje(Termin izabrani)
         {
             InitializeComponent();
-            Termin t = TerminServis.pretraziSlobodnePoId(izabrani.IdTermina);
+            Termin t = TerminKontroler.pretraziSlobodnePoId(izabrani.IdTermina);
             lekar.Text = t.Lekar.CeloIme;
             datum.Text = t.Datum;
             vreme.Text = t.Vreme;
@@ -34,9 +35,9 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void potvrdiZakazivanje_Click(object sender, RoutedEventArgs e)
         {
-            Termin t = TerminServis.pretraziSlobodnePoId(idTermin);
-            t.Pacijent = NaloziPacijenataServis.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
-            TerminServis.ZakaziPregled(t);
+            Termin t = TerminKontroler.pretraziSlobodnePoId(idTermin);
+            t.Pacijent = NaloziPacijenataKontroler.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
+            TerminKontroler.ZakaziPregled(t);
             this.Close();
         }
     }

@@ -59,11 +59,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 return;
             }
           //////////////////////////////////////////////////////////////////////////////////////
-            bool dostupanDatum = TerminServis.ProveriMogucnostPomeranjaDatum(datum1);
+            bool dostupanDatum = TerminKontroler.ProveriMogucnostPomeranjaDatum(datum1);
             Console.WriteLine("ISTI DATUMI------" + dostupanDatum);
             if (dostupanDatum)
             {
-                bool dostupnoVreme = TerminServis.ProveriMogucnostPomeranjaVreme(TerminServis.PretragaPoId(idTermina).Vreme);
+                bool dostupnoVreme = TerminKontroler.ProveriMogucnostPomeranjaVreme(TerminServis.PretragaPoId(idTermina).Vreme);
                 // Console.WriteLine("BOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOL" + dostupnoVreme);
                 if (!dostupnoVreme)
                 {
@@ -72,7 +72,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 }
             }
 
-            Termin t = TerminServis.PretragaPoId(idTermina);
+            Termin t = TerminKontroler.PretragaPoId(idTermina);
             DateTime datumPregleda = DateTime.ParseExact(datum.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             DateTime pocetni = datumPregleda.AddDays(-2);
             DateTime krajnji = datumPregleda.AddDays(2);
@@ -85,7 +85,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             datumiZaIzmenu.Clear();
 
 
-            pomocna = TerminServis.nadjiSlobodneDatumeLekarauIntervalu(pocetni, krajnji, t.Lekar.idZaposlenog);
+            pomocna = TerminKontroler.nadjiSlobodneDatumeLekarauIntervalu(pocetni, krajnji, t.Lekar.idZaposlenog);
             foreach (Termin ter in pomocna)
             {
                 nasao = false;

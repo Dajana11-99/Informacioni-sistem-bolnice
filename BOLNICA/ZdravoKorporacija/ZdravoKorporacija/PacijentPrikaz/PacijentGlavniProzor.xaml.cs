@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             ObavestenjaRepozitorijum.Ucitaj();
-            ulogovan = NaloziPacijenataServis.pretraziPoKorisnickom(id);
+            ulogovan = NaloziPacijenataKontroler.pretraziPoKorisnickom(id);
             imePacijenta.Content = ulogovan.korisnik.KorisnickoIme;
         }
 

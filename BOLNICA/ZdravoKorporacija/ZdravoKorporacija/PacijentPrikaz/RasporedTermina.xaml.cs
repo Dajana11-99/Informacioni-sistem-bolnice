@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
             this.DataContext = this;
             TerminiPacijenta = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminServis.PrikaziSveTermine())
+            foreach (Termin t in TerminKontroler.PrikaziSveTermine())
             {
                 if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                     TerminiPacijenta.Add(t);

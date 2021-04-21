@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -62,7 +63,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             bool nasao = false;
             slobodniDatumi.Clear();
 
-            pomocna = TerminServis.nadjiSlobodneDatumeLekarauIntervalu(pocetak, kraj, l.idZaposlenog);
+            pomocna = TerminKontroler.nadjiSlobodneDatumeLekarauIntervalu(pocetak, kraj, l.idZaposlenog);
             foreach(Termin t in pomocna)
             {
                 nasao = false;
@@ -92,7 +93,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
                 if (prioritet.SelectedIndex == 0)
                 {
-                    pomocna = TerminServis.nadjiDatumUIntervalu(pocetak, kraj);
+                    pomocna = TerminKontroler.nadjiDatumUIntervalu(pocetak, kraj);
                     foreach (Termin t1 in pomocna)
                     {
                         nasao = false;
@@ -131,7 +132,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
 
 
-                    pomocna = TerminServis.nadjiSlobodneDatumeLekarauIntervalu(noviPocetak, noviKraj, l.idZaposlenog);
+                    pomocna = TerminKontroler.nadjiSlobodneDatumeLekarauIntervalu(noviPocetak, noviKraj, l.idZaposlenog);
                     foreach (Termin t in pomocna)
                     {
                         nasao = false;

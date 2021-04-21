@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             InitializeComponent();
             VremenaTerminaPomeranje = new ObservableCollection<Termin>();
 
-            foreach (Termin t in TerminServis.nadjiVremeTermina(termin))
+            foreach (Termin t in TerminKontroler.nadjiVremeTermina(termin))
             {
                 VremenaTerminaPomeranje.Add(t);
             }
