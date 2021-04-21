@@ -35,29 +35,22 @@ namespace Servis
         public static void inicijalizujSlobodneTermine()
         {
 
-            SlobodniTermini.Add(new Termin("6", TipTermina.Pregled, "16:30", 30, "21/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
-            SlobodniTermini.Add(new Termin("7", TipTermina.Pregled, "18:30", 30, "21/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
-            SlobodniTermini.Add(new Termin("8", TipTermina.Pregled, "18:30", 30, "22/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
-            SlobodniTermini.Add(new Termin("9", TipTermina.Pregled, "16:30", 30, "23/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
-            SlobodniTermini.Add(new Termin("10", TipTermina.Pregled, "16:30", 30, "26/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
+            
+            SlobodniTermini.Add(new Termin("7", TipTermina.Pregled, "12:30", 30, "27/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
+            SlobodniTermini.Add(new Termin("8", TipTermina.Pregled, "16:30", 30, "26/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
 
 
            
 
 
-            SlobodniTermini.Add(new Termin("1", TipTermina.Pregled, "16:30", 30, "21/04/2021", SalaServis.PretraziPoId("A2"), null, PretragaLekaraPoID("L4")));
-           SlobodniTermini.Add(new Termin("2", TipTermina.Pregled, "18:30", 30, "21/04/2021", SalaServis.PretraziPoId("A2"), null, PretragaLekaraPoID("L4")));
-           SlobodniTermini.Add(new Termin("3", TipTermina.Pregled, "18:30", 30, "22/04/2021", SalaServis.PretraziPoId("A2"), null, PretragaLekaraPoID("L4")));
-           SlobodniTermini.Add(new Termin("4", TipTermina.Pregled, "16:30", 30, "23/04/2021", SalaServis.PretraziPoId("A2"), null, PretragaLekaraPoID("L4")));
-           SlobodniTermini.Add(new Termin("5", TipTermina.Pregled, "16:30", 30, "26/04/2021", SalaServis.PretraziPoId("A2"), null, PretragaLekaraPoID("L4")));
+           
 
 
 
-            SlobodniTermini.Add(new Termin("11", TipTermina.Pregled, "16:30", 30, "21/04/2021", SalaServis.PretraziPoId("A1"), null, PretragaLekaraPoID("L2")));
-            SlobodniTermini.Add(new Termin("12", TipTermina.Pregled, "18:30", 30, "21/04/2021", SalaServis.PretraziPoId("A1"), null, PretragaLekaraPoID("L2")));
-            SlobodniTermini.Add(new Termin("13", TipTermina.Pregled, "18:30", 30, "22/04/2021", SalaServis.PretraziPoId("A1"), null, PretragaLekaraPoID("L2")));
-            SlobodniTermini.Add(new Termin("14", TipTermina.Pregled, "16:30", 30, "23/04/2021", SalaServis.PretraziPoId("A1"), null, PretragaLekaraPoID("L2")));
-            SlobodniTermini.Add(new Termin("15", TipTermina.Pregled, "16:30", 30, "26/04/2021", SalaServis.PretraziPoId("A1"), null, PretragaLekaraPoID("L2")));
+           
+            SlobodniTermini.Add(new Termin("1", TipTermina.Pregled, "19:00", 30, "24/04/2021", SalaServis.PretraziPoId("A1"), null, PretragaLekaraPoID("L2")));
+            SlobodniTermini.Add(new Termin("2", TipTermina.Pregled, "16:30", 30, "21/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L2")));
+            SlobodniTermini.Add(new Termin("3", TipTermina.Pregled, "14:30", 30, "22/04/2021", SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L2")));
 
 
 
@@ -128,7 +121,7 @@ namespace Servis
             foreach(Termin d in datumi)
             {
                
-                if (d.Lekar.idZaposlenog.Equals(id))
+                if (d.Lekar.idZaposlenog.Equals(id) )
                 {
                    
                     povratna.Add(d);
@@ -365,11 +358,13 @@ namespace Servis
             DateTime trenutni1 = DateTime.Now;
             DateTime trenutni = trenutni1.AddDays(1);
 
-            String[] sadasnji = trenutni.ToString().Split(' ');
+          
 
             String KONACNI = "";
+            String[] sadasnji = trenutni.ToString().Split(' ');
 
             String[] brojevi = sadasnji[0].Split('/');
+            
 
             if (brojevi[1].Length == 1)
                 KONACNI += "0" + brojevi[1] + "/";
@@ -392,7 +387,8 @@ namespace Servis
             if (datumPregleda.Equals(KONACNI))
                 return true;
 
-
+            Console.WriteLine("KONACNI///" + KONACNI);
+            Console.WriteLine("DATUM PREGLEDA" + datumPregleda);
 
             return false;
         }

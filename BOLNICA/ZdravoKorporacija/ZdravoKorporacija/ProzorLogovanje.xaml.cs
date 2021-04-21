@@ -46,7 +46,7 @@ namespace ZdravoKorporacija
             LekarRepozitorijum.ucitajLekare();
            
           // TerminServis.inicijalizuj(); //Inicijalizacija lekara
-            //TerminServis.inicijalizujSlobodneTermine();
+           // TerminServis.inicijalizujSlobodneTermine();
            TerminRepozitorijum.ucitajSlobodneTermine();
 
 

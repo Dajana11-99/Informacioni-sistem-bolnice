@@ -38,7 +38,7 @@
 
             <Label Grid.Column="1" FontSize="20" Grid.ColumnSpan="2" Margin="0,0,95.6,0">Zdravo korporacija</Label>
             <Label Grid.Column="1" VerticalContentAlignment="Bottom" FontSize="15">Pacijent-</Label>
-            <Label x:Name="imePacijenta" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55.8,0" Width="65" Height="27">IME</Label>
+            <Label x:Name="imePacijenta" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,96.6,0.4" Width="121" Height="27" Grid.ColumnSpan="2"></Label>
             <Button FontSize="20" Grid.Column="3" Background="#77c9b5" Name="obavestenja" Click="obavestenja_Click"  Grid.ColumnSpan="2" Margin="0.4,0,131.6,50.4" >
                 Obaveštenja
 
@@ -127,7 +127,7 @@
             <Grid x:Name="MainPanel" Width="586"  Margin="0,0,0,9.6">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="403*"/>
-                 
+
                 </Grid.ColumnDefinitions>
             </Grid>
         </StackPanel>

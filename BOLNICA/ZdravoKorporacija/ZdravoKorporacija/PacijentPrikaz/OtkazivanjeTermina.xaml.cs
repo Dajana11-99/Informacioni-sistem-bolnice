@@ -1,4 +1,5 @@
-﻿using Servis;
+﻿using Model;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,29 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            String[] split = DateTime.Now.ToString().Split(' ');
+
+
+          
+
+            String[] delovi = split[0].Split('/');
+
+
+
+            DateTime konacni = new DateTime(Int32.Parse(delovi[2]), Int32.Parse(delovi[0]), Int32.Parse(delovi[1]), 0, 0, 0);
+
+            Termin t = TerminServis.PretragaPoId(izabran);
+            DateTime pregled = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+
+           
+
+
+            if (DateTime.Compare(konacni, pregled) == 0)
+            {
+                MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
+                return;
+            }
             TerminServis.OtkaziPregled(izabran);
             this.Close();
         }

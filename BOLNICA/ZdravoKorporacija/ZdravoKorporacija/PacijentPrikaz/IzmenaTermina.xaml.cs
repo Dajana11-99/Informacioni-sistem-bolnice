@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -34,17 +35,41 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void prikaziDatume_Click(object sender, RoutedEventArgs e)
         {
-            String datum1 = datum.Text;
+            string datum1 = datum.Text;
+
+            DateTime pregled = DateTime.ParseExact(datum1, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+
+
+            String[] split = DateTime.Now.ToString().Split(' ');
+
+           
+
+         
+            String[] delovi = split[0].Split('/');
+
+           
+
+            DateTime konacni=new DateTime(Int32.Parse(delovi[2]), Int32.Parse(delovi[0]), Int32.Parse(delovi[1]),0,0,0);
+  
+
+            if (DateTime.Compare(konacni,pregled)== 0)
+            {
+                MessageBox.Show("Termin je za manje od 24h ne mozete ga pomeriti!");
+                return;
+            }
+          //////////////////////////////////////////////////////////////////////////////////////
             bool dostupanDatum = TerminServis.ProveriMogucnostPomeranjaDatum(datum1);
+            Console.WriteLine("ISTI DATUMI------" + dostupanDatum);
             if (dostupanDatum)
             {
                 bool dostupnoVreme = TerminServis.ProveriMogucnostPomeranjaVreme(TerminServis.PretragaPoId(idTermina).Vreme);
+                // Console.WriteLine("BOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOL" + dostupnoVreme);
                 if (!dostupnoVreme)
                 {
-                    MessageBox.Show("Datum pregleda je za manje od 24h ne mozete ga pomeriti!!");
+                    MessageBox.Show("Datum pregleda je za manje od 24h! Ne mozete pomeriti!", "Datum pregleda!");
                     return;
                 }
-
             }
 
             Termin t = TerminServis.PretragaPoId(idTermina);
@@ -52,9 +77,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
             DateTime pocetni = datumPregleda.AddDays(-2);
             DateTime krajnji = datumPregleda.AddDays(2);
 
+
             List<Termin> pomocna = new List<Termin>();
+
             bool nasao = false;
+
             datumiZaIzmenu.Clear();
+
 
             pomocna = TerminServis.nadjiSlobodneDatumeLekarauIntervalu(pocetni, krajnji, t.Lekar.idZaposlenog);
             foreach (Termin ter in pomocna)
@@ -76,13 +105,14 @@ namespace ZdravoKorporacija.PacijentPrikaz
             }
             if (datumiZaIzmenu.Count == 0)
             {
-                MessageBox.Show("Nema termina za izmenu!");
+                MessageBox.Show("Nema datuma za izmenu");
             }else
             {
                 PrikazDatumaZaPomeranjeKodLekara prikaz = new PrikazDatumaZaPomeranjeKodLekara();
                 prikaz.Show();
                 this.Close();
             }
+
 
 
 

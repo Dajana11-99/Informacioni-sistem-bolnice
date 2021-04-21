@@ -108,9 +108,6 @@
     <Compile Include="Kontroler\StatickaOpremaKontroler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZahteviKontroler.cs" />
-    <Compile Include="IzmenaPacijenta.xaml.cs">
-      <DependentUpon>IzmenaPacijenta.xaml</DependentUpon>
-    </Compile>
     <Compile Include="IzmenaTerminaLekara.xaml.cs">
       <DependentUpon>IzmenaTerminaLekara.xaml</DependentUpon>
     </Compile>
@@ -257,9 +254,6 @@
     <Compile Include="ZahtevZaSlobodneDaneWindow.xaml.cs">
       <DependentUpon>ZahtevZaSlobodneDaneWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ZakaziPregledPacijent.xaml.cs">
-      <DependentUpon>ZakaziPregledPacijent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ZakazivanjeTerminaLekara.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekara.xaml</DependentUpon>
     </Compile>
@@ -323,10 +317,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmenaNalogaPacijentu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IzmenaPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -475,10 +465,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ZahtevZaSlobodneDaneWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ZakaziPregledPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

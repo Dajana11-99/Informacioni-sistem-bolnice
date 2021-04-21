@@ -51,6 +51,12 @@ namespace ZdravoKorporacija.PacijentPrikaz
             DateTime pocetak = (DateTime)datumOD;
             DateTime kraj = (DateTime)datumDO;
 
+            if (DateTime.Compare(pocetak, kraj) > 0)
+            {
+                MessageBox.Show("Pocetni datum mora biti raniji od krajnjeg!");
+                return;
+            }
+
             List<Termin> pomocna = new List<Termin>();
 
             bool nasao = false;
@@ -122,6 +128,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
                     DateTime noviPocetak = pocetak.AddDays(-7);
                     DateTime noviKraj = kraj.AddDays(7);
+
+
 
                     pomocna = TerminServis.nadjiSlobodneDatumeLekarauIntervalu(noviPocetak, noviKraj, l.idZaposlenog);
                     foreach (Termin t in pomocna)

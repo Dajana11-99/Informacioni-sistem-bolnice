@@ -27,6 +27,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             ulogovan = NaloziPacijenataServis.pretraziPoKorisnickom(id);
+            imePacijenta.Content = ulogovan.korisnik.KorisnickoIme;
         }
 
         private void karton_Click(object sender, RoutedEventArgs e)
