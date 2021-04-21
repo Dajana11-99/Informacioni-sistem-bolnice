@@ -10,6 +10,5 @@ namespace Model
     {
         public int Kolicina { get; set; }
         public DinamickaOprema dinamickaOprema { get; set; }
-        public DateTime RasporedjenaOd { get; set; }
     }
 }

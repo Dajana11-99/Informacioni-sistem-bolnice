@@ -32,12 +32,7 @@ namespace ZdravoKorporacija
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            DateTime? rasporedjenoOd = datePickerRasporedjenoOd.SelectedDate;
-            if (!rasporedjenoOd.HasValue)
-            {
-                MessageBox.Show("Datum od nije unet");
-                return;
-            }
+            
 
 
             ZahtevZaRasporedjivanjeDinamickeOpreme zahtev = new ZahtevZaRasporedjivanjeDinamickeOpreme();
@@ -58,7 +53,6 @@ namespace ZdravoKorporacija
                 return;
             }
             zahtev.Kolicina = kolicina; // txtKolicina.Text;
-            zahtev.RasporedjenoOd = rasporedjenoOd.Value;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.DinamickaOpremaId = (string)cmbDinamicka.SelectedValue;
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.DodajDinamickuOpremuProstorija(zahtev);

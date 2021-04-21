@@ -64,8 +64,8 @@ namespace ZdravoKorporacija
             RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.inicijalizuj();
 
             // Izvrsi zahteve automatski 
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
+            //RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
+            //RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
 
            // NaloziPacijenataServis.inic();
            NaloziPacijenataRepozitorijum.UcitajPacijente();

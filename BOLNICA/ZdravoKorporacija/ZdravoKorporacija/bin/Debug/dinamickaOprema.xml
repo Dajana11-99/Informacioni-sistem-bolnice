@@ -2,7 +2,7 @@
 <ArrayOfDinamickaOprema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DinamickaOprema>
     <Id>1</Id>
-    <kolicina>554</kolicina>
+    <kolicina>354</kolicina>
     <naziv>zavoj</naziv>
   </DinamickaOprema>
 </ArrayOfDinamickaOprema>

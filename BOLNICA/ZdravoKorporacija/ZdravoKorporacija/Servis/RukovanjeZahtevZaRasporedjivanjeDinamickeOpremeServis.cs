@@ -42,6 +42,39 @@ namespace PoslovnaLogika
 
             dinamickaOprema.kolicina -= zahtevZaRasporedjivanjeDinamicke.Kolicina;
             RukovanjeDinamickomOpremomServis.IzmeniDinamickuOpremu(dinamickaOprema);
+            var sala = SalaServis.PretraziPoId(zahtevZaRasporedjivanjeDinamicke.ProstorijaId);
+            if (sala.RasporedjenaDinamickaOprema == null)
+            {
+                sala.RasporedjenaDinamickaOprema = new List<RasporedjenaDinamickaOprema>();
+            }
+
+            // 
+            // da li je ovaj tip/vrsta opreme vec tu?
+            // ako jeste samo uvecaj kolicinu
+            RasporedjenaDinamickaOprema rasporedjenaOprema = null;
+            foreach (var rasporedjena in sala.RasporedjenaDinamickaOprema)
+            {
+                if (rasporedjena.dinamickaOprema.Id == zahtevZaRasporedjivanjeDinamicke.DinamickaOpremaId)
+                {
+                    rasporedjenaOprema = rasporedjena;
+                    break;
+                }
+            }
+            // ako smo je nasli
+            // onda dodamo kolicinu iz zahteva
+            if (rasporedjenaOprema != null)
+            {
+                rasporedjenaOprema.Kolicina += zahtevZaRasporedjivanjeDinamicke.Kolicina;
+            }
+            else
+            {
+                // u suprotnom je ovo nova oprema
+                rasporedjenaOprema = new RasporedjenaDinamickaOprema();
+                rasporedjenaOprema.Kolicina = zahtevZaRasporedjivanjeDinamicke.Kolicina;
+                rasporedjenaOprema.dinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(zahtevZaRasporedjivanjeDinamicke.DinamickaOpremaId);
+                sala.RasporedjenaDinamickaOprema.Add(rasporedjenaOprema);
+            }
+            SalaRepozitorijum.UpisiSale();
             ZahtevZaRasporedjivanjeDinamickeOpreme.Add(zahtevZaRasporedjivanjeDinamicke);
             OsveziKolekciju();
             SkladisteZahtevZaRasporedjivanjeDinamickeOpreme.UpisiZahtevZaRasporedjivanjeDinamickeOpreme();
@@ -89,8 +122,6 @@ namespace PoslovnaLogika
 
             s.Kolicina = dinamickaOpremaZaIzmenu.Kolicina;
             s.ProstorijaId = dinamickaOpremaZaIzmenu.ProstorijaId;
-            s.RasporedjenoOd = dinamickaOpremaZaIzmenu.RasporedjenoOd;
-
             OsveziKolekciju();
             SkladisteZahtevZaRasporedjivanjeDinamickeOpreme.UpisiZahtevZaRasporedjivanjeDinamickeOpreme();
             return true;
@@ -142,11 +173,6 @@ namespace PoslovnaLogika
         {
             foreach (ZahtevZaRasporedjivanjeDinamickeOpreme zahtev in ZahtevZaRasporedjivanjeDinamickeOpreme)
             {
-                if (zahtev.RasporedjenoOd >= DateTime.Now)
-                {
-                    continue;
-                }
-
                 ObrisiZahtevZaRasporedjivanjeDinamickeOpreme(zahtev.Id);
                 var sala = SalaServis.PretraziPoId(zahtev.ProstorijaId);
                 if (sala.RasporedjenaDinamickaOprema == null)
@@ -179,7 +205,6 @@ namespace PoslovnaLogika
                     rasporedjenaOprema.Kolicina = zahtev.Kolicina;
                     sala.RasporedjenaDinamickaOprema.Add(rasporedjenaOprema);
                 }
-                rasporedjenaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
                 rasporedjenaOprema.dinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(zahtev.DinamickaOpremaId);
                 SalaRepozitorijum.UpisiSale();
             }

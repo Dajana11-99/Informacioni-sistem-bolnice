@@ -19,13 +19,12 @@
     </RasporedjenaStatickaOprema>
     <RasporedjenaDinamickaOprema>
       <RasporedjenaDinamickaOprema>
-        <Kolicina>1</Kolicina>
+        <Kolicina>201</Kolicina>
         <dinamickaOprema>
           <Id>1</Id>
           <kolicina>554</kolicina>
           <naziv>zavoj</naziv>
         </dinamickaOprema>
-        <RasporedjenaOd>2021-04-18T00:00:00</RasporedjenaOd>
       </RasporedjenaDinamickaOprema>
     </RasporedjenaDinamickaOprema>
   </Sala>
