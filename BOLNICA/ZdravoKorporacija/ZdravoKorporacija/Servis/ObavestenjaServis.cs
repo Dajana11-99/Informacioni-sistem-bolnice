@@ -69,5 +69,7 @@ namespace ZdravoKorporacija.Servis
         {
             return svaObavestenja;
         }
+
+        public Repozitorijum.ObavestenjaRepozitorijum obavestenjaRepozitorijum;
     }
 }
