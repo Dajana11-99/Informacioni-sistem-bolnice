@@ -10,11 +10,11 @@ namespace Model
 {
     public class Recept
     {
-        public Lek lek { get; set; }
+        public Lek Lek1 { get; set; }
 
         public String KolicinaTerapije { get; set; }
-        public DateTime PocetakTerapije { get; set; }
-        private DateTime KrajTerapije { get; set; }
+        public String PocetakTerapije { get; set; }
+        private String KrajTerapije { get; set; }
         public double PeroidUzimanjaUSatima { get; set; }
 
 
@@ -23,13 +23,13 @@ namespace Model
 
         }
 
-        public Recept(String kolicinaTerapije, DateTime pocetakTerapije, DateTime krajTarapije, double periodUzimanja,Lek lek)
+        public Recept(String kolicinaTerapije, String pocetakTerapije, String krajTarapije, double periodUzimanja,Lek lek)
         {
             KolicinaTerapije = kolicinaTerapije;
             PocetakTerapije = pocetakTerapije;
             KrajTerapije = krajTarapije;
             PeroidUzimanjaUSatima = periodUzimanja;
-            this.lek = lek;
+            this.Lek1 = lek;
         }
 
     }

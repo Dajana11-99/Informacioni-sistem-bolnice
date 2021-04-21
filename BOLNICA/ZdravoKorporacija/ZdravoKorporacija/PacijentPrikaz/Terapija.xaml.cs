@@ -32,7 +32,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             
             foreach (Recept r in PacijentGlavniProzor.ulogovan.karton.recepti)
             {
-                Console.WriteLine("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-NASAO"+r.lek.ImeLeka);
+                
                 ReceptiPropisani.Add(r);
             }
             

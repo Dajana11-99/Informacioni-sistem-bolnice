@@ -16,7 +16,6 @@
       <Ulica>Koste Pavlovica</Ulica>
     </adresaStanovanja>
     <karton>
-      <recepti />
       <OdeljenjeNaPrijemu>O1</OdeljenjeNaPrijemu>
       <Ime>Jova</Ime>
       <Prezime>Jovic</Prezime>
@@ -30,7 +29,9 @@
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
+      <recepti />
     </karton>
+    <termin />
     <idPacijenta>1</idPacijenta>
   </Pacijent>
   <Pacijent>
@@ -49,7 +50,6 @@
       <Ulica>Veselina Maslese</Ulica>
     </adresaStanovanja>
     <karton>
-      <recepti />
       <OdeljenjeNaPrijemu>O2</OdeljenjeNaPrijemu>
       <Ime>Pera</Ime>
       <Prezime>Peric</Prezime>
@@ -63,7 +63,9 @@
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
+      <recepti />
     </karton>
+    <termin />
     <idPacijenta>2</idPacijenta>
   </Pacijent>
   <Pacijent>
@@ -82,17 +84,6 @@
       <Ulica>Adresa</Ulica>
     </adresaStanovanja>
     <karton>
-      <recepti>
-        <Recept>
-          <lek>
-            <IdLeka>123</IdLeka>
-            <ImeLeka>Paracetamol</ImeLeka>
-          </lek>
-          <KolicinaTerapije>1</KolicinaTerapije>
-          <PocetakTerapije>2021-04-21T00:00:00</PocetakTerapije>
-          <PeroidUzimanjaUSatima>8</PeroidUzimanjaUSatima>
-        </Recept>
-      </recepti>
       <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
       <Ime>Dajana</Ime>
       <Prezime>Zlokapa</Prezime>
@@ -106,7 +97,19 @@
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
+      <recepti>
+        <Recept>
+          <Lek1>
+            <IdLeka>123</IdLeka>
+            <ImeLeka>Paracetamol</ImeLeka>
+          </Lek1>
+          <KolicinaTerapije>1</KolicinaTerapije>
+          <PocetakTerapije>04/21/2021</PocetakTerapije>
+          <PeroidUzimanjaUSatima>7</PeroidUzimanjaUSatima>
+        </Recept>
+      </recepti>
     </karton>
+    <termin />
     <idPacijenta>P1</idPacijenta>
   </Pacijent>
 </ArrayOfPacijent>

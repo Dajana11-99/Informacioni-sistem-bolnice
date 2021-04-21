@@ -21,7 +21,7 @@
                   SelectionMode="Single"  Margin="15,5,0,20" 
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="195" HorizontalAlignment="Left" Width="544">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naziv Leka" Binding="{Binding lek.NazivLeka}"/>
+                    <DataGridTextColumn Header="Naziv Leka" Binding="{Binding Lek1.ImeLeka}"/>
                     <DataGridTextColumn Header="Kolicina" Binding="{Binding KolicinaTerapije}" />
                     <DataGridTextColumn Header="Vreme" Binding="{Binding PeroidUzimanjaUSatima}"/>
                    

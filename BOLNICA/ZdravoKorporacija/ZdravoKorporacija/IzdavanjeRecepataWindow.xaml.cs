@@ -29,7 +29,16 @@ namespace ZdravoKorporacija
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
 
-            Recept = new Recept(txtKolicinaLeka.Text, datePickerPocetak.SelectedDate.Value, datePickerKraj.SelectedDate.Value, double.Parse(txtPeriodUzimanja.Text),new Lek(idLeka.Text,txtNazivLeka.Text));
+            DateTime? datum = this.datePickerPocetak.SelectedDate;
+            DateTime? datum1 = this.datePickerKraj.SelectedDate;
+            String formatirano = null;
+            String formatirano1 = null;
+            if (datum.HasValue)
+                formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+            if (datum1.HasValue)
+                formatirano1 = datum1.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            Recept = new Recept(txtKolicinaLeka.Text, formatirano, formatirano1, double.Parse(txtPeriodUzimanja.Text),new Lek(idLeka.Text,txtNazivLeka.Text));
            
             this.Close();
         }
