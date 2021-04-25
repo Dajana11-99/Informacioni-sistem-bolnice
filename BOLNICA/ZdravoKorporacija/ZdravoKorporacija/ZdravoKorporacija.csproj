@@ -102,11 +102,13 @@
       <DependentUpon>IzmenaNalogaPacijentu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Kontroler\DinamickaOpremaKontroler.cs" />
+    <Compile Include="Kontroler\DinamickiZahteviKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
     <Compile Include="Kontroler\OpremaProstorijaKontroler.cs" />
     <Compile Include="Kontroler\SalaKontroler.cs" />
     <Compile Include="Kontroler\StatickaOpremaKontroler.cs" />
+    <Compile Include="Kontroler\StatickiZahteviKontroler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZahteviKontroler.cs" />
     <Compile Include="IzmenaTerminaLekara.xaml.cs">

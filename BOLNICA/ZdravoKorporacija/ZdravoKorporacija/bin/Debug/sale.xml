@@ -6,54 +6,19 @@
     <Zauzeta>false</Zauzeta>
     <sprat>2</sprat>
     <kvadratura>0</kvadratura>
-    <RasporedjenaStatickaOprema>
-      <RasporedjenaStatickaOprema>
-        <Kolicina>4</Kolicina>
-        <statickaOprema>
-          <Id>2</Id>
-          <kolicina>896</kolicina>
-          <naziv>stolica</naziv>
-        </statickaOprema>
-        <RasporedjenaOd>2021-04-18T00:00:00</RasporedjenaOd>
-      </RasporedjenaStatickaOprema>
-    </RasporedjenaStatickaOprema>
-    <RasporedjenaDinamickaOprema>
-      <RasporedjenaDinamickaOprema>
-        <Kolicina>201</Kolicina>
-        <dinamickaOprema>
-          <Id>1</Id>
-          <kolicina>554</kolicina>
-          <naziv>zavoj</naziv>
-        </dinamickaOprema>
-      </RasporedjenaDinamickaOprema>
-    </RasporedjenaDinamickaOprema>
   </Sala>
   <Sala>
     <TipSale>Pregled</TipSale>
     <Id>A2</Id>
     <Zauzeta>false</Zauzeta>
-    <sprat>4</sprat>
+    <sprat>3</sprat>
     <kvadratura>0</kvadratura>
-    <RasporedjenaStatickaOprema>
-      <RasporedjenaStatickaOprema>
-        <Kolicina>5</Kolicina>
-        <statickaOprema>
-          <Id>2</Id>
-          <kolicina>896</kolicina>
-          <naziv>stolica</naziv>
-        </statickaOprema>
-        <RasporedjenaOd>2021-04-18T00:00:00</RasporedjenaOd>
-      </RasporedjenaStatickaOprema>
-    </RasporedjenaStatickaOprema>
-    <RasporedjenaDinamickaOprema />
   </Sala>
   <Sala>
     <TipSale>Pregled</TipSale>
     <Id>a3</Id>
     <Zauzeta>false</Zauzeta>
-    <sprat>2</sprat>
+    <sprat>4</sprat>
     <kvadratura>0</kvadratura>
-    <RasporedjenaStatickaOprema />
-    <RasporedjenaDinamickaOprema />
   </Sala>
 </ArrayOfSala>

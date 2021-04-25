@@ -45,8 +45,8 @@ namespace ZdravoKorporacija
             TerminRepozitorijum.ucitajTermine();
             LekarRepozitorijum.ucitajLekare();
            
-          // TerminServis.inicijalizuj(); //Inicijalizacija lekara
-           // TerminServis.inicijalizujSlobodneTermine();
+           //TerminServis.inicijalizuj(); //Inicijalizacija lekara
+           //TerminServis.inicijalizujSlobodneTermine();
            TerminRepozitorijum.ucitajSlobodneTermine();
 
 
@@ -57,7 +57,7 @@ namespace ZdravoKorporacija
 
 
 
-            SalaServis.inicijalizuj();
+            //SalaServis.inicijalizuj();
             RukovanjeStatickomOpremomServis.inicijalizuj();
             RukovanjeDinamickomOpremomServis.inicijalizuj();
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.inicijalizuj();
@@ -67,10 +67,11 @@ namespace ZdravoKorporacija
             //RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
             //RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
 
-           // NaloziPacijenataServis.inic();
-           NaloziPacijenataRepozitorijum.UcitajPacijente();
+            //NaloziPacijenataServis.inic();
 
-            //ObavestenjaRepozitorijum.Ucitaj();
+             NaloziPacijenataRepozitorijum.UcitajPacijente();
+
+            ObavestenjaRepozitorijum.Ucitaj();
 
 
 
@@ -157,11 +158,17 @@ namespace ZdravoKorporacija
                 {
                     if (u.korisnik.Sifra.Equals(Lozinka.Password))
                     {
-
-                        PacijentGlavniProzor pg = new PacijentGlavniProzor(korisnickoIme.Text);
-                        pg.Show();
-                        this.Close();
-                        nasao = true;
+                        if (u.maliciozan == false)
+                        {
+                            PacijentGlavniProzor pg = new PacijentGlavniProzor(korisnickoIme.Text);
+                            pg.Show();
+                            this.Close();
+                            nasao = true;
+                        }else
+                        {
+                            System.Windows.Forms.MessageBox.Show("VAS NALOG JE BLOKIRAN OBRATITE SE SEKRETARU!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
                     else
                     {

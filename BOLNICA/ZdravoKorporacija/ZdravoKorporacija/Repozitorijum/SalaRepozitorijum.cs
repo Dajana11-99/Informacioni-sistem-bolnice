@@ -10,15 +10,18 @@ namespace ZdravoKorporacija.Repozitorijum
 {
     public class SalaRepozitorijum
     {
+        public static String imeFajla = "sale.xml";
         public static List<Sala> UcitajSale()
+
         {
-            if (!File.Exists("sale.xml") || File.ReadAllText("sale.xml").Trim().Equals(""))
+             
+            if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return SalaServis.sala;
             }
             else
             {
-                FileStream fileStream = File.OpenRead("sale.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sala>));
                 SalaServis.sala = (List<Sala>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -31,7 +34,7 @@ namespace ZdravoKorporacija.Repozitorijum
         public static bool UpisiSale()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sala>));
-            TextWriter tw = new StreamWriter("sale.xml");
+            TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, SalaServis.sala);
             tw.Close();
             return true;

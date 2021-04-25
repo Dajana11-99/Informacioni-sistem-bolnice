@@ -13,15 +13,16 @@ namespace ZdravoKorporacija.Repozitorijum
 {
     public class SkladisteZahtevZaRasporedjivanjeStatickeOpreme
     {
+        public static String imeFajla = "ZahtevZaRasporedjivanjeStatickeOpreme.xml";
         public static List<ZahtevZaRasporedjivanjeStatickeOpreme> UcitajZahtevZaRasporedjivanjeStatickeOpreme()
         {
-            if (!File.Exists("ZahtevZaRasporedjivanjeStatickeOpreme.xml") || File.ReadAllText("ZahtevZaRasporedjivanjeStatickeOpreme.xml").Trim().Equals(""))
+            if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return new List<ZahtevZaRasporedjivanjeStatickeOpreme>();
             }
             else
             {
-                FileStream fileStream = File.OpenRead("ZahtevZaRasporedjivanjeStatickeOpreme.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ZahtevZaRasporedjivanjeStatickeOpreme>));
                 var sale = (List<ZahtevZaRasporedjivanjeStatickeOpreme>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -34,7 +35,7 @@ namespace ZdravoKorporacija.Repozitorijum
         public static bool UpisiZahtevZaRasporedjivanjeStatickeOpreme()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ZahtevZaRasporedjivanjeStatickeOpreme>));
-            TextWriter tw = new StreamWriter("ZahtevZaRasporedjivanjeStatickeOpreme.xml");
+            TextWriter tw = new StreamWriter(imeFajla);
            // xmlSerializer.Serialize(tw, RukovanjeStatickomOpremomServis.statickaOprema);
             xmlSerializer.Serialize(tw, RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.ZahtevZaRasporedjivanjeStatickeOpreme);
             tw.Close();

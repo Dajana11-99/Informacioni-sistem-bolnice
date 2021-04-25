@@ -12,17 +12,18 @@ namespace ZdravoKorporacija.Repozitorijum
 {
     class ObavestenjaRepozitorijum
     {
-        
+
+        public static String imeFajla = "obavestenja.txt";
 
         public static List<Obavestenja> Ucitaj()
         {
-            if (File.ReadAllText("obavestenja.txt").Trim().Equals(""))
+            if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return new List<Obavestenja>();
             }
             else
             {
-                FileStream fileStream = File.OpenRead("obavestenja.txt");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenja>));
                 ObavestenjaServis.svaObavestenja = (List<Obavestenja>)serializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -33,7 +34,7 @@ namespace ZdravoKorporacija.Repozitorijum
         public static void Sacuvaj()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenja>));
-            TextWriter fileStream = new StreamWriter("obavestenja.txt");
+            TextWriter fileStream = new StreamWriter(imeFajla);
             serializer.Serialize(fileStream, ObavestenjaServis.svaObavestenja);
             fileStream.Close();
         }

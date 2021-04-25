@@ -95,6 +95,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void odjava_Click(object sender, RoutedEventArgs e)
         {
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
+            LekarRepozitorijum.upisiLekare();
+            TerminRepozitorijum.upisiSlobodneTermine();
+            TerminRepozitorijum.upisiTermine();
+            ObavestenjaRepozitorijum.Sacuvaj();
             ProzorLogovanje log = new ProzorLogovanje();
             log.Show();
             this.Close();
@@ -107,6 +112,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
             TerminRepozitorijum.upisiSlobodneTermine();
             TerminRepozitorijum.upisiTermine();
             ObavestenjaRepozitorijum.Sacuvaj();
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
+
 
         }
     }

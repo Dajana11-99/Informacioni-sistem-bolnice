@@ -12,7 +12,9 @@
             <ColumnDefinition Width="64*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2">
+            
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Pacijenti</Label>
+            <Button x:Name="Odblokiraj" Click="Odblokiraj_Click" Height="26" Margin="0,0,647.6,0">OdblokirajPacijenta</Button>
             <DataGrid x:Name="PacijenitXName"  IsReadOnly="true"
                   SelectionMode="Single"  Margin="20,10,20.4,20" 
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="300">

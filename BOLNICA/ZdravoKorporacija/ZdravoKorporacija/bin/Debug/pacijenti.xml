@@ -31,6 +31,9 @@
       </Anamneza>
       <recepti />
     </karton>
+    <termin />
+    <maliciozan>false</maliciozan>
+    <zloupotrebio>0</zloupotrebio>
     <idPacijenta>1</idPacijenta>
   </Pacijent>
   <Pacijent>
@@ -64,6 +67,9 @@
       </Anamneza>
       <recepti />
     </karton>
+    <termin />
+    <maliciozan>false</maliciozan>
+    <zloupotrebio>0</zloupotrebio>
     <idPacijenta>2</idPacijenta>
   </Pacijent>
   <Pacijent>
@@ -95,20 +101,11 @@
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
-      <recepti>
-        <Recept>
-          <Lek1>
-            <IdLeka>123</IdLeka>
-            <ImeLeka>Paracetamol</ImeLeka>
-          </Lek1>
-          <KolicinaTerapije>1</KolicinaTerapije>
-          <PocetakTerapije>04/21/2021</PocetakTerapije>
-          <KrajTerapije>04/23/2021</KrajTerapije>
-          <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
-          <idPacijenta>P1</idPacijenta>
-        </Recept>
-      </recepti>
+      <recepti />
     </karton>
+    <termin />
+    <maliciozan>false</maliciozan>
+    <zloupotrebio>0</zloupotrebio>
     <idPacijenta>P1</idPacijenta>
   </Pacijent>
 </ArrayOfPacijent>

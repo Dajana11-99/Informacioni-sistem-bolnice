@@ -110,5 +110,26 @@ namespace ZdravoKorporacija
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
         }
+
+        private void Odblokiraj_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (((Pacijent)PacijenitXName.SelectedItem).maliciozan == false)
+            {
+                MessageBox.Show("NE MOZETE ODBLOKIRATI PACIJENTA KOJI NIJ BLOKIRAN");
+                return;
+            }
+            Pacijent p = NaloziPacijenataServis.PretragaPoId(((Pacijent)PacijenitXName.SelectedItem).idPacijenta);
+            p.maliciozan = false;
+            p.zloupotrebio = 0;
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
+            Console.WriteLine("PACIJENTTT" + p.maliciozan);
+
+
+
+
+
+
+        }
     }
 }

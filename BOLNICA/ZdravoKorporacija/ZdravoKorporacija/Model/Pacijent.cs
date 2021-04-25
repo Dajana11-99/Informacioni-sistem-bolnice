@@ -15,6 +15,9 @@ namespace Model
     {
         public Karton karton;
         public System.Collections.ArrayList termin;
+
+        public bool maliciozan { get; set; }
+        public int zloupotrebio { get; set; }
         public String idPacijenta { get; set; }
         public String Anamneza { get; set; }
 
@@ -26,39 +29,20 @@ namespace Model
         {
 
         }
-        /*public Pacijent(String idPacijenta , string ime , string prezime , string jmbg)
-        {
-            this.idPacijenta = idPacijenta;
-            this.Ime = ime;
-            this.Prezime = prezime;
-            this.Jmbg = jmbg;
-        }*/
-        // public Pacijent() { }
-
-
-
         public Pacijent(string id, string ime, string prezime, string jmbg, string email, AdresaStanovanja adresaStanovanja) : base(ime, prezime, jmbg, email, adresaStanovanja)
         {
             idPacijenta = id;
+            maliciozan = false;
+            zloupotrebio = 0;
         }
 
         public Pacijent(string id, string ime, string prezime, string jmbg, string email, AdresaStanovanja adresaStanovanja,Korisnik korisnik) : base(ime, prezime, jmbg, email, adresaStanovanja,korisnik)
         {
             idPacijenta = id;
+            maliciozan = false;
+            zloupotrebio = 0;
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-        /*
-         protected void OnPropertyChanged([CallerMemberName] string name = null)
-      {
-          PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-      }
-         */
+       
+      
     }
 }

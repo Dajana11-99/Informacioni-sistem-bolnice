@@ -50,6 +50,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 MessageBox.Show("Izaberite termin za izmenu");
                 return;
             }
+            if (PacijentGlavniProzor.ulogovan.maliciozan == true)
+            {
+                MessageBox.Show("OPASAN PACIJENT");
+              
+                
+                return;
+            }
             TerminZaPomeranje = (Termin)TerminiPacijentaa.SelectedItem;
             IzmenaTermina izmeni = new IzmenaTermina(TerminZaPomeranje);
             izmeni.Show();
@@ -63,6 +70,14 @@ namespace ZdravoKorporacija.PacijentPrikaz
             if (TerminiPacijentaa.SelectedIndex == -1)
             {
                 MessageBox.Show("Izaberite termin za otkazivanje");
+                
+                return;
+            }
+
+            if (PacijentGlavniProzor.ulogovan.maliciozan == true)
+            {
+                MessageBox.Show("OPASAN PACIJENT");
+               
                 return;
             }
             OtkazivanjeTermina otk = new OtkazivanjeTermina(((Termin)TerminiPacijentaa.SelectedItem).IdTermina);

@@ -12,15 +12,16 @@ namespace ZdravoKorporacija.Repozitorijum
 {
    public class NaloziPacijenataRepozitorijum
     {
+        public static String imeFajla = "pacijenti.xml";
         public static List<Pacijent> UcitajPacijente()
         {
-            if (!File.Exists("pacijenti.xml") || File.ReadAllText("pacijenti.xml").Trim().Equals(""))
+            if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return NaloziPacijenataServis.ListaPacijenata;
             }
             else
             {
-                FileStream fileStream = File.OpenRead("pacijenti.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pacijent>));
                 NaloziPacijenataServis.ListaPacijenata = (List<Pacijent>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -31,7 +32,7 @@ namespace ZdravoKorporacija.Repozitorijum
         public static void UpisiPacijente()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pacijent>));
-            TextWriter tw = new StreamWriter("pacijenti.xml");
+            TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, NaloziPacijenataServis.ListaPacijenata);
             tw.Close();
         }

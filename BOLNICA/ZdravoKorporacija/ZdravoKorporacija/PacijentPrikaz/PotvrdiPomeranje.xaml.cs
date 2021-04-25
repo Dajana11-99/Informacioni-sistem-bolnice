@@ -38,6 +38,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void potvrdiIzmenu_Click(object sender, RoutedEventArgs e)
         {
+        
             TerminKontroler.PomeriPregled(idTermina);
             this.Close();
         }

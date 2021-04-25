@@ -270,12 +270,22 @@ namespace Servis
 
         public static void PomeriPregled(String idTermina)
         {
+            int broj = 0;
             // PrikazTerminaPacijent.TerminZaPomeranje.Pacijent=null;
-            Pacijent p = NaloziPacijenataServis.PretragaPoId(RasporedTermina.TerminZaPomeranje.IdTermina);
-            p = null;
+            Termin ter = TerminServis.PretragaPoId(RasporedTermina.TerminZaPomeranje.IdTermina);
+
+            ter.Pacijent = null;
+
             Termin novi = pretraziSlobodnePoId(idTermina);
             novi.Pacijent = NaloziPacijenataServis.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
 
+            Pacijent p = NaloziPacijenataServis.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
+            broj = p.zloupotrebio + 1;
+            p.zloupotrebio = broj;
+            if (p.zloupotrebio > 5)
+            {
+                p.maliciozan = true;
+            }
             zakazani.Remove(RasporedTermina.TerminZaPomeranje);
             zakazani.Add(novi);
             SlobodniTermini.Remove(novi);
@@ -285,6 +295,8 @@ namespace Servis
             RasporedTermina.TerminiPacijenta.RemoveAt(indeks);
             RasporedTermina.TerminiPacijenta.Insert(indeks, novi);
             RasporedTermina.TerminZaPomeranje = null;
+
+
 
         }
         public static bool IzmenaTermina(String idTermina, String datum, String vreme, String lekar, String predvidjenoVreme, String BrOperaioneSale,  String vrstaTerminaOperacije)
@@ -341,6 +353,7 @@ namespace Servis
         }
         public static bool OtkaziPregled(String idTermina)
         {
+
             Termin t = PretragaPoId(idTermina);
             zakazani.Remove(t);
             t.Pacijent = null;
@@ -349,6 +362,13 @@ namespace Servis
             RasporedTermina.TerminiPacijenta.Remove(t);
             if (zakazani.Contains(t))
                 return false;
+            Pacijent p = NaloziPacijenataServis.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
+           int broj = p.zloupotrebio + 1;
+            p.zloupotrebio = broj;
+            if (p.zloupotrebio > 5)
+            {
+                p.maliciozan = true;
+            }
             return true;
 
         }
@@ -430,12 +450,7 @@ namespace Servis
             return null;
         }
 
-        public Termin PretraziPoVremenu(DateTime vreme)
-        {
-            // TODO: implement
-            return null;
-        }
-
+      
 
         public TerminRepozitorijum terminRepozitorijum;
     }

@@ -3,39 +3,39 @@
   <Termin>
     <Vreme>16:30</Vreme>
     <trajanjeTermina>30</trajanjeTermina>
-    <Datum>21/04/2021</Datum>
+    <Datum>26/04/2021</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>2</IdTermina>
+    <IdTermina>8</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
       <Id>a3</Id>
       <Zauzeta>false</Zauzeta>
-      <sprat>2</sprat>
+      <sprat>4</sprat>
       <kvadratura>0</kvadratura>
       <RasporedjenaStatickaOprema />
       <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
       <korisnik>
-        <KorisnickoIme>stefan.markovic</KorisnickoIme>
-        <Sifra>stefan.markovic</Sifra>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
         <Uloga>Lekar</Uloga>
         <Nalog>Obican</Nalog>
       </korisnik>
-      <Ime>Stefan</Ime>
-      <Prezime>Markovic</Prezime>
-      <Jmbg>3008997181967</Jmbg>
-      <Email>stefan.markovic@gmail.com</Email>
-      <CeloIme>Stefan Markovic</CeloIme>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
       <adresaStanovanja>
-        <Broj> 43</Broj>
-        <Ulica>Laze Lazarevica</Ulica>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
       </adresaStanovanja>
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
       <Specijalizacija>Ostapraksa</Specijalizacija>
-      <idZaposlenog>L2</idZaposlenog>
+      <idZaposlenog>L1</idZaposlenog>
     </Lekar>
     <Pacijent>
       <korisnik>
@@ -66,101 +66,11 @@
           <Simptomi />
           <IzvestajLekara />
         </Anamneza>
-        <recepti>
-          <Recept>
-            <Lek1>
-              <IdLeka>123</IdLeka>
-              <ImeLeka>Paracetamol</ImeLeka>
-            </Lek1>
-            <KolicinaTerapije>1</KolicinaTerapije>
-            <PocetakTerapije>04/21/2021</PocetakTerapije>
-            <PeroidUzimanjaUSatima>7</PeroidUzimanjaUSatima>
-          </Recept>
-        </recepti>
+        <recepti />
       </karton>
       <termin />
-      <idPacijenta>P1</idPacijenta>
-    </Pacijent>
-  </Termin>
-  <Termin>
-    <Vreme>14:30</Vreme>
-    <trajanjeTermina>30</trajanjeTermina>
-    <Datum>22/04/2021</Datum>
-    <TipTermina>Pregled</TipTermina>
-    <IdTermina>3</IdTermina>
-    <Sala>
-      <TipSale>Pregled</TipSale>
-      <Id>a3</Id>
-      <Zauzeta>false</Zauzeta>
-      <sprat>2</sprat>
-      <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
-      <RasporedjenaDinamickaOprema />
-    </Sala>
-    <Lekar>
-      <korisnik>
-        <KorisnickoIme>stefan.markovic</KorisnickoIme>
-        <Sifra>stefan.markovic</Sifra>
-        <Uloga>Lekar</Uloga>
-        <Nalog>Obican</Nalog>
-      </korisnik>
-      <Ime>Stefan</Ime>
-      <Prezime>Markovic</Prezime>
-      <Jmbg>3008997181967</Jmbg>
-      <Email>stefan.markovic@gmail.com</Email>
-      <CeloIme>Stefan Markovic</CeloIme>
-      <adresaStanovanja>
-        <Broj> 43</Broj>
-        <Ulica>Laze Lazarevica</Ulica>
-      </adresaStanovanja>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
-      <idZaposlenog>L2</idZaposlenog>
-    </Lekar>
-    <Pacijent>
-      <korisnik>
-        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
-        <Sifra>dajana.zlokapa</Sifra>
-        <Uloga>Lekar</Uloga>
-        <Nalog>Obican</Nalog>
-      </korisnik>
-      <Ime>Dajana</Ime>
-      <Prezime>Zlokapa</Prezime>
-      <Jmbg>2711999105018</Jmbg>
-      <Email>dajana.zlokapa@gmail.com</Email>
-      <adresaStanovanja>
-        <Broj>4</Broj>
-        <Ulica>Adresa</Ulica>
-      </adresaStanovanja>
-      <karton>
-        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
-        <Ime>Dajana</Ime>
-        <Prezime>Zlokapa</Prezime>
-        <ImeRoditelja>Sinisa</ImeRoditelja>
-        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
-        <Pol>Zenski</Pol>
-        <Telefon>064 87956163</Telefon>
-        <BrojKartona>123</BrojKartona>
-        <BracniStatus>Neudata</BracniStatus>
-        <Anamneza>
-          <Simptomi />
-          <IzvestajLekara />
-        </Anamneza>
-        <recepti>
-          <Recept>
-            <Lek1>
-              <IdLeka>123</IdLeka>
-              <ImeLeka>Paracetamol</ImeLeka>
-            </Lek1>
-            <KolicinaTerapije>1</KolicinaTerapije>
-            <PocetakTerapije>04/21/2021</PocetakTerapije>
-            <PeroidUzimanjaUSatima>7</PeroidUzimanjaUSatima>
-          </Recept>
-        </recepti>
-      </karton>
-      <termin />
+      <maliciozan>false</maliciozan>
+      <zloupotrebio>0</zloupotrebio>
       <idPacijenta>P1</idPacijenta>
     </Pacijent>
   </Termin>

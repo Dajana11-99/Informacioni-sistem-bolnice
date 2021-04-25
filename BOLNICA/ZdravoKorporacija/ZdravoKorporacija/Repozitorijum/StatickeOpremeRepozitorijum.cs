@@ -13,15 +13,16 @@ namespace ZdravoKorporacija.Repozitorijum
 {
     public class StatickeOpremeRepozitorijum
     {
+        public static String imeFajla = "statickaOprema.xml";
         public static List<StatickaOprema> UcitajStatickuOpremu()
         {
-            if (!File.Exists("statickaOprema.xml") || File.ReadAllText("statickaOprema.xml").Trim().Equals(""))
+            if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return new List<StatickaOprema>();
             }
             else
             {
-                FileStream fileStream = File.OpenRead("statickaOprema.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<StatickaOprema>));
                 var sale = (List<StatickaOprema>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -34,7 +35,7 @@ namespace ZdravoKorporacija.Repozitorijum
         public static bool UpisiStatickuOpremu()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<StatickaOprema>));
-            TextWriter tw = new StreamWriter("statickaOprema.xml");
+            TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, RukovanjeStatickomOpremomServis.statickaOprema);
             tw.Close();
             return true;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZdravoKorporacija.Kontroler
 {
-    class StatickiZahteviKontroler
+   public class StatickiZahteviKontroler
     {
     }
 }

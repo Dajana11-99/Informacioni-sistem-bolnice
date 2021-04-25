@@ -8,17 +8,25 @@ using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
+using ZdravoKorporacija.PacijentPrikaz;
 
 namespace Kontroler
 {
    public class TerminKontroler
    {
+       
+
+    
+      
+       
         public static bool ProveriMogucnostPomeranjaDatum(String dat) {
             return TerminServis.ProveriMogucnostPomeranjaDatum(dat);
+            
+            
+        }
+       
 
-            }
-
-
+        
         public static List<Termin> nadjiVremeTermina(Termin izabraniTermin)
         {
             return TerminServis.nadjiVremeTermina(izabraniTermin);
@@ -51,7 +59,10 @@ namespace Kontroler
 
         public static void PomeriPregled(String id)
         {
+           
             TerminServis.PomeriPregled(id);
+           
+
         }
 
         public static bool OtkaziPregled(String id)
@@ -68,5 +79,9 @@ namespace Kontroler
         {
             return TerminServis.ProveriMogucnostPomeranjaVreme(vreme);
         }
+
+        public TerminServis terminiServis { get; set; }
+
+
     }
 }
