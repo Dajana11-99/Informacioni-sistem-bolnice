@@ -30,6 +30,15 @@ namespace ZdravoKorporacija.PacijentPrikaz
             ObavestenjaRepozitorijum.Ucitaj();
             ulogovan = NaloziPacijenataKontroler.pretraziPoKorisnickom(id);
             imePacijenta.Content = ulogovan.korisnik.KorisnickoIme;
+            foreach(Recept rec in ulogovan.karton.recepti)
+            {
+                if (rec.obavestiMe.Equals("DA"))
+                {
+                    Terapija.r = rec;
+                    Terapija.schedule_Timer();
+                }
+            }
+            
         }
 
         private void karton_Click(object sender, RoutedEventArgs e)

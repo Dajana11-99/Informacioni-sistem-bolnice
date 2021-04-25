@@ -101,7 +101,32 @@
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
-      <recepti />
+      <recepti>
+        <Recept>
+          <Lek1>
+            <IdLeka>123</IdLeka>
+            <ImeLeka>Paracetamol</ImeLeka>
+          </Lek1>
+          <KolicinaTerapije>1</KolicinaTerapije>
+          <PocetakTerapije>04/25/2021</PocetakTerapije>
+          <KrajTerapije>04/27/2021</KrajTerapije>
+          <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+          <obavestiMe>NE</obavestiMe>
+          <idPacijenta>P1</idPacijenta>
+        </Recept>
+        <Recept>
+          <Lek1>
+            <IdLeka>123</IdLeka>
+            <ImeLeka>Brufen</ImeLeka>
+          </Lek1>
+          <KolicinaTerapije>1</KolicinaTerapije>
+          <PocetakTerapije>04/25/2021</PocetakTerapije>
+          <KrajTerapije>04/26/2021</KrajTerapije>
+          <PeroidUzimanjaUSatima>1</PeroidUzimanjaUSatima>
+          <obavestiMe>DA</obavestiMe>
+          <idPacijenta>P1</idPacijenta>
+        </Recept>
+      </recepti>
     </karton>
     <termin />
     <maliciozan>false</maliciozan>

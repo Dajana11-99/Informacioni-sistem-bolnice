@@ -16,6 +16,7 @@ namespace Model
         public String PocetakTerapije { get; set; }
         public String KrajTerapije { get; set; }
         public double PeroidUzimanjaUSatima { get; set; }
+        public String obavestiMe { get; set; }
 
         public String idPacijenta { get; set; }
 
@@ -34,6 +35,7 @@ namespace Model
             PeroidUzimanjaUSatima = periodUzimanja;
             this.Lek1 = lek;
             idPacijenta = pac;
+            obavestiMe = "NE";
         }
 
     }

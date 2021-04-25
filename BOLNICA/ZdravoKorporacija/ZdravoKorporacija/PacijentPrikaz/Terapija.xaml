@@ -24,6 +24,7 @@
                     <DataGridTextColumn Header="Naziv Leka" Binding="{Binding Lek1.ImeLeka}"/>
                     <DataGridTextColumn Header="Kolicina" Binding="{Binding KolicinaTerapije}" />
                     <DataGridTextColumn Header="Vreme" Binding="{Binding PeroidUzimanjaUSatima}"/>
+                    <DataGridTextColumn Header="Obavesti me" Binding="{Binding obavestiMe}" />
                    
 
                 </DataGrid.Columns>
@@ -35,7 +36,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-
+                <Button Click="Button_Click">Ukljuci obavestenja</Button>
+                <Button Click="Button_Click_1" Grid.Column="1" Grid.Row="1">Iskljuci obavestenja</Button>
                
             </Grid>
 
