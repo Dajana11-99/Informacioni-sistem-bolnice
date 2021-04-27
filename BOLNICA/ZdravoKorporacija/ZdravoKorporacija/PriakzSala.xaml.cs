@@ -98,5 +98,16 @@ namespace ZdravoKorporacija
                 prikz.Show();
             }
         }
+
+        private void btnRenovirajSaluClick(object sender, RoutedEventArgs e)
+        {
+            if (SpisakSala.SelectedIndex != -1)
+            {
+                Sala salaZaRenoviranje = (Sala)SpisakSala.SelectedItem;
+                RenovirajSalu renovirajSalu = new RenovirajSalu(salaZaRenoviranje);
+                renovirajSalu.Show();
+            }
+            
+        }
     }
 }

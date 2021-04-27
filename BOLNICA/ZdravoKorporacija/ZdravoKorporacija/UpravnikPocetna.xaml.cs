@@ -73,5 +73,23 @@ namespace ZdravoKorporacija
             PrikazDinamickeOpreme prikazDinamickeOpreme = new PrikazDinamickeOpreme();
             prikazDinamickeOpreme.Show();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPrikaziLekove_Click(object sender, RoutedEventArgs e)
+        {
+            PrikazLekova prikazLekova = new PrikazLekova();
+            prikazLekova.Show();
+        }
+
+        private void btnPretragaOpreme_Click(object sender, RoutedEventArgs e)
+        { 
+        
+            PretragaOpreme pretragaOpreme = new PretragaOpreme();
+            pretragaOpreme.Show();
+        }
     }
 }

@@ -1,0 +1,55 @@
+﻿<Window x:Class="ZdravoKorporacija.PrikazLekova"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="PrikazLekova" Height="450" Width="800">
+
+    <Window.Resources>
+        <local:ListSastojakaToStringConverter x:Key="ListSastojakaToStringConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="64*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Margin="0,36,0,-36">
+            <Label HorizontalAlignment="Center" FontSize="20 " Margin="336,10,336,0">Pregled Lekova</Label>
+            <DataGrid x:Name="SpisakLekova" ItemsSource="{Binding ListLekova}" IsReadOnly="true"
+                  SelectionMode="Single"  Margin="20,10,20,20" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="169">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding IdLeka}"/>
+                    <DataGridTextColumn Header="Ime" Binding="{Binding ImeLeka}" />
+                    <DataGridTextColumn Header="Sastojci" Binding="{Binding Path=ListaSastojaka,Converter={StaticResource ListSastojakaToStringConverter}}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Height="53" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="95*"/>
+                    <ColumnDefinition Width="103*"/>
+                    <ColumnDefinition Width="196*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="190*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="198*"/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="0,10,0,-37"  Grid.Column="0" Content="Dodaj Lek" Click="btnDodajLek_Click" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="116"   />
+                <Button Margin="63,10,100,-37"  Grid.Column="1"  Content="Izmeni Lek" Click="btnIzmeniLek_Click" Grid.Row="1" Grid.ColumnSpan="2" RenderTransformOrigin="0.801,1.568"      />
+                <Button Margin="146,10,109,-37"  Grid.Column="2" Content="Izbrisi Lek" Click="btnIzbrisiLek_Click" Grid.Row="1" Grid.ColumnSpan="3"  />
+                <Button Margin="10,10,30,-37" Grid.Column="6" Content="Vrati se" Click="btnVratiSe_Click" Grid.Row="1"              />
+
+
+
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</Window>

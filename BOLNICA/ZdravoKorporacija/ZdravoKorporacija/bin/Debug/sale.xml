@@ -8,21 +8,21 @@
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema>
       <RasporedjenaStatickaOprema>
-        <Kolicina>4</Kolicina>
+        <Kolicina>897</Kolicina>
         <statickaOprema>
           <Id>2</Id>
-          <kolicina>896</kolicina>
+          <kolicina>36</kolicina>
           <naziv>stolica</naziv>
         </statickaOprema>
-        <RasporedjenaOd>2021-04-18T00:00:00</RasporedjenaOd>
+        <RasporedjenaOd>2021-04-14T00:00:00</RasporedjenaOd>
       </RasporedjenaStatickaOprema>
     </RasporedjenaStatickaOprema>
     <RasporedjenaDinamickaOprema>
       <RasporedjenaDinamickaOprema>
-        <Kolicina>201</Kolicina>
+        <Kolicina>401</Kolicina>
         <dinamickaOprema>
           <Id>1</Id>
-          <kolicina>554</kolicina>
+          <kolicina>354</kolicina>
           <naziv>zavoj</naziv>
         </dinamickaOprema>
       </RasporedjenaDinamickaOprema>

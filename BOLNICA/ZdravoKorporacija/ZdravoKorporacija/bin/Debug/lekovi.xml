@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Lek>
+    <IdLeka>sfdf</IdLeka>
+    <ImeLeka>dsfdsdf</ImeLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>3</IdLeka>
+    <ImeLeka>4</ImeLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>5</IdLeka>
+    <ImeLeka>345645</ImeLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka />
+    <ImeLeka />
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+</ArrayOfLek>

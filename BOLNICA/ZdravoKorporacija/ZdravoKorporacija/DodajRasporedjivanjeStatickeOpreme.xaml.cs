@@ -30,7 +30,19 @@ namespace ZdravoKorporacija
             InitializeComponent();
             cmbStatickaOprema.ItemsSource = RukovanjeStatickomOpremomServis.statickaOprema;
             cmbProstorija.ItemsSource = SalaServis.sala;
+            
             cmbProstorijaIz.ItemsSource = SalaServis.sala;
+            
+            var listaSala = new List<Sala>();
+
+            var kobajagiSala = new Sala();
+            kobajagiSala.Id= "Skladiste staticke opreme";
+            listaSala.Add(kobajagiSala);
+
+            listaSala.AddRange(SalaServis.sala);
+            cmbProstorijaIz.ItemsSource = listaSala;
+
+
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
@@ -43,7 +55,7 @@ namespace ZdravoKorporacija
             }
 
 
-          ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
+            ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
             zahtev.Id = RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.pronadji();
             int kolicina = 0;
             try
