@@ -11,16 +11,18 @@ namespace Model
 {
    public class Sala
    {
-      public TipSale TipSale { get; set; }
+        public TipSale TipSale { get; set; }
         public String Id { get; set; }
         public bool Zauzeta { get; set; }
         public string sprat { get; set; }
         public float kvadratura { get; set; }
 
+        
+
         public List<RasporedjenaStatickaOprema> RasporedjenaStatickaOprema { get; set; }
         public List<RasporedjenaDinamickaOprema> RasporedjenaDinamickaOprema { get; set; }
 
-
+        public List<Renoviranje> Renoviranja { get; set; }
 
 
 

@@ -6,6 +6,23 @@
     <Zauzeta>false</Zauzeta>
     <sprat>2</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema>
+        <Kolicina>897</Kolicina>
+        <statickaOprema>
+          <Id>2</Id>
+          <kolicina>36</kolicina>
+          <naziv>stolica</naziv>
+        </statickaOprema>
+        <RasporedjenaOd>2021-04-14T00:00:00</RasporedjenaOd>
+    </RasporedjenaStatickaOprema>
+      <RasporedjenaDinamickaOprema>
+        <Kolicina>401</Kolicina>
+        <dinamickaOprema>
+          <Id>1</Id>
+          <kolicina>354</kolicina>
+          <naziv>zavoj</naziv>
+        </dinamickaOprema>
+      </RasporedjenaDinamickaOprema>
   </Sala>
   <Sala>
     <TipSale>Pregled</TipSale>

@@ -69,7 +69,7 @@ namespace Servis
         {
 
             // DA Li JE IZ DRUGE PROSTORIJE?
-            if (!String.IsNullOrEmpty(zahtev.IzProstorijaId))
+            if (!String.IsNullOrEmpty(zahtev.IzProstorijaId) && (zahtev.IzProstorijaId != "Skladiste staticke opreme"))
             {
                 return DodajZahtevIzDrugeSale(zahtev);
             }
@@ -91,8 +91,25 @@ namespace Servis
             statickaOprema.kolicina -= zahtev.Kolicina;
             RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOprema);
             ZahtevZaRasporedjivanjeStatickeOpreme.Add(zahtev);
-            OsveziKolekciju();
             SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UpisiZahtevZaRasporedjivanjeStatickeOpreme();
+            if (zahtev.RasporedjenoOd <= DateTime.Now)
+            { 
+                Sala sala = SalaServis.PretraziPoId(zahtev.ProstorijaId);
+                var rasporedjeno = sala.RasporedjenaStatickaOprema;
+                foreach (var op in rasporedjeno)
+                {
+                    if (op.statickaOprema.Id == zahtev.StatickeOpremaId)
+                    {
+                        op.Kolicina += zahtev.Kolicina;
+                        break;
+                    }
+                }
+                ObrisiZahtevZaRasporedjivanjeStatickeOpreme(zahtev.Id);
+                SalaRepozitorijum.UpisiSale();
+            }
+            
+            OsveziKolekciju();
+            
             return true;
         }
 

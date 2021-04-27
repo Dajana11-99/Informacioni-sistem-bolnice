@@ -1207,6 +1207,7 @@ C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.exe
 C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.pdb
+<<<<<<< HEAD
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\AnamnezaWindow.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeDinamickeOpreme.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeStatickeOpreme.g.cs
@@ -1277,3 +1278,20 @@ C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\RasporedjivanjeDinamickeOpreme.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\RasporedjivanjeStatickeOpreme.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravstevniKartonPacijenta.baml
+=======
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeLeka.g.cs
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajLek.g.cs
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniLek.g.cs
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazLekova.g.cs
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\BrisanjeLeka.baml
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\DodajLek.baml
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\IzmeniLek.baml
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazLekova.baml
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\RenovirajSalu.g.cs
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\RenovirajSalu.baml
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\CheckboxList.g.cs
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\CheckboxList.baml
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PretragaOpreme.g.cs
+C:\Users\User\Desktop\New folder (5)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PretragaOpreme.baml
+>>>>>>> feat-pretraga-renoviranje-crud-lekova

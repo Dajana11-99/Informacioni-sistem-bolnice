@@ -1,0 +1,18 @@
+﻿<Window x:Class="ZdravoKorporacija.RenovirajSalu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="RenovirajSalu" Height="450" Width="800">
+    <Grid>
+        <Button Content="Potvrdi"  Name="btnPotvrdi" Click="btnPotvrdi_Click" HorizontalAlignment="Left" Height="44" Margin="73,354,0,0" VerticalAlignment="Top" Width="220" FontSize="18"/>
+        <Button Content="Odustani" Name="btnOdustani" Click="btnOdustani_Click" HorizontalAlignment="Left" Height="44" Margin="438,354,0,0" VerticalAlignment="Top" Width="227" FontSize="18"/>
+        <Label Content="Pocetak odmora:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="29,103,0,0" VerticalAlignment="Top" Width="270" FontSize="18"/>
+        <Label Content="Kraj odmora:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="43" Margin="15,185,0,0" VerticalAlignment="Top" Width="270" FontSize="18" RenderTransformOrigin="0.519,-2.775"/>
+        <DatePicker Name="datePickerPocetakRenoviranja" HorizontalAlignment="Left" Height="42" Margin="414,100,0,0" VerticalAlignment="Top" Width="292"/>
+        <DatePicker Name="datePickerKrajRenoviranja" HorizontalAlignment="Left" Height="44" Margin="416,188,0,0" VerticalAlignment="Top" Width="292"/>
+        <Label Name="lblNaslov"  HorizontalAlignment="Left" Margin="94,36,0,0" VerticalAlignment="Top" Width="278" Height="35" FontSize="18"/>
+    </Grid>
+</Window>

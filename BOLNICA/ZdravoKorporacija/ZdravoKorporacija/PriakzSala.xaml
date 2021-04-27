@@ -37,15 +37,16 @@
                     <ColumnDefinition Width="8*"/>
                     <ColumnDefinition Width="198*"/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="0,10,82,-37"  Grid.Column="0" Content="Dodaj Salu" Click="Button_Click" Grid.Row="1" Grid.ColumnSpan="2"   />
-                <Button Margin="63,10,100,-37"  Grid.Column="1"  Content="Izmeni salu" Click="Button_Click_3" Grid.Row="1" Grid.ColumnSpan="2" RenderTransformOrigin="0.801,1.568"      />
-                <Button Margin="146,10,109,-37"  Grid.Column="2" Content="Izbrisi salu" Click="Button_Click_2" Grid.Row="1" Grid.ColumnSpan="3"  />
-                <Button Margin="10,10,30,-37" Grid.Column="6" Content="Vrati se" Click="Button_Click_1" Grid.Row="1"              />
+                <Button Margin="0,10,100,-37"  Grid.Column="0" Content="Dodaj Salu" Click="Button_Click" Grid.Row="1" Grid.ColumnSpan="2"   />
+                <Button Margin="0,11,182,-38"  Grid.Column="1"  Content="Izmeni salu" Click="Button_Click_3" Grid.Row="1" Grid.ColumnSpan="2" RenderTransformOrigin="0.801,1.568" HorizontalAlignment="Right" Width="93"      />
+                <Button Margin="36,10,62,-37"  Grid.Column="2" Content="Izbrisi salu" Click="Button_Click_2" Grid.Row="1"  />
+                <Button Margin="10,10,118,-37" Grid.Column="6" Content="Vrati se" Click="Button_Click_1" Grid.Row="1"              />
 
                 <Button Margin="0,-5,177,10"  Grid.Column="2" Content="Prikaz rasporedjene staticke opreme" Click="btnPregledStatickeOpreme_Click" Grid.ColumnSpan="3"  />
                 <Button Margin="47,-5,128,11"  Grid.Column="4" Content="Prikaz rasporedjene dinamicke opreme" Click="btnPregledDinamickeOpreme_Click" Grid.ColumnSpan="3"    />
 
             </Grid>
+            <Button Content="Renoviraj salu" Height="37" Margin="354,0,341,0" Click="btnRenovirajSaluClick"/>
 
 
         </StackPanel>

@@ -59,6 +59,24 @@ namespace Servis
       {
          return sala;
       }
+
+        public static bool DaLiJeSalaSlobodna(Sala sala, DateTime termin)
+        {
+            if(sala.Renoviranja == null || sala.Renoviranja.Count == 0)
+            {
+                return false;
+            } 
+            foreach(Renoviranje renoviranje in sala.Renoviranja)
+            {
+                // ponde do petka
+                // ili pre pon ili posle petka
+                if (renoviranje.RenoviranjeOd >= termin && renoviranje.RenoviranjeDo <= termin)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
       
       public static bool Izmena(Sala salaZaIzmenu)
       {
@@ -71,7 +89,7 @@ namespace Servis
                     s.Zauzeta = salaZaIzmenu.Zauzeta;
                     s.RasporedjenaDinamickaOprema = salaZaIzmenu.RasporedjenaDinamickaOprema;
                     s.RasporedjenaStatickaOprema = salaZaIzmenu.RasporedjenaStatickaOprema;
-
+                    s.Renoviranja = salaZaIzmenu.Renoviranja;
                 }
               
             }

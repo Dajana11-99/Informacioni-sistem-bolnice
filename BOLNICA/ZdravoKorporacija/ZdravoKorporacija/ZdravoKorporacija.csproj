@@ -62,6 +62,9 @@
     <Compile Include="BrisanjeDinamickeOpreme.xaml.cs">
       <DependentUpon>BrisanjeDinamickeOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BrisanjeLeka.xaml.cs">
+      <DependentUpon>BrisanjeLeka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BrisanjeSale.xaml.cs">
       <DependentUpon>BrisanjeSale.xaml</DependentUpon>
     </Compile>
@@ -71,8 +74,14 @@
     <Compile Include="BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml.cs">
       <DependentUpon>BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CheckboxList.xaml.cs">
+      <DependentUpon>CheckboxList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajDinamickuOpremu.xaml.cs">
       <DependentUpon>DodajDinamickuOpremu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DodajLek.xaml.cs">
+      <DependentUpon>DodajLek.xaml</DependentUpon>
     </Compile>
     <Compile Include="DodajRasporedjivanjeDinamickeOpreme.xaml.cs">
       <DependentUpon>DodajRasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
@@ -100,6 +109,9 @@
     </Compile>
     <Compile Include="IzmenaNalogaPacijentu.xaml.cs">
       <DependentUpon>IzmenaNalogaPacijentu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniLek.xaml.cs">
+      <DependentUpon>IzmeniLek.xaml</DependentUpon>
     </Compile>
     <Compile Include="Kontroler\DinamickaOpremaKontroler.cs" />
     <Compile Include="Kontroler\DinamickiZahteviKontroler.cs" />
@@ -149,7 +161,9 @@
     <Compile Include="Model\RasporedjenaDinamickaOprema.cs" />
     <Compile Include="Model\RasporedjenaStatickaOprema.cs" />
     <Compile Include="Model\Recept.cs" />
+    <Compile Include="Model\Renoviranje.cs" />
     <Compile Include="Model\Sala.cs" />
+    <Compile Include="Model\Sastojak.cs" />
     <Compile Include="Model\Sekretara.cs" />
     <Compile Include="Model\Specijalizacija.cs" />
     <Compile Include="Model\StatickaOprema.cs" />
@@ -218,11 +232,24 @@
     <Compile Include="PacijentPrikaz\ZakazivanjeVremena.xaml.cs">
       <DependentUpon>ZakazivanjeVremena.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PretragaOpreme.xaml.cs">
+      <DependentUpon>PretragaOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazLekova.xaml.cs">
+      <DependentUpon>PrikazLekova.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProzorLogovanje.xaml.cs">
       <DependentUpon>ProzorLogovanje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RenovirajSalu.xaml.cs">
+      <DependentUpon>RenovirajSalu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Repozitorijum\LekRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
+    <Compile Include="Servis\LekServis.cs" />
     <Compile Include="Servis\ObavestenjaServis.cs" />
+    <Compile Include="Servis\RenoviranjeServis.cs" />
     <Compile Include="Servis\RukovanjeDinamickomOpremomServis.cs" />
     <Compile Include="Servis\RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.cs" />
     <Compile Include="Servis\RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.cs" />
@@ -274,6 +301,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BrisanjeLeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BrisanjeSale.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -286,7 +317,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CheckboxList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajDinamickuOpremu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajLek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -331,6 +370,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniDinamickuOpremu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniLek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -438,11 +481,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PretragaOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PriakzSala.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazDinamickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazLekova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -463,6 +514,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RasporedjivanjeStatickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RenovirajSalu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -525,6 +580,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="PacijentPrikaz\SlikePacijent\2021-04-19 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lekovi.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="renoviranja.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sastojci.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
