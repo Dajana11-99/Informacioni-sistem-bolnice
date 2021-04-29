@@ -24,7 +24,7 @@ namespace Model
             set;
         }
 
-        public String Datum
+        public DateTime Datum
         {
 
             get;
@@ -66,7 +66,7 @@ namespace Model
             set;
         }
 
-        public Termin(String id, TipTermina tip, String vreme, double trajanje, String datum, Sala sala, Pacijent p, Lekar l)
+        public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent p, Lekar l)
 
         {
             IdTermina = id;

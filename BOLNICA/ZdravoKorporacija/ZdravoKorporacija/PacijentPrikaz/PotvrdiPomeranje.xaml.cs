@@ -27,10 +27,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             Termin termin = TerminKontroler.pretraziSlobodnePoId(izabrani.IdTermina);
+         
             lekar.Text = termin.Lekar.CeloIme;
-            datum.Text = termin.Datum;
+            datum.Text = termin.Datum.ToString("MM/dd/yyyy");
             vreme.Text = termin.Vreme;
             idTermina = termin.IdTermina;
+
+          
 
         }
 
@@ -38,8 +41,14 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void potvrdiIzmenu_Click(object sender, RoutedEventArgs e)
         {
-        
+           
             TerminKontroler.PomeriPregled(idTermina);
+            if (PacijentGlavniProzor.ulogovan.maliciozan == true)
+            {
+                MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
+
+               
+            }
             this.Close();
         }
     }

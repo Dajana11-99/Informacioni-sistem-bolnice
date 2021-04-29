@@ -28,43 +28,26 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             lekar.Text = termin.Lekar.CeloIme;
-            datum.Text = termin.Datum;
+            datum.Text = termin.Datum.ToString("MM/dd/yyyy");
             vreme.Text = termin.Vreme;
             idTermina = termin.IdTermina;
         }
 
         private void prikaziDatume_Click(object sender, RoutedEventArgs e)
         {
-            string datum1 = datum.Text;
-
-            DateTime pregled = DateTime.ParseExact(datum1, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-
-
-
-            String[] split = DateTime.Now.ToString().Split(' ');
-
-           
-
-         
-            String[] delovi = split[0].Split('/');
-
-           
-
-            DateTime konacni=new DateTime(Int32.Parse(delovi[2]), Int32.Parse(delovi[0]), Int32.Parse(delovi[1]),0,0,0);
-  
-
-            if (DateTime.Compare(konacni,pregled)== 0)
+ 
+            if (DateTime.Compare(DateTime.Now.Date, DateTime.Parse(datum.Text).Date) == 0)
             {
                 MessageBox.Show("Termin je za manje od 24h ne mozete ga pomeriti!");
                 return;
             }
-          //////////////////////////////////////////////////////////////////////////////////////
-            bool dostupanDatum = TerminKontroler.ProveriMogucnostPomeranjaDatum(datum1);
-            Console.WriteLine("ISTI DATUMI------" + dostupanDatum);
+    
+            bool dostupanDatum = TerminKontroler.ProveriMogucnostPomeranjaDatum(DateTime.Parse(datum.Text).Date);
+            
             if (dostupanDatum)
             {
-                bool dostupnoVreme = TerminKontroler.ProveriMogucnostPomeranjaVreme(TerminServis.PretragaPoId(idTermina).Vreme);
-                // Console.WriteLine("BOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOL" + dostupnoVreme);
+                bool dostupnoVreme = TerminKontroler.ProveriMogucnostPomeranjaVreme(TerminServis.PretragaZakazanihTerminaPoId(idTermina).Vreme);
+             
                 if (!dostupnoVreme)
                 {
                     MessageBox.Show("Datum pregleda je za manje od 24h! Ne mozete pomeriti!", "Datum pregleda!");
@@ -72,36 +55,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 }
             }
 
-            Termin t = TerminKontroler.PretragaPoId(idTermina);
-            DateTime datumPregleda = DateTime.ParseExact(datum.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime pocetni = datumPregleda.AddDays(-2);
-            DateTime krajnji = datumPregleda.AddDays(2);
-
-
-            List<Termin> pomocna = new List<Termin>();
-
-            bool nasao = false;
-
+            Termin termin = TerminKontroler.PretragaPoId(idTermina);
+            List<Termin> datumiIntervala = new List<Termin>();
             datumiZaIzmenu.Clear();
-
-
-            pomocna = TerminKontroler.nadjiSlobodneDatumeLekarauIntervalu(pocetni, krajnji, t.Lekar.idZaposlenog);
-            foreach (Termin ter in pomocna)
+            datumiIntervala = TerminKontroler.nadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
+            foreach (Termin terminiLekara in TerminKontroler.nadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog,datumiIntervala))
             {
-                nasao = false;
-                foreach (Termin t1 in datumiZaIzmenu)
-                {
-                    if (t1.Datum.Equals(ter.Datum))
-                    {
-                        nasao = true;
-                        break;
-                    }
-                }
-                if (!nasao)
-                {
-                    datumiZaIzmenu.Add(ter);
-                }
-
+                 UkloniDupleDatume(terminiLekara);
             }
             if (datumiZaIzmenu.Count == 0)
             {
@@ -117,6 +77,25 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
 
 
+        }
+
+        private static bool UkloniDupleDatume(Termin termin)
+        {
+            bool nasao = false;
+            foreach (Termin t1 in datumiZaIzmenu)
+            {
+                if (t1.Datum.Equals(termin.Datum))
+                {
+                    nasao = true;
+                    break;
+                }
+            }
+            if (!nasao)
+            {
+                datumiZaIzmenu.Add(termin);
+            }
+
+            return nasao;
         }
     }
 }

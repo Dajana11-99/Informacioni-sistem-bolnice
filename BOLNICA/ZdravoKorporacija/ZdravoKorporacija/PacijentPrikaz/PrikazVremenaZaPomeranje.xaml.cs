@@ -51,6 +51,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 return;
             }
             PotvrdiPomeranje pz = new PotvrdiPomeranje(((Termin)slobodnaVremenaLista.SelectedItem));
+
             pz.Show();
             this.Close();
         }

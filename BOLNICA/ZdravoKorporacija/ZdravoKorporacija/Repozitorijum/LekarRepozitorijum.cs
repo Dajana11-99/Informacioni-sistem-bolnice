@@ -17,15 +17,15 @@ namespace ZdravoKorporacija.Repozitorijum
         {
             if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
-                return TerminServis.pom;
+                return TerminServis.sviLekari;
             }
             else
             {
                 FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
-                TerminServis.pom = (List<Lekar>)xmlSerializer.Deserialize(fileStream);
+                TerminServis.sviLekari = (List<Lekar>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
-                return TerminServis.pom;
+                return TerminServis.sviLekari;
 
             }
 
@@ -35,7 +35,7 @@ namespace ZdravoKorporacija.Repozitorijum
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
             TextWriter tw = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(tw, TerminServis.pom);
+            xmlSerializer.Serialize(tw, TerminServis.sviLekari);
             tw.Close();
 
         }

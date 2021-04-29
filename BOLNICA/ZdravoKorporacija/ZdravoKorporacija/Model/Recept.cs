@@ -13,8 +13,8 @@ namespace Model
         public Lek Lek1 { get; set; }
 
         public String KolicinaTerapije { get; set; }
-        public String PocetakTerapije { get; set; }
-        public String KrajTerapije { get; set; }
+        public DateTime PocetakTerapije { get; set; }
+        public DateTime KrajTerapije { get; set; }
         public double PeroidUzimanjaUSatima { get; set; }
         public String obavestiMe { get; set; }
 
@@ -27,7 +27,7 @@ namespace Model
 
         }
 
-        public Recept(String kolicinaTerapije, String pocetakTerapije, String krajTarapije, double periodUzimanja,Lek lek,String pac)
+        public Recept(String kolicinaTerapije, DateTime pocetakTerapije, DateTime krajTarapije, double periodUzimanja,Lek lek,String pac)
         {
             KolicinaTerapije = kolicinaTerapije;
             PocetakTerapije = pocetakTerapije;

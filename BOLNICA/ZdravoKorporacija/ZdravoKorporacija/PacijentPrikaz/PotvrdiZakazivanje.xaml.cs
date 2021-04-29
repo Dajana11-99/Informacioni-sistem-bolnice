@@ -28,7 +28,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             InitializeComponent();
             Termin t = TerminKontroler.pretraziSlobodnePoId(izabrani.IdTermina);
             lekar.Text = t.Lekar.CeloIme;
-            datum.Text = t.Datum;
+            datum.Text = t.Datum.ToString("MM/dd/yyyy");
             vreme.Text = t.Vreme;
             idTermin = t.IdTermina;
         }

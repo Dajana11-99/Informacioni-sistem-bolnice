@@ -31,7 +31,7 @@ namespace ZdravoKorporacija
             id = t.IdTermina;
 
             cmbLekar.SelectedIndex = konstruisi_combo(t.Lekar.CeloIme);
-            datePickerZakazivanjeTermina.SelectedDate = DateTime.ParseExact(t.Datum, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            datePickerZakazivanjeTermina.SelectedDate = t.Datum;
             cmbZakazivanjeTerminaVreme.Text = t.Vreme;
             cmbPacijent.Text = t.Pacijent.idPacijenta;
             txtPredvidjenoVremeTermina.Text = t.trajanjeTermina.ToString();
@@ -52,13 +52,10 @@ namespace ZdravoKorporacija
 
         private void btnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
         {
-            DateTime? datum = this.datePickerZakazivanjeTermina.SelectedDate;
-            String formatirano = null;
-            if (datum.HasValue)
-                formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+           
 
 
-            TerminServis.IzmenaTermina(id,formatirano,cmbZakazivanjeTerminaVreme.Text,cmbLekar.Text,txtPredvidjenoVremeTermina.Text, brojSale.Text, cmbVrstaTermina.Text);
+            TerminServis.IzmenaTermina(id, (DateTime)this.datePickerZakazivanjeTermina.SelectedDate,cmbZakazivanjeTerminaVreme.Text,cmbLekar.Text,txtPredvidjenoVremeTermina.Text, brojSale.Text, cmbVrstaTermina.Text);
             this.Close();
         }
 
@@ -76,7 +73,7 @@ namespace ZdravoKorporacija
         {
             List<Lekar> pomocna = new List<Lekar>();
 
-            foreach (Lekar l in TerminServis.pom)
+            foreach (Lekar l in TerminServis.sviLekari)
             {
                 if (!l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
                 {

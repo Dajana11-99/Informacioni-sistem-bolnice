@@ -22,11 +22,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
     /// </summary>
     public partial class OtkazivanjeTermina : Window
     {
-        String izabran = null;
+        String izabraniIdTermina = null;
         public OtkazivanjeTermina(String idTermina)
         {
             InitializeComponent();
-            izabran = idTermina;
+            izabraniIdTermina = idTermina;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,30 +36,20 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            String[] split = DateTime.Now.ToString().Split(' ');
-
-
-          
-
-            String[] delovi = split[0].Split('/');
-
-
-
-            DateTime konacni = new DateTime(Int32.Parse(delovi[2]), Int32.Parse(delovi[0]), Int32.Parse(delovi[1]), 0, 0, 0);
-
-            Termin t = TerminKontroler.PretragaPoId(izabran);
-            DateTime pregled = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-
-
-           
-
-
-            if (DateTime.Compare(konacni, pregled) == 0)
+            Termin termin = TerminKontroler.PretragaPoId(izabraniIdTermina);
+            if (DateTime.Compare(DateTime.Now.Date, termin.Datum.Date) == 0)
             {
                 MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
                 return;
             }
-            TerminKontroler.OtkaziPregled(izabran);
+       
+            TerminKontroler.OtkaziPregled(izabraniIdTermina);
+            if (PacijentGlavniProzor.ulogovan.maliciozan == true)
+            {
+                MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
+
+                return;
+            }
             this.Close();
         }
     }

@@ -29,7 +29,7 @@ namespace ZdravoKorporacija
         {
             List<Lekar> pomocna = new List<Lekar>();
 
-            foreach (Lekar l in TerminServis.pom)
+            foreach (Lekar l in TerminServis.sviLekari)
             {
                 if (!l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
                 {
@@ -94,10 +94,7 @@ namespace ZdravoKorporacija
 
            
 
-            DateTime? datum = datePickerZakazivanjeTermina.SelectedDate;
-            String formatirano = null;
-            if (datum.HasValue)
-                formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+          
 
             String hmin = cmbHMin.Text;
             String vreme = txtPredvidjenoVremeTermina.Text;
@@ -112,7 +109,7 @@ namespace ZdravoKorporacija
                 predvidjenoVreme = double.Parse(vreme);
             }
 
-            Termin t = new Termin(id, tipP, vr, predvidjenoVreme, formatirano, s, p, l);
+            Termin t = new Termin(id, tipP, vr, predvidjenoVreme, (DateTime)datePickerZakazivanjeTermina.SelectedDate, s, p, l);
 
             TerminServis.ZakaziTermin(t);
             this.Close();

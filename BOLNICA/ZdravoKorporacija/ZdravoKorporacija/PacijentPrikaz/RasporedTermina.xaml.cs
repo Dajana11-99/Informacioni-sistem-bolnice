@@ -52,9 +52,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
             }
             if (PacijentGlavniProzor.ulogovan.maliciozan == true)
             {
-                MessageBox.Show("OPASAN PACIJENT");
-              
-                
+                MessageBox.Show("Vas nalog je blokiran!");
+
                 return;
             }
             TerminZaPomeranje = (Termin)TerminiPacijentaa.SelectedItem;
@@ -76,7 +75,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
             if (PacijentGlavniProzor.ulogovan.maliciozan == true)
             {
-                MessageBox.Show("OPASAN PACIJENT");
+                MessageBox.Show("Vas nalog je blokiran!");
                
                 return;
             }

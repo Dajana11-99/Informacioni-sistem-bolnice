@@ -36,25 +36,29 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
 
             Lekar l = TerminServis.PretragaLekaraPoID(((Lekar)lekar.SelectedItem).idZaposlenog);
-            DateTime? datumOD = this.datumOd.SelectedDate;
-            DateTime? datumDO = this.datumDo.SelectedDate;
-
-           
-
-
-
-            if(lekar.SelectedIndex==-1 || prioritet.SelectedIndex==-1 || !datumOD.HasValue || !datumDO.HasValue)
+            if(lekar.SelectedIndex==-1 || prioritet.SelectedIndex==-1 || !this.datumOd.SelectedDate.HasValue || !datumDo.SelectedDate.HasValue)
             {
                 MessageBox.Show("Popunite sva polja!");
                 return;
             }
-
-            DateTime pocetak = (DateTime)datumOD;
-            DateTime kraj = (DateTime)datumDO;
-
-            if (DateTime.Compare(pocetak, kraj) > 0)
+            if (DateTime.Compare(((DateTime)datumOd.SelectedDate).Date, DateTime.Now.Date) <= 0)
             {
-                MessageBox.Show("Pocetni datum mora biti raniji od krajnjeg!");
+                MessageBox.Show("Ne možete izabrati datum u prošlosti!");
+                return;
+            }
+
+            if (DateTime.Compare(((DateTime)datumDo.SelectedDate).Date, ((DateTime)datumOd.SelectedDate).Date) < 0)
+            {
+                MessageBox.Show("Početni datum mora biti raniji od krajnjeg!");
+                return;
+            }
+
+            DateTime pocetak = (DateTime)datumOd.SelectedDate;
+            DateTime kraj = (DateTime)datumDo.SelectedDate;
+
+            if (PacijentGlavniProzor.ulogovan.maliciozan==true)
+            {
+                MessageBox.Show("Vas nalog je blokiran!");
                 return;
             }
 
@@ -63,8 +67,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
             bool nasao = false;
             slobodniDatumi.Clear();
 
-            pomocna = TerminKontroler.nadjiSlobodneDatumeLekarauIntervalu(pocetak, kraj, l.idZaposlenog);
-            foreach(Termin t in pomocna)
+            pomocna = TerminKontroler.nadjiDatumUIntervalu(pocetak, kraj);
+            foreach(Termin t in TerminKontroler.nadjiSlobodneTermineLekara(l.idZaposlenog,pomocna))
             {
                 nasao = false;
                 foreach (Termin t1 in slobodniDatumi)
@@ -126,14 +130,18 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 }
                 else if (prioritet.SelectedIndex == 1)
                 {
-
+                   
                     DateTime noviPocetak = pocetak.AddDays(-7);
                     DateTime noviKraj = kraj.AddDays(7);
+                    int razlikaDana = DateTime.Compare(DateTime.Now.Date, pocetak.Date);
+                    if (razlikaDana < 7)
+                    {
+                        noviPocetak = pocetak.AddDays(-razlikaDana);
+                    }
 
 
-
-                    pomocna = TerminKontroler.nadjiSlobodneDatumeLekarauIntervalu(noviPocetak, noviKraj, l.idZaposlenog);
-                    foreach (Termin t in pomocna)
+                    pomocna = TerminKontroler.nadjiDatumUIntervalu(noviPocetak, noviKraj);
+                    foreach (Termin t in TerminKontroler.nadjiSlobodneTermineLekara(l.idZaposlenog,pomocna))
                     {
                         nasao = false;
                         foreach (Termin t1 in slobodniDatumi)
@@ -187,7 +195,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             List<Lekar> pomocna = new List<Lekar>();
 
-            foreach (Lekar l in TerminServis.pom)
+            foreach (Lekar l in TerminServis.sviLekari)
             {
                 if (l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
                 {

@@ -8,80 +8,56 @@ using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
-using ZdravoKorporacija.PacijentPrikaz;
 
 namespace Kontroler
 {
    public class TerminKontroler
    {
-       
-
-    
-      
-       
-        public static bool ProveriMogucnostPomeranjaDatum(String dat) {
+        public static bool ProveriMogucnostPomeranjaDatum(DateTime dat)
+        {
             return TerminServis.ProveriMogucnostPomeranjaDatum(dat);
-            
-            
         }
-       
-
-        
         public static List<Termin> nadjiVremeTermina(Termin izabraniTermin)
         {
-            return TerminServis.nadjiVremeTermina(izabraniTermin);
+            return TerminServis.NadjiVremeTermina(izabraniTermin);
         }
-
-        public static List<Termin> nadjiSlobodneDatumeLekarauIntervalu(DateTime pocetak, DateTime kraj,String idZaposlenog)
+        public static List<Termin> nadjiSlobodneTermineLekara(String idZaposlenog, List<Termin> datumi)
         {
-            return TerminServis.nadjiSlobodneDatumeLekarauIntervalu(pocetak, kraj, idZaposlenog);
+            return TerminServis.NadjiSlobodneTermineLekara(idZaposlenog, datumi);
         }
-
         public static List<Termin> nadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
         {
-            return TerminServis.nadjiDatumUIntervalu(pocetak, kraj);
+            return TerminServis.NadjiDatumUIntervalu(pocetak, kraj);
         }
-
         public static List<Termin> PrikaziSveTermine()
         {
             return TerminServis.PrikaziSveTermine();
         }
-
         public static Termin pretraziSlobodnePoId(String IdTermina)
         {
-            return TerminServis.pretraziSlobodnePoId(IdTermina);
+            return TerminServis.PretraziSlobodneTerminePoId(IdTermina);
         }
-
-        public static bool ZakaziPregled(Termin t)
+        public static void ZakaziPregled(Termin t)
         {
-            return TerminServis.ZakaziPregled(t);
+            TerminServis.ZakaziPregled(t);
         }
-
         public static void PomeriPregled(String id)
         {
-           
             TerminServis.PomeriPregled(id);
-           
-
         }
-
-        public static bool OtkaziPregled(String id)
+        public static void OtkaziPregled(String id)
         {
-            return TerminServis.OtkaziPregled(id);
+            TerminServis.OtkaziPregled(id);
         }
-
         public static Termin PretragaPoId(String izabran)
         {
-            return TerminServis.PretragaPoId(izabran);
+            return TerminServis.PretragaZakazanihTerminaPoId(izabran);
         }
-
         public static bool ProveriMogucnostPomeranjaVreme(String vreme)
         {
             return TerminServis.ProveriMogucnostPomeranjaVreme(vreme);
         }
-
         public TerminServis terminiServis { get; set; }
-
 
     }
 }

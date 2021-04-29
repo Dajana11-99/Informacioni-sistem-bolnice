@@ -22,7 +22,7 @@
 
 
 
-                            <TextBlock   Text="{Binding Datum}"/>
+                            <TextBlock   Text="{Binding Datum,  StringFormat={}{0:MM/dd/yyyy}}"/>
                             <TextBlock   Text=" - "/>
                             <TextBlock   Text="{Binding Lekar.CeloIme}"/>
 

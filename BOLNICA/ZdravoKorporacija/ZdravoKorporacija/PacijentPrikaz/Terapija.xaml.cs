@@ -50,10 +50,10 @@ namespace ZdravoKorporacija.PacijentPrikaz
             sadrzaj1 = "Terapija: " + r.Lek1.ImeLeka +
            "\ndnevna količina: " + r.KolicinaTerapije + ",\nvremenski interval između doza: " + r.PeroidUzimanjaUSatima + "h.";
             nowTime = DateTime.Now;
-            DateTime scheduledTime = DateTime.Now.AddMinutes(r.PeroidUzimanjaUSatima); //Specify your scheduled time HH,MM,SS [8am and 42 minutes]
-            DateTime krajnji = DateTime.Parse(r.KrajTerapije);
+            DateTime scheduledTime = DateTime.Now.AddSeconds(r.PeroidUzimanjaUSatima); //Specify your scheduled time HH,MM,SS [8am and 42 minutes]
+            DateTime krajnji = r.KrajTerapije;
 
-            // DateTime krajnji = (DateTime)krajnji1;
+           
 
              if (DateTime.Compare(nowTime.Date, krajnji.Date)==0)
              {
