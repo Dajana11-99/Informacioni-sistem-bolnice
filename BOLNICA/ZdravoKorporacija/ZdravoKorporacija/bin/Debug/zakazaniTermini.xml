@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>2021-04-28T00:00:00</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>6</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+      <Renoviranja />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L1</idZaposlenog>
+    </Lekar>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
+      <karton>
+        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <ImeRoditelja>Sinisa</ImeRoditelja>
+        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+        <Pol>Zenski</Pol>
+        <Telefon>064 87956163</Telefon>
+        <BrojKartona>123</BrojKartona>
+        <BracniStatus>Neudata</BracniStatus>
+        <Anamneza>
+          <Simptomi />
+          <IzvestajLekara />
+        </Anamneza>
+        <recepti />
+      </karton>
+      <termin />
+      <maliciozan>false</maliciozan>
+      <zloupotrebio>0</zloupotrebio>
+      <idPacijenta>P1</idPacijenta>
+    </Pacijent>
+    <ocenjenTermin>true</ocenjenTermin>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <trajanjeTermina>30</trajanjeTermina>
+    <Datum>2021-04-29T00:00:00</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>5</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+      <Renoviranja />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+      <idZaposlenog>L1</idZaposlenog>
+    </Lekar>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
+      <karton>
+        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <ImeRoditelja>Sinisa</ImeRoditelja>
+        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+        <Pol>Zenski</Pol>
+        <Telefon>064 87956163</Telefon>
+        <BrojKartona>123</BrojKartona>
+        <BracniStatus>Neudata</BracniStatus>
+        <Anamneza>
+          <Simptomi />
+          <IzvestajLekara />
+        </Anamneza>
+        <recepti />
+      </karton>
+      <termin />
+      <maliciozan>false</maliciozan>
+      <zloupotrebio>0</zloupotrebio>
+      <idPacijenta>P1</idPacijenta>
+    </Pacijent>
+    <ocenjenTermin>true</ocenjenTermin>
+  </Termin>
+</ArrayOfTermin>

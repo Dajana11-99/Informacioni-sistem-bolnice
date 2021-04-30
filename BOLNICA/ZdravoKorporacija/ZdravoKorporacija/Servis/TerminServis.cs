@@ -33,11 +33,11 @@ namespace Servis
 
         public static void inicijalizujSlobodneTermine()
         {
-            //slobodniTermini.Add(new Termin("7", TipTermina.Pregled, "12:30", 30, new DateTime(2021,4,30), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
-            slobodniTermini.Add(new Termin("8", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 1), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
-            slobodniTermini.Add(new Termin("8", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 4, 29), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
-            slobodniTermini.Add(new Termin("8", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 4, 28), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
-            slobodniTermini.Add(new Termin("8", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 3), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
+            slobodniTermini.Add(new Termin("7", TipTermina.Pregled, "12:30", 30, new DateTime(2021,4,30), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
+            slobodniTermini.Add(new Termin("4", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 1), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
+            slobodniTermini.Add(new Termin("5", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 4, 29), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
+            slobodniTermini.Add(new Termin("6", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 4, 28), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
+            slobodniTermini.Add(new Termin("7", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 3), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
             slobodniTermini.Add(new Termin("1", TipTermina.Pregled, "19:00", 30, new DateTime(2021, 5, 2), SalaServis.PretraziPoId("A1"), null, PretragaLekaraPoID("L2")));
             slobodniTermini.Add(new Termin("2", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 3), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L2")));
             slobodniTermini.Add(new Termin("3", TipTermina.Pregled, "14:30", 30, new DateTime(2021, 5, 30), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L2")));

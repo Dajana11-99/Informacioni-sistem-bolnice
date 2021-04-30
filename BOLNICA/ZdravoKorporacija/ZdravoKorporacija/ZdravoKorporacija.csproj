@@ -146,6 +146,7 @@
     </Compile>
     <Compile Include="Model\AdresaStanovanja.cs" />
     <Compile Include="Model\Anamneza.cs" />
+    <Compile Include="Model\Ankete.cs" />
     <Compile Include="Model\BracniStatusE.cs" />
     <Compile Include="Model\DinamickaOprema.cs" />
     <Compile Include="Model\Drzava.cs" />
@@ -155,8 +156,10 @@
     <Compile Include="Model\Lekar.cs" />
     <Compile Include="Model\Mesto.cs" />
     <Compile Include="Model\Obavestenja.cs" />
+    <Compile Include="Model\OcenaAnkete.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Pacijent.cs" />
+    <Compile Include="Model\Pitanje.cs" />
     <Compile Include="Model\Pol.cs" />
     <Compile Include="Model\RasporedjenaDinamickaOprema.cs" />
     <Compile Include="Model\RasporedjenaStatickaOprema.cs" />
@@ -199,17 +202,26 @@
     <Compile Include="PacijentPrikaz\IzmenaTermina.xaml.cs">
       <DependentUpon>IzmenaTermina.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PacijentPrikaz\OceniBolnicu.xaml.cs">
+      <DependentUpon>OceniBolnicu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PacijentPrikaz\OtkazivanjeTermina.xaml.cs">
       <DependentUpon>OtkazivanjeTermina.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\PacijentGlavniProzor.xaml.cs">
       <DependentUpon>PacijentGlavniProzor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PacijentPrikaz\PopuniAnketu.xaml.cs">
+      <DependentUpon>PopuniAnketu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PacijentPrikaz\PotvrdiPomeranje.xaml.cs">
       <DependentUpon>PotvrdiPomeranje.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\PotvrdiZakazivanje.xaml.cs">
       <DependentUpon>PotvrdiZakazivanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PrikazAnketa.xaml.cs">
+      <DependentUpon>PrikazAnketa.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\PrikazDatumaZaPomeranjeKodLekara.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjeKodLekara.xaml</DependentUpon>
@@ -244,9 +256,11 @@
     <Compile Include="RenovirajSalu.xaml.cs">
       <DependentUpon>RenovirajSalu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Repozitorijum\AnketeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\LekRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
+    <Compile Include="Servis\AnketaServis.cs" />
     <Compile Include="Servis\LekServis.cs" />
     <Compile Include="Servis\ObavestenjaServis.cs" />
     <Compile Include="Servis\RenoviranjeServis.cs" />
@@ -437,6 +451,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentPrikaz\OceniBolnicu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentPrikaz\OtkazivanjeTermina.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -445,11 +463,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentPrikaz\PopuniAnketu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentPrikaz\PotvrdiPomeranje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PacijentPrikaz\PotvrdiZakazivanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PrikazAnketa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

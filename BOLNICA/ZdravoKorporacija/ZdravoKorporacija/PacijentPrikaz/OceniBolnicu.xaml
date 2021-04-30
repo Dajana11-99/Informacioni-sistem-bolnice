@@ -1,0 +1,115 @@
+﻿<Window x:Class="ZdravoKorporacija.PacijentPrikaz.OceniBolnicu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+        mc:Ignorable="d"
+        Title="OceniBolnicu" Height="550" Width="587">
+    <StackPanel Background="#77c9b5">
+        <Label FontSize="20" Margin="6,0,9.8,0" >Ocenite od 1-5 sledeća polja:</Label>
+        <StackPanel Orientation="Horizontal">
+            <Label FontSize="14" Margin="10 0">1-Loše</Label>
+            <Label FontSize="14" Margin="10 0">2-Manje nego dobro</Label>
+            <Label FontSize="14" Margin="10 0">3-Dobro</Label>
+            <Label FontSize="14" Margin="10 0">4-Više nego dobro</Label>
+            <Label FontSize="14" Margin="10 0">5-Odlično</Label>
+        </StackPanel>
+
+
+        <Grid Margin="10"  x:Name="grid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="451*"></ColumnDefinition>
+                <ColumnDefinition Width="130*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Label Content="Izgled bolnice" FontSize="15" Grid.Column="0" Grid.Row="0" Margin="0,0,2.2,0"></Label>
+            <ComboBox x:Name="pitanje1" Grid.Column="1" Grid.Row="0" Width="40" Height="25">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Higijena bolnice" FontSize="15" Grid.Column="0" Grid.Row="1" Margin="0,0,2.2,0"></Label>
+            <ComboBox x:Name="pitanje2" Grid.Column="1" Grid.Row="1" Width="40" Height="25">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Pristupačna lokacija" FontSize="15" Grid.Column="0" Grid.Row="2" Margin="0,0,2.2,0"></Label>
+            <ComboBox x:Name="pitanje3" Grid.Column="1" Grid.Row="2" Width="40" Height="25">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Obezbeđen parking" FontSize="15" Grid.Column="0" Grid.Row="3" Margin="0,0,2.2,0"></Label>
+            <ComboBox x:Name="pitanje4" Grid.Column="1" Grid.Row="3" Width="40" Height="25">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Aplikacija bolnice" FontSize="15" Grid.Column="0" Grid.Row="4" Margin="0,0,2.2,0"></Label>
+            <ComboBox x:Name="pitanje5" Grid.Column="1" Grid.Row="4" Width="40" Height="25">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Celokupna ocena osoblja" FontSize="15" Grid.Column="0" Grid.Row="5" Margin="0,0,2.2,0"></Label>
+            <ComboBox x:Name="pitanje6" Grid.Column="1" Grid.Row="5" Width="40" Height="25">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Celokupna ocena bolnice" FontSize="15" Grid.Column="0" Grid.Row="6" Margin="0,0,2.2,0"></Label>
+            <ComboBox x:Name="pitanje7" Grid.Column="1" Grid.Row="6" Width="40" Height="25">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
+
+
+        </Grid>
+
+        <Label Margin="6,10,9.8,10" FontSize="14">Mesto za dodatne komentare, preporuke,kritike i sugestije:</Label>
+        <TextBox Margin="10 0" Height="130" x:Name="dodatniKomentar" ></TextBox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                </ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Height="30" FontSize="13" Margin="10 10" x:Name="VratiSe" Click="VratiSe_Click" Grid.Column="0">Vrati se</Button>
+            <Button Height="30" FontSize="13" Margin="10 10" x:Name="PosaljiAnketu" Click="PosaljiAnketu_Click" Grid.Column="1">Pošalji anketu</Button>
+        </Grid>
+
+    </StackPanel>
+</Window>

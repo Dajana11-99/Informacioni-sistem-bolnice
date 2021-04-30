@@ -39,7 +39,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
             foreach (Termin t in TerminKontroler.PrikaziSveTermine())
             {
                 if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
-                    TerminiPacijenta.Add(t);
+                {
+                    if(DateTime.Compare(t.Datum.Date,DateTime.Now.Date)>=0)
+                        TerminiPacijenta.Add(t);
+                }
+                 
             }
         }
 

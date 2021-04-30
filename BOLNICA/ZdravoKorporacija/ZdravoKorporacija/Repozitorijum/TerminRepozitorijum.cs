@@ -14,23 +14,18 @@ using Servis;
 namespace ZdravoKorporacija.Repozitorijum
 {
     public class TerminRepozitorijum
-   {
-
-     
-       
-
-       
-     
-
+    {
+        public static String zakazaniTerminiFajl = "zakazaniTermini.xml";
+        public static String slobodniTerminiFajl = "slobodniTermini.xml";
         public static List<Termin> ucitajTermine()
         {
-            if (!File.Exists("termini.xml") || File.ReadAllText("termini.xml").Trim().Equals(""))
+            if (!File.Exists(zakazaniTerminiFajl) || File.ReadAllText(zakazaniTerminiFajl).Trim().Equals(""))
             {
                 return TerminServis.zakazaniTermini;
             }
             else
             {
-                FileStream fileStream = File.OpenRead("termini.xml");
+                FileStream fileStream = File.OpenRead(zakazaniTerminiFajl);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
                 TerminServis.zakazaniTermini = (List<Termin>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -43,7 +38,7 @@ namespace ZdravoKorporacija.Repozitorijum
         public static void upisiTermine()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
-            TextWriter tw = new StreamWriter("termini.xml");
+            TextWriter tw = new StreamWriter(zakazaniTerminiFajl);
             xmlSerializer.Serialize(tw, TerminServis.zakazaniTermini);
             tw.Close();
 
@@ -52,13 +47,13 @@ namespace ZdravoKorporacija.Repozitorijum
 
         public static List<Termin> ucitajSlobodneTermine()
         {
-            if (!File.Exists("slobodniTermini.xml") || File.ReadAllText("slobodniTermini.xml").Trim().Equals(""))
+            if (!File.Exists(slobodniTerminiFajl) || File.ReadAllText(slobodniTerminiFajl).Trim().Equals(""))
             {
                 return TerminServis.slobodniTermini;
             }
             else
             {
-                FileStream fileStream = File.OpenRead("slobodniTermini.xml");
+                FileStream fileStream = File.OpenRead(slobodniTerminiFajl);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
                 TerminServis.slobodniTermini = (List<Termin>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -71,7 +66,7 @@ namespace ZdravoKorporacija.Repozitorijum
         public static void upisiSlobodneTermine()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
-            TextWriter tw = new StreamWriter("slobodniTermini.xml");
+            TextWriter tw = new StreamWriter(slobodniTerminiFajl);
             xmlSerializer.Serialize(tw, TerminServis.slobodniTermini);
             tw.Close();
 

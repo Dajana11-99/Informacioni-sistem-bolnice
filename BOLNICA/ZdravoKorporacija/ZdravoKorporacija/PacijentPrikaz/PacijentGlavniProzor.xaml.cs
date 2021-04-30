@@ -87,6 +87,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void ankete_Click(object sender, RoutedEventArgs e)
         {
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new PrikazAnketa();
+            MainPanel.Children.Add(usc);
 
         }
 

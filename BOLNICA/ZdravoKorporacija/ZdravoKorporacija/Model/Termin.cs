@@ -66,6 +66,8 @@ namespace Model
             set;
         }
 
+        public bool ocenjenTermin { get; set; }
+
         public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent p, Lekar l)
 
         {
@@ -77,6 +79,8 @@ namespace Model
             Sala = sala;
             Pacijent = p;
             Lekar = l;
+            ocenjenTermin = false;
+
 
 
         }

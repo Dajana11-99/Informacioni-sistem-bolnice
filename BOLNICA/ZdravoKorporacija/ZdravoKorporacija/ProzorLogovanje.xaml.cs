@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ZdravoKorporacija.PacijentPrikaz;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija
 {
@@ -50,7 +51,7 @@ namespace ZdravoKorporacija
            //TerminServis.inicijalizuj(); //Inicijalizacija lekara
            //TerminServis.inicijalizujSlobodneTermine();
            TerminRepozitorijum.ucitajSlobodneTermine();
-
+            AnketaServis.inicijalizujPitanja();
 
 
 
@@ -78,6 +79,7 @@ namespace ZdravoKorporacija
             NaloziPacijenataRepozitorijum.UcitajPacijente();
 
             ObavestenjaRepozitorijum.Ucitaj();
+            AnketeRepozitorijum.ucitajAnkete();
 
 
 

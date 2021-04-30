@@ -41,7 +41,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 MessageBox.Show("Popunite sva polja!");
                 return;
             }
-            if (DateTime.Compare(((DateTime)datumOd.SelectedDate).Date, DateTime.Now.Date) <= 0)
+          /*  if (DateTime.Compare(((DateTime)datumOd.SelectedDate).Date, DateTime.Now.Date) <= 0)
             {
                 MessageBox.Show("Ne možete izabrati datum u prošlosti!");
                 return;
@@ -51,7 +51,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             {
                 MessageBox.Show("Početni datum mora biti raniji od krajnjeg!");
                 return;
-            }
+            }*/
 
             DateTime pocetak = (DateTime)datumOd.SelectedDate;
             DateTime kraj = (DateTime)datumDo.SelectedDate;

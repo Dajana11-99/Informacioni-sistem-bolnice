@@ -5,7 +5,7 @@
     <trajanjeTermina>30</trajanjeTermina>
     <Datum>2021-05-01T00:00:00</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>8</IdTermina>
+    <IdTermina>4</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
       <Id>a3</Id>
@@ -38,91 +38,14 @@
       <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L1</idZaposlenog>
     </Lekar>
-  </Termin>
-  <Termin>
-    <Vreme>16:30</Vreme>
-    <trajanjeTermina>30</trajanjeTermina>
-    <Datum>2021-04-29T00:00:00</Datum>
-    <TipTermina>Pregled</TipTermina>
-    <IdTermina>8</IdTermina>
-    <Sala>
-      <TipSale>Pregled</TipSale>
-      <Id>a3</Id>
-      <Zauzeta>false</Zauzeta>
-      <sprat>4</sprat>
-      <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
-      <RasporedjenaDinamickaOprema />
-      <Renoviranja />
-    </Sala>
-    <Lekar>
-      <korisnik>
-        <KorisnickoIme>pera.peric</KorisnickoIme>
-        <Sifra>pera.peric</Sifra>
-        <Uloga>Lekar</Uloga>
-        <Nalog>Obican</Nalog>
-      </korisnik>
-      <Ime>Pera</Ime>
-      <Prezime>Peric</Prezime>
-      <Jmbg>2711999105018</Jmbg>
-      <Email>dajanazlokapa@gmail.com</Email>
-      <CeloIme>Pera Peric</CeloIme>
-      <adresaStanovanja>
-        <Broj>2A</Broj>
-        <Ulica>Ljubice Ravasi</Ulica>
-      </adresaStanovanja>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
-      <idZaposlenog>L1</idZaposlenog>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <Vreme>16:30</Vreme>
-    <trajanjeTermina>30</trajanjeTermina>
-    <Datum>2021-04-28T00:00:00</Datum>
-    <TipTermina>Pregled</TipTermina>
-    <IdTermina>8</IdTermina>
-    <Sala>
-      <TipSale>Pregled</TipSale>
-      <Id>a3</Id>
-      <Zauzeta>false</Zauzeta>
-      <sprat>4</sprat>
-      <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
-      <RasporedjenaDinamickaOprema />
-      <Renoviranja />
-    </Sala>
-    <Lekar>
-      <korisnik>
-        <KorisnickoIme>pera.peric</KorisnickoIme>
-        <Sifra>pera.peric</Sifra>
-        <Uloga>Lekar</Uloga>
-        <Nalog>Obican</Nalog>
-      </korisnik>
-      <Ime>Pera</Ime>
-      <Prezime>Peric</Prezime>
-      <Jmbg>2711999105018</Jmbg>
-      <Email>dajanazlokapa@gmail.com</Email>
-      <CeloIme>Pera Peric</CeloIme>
-      <adresaStanovanja>
-        <Broj>2A</Broj>
-        <Ulica>Ljubice Ravasi</Ulica>
-      </adresaStanovanja>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
-      <idZaposlenog>L1</idZaposlenog>
-    </Lekar>
+    <ocenjenTermin>false</ocenjenTermin>
   </Termin>
   <Termin>
     <Vreme>16:30</Vreme>
     <trajanjeTermina>30</trajanjeTermina>
     <Datum>2021-05-03T00:00:00</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>8</IdTermina>
+    <IdTermina>7</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
       <Id>a3</Id>
@@ -155,6 +78,7 @@
       <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L1</idZaposlenog>
     </Lekar>
+    <ocenjenTermin>false</ocenjenTermin>
   </Termin>
   <Termin>
     <Vreme>19:00</Vreme>
@@ -194,6 +118,7 @@
       <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L2</idZaposlenog>
     </Lekar>
+    <ocenjenTermin>false</ocenjenTermin>
   </Termin>
   <Termin>
     <Vreme>16:30</Vreme>
@@ -233,6 +158,7 @@
       <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L2</idZaposlenog>
     </Lekar>
+    <ocenjenTermin>false</ocenjenTermin>
   </Termin>
   <Termin>
     <Vreme>14:30</Vreme>
@@ -272,5 +198,6 @@
       <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L2</idZaposlenog>
     </Lekar>
+    <ocenjenTermin>false</ocenjenTermin>
   </Termin>
 </ArrayOfTermin>
