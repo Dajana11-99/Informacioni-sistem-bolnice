@@ -113,8 +113,7 @@ namespace Servis
         {
             zakazaniTermini.Add(termin);
             slobodniTermini.Remove(termin);
-            TerminRepozitorijum.upisiSlobodneTermine();
-            TerminRepozitorijum.upisiTermine();
+            SacuvajNoveTermine();
         }
         public static String pronadji()
         {
@@ -161,6 +160,8 @@ namespace Servis
             Termin termin = PretragaZakazanihTerminaPoId(idTermina);
             zakazaniTermini.Remove(termin);
             LekarWindow.TerminiLekara.Remove(termin);
+           
+
         }
 
         public static void PomeriPregled(String idTermina)
@@ -186,6 +187,12 @@ namespace Servis
             zakazaniTermini.Add(noviTermin);
             slobodniTermini.Remove(noviTermin);
             slobodniTermini.Add(stariTermin);
+            SacuvajNoveTermine();
+        }
+        private static void SacuvajNoveTermine()
+        {
+            TerminRepozitorijum.upisiSlobodneTermine();
+            TerminRepozitorijum.upisiTermine();
         }
         public static bool ProveriMalicioznostPacijenta(Pacijent pacijent)
         {
@@ -256,6 +263,7 @@ namespace Servis
             Termin termin = PretragaZakazanihTerminaPoId(idTermina);
             BrisanjePrikazaPosleOtkazivanja(termin);
             ProveriMalicioznostPacijenta(NaloziPacijenataServis.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme));
+           
         }
 
         private static void BrisanjePrikazaPosleOtkazivanja(Termin termin)
@@ -264,6 +272,7 @@ namespace Servis
             termin.Pacijent = null;
             slobodniTermini.Add(termin);
             RasporedTermina.TerminiPacijenta.Remove(termin);
+            SacuvajNoveTermine();
         }
 
         public static bool ProveriMogucnostPomeranjaDatum(DateTime datumPregleda)
