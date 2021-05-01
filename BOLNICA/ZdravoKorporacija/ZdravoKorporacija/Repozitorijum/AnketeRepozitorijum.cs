@@ -20,15 +20,15 @@ namespace ZdravoKorporacija.Repozitorijum
         {
             if (!File.Exists(pitanjaFajl) || File.ReadAllText(pitanjaFajl).Trim().Equals(""))
             {
-                return AnketaServis.pitanja;
+                return AnketaServis.pitanjaOPregledu;
             }
             else
             {
                 FileStream fileStream = File.OpenRead(pitanjaFajl);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pitanje>));
-                AnketaServis.pitanja = (List<Pitanje>)xmlSerializer.Deserialize(fileStream);
+                AnketaServis.pitanjaOPregledu = (List<Pitanje>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
-                return AnketaServis.pitanja;
+                return AnketaServis.pitanjaOPregledu;
 
             }
 
@@ -38,7 +38,7 @@ namespace ZdravoKorporacija.Repozitorijum
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pitanje>));
             TextWriter tw = new StreamWriter(pitanjaFajl);
-            xmlSerializer.Serialize(tw, AnketaServis.pitanja);
+            xmlSerializer.Serialize(tw, AnketaServis.pitanjaOPregledu);
             tw.Close();
 
         }

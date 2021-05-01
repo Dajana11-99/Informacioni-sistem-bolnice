@@ -15,7 +15,7 @@ namespace Model
       public List<Pitanje> pitanja { get; set; }
       public Termin termin { get; set; }
       
-        public Pacijent Pacijent { get;set; }
+      public Pacijent Pacijent { get;set; }
       public DateTime ocenioBolnicu { get; set; }
 
         public Ankete(string dodatniKomentar, List<Pitanje> pitanja, Termin termin,Pacijent pacijent)

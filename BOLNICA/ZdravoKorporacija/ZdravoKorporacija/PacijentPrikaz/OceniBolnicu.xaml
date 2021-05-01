@@ -30,6 +30,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
 
             </Grid.RowDefinitions>
             <Label Content="Izgled bolnice" FontSize="15" Grid.Column="0" Grid.Row="0" Margin="0,0,2.2,0"></Label>
@@ -94,6 +95,17 @@
                 <ComboBoxItem>4</ComboBoxItem>
                 <ComboBoxItem>5</ComboBoxItem>
             </ComboBox>
+
+
+            <Label Content="Da li biste prijateljima preporučili kliniku Zdravo" FontSize="15" Grid.Column="0" Grid.Row="7" Margin="0,0,2.2,0"></Label>
+            <ComboBox x:Name="pitanje8" Grid.Column="1" Grid.Row="7" Width="40" Height="25">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+            </ComboBox>
+
 
 
 

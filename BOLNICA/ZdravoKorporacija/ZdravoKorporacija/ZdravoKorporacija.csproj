@@ -113,6 +113,7 @@
     <Compile Include="IzmeniLek.xaml.cs">
       <DependentUpon>IzmeniLek.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Kontroler\AnketeKontroler.cs" />
     <Compile Include="Kontroler\DinamickaOpremaKontroler.cs" />
     <Compile Include="Kontroler\DinamickiZahteviKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />

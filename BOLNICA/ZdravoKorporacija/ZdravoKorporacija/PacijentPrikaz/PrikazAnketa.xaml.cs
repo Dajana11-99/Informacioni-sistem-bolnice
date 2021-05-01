@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.PacijentPrikaz
@@ -55,7 +56,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
-            if (!AnketaServis.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovan))
+            if (!AnketeKontroler.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovan))
             {
                 MessageBox.Show("Već ste ocenili bolnicu!");
                 return;

@@ -13,14 +13,14 @@ namespace Model
    {
      public OcenaAnkete Ocena { get; set; }
         public String Tekst { get; set; }
-        public bool pitanjeOBolnici { get; set; }
+       
 
         public Pitanje() { }
         public Pitanje(OcenaAnkete ocena, string tekst, bool pitanjeOBolnici)
         {
             Ocena = ocena;
             Tekst = tekst;
-            this.pitanjeOBolnici = pitanjeOBolnici;
+           
         }
     }
 }

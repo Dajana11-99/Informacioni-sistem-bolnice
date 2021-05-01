@@ -52,6 +52,7 @@ namespace ZdravoKorporacija
            //TerminServis.inicijalizujSlobodneTermine();
            TerminRepozitorijum.ucitajSlobodneTermine();
             AnketaServis.inicijalizujPitanja();
+            AnketaServis.inicijalizujPitanjaOBolnici();
 
 
 
@@ -79,7 +80,7 @@ namespace ZdravoKorporacija
             NaloziPacijenataRepozitorijum.UcitajPacijente();
 
             ObavestenjaRepozitorijum.Ucitaj();
-            AnketeRepozitorijum.ucitajAnkete();
+           AnketeRepozitorijum.ucitajAnkete();
 
 
 

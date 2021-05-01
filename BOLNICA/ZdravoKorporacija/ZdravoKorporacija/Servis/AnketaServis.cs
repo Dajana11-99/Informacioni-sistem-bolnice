@@ -10,22 +10,47 @@ namespace ZdravoKorporacija.Servis
 {
     public class AnketaServis
     {
-        public static List<Pitanje> pitanja = new List<Pitanje>();
+        public static List<Pitanje> pitanjaOPregledu = new List<Pitanje>();
+        public static List<Pitanje> pitanjaOBolnici = new List<Pitanje>();
         public static List<Ankete> popunjeneAnkete = new List<Ankete>();
         public static void inicijalizujPitanja()
         {
            
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Higijena ordinacije/sobe za preglede", false));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Ljubaznost osoblja", false));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Ljubaznost lekara", false));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Strucnost lekara", false));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Zadovoljstvo pruženom zdravstvenom uslugom", false));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Usluge se obavljaju u skladu sa rasporedom termina", false));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Da li biste preporučili prijateljima ovog lekara", false));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Izgled bolnice", true));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Higijena bolnice", true));
-            pitanja.Add(new Pitanje(OcenaAnkete.pet, "Celokupna ocena klinike", true));
-            pitanja.Add(new Pitanje(OcenaAnkete.da, "Da li biste prijateljima preporučili kliniku Zdravo", true));
+            pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Higijena ordinacije/sobe za preglede", false));
+            pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Ljubaznost osoblja", false));
+            pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Ljubaznost lekara", false));
+            pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Strucnost lekara", false));
+            pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Zadovoljstvo pruženom zdravstvenom uslugom", false));
+            pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Usluge se obavljaju u skladu sa rasporedom termina", false));
+            pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Da li biste preporučili prijateljima ovog lekara", false));
+      
+        }
+
+        public static void inicijalizujPitanjaOBolnici()
+        {
+           pitanjaOBolnici.Add(new Pitanje(OcenaAnkete.pet, "Izgled bolnice", true));
+           pitanjaOBolnici.Add(new Pitanje(OcenaAnkete.pet, "Higijena bolnice", true));
+           pitanjaOBolnici.Add(new Pitanje(OcenaAnkete.pet, "Pristupačna lokacija", true));
+           pitanjaOBolnici.Add(new Pitanje(OcenaAnkete.pet, "Obezbeđen parking", true));
+           pitanjaOBolnici.Add(new Pitanje(OcenaAnkete.pet, "Aplikacija bolnice", true));
+           pitanjaOBolnici.Add(new Pitanje(OcenaAnkete.pet, "Celokupna ocena osoblja", true));
+           pitanjaOBolnici.Add(new Pitanje(OcenaAnkete.pet, "Celokupna ocena bolnice", true));
+            pitanjaOBolnici.Add(new Pitanje(OcenaAnkete.da, "Da li biste prijateljima preporučili kliniku Zdravo", true));
+        }
+
+        public static List<Pitanje> DobaviSvaPitanjaOPregledu()
+        {
+            return pitanjaOPregledu;
+        }
+
+
+        public static List<Pitanje> DobaviSvaPitanjaOBolnici()
+        {
+            return pitanjaOBolnici;
+        }
+        public static List<Ankete> DobaviSveAnkete()
+        {
+            return popunjeneAnkete;
         }
 
         public static void DodajAnketu(Ankete anketa)
