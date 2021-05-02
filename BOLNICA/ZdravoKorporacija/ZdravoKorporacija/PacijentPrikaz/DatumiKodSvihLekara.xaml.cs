@@ -27,8 +27,10 @@ namespace ZdravoKorporacija.PacijentPrikaz
             InitializeComponent();
             slobodniDatumiKodSvih = new ObservableCollection<Termin>();
             foreach (Termin t in ZakazivanjeSaPrioritetom.slobodniDatumi)
-                slobodniDatumiKodSvih.Add(t);
-
+            {
+                if (t.Lekar.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
+                    slobodniDatumiKodSvih.Add(t);
+            }
             slobodniDatumiKodSvihLista.ItemsSource = slobodniDatumiKodSvih;
         }
 

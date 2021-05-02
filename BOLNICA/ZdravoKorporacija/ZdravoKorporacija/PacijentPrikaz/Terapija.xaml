@@ -16,7 +16,7 @@
             <ColumnDefinition Width="64*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2" Margin="0,0,0.2,0.6" Grid.RowSpan="2">
-            <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Raspored termina</Label>
+            <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Raspored terapije</Label>
             <DataGrid x:Name="ReceptiPropisanii" ItemsSource="{Binding ReceptiPropisani}" IsReadOnly="true"
                   SelectionMode="Single"  Margin="15,5,0,20" 
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="195" HorizontalAlignment="Left" Width="544">
@@ -29,15 +29,14 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-            <Grid Height="39" >
+            <Grid Height="40" Margin="0,0,28.2,0" >
                 <Grid.ColumnDefinitions>
 
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Click="Button_Click">Ukljuci obavestenja</Button>
-                <Button Click="Button_Click_1" Grid.Column="1" Grid.Row="1">Iskljuci obavestenja</Button>
+                <Button Click="Button_Click" Margin="23,0,10,0">Ukljuci obavestenja</Button>
+                <Button Click="Button_Click_1" Grid.Column="2"  Margin="10,0,23,0" Grid.Row="1">Iskljuci obavestenja</Button>
                
             </Grid>
 

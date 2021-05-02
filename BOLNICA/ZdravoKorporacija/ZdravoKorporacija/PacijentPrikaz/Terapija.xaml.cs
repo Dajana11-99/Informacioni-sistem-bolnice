@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ZdravoKorporacija.Model;
+using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.PacijentPrikaz
@@ -47,24 +48,14 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public static void schedule_Timer()
         {
            
-            sadrzaj1 = "Terapija: " + r.Lek1.ImeLeka +
-           "\ndnevna količina: " + r.KolicinaTerapije + ",\nvremenski interval između doza: " + r.PeroidUzimanjaUSatima + "h.";
+            sadrzaj1 = "Lek: " + r.Lek1.ImeLeka + ".\nIsteklo je " + r.PeroidUzimanjaUSatima + "h od poslednje doze."+
+           "\nKoličina u sledećoj dozi: " + r.KolicinaTerapije+"." ;
             nowTime = DateTime.Now;
-            DateTime scheduledTime = DateTime.Now.AddSeconds(r.PeroidUzimanjaUSatima); //Specify your scheduled time HH,MM,SS [8am and 42 minutes]
+            DateTime scheduledTime = DateTime.Now.AddSeconds(r.PeroidUzimanjaUSatima);
             DateTime krajnji = r.KrajTerapije;
-
-           
-
              if (DateTime.Compare(nowTime.Date, krajnji.Date)==0)
-             {
-
-                 kraj();
-             }
-
-
-             Console.WriteLine("KONNNN" + krajnji.Date);
-             Console.WriteLine("NOWW" + nowTime.Date);
-
+                  kraj();
+             
             double tickTime = (double)(scheduledTime - DateTime.Now).TotalMilliseconds;
             timer = new Timer(tickTime);
 
@@ -93,8 +84,10 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public static String sadrzaj1;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
              r = (Recept)ReceptiPropisanii.SelectedItem;
-          if (r.obavestiMe.Equals("DA"))
+            schedule_Timer();
+            if (r.obavestiMe.Equals("DA"))
             {
                 MessageBox.Show("Vec primate obavestenja o ovoj terapiji!!");
                 return;

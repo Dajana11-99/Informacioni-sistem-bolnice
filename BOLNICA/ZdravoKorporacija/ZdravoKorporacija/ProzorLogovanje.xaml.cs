@@ -49,8 +49,8 @@ namespace ZdravoKorporacija
             LekarRepozitorijum.ucitajLekare();
            
            //TerminServis.inicijalizuj(); //Inicijalizacija lekara
-           TerminServis.inicijalizujSlobodneTermine();
-          // TerminRepozitorijum.ucitajSlobodneTermine();
+          // TerminServis.inicijalizujSlobodneTermine();
+           TerminRepozitorijum.UcitajSlobodneTermine();
             AnketaServis.inicijalizujPitanja();
             AnketaServis.inicijalizujPitanjaOBolnici();
 
@@ -75,11 +75,11 @@ namespace ZdravoKorporacija
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
             //RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
 
-           // NaloziPacijenataServis.inic();
+           //NaloziPacijenataServis.inic();
 
             NaloziPacijenataRepozitorijum.UcitajPacijente();
 
-            ObavestenjaRepozitorijum.Ucitaj();
+           // ObavestenjaRepozitorijum.Ucitaj();
            AnketeRepozitorijum.UcitajAnkete();
 
 

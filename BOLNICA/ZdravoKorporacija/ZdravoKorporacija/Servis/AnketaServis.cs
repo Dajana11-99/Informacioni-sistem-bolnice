@@ -89,6 +89,6 @@ namespace ZdravoKorporacija.Servis
             return nesortiraniDatumi.OrderByDescending(user => user.ocenioBolnicu).ToList();
         }
 
-
+        public Repozitorijum.AnketeRepozitorijum anketeRepozitorijum;
     }
 }

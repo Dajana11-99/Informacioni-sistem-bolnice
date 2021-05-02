@@ -1,50 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfAnkete xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Ankete>
-    <DodatniKomentar>OK</DodatniKomentar>
+    <DodatniKomentar>hh</DodatniKomentar>
+    <pitanja>
+      <Pitanje>
+        <Ocena>jedan</Ocena>
+        <Tekst>Izgled bolnice</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>dva</Ocena>
+        <Tekst>Higijena bolnice</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>tri</Ocena>
+        <Tekst>Pristupačna lokacija</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>cetiri</Ocena>
+        <Tekst>Obezbeđen parking</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Aplikacija bolnice</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>jedan</Ocena>
+        <Tekst>Celokupna ocena osoblja</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>dva</Ocena>
+        <Tekst>Celokupna ocena bolnice</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>tri</Ocena>
+        <Tekst>Da li biste prijateljima preporučili kliniku Zdravo</Tekst>
+      </Pitanje>
+    </pitanja>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
+      <karton>
+        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <ImeRoditelja>Sinisa</ImeRoditelja>
+        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+        <Pol>Zenski</Pol>
+        <Telefon>064 87956163</Telefon>
+        <BrojKartona>123</BrojKartona>
+        <BracniStatus>Neudata</BracniStatus>
+        <Anamneza>
+          <Simptomi />
+          <IzvestajLekara />
+        </Anamneza>
+        <recepti />
+      </karton>
+      <termin />
+      <Maliciozan>false</Maliciozan>
+      <Zloupotrebio>0</Zloupotrebio>
+      <IdPacijenta>P1</IdPacijenta>
+    </Pacijent>
+    <ocenioBolnicu>2021-05-02T00:00:00+02:00</ocenioBolnicu>
+  </Ankete>
+  <Ankete>
+    <DodatniKomentar>cccc</DodatniKomentar>
     <pitanja>
       <Pitanje>
         <Ocena>jedan</Ocena>
         <Tekst>Higijena ordinacije/sobe za preglede</Tekst>
-        <pitanjeOBolnici>false</pitanjeOBolnici>
       </Pitanje>
       <Pitanje>
-        <Ocena>jedan</Ocena>
+        <Ocena>dva</Ocena>
         <Tekst>Ljubaznost osoblja</Tekst>
-        <pitanjeOBolnici>false</pitanjeOBolnici>
-      </Pitanje>
-      <Pitanje>
-        <Ocena>jedan</Ocena>
-        <Tekst>Ljubaznost lekara</Tekst>
-        <pitanjeOBolnici>false</pitanjeOBolnici>
-      </Pitanje>
-      <Pitanje>
-        <Ocena>jedan</Ocena>
-        <Tekst>Strucnost lekara</Tekst>
-        <pitanjeOBolnici>false</pitanjeOBolnici>
       </Pitanje>
       <Pitanje>
         <Ocena>tri</Ocena>
+        <Tekst>Ljubaznost lekara</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>tri</Ocena>
+        <Tekst>Strucnost lekara</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
         <Tekst>Zadovoljstvo pruženom zdravstvenom uslugom</Tekst>
-        <pitanjeOBolnici>false</pitanjeOBolnici>
       </Pitanje>
       <Pitanje>
         <Ocena>cetiri</Ocena>
         <Tekst>Usluge se obavljaju u skladu sa rasporedom termina</Tekst>
-        <pitanjeOBolnici>false</pitanjeOBolnici>
       </Pitanje>
       <Pitanje>
-        <Ocena>pet</Ocena>
+        <Ocena>dva</Ocena>
         <Tekst>Da li biste preporučili prijateljima ovog lekara</Tekst>
-        <pitanjeOBolnici>false</pitanjeOBolnici>
       </Pitanje>
     </pitanja>
     <termin>
       <Vreme>16:30</Vreme>
-      <trajanjeTermina>30</trajanjeTermina>
+      <TrajanjeTermina>30</TrajanjeTermina>
       <Datum>2021-04-29T00:00:00</Datum>
       <TipTermina>Pregled</TipTermina>
-      <IdTermina>5</IdTermina>
+      <IdTermina>3</IdTermina>
       <Sala>
         <TipSale>Pregled</TipSale>
         <Id>a3</Id>
@@ -109,11 +176,10 @@
           <recepti />
         </karton>
         <termin />
-        <maliciozan>false</maliciozan>
-        <zloupotrebio>0</zloupotrebio>
-        <idPacijenta>P1</idPacijenta>
+        <Maliciozan>false</Maliciozan>
+        <Zloupotrebio>0</Zloupotrebio>
       </Pacijent>
-      <ocenjenTermin>true</ocenjenTermin>
+      <OcenjenTermin>true</OcenjenTermin>
     </termin>
     <Pacijent>
       <korisnik>
@@ -147,56 +213,120 @@
         <recepti />
       </karton>
       <termin />
-      <maliciozan>false</maliciozan>
-      <zloupotrebio>0</zloupotrebio>
-      <idPacijenta>P1</idPacijenta>
+      <Maliciozan>false</Maliciozan>
+      <Zloupotrebio>0</Zloupotrebio>
+      <IdPacijenta>P1</IdPacijenta>
     </Pacijent>
     <ocenioBolnicu>0001-01-01T00:00:00</ocenioBolnicu>
   </Ankete>
   <Ankete>
-    <DodatniKomentar>ok blonica</DodatniKomentar>
+    <DodatniKomentar>ok</DodatniKomentar>
     <pitanja>
       <Pitanje>
         <Ocena>jedan</Ocena>
-        <Tekst>Izgled bolnice</Tekst>
-        <pitanjeOBolnici>true</pitanjeOBolnici>
+        <Tekst>Higijena ordinacije/sobe za preglede</Tekst>
       </Pitanje>
       <Pitanje>
         <Ocena>dva</Ocena>
-        <Tekst>Higijena bolnice</Tekst>
-        <pitanjeOBolnici>true</pitanjeOBolnici>
-      </Pitanje>
-      <Pitanje>
-        <Ocena>cetiri</Ocena>
-        <Tekst>Pristupačna lokacija</Tekst>
-        <pitanjeOBolnici>true</pitanjeOBolnici>
+        <Tekst>Ljubaznost osoblja</Tekst>
       </Pitanje>
       <Pitanje>
         <Ocena>tri</Ocena>
-        <Tekst>Obezbeđen parking</Tekst>
-        <pitanjeOBolnici>true</pitanjeOBolnici>
+        <Tekst>Ljubaznost lekara</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>cetiri</Ocena>
+        <Tekst>Strucnost lekara</Tekst>
       </Pitanje>
       <Pitanje>
         <Ocena>pet</Ocena>
-        <Tekst>Aplikacija bolnice</Tekst>
-        <pitanjeOBolnici>true</pitanjeOBolnici>
+        <Tekst>Zadovoljstvo pruženom zdravstvenom uslugom</Tekst>
       </Pitanje>
       <Pitanje>
-        <Ocena>cetiri</Ocena>
-        <Tekst>Celokupna ocena osoblja</Tekst>
-        <pitanjeOBolnici>true</pitanjeOBolnici>
+        <Ocena>pet</Ocena>
+        <Tekst>Usluge se obavljaju u skladu sa rasporedom termina</Tekst>
       </Pitanje>
       <Pitanje>
-        <Ocena>cetiri</Ocena>
-        <Tekst>Celokupna ocena bolnice</Tekst>
-        <pitanjeOBolnici>true</pitanjeOBolnici>
-      </Pitanje>
-      <Pitanje>
-        <Ocena>cetiri</Ocena>
-        <Tekst>Da li biste prijateljima preporučili kliniku Zdravo</Tekst>
-        <pitanjeOBolnici>true</pitanjeOBolnici>
+        <Ocena>pet</Ocena>
+        <Tekst>Da li biste preporučili prijateljima ovog lekara</Tekst>
       </Pitanje>
     </pitanja>
+    <termin>
+      <Vreme>16:30</Vreme>
+      <TrajanjeTermina>30</TrajanjeTermina>
+      <Datum>2021-04-28T00:00:00</Datum>
+      <TipTermina>Pregled</TipTermina>
+      <IdTermina>4</IdTermina>
+      <Sala>
+        <TipSale>Pregled</TipSale>
+        <Id>a3</Id>
+        <Zauzeta>false</Zauzeta>
+        <sprat>4</sprat>
+        <kvadratura>0</kvadratura>
+        <RasporedjenaStatickaOprema />
+        <RasporedjenaDinamickaOprema />
+        <Renoviranja />
+      </Sala>
+      <Lekar>
+        <korisnik>
+          <KorisnickoIme>pera.peric</KorisnickoIme>
+          <Sifra>pera.peric</Sifra>
+          <Uloga>Lekar</Uloga>
+          <Nalog>Obican</Nalog>
+        </korisnik>
+        <Ime>Pera</Ime>
+        <Prezime>Peric</Prezime>
+        <Jmbg>2711999105018</Jmbg>
+        <Email>dajanazlokapa@gmail.com</Email>
+        <CeloIme>Pera Peric</CeloIme>
+        <adresaStanovanja>
+          <Broj>2A</Broj>
+          <Ulica>Ljubice Ravasi</Ulica>
+        </adresaStanovanja>
+        <termin />
+        <zahtevUpravniku />
+        <Zauzet>false</Zauzet>
+        <Specijalizacija>Ostapraksa</Specijalizacija>
+        <idZaposlenog>L1</idZaposlenog>
+      </Lekar>
+      <Pacijent>
+        <korisnik>
+          <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+          <Sifra>dajana.zlokapa</Sifra>
+          <Uloga>Lekar</Uloga>
+          <Nalog>Obican</Nalog>
+        </korisnik>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <Jmbg>2711999105018</Jmbg>
+        <Email>dajana.zlokapa@gmail.com</Email>
+        <adresaStanovanja>
+          <Broj>4</Broj>
+          <Ulica>Adresa</Ulica>
+        </adresaStanovanja>
+        <karton>
+          <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+          <Ime>Dajana</Ime>
+          <Prezime>Zlokapa</Prezime>
+          <ImeRoditelja>Sinisa</ImeRoditelja>
+          <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+          <Pol>Zenski</Pol>
+          <Telefon>064 87956163</Telefon>
+          <BrojKartona>123</BrojKartona>
+          <BracniStatus>Neudata</BracniStatus>
+          <Anamneza>
+            <Simptomi />
+            <IzvestajLekara />
+          </Anamneza>
+          <recepti />
+        </karton>
+        <termin />
+        <Maliciozan>false</Maliciozan>
+        <Zloupotrebio>2</Zloupotrebio>
+        <IdPacijenta>P1</IdPacijenta>
+      </Pacijent>
+      <OcenjenTermin>true</OcenjenTermin>
+    </termin>
     <Pacijent>
       <korisnik>
         <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
@@ -229,10 +359,10 @@
         <recepti />
       </karton>
       <termin />
-      <maliciozan>false</maliciozan>
-      <zloupotrebio>0</zloupotrebio>
-      <idPacijenta>P1</idPacijenta>
+      <Maliciozan>false</Maliciozan>
+      <Zloupotrebio>2</Zloupotrebio>
+      <IdPacijenta>P1</IdPacijenta>
     </Pacijent>
-    <ocenioBolnicu>2021-05-01T00:00:00+02:00</ocenioBolnicu>
+    <ocenioBolnicu>0001-01-01T00:00:00</ocenioBolnicu>
   </Ankete>
 </ArrayOfAnkete>

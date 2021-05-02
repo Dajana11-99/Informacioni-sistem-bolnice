@@ -33,11 +33,10 @@
 
 
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Height="21" Margin="0,0,4.6,0" Width="204">
-                <Button  Width="150"  x:Name="potvrdiZakazivanje" Click="potvrdiZakazivanje_Click"   Margin="0,0,20,-0.2">Prikaži datume</Button>
+            
+                <Button VerticalAlignment="Bottom" Width="150"  x:Name="potvrdiZakazivanje" Click="potvrdiZakazivanje_Click"  >Potvrdi zakazivanje</Button>
 
-            </StackPanel>
-
+           
 
         </StackPanel>
     </Grid>

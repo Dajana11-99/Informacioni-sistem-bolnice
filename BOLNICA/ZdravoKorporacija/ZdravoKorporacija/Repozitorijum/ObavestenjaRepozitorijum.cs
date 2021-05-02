@@ -13,11 +13,11 @@ namespace ZdravoKorporacija.Repozitorijum
     class ObavestenjaRepozitorijum
     {
 
-        public static String imeFajla = "obavestenja.txt";
+        public static String imeFajla = "obavestenja.xml";
 
         public static List<Obavestenja> Ucitaj()
         {
-            if (File.ReadAllText(imeFajla).Trim().Equals(""))
+            if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return new List<Obavestenja>();
             }

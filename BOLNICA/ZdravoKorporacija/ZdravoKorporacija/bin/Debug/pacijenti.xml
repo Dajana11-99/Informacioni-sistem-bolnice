@@ -32,9 +32,9 @@
       <recepti />
     </karton>
     <termin />
-    <maliciozan>false</maliciozan>
-    <zloupotrebio>0</zloupotrebio>
-    <idPacijenta>1</idPacijenta>
+    <Maliciozan>false</Maliciozan>
+    <Zloupotrebio>0</Zloupotrebio>
+    <IdPacijenta>1</IdPacijenta>
   </Pacijent>
   <Pacijent>
     <korisnik>
@@ -68,9 +68,9 @@
       <recepti />
     </karton>
     <termin />
-    <maliciozan>false</maliciozan>
-    <zloupotrebio>0</zloupotrebio>
-    <idPacijenta>2</idPacijenta>
+    <Maliciozan>false</Maliciozan>
+    <Zloupotrebio>0</Zloupotrebio>
+    <IdPacijenta>2</IdPacijenta>
   </Pacijent>
   <Pacijent>
     <korisnik>
@@ -101,11 +101,26 @@
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
-      <recepti />
+      <recepti>
+        <Recept>
+          <Lek1>
+            <IdLeka>123</IdLeka>
+            <ImeLeka>Paracetamol</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek1>
+          <KolicinaTerapije>1</KolicinaTerapije>
+          <PocetakTerapije>2021-05-02T00:00:00</PocetakTerapije>
+          <KrajTerapije>2021-05-04T00:00:00</KrajTerapije>
+          <PeroidUzimanjaUSatima>1</PeroidUzimanjaUSatima>
+          <obavestiMe>NE</obavestiMe>
+          <idPacijenta>P1</idPacijenta>
+        </Recept>
+      </recepti>
     </karton>
     <termin />
-    <maliciozan>false</maliciozan>
-    <zloupotrebio>0</zloupotrebio>
-    <idPacijenta>P1</idPacijenta>
+    <Maliciozan>false</Maliciozan>
+    <Zloupotrebio>0</Zloupotrebio>
+    <IdPacijenta>P1</IdPacijenta>
   </Pacijent>
 </ArrayOfPacijent>

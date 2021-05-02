@@ -26,11 +26,9 @@ namespace ZdravoKorporacija.Repozitorijum
                 AnketaServis.popunjeneAnkete = (List<Ankete>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
                 return AnketaServis.popunjeneAnkete;
-
             }
 
         }
-
         public static void UpisiAnkete()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Ankete>));

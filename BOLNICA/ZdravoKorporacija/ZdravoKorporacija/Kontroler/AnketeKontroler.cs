@@ -14,7 +14,6 @@ namespace ZdravoKorporacija.Kontroler
         {
             return AnketaServis.DobaviSvaPitanjaOPregledu();
         }
-
         public static List<Ankete> DobaviSveAnkete()
         {
             return AnketaServis.DobaviSveAnkete();
@@ -23,7 +22,6 @@ namespace ZdravoKorporacija.Kontroler
         {
             return AnketaServis.DostupnaAnketaOBolnici(pacijent);
         }
-
         public static void DodajAnketu(Ankete anketa)
         {
              AnketaServis.DodajAnketu(anketa);

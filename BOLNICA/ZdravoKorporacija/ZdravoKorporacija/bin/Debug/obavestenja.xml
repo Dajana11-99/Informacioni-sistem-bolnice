@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfObavestenja xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Obavestenja>
+    <IdObavestenja>O0</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:15.0465078+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>O1</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:16.0546087+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>O2</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:17.0650944+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>O3</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:18.066073+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>O4</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:19.0664371+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>O5</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:20.0684373+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>O6</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:21.0869531+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>O7</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:22.0964309+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>O8</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Paracetamol.
+Isteklo je 1h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-02T18:29:23.1087+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+</ArrayOfObavestenja>

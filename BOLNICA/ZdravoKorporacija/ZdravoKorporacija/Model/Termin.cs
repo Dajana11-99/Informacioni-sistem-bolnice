@@ -74,7 +74,7 @@ namespace Model
             IdTermina = id;
             TipTermina = tip;
             Vreme = vreme;
-            trajanjeTermina = trajanje;
+            TrajanjeTermina = trajanje;
             Datum = datum;
             Sala = sala;
             Pacijent = p;

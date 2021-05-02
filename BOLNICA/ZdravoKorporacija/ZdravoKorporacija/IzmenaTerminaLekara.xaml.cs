@@ -34,7 +34,7 @@ namespace ZdravoKorporacija
             datePickerZakazivanjeTermina.SelectedDate = t.Datum;
             cmbZakazivanjeTerminaVreme.Text = t.Vreme;
             cmbPacijent.Text = t.Pacijent.IdPacijenta;
-            txtPredvidjenoVremeTermina.Text = t.trajanjeTermina.ToString();
+            txtPredvidjenoVremeTermina.Text = t.TrajanjeTermina.ToString();
            // cmbHMin.Text = 
             brojSale.Text= t.Sala.Id;
             
