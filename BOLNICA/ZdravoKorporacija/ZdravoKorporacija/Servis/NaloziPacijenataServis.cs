@@ -28,7 +28,7 @@ namespace Servis
         {
             foreach (Pacijent P in ListaPacijenata)
             {
-                if (P.idPacijenta.Equals(Id))
+                if (P.IdPacijenta.Equals(Id))
                 {
                     return P;
                 }

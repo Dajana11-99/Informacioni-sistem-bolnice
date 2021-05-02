@@ -15,7 +15,6 @@ namespace ZdravoKorporacija.Servis
         public static List<Ankete> popunjeneAnkete = new List<Ankete>();
         public static void inicijalizujPitanja()
         {
-           
             pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Higijena ordinacije/sobe za preglede", false));
             pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Ljubaznost osoblja", false));
             pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Ljubaznost lekara", false));
@@ -23,7 +22,6 @@ namespace ZdravoKorporacija.Servis
             pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Zadovoljstvo pruženom zdravstvenom uslugom", false));
             pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Usluge se obavljaju u skladu sa rasporedom termina", false));
             pitanjaOPregledu.Add(new Pitanje(OcenaAnkete.pet, "Da li biste preporučili prijateljima ovog lekara", false));
-      
         }
 
         public static void inicijalizujPitanjaOBolnici()
@@ -60,19 +58,19 @@ namespace ZdravoKorporacija.Servis
 
         public static bool DostupnaAnketaOBolnici(Pacijent pacijent)
         {
-            DateTime novaAnketa=NadjiSveAnketePacijenta(pacijent).AddMonths(3);
+            DateTime novaAnketa=NadjiDatumPoslednjeAnketeOBolnici(pacijent).AddMonths(3);
             if (DateTime.Compare(DateTime.Now.Date, novaAnketa.Date) >= 0)
                 return true;
             
             return false;
         }
 
-        public static DateTime NadjiSveAnketePacijenta(Pacijent pacijent)
+        public static DateTime NadjiDatumPoslednjeAnketeOBolnici(Pacijent pacijent)
         {
             List<Ankete> anketePacijenta = new List<Ankete>();
             foreach (Ankete anketa in popunjeneAnkete)
             {
-                if (anketa.Pacijent.idPacijenta.Equals(pacijent.idPacijenta) && anketa.termin == null)
+                if (anketa.Pacijent.IdPacijenta.Equals(pacijent.IdPacijenta) && anketa.termin == null)
                 {
                     anketePacijenta.Add(anketa);
                 }

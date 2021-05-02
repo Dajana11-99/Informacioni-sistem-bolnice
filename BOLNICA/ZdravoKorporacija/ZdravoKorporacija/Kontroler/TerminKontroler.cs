@@ -17,23 +17,23 @@ namespace Kontroler
         {
             return TerminServis.ProveriMogucnostPomeranjaDatum(dat);
         }
-        public static List<Termin> nadjiVremeTermina(Termin izabraniTermin)
+        public static List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
             return TerminServis.NadjiVremeTermina(izabraniTermin);
         }
-        public static List<Termin> nadjiSlobodneTermineLekara(String idZaposlenog, List<Termin> datumi)
+        public static List<Termin> NadjiSlobodneTermineLekara(String idZaposlenog, List<Termin> datumiUIntervalu)
         {
-            return TerminServis.NadjiSlobodneTermineLekara(idZaposlenog, datumi);
+            return TerminServis.NadjiSlobodneTermineLekara(idZaposlenog, datumiUIntervalu);
         }
-        public static List<Termin> nadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
+        public static List<Termin> NadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
         {
             return TerminServis.NadjiDatumUIntervalu(pocetak, kraj);
         }
-        public static List<Termin> PrikaziSveTermine()
+        public static List<Termin> PrikaziSveZakazaneTermine()
         {
-            return TerminServis.PrikaziSveTermine();
+            return TerminServis.PrikaziSveZakazaneTermine();
         }
-        public static Termin pretraziSlobodnePoId(String IdTermina)
+        public static Termin PretraziSlobodneTerminePoId(String IdTermina)
         {
             return TerminServis.PretraziSlobodneTerminePoId(IdTermina);
         }
@@ -49,7 +49,7 @@ namespace Kontroler
         {
             TerminServis.OtkaziPregled(id);
         }
-        public static Termin PretragaPoId(String izabran)
+        public static Termin PretragaZakazanihTerminaPoId(String izabran)
         {
             return TerminServis.PretragaZakazanihTerminaPoId(izabran);
         }

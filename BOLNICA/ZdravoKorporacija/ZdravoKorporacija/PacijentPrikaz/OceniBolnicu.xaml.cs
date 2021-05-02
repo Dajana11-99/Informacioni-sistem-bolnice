@@ -48,7 +48,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 
             }
             AnketeKontroler.DodajAnketu(new Ankete(dodatniKomentar.Text, AnketaServis.pitanjaOBolnici, null, PacijentGlavniProzor.ulogovan,DateTime.Now.Date));
-            AnketeRepozitorijum.upisiAnkete();
+            AnketeRepozitorijum.UpisiAnkete();
             this.Close();
         }
 

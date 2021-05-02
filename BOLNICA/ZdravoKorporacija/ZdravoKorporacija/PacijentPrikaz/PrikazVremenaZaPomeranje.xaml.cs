@@ -30,7 +30,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             InitializeComponent();
             VremenaTerminaPomeranje = new ObservableCollection<Termin>();
 
-            foreach (Termin t in TerminKontroler.nadjiVremeTermina(termin))
+            foreach (Termin t in TerminKontroler.NadjiVremeTermina(termin))
             {
                 VremenaTerminaPomeranje.Add(t);
             }

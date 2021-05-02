@@ -36,7 +36,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Termin termin = TerminKontroler.PretragaPoId(izabraniIdTermina);
+            Termin termin = TerminKontroler.PretragaZakazanihTerminaPoId(izabraniIdTermina);
             if (DateTime.Compare(DateTime.Now.Date, termin.Datum.Date) == 0)
             {
                 MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
@@ -44,7 +44,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             }
        
             TerminKontroler.OtkaziPregled(izabraniIdTermina);
-            if (PacijentGlavniProzor.ulogovan.maliciozan == true)
+            if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
             {
                 MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
 

@@ -111,8 +111,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
             LekarRepozitorijum.upisiLekare();
-            TerminRepozitorijum.upisiSlobodneTermine();
-            TerminRepozitorijum.upisiTermine();
+            TerminRepozitorijum.UpisiSlobodneTermine();
+            TerminRepozitorijum.UpisiZakazaneTermine();
             ObavestenjaRepozitorijum.Sacuvaj();
             ProzorLogovanje log = new ProzorLogovanje();
             log.Show();
@@ -123,8 +123,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             LekarRepozitorijum.upisiLekare();
-            TerminRepozitorijum.upisiSlobodneTermine();
-            TerminRepozitorijum.upisiTermine();
+            TerminRepozitorijum.UpisiSlobodneTermine();
+            TerminRepozitorijum.UpisiZakazaneTermine();
             ObavestenjaRepozitorijum.Sacuvaj();
             NaloziPacijenataRepozitorijum.UpisiPacijente();
 

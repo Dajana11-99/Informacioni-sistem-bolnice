@@ -48,8 +48,8 @@ namespace ZdravoKorporacija
             foreach (Pacijent p in pacijenti)
             {
                 ComboBoxItem cbi = new ComboBoxItem();
-                cbi.Tag = p.idPacijenta;
-                cbi.Content = p.idPacijenta;
+                cbi.Tag = p.IdPacijenta;
+                cbi.Content = p.IdPacijenta;
                 cmbPacijent.Items.Add(cbi);
             }
         }

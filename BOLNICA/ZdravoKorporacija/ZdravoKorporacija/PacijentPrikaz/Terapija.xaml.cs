@@ -75,7 +75,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         public static void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Obavestenja o = new Obavestenja(ObavestenjaServis.generisiIdObavestenja(), "Terapija", sadrzaj1, nowTime, PacijentGlavniProzor.ulogovan.idPacijenta);
+            Obavestenja o = new Obavestenja(ObavestenjaServis.generisiIdObavestenja(), "Terapija", sadrzaj1, nowTime, PacijentGlavniProzor.ulogovan.IdPacijenta);
             ObavestenjaServis.DodajObavestenjePacijentu(o);
             timer.Stop();
             schedule_Timer();

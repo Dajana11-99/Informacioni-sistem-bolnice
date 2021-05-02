@@ -55,11 +55,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 }
             }
 
-            Termin termin = TerminKontroler.PretragaPoId(idTermina);
+            Termin termin = TerminKontroler.PretragaZakazanihTerminaPoId(idTermina);
             List<Termin> datumiIntervala = new List<Termin>();
             datumiZaIzmenu.Clear();
-            datumiIntervala = TerminKontroler.nadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
-            foreach (Termin terminiLekara in TerminKontroler.nadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog,datumiIntervala))
+            datumiIntervala = TerminKontroler.NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
+            foreach (Termin terminiLekara in TerminKontroler.NadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog,datumiIntervala))
             {
                  UkloniDupleDatume(terminiLekara);
             }

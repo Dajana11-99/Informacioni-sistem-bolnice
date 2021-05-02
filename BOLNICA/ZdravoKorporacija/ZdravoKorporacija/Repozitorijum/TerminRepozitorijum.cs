@@ -17,7 +17,7 @@ namespace ZdravoKorporacija.Repozitorijum
     {
         public static String zakazaniTerminiFajl = "zakazaniTermini.xml";
         public static String slobodniTerminiFajl = "slobodniTermini.xml";
-        public static List<Termin> ucitajTermine()
+        public static List<Termin> UcitajZakazaneTermine()
         {
             if (!File.Exists(zakazaniTerminiFajl) || File.ReadAllText(zakazaniTerminiFajl).Trim().Equals(""))
             {
@@ -30,12 +30,11 @@ namespace ZdravoKorporacija.Repozitorijum
                 TerminServis.zakazaniTermini = (List<Termin>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
                 return TerminServis.zakazaniTermini;
-
             }
 
         }
 
-        public static void upisiTermine()
+        public static void UpisiZakazaneTermine()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
             TextWriter tw = new StreamWriter(zakazaniTerminiFajl);
@@ -45,7 +44,7 @@ namespace ZdravoKorporacija.Repozitorijum
         }
 
 
-        public static List<Termin> ucitajSlobodneTermine()
+        public static List<Termin> UcitajSlobodneTermine()
         {
             if (!File.Exists(slobodniTerminiFajl) || File.ReadAllText(slobodniTerminiFajl).Trim().Equals(""))
             {
@@ -63,7 +62,7 @@ namespace ZdravoKorporacija.Repozitorijum
 
         }
 
-        public static void upisiSlobodneTermine()
+        public static void UpisiSlobodneTermine()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
             TextWriter tw = new StreamWriter(slobodniTerminiFajl);

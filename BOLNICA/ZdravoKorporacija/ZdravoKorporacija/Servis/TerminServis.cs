@@ -67,7 +67,7 @@ namespace Servis
             }
             return slobodniTerminiKodLekara;
         }
-        public static Termin PretraziSlobodneTerminePoId(String idTermina)
+       public static Termin PretraziSlobodneTerminePoId(String idTermina)
         {
             foreach (Termin termin in slobodniTermini)
             {
@@ -91,7 +91,7 @@ namespace Servis
         {
             return nesortiraniDatumi.OrderBy(user => user.Datum).ToList();
         }
-        public static Lekar PretragaLekaraPoID(String idLekara)
+       public static Lekar PretragaLekaraPoID(String idLekara)
         {
             foreach (Lekar lekar in sviLekari)
             {
@@ -146,7 +146,7 @@ namespace Servis
 
 
         }
-        public static List<Termin> PrikaziSveTermine()
+        public static List<Termin> PrikaziSveZakazaneTermine()
         {
             return zakazaniTermini;
         }
@@ -191,16 +191,16 @@ namespace Servis
         }
         private static void SacuvajNoveTermine()
         {
-            TerminRepozitorijum.upisiSlobodneTermine();
-            TerminRepozitorijum.upisiTermine();
+            TerminRepozitorijum.UpisiSlobodneTermine();
+            TerminRepozitorijum.UpisiZakazaneTermine();
         }
         public static bool ProveriMalicioznostPacijenta(Pacijent pacijent)
         {
-            int broj = pacijent.zloupotrebio + 1;
-            pacijent.zloupotrebio = broj;
-            if (pacijent.zloupotrebio > MAXBR_PROMENA)
+            int broj = pacijent.Zloupotrebio + 1;
+            pacijent.Zloupotrebio = broj;
+            if (pacijent.Zloupotrebio > MAXBR_PROMENA)
             {
-                pacijent.maliciozan = true;
+                pacijent.Maliciozan = true;
                 return true;
             }
             return false;
@@ -226,9 +226,9 @@ namespace Servis
             {
                 t.Vreme = vreme;
             }
-            if (!t.trajanjeTermina.Equals(predvidjenoVreme))
+            if (!t.TrajanjeTermina.Equals(predvidjenoVreme))
             {
-                t.trajanjeTermina = double.Parse(predvidjenoVreme);
+                t.TrajanjeTermina = double.Parse(predvidjenoVreme);
 
             }
 
@@ -310,11 +310,11 @@ namespace Servis
             }
             return null;
         }
-        private static List<Termin> UkloniDupleDatume(List<Termin> uklanjanjeDuplihTermina)
+        private static List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
         {
             List<Termin> obrisaniDuplikati = new List<Termin>();
             bool nasao = false;
-            foreach (Termin ter1 in uklanjanjeDuplihTermina)
+            foreach (Termin ter1 in dupliTermini)
             {
                 nasao = false;
                 foreach (Termin ter2 in obrisaniDuplikati)

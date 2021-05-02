@@ -32,7 +32,7 @@ namespace ZdravoKorporacija
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Recept = new Recept(txtKolicinaLeka.Text, (DateTime)this.datePickerPocetak.SelectedDate, (DateTime)this.datePickerKraj.SelectedDate, double.Parse(txtPeriodUzimanja.Text),new Lek(idLeka.Text,txtNazivLeka.Text),ZdravstevniKartonPacijenta.pacijent.idPacijenta);
+            Recept = new Recept(txtKolicinaLeka.Text, (DateTime)this.datePickerPocetak.SelectedDate, (DateTime)this.datePickerKraj.SelectedDate, double.Parse(txtPeriodUzimanja.Text),new Lek(idLeka.Text,txtNazivLeka.Text),ZdravstevniKartonPacijenta.pacijent.IdPacijenta);
 
          
   

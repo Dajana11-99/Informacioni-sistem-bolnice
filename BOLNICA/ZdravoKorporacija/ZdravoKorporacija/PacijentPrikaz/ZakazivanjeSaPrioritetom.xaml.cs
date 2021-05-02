@@ -56,7 +56,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             DateTime pocetak = (DateTime)datumOd.SelectedDate;
             DateTime kraj = (DateTime)datumDo.SelectedDate;
 
-            if (PacijentGlavniProzor.ulogovan.maliciozan==true)
+            if (PacijentGlavniProzor.ulogovan.Maliciozan==true)
             {
                 MessageBox.Show("Vas nalog je blokiran!");
                 return;
@@ -67,8 +67,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
             bool nasao = false;
             slobodniDatumi.Clear();
 
-            pomocna = TerminKontroler.nadjiDatumUIntervalu(pocetak, kraj);
-            foreach(Termin t in TerminKontroler.nadjiSlobodneTermineLekara(l.idZaposlenog,pomocna))
+            pomocna = TerminKontroler.NadjiDatumUIntervalu(pocetak, kraj);
+            foreach(Termin t in TerminKontroler.NadjiSlobodneTermineLekara(l.idZaposlenog,pomocna))
             {
                 nasao = false;
                 foreach (Termin t1 in slobodniDatumi)
@@ -97,7 +97,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
                 if (prioritet.SelectedIndex == 0)
                 {
-                    pomocna = TerminKontroler.nadjiDatumUIntervalu(pocetak, kraj);
+                    pomocna = TerminKontroler.NadjiDatumUIntervalu(pocetak, kraj);
                     foreach (Termin t1 in pomocna)
                     {
                         nasao = false;
@@ -140,8 +140,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
                     }
 
 
-                    pomocna = TerminKontroler.nadjiDatumUIntervalu(noviPocetak, noviKraj);
-                    foreach (Termin t in TerminKontroler.nadjiSlobodneTermineLekara(l.idZaposlenog,pomocna))
+                    pomocna = TerminKontroler.NadjiDatumUIntervalu(noviPocetak, noviKraj);
+                    foreach (Termin t in TerminKontroler.NadjiSlobodneTermineLekara(l.idZaposlenog,pomocna))
                     {
                         nasao = false;
                         foreach (Termin t1 in slobodniDatumi)

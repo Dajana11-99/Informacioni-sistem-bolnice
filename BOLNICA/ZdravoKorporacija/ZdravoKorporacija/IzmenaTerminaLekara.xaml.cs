@@ -33,7 +33,7 @@ namespace ZdravoKorporacija
             cmbLekar.SelectedIndex = konstruisi_combo(t.Lekar.CeloIme);
             datePickerZakazivanjeTermina.SelectedDate = t.Datum;
             cmbZakazivanjeTerminaVreme.Text = t.Vreme;
-            cmbPacijent.Text = t.Pacijent.idPacijenta;
+            cmbPacijent.Text = t.Pacijent.IdPacijenta;
             txtPredvidjenoVremeTermina.Text = t.trajanjeTermina.ToString();
            // cmbHMin.Text = 
             brojSale.Text= t.Sala.Id;

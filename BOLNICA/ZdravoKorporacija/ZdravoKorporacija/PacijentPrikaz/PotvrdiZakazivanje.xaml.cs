@@ -26,7 +26,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public PotvrdiZakazivanje(Termin izabrani)
         {
             InitializeComponent();
-            Termin t = TerminKontroler.pretraziSlobodnePoId(izabrani.IdTermina);
+            Termin t = TerminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
             lekar.Text = t.Lekar.CeloIme;
             datum.Text = t.Datum.ToString("MM/dd/yyyy");
             vreme.Text = t.Vreme;
@@ -35,7 +35,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void potvrdiZakazivanje_Click(object sender, RoutedEventArgs e)
         {
-            Termin t = TerminKontroler.pretraziSlobodnePoId(idTermin);
+            Termin t = TerminKontroler.PretraziSlobodneTerminePoId(idTermin);
             t.Pacijent = NaloziPacijenataKontroler.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
             TerminKontroler.ZakaziPregled(t);
             this.Close();

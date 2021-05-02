@@ -31,11 +31,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
             InitializeComponent();
             this.DataContext = this;
             Ankete = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminKontroler.PrikaziSveTermine())
+            foreach (Termin t in TerminKontroler.PrikaziSveZakazaneTermine())
             {
                 if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                 {
-                    if(DateTime.Compare(t.Datum.Date,DateTime.Now.Date)<0 && !t.ocenjenTermin)
+                    if(DateTime.Compare(t.Datum.Date,DateTime.Now.Date)<0 && !t.OcenjenTermin)
                        Ankete.Add(t);
                 }
                   

@@ -33,7 +33,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
             foreach (Obavestenja o in datumi)
             {
-                if (o.IdPrimaoca.Equals(PacijentGlavniProzor.ulogovan.idPacijenta))
+                if (o.IdPrimaoca.Equals(PacijentGlavniProzor.ulogovan.IdPacijenta))
                 {
 
 

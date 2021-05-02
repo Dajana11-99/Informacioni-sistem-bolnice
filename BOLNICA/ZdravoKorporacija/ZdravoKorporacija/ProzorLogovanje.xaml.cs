@@ -45,7 +45,7 @@ namespace ZdravoKorporacija
             SalaRepozitorijum.UcitajSale();
             LekarRepozitorijum.ucitajLekare();
             //Dajana
-            TerminRepozitorijum.ucitajTermine();
+            TerminRepozitorijum.UcitajZakazaneTermine();
             LekarRepozitorijum.ucitajLekare();
            
            //TerminServis.inicijalizuj(); //Inicijalizacija lekara
@@ -80,7 +80,7 @@ namespace ZdravoKorporacija
             NaloziPacijenataRepozitorijum.UcitajPacijente();
 
             ObavestenjaRepozitorijum.Ucitaj();
-           AnketeRepozitorijum.ucitajAnkete();
+           AnketeRepozitorijum.UcitajAnkete();
 
 
 
@@ -167,7 +167,7 @@ namespace ZdravoKorporacija
                 {
                     if (u.korisnik.Sifra.Equals(Lozinka.Password))
                     {
-                        if (u.maliciozan == false)
+                        if (u.Maliciozan == false)
                         {
                             PacijentGlavniProzor pg = new PacijentGlavniProzor(korisnickoIme.Text);
                             pg.Show();
@@ -200,10 +200,10 @@ namespace ZdravoKorporacija
         {
 
             SalaRepozitorijum.UpisiSale();
-            TerminRepozitorijum.upisiTermine();
+            TerminRepozitorijum.UpisiZakazaneTermine();
             LekarRepozitorijum.upisiLekare();
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            TerminRepozitorijum.upisiSlobodneTermine();
+            TerminRepozitorijum.UpisiSlobodneTermine();
             LekRepozitorijum.UpisiLekove();
           
         }

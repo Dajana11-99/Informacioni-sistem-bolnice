@@ -32,7 +32,7 @@ namespace ZdravoKorporacija
             InitializeComponent();
             this.DataContext = this;
             TerminiLekara = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminServis.PrikaziSveTermine())
+            foreach (Termin t in TerminServis.PrikaziSveZakazaneTermine())
                 TerminiLekara.Add(t);
         }
 
@@ -86,14 +86,14 @@ namespace ZdravoKorporacija
                 return;
             }
             Termin t = (Termin)TerminiLekaraa.SelectedItem;
-            ZdravstevniKartonPacijenta zkp = new ZdravstevniKartonPacijenta(t.Pacijent.idPacijenta);
+            ZdravstevniKartonPacijenta zkp = new ZdravstevniKartonPacijenta(t.Pacijent.IdPacijenta);
             zkp.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            TerminRepozitorijum.upisiTermine();
+            TerminRepozitorijum.UpisiZakazaneTermine();
         }
     }
 }

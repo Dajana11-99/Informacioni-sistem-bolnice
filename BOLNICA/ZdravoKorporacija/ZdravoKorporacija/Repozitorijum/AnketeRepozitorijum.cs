@@ -12,38 +12,8 @@ namespace ZdravoKorporacija.Repozitorijum
 {
    public class AnketeRepozitorijum
     {
-        public static String pitanjaFajl = "pitanjaOBolnici.xml";
         public static String sveAnketeFajl = "sveAnkete.xml";
- 
-
-        public static List<Pitanje> ucitajPitanjaOBolnici()
-        {
-            if (!File.Exists(pitanjaFajl) || File.ReadAllText(pitanjaFajl).Trim().Equals(""))
-            {
-                return AnketaServis.pitanjaOPregledu;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(pitanjaFajl);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pitanje>));
-                AnketaServis.pitanjaOPregledu = (List<Pitanje>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return AnketaServis.pitanjaOPregledu;
-
-            }
-
-        }
-
-        public static void upisiPitanjaOBolnici()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pitanje>));
-            TextWriter tw = new StreamWriter(pitanjaFajl);
-            xmlSerializer.Serialize(tw, AnketaServis.pitanjaOPregledu);
-            tw.Close();
-
-        }
-
-        public static List<Ankete> ucitajAnkete()
+        public static List<Ankete> UcitajAnkete()
         {
             if (!File.Exists(sveAnketeFajl) || File.ReadAllText(sveAnketeFajl).Trim().Equals(""))
             {
@@ -61,7 +31,7 @@ namespace ZdravoKorporacija.Repozitorijum
 
         }
 
-        public static void upisiAnkete()
+        public static void UpisiAnkete()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Ankete>));
             TextWriter tw = new StreamWriter(sveAnketeFajl);

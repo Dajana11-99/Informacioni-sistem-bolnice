@@ -49,7 +49,7 @@ namespace ZdravoKorporacija
 
             KojegMenjam.Email = EmailTEXTBOX1.Text;
             KojegMenjam.adresaStanovanja.Ulica = AdresaTEXTBOX1.Text;
-           NaloziPacijenataServis.IzmeniPostojeciNalog(KojegMenjam.idPacijenta);
+           NaloziPacijenataServis.IzmeniPostojeciNalog(KojegMenjam.IdPacijenta);
 
 
             this.Close();

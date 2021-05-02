@@ -62,7 +62,7 @@ namespace ZdravoKorporacija
         {
             foreach (Pacijent P in ListaPacijenataXMAL)
             {
-                if (P.idPacijenta.Equals(Id))
+                if (P.IdPacijenta.Equals(Id))
                 {
                     return P;
                 }
@@ -114,16 +114,16 @@ namespace ZdravoKorporacija
         private void Odblokiraj_Click(object sender, RoutedEventArgs e)
         {
 
-            if (((Pacijent)PacijenitXName.SelectedItem).maliciozan == false)
+            if (((Pacijent)PacijenitXName.SelectedItem).Maliciozan == false)
             {
                 MessageBox.Show("NE MOZETE ODBLOKIRATI PACIJENTA KOJI NIJ BLOKIRAN");
                 return;
             }
-            Pacijent p = NaloziPacijenataServis.PretragaPoId(((Pacijent)PacijenitXName.SelectedItem).idPacijenta);
-            p.maliciozan = false;
-            p.zloupotrebio = 0;
+            Pacijent p = NaloziPacijenataServis.PretragaPoId(((Pacijent)PacijenitXName.SelectedItem).IdPacijenta);
+            p.Maliciozan = false;
+            p.Zloupotrebio = 0;
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            Console.WriteLine("PACIJENTTT" + p.maliciozan);
+            Console.WriteLine("PACIJENTTT" + p.Maliciozan);
 
 
 

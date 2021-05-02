@@ -36,7 +36,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
             this.DataContext = this;
             TerminiPacijenta = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminKontroler.PrikaziSveTermine())
+            foreach (Termin t in TerminKontroler.PrikaziSveZakazaneTermine())
             {
                 if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                 {
@@ -54,7 +54,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 MessageBox.Show("Izaberite termin za izmenu");
                 return;
             }
-            if (PacijentGlavniProzor.ulogovan.maliciozan == true)
+            if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
             {
                 MessageBox.Show("Vas nalog je blokiran!");
 
@@ -77,7 +77,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 return;
             }
 
-            if (PacijentGlavniProzor.ulogovan.maliciozan == true)
+            if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
             {
                 MessageBox.Show("Vas nalog je blokiran!");
                

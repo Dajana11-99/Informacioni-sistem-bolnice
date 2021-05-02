@@ -50,7 +50,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                     postaviOcenuZaPitanje(((ComboBox)grid.FindName("pitanje" + indexCombo)).SelectedIndex, i);
                 
             }
-            izabraniZaAnketu.ocenjenTermin = true;
+            izabraniZaAnketu.OcenjenTermin = true;
 
             AnketeKontroler.DodajAnketu(new Ankete(dodatniKomentar.Text, AnketaServis.pitanjaOPregledu, izabraniZaAnketu, PacijentGlavniProzor.ulogovan)); 
 
@@ -60,7 +60,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private static void OsveziPrikazAnketa()
         { 
-            AnketeRepozitorijum.upisiAnkete();
+            AnketeRepozitorijum.UpisiAnkete();
 
             PrikazAnketa.Ankete.Remove(izabraniZaAnketu);
 
