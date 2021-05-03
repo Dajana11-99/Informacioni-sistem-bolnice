@@ -182,6 +182,7 @@
     <Compile Include="Model\ZahtevUpravniku.cs" />
     <Compile Include="Model\ZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
     <Compile Include="Model\ZahtevZaRasporedjivanjeStatickeOpreme.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
     <Compile Include="OdusustvaUpravnik.xaml.cs">
       <DependentUpon>OdusustvaUpravnik.xaml</DependentUpon>
     </Compile>

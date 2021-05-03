@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Model;
+using MoreLinq;
 using ZdravoKorporacija;
 using ZdravoKorporacija.PacijentPrikaz;
 using ZdravoKorporacija.Repozitorijum;
@@ -30,8 +31,7 @@ namespace Servis
              pom.Add(new Lekar("l6", false, Specijalizacija.Stomatolog,"Petar","Petrovic","6583892377523","petar.petrovic@gmail.com", new AdresaStanovanja("Ustanicka", "8"), new Korisnik("petar.markovic", "petar.markovic")));
 
          }*/
-
-        public static void inicijalizujSlobodneTermine()
+      /*  public static void inicijalizujSlobodneTermine()
         {
            
             slobodniTermini.Add(new Termin("2", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 8), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
@@ -47,16 +47,17 @@ namespace Servis
             slobodniTermini.Add(new Termin("11", TipTermina.Pregled, "15:30", 30, new DateTime(2021, 5, 16), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L5")));
             slobodniTermini.Add(new Termin("12", TipTermina.Pregled, "15:30", 30, new DateTime(2021, 5, 10), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L5")));
         }
-
+      */
         public static List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
             List<Termin> vremeDatumaSlobodnogTermina = new List<Termin>();
             foreach (Termin termin in slobodniTermini)
             {
-                if (termin.Datum.Equals(izabraniTermin.Datum) && izabraniTermin.Lekar.korisnik.KorisnickoIme.Equals(termin.Lekar.korisnik.KorisnickoIme))
+                if (termin.Datum.Equals(izabraniTermin.Datum) && 
+                    izabraniTermin.Lekar.korisnik.KorisnickoIme.Equals(termin.Lekar.korisnik.KorisnickoIme))
                     vremeDatumaSlobodnogTermina.Add(termin);
             }
-            return UkloniDupleDatume(vremeDatumaSlobodnogTermina).OrderBy(user => DateTime.ParseExact(user.Vreme, "HH:mm", null)).ToList();
+            return UkloniDupleDatume(vremeDatumaSlobodnogTermina);
         }
         public static List<Termin> PrikaziSlobodneTermine()
         {
@@ -120,37 +121,6 @@ namespace Servis
             slobodniTermini.Remove(termin);
             SacuvajNoveTermine();
         }
-        public static String pronadji()
-        {
-
-            bool postoji = false;
-            int broj = 1;
-            for (int i = 1; i <= zakazaniTermini.Count; i++)
-            {
-
-                foreach (Termin t in zakazaniTermini)
-                {
-                    if (t.IdTermina.Equals(broj.ToString()))
-
-                    {
-                        postoji = true;
-                        break;
-                    }
-
-
-                }
-
-                if (!postoji)
-                    return broj.ToString();
-                postoji = false;
-                broj++;
-
-
-            }
-            return broj.ToString();
-
-
-        }
         public static List<Termin> PrikaziSveZakazaneTermine()
         {
             return zakazaniTermini;
@@ -165,8 +135,6 @@ namespace Servis
             Termin termin = PretragaZakazanihTerminaPoId(idTermina);
             zakazaniTermini.Remove(termin);
             LekarWindow.TerminiLekara.Remove(termin);
-           
-
         }
 
         public static void PomeriPregled(String idTermina)
@@ -210,59 +178,6 @@ namespace Servis
             }
             return false;
         }
-
-        public static bool IzmenaTermina(String idTermina, DateTime datum, String vreme, String lekar, String predvidjenoVreme, String BrOperaioneSale, String vrstaTerminaOperacije)
-        {
-            Termin t = PretragaZakazanihTerminaPoId(idTermina);
-            String[] pomm = lekar.Split(' ');
-            Termin tp = PretragaZakazanihTerminaPoId(idTermina);
-            tp.Lekar = PretragaPoLekaru(pomm[0], pomm[1]);
-
-            if (!t.Lekar.idZaposlenog.Equals(tp.Lekar.idZaposlenog))
-            {
-                t.Lekar = PretragaLekaraPoID(tp.Lekar.idZaposlenog);
-            }
-
-            if (!t.Datum.Equals(datum))
-            {
-                t.Datum = datum;
-            }
-            if (!t.Vreme.Equals(vreme))
-            {
-                t.Vreme = vreme;
-            }
-            if (!t.TrajanjeTermina.Equals(predvidjenoVreme))
-            {
-                t.TrajanjeTermina = double.Parse(predvidjenoVreme);
-
-            }
-
-
-            if (!t.Sala.Id.Equals(BrOperaioneSale))
-            {
-                t.Sala.Id = BrOperaioneSale;
-            }
-
-
-
-            if (!t.TipTermina.Equals(vrstaTerminaOperacije))
-            {
-                if (vrstaTerminaOperacije.Equals(TipTermina.Operacija))
-                {
-                    t.TipTermina = TipTermina.Operacija;
-                }
-                else
-                {
-                    t.TipTermina = TipTermina.Pregled;
-                }
-
-
-                int ind = LekarWindow.TerminiLekara.IndexOf(t);
-                LekarWindow.TerminiLekara.RemoveAt(ind);
-                LekarWindow.TerminiLekara.Insert(ind, t);
-            }
-            return true;
-        }
         public static void OtkaziPregled(String idTermina)
         {
             Termin termin = PretragaZakazanihTerminaPoId(idTermina);
@@ -279,30 +194,34 @@ namespace Servis
             RasporedTermina.TerminiPacijenta.Remove(termin);
             SacuvajNoveTermine();
         }
+        private static List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
+        {
+            List<Termin> jedinstveniTermini = new List<Termin>();
+            foreach (Termin termin in dupliTermini.DistinctBy(t => t.Datum))
+                jedinstveniTermini.Add(termin);
+            return SortirajTerminePoPocetnomVremenu(jedinstveniTermini);
+        }
+
+        private static List<Termin> SortirajTerminePoPocetnomVremenu(List<Termin> nesortiraniTermini)
+        {
+            return nesortiraniTermini.OrderBy(user => DateTime.ParseExact(user.Vreme, "HH:mm", null)).ToList();
+        }
 
         public static bool ProveriMogucnostPomeranjaDatum(DateTime datumPregleda)
         {
-            if (DateTime.Compare(DateTime.Now.AddDays(1), datumPregleda) == 0)
+            if (DateTime.Compare(DateTime.Now.AddDays(1).Date, datumPregleda.Date) == 0)
                 return true;
             return false;
         }
 
         public static bool ProveriMogucnostPomeranjaVreme(String vreme)
         {
-            String sadasnji = DateTime.Now.ToString("HH:mm");
-            Console.WriteLine(sadasnji);
-            string[] splits2 = sadasnji.Split(':');
-            string[] pregled = vreme.Split(':');
-            int sat = Int32.Parse(splits2[0]);
-            int minut = Int32.Parse(splits2[1]);
-            int satPregleda = Int32.Parse(pregled[0]);
-            int minutPregleda = Int32.Parse(pregled[1]);
-
-            if (satPregleda < sat)
+            DateTime vremePregleda = DateTime.ParseExact(vreme, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+            if (vremePregleda.Hour < DateTime.Now.Hour)
                 return false;
-            else if (satPregleda == sat && minut == minutPregleda)
+            else if (vremePregleda.Hour == DateTime.Now.Hour && DateTime.Now.Minute == vremePregleda.Minute)
                 return false;
-            else if (satPregleda == sat && minut > minutPregleda)
+            else if (vremePregleda.Hour == DateTime.Now.Hour && DateTime.Now.Minute > vremePregleda.Minute)
                 return false;
             return true;
         }
@@ -315,28 +234,58 @@ namespace Servis
             }
             return null;
         }
-        private static List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
-        {
-            List<Termin> obrisaniDuplikati = new List<Termin>();
-            bool nasao = false;
-            foreach (Termin ter1 in dupliTermini)
+            public static bool IzmenaTermina(String idTermina, DateTime datum, String vreme, String lekar, String predvidjenoVreme, String BrOperaioneSale, String vrstaTerminaOperacije)
             {
-                nasao = false;
-                foreach (Termin ter2 in obrisaniDuplikati)
+                Termin t = PretragaZakazanihTerminaPoId(idTermina);
+                String[] pomm = lekar.Split(' ');
+                Termin tp = PretragaZakazanihTerminaPoId(idTermina);
+                tp.Lekar = PretragaPoLekaru(pomm[0], pomm[1]);
+
+                if (!t.Lekar.idZaposlenog.Equals(tp.Lekar.idZaposlenog))
                 {
-                    if (ter2.Vreme.Equals(ter1.Vreme))
+                    t.Lekar = PretragaLekaraPoID(tp.Lekar.idZaposlenog);
+                }
+
+                if (!t.Datum.Equals(datum))
+                {
+                    t.Datum = datum;
+                }
+                if (!t.Vreme.Equals(vreme))
+                {
+                    t.Vreme = vreme;
+                }
+                if (!t.TrajanjeTermina.Equals(predvidjenoVreme))
+                {
+                    t.TrajanjeTermina = double.Parse(predvidjenoVreme);
+
+                }
+
+
+                if (!t.Sala.Id.Equals(BrOperaioneSale))
+                {
+                    t.Sala.Id = BrOperaioneSale;
+                }
+
+
+
+                if (!t.TipTermina.Equals(vrstaTerminaOperacije))
+                {
+                    if (vrstaTerminaOperacije.Equals(TipTermina.Operacija))
                     {
-                        nasao = true;
-                        break;
+                        t.TipTermina = TipTermina.Operacija;
                     }
+                    else
+                    {
+                        t.TipTermina = TipTermina.Pregled;
+                    }
+
+
+                    int ind = LekarWindow.TerminiLekara.IndexOf(t);
+                    LekarWindow.TerminiLekara.RemoveAt(ind);
+                    LekarWindow.TerminiLekara.Insert(ind, t);
                 }
-                if (!nasao)
-                {
-                    obrisaniDuplikati.Add(ter1);
-                }
+                return true;
             }
-            return obrisaniDuplikati;
-        }
 
 
         public TerminRepozitorijum terminRepozitorijum;
