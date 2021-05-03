@@ -167,16 +167,13 @@ namespace Servis
             TerminRepozitorijum.UpisiSlobodneTermine();
             TerminRepozitorijum.UpisiZakazaneTermine();
         }
-        public static bool ProveriMalicioznostPacijenta(Pacijent pacijent)
+        public static void ProveriMalicioznostPacijenta(Pacijent pacijent)
         {
             int broj = pacijent.Zloupotrebio + 1;
             pacijent.Zloupotrebio = broj;
             if (pacijent.Zloupotrebio > MAXBR_PROMENA)
-            {
                 pacijent.Maliciozan = true;
-                return true;
-            }
-            return false;
+               
         }
         public static void OtkaziPregled(String idTermina)
         {

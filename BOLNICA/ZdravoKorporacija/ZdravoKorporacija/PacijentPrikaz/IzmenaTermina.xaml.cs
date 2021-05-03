@@ -1,5 +1,6 @@
 ﻿using Kontroler;
 using Model;
+using MoreLinq;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -59,10 +60,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
             List<Termin> datumiIntervala = new List<Termin>();
             datumiZaIzmenu.Clear();
             datumiIntervala = TerminKontroler.NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
-            foreach (Termin terminiLekara in TerminKontroler.NadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog,datumiIntervala))
-            {
-                 UkloniDupleDatume(terminiLekara);
-            }
+           UkloniDupleDatume(TerminKontroler.NadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog, datumiIntervala));
+            
             if (datumiZaIzmenu.Count == 0)
             {
                 MessageBox.Show("Nema datuma za izmenu");
@@ -79,23 +78,10 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         }
 
-        private static bool UkloniDupleDatume(Termin termin)
+        private static void UkloniDupleDatume(List<Termin> dupliTermini)
         {
-            bool nasao = false;
-            foreach (Termin t1 in datumiZaIzmenu)
-            {
-                if (t1.Datum.Equals(termin.Datum))
-                {
-                    nasao = true;
-                    break;
-                }
-            }
-            if (!nasao)
-            {
+            foreach (Termin termin in dupliTermini.DistinctBy(t => t.Datum))
                 datumiZaIzmenu.Add(termin);
-            }
-
-            return nasao;
         }
     }
 }

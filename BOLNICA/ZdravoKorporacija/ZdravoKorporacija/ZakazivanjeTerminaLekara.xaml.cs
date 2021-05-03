@@ -59,8 +59,8 @@ namespace ZdravoKorporacija
         private void btnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
         {
 
-           
-            String id = TerminServis.pronadji();
+
+            String id = Guid.NewGuid().ToString();
             string[] pom = cmbLekar.Text.Split(' ');
             Lekar l = new Lekar(pom[0], pom[1]);
            
