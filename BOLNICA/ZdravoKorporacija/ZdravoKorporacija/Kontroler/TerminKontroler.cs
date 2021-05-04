@@ -41,13 +41,13 @@ namespace Kontroler
         {
             TerminServis.ZakaziPregled(t);
         }
-        public static void PomeriPregled(String id)
+        public static void PomeriPregled(String idTermina)
         {
-            TerminServis.PomeriPregled(id);
+            TerminServis.PomeriPregled(idTermina);
         }
-        public static void OtkaziPregled(String id)
+        public static void OtkaziPregled(String idTermina)
         {
-            TerminServis.OtkaziPregled(id);
+            TerminServis.OtkaziPregled(idTermina);
         }
         public static Termin PretragaZakazanihTerminaPoId(String izabran)
         {

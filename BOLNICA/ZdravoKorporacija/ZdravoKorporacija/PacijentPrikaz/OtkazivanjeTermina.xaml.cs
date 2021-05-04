@@ -37,6 +37,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Termin termin = TerminKontroler.PretragaZakazanihTerminaPoId(izabraniIdTermina);
+
             if (DateTime.Compare(DateTime.Now.Date, termin.Datum.Date) == 0)
             {
                 MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
