@@ -63,7 +63,6 @@ namespace ZdravoKorporacija.PacijentPrikaz
             TerminZaPomeranje = (Termin)TerminiPacijentaa.SelectedItem;
             IzmenaTermina izmeni = new IzmenaTermina(TerminZaPomeranje);
             izmeni.Show();
-            
         }
 
         private void OtkazivanjeTermina_Click(object sender, RoutedEventArgs e)
@@ -85,10 +84,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             }
             OtkazivanjeTermina otk = new OtkazivanjeTermina(((Termin)TerminiPacijentaa.SelectedItem).IdTermina);
             otk.Show();
-            
-
         }
-
         private void Izvestaj_Click(object sender, RoutedEventArgs e)
         {
 

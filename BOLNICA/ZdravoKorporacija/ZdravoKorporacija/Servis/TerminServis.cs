@@ -51,7 +51,7 @@ namespace Servis
         public static List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
             List<Termin> vremeDatumaSlobodnogTermina = new List<Termin>();
-            foreach (Termin termin in slobodniTermini)
+            foreach (Termin termin in TerminRepozitorijum.UcitajSlobodneTermine())
             {
                 if (termin.Datum.Equals(izabraniTermin.Datum) && 
                     izabraniTermin.Lekar.korisnik.KorisnickoIme.Equals(termin.Lekar.korisnik.KorisnickoIme))
@@ -75,7 +75,7 @@ namespace Servis
         }
        public static Termin PretraziSlobodneTerminePoId(String idTermina)
         {
-            foreach (Termin termin in slobodniTermini)
+            foreach (Termin termin in TerminRepozitorijum.UcitajSlobodneTermine())
             {
                 if (termin.IdTermina.Equals(idTermina))
                     return termin;
@@ -85,7 +85,7 @@ namespace Servis
         public static List<Termin> NadjiDatumUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
         {
             List<Termin> slobodniDatumi = new List<Termin>();
-            foreach (Termin termin in slobodniTermini)
+            foreach (Termin termin in TerminRepozitorijum.UcitajSlobodneTermine())
             {
                 if (DateTime.Compare(termin.Datum, pocetakIntervala) >= 0
                     && DateTime.Compare(termin.Datum, krajIntervala) <= 0)
@@ -191,6 +191,8 @@ namespace Servis
             RasporedTermina.TerminiPacijenta.Remove(termin);
             SacuvajNoveTermine();
         }
+
+       
         private static List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
         {
             List<Termin> jedinstveniTermini = new List<Termin>();

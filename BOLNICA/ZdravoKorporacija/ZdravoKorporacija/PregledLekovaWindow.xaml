@@ -1,0 +1,24 @@
+﻿<Window x:Class="ZdravoKorporacija.PregledLekovaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoKorporacija"
+        mc:Ignorable="d"
+        Title="PregledLekovaWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgPregledLekova" ItemsSource="{Binding lekovi}" IsReadOnly="true"
+                  SelectionMode="Single"  Margin="10,55,9.6,109" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Leka" Binding="{Binding IdLeka}"/>
+                <DataGridTextColumn Header="Ime leka" Binding="{Binding ImeLeka}" />
+                <DataGridTextColumn Header="Kolicina leka(mg)" Binding="{Binding KolicinaLeka}" />
+                <DataGridTextColumn Header="Sastojci leka" Binding="{Binding SastojciLeka}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Pregled lekova" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="298,10,0,0" Height="45" Width="219"/>
+        <Button Content="Pregled informacija" Name="btnPregledInfo" Click="btnPregledInfo_Click" HorizontalAlignment="Left" Height="54" Margin="84,342,0,0" VerticalAlignment="Top" Width="186"/>
+        <Button Content="Vrati se" Name="btnVratiSe" Click="btnVratiSe_Click" HorizontalAlignment="Left" Height="54" Margin="526,342,0,0" VerticalAlignment="Top" Width="182"/>
+    </Grid>
+</Window>

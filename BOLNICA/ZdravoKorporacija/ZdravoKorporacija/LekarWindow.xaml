@@ -12,16 +12,18 @@
         <StackPanel>
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Zakazani termini</Label>
             <DataGrid x:Name="TerminiLekaraa" ItemsSource="{Binding TerminiLekara}" IsReadOnly="true"
-                  SelectionMode="Single"  Margin="20,10,20.4,20" 
+                  SelectionMode="Single"  Margin="126,10,20.6,20" 
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="300">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}"/>
                     <DataGridTextColumn Header="Tip termina" Binding="{Binding TipTermina}" />
                     <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.CeloIme}"/>
+                    <DataGridTextColumn Header="Specijalizacija" Binding="{Binding Lekar.Specijalizacija}"/>
                     <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.idPacijenta}"/>
                     <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"/>
                     <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Vreme}"/>
                     <DataGridTextColumn Header="Trajanje termina" Binding="{Binding trajanjeTermina}"/>
+                    <DataGridTextColumn Header="Hitno?" Binding="{Binding DaLiJeHitno}"/>
                     <DataGridTextColumn Header="Sala" Binding="{Binding Sala.Id}"/>
 
 
@@ -35,12 +37,16 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="20,0,66.4,5"  Grid.Column="0" Content="Zakazivanje termina"   Click="Button_Click"  />
-                <Button Margin="164,0,120.8,5"  Content="Izmena termina"        Click="Button_Click_1" Grid.ColumnSpan="2"/>
-                <Button Margin="110.6,0,175.2,5"  Grid.Column="1" Content="Otkazivanje termina"    Click="Button_Click_2" Grid.ColumnSpan="2"/>
-                <Button Margin="20,0,20.4,5" Grid.Column="3" Content="Vrati se"              Click="Button_Click_3" />
-                <Button Content="Zahtev upravniku" Name="btnZahtevUpravniku" Click="btnZahtevUpravniku_Click"  Grid.Column="2" HorizontalAlignment="Left" Height="34" Margin="49.2,0,0,0" VerticalAlignment="Top" Width="112"/>
+                <Button Margin="6,-323,80.4,328"  Grid.Column="0" Content="Zakazivanje termina"   Click="Button_Click"  />
+                <Button Margin="6,-286,80.4,291"  Content="Izmena termina"        Click="Button_Click_1"/>
+                <Button Margin="7,-249,80.4,254" Content="Otkazivanje termina"    Click="Button_Click_2"/>
+                <Button Margin="6,-177,80.4,182" Content="Vrati se"              Click="Button_Click_3" />
+                <Button Content="Zahtev upravniku" Name="btnZahtevUpravniku" Click="btnZahtevUpravniku_Click" HorizontalAlignment="Left" Height="34" Margin="6,-212,0,0" VerticalAlignment="Top" Width="112"/>
                 <Button Margin="169.2,-365,20.6,369" Grid.Column="2" Content="Pregled zdravstvenog kartona" Name="btnPregledKartona" Click="btnPregledKartona_Click"  Grid.ColumnSpan="2" />
+                <Button Content="Pregled lekova" Name="btnPregledLekova" Click="btnPregledLekova_Click" Margin="6,-142,80.4,142" />
+                <Button Content="Termini lekara" Name="btnPrikazTerminaLekara" Click="btnPregledLekova_Click" Margin="6,-102,80.4,102" />
+                <Button Content="Odjavi se" Name="btnOdjaviSe" Click="btnOdjaviSe_Click" Margin="6,-10,74.4,10"  />
+
             </Grid>
 
 

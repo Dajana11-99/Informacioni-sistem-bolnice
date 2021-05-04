@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -32,8 +33,11 @@ namespace ZdravoKorporacija
             InitializeComponent();
             this.DataContext = this;
             TerminiLekara = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminServis.PrikaziSveZakazaneTermine())
-                TerminiLekara.Add(t);
+            foreach (Termin termin in TerminKontroler.PrikaziSveZakazaneTermine())
+            {
+                // t.Lekar.Specijalizacija
+                TerminiLekara.Add(termin);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -51,15 +55,15 @@ namespace ZdravoKorporacija
                 IzmenaTerminaLekara izmena = new IzmenaTerminaLekara(((Termin)TerminiLekaraa.SelectedItem));
                 izmena.Show();
             }
-            else 
+            else
             {
-                System.Windows.MessageBox.Show("Morate selektovati termin!","Izmena termina lekara", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Warning);
+                System.Windows.MessageBox.Show("Morate selektovati termin!", "Izmena termina lekara", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Warning);
             }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (TerminiLekaraa.SelectedIndex != -1) 
+            if (TerminiLekaraa.SelectedIndex != -1)
             {
                 OtkazivanjeTerminaLekara otkazii = new OtkazivanjeTerminaLekara(((Termin)TerminiLekaraa.SelectedItem).IdTermina);
                 otkazii.Show();
@@ -74,7 +78,7 @@ namespace ZdravoKorporacija
         private void btnZahtevUpravniku_Click(object sender, RoutedEventArgs e)
         {
             ZahtevZaSlobodneDaneWindow zahtev = new ZahtevZaSlobodneDaneWindow();
-            
+
             zahtev.Show();
         }
 
@@ -94,6 +98,19 @@ namespace ZdravoKorporacija
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
             TerminRepozitorijum.UpisiZakazaneTermine();
+            LekoviRepozitorijum.upisiLekove();
+        }
+
+        private void btnPregledLekova_Click(object sender, RoutedEventArgs e)
+        {
+            PregledLekovaWindow p = new PregledLekovaWindow();
+            p.Show();
+        }
+
+        private void btnOdjaviSe_Click(object sender, RoutedEventArgs e)
+        {
+            LekarWindow l = new LekarWindow();
+            l.Close();
         }
     }
 }

@@ -56,14 +56,16 @@ namespace ZdravoKorporacija
 
 
 
-           //////----------------------
-            
+            //////----------------------
+            //LekServis.inicijalizujLekove();
+            LekoviRepozitorijum.ucitajLekove();
+            ZalbaRepozitorijum.ucitajZalbe();
 
 
 
             //SalaServis.inicijalizuj();
 
-            
+
             SalaServis.inicijalizuj();
             LekServis.inicijalizuj();
             RukovanjeStatickomOpremomServis.inicijalizuj();
@@ -205,7 +207,7 @@ namespace ZdravoKorporacija
             NaloziPacijenataRepozitorijum.UpisiPacijente();
             TerminRepozitorijum.UpisiSlobodneTermine();
             LekRepozitorijum.UpisiLekove();
-          
+            LekoviRepozitorijum.upisiLekove();  
         }
     }
 }

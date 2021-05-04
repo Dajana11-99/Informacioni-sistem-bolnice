@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Lek>
+    <IdLeka>1</IdLeka>
+    <ImeLeka>Brufen</ImeLeka>
+    <KolicinaLeka>20</KolicinaLeka>
+    <SastojciLeka>Sastojci1</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>2</IdLeka>
+    <ImeLeka>Andol</ImeLeka>
+    <KolicinaLeka>250</KolicinaLeka>
+    <SastojciLeka>Sastojci2</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>3</IdLeka>
+    <ImeLeka>Pentraxil</ImeLeka>
+    <KolicinaLeka>120</KolicinaLeka>
+    <SastojciLeka>Sastojci3</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>4</IdLeka>
+    <ImeLeka>Palitex</ImeLeka>
+    <KolicinaLeka>100</KolicinaLeka>
+    <SastojciLeka>Sastojci4</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>5</IdLeka>
+    <ImeLeka>Bromazepam</ImeLeka>
+    <KolicinaLeka>30</KolicinaLeka>
+    <SastojciLeka>Sastojci5</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>6</IdLeka>
+    <ImeLeka>Febricet</ImeLeka>
+    <KolicinaLeka>300</KolicinaLeka>
+    <SastojciLeka>Sastojci6 i sastojak 19</SastojciLeka>
+  </Lek>
+</ArrayOfLek>

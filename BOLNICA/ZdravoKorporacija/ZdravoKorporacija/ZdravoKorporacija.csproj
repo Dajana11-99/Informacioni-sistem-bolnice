@@ -98,6 +98,9 @@
     <Compile Include="DodajZahtevWindow.xaml.cs">
       <DependentUpon>DodajZahtevWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InformacijeLekaWindow.xaml.cs">
+      <DependentUpon>InformacijeLekaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzbrisiPacijenta.xaml.cs">
       <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,7 @@
     <Compile Include="Kontroler\AnketeKontroler.cs" />
     <Compile Include="Kontroler\DinamickaOpremaKontroler.cs" />
     <Compile Include="Kontroler\DinamickiZahteviKontroler.cs" />
+    <Compile Include="Kontroler\LekKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
     <Compile Include="Kontroler\OpremaProstorijaKontroler.cs" />
@@ -142,6 +146,7 @@
     <Compile Include="IzmeniStatickuOpremu.xaml.cs">
       <DependentUpon>IzmeniStatickuOpremu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Kontroler\ZalbaKontroler.cs" />
     <Compile Include="LekarWindow.xaml.cs">
       <DependentUpon>LekarWindow.xaml</DependentUpon>
     </Compile>
@@ -182,6 +187,7 @@
     <Compile Include="Model\ZahtevUpravniku.cs" />
     <Compile Include="Model\ZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
     <Compile Include="Model\ZahtevZaRasporedjivanjeStatickeOpreme.cs" />
+    <Compile Include="Model\Zalba.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
     <Compile Include="OdusustvaUpravnik.xaml.cs">
       <DependentUpon>OdusustvaUpravnik.xaml</DependentUpon>
@@ -246,6 +252,9 @@
     <Compile Include="PacijentPrikaz\ZakazivanjeVremena.xaml.cs">
       <DependentUpon>ZakazivanjeVremena.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PregledLekovaWindow.xaml.cs">
+      <DependentUpon>PregledLekovaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PretragaOpreme.xaml.cs">
       <DependentUpon>PretragaOpreme.xaml</DependentUpon>
     </Compile>
@@ -259,9 +268,11 @@
       <DependentUpon>RenovirajSalu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repozitorijum\AnketeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\LekoviRepozitorijum.cs" />
     <Compile Include="Repozitorijum\LekRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\ZalbaRepozitorijum.cs" />
     <Compile Include="Servis\AnketaServis.cs" />
     <Compile Include="Servis\LekServis.cs" />
     <Compile Include="Servis\ObavestenjaServis.cs" />
@@ -297,6 +308,7 @@
     <Compile Include="RasporedjivanjeStatickeOpreme.xaml.cs">
       <DependentUpon>RasporedjivanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Servis\ZalbaServis.cs" />
     <Compile Include="UpravnikPocetna.xaml.cs">
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>
@@ -305,6 +317,9 @@
     </Compile>
     <Compile Include="ZakazivanjeTerminaLekara.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZalbaWindow.xaml.cs">
+      <DependentUpon>ZalbaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ZdravstevniKartonPacijenta.xaml.cs">
       <DependentUpon>ZdravstevniKartonPacijenta.xaml</DependentUpon>
@@ -362,6 +377,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DodajZahtevWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InformacijeLekaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -509,6 +528,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PregledLekovaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PretragaOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -558,6 +581,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ZakazivanjeTerminaLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZalbaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

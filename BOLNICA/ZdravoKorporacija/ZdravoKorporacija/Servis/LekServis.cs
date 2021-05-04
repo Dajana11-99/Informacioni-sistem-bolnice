@@ -20,6 +20,19 @@ namespace Servis
             new Sastojak{Id="2", Ime="Ibrufen"},
             new Sastojak{Id="3", Ime="Lavanda"}
         };
+
+        public static List<Lek> lekovii = new List<Lek>();
+
+        public static void inicijalizujLekove()
+        {
+            lekovii.Add(new Lek("1", "Brufen", "20", "Sastojci1"));
+            lekovii.Add(new Lek("2", "Andol", "250", "Sastojci2"));
+            lekovii.Add(new Lek("3", "Pentraxil", "120", "Sastojci3"));
+            lekovii.Add(new Lek("4", "Palitex", "100", "Sastojci4"));
+            lekovii.Add(new Lek("5", "Bromazepam", "30", "Sastojci5"));
+            lekovii.Add(new Lek("6", "Febricet", "300", "Sastojci6"));
+        }
+
         public static void inicijalizuj()
         {
             lek = LekRepozitorijum.UcitajLekove();
@@ -98,6 +111,21 @@ namespace Servis
             OsveziKolekciju();
             LekRepozitorijum.UpisiLekove();
             return nadjena;
+        }
+
+        public static Lek pretraziSveLekove(String id)
+        {
+            return LekoviRepozitorijum.PronadjiLek(id);
+        }
+
+        public static List<Lek> prikaziSveLekove()
+        {
+            return lekovii;
+        }
+
+        public static Lek IzmeniSelektovaniLek(Lek lek)
+        {
+            return LekoviRepozitorijum.IzmeniLek(lek);
         }
     }
 }

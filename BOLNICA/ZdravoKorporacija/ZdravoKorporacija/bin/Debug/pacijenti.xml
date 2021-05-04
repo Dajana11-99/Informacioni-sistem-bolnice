@@ -120,7 +120,7 @@
     </karton>
     <termin />
     <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>0</Zloupotrebio>
+    <Zloupotrebio>3</Zloupotrebio>
     <IdPacijenta>P1</IdPacijenta>
   </Pacijent>
 </ArrayOfPacijent>
