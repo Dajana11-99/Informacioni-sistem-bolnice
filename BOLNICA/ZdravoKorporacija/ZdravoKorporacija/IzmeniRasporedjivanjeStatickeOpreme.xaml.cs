@@ -43,7 +43,7 @@ namespace ZdravoKorporacija
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.IzProstorijaId = (string)cmbProstorijaIz.SelectedValue;
             zahtev.StatickeOpremaId = (string)cmbStatickaOprema.SelectedValue;
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuProstorija(zahtev);
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuIzSkladista(zahtev);
 
         }
 

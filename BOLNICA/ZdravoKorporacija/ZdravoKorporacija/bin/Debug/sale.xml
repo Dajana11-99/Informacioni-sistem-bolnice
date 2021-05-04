@@ -7,22 +7,44 @@
     <sprat>2</sprat>
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema>
-        <Kolicina>897</Kolicina>
+      <RasporedjenaStatickaOprema>
+        <Kolicina>90</Kolicina>
         <statickaOprema>
           <Id>2</Id>
-          <kolicina>36</kolicina>
+          <kolicina>33</kolicina>
           <naziv>stolica</naziv>
         </statickaOprema>
-        <RasporedjenaOd>2021-04-14T00:00:00</RasporedjenaOd>
+        <RasporedjenaOd>2021-04-13T00:00:00</RasporedjenaOd>
+      </RasporedjenaStatickaOprema>
+      <RasporedjenaStatickaOprema>
+        <Kolicina>10</Kolicina>
+        <statickaOprema>
+          <Id>4</Id>
+          <kolicina>90</kolicina>
+          <naziv>spric</naziv>
+        </statickaOprema>
+        <RasporedjenaOd>2021-04-29T00:00:00</RasporedjenaOd>
+      </RasporedjenaStatickaOprema>
     </RasporedjenaStatickaOprema>
-      <RasporedjenaDinamickaOprema>
-        <Kolicina>401</Kolicina>
-        <dinamickaOprema>
-          <Id>1</Id>
-          <kolicina>354</kolicina>
-          <naziv>zavoj</naziv>
-        </dinamickaOprema>
-      </RasporedjenaDinamickaOprema>
+    <RasporedjenaDinamickaOprema />
+    <Renoviranja>
+      <Renoviranje>
+        <RenoviranjeOd>2021-05-05T00:00:00</RenoviranjeOd>
+        <RenoviranjeDo>2021-05-08T00:00:00</RenoviranjeDo>
+      </Renoviranje>
+      <Renoviranje>
+        <RenoviranjeOd>2021-05-05T00:00:00</RenoviranjeOd>
+        <RenoviranjeDo>2021-05-08T00:00:00</RenoviranjeDo>
+      </Renoviranje>
+      <Renoviranje>
+        <RenoviranjeOd>2021-05-05T00:00:00</RenoviranjeOd>
+        <RenoviranjeDo>2021-05-08T00:00:00</RenoviranjeDo>
+      </Renoviranje>
+      <Renoviranje>
+        <RenoviranjeOd>2021-05-05T00:00:00</RenoviranjeOd>
+        <RenoviranjeDo>2021-05-07T00:00:00</RenoviranjeDo>
+      </Renoviranje>
+    </Renoviranja>
   </Sala>
   <Sala>
     <TipSale>Pregled</TipSale>
@@ -30,6 +52,28 @@
     <Zauzeta>false</Zauzeta>
     <sprat>3</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema>
+      <RasporedjenaStatickaOprema>
+        <Kolicina>2</Kolicina>
+        <statickaOprema>
+          <Id>2</Id>
+          <kolicina>90</kolicina>
+          <naziv>stolica</naziv>
+        </statickaOprema>
+        <RasporedjenaOd>2021-05-03T00:00:00</RasporedjenaOd>
+      </RasporedjenaStatickaOprema>
+    </RasporedjenaStatickaOprema>
+    <RasporedjenaDinamickaOprema>
+      <RasporedjenaDinamickaOprema>
+        <Kolicina>4</Kolicina>
+        <dinamickaOprema>
+          <Id>1</Id>
+          <kolicina>98</kolicina>
+          <naziv>aspirin</naziv>
+        </dinamickaOprema>
+      </RasporedjenaDinamickaOprema>
+    </RasporedjenaDinamickaOprema>
+    <Renoviranja />
   </Sala>
   <Sala>
     <TipSale>Pregled</TipSale>
@@ -37,5 +81,8 @@
     <Zauzeta>false</Zauzeta>
     <sprat>4</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
+    <Renoviranja />
   </Sala>
 </ArrayOfSala>

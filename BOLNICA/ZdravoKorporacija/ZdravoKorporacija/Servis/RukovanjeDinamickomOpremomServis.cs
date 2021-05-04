@@ -23,26 +23,6 @@ namespace Servis
             dinamickaOprema = DinamickeOpremeRepozitorijum.UcitajDinamickuOpremu();
             OsveziKolekciju();
         }
-
-        /*
-        public static Sala PretraziPoTipu(TipSale tip)
-        {
-            Sala salaa = null;
-            foreach (Sala s in sala)
-            {
-
-                if (s.TipSale.Equals(tip))
-                    salaa = s;
-                break;
-
-            }
-
-            return salaa;
-        }
-
-        */
-
-
         public static bool DodajDinamickuOpremu(DinamickaOprema unetaDinamickaOprema)
         {
             if (dinamickaOprema.Contains(unetaDinamickaOprema))
@@ -52,18 +32,15 @@ namespace Servis
             else
             {
                 dinamickaOprema.Add(unetaDinamickaOprema);
-              DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
+                DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
                 OsveziKolekciju();
                 return true;
             }
         }
-
-
         public static List<DinamickaOprema> PrikaziDinamickuOpremu()
         {
             return dinamickaOprema;
         }
-
         public static bool IzmeniDinamickuOpremu(DinamickaOprema dinamickaOpremaZaIzmenu)
         {
             foreach (DinamickaOprema s in dinamickaOprema)
@@ -75,7 +52,7 @@ namespace Servis
                 }
 
             }
-         DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
+            DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             OsveziKolekciju();
 
             return true;
@@ -98,7 +75,7 @@ namespace Servis
             }
             dinamickaOprema = dinamickaOpremaBezIzbrisane;
             OsveziKolekciju();
-           DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
+            DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             return nadjena;
         }
 
@@ -113,9 +90,6 @@ namespace Servis
             }
             return null;
         }
-
-        
-
         public static void OsveziKolekciju()
         {
             observableDinamickaOprema.Clear();

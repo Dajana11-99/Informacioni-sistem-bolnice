@@ -37,7 +37,7 @@ namespace ZdravoKorporacija.Repozitorijum
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ZahtevZaRasporedjivanjeDinamickeOpreme>));
             TextWriter tw = new StreamWriter(imeFajla);
            // xmlSerializer.Serialize(tw, RukovanjeStatickomOpremomServis.statickaOprema);
-            xmlSerializer.Serialize(tw, RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.ZahtevZaRasporedjivanjeDinamickeOpreme);
+            xmlSerializer.Serialize(tw, RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.rasporedjivanjeDinamickeOpremeZahtev);
             tw.Close();
             return true;
         }

@@ -27,7 +27,6 @@ namespace ZdravoKorporacija
         public static List<CheckBoxListItem> SastojciCheckboxItems { get; set; }
         public static List<CheckBoxListItem> LekoviZamenaCheckboxItems { get; set; }
         // https://stackoverflow.com/questions/4527286/how-to-implement-a-listbox-of-checkboxes-in-wpf
-
         public static List<String> ListaImenaSastojaka { get; set; }
         public static List<Lek> ListaLekova { get; set; }
         public DodajLek()
@@ -45,19 +44,15 @@ namespace ZdravoKorporacija
                 item.Name = sastojak.Ime;
                 SastojciCheckboxItems.Add(item);
             }
-
             foreach(Lek lek in ListaLekova)
             {
-                // if (lek.Id == lekZaIzmenu.Id) continue
                 CheckBoxListItem item = new CheckBoxListItem();
                 item.Data = lek;
                 item.Name = lek.ImeLeka;
                 LekoviZamenaCheckboxItems.Add(item);
             }
-
             cboxlistSastojci.CheckBoxItems = SastojciCheckboxItems;
             cboxlistLekovi.CheckBoxItems = LekoviZamenaCheckboxItems;
-
 
         }
 
@@ -102,7 +97,7 @@ namespace ZdravoKorporacija
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -21,7 +21,7 @@
         <ComboBox x:Name="cmbProstorijaIz" HorizontalAlignment="Left" Height="37" Margin="423,202,0,0" VerticalAlignment="Top" Width="296"  DisplayMemberPath="Id" SelectedValuePath="Id" Text="staticka oprema"/>
         <Label Content="Staticka oprema" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="23,54,0,0" VerticalAlignment="Top" Width="283" FontSize="18"/>
         <Label Content="Prostorija" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="23,116,0,0" VerticalAlignment="Top" Width="283" FontSize="18"/>
-        <Label Content="Iz prostorije (prazno za skladiste)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="23,202,0,0" VerticalAlignment="Top" Width="283" FontSize="18"/>
+        <Label Content="Iz prostorije/skladista" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="23,202,0,0" VerticalAlignment="Top" Width="283" FontSize="18"/>
 
 
     </Grid>
