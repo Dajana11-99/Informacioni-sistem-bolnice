@@ -1,26 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfZahtevZaRasporedjivanjeStatickeOpreme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ZahtevZaRasporedjivanjeStatickeOpreme>
-    <Id>1</Id>
-    <StatickeOpremaId>2</StatickeOpremaId>
-    <ProstorijaId>A1</ProstorijaId>
-    <RasporedjenoOd>2021-04-30T00:00:00</RasporedjenoOd>
-    <Kolicina>80</Kolicina>
-  </ZahtevZaRasporedjivanjeStatickeOpreme>
-  <ZahtevZaRasporedjivanjeStatickeOpreme>
-    <Id>2</Id>
-    <StatickeOpremaId>2</StatickeOpremaId>
-    <ProstorijaId>A1</ProstorijaId>
-    <RasporedjenoOd>2021-04-12T00:00:00</RasporedjenoOd>
-    <Kolicina>1</Kolicina>
-    <IzProstorijaId>Skladiste staticke opreme</IzProstorijaId>
-  </ZahtevZaRasporedjivanjeStatickeOpreme>
-  <ZahtevZaRasporedjivanjeStatickeOpreme>
-    <Id>3</Id>
-    <StatickeOpremaId>2</StatickeOpremaId>
-    <ProstorijaId>A1</ProstorijaId>
-    <RasporedjenoOd>2021-04-13T00:00:00</RasporedjenoOd>
-    <Kolicina>1</Kolicina>
-    <IzProstorijaId>Skladiste staticke opreme</IzProstorijaId>
-  </ZahtevZaRasporedjivanjeStatickeOpreme>
-</ArrayOfZahtevZaRasporedjivanjeStatickeOpreme>
+<ArrayOfZahtevZaRasporedjivanjeStatickeOpreme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />

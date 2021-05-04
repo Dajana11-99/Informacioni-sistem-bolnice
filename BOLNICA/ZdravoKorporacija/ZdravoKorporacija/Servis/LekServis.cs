@@ -76,6 +76,15 @@ namespace Servis
         {
             return lek;
         }
+        public static List<string> PrikaziImenaSastojaka() 
+        {
+            List<string> imenaSastojaka = new List<string>();
+            foreach (Sastojak sastojak in listaSvihSastojaka)
+            {
+                imenaSastojaka.Add(sastojak.Ime);
+            }
+            return imenaSastojaka;
+        }
 
         public static bool Izmena(Lek lekZaIzmenu)
         {

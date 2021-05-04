@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfZahtevZaRasporedjivanjeDinamickeOpreme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ZahtevZaRasporedjivanjeDinamickeOpreme>
+    <Id>1</Id>
+    <DinamickaOpremaId>1</DinamickaOpremaId>
+    <ProstorijaId>A2</ProstorijaId>
+    <Kolicina>2</Kolicina>
+  </ZahtevZaRasporedjivanjeDinamickeOpreme>
+  <ZahtevZaRasporedjivanjeDinamickeOpreme>
+    <Id>2</Id>
+    <DinamickaOpremaId>1</DinamickaOpremaId>
+    <ProstorijaId>A2</ProstorijaId>
+    <Kolicina>2</Kolicina>
+  </ZahtevZaRasporedjivanjeDinamickeOpreme>
+  <ZahtevZaRasporedjivanjeDinamickeOpreme>
+    <Id>3</Id>
+    <DinamickaOpremaId>1</DinamickaOpremaId>
+    <ProstorijaId>A2</ProstorijaId>
+    <Kolicina>2</Kolicina>
+  </ZahtevZaRasporedjivanjeDinamickeOpreme>
 </ArrayOfZahtevZaRasporedjivanjeDinamickeOpreme>

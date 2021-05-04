@@ -71,9 +71,6 @@
     <Compile Include="BrisanjeStatickeOpreme.xaml.cs">
       <DependentUpon>BrisanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml.cs">
-      <DependentUpon>BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CheckboxList.xaml.cs">
       <DependentUpon>CheckboxList.xaml</DependentUpon>
     </Compile>
@@ -341,10 +338,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BrisanjeStatickeOpreme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

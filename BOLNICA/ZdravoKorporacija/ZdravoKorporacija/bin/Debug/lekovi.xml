@@ -2,26 +2,69 @@
 <ArrayOfLek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Lek>
     <IdLeka>sfdf</IdLeka>
-    <ImeLeka>dsfdsdf</ImeLeka>
+    <ImeLeka>penicilin</ImeLeka>
     <ListaSastojaka />
     <ListaZamenaZaLek />
   </Lek>
   <Lek>
     <IdLeka>3</IdLeka>
-    <ImeLeka>4</ImeLeka>
+    <ImeLeka>andol</ImeLeka>
     <ListaSastojaka />
     <ListaZamenaZaLek />
   </Lek>
   <Lek>
     <IdLeka>5</IdLeka>
-    <ImeLeka>345645</ImeLeka>
+    <ImeLeka>brufen</ImeLeka>
     <ListaSastojaka />
-    <ListaZamenaZaLek />
+    <ListaZamenaZaLek>
+      <Lek>
+        <IdLeka>sfdf</IdLeka>
+        <ImeLeka>penicilin</ImeLeka>
+        <ListaSastojaka />
+        <ListaZamenaZaLek />
+      </Lek>
+    </ListaZamenaZaLek>
   </Lek>
   <Lek>
-    <IdLeka />
-    <ImeLeka />
-    <ListaSastojaka />
-    <ListaZamenaZaLek />
+    <IdLeka>1</IdLeka>
+    <ImeLeka>antiseptic</ImeLeka>
+    <ListaSastojaka>
+      <Sastojak>
+        <Id>2</Id>
+        <Ime>Ibrufen</Ime>
+      </Sastojak>
+    </ListaSastojaka>
+    <ListaZamenaZaLek>
+      <Lek>
+        <IdLeka>sfdf</IdLeka>
+        <ImeLeka>penicilin</ImeLeka>
+        <ListaSastojaka />
+        <ListaZamenaZaLek />
+      </Lek>
+      <Lek>
+        <IdLeka>3</IdLeka>
+        <ImeLeka>andol</ImeLeka>
+        <ListaSastojaka />
+        <ListaZamenaZaLek />
+      </Lek>
+    </ListaZamenaZaLek>
+  </Lek>
+  <Lek>
+    <IdLeka>43</IdLeka>
+    <ImeLeka>vitamin </ImeLeka>
+    <ListaSastojaka>
+      <Sastojak>
+        <Id>1</Id>
+        <Ime>Voda</Ime>
+      </Sastojak>
+    </ListaSastojaka>
+    <ListaZamenaZaLek>
+      <Lek>
+        <IdLeka>3</IdLeka>
+        <ImeLeka>andol</ImeLeka>
+        <ListaSastojaka />
+        <ListaZamenaZaLek />
+      </Lek>
+    </ListaZamenaZaLek>
   </Lek>
 </ArrayOfLek>

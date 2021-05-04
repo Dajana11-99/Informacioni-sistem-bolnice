@@ -18,162 +18,114 @@ namespace Servis
     {
         public static List<ZahtevZaRasporedjivanjeStatickeOpreme> ZahtevZaRasporedjivanjeStatickeOpreme = new List<ZahtevZaRasporedjivanjeStatickeOpreme>();
         public static ObservableCollection<ZahtevZaRasporedjivanjeStatickeOpreme> observableZahtevZaRasporedjivanjeStatickeOpreme = new ObservableCollection<ZahtevZaRasporedjivanjeStatickeOpreme>();
-        public static void inicijalizuj()
+        public static void Inicijalizuj()
         {
             ZahtevZaRasporedjivanjeStatickeOpreme = SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UcitajZahtevZaRasporedjivanjeStatickeOpreme();
+            IzvrsiZahteve();
             OsveziKolekciju();
         }
-
-        private static bool DodajZahtevIzDrugeSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public static bool DodajZahtevIzDrugeSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
-            var sala = SalaServis.PretraziPoId(zahtev.IzProstorijaId);
-            var rasporedjeno = sala.RasporedjenaStatickaOprema;
-            if (rasporedjeno == null)
+            Sala sala = SalaServis.PretraziPoId(zahtev.IzProstorijaId);
+            if (!RasporedjenaStatickaOpremaPosoji(zahtev))
+                return false;
+            if (!SalaPosedujeDovoljnuKolicinuStatickeOpreme(zahtev, sala.RasporedjenaStatickaOprema))
+                return false;
+            return AzuriranjeZahtevSala(zahtev, sala);
+            IzvrsiZahteve();
+        }
+        public static bool AzuriranjeZahtevSala(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, Sala sala)
+        {
+            RasporedjenaStatickaOpremaSale(zahtev, sala.RasporedjenaStatickaOprema).Kolicina -= zahtev.Kolicina;
+            SalaServis.Izmena(sala);
+            AzuriranjeZahteva(zahtev);
+            OsveziKolekciju();
+            return true;
+        }
+        public static bool SalaPosedujeDovoljnuKolicinuStatickeOpreme(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, List<RasporedjenaStatickaOprema> rasporedjenaStatickaOprema)
+        {
+            if (RasporedjenaStatickaOpremaSale(zahtev, rasporedjenaStatickaOprema).Kolicina < zahtev.Kolicina)
+            {
+                MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine opreme");
+                return false;
+            }
+            return true;
+        }
+        public static bool RasporedjenaStatickaOpremaPosoji(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        {
+            Sala sala = SalaServis.PretraziPoId(zahtev.IzProstorijaId);
+            List<RasporedjenaStatickaOprema> rasporedjena = sala.RasporedjenaStatickaOprema;
+            if (rasporedjena == null || RasporedjenaStatickaOpremaSale(zahtev, rasporedjena) == null)
             {
                 MessageBox.Show($"Nema rasporedjene te opreme u toj sali");
                 return false;
             }
-
-            RasporedjenaStatickaOprema taOpremaUTojSali = null;
-            foreach (var raspodela in rasporedjeno)
+            return true;
+        }
+        public static RasporedjenaStatickaOprema RasporedjenaStatickaOpremaSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, List<RasporedjenaStatickaOprema> rasporedjena)
+        {
+            RasporedjenaStatickaOprema opremaSalaZahtev = null;
+            foreach (var raspodela in rasporedjena)
             {
                 if (raspodela.statickaOprema.Id == zahtev.StatickeOpremaId)
                 {
-                    taOpremaUTojSali = raspodela;
+                    opremaSalaZahtev = raspodela;
                 }
-
             }
-
-            if (taOpremaUTojSali == null)
-            {
-                MessageBox.Show($"Nema rasporedjene te opreme u toj sali");
-                return false;
-            }
-
-            if (taOpremaUTojSali.Kolicina - zahtev.Kolicina < 0)
-            {
-                MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine opreme");
-                return false;
-            }
-
-            taOpremaUTojSali.Kolicina -= zahtev.Kolicina;
-            SalaServis.Izmena(sala);
-            ZahtevZaRasporedjivanjeStatickeOpreme.Add(zahtev);
-            OsveziKolekciju();
-            SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UpisiZahtevZaRasporedjivanjeStatickeOpreme();
-            return true;
+            return opremaSalaZahtev;
         }
-
-
-        public static bool DodajStatickuOpremuProstorija(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public static bool DodajStatickuOpremuIzSkladista(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
+            if (!SkladistePosedujeDovoljnuKolicinuStatickeOpreme(zahtev))
+                return false;
+            AzuriranjeStatickeOpremeSkladista(zahtev);
+            AzuriranjeZahteva(zahtev);
+            IzvrsiZahteve();
+            OsveziKolekciju();
+            return true;
+        }      
+        public static void AzuriranjeZahteva(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        {
+            ZahtevZaRasporedjivanjeStatickeOpreme.Add(zahtev);
+            SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UpisiZahtevZaRasporedjivanjeStatickeOpreme();
+        }
 
-            // DA Li JE IZ DRUGE PROSTORIJE?
-            if (!String.IsNullOrEmpty(zahtev.IzProstorijaId) && (zahtev.IzProstorijaId != "Skladiste staticke opreme"))
-            {
-                return DodajZahtevIzDrugeSale(zahtev);
-            }
+        public static void AzuriranjeStatickeOpremeSkladista(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        {
+            StatickaOprema oprema = RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
+            oprema.kolicina -= zahtev.Kolicina;
+            RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(oprema);
+        }
 
-
-            // IZ SKLADISTA
-
-            // da li je ta oprema vec u tom rasponu negde rasporedjena?
-            // da li ima dovoljno kolicine prvo?
-            // 
-            var statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
-
-            if (statickaOprema.kolicina - zahtev.Kolicina < 0)
+        public static bool SkladistePosedujeDovoljnuKolicinuStatickeOpreme(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        {
+            if (RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId).kolicina < zahtev.Kolicina
+               || RukovanjeStatickomOpremomServis.PrikaziStatickuOpremu() == null)
             {
                 MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine opreme");
                 return false;
             }
-
-            statickaOprema.kolicina -= zahtev.Kolicina;
-            RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOprema);
-            ZahtevZaRasporedjivanjeStatickeOpreme.Add(zahtev);
-            SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UpisiZahtevZaRasporedjivanjeStatickeOpreme();
-            if (zahtev.RasporedjenoOd <= DateTime.Now)
-            { 
-                Sala sala = SalaServis.PretraziPoId(zahtev.ProstorijaId);
-                var rasporedjeno = sala.RasporedjenaStatickaOprema;
-                foreach (var op in rasporedjeno)
-                {
-                    if (op.statickaOprema.Id == zahtev.StatickeOpremaId)
-                    {
-                        op.Kolicina += zahtev.Kolicina;
-                        break;
-                    }
-                }
-                ObrisiZahtevZaRasporedjivanjeStatickeOpreme(zahtev.Id);
-                SalaRepozitorijum.UpisiSale();
-            }
-            
-            OsveziKolekciju();
-            
             return true;
         }
-
 
         public static List<ZahtevZaRasporedjivanjeStatickeOpreme> PrikaziStatickuOpremu()
         {
             return ZahtevZaRasporedjivanjeStatickeOpreme;
-        }
-
-        public static bool IzmeniStatickuOpremu(ZahtevZaRasporedjivanjeStatickeOpreme statickaOpremaZaIzmenu)
-        {
-
-
-            var s = PretraziPoId(statickaOpremaZaIzmenu.Id);
-
-            var statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(s.StatickeOpremaId);
-            var dodato = statickaOpremaZaIzmenu.Kolicina > s.Kolicina;
-            var razlikaUKoliciniDodato = statickaOpremaZaIzmenu.Kolicina - s.Kolicina;
-            if (dodato)
-            {
-                if (statickaOprema.kolicina - razlikaUKoliciniDodato < 0)
-                {
-                    MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine za ovaj zahtev");
-                    return false;
-                }
-                statickaOprema.kolicina -= razlikaUKoliciniDodato;
-            }
-            else
-            {
-                // manja kolicina rasporedjna, ostatak se vraca u magacin
-                var razlikaUKoliciniOduzeto = s.Kolicina - statickaOpremaZaIzmenu.Kolicina;
-                statickaOprema.kolicina += razlikaUKoliciniOduzeto;
-            }
-
-            if (statickaOprema.kolicina - statickaOpremaZaIzmenu.Kolicina < 0)
-            {
-                MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine opreme");
-                return false;
-            }
-            RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOprema);
-
-            s.Kolicina = statickaOpremaZaIzmenu.Kolicina;
-            s.ProstorijaId = statickaOpremaZaIzmenu.ProstorijaId;
-            s.RasporedjenoOd = statickaOpremaZaIzmenu.RasporedjenoOd;
-
-            OsveziKolekciju();
-            SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UpisiZahtevZaRasporedjivanjeStatickeOpreme();
-            return true;
-        }
-
+        }        
         public static bool ObrisiZahtevZaRasporedjivanjeStatickeOpreme(String id)
         {
             List<ZahtevZaRasporedjivanjeStatickeOpreme> statickaOpremaBezIzbrisane = new List<ZahtevZaRasporedjivanjeStatickeOpreme>();
             bool nadjena = false;
-            foreach (ZahtevZaRasporedjivanjeStatickeOpreme s in ZahtevZaRasporedjivanjeStatickeOpreme)
+            foreach (ZahtevZaRasporedjivanjeStatickeOpreme zahtev in ZahtevZaRasporedjivanjeStatickeOpreme)
             {
-                if (s.Id.Equals(id))
+                if (zahtev.Id.Equals(id))
                 {
                     nadjena = true;
 
                 }
                 else
                 {
-                    statickaOpremaBezIzbrisane.Add(s);
+                    statickaOpremaBezIzbrisane.Add(zahtev);
                 }
             }
             ZahtevZaRasporedjivanjeStatickeOpreme = statickaOpremaBezIzbrisane;
@@ -193,63 +145,54 @@ namespace Servis
             }
             return null;
         }
-
-
         public static void OsveziKolekciju()
         {
             observableZahtevZaRasporedjivanjeStatickeOpreme.Clear();
             foreach (ZahtevZaRasporedjivanjeStatickeOpreme so in ZahtevZaRasporedjivanjeStatickeOpreme)
                 observableZahtevZaRasporedjivanjeStatickeOpreme.Add(so);
         }
-
-
-        public static void IzvrsiZahteveZaDanas()
+        public static void IzvrsiZahteve()
         {
             foreach (ZahtevZaRasporedjivanjeStatickeOpreme zahtev in ZahtevZaRasporedjivanjeStatickeOpreme)
             {
-                if (zahtev.RasporedjenoOd >= DateTime.Now)
+                if (zahtev.RasporedjenoOd > DateTime.Now)
                 {
                     continue;
                 }
-
+                Sala sala = SalaPosedujeStatickuOprepu(zahtev);
+                DodavanjeStatickeOpremeSali(zahtev, sala);
                 ObrisiZahtevZaRasporedjivanjeStatickeOpreme(zahtev.Id);
-                var sala = SalaServis.PretraziPoId(zahtev.ProstorijaId);
-                if (sala.RasporedjenaStatickaOprema == null)
-                {
-                    sala.RasporedjenaStatickaOprema = new List<RasporedjenaStatickaOprema>();
-                }
-                // da li je ovaj tip/vrsta opreme vec tu?
-                // ako jeste samo uvecaj kolicinu
-                RasporedjenaStatickaOprema rasporedjenaOprema = null;
-                foreach(var rasporedjena in sala.RasporedjenaStatickaOprema)
-                {
-                    if (rasporedjena.statickaOprema.Id == zahtev.StatickeOpremaId)
-                    {
-                        rasporedjenaOprema = rasporedjena;
-                        break;
-                    }
-                }
-                // ako smo je nasli
-                // onda dodamo kolicinu iz zahteva
-                if (rasporedjenaOprema != null)
-                {
-                    rasporedjenaOprema.Kolicina += zahtev.Kolicina;
-                } 
-                else
-                {
-                    // u suprotnom je ovo nova oprema
-                    rasporedjenaOprema = new RasporedjenaStatickaOprema();
-                    rasporedjenaOprema.Kolicina = zahtev.Kolicina;
-                    sala.RasporedjenaStatickaOprema.Add(rasporedjenaOprema);
-                }
-                rasporedjenaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
-                rasporedjenaOprema.statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
                 SalaRepozitorijum.UpisiSale();
             }
-
-
         }
 
+        public static Sala SalaPosedujeStatickuOprepu(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        {
+            var sala = SalaServis.PretraziPoId(zahtev.ProstorijaId);
+            if (sala.RasporedjenaStatickaOprema == null)
+            {
+                sala.RasporedjenaStatickaOprema = new List<RasporedjenaStatickaOprema>();
+            }
+
+            return sala;
+        }
+
+        public static void DodavanjeStatickeOpremeSali(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, Sala sala)
+        {
+            var rasporedjenaOprema = RasporedjenaStatickaOpremaSale(zahtev, sala.RasporedjenaStatickaOprema);
+            if (rasporedjenaOprema != null)
+            {
+                rasporedjenaOprema.Kolicina += zahtev.Kolicina;
+            }
+            else
+            {
+                rasporedjenaOprema = new RasporedjenaStatickaOprema();
+                rasporedjenaOprema.Kolicina = zahtev.Kolicina;
+                rasporedjenaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
+                rasporedjenaOprema.statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
+                sala.RasporedjenaStatickaOprema.Add(rasporedjenaOprema);
+            }
+        }
 
         public static String pronadji()
         {

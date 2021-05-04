@@ -46,8 +46,8 @@ namespace ZdravoKorporacija
 
         private void btnIzvrsiZahteve_Odmah(object sender, RoutedEventArgs e)
         {
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
+           // RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
+           // RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
