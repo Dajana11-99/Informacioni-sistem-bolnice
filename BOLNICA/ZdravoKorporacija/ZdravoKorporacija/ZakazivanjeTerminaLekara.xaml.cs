@@ -62,9 +62,10 @@ namespace ZdravoKorporacija
 
             String id = Guid.NewGuid().ToString();
             string[] pom = cmbLekar.Text.Split(' ');
-            Lekar l = new Lekar(pom[0], pom[1]);
-           
-            Pacijent p = new Pacijent(cmbPacijent.Text);
+            Lekar l = TerminServis.PretragaPoLekaru(pom[0], pom[1]);
+
+
+            Pacijent p = NaloziPacijenataServis.PretragaPoId(cmbPacijent.Text);
             String idSale = brojSale.Text;
             String vr = cmbZakazivanjeTerminaVreme.Text;
 

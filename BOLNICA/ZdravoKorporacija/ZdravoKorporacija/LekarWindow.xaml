@@ -19,10 +19,10 @@
                     <DataGridTextColumn Header="Tip termina" Binding="{Binding TipTermina}" />
                     <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.CeloIme}"/>
                     <DataGridTextColumn Header="Specijalizacija" Binding="{Binding Lekar.Specijalizacija}"/>
-                    <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.idPacijenta}"/>
+                    <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.IdPacijenta}"/>
                     <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"/>
                     <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Vreme}"/>
-                    <DataGridTextColumn Header="Trajanje termina" Binding="{Binding trajanjeTermina}"/>
+                    <DataGridTextColumn Header="Trajanje termina" Binding="{Binding TrajanjeTermina}"/>
                     <DataGridTextColumn Header="Hitno?" Binding="{Binding DaLiJeHitno}"/>
                     <DataGridTextColumn Header="Sala" Binding="{Binding Sala.Id}"/>
 

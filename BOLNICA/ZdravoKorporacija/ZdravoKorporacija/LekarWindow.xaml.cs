@@ -28,15 +28,17 @@ namespace ZdravoKorporacija
 
         public static ObservableCollection<Termin> TerminiLekara { get; set; }
 
-        public LekarWindow()
+        public static Lekar Ulogovan = null;
+        public LekarWindow(String korisnickoIme)
         {
             InitializeComponent();
+            Ulogovan = TerminServis.PretraziPoKorisnickomImenu(korisnickoIme);
             this.DataContext = this;
             TerminiLekara = new ObservableCollection<Termin>();
             foreach (Termin termin in TerminKontroler.PrikaziSveZakazaneTermine())
             {
-                // t.Lekar.Specijalizacija
-                TerminiLekara.Add(termin);
+                if(termin.Lekar.CeloIme.Equals(Ulogovan.CeloIme))
+                     TerminiLekara.Add(termin);
             }
         }
 
@@ -109,8 +111,9 @@ namespace ZdravoKorporacija
 
         private void btnOdjaviSe_Click(object sender, RoutedEventArgs e)
         {
-            LekarWindow l = new LekarWindow();
-            l.Close();
+            ProzorLogovanje prikaz = new ProzorLogovanje();
+            prikaz.Show();
+            this.Close();
         }
     }
 }

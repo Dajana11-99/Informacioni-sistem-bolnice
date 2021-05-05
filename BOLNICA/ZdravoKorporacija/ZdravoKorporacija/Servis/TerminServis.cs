@@ -31,7 +31,7 @@ namespace Servis
              pom.Add(new Lekar("l6", false, Specijalizacija.Stomatolog,"Petar","Petrovic","6583892377523","petar.petrovic@gmail.com", new AdresaStanovanja("Ustanicka", "8"), new Korisnik("petar.markovic", "petar.markovic")));
 
          }*/
-      /*  public static void inicijalizujSlobodneTermine()
+       public static void inicijalizujSlobodneTermine()
         {
            
             slobodniTermini.Add(new Termin("2", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 8), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L1")));
@@ -47,7 +47,7 @@ namespace Servis
             slobodniTermini.Add(new Termin("11", TipTermina.Pregled, "15:30", 30, new DateTime(2021, 5, 16), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L5")));
             slobodniTermini.Add(new Termin("12", TipTermina.Pregled, "15:30", 30, new DateTime(2021, 5, 10), SalaServis.PretraziPoId("a3"), null, PretragaLekaraPoID("L5")));
         }
-      */
+      
         public static List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
             List<Termin> vremeDatumaSlobodnogTermina = new List<Termin>();
@@ -192,6 +192,15 @@ namespace Servis
             SacuvajNoveTermine();
         }
 
+        public static Lekar PretraziPoKorisnickomImenu(String korisnickoIme)
+        {
+            foreach(Lekar lekar in sviLekari)
+            {
+                if (lekar.korisnik.KorisnickoIme.Equals(korisnickoIme))
+                    return lekar;
+            }
+            return null;
+        }
        
         private static List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
         {
