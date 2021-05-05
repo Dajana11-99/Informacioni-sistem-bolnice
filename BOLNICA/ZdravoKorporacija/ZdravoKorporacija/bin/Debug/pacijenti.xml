@@ -110,9 +110,9 @@
             <ListaZamenaZaLek />
           </Lek1>
           <KolicinaTerapije>1</KolicinaTerapije>
-          <PocetakTerapije>2021-05-02T00:00:00</PocetakTerapije>
-          <KrajTerapije>2021-05-04T00:00:00</KrajTerapije>
-          <PeroidUzimanjaUSatima>1</PeroidUzimanjaUSatima>
+          <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
+          <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
+          <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
           <obavestiMe>NE</obavestiMe>
           <idPacijenta>P1</idPacijenta>
         </Recept>

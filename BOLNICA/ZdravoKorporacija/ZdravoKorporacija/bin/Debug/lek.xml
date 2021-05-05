@@ -45,5 +45,7 @@
     <ImeLeka>Febricet</ImeLeka>
     <KolicinaLeka>300</KolicinaLeka>
     <SastojciLeka>Sastojci6 i sastojak 19</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
   </Lek>
 </ArrayOfLek>
