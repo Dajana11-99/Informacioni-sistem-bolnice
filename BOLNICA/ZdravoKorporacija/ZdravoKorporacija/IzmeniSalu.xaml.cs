@@ -32,7 +32,6 @@ namespace ZdravoKorporacija
             chkboxZauzeta.IsChecked = sala.Zauzeta;
 
         }
-
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             TipSale tipS;
@@ -45,23 +44,18 @@ namespace ZdravoKorporacija
             {
                 tipS = TipSale.Operaciona;
             }
-
             String sprat = txtSprat.Text;
-
             salaZaIzmenu.sprat = sprat;
             salaZaIzmenu.Zauzeta = chkboxZauzeta.IsChecked.Value;
             salaZaIzmenu.TipSale = tipS;
-
             SalaServis.Izmena(salaZaIzmenu);
             Close();
 
         }
-
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             

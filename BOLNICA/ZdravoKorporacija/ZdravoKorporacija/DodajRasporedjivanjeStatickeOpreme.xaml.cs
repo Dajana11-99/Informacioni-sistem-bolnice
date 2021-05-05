@@ -30,19 +30,13 @@ namespace ZdravoKorporacija
             InitializeComponent();
             cmbStatickaOprema.ItemsSource = RukovanjeStatickomOpremomServis.statickaOprema;
             cmbProstorija.ItemsSource = SalaServis.sala;
-            
-            cmbProstorijaIz.ItemsSource = SalaServis.sala;
-            
+            cmbProstorijaIz.ItemsSource = SalaServis.sala; 
             var listaSala = new List<Sala>();
-
             var kobajagiSala = new Sala();
             kobajagiSala.Id= "Skladiste staticke opreme";
             listaSala.Add(kobajagiSala);
-
             listaSala.AddRange(SalaServis.sala);
             cmbProstorijaIz.ItemsSource = listaSala;
-
-
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
@@ -53,8 +47,6 @@ namespace ZdravoKorporacija
                 MessageBox.Show("Datum od nije unet");
                 return;
             }
-
-
             ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
             zahtev.Id = RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.pronadji();
             int kolicina = 0;
@@ -76,8 +68,10 @@ namespace ZdravoKorporacija
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.IzProstorijaId = (string)cmbProstorijaIz.SelectedValue;
             zahtev.StatickeOpremaId = (string)cmbStatickaOprema.SelectedValue;
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuProstorija(zahtev);
-
+            if (zahtev.IzProstorijaId == "Skladiste staticke opreme")
+                RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuIzSkladista(zahtev);
+            else
+                RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajZahtevIzDrugeSale(zahtev);
             Close();
         }
 

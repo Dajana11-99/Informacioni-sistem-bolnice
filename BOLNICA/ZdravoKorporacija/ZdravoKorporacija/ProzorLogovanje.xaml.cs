@@ -71,11 +71,11 @@ namespace ZdravoKorporacija
             LekServis.inicijalizuj();
             RukovanjeStatickomOpremomServis.inicijalizuj();
             RukovanjeDinamickomOpremomServis.inicijalizuj();
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.inicijalizuj();
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.inicijalizuj();
+            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.Inicijalizuj();
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.Inicijalizuj();
 
              
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
+            //RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();
             //RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.IzvrsiZahteveZaDanas();
 
            //NaloziPacijenataServis.inic();

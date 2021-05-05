@@ -29,33 +29,13 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             DataContext = this;
-            ListRasporedele = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.observableZahtevZaRasporedjivanjeDinamickeOpreme;
+            ListRasporedele = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.prikazRasporedjivanjeDinamickeOpremeZahtev;
 
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            if (SpisakRaspodela.SelectedIndex != -1)
-            {
-                BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme brisaje = new BrisanjeZahtevaZaRasporedjivanjeDinamickeOpreme(((ZahtevZaRasporedjivanjeDinamickeOpreme)SpisakRaspodela.SelectedItem).Id);
-                brisaje.Show();
-            }
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            if (SpisakRaspodela.SelectedIndex != -1)
-            {
-                IzmeniRasporedjivanjeStatickeOpreme izmena = new IzmeniRasporedjivanjeStatickeOpreme(((ZahtevZaRasporedjivanjeStatickeOpreme)SpisakRaspodela.SelectedItem));
-                izmena.Show();
-            }
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DodajRasporedjivanjeDinamickeOpreme dodaj = new DodajRasporedjivanjeDinamickeOpreme();

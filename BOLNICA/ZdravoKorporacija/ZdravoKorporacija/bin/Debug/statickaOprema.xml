@@ -12,7 +12,12 @@
   </StatickaOprema>
   <StatickaOprema>
     <Id>2</Id>
-    <kolicina>33</kolicina>
+    <kolicina>90</kolicina>
     <naziv>stolica</naziv>
+  </StatickaOprema>
+  <StatickaOprema>
+    <Id>4</Id>
+    <kolicina>90</kolicina>
+    <naziv>spric</naziv>
   </StatickaOprema>
 </ArrayOfStatickaOprema>
