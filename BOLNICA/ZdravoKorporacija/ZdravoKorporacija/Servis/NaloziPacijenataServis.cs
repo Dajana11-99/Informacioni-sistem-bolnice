@@ -62,18 +62,11 @@ namespace Servis
 
         public static bool IzmeniPostojeciNalog(string iDPacijent)
         {
-
-            //Pacijent P = PrikazPacijenata.ListaPacijenataXMAL.Items.Refresh();
-            //PrikazPacijenata.UbaciUListu(iDPacijent);
-
             Pacijent P = PretragaPoId(iDPacijent);
 
             int id = PrikazPacijenata.ListaPacijenataXMAL.IndexOf(P);
             PrikazPacijenata.ListaPacijenataXMAL.RemoveAt(id);
             PrikazPacijenata.ListaPacijenataXMAL.Insert(id, P);
-
-            //PrikazPacijenata.ListaPacijenataXMAL.Remove(iDPacijent);
-
             return false;
         }
 
@@ -93,11 +86,11 @@ namespace Servis
 
       public static Pacijent pretraziPoKorisnickom(String korisnicko)
         {
-            foreach(Pacijent p in ListaPacijenata)
+            foreach(Pacijent pacijent in ListaPacijenata)
             {
-                if (p.korisnik.KorisnickoIme.Equals(korisnicko))
+                if (pacijent.korisnik.KorisnickoIme.Equals(korisnicko))
                 {
-                    return p;
+                    return pacijent;
                 }
             }
             return null;
@@ -113,10 +106,10 @@ namespace Servis
 
         public static Karton pronadjiKarton(String brojKartona) 
         {
-            foreach (Pacijent p in ListaPacijenata) 
+            foreach (Pacijent pacijent in ListaPacijenata) 
             {
-                if (p.karton.BrojKartona.Equals(brojKartona))
-                    return p.karton;
+                if (pacijent.karton.BrojKartona.Equals(brojKartona))
+                    return pacijent.karton;
             }
             return null;
         }
