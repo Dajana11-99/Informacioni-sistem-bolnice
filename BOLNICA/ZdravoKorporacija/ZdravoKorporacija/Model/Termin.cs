@@ -66,6 +66,12 @@ namespace Model
             set;
         }
 
+        public bool DaLiJeHitno
+        {
+            get;
+            set;
+        }
+
         public bool OcenjenTermin { get; set; }
 
         public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent p, Lekar l)
@@ -84,8 +90,21 @@ namespace Model
 
 
         }
+        public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent p, Lekar l, bool hitno = false)
 
-    
+        {
+            IdTermina = id;
+            TipTermina = tip;
+            Vreme = vreme;
+            TrajanjeTermina = trajanje;
+            Datum = datum;
+            Sala = sala;
+            Pacijent = p;
+            Lekar = l;
+            DaLiJeHitno = hitno;
+        }
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name) 

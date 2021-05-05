@@ -19,8 +19,8 @@
     <termin />
     <zahtevUpravniku />
     <Zauzet>false</Zauzet>
-    <Specijalizacija>Ostapraksa</Specijalizacija>
     <idZaposlenog>L1</idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
   </Lekar>
   <Lekar>
     <korisnik>
@@ -41,8 +41,8 @@
     <termin />
     <zahtevUpravniku />
     <Zauzet>false</Zauzet>
-    <Specijalizacija>Ostapraksa</Specijalizacija>
     <idZaposlenog>L2</idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
   </Lekar>
   <Lekar>
     <korisnik>
@@ -63,8 +63,8 @@
     <termin />
     <zahtevUpravniku />
     <Zauzet>false</Zauzet>
-    <Specijalizacija>Ostapraksa</Specijalizacija>
     <idZaposlenog>L3</idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
   </Lekar>
   <Lekar>
     <korisnik>
@@ -85,8 +85,8 @@
     <termin />
     <zahtevUpravniku />
     <Zauzet>false</Zauzet>
-    <Specijalizacija>Ostapraksa</Specijalizacija>
     <idZaposlenog>L4</idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
   </Lekar>
   <Lekar>
     <korisnik>
@@ -107,8 +107,8 @@
     <termin />
     <zahtevUpravniku />
     <Zauzet>false</Zauzet>
-    <Specijalizacija>Kardiolog</Specijalizacija>
     <idZaposlenog>L5</idZaposlenog>
+    <Specijalizacija>Kardiolog</Specijalizacija>
   </Lekar>
   <Lekar>
     <korisnik>
@@ -129,7 +129,7 @@
     <termin />
     <zahtevUpravniku />
     <Zauzet>false</Zauzet>
-    <Specijalizacija>Stomatolog</Specijalizacija>
     <idZaposlenog>l6</idZaposlenog>
+    <Specijalizacija>Stomatolog</Specijalizacija>
   </Lekar>
 </ArrayOfLekar>

@@ -35,8 +35,8 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L1</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
     </Lekar>
     <Pacijent>
       <korisnik>
@@ -89,6 +89,7 @@
       <Zloupotrebio>3</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
     </Pacijent>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
@@ -126,8 +127,8 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L1</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
     </Lekar>
     <Pacijent>
       <korisnik>
@@ -180,6 +181,7 @@
       <Zloupotrebio>3</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
     </Pacijent>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
@@ -217,8 +219,8 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L2</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
     </Lekar>
     <Pacijent>
       <korisnik>
@@ -271,6 +273,7 @@
       <Zloupotrebio>3</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
     </Pacijent>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
@@ -308,8 +311,8 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L2</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
     </Lekar>
     <Pacijent>
       <korisnik>
@@ -362,6 +365,7 @@
       <Zloupotrebio>3</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
     </Pacijent>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
@@ -399,8 +403,8 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L1</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
     </Lekar>
     <Pacijent>
       <korisnik>
@@ -453,6 +457,7 @@
       <Zloupotrebio>3</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
     </Pacijent>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>true</OcenjenTermin>
   </Termin>
   <Termin>
@@ -490,8 +495,8 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L1</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
     </Lekar>
     <Pacijent>
       <korisnik>
@@ -544,96 +549,7 @@
       <Zloupotrebio>3</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
     </Pacijent>
-    <OcenjenTermin>false</OcenjenTermin>
-  </Termin>
-  <Termin>
-    <Vreme>9:00</Vreme>
-    <TrajanjeTermina>45</TrajanjeTermina>
-    <Datum>2021-05-06T00:00:00</Datum>
-    <TipTermina>Operacija</TipTermina>
-    <IdTermina>ebb21adb-45e4-4111-b110-5fddb3bb06ec</IdTermina>
-    <Sala>
-      <TipSale>Operaciona</TipSale>
-      <Id>a1</Id>
-      <Zauzeta>false</Zauzeta>
-      <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
-      <RasporedjenaDinamickaOprema />
-      <Renoviranja />
-    </Sala>
-    <Lekar>
-      <korisnik>
-        <KorisnickoIme>milan.markovic</KorisnickoIme>
-        <Sifra>milan.markovic</Sifra>
-        <Uloga>Lekar</Uloga>
-        <Nalog>Obican</Nalog>
-      </korisnik>
-      <Ime>Milan</Ime>
-      <Prezime>Djenic</Prezime>
-      <Jmbg>5686323676</Jmbg>
-      <Email>milan.djenic@gmail.com</Email>
-      <CeloIme>Milan Djenic</CeloIme>
-      <adresaStanovanja>
-        <Broj>32</Broj>
-        <Ulica>Narodnih heroja</Ulica>
-      </adresaStanovanja>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
-      <idZaposlenog>L5</idZaposlenog>
-    </Lekar>
-    <Pacijent>
-      <korisnik>
-        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
-        <Sifra>dajana.zlokapa</Sifra>
-        <Uloga>Lekar</Uloga>
-        <Nalog>Obican</Nalog>
-      </korisnik>
-      <Ime>Dajana</Ime>
-      <Prezime>Zlokapa</Prezime>
-      <Jmbg>2711999105018</Jmbg>
-      <Email>dajana.zlokapa@gmail.com</Email>
-      <adresaStanovanja>
-        <Broj>4</Broj>
-        <Ulica>Adresa</Ulica>
-      </adresaStanovanja>
-      <karton>
-        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
-        <Ime>Dajana</Ime>
-        <Prezime>Zlokapa</Prezime>
-        <ImeRoditelja>Sinisa</ImeRoditelja>
-        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
-        <Pol>Zenski</Pol>
-        <Telefon>064 87956163</Telefon>
-        <BrojKartona>123</BrojKartona>
-        <BracniStatus>Neudata</BracniStatus>
-        <Anamneza>
-          <Simptomi />
-          <IzvestajLekara />
-        </Anamneza>
-        <recepti>
-          <Recept>
-            <Lek1>
-              <IdLeka>123</IdLeka>
-              <ImeLeka>Paracetamol</ImeLeka>
-              <ListaSastojaka />
-              <ListaZamenaZaLek />
-            </Lek1>
-            <KolicinaTerapije>1</KolicinaTerapije>
-            <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
-            <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
-            <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
-            <obavestiMe>NE</obavestiMe>
-            <idPacijenta>P1</idPacijenta>
-          </Recept>
-        </recepti>
-      </karton>
-      <termin />
-      <Maliciozan>false</Maliciozan>
-      <Zloupotrebio>3</Zloupotrebio>
-      <IdPacijenta>P1</IdPacijenta>
-    </Pacijent>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
 </ArrayOfTermin>

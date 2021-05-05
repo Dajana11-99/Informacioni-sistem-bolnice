@@ -109,8 +109,8 @@ namespace ZdravoKorporacija
             {
                 predvidjenoVreme = double.Parse(vreme);
             }
-
-            Termin t = new Termin(id, tipP, vr, predvidjenoVreme, (DateTime)datePickerZakazivanjeTermina.SelectedDate, s, p, l);
+            bool hitno = (bool)checkBoxHitno.IsChecked;
+            Termin t = new Termin(id, tipP, vr, predvidjenoVreme, (DateTime)datePickerZakazivanjeTermina.SelectedDate, s, p, l, hitno);
 
             TerminServis.ZakaziTermin(t);
             this.Close();

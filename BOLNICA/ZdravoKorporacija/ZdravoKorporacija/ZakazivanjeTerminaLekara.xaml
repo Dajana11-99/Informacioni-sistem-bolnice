@@ -35,24 +35,25 @@
         <Button Content="Odustani" Name="btnOdustani" Background="Transparent" HorizontalAlignment="Left" Height="46" Margin="154.8,494,0,0" VerticalAlignment="Top" Width="216" Click="btnOdustani_Click" FontSize="18" FontWeight="Bold" Grid.Column="1"/>
         <Label Content="Broj operacione sale:" Name="lblBrojOperacioeSale" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="72,342,0,0" VerticalAlignment="Top" Width="339" FontSize="16" Grid.ColumnSpan="2" Height="32"/>
         <TextBox HorizontalAlignment="Left" Name="brojSale" Height="36" Margin="119.8,342,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1">
-          
+
         </TextBox>
         <Label Content="Pacijent:" Name="pacijent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Margin="72,234,0,0" VerticalAlignment="Top" Width="265" FontSize="16"/>
         <ComboBox Grid.Column="1" HorizontalAlignment="Left" Name="cmbPacijent" Height="31" Margin="119.8,248,0,0" VerticalAlignment="Top" Width="296">
-          
+
         </ComboBox>
-        <Label Content="Vrsta termina:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="41" Margin="72,421,0,0" VerticalAlignment="Top" Width="265" FontSize="16"/>
-        <ComboBox Name="cmbVrstaTermina" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="119.8,421,0,0" VerticalAlignment="Top" Width="296">
+        <Label Content="Vrsta termina:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="41" Margin="72,385,0,0" VerticalAlignment="Top" Width="265" FontSize="16"/>
+        <ComboBox Name="cmbVrstaTermina" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="119.8,385,0,0" VerticalAlignment="Top" Width="296">
             <ComboBoxItem>Pregled</ComboBoxItem>
             <ComboBoxItem>Operacija</ComboBoxItem>
 
         </ComboBox>
 
-        
+
         <ComboBox  Name="cmbHMin" Grid.Column="1" HorizontalAlignment="Left" Height="36" Margin="340.8,295,0,0" VerticalAlignment="Top" Width="75">
             <ComboBoxItem>h</ComboBoxItem>
             <ComboBoxItem>min</ComboBoxItem>
 
         </ComboBox>
+        <CheckBox Content="Hitno" Name="checkBoxHitno" FontSize="20" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="169.8,444,0,0" VerticalAlignment="Top" Width="165"/>
     </Grid>
 </Window>

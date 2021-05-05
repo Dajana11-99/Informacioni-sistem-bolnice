@@ -17,7 +17,7 @@ namespace Model
 
         public String idZaposlenog { get; set; }
         public bool Zauzet;
-        public Specijalizacija Specijalizacija;
+        public Specijalizacija Specijalizacija { get; set; }
 
 
         public Lekar()

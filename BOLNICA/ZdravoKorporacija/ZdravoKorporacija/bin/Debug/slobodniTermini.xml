@@ -35,9 +35,10 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
       <idZaposlenog>L5</idZaposlenog>
+      <Specijalizacija>Kardiolog</Specijalizacija>
     </Lekar>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
@@ -75,9 +76,10 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
       <idZaposlenog>L5</idZaposlenog>
+      <Specijalizacija>Kardiolog</Specijalizacija>
     </Lekar>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
@@ -115,9 +117,10 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
       <idZaposlenog>L5</idZaposlenog>
+      <Specijalizacija>Kardiolog</Specijalizacija>
     </Lekar>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
@@ -155,9 +158,10 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Kardiolog</Specijalizacija>
       <idZaposlenog>L5</idZaposlenog>
+      <Specijalizacija>Kardiolog</Specijalizacija>
     </Lekar>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
@@ -195,9 +199,10 @@
       <termin />
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
       <idZaposlenog>L2</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
     </Lekar>
+    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
 </ArrayOfTermin>
