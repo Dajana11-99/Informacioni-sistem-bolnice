@@ -128,7 +128,7 @@ namespace Servis
         public static void ZakaziTermin(Termin termin)
         {
             zakazaniTermini.Add(termin);
-            LekarWindow.TerminiLekara.Add(termin);
+            //LekarWindow.TerminiLekara.Add(termin);
         }
         public static void OtkaziTermin(String idTermina)
         {
