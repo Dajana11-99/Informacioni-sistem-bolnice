@@ -32,13 +32,13 @@ namespace Servis
             if (!SalaPosedujeDovoljnuKolicinuStatickeOpreme(zahtev, sala.RasporedjenaStatickaOprema))
                 return false;
             return AzuriranjeZahtevSala(zahtev, sala);
-            IzvrsiZahteve();
         }
         public static bool AzuriranjeZahtevSala(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, Sala sala)
         {
             RasporedjenaStatickaOpremaSale(zahtev, sala.RasporedjenaStatickaOprema).Kolicina -= zahtev.Kolicina;
             SalaServis.Izmena(sala);
             AzuriranjeZahteva(zahtev);
+            IzvrsiZahteve();
             OsveziKolekciju();
             return true;
         }
