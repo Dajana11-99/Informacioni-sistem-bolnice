@@ -30,27 +30,31 @@ namespace ZdravoKorporacija
             txtSprat.Text = "" + sala.sprat;
             cmbTipSale.Text = sala.TipSale.ToString();
             chkboxZauzeta.IsChecked = sala.Zauzeta;
-
         }
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             TipSale tipS;
             String tipSale = cmbTipSale.Text;
-            if (tipSale.Equals(TipSale.Pregled.ToString()))
-            {
-                tipS = TipSale.Pregled;
-            }
-            else
-            {
-                tipS = TipSale.Operaciona;
-            }
+            tipS = TipSale(tipSale);
             String sprat = txtSprat.Text;
             salaZaIzmenu.sprat = sprat;
             salaZaIzmenu.Zauzeta = chkboxZauzeta.IsChecked.Value;
             salaZaIzmenu.TipSale = tipS;
             SalaServis.Izmena(salaZaIzmenu);
             Close();
-
+        }
+        private static TipSale TipSale(string tipSale)
+        {
+            TipSale tipS;
+            if (tipSale.Equals(global::Model.TipSale.Pregled.ToString()))
+            {
+                tipS = global::Model.TipSale.Pregled;
+            }
+            else
+            {
+                tipS = global::Model.TipSale.Operaciona;
+            }
+            return tipS;
         }
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {

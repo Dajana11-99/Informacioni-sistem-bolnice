@@ -19,7 +19,6 @@ using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
-    
     public partial class IzmeniLek : Window
     {
         Lek lekZaIzmenu;
@@ -33,21 +32,17 @@ namespace ZdravoKorporacija
             DataContext = this;
             lekZaIzmenu = lek;
             txtImeLeka.Text = "" + lek.ImeLeka;
-            List<Sastojak> sastojci = new List<Sastojak>();
             SastojciCheckboxItems = new List<CheckBoxListItem>();
             LekoviZamenaCheckboxItems = new List<CheckBoxListItem>();
-            ListaLekova = LekServis.PrikaziLekove();
-            LekoviZamenaCheckboxItems = new List<CheckBoxListItem>();
-            foreach (Sastojak sastojak in LekServis.listaSvihSastojaka)
-            {
-                CheckBoxListItem item = new CheckBoxListItem();
-                item.Data = sastojak;
-                item.Name = sastojak.Ime;
-                var vecChekiran = lek.ListaSastojaka.SingleOrDefault(sastojakLeka => sastojakLeka.Id == sastojak.Id);
-                item.IsChecked = vecChekiran != null;
-                SastojciCheckboxItems.Add(item);
-            }
-            foreach (Lek sviLekovi in ListaLekova)
+            ListaSastojakaZamena(lekZaIzmenu);
+            ListaLekovaZamena(lekZaIzmenu);
+            cboxlistSastojci.CheckBoxItems = SastojciCheckboxItems;
+            cboxlistLekovi.CheckBoxItems = LekoviZamenaCheckboxItems;
+        }
+
+        private void ListaLekovaZamena(Lek lek)
+        {
+            foreach (Lek sviLekovi in LekServis.PrikaziLekove())
             {
                 if (sviLekovi.IdLeka == lekZaIzmenu.IdLeka)
                 {
@@ -60,22 +55,33 @@ namespace ZdravoKorporacija
                 item.IsChecked = vecChekiran != null;
                 LekoviZamenaCheckboxItems.Add(item);
             }
-            cboxlistSastojci.CheckBoxItems = SastojciCheckboxItems;
-            cboxlistLekovi.CheckBoxItems = LekoviZamenaCheckboxItems;
+        }
+
+        private static void ListaSastojakaZamena(Lek lek)
+        {
+            foreach (Sastojak sastojak in LekServis.listaSvihSastojaka)
+            {
+                CheckBoxListItem item = new CheckBoxListItem();
+                item.Data = sastojak;
+                item.Name = sastojak.Ime;
+                var vecChekiran = lek.ListaSastojaka.SingleOrDefault(sastojakLeka => sastojakLeka.Id == sastojak.Id);
+                item.IsChecked = vecChekiran != null;
+                SastojciCheckboxItems.Add(item);
+            }
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             String imeLeka = txtImeLeka.Text;
-            Lek l = lekZaIzmenu;
-            List<Sastojak> sastojci = new List<Sastojak>();
-            foreach (var item in SastojciCheckboxItems)
-            {
-                if (item.IsChecked)
-                {
-                    sastojci.Add(item.Data as Sastojak);
-                }
-            }
+            NovaListaSastojakaZamena(lekZaIzmenu);
+            NovaListaLekovaZamena(lekZaIzmenu);
+            lekZaIzmenu.ImeLeka = imeLeka;
+            LekServis.Izmena(lekZaIzmenu);
+            LekRepozitorijum.UpisiLekove();
+            Close();
+        }
+        public static void NovaListaLekovaZamena(Lek lek)
+        {
             List<Lek> lekovi = new List<Lek>();
             foreach (var item in LekoviZamenaCheckboxItems)
             {
@@ -84,13 +90,21 @@ namespace ZdravoKorporacija
                     lekovi.Add(item.Data as Lek);
                 }
             }
-            l.ListaSastojaka = sastojci;
-            l.ListaZamenaZaLek = lekovi;
-            l.ImeLeka = imeLeka;
-            LekServis.Izmena(lekZaIzmenu);
-            LekRepozitorijum.UpisiLekove();
-            Close();
+            lek.ListaZamenaZaLek = lekovi;
         }
+        public static void NovaListaSastojakaZamena(Lek lek)
+        {
+            List<Sastojak> sastojci = new List<Sastojak>();
+            foreach (var item in SastojciCheckboxItems)
+            {
+                if (item.IsChecked)
+                {
+                    sastojci.Add(item.Data as Sastojak);
+                }
+            }
+            lek.ListaSastojaka = sastojci;
+        }
+
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();

@@ -4,7 +4,7 @@
     <TipSale>Pregled</TipSale>
     <Id>A1</Id>
     <Zauzeta>false</Zauzeta>
-    <sprat>2</sprat>
+    <sprat>3</sprat>
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema>
       <RasporedjenaStatickaOprema>
@@ -47,10 +47,10 @@
     </Renoviranja>
   </Sala>
   <Sala>
-    <TipSale>Pregled</TipSale>
+    <TipSale>Operaciona</TipSale>
     <Id>A2</Id>
-    <Zauzeta>false</Zauzeta>
-    <sprat>3</sprat>
+    <Zauzeta>true</Zauzeta>
+    <sprat>4</sprat>
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema>
       <RasporedjenaStatickaOprema>
@@ -78,7 +78,7 @@
   <Sala>
     <TipSale>Pregled</TipSale>
     <Id>a3</Id>
-    <Zauzeta>false</Zauzeta>
+    <Zauzeta>true</Zauzeta>
     <sprat>4</sprat>
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema />

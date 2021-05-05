@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public partial class BrisanjeStatickeOpreme : Window
     {
         string statickaOpremaId;
@@ -27,13 +24,10 @@ namespace ZdravoKorporacija
             InitializeComponent();
             statickaOpremaId = id;
         }
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             RukovanjeStatickomOpremomServis.ObrisiStatickuOpremu(statickaOpremaId);

@@ -29,16 +29,11 @@ namespace ZdravoKorporacija
             statickaOpremaZaIzmenu = staticka;
             txtNaziv.Text = "" + staticka.naziv;
             txtKolicina.Text = "" + staticka.kolicina;
-
         }
-
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-
             String naziv = txtNaziv.Text;
-
             int kolicina;
-
             try
             {
                 kolicina = Int32.Parse(txtKolicina.Text);
@@ -48,15 +43,11 @@ namespace ZdravoKorporacija
                 MessageBox.Show($"Kolicina mora biti ceo broj!!");
                 return;
             }
-
             statickaOpremaZaIzmenu.naziv = naziv;
             statickaOpremaZaIzmenu.kolicina = kolicina;
-
             RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOpremaZaIzmenu);
             Close();
-
         }
-
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();

@@ -18,15 +18,10 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for PriakzSala.xaml
-    /// </summary>
     public partial class PrikazStatickeOpreme : Window
     {
-
         public static ObservableCollection<StatickaOprema> ListStatickaOprema { get; set; }
         public bool CRUDStatickeOpreme { get; set; }
-
         public PrikazStatickeOpreme(ObservableCollection<RasporedjenaStatickaOprema> rasporedjenaOprema = null)
         {
             InitializeComponent();
@@ -50,10 +45,7 @@ namespace ZdravoKorporacija
                 ListStatickaOprema = opremaIzSale;
 
             }
-
-
         }
-
         private void Button_dodaj(object sender, RoutedEventArgs e)
         {
             DodajStatickuOpremu dodaj = new DodajStatickuOpremu();
@@ -64,7 +56,6 @@ namespace ZdravoKorporacija
         {
             Close();
         }
-
         private void Button_obrisi(object sender, RoutedEventArgs e)
         {
             if (SpisakStatickeOpreme.SelectedIndex != -1)
@@ -73,7 +64,6 @@ namespace ZdravoKorporacija
                 brisaje.Show();
             }
         }
-
         private void Button_izmeni(object sender, RoutedEventArgs e)
         {
             if (SpisakStatickeOpreme.SelectedIndex != -1)
@@ -82,7 +72,6 @@ namespace ZdravoKorporacija
                 izmena.Show();
             }
         }
-
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -29,34 +29,30 @@ namespace ZdravoKorporacija
             cmbDinamicka.ItemsSource = RukovanjeDinamickomOpremomServis.dinamickaOprema;
             cmbProstorija.ItemsSource = SalaServis.sala;
         }
-
-
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             DateTime? rasporedjenoOd = datePickerRasporedjenoOd.SelectedDate;
-            if (!rasporedjenoOd.HasValue)
-            {
-                MessageBox.Show("Datum od nije unet");
+            if(!DatumUnet(rasporedjenoOd))
                 return;
-            }
-
-
             DateTime? rasporedjenoDo = this.datePickerRasporedjenoDo.SelectedDate;
-            if (!rasporedjenoDo.HasValue)
-            {
-                MessageBox.Show("Datum do nije unet");
+            if (!DatumUnet(rasporedjenoDo))
                 return;
-            }
-
             ZahtevZaRasporedjivanjeDinamickeOpreme zahtev = new ZahtevZaRasporedjivanjeDinamickeOpreme();
             zahtev.Id = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.pronadji();
             zahtev.Kolicina = 4; // txtKolicina.Text;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.DinamickaOpremaId = (string)cmbDinamicka.SelectedValue;
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.DodajDinamickuOpremuProstorija(zahtev);
-
         }
-
+        private static bool DatumUnet(DateTime? rasporedjeno)
+        {
+            if (!rasporedjeno.HasValue)
+            {
+                MessageBox.Show("Datum od nije unet");
+                return false;
+            }
+            return true;
+        }
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();

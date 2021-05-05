@@ -13,16 +13,13 @@ namespace Servis
     {
         public static List<Lek> lek = new List<Lek>();
         public static ObservableCollection<Lek> observableLek = new ObservableCollection<Lek>();
-
         public static List<Sastojak> listaSvihSastojaka = new List<Sastojak>
         {
             new Sastojak{Id="1", Ime="Voda"},
             new Sastojak{Id="2", Ime="Ibrufen"},
             new Sastojak{Id="3", Ime="Lavanda"}
         };
-
         public static List<Lek> lekovii = new List<Lek>();
-
         public static void inicijalizujLekove()
         {
             lekovii.Add(new Lek("1", "Brufen", "20", "Sastojci1"));
@@ -32,20 +29,17 @@ namespace Servis
             lekovii.Add(new Lek("5", "Bromazepam", "30", "Sastojci5"));
             lekovii.Add(new Lek("6", "Febricet", "300", "Sastojci6"));
         }
-
         public static void inicijalizuj()
         {
             lek = LekRepozitorijum.UcitajLekove();
             OsveziKolekciju();
         }
-
         private static void OsveziKolekciju()
         {
             observableLek.Clear();
             foreach (Lek lek in lek)
                 observableLek.Add(lek);
         }
-
         public static bool DodajLek(Lek unetiLek)
         {
             if (lek.Contains(unetiLek))
@@ -60,7 +54,6 @@ namespace Servis
                 return true;
             }
         }
-
         public static Lek PretraziPoId(String id)
         {
             foreach (Lek l in lek)
@@ -85,7 +78,6 @@ namespace Servis
             }
             return imenaSastojaka;
         }
-
         public static bool Izmena(Lek lekZaIzmenu)
         {
             foreach (Lek l in lek)
@@ -98,10 +90,8 @@ namespace Servis
             }
             LekRepozitorijum.UpisiLekove();
             OsveziKolekciju();
-
             return true;
         }
-
         public static bool BrisanjeLeka(String id)
         {
             List<Lek> lekoviBezIzbrisanog = new List<Lek>();
@@ -121,17 +111,14 @@ namespace Servis
             LekRepozitorijum.UpisiLekove();
             return nadjena;
         }
-
         public static Lek pretraziSveLekove(String id)
         {
             return LekoviRepozitorijum.PronadjiLek(id);
         }
-
         public static List<Lek> prikaziSveLekove()
         {
             return lekovii;
         }
-
         public static Lek IzmeniSelektovaniLek(Lek lek)
         {
             return LekoviRepozitorijum.IzmeniLek(lek);

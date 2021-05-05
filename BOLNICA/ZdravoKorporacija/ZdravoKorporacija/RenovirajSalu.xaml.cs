@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for RenovirajSalu.xaml
-    /// </summary>
     public partial class RenovirajSalu : Window
     {
         Sala salaZaIzmenu;
@@ -33,18 +30,12 @@ namespace ZdravoKorporacija
         {
             Renoviranje renoviranje = new Renoviranje();
             DateTime? RenoviranjeOd = datePickerPocetakRenoviranja.SelectedDate;
-            if (!RenoviranjeOd.HasValue)
-            {
-                MessageBox.Show("Datum od nije unet");
+            if (!DatumUnet(RenoviranjeOd))
                 return;
-            }
             DateTime? RenoviranjeDo = datePickerKrajRenoviranja.SelectedDate;
-            if (!RenoviranjeDo.HasValue)
-            {
-                MessageBox.Show("Datum do nije unet");
+            if (!DatumUnet(RenoviranjeDo))
                 return;
-            }
-            if(salaZaIzmenu.Renoviranja == null)
+            if (salaZaIzmenu.Renoviranja == null)
             {
                 salaZaIzmenu.Renoviranja = new List<Renoviranje>();
             }
@@ -52,6 +43,15 @@ namespace ZdravoKorporacija
             renoviranje.RenoviranjeDo = RenoviranjeDo.Value;
             salaZaIzmenu.Renoviranja.Add(renoviranje);
             SalaServis.Izmena(salaZaIzmenu);
+        }
+        private static bool DatumUnet(DateTime? renoviranje)
+        {
+            if (!renoviranje.HasValue)
+            {
+                MessageBox.Show("Datum od nije unet");
+                return false;
+            }
+            return true;
         }
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {

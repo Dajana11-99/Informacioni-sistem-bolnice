@@ -19,11 +19,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for PrikazLekova.xaml
-    /// </summary>
-    /// 
-
     [ValueConversion(typeof(List<Sastojak>), typeof(string))]
     public class ListSastojakaToStringConverter : IValueConverter
     {
@@ -32,17 +27,14 @@ namespace ZdravoKorporacija
         {
             if (targetType != typeof(string))
                 throw new InvalidOperationException("The target must be a String");
-
             List<string> asString = new List<string>();
             var sastojci = (List<Sastojak>)value;
             foreach(Sastojak sastojak in sastojci)
             {
                 asString.Add(sastojak.Ime);
             }
-
             return String.Join(", ", asString.ToArray());
         }
-
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new NotImplementedException();
@@ -55,22 +47,17 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             DataContext = this;
-
             ListLekova = LekServis.observableLek;
-
         }
-
         private void btnVratiSe_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
         private void btnDodajLek_Click(object sender, RoutedEventArgs e)
         {
             DodajLek dodajLek = new DodajLek();
             dodajLek.Show();
         }
-
         private void btnIzmeniLek_Click(object sender, RoutedEventArgs e)
         {
             if (SpisakLekova.SelectedIndex != -1)
@@ -80,15 +67,13 @@ namespace ZdravoKorporacija
             }
             
         }
-
         private void btnIzbrisiLek_Click(object sender, RoutedEventArgs e)
         {
             if (SpisakLekova.SelectedIndex != -1)
             {
                 BrisanjeLeka brisanjeLeka = new BrisanjeLeka(((Lek)SpisakLekova.SelectedItem).IdLeka);
                 brisanjeLeka.Show();
-            }
-            
+            } 
         }
     }
 }

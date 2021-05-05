@@ -24,13 +24,11 @@ namespace ZdravoKorporacija
     public partial class RasporedjivanjeDinamickeOpreme : Window
     {
         public static ObservableCollection<ZahtevZaRasporedjivanjeDinamickeOpreme> ListRasporedele { get; set; }
-
         public RasporedjivanjeDinamickeOpreme()
         {
             InitializeComponent();
             DataContext = this;
             ListRasporedele = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.prikazRasporedjivanjeDinamickeOpremeZahtev;
-
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

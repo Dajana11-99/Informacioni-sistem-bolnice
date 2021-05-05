@@ -23,16 +23,12 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class PriakzSala : Window
     {
-
         public static ObservableCollection<Sala> ListSala { get; set; }
         public PriakzSala()
         {
             InitializeComponent();
             DataContext = this;
-
             ListSala = SalaServis.observableSala;
-    
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -75,14 +71,12 @@ namespace ZdravoKorporacija
             if (SpisakSala.SelectedIndex != -1)
             {
                 Sala salaCijaSeOpremaPrikazuje = (Sala)SpisakSala.SelectedItem;
-                // staticvke
                 List<RasporedjenaStatickaOprema> oprema = salaCijaSeOpremaPrikazuje.RasporedjenaStatickaOprema;
                 ObservableCollection<RasporedjenaStatickaOprema> opremaKol = 
                         new ObservableCollection<RasporedjenaStatickaOprema>(oprema);
                 PrikazStatickeOpreme prikz = new PrikazStatickeOpreme(opremaKol);
                 prikz.Show();
             }
-           
         }
 
         private void btnPregledDinamickeOpreme_Click(object sender, RoutedEventArgs e)
@@ -90,7 +84,6 @@ namespace ZdravoKorporacija
             if (SpisakSala.SelectedIndex != -1)
             {
                 Sala salaCijaSeOpremaPrikazuje = (Sala)SpisakSala.SelectedItem;
-                // staticvke
                 List<RasporedjenaDinamickaOprema> oprema = salaCijaSeOpremaPrikazuje.RasporedjenaDinamickaOprema;
                 ObservableCollection<RasporedjenaDinamickaOprema> opremaKol =
                   new ObservableCollection<RasporedjenaDinamickaOprema>(oprema);
@@ -98,7 +91,6 @@ namespace ZdravoKorporacija
                 prikz.Show();
             }
         }
-
         private void btnRenovirajSaluClick(object sender, RoutedEventArgs e)
         {
             if (SpisakSala.SelectedIndex != -1)
@@ -106,8 +98,7 @@ namespace ZdravoKorporacija
                 Sala salaZaRenoviranje = (Sala)SpisakSala.SelectedItem;
                 RenovirajSalu renovirajSalu = new RenovirajSalu(salaZaRenoviranje);
                 renovirajSalu.Show();
-            }
-            
+            }  
         }
     }
 }

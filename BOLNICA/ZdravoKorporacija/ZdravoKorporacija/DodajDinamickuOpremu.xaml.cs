@@ -27,24 +27,15 @@ namespace ZdravoKorporacija
         public DodajDinamickuOpremu()
         {
             InitializeComponent();
-
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-
             String id = txtId.Text;
-            DinamickaOprema postojecaDinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(id);
-            if (postojecaDinamickaOprema != null)
-            {
-                MessageBox.Show($"Postoji vec oprema sa ID-em:{id}");
+            if (PostojiDinamickaOprema(id))
                 return;
-            }
-
             String naziv = txtNaziv.Text;
-
             int kolicina;
-
             try
             {
                 kolicina = Int32.Parse(txtKolicina.Text);
@@ -54,17 +45,23 @@ namespace ZdravoKorporacija
                 MessageBox.Show($"Kolicina mora biti coe broj!!");
                 return;
             }
-
-
-
-            DinamickaOprema so = new DinamickaOprema(id);
-            so.naziv = naziv;
-            so.kolicina = kolicina;
-            RukovanjeDinamickomOpremomServis.DodajDinamickuOpremu(so);
+            DinamickaOprema oprema = new DinamickaOprema(id);
+            oprema.naziv = naziv;
+            oprema.kolicina = kolicina;
+            RukovanjeDinamickomOpremomServis.DodajDinamickuOpremu(oprema);
             DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             Close();
+        }
 
-
+        private static bool PostojiDinamickaOprema(string id)
+        {
+            DinamickaOprema postojecaDinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(id);
+            if (postojecaDinamickaOprema != null)
+            {
+                MessageBox.Show($"Postoji vec oprema sa ID-em:{id}");
+                return true;
+            }
+            return false;
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

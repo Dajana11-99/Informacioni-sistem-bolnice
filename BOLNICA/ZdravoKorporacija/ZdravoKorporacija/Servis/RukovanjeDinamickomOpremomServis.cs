@@ -43,34 +43,32 @@ namespace Servis
         }
         public static bool IzmeniDinamickuOpremu(DinamickaOprema dinamickaOpremaZaIzmenu)
         {
-            foreach (DinamickaOprema s in dinamickaOprema)
+            foreach (DinamickaOprema oprema in dinamickaOprema)
             {
-                if (s.Id.Equals(dinamickaOpremaZaIzmenu.Id))
+                if (oprema.Id.Equals(dinamickaOpremaZaIzmenu.Id))
                 {
-                    s.kolicina = dinamickaOpremaZaIzmenu.kolicina;
-                    s.naziv = dinamickaOpremaZaIzmenu.naziv;
+                    oprema.kolicina = dinamickaOpremaZaIzmenu.kolicina;
+                    oprema.naziv = dinamickaOpremaZaIzmenu.naziv;
                 }
 
             }
             DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             OsveziKolekciju();
-
             return true;
         }
-
         public static bool ObrisiDinamickuOpremu(String id)
         {
             List<DinamickaOprema> dinamickaOpremaBezIzbrisane = new List<DinamickaOprema>();
             bool nadjena = false;
-            foreach (DinamickaOprema s in dinamickaOprema)
+            foreach (DinamickaOprema oprema in dinamickaOprema)
             {
-                if (s.Id.Equals(id))
+                if (oprema.Id.Equals(id))
                 {
                     nadjena = true;
                 }
                 else
                 {
-                    dinamickaOpremaBezIzbrisane.Add(s);
+                    dinamickaOpremaBezIzbrisane.Add(oprema);
                 }
             }
             dinamickaOprema = dinamickaOpremaBezIzbrisane;
@@ -78,14 +76,13 @@ namespace Servis
             DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             return nadjena;
         }
-
         public static DinamickaOprema PretraziPoId(String id)
         {
-            foreach (DinamickaOprema s in dinamickaOprema)
+            foreach (DinamickaOprema oprema in dinamickaOprema)
             {
-                if (s.Id.Equals(id))
+                if (oprema.Id.Equals(id))
                 {
-                    return s;
+                    return oprema;
                 }
             }
             return null;
@@ -93,10 +90,9 @@ namespace Servis
         public static void OsveziKolekciju()
         {
             observableDinamickaOprema.Clear();
-            foreach (DinamickaOprema so in dinamickaOprema)
-                observableDinamickaOprema.Add(so);
+            foreach (DinamickaOprema oprema in dinamickaOprema)
+                observableDinamickaOprema.Add(oprema);
         }
-
         public ZdravoKorporacija.Repozitorijum.DinamickeOpremeRepozitorijum dinamickeOpremeRepozitorijum;
     }
 }

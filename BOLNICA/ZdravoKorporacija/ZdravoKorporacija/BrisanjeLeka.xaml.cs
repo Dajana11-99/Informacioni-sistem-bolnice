@@ -16,7 +16,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    
     public partial class BrisanjeLeka : Window
     {
         string lekZaBrisanjeId;
@@ -25,13 +24,10 @@ namespace ZdravoKorporacija
             InitializeComponent();
             lekZaBrisanjeId = id;
         }
-
-
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             LekServis.BrisanjeLeka(lekZaBrisanjeId);

@@ -18,21 +18,15 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for PriakzSala.xaml
-    /// </summary>
     public partial class PrikazDinamickeOpreme : Window
     {
-
         public static ObservableCollection<DinamickaOprema> ListDinamickaOprema { get; set; }
         public bool CRUDDinamickeOpreme { get; set; }
-
         public PrikazDinamickeOpreme(ObservableCollection<RasporedjenaDinamickaOprema> rasporedjenaOprema = null)
         {
             InitializeComponent();
             DataContext = this;
-
-         if (rasporedjenaOprema == null)
+            if (rasporedjenaOprema == null)
             {
                 CRUDDinamickeOpreme = true;
                 ListDinamickaOprema = RukovanjeDinamickomOpremomServis.observableDinamickaOprema;
@@ -49,32 +43,25 @@ namespace ZdravoKorporacija
                     opremaIzSale.Add(dinamicka);
                 }
                 ListDinamickaOprema = opremaIzSale;
-
             }
-
         }
-
         private void Button_dodaj(object sender, RoutedEventArgs e)
         {
             DodajDinamickuOpremu dodaj = new DodajDinamickuOpremu();
             dodaj.Show();
         }
-
         private void Button_vrati_se(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
         private void Button_obrisi(object sender, RoutedEventArgs e)
-        {
-
+        { 
             if (SpisakDinamickeOpreme.SelectedIndex != -1)
             {
                 BrisanjeDinamickeOpreme brisaje = new BrisanjeDinamickeOpreme(((DinamickaOprema)SpisakDinamickeOpreme.SelectedItem).Id);
                 brisaje.Show();
             }
         }
-
         private void Button_izmeni(object sender, RoutedEventArgs e)
         {
             if (SpisakDinamickeOpreme.SelectedIndex != -1)
@@ -83,7 +70,6 @@ namespace ZdravoKorporacija
                 izmena.Show();
             }
         }
-
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             this.Close();

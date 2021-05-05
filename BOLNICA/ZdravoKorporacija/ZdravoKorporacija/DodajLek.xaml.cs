@@ -33,10 +33,25 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             DataContext = this;
-            
-            ListaLekova = LekServis.PrikaziLekove();
             SastojciCheckboxItems = new List<CheckBoxListItem>();
             LekoviZamenaCheckboxItems = new List<CheckBoxListItem>();
+            ListaSastojakaChechBoxItems();
+            ListaLekovaChechBoxItems();
+            cboxlistSastojci.CheckBoxItems = SastojciCheckboxItems;
+            cboxlistLekovi.CheckBoxItems = LekoviZamenaCheckboxItems;
+        }
+        private static void ListaLekovaChechBoxItems()
+        {
+            foreach (Lek lek in LekServis.PrikaziLekove())
+            {
+                CheckBoxListItem item = new CheckBoxListItem();
+                item.Data = lek;
+                item.Name = lek.ImeLeka;
+                LekoviZamenaCheckboxItems.Add(item);
+            }
+        }
+        private static void ListaSastojakaChechBoxItems()
+        {
             foreach (Sastojak sastojak in LekServis.listaSvihSastojaka)
             {
                 CheckBoxListItem item = new CheckBoxListItem();
@@ -44,41 +59,22 @@ namespace ZdravoKorporacija
                 item.Name = sastojak.Ime;
                 SastojciCheckboxItems.Add(item);
             }
-            foreach(Lek lek in ListaLekova)
-            {
-                CheckBoxListItem item = new CheckBoxListItem();
-                item.Data = lek;
-                item.Name = lek.ImeLeka;
-                LekoviZamenaCheckboxItems.Add(item);
-            }
-            cboxlistSastojci.CheckBoxItems = SastojciCheckboxItems;
-            cboxlistLekovi.CheckBoxItems = LekoviZamenaCheckboxItems;
-
         }
-
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             String id = txtId.Text;
-            Lek postojeciLek = LekServis.PretraziPoId(id);
-            if (postojeciLek != null)
-            {
-                MessageBox.Show($"Postoji vec lek sa ID-em:{id}");
+            if (LekPostoji(id))
                 return;
-            }
-
             String imeLeka = txtImeLeka.Text;
-
             Lek l = new Lek(id, imeLeka);
-
-            List<Sastojak> sastojci = new List<Sastojak>();
-            foreach(var item in SastojciCheckboxItems)
-            {
-                if(item.IsChecked)
-                {
-                    sastojci.Add(item.Data as Sastojak);
-                }
-            }
-
+            ListaSastojaka(l);
+            NovaListaLekova(l);
+            LekServis.DodajLek(l);
+            LekRepozitorijum.UpisiLekove();
+            Close();
+        }
+        private static void NovaListaLekova(Lek lek)
+        {
             List<Lek> lekovi = new List<Lek>();
             foreach (var item in LekoviZamenaCheckboxItems)
             {
@@ -87,14 +83,30 @@ namespace ZdravoKorporacija
                     lekovi.Add(item.Data as Lek);
                 }
             }
-
-            l.ListaSastojaka = sastojci;
-            l.ListaZamenaZaLek = lekovi;
-            LekServis.DodajLek(l);
-            LekRepozitorijum.UpisiLekove();
-            Close();
+            lek.ListaZamenaZaLek = lekovi;
         }
-
+        public static void ListaSastojaka(Lek lek)
+        {
+            List<Sastojak> sastojci = new List<Sastojak>();
+            foreach (var item in SastojciCheckboxItems)
+            {
+                if (item.IsChecked)
+                {
+                    sastojci.Add(item.Data as Sastojak);
+                }
+            }
+            lek.ListaSastojaka = sastojci;
+        }
+        public static bool LekPostoji(string id)
+        {
+            Lek postojeciLek = LekServis.PretraziPoId(id);
+            if (postojeciLek != null)
+            {
+                MessageBox.Show($"Postoji vec lek sa ID-em:{id}");
+                return true;
+            }
+            return false;
+        }
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();

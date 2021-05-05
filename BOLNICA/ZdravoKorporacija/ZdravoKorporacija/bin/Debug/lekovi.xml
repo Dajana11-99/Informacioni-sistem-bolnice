@@ -15,7 +15,12 @@
   <Lek>
     <IdLeka>5</IdLeka>
     <ImeLeka>brufen</ImeLeka>
-    <ListaSastojaka />
+    <ListaSastojaka>
+      <Sastojak>
+        <Id>1</Id>
+        <Ime>Voda</Ime>
+      </Sastojak>
+    </ListaSastojaka>
     <ListaZamenaZaLek>
       <Lek>
         <IdLeka>sfdf</IdLeka>
@@ -64,6 +69,36 @@
         <ImeLeka>andol</ImeLeka>
         <ListaSastojaka />
         <ListaZamenaZaLek />
+      </Lek>
+    </ListaZamenaZaLek>
+  </Lek>
+  <Lek>
+    <IdLeka>33</IdLeka>
+    <ImeLeka>anadol</ImeLeka>
+    <ListaSastojaka>
+      <Sastojak>
+        <Id>1</Id>
+        <Ime>Voda</Ime>
+      </Sastojak>
+    </ListaSastojaka>
+    <ListaZamenaZaLek>
+      <Lek>
+        <IdLeka>5</IdLeka>
+        <ImeLeka>brufen</ImeLeka>
+        <ListaSastojaka>
+          <Sastojak>
+            <Id>1</Id>
+            <Ime>Voda</Ime>
+          </Sastojak>
+        </ListaSastojaka>
+        <ListaZamenaZaLek>
+          <Lek>
+            <IdLeka>sfdf</IdLeka>
+            <ImeLeka>penicilin</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek>
+        </ListaZamenaZaLek>
       </Lek>
     </ListaZamenaZaLek>
   </Lek>
