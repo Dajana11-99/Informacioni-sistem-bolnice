@@ -44,29 +44,27 @@ namespace ZdravoKorporacija.PacijentPrikaz
             
 
         }
-        public static DateTime nowTime;
+
         public static void schedule_Timer()
         {
-           
-            sadrzaj1 = "Lek: " + r.Lek1.ImeLeka + ".\nIsteklo je " + r.PeroidUzimanjaUSatima + "h od poslednje doze."+
-           "\nKoličina u sledećoj dozi: " + r.KolicinaTerapije+"." ;
-            nowTime = DateTime.Now;
-            DateTime scheduledTime = DateTime.Now.AddSeconds(r.PeroidUzimanjaUSatima);
-            DateTime krajnji = r.KrajTerapije;
-             if (DateTime.Compare(nowTime.Date, krajnji.Date)==0)
-                  kraj();
-             
-            double tickTime = (double)(scheduledTime - DateTime.Now).TotalMilliseconds;
+            if (DateTime.Compare(DateTime.Now.Date, r.KrajTerapije.Date) == 0)
+                kraj();
+            double tickTime = (double)(DateTime.Now.AddSeconds(r.PeroidUzimanjaUSatima) - DateTime.Now).TotalMilliseconds;
             timer = new Timer(tickTime);
-
             timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
             timer.Start();
 
         }
 
+        private static String Sadrzaj()
+        {
+           return sadrzaj1 = "Lek: " + r.Lek1.ImeLeka + ".\nIsteklo je " + r.PeroidUzimanjaUSatima + "h od poslednje doze." +
+           "\nKoličina u sledećoj dozi: " + r.KolicinaTerapije + ".";
+        }
+
         public static void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Obavestenja o = new Obavestenja(ObavestenjaServis.generisiIdObavestenja(), "Terapija", sadrzaj1, nowTime, PacijentGlavniProzor.ulogovan.IdPacijenta);
+            Obavestenja o = new Obavestenja(Guid.NewGuid().ToString(), "Terapija", Sadrzaj(), DateTime.Now, PacijentGlavniProzor.ulogovan.IdPacijenta);
             ObavestenjaServis.DodajObavestenjePacijentu(o);
             timer.Stop();
             schedule_Timer();
@@ -89,12 +87,12 @@ namespace ZdravoKorporacija.PacijentPrikaz
             schedule_Timer();
             if (r.obavestiMe.Equals("DA"))
             {
-                MessageBox.Show("Vec primate obavestenja o ovoj terapiji!!");
+                MessageBox.Show("Vec primate obavestenja o ovoj terapiji!!","Terapija",MessageBoxButton.OK,MessageBoxImage.Information);
                 return;
             }
-            r.obavestiMe = "DA";
+                    r.obavestiMe = "DA";
             CollectionViewSource.GetDefaultView(ReceptiPropisani).Refresh();
-            MessageBox.Show("USPESNO STE UKLJUCILI OBAVESTENJA");
+            MessageBox.Show("Uspešno ste uključili obaveštenja o terapiji!","Terapija",MessageBoxButton.OK,MessageBoxImage.Exclamation);
 
            
            
@@ -105,12 +103,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
             r = (Recept)ReceptiPropisanii.SelectedItem;
             if (r.obavestiMe.Equals("NE"))
             {
-                MessageBox.Show("Vec ste iskljucili obavestenja o ovoj terapiji!!");
+                MessageBox.Show("Vec ste iskljucili obavestenja o ovoj terapiji!!","Terapija",MessageBoxButton.OK,MessageBoxImage.Information);
                 return;
             }
-            r.obavestiMe = "NE";
+             r.obavestiMe = "NE";
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
             CollectionViewSource.GetDefaultView(ReceptiPropisani).Refresh();
-            MessageBox.Show("USPESNO STE ISKLJUCILI OBAVESTENJA");
+            MessageBox.Show("Uspešno ste isključili obaveštenja o terapiji!", "Terapija", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
         }
     }

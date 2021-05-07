@@ -5,4 +5,9 @@
     <TextZalbe>istkao rok trjana</TextZalbe>
     <IdLeka>6</IdLeka>
   </Zalba>
+  <Zalba>
+    <IdZalbe>76cc7325-5a77-42df-9afa-c41343908b97</IdZalbe>
+    <TextZalbe>istekao rok</TextZalbe>
+    <IdLeka>2</IdLeka>
+  </Zalba>
 </ArrayOfZalba>

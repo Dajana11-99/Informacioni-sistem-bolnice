@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    /// <summary>
-    /// Interaction logic for ZakazivanjeSaPrioritetom.xaml
-    /// </summary>
     public partial class ZakazivanjeSaPrioritetom : UserControl
     {
 
@@ -36,7 +33,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
 
             Lekar l = TerminServis.PretragaLekaraPoID(((Lekar)lekar.SelectedItem).idZaposlenog);
-            if(lekar.SelectedIndex==-1 || prioritet.SelectedIndex==-1 || !this.datumOd.SelectedDate.HasValue || !datumDo.SelectedDate.HasValue)
+          /*  if(lekar.SelectedIndex==-1 || prioritet.SelectedIndex==-1 || !this.datumOd.SelectedDate.HasValue || !datumDo.SelectedDate.HasValue)
             {
                 MessageBox.Show("Popunite sva polja!");
                 return;
@@ -51,7 +48,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             {
                 MessageBox.Show("Početni datum mora biti raniji od krajnjeg!");
                 return;
-            }
+            }*/
 
             DateTime pocetak = (DateTime)datumOd.SelectedDate;
             DateTime kraj = (DateTime)datumDo.SelectedDate;

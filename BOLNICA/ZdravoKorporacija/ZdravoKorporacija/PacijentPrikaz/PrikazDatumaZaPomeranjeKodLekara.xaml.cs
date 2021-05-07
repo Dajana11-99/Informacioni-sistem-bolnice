@@ -37,7 +37,9 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void vratiSe_Click(object sender, RoutedEventArgs e)
         {
-
+            IzmenaTermina prikaz = new IzmenaTermina(IzmenaTermina.Termin);
+            prikaz.Show();
+            this.Close();
         }
 
         private void nastavi_Click(object sender, RoutedEventArgs e)
@@ -51,6 +53,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
              PrikazVremenaZaPomeranje pr = new PrikazVremenaZaPomeranje((Termin)slobodniDatumiPomLista.SelectedItem);
             pr.Show();
             this.Close();
+           
         }
     }
 }

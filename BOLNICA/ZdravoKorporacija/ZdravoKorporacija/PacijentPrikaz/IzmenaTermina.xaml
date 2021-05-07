@@ -5,39 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="IzmenaTermina" Height="450" Width="800">
-    <Grid Margin="60,50,60.4,62" >
+        Title="IzmenaTermina" Height="360" Width="582" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="289*"></ColumnDefinition>
+            <ColumnDefinition Width="287*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition/>
+        
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.RowSpan="2" Margin="135,31,163.2,0" Width="375" Height="248" VerticalAlignment="Top">
-            <Label HorizontalAlignment="Left"  FontSize="18">Izmeni pregled</Label>
-            <StackPanel Orientation="Horizontal" Margin="15 15 0 0">
-                <Label FontSize="15"  Content="Lekar" RenderTransformOrigin="0.598,0.478" Height="27" Width="53"/>
 
-                <TextBox x:Name="lekar" Margin="50 0 10 10" Width="213" Height="25" IsReadOnly="True"  />
+        <Label HorizontalAlignment="Left"  FontSize="25" Margin="50 0 0 0" Grid.Row="0" Grid.Column="0">Izmena termina</Label>
+        <Label FontSize="20"  Margin="50 10 0 0"  Grid.Row="1" Grid.Column="0" Content="Lekar" />
 
-            </StackPanel >
-            <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
-                <Label FontSize="15" Height="32">Datum</Label>
-                <TextBox x:Name="datum" Margin="50 0 0 0" Width="199" Height="28" IsReadOnly="True"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="15,0,0.2,0">
-                <Label FontSize="15" Margin="-6,0,-0.4,0" Height="32" Width="63">Vreme</Label>
-                <TextBox x:Name="vreme" Margin="70 10 10 10" Width="213" Height="25" IsReadOnly="True" />
-            </StackPanel>
+        <TextBox x:Name="lekar"  IsReadOnly="True" Grid.Column="1" Grid.Row="1"  Margin="0 0 20 10"  Height="30"/>
+        <Label FontSize="20"  Margin="50 10 0 0" Grid.Column="0" Grid.Row="2">Datum</Label>
+        <TextBox x:Name="datum" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Height="30" Margin="0 0 20 10"/>
+        <Label FontSize="20" Margin="50 10 0 0" Grid.Row="3" Grid.Column="0" >Vreme</Label>
+        <TextBox x:Name="vreme" Grid.Row="3" Grid.Column="1" IsReadOnly="True" Height="30" Margin="0 0 20 10" />
 
 
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Height="21" Margin="0,0,4.6,0" Width="204">
-                <Button  Width="150"  x:Name="prikaziDatume"  Click="prikaziDatume_Click"  Margin="0,0,20,-0.2">Prikaži datume</Button>
 
-            </StackPanel>
-
-
-        </StackPanel>
+      
+            <Button  x:Name="prikaziDatume"  Click="prikaziDatume_Click"  Grid.Column="2" Grid.Row="4" Margin="0 0 20 10" Height="30" >
+                Prikaži datume
+            </Button>
+        <Button x:Name="VratiSe" Click="VratiSe_Click" Grid.Column="0" Grid.Row="4"  Margin=" 50 10 30 20"  Height="30"> Vrati se</Button>
+ 
     </Grid>
 </Window>

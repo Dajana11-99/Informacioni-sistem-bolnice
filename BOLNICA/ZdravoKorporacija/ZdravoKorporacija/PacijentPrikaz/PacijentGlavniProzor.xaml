@@ -5,50 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="PacijentGlavniProzor" Height="450" Width="800" Closing="Window_Closing">
+        Title="PacijentGlavniProzor" Height="450" Width="800" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <StackPanel  >
         <Grid Background="#77c9b5" Margin="0,0,-0.4,0">
 
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="104*">
+                <ColumnDefinition Width="52*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="197*">
+                <ColumnDefinition Width="120*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="97*">
+                <ColumnDefinition Width="27*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="132*">
+                <ColumnDefinition Width="66*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="132*">
+                <ColumnDefinition Width="66*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="132*">
+                <ColumnDefinition Width="66*">
 
                 </ColumnDefinition>
 
             </Grid.ColumnDefinitions>
 
-            <Image Source="/PacijentPrikaz/SlikePacijent/2021-04-19 (3).png" Width="70" Margin="5 5 5 5" />
+            <Image Source="/PacijentPrikaz/SlikePacijent/2021-04-19 (3).png" Margin="17,5,17,5.2" />
 
 
 
-            <Label Grid.Column="1" FontSize="20" Grid.ColumnSpan="2" Margin="0,0,95.6,0">Zdravo korporacija</Label>
-            <Label Grid.Column="1" VerticalContentAlignment="Bottom" FontSize="15">Pacijent-</Label>
-            <Label x:Name="imePacijenta" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,96.6,0.4" Width="121" Height="27" Grid.ColumnSpan="2"></Label>
-            <Button FontSize="20" Grid.Column="3" Background="#77c9b5" Name="obavestenja" Click="obavestenja_Click"  Grid.ColumnSpan="2" Margin="0.4,0,131.6,50.4" >
+            <Label Grid.Column="1" FontSize="20" Margin="0,0,2,0.2">Zdravo korporacija</Label>
+            <Label Grid.Column="1" VerticalContentAlignment="Bottom" FontSize="15" Margin="0,0,2,0.2">Pacijent-</Label>
+            <Label x:Name="imePacijenta" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,3,0.2" Width="162" Height="27"/>
+            <Button FontSize="20" Grid.Column="3" Background="#77c9b5" Name="obavestenja" Click="obavestenja_Click"  Grid.ColumnSpan="2" Margin="0.4,0,131.6,50.2" >
                 Obaveštenja
 
             </Button>
 
-            <Button FontSize="20" Grid.Column="4" Background="#77c9b5" Name="pomoc" Grid.ColumnSpan="2" Margin="0.4,0,131.6,50.4" Click="pomoc_Click">
+            <Button FontSize="20" Grid.Column="4" Background="#77c9b5" Name="pomoc" Grid.ColumnSpan="2" Margin="0.4,0,131.6,50.2" Click="pomoc_Click">
                 Pomoc
             </Button>
 
-            <Button FontSize="20" Grid.Column="5" Background="#77c9b5" Name="odjava" Margin="0.4,0,-0.4,50.4" Click="odjava_Click">
+            <Button FontSize="20" Grid.Column="5" Background="#77c9b5" Name="odjava" Margin="0.4,0,-0.4,50.2" Click="odjava_Click">
                 Odjavi se
             </Button>
 
@@ -57,7 +57,7 @@
 
         </Grid>
 
-        <StackPanel  Height="354" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,-0.4,0" >
+        <StackPanel  Height="354"  VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,-0.4,0" >
             <Grid Background="#77c9b5" Width="207" Margin="0,0,0,0.2">
 
                 <Grid.RowDefinitions>

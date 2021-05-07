@@ -17,38 +17,44 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    /// <summary>
-    /// Interaction logic for PotvrdiPomeranje.xaml
-    /// </summary>
+
     public partial class PotvrdiPomeranje : Window
     {
-        public string idTermina = null;
+        public Termin Termin = null;
         public PotvrdiPomeranje(Termin izabrani)
         {
             InitializeComponent();
-            Termin termin = TerminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
-         
+            Termin= TerminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
+            PodesavanjePrikaza(Termin);
+        }
+
+        private void PodesavanjePrikaza(Termin termin)
+        {
             lekar.Text = termin.Lekar.CeloIme;
             datum.Text = termin.Datum.ToString("MM/dd/yyyy");
             vreme.Text = termin.Vreme;
-            idTermina = termin.IdTermina;
-
-          
-
+            Termin = termin;
         }
 
-  
 
         private void potvrdiIzmenu_Click(object sender, RoutedEventArgs e)
         {
-           
-            TerminKontroler.PomeriPregled(idTermina);
+            TerminKontroler.PomeriPregled(Termin.IdTermina);
             if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
-            {
                 MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
+            this.Close();
 
-               
-            }
+
+
+        }
+
+        
+
+     
+        private void VratiSe_Click(object sender, RoutedEventArgs e)
+        {
+            PrikazVremenaZaPomeranje prikaz = new PrikazVremenaZaPomeranje(Termin);
+            prikaz.Show();
             this.Close();
         }
     }

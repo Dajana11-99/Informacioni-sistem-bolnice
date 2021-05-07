@@ -16,7 +16,7 @@ namespace Model
        
 
         public Pitanje() { }
-        public Pitanje(OcenaAnkete ocena, string tekst, bool pitanjeOBolnici)
+        public Pitanje(OcenaAnkete ocena, string tekst)
         {
             Ocena = ocena;
             Tekst = tekst;

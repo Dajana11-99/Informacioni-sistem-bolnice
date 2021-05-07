@@ -13,6 +13,7 @@ namespace Model
         public String NazivMesta;
         public String PostanskiBroj;
 
+     
         public System.Collections.ArrayList adresaStanovanja;
         public Mesto() { }
 

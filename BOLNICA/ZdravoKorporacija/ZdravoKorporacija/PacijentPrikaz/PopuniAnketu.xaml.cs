@@ -20,9 +20,6 @@ using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    /// <summary>
-    /// Interaction logic for PopuniAnketu.xaml
-    /// </summary>
     public partial class PopuniAnketu : Window
     {
        
@@ -31,8 +28,6 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             izabraniZaAnketu = izabraniTermin;
-           
-            
         }
 
         private void VratiSe_Click(object sender, RoutedEventArgs e)
@@ -44,11 +39,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             for (int i = 0; i < AnketaServis.pitanjaOPregledu.Count; i++)
             {
-               
-                
                     int indexCombo = i + 1;
                     postaviOcenuZaPitanje(((ComboBox)grid.FindName("pitanje" + indexCombo)).SelectedIndex, i);
-                
             }
             izabraniZaAnketu.OcenjenTermin = true;
 

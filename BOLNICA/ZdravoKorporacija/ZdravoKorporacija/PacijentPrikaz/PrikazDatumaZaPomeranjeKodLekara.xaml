@@ -5,43 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="PrikazDatumaZaPomeranjeKodLekara" Height="360" Width="587">
+        Title="PrikazDatumaZaPomeranjeKodLekara" Height="360" Width="587" WindowStartupLocation="CenterScreen">
     <StackPanel >
         <Label HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="15" >Izaberite datum</Label>
         <Label Name="NaslovTabele"></Label>
         <ListBox x:Name="slobodniDatumiPomLista" SelectionMode="Single" Height="236" Margin="45 10,45,0"   >
-
             <ListBox.ItemTemplate  >
                 <DataTemplate>
-
-
-
                     <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel  Margin="10"  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
-
-
-
-
                             <TextBlock   Text="{Binding Datum ,  StringFormat={}{0:MM/dd/yyyy}}"/>
-
-
-
-
-
                         </StackPanel>
-
                     </WrapPanel>
-
-
-
-
-
-
                 </DataTemplate>
             </ListBox.ItemTemplate>
-
-
-
         </ListBox>
 
         <Grid>

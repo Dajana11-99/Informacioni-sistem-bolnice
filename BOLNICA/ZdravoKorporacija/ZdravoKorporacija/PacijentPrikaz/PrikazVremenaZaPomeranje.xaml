@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="PrikazVremenaZaPomeranje" Height="360" Width="587">
+        Title="PrikazVremenaZaPomeranje" Height="360" Width="587" WindowStartupLocation="CenterScreen">
     <StackPanel >
         <Label HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="15" >Izaberite datum</Label>
         <Label Name="NaslovTabele"></Label>

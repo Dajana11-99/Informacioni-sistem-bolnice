@@ -18,4 +18,10 @@
     <ProstorijaId>A2</ProstorijaId>
     <Kolicina>2</Kolicina>
   </ZahtevZaRasporedjivanjeDinamickeOpreme>
+  <ZahtevZaRasporedjivanjeDinamickeOpreme>
+    <Id>4</Id>
+    <DinamickaOpremaId>2</DinamickaOpremaId>
+    <ProstorijaId>A2</ProstorijaId>
+    <Kolicina>5</Kolicina>
+  </ZahtevZaRasporedjivanjeDinamickeOpreme>
 </ArrayOfZahtevZaRasporedjivanjeDinamickeOpreme>

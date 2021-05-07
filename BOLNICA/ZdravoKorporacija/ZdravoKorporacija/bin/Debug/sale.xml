@@ -8,7 +8,7 @@
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema>
       <RasporedjenaStatickaOprema>
-        <Kolicina>90</Kolicina>
+        <Kolicina>100</Kolicina>
         <statickaOprema>
           <Id>2</Id>
           <kolicina>33</kolicina>
@@ -72,6 +72,14 @@
           <naziv>aspirin</naziv>
         </dinamickaOprema>
       </RasporedjenaDinamickaOprema>
+      <RasporedjenaDinamickaOprema>
+        <Kolicina>5</Kolicina>
+        <dinamickaOprema>
+          <Id>2</Id>
+          <kolicina>95</kolicina>
+          <naziv>andol</naziv>
+        </dinamickaOprema>
+      </RasporedjenaDinamickaOprema>
     </RasporedjenaDinamickaOprema>
     <Renoviranja />
   </Sala>
@@ -83,6 +91,23 @@
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema />
     <RasporedjenaDinamickaOprema />
-    <Renoviranja />
+    <Renoviranja>
+      <Renoviranje>
+        <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
+        <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
+      </Renoviranje>
+      <Renoviranje>
+        <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
+        <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
+      </Renoviranje>
+      <Renoviranje>
+        <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
+        <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
+      </Renoviranje>
+      <Renoviranje>
+        <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
+        <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
+      </Renoviranje>
+    </Renoviranja>
   </Sala>
 </ArrayOfSala>

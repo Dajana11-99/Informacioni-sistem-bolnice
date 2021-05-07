@@ -15,6 +15,7 @@
       <Broj>23</Broj>
       <Ulica>Koste Pavlovica</Ulica>
     </adresaStanovanja>
+    <termin />
     <karton>
       <OdeljenjeNaPrijemu>O1</OdeljenjeNaPrijemu>
       <Ime>Jova</Ime>
@@ -31,7 +32,6 @@
       </Anamneza>
       <recepti />
     </karton>
-    <termin />
     <Maliciozan>false</Maliciozan>
     <Zloupotrebio>0</Zloupotrebio>
     <IdPacijenta>1</IdPacijenta>
@@ -51,6 +51,7 @@
       <Broj>24</Broj>
       <Ulica>Veselina Maslese</Ulica>
     </adresaStanovanja>
+    <termin />
     <karton>
       <OdeljenjeNaPrijemu>O2</OdeljenjeNaPrijemu>
       <Ime>Pera</Ime>
@@ -67,7 +68,6 @@
       </Anamneza>
       <recepti />
     </karton>
-    <termin />
     <Maliciozan>false</Maliciozan>
     <Zloupotrebio>0</Zloupotrebio>
     <IdPacijenta>2</IdPacijenta>
@@ -87,6 +87,7 @@
       <Broj>4</Broj>
       <Ulica>Adresa</Ulica>
     </adresaStanovanja>
+    <termin />
     <karton>
       <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
       <Ime>Dajana</Ime>
@@ -98,8 +99,8 @@
       <BrojKartona>123</BrojKartona>
       <BracniStatus>Neudata</BracniStatus>
       <Anamneza>
-        <Simptomi />
-        <IzvestajLekara />
+        <Simptomi>Bol u grlu.</Simptomi>
+        <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
       </Anamneza>
       <recepti>
         <Recept>
@@ -116,11 +117,24 @@
           <obavestiMe>NE</obavestiMe>
           <idPacijenta>P1</idPacijenta>
         </Recept>
+        <Recept>
+          <Lek1>
+            <IdLeka>12345</IdLeka>
+            <ImeLeka>Septolete</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek1>
+          <KolicinaTerapije>1</KolicinaTerapije>
+          <PocetakTerapije>2021-05-07T00:00:00</PocetakTerapije>
+          <KrajTerapije>2021-05-14T00:00:00</KrajTerapije>
+          <PeroidUzimanjaUSatima>6</PeroidUzimanjaUSatima>
+          <obavestiMe>NE</obavestiMe>
+          <idPacijenta>P1</idPacijenta>
+        </Recept>
       </recepti>
     </karton>
-    <termin />
     <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>3</Zloupotrebio>
+    <Zloupotrebio>2</Zloupotrebio>
     <IdPacijenta>P1</IdPacijenta>
   </Pacijent>
 </ArrayOfPacijent>

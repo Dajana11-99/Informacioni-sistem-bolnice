@@ -24,14 +24,14 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class IzmenaTermina : Window
     {
         public static List<Termin> datumiZaIzmenu = new List<Termin>();
-        public string idTermina = null;
+        public static Termin Termin = null;
         public IzmenaTermina(Termin termin)
         {
             InitializeComponent();
             lekar.Text = termin.Lekar.CeloIme;
             datum.Text = termin.Datum.ToString("MM/dd/yyyy");
             vreme.Text = termin.Vreme;
-            idTermina = termin.IdTermina;
+            Termin = termin;
         }
 
         private void prikaziDatume_Click(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             
             if (dostupanDatum)
             {
-                bool dostupnoVreme = TerminKontroler.ProveriMogucnostPomeranjaVreme(TerminServis.PretragaZakazanihTerminaPoId(idTermina).Vreme);
+                bool dostupnoVreme = TerminKontroler.ProveriMogucnostPomeranjaVreme(TerminServis.PretragaZakazanihTerminaPoId(Termin.IdTermina).Vreme);
              
                 if (!dostupnoVreme)
                 {
@@ -56,7 +56,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 }
             }
 
-            Termin termin = TerminKontroler.PretragaZakazanihTerminaPoId(idTermina);
+            Termin termin = TerminKontroler.PretragaZakazanihTerminaPoId(Termin.IdTermina);
             List<Termin> datumiIntervala = new List<Termin>();
             datumiZaIzmenu.Clear();
             datumiIntervala = TerminKontroler.NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
@@ -70,6 +70,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 PrikazDatumaZaPomeranjeKodLekara prikaz = new PrikazDatumaZaPomeranjeKodLekara();
                 prikaz.Show();
                 this.Close();
+              
             }
 
 
@@ -82,6 +83,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             foreach (Termin termin in dupliTermini.DistinctBy(t => t.Datum))
                 datumiZaIzmenu.Add(termin);
+        }
+
+        private void VratiSe_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

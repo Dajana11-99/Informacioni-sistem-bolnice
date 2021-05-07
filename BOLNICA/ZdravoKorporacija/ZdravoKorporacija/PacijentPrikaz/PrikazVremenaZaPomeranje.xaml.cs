@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    /// <summary>
-    /// Interaction logic for PrikazVremenaZaPomeranje.xaml
-    /// </summary>
     public partial class PrikazVremenaZaPomeranje : Window
     {
 
@@ -40,7 +37,9 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void vratiSe_Click(object sender, RoutedEventArgs e)
         {
-
+            PrikazDatumaZaPomeranjeKodLekara prikaz = new PrikazDatumaZaPomeranjeKodLekara();
+            prikaz.Show();
+            this.Close();
         }
 
         private void nastavi_Click(object sender, RoutedEventArgs e)
@@ -54,6 +53,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
             pz.Show();
             this.Close();
+        
         }
     }
 }

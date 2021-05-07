@@ -29,7 +29,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             InitializeComponent();
             ObavestenjaRepozitorijum.Ucitaj();
             ulogovan = NaloziPacijenataKontroler.pretraziPoKorisnickom(id);
-            imePacijenta.Content = ulogovan.korisnik.KorisnickoIme;
+            imePacijenta.Content = ulogovan.Ime+" "+ulogovan.Prezime;
             foreach(Recept rec in ulogovan.karton.recepti)
             {
                 if (rec.obavestiMe.Equals("DA"))
@@ -37,6 +37,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                     Terapija.r = rec;
                     Terapija.schedule_Timer();
                 }
+
             }
             
         }
@@ -44,6 +45,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void karton_Click(object sender, RoutedEventArgs e)
         {
 
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new ZdravstevniKarton();
+            MainPanel.Children.Add(usc);
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)

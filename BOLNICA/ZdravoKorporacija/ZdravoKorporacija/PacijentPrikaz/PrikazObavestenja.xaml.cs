@@ -18,9 +18,7 @@ using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    /// <summary>
-    /// Interaction logic for PrikazObavestenja.xaml
-    /// </summary>
+  
     public partial class PrikazObavestenja : Window
     {
         public static ObservableCollection<Obavestenja> obavestenjaPacijenta { get; set; }
@@ -28,27 +26,26 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             obavestenjaPacijenta = new ObservableCollection<Obavestenja>();
-
             List<Obavestenja> datumi = ObavestenjaKontroler.svaObavestenja().OrderByDescending(user => user.Datum).ToList();
+            PodesavanjePrikaza(datumi);
+            obavestenjaPacijentaLista.ItemsSource = obavestenjaPacijenta;
+        }
 
+        private static void PodesavanjePrikaza(List<Obavestenja> datumi)
+        {
             foreach (Obavestenja o in datumi)
             {
                 if (o.IdPrimaoca.Equals(PacijentGlavniProzor.ulogovan.IdPacijenta))
                 {
-
-
-
                     if (DateTime.Compare(o.Datum.Date, DateTime.Now.Date) <= 0)
-                    {
                         obavestenjaPacijenta.Add(o);
-                    }
-
                 }
-              
-
             }
+        }
 
-            obavestenjaPacijentaLista.ItemsSource = obavestenjaPacijenta;
+        private void VratiSe_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

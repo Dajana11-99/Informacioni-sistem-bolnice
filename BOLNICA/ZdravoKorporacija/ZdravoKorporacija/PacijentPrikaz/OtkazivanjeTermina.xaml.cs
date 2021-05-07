@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    /// <summary>
-    /// Interaction logic for OtkazivanjeTermina.xaml
-    /// </summary>
     public partial class OtkazivanjeTermina : Window
     {
         String izabraniIdTermina = null;

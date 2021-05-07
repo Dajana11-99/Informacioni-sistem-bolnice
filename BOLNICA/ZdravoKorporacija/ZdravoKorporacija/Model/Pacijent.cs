@@ -13,7 +13,7 @@ namespace Model
 {
     public class Pacijent : Osoba, INotifyPropertyChanged
     {
-        public Karton karton;
+        public Karton karton { get; set; }
         public System.Collections.ArrayList termin;
 
         public bool Maliciozan { get; set; }

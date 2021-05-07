@@ -9,14 +9,6 @@
     <ListaZamenaZaLek />
   </Lek>
   <Lek>
-    <IdLeka>2</IdLeka>
-    <ImeLeka>Andol</ImeLeka>
-    <KolicinaLeka>250</KolicinaLeka>
-    <SastojciLeka>Sastojci2</SastojciLeka>
-    <ListaSastojaka />
-    <ListaZamenaZaLek />
-  </Lek>
-  <Lek>
     <IdLeka>3</IdLeka>
     <ImeLeka>Pentraxil</ImeLeka>
     <KolicinaLeka>120</KolicinaLeka>
@@ -45,6 +37,14 @@
     <ImeLeka>Febricet</ImeLeka>
     <KolicinaLeka>300</KolicinaLeka>
     <SastojciLeka>Sastojci6 i sastojak 19</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>2</IdLeka>
+    <ImeLeka>Andol</ImeLeka>
+    <KolicinaLeka>250</KolicinaLeka>
+    <SastojciLeka>Sastojci2 i sastojci5</SastojciLeka>
     <ListaSastojaka />
     <ListaZamenaZaLek />
   </Lek>

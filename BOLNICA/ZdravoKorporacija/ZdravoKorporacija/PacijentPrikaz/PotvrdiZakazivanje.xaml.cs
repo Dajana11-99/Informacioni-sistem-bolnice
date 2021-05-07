@@ -22,22 +22,34 @@ namespace ZdravoKorporacija.PacijentPrikaz
     /// </summary>
     public partial class PotvrdiZakazivanje : Window
     {
-        public string idTermin = null;
+        public Termin Termin = null;
         public PotvrdiZakazivanje(Termin izabrani)
         {
             InitializeComponent();
             Termin t = TerminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
+            PodesavanjePrikaza(t);
+        }
+
+        private void PodesavanjePrikaza(Termin t)
+        {
             lekar.Text = t.Lekar.CeloIme;
             datum.Text = t.Datum.ToString("MM/dd/yyyy");
             vreme.Text = t.Vreme;
-            idTermin = t.IdTermina;
+            Termin = t;
         }
 
         private void potvrdiZakazivanje_Click(object sender, RoutedEventArgs e)
         {
-            Termin t = TerminKontroler.PretraziSlobodneTerminePoId(idTermin);
+            Termin t = TerminKontroler.PretraziSlobodneTerminePoId(Termin.IdTermina);
             t.Pacijent = NaloziPacijenataKontroler.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
             TerminKontroler.ZakaziPregled(t);
+            this.Close();
+        }
+
+        private void VratiSe_Click(object sender, RoutedEventArgs e)
+        {
+            ZakazivanjeVremena prikaz = new ZakazivanjeVremena(Termin);
+            prikaz.Show();
             this.Close();
         }
     }

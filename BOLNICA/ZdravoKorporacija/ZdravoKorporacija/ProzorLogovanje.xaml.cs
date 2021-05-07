@@ -38,6 +38,7 @@ namespace ZdravoKorporacija
             Upravnici.Add(new Upravnik("U1", "Mirjana", "Jovanov", "1234567891082", "mirjana.jovanov@gmail.com", new AdresaStanovanja("Adresa", "2"), new Korisnik("mirjana.jovanov", "mirjana.jovanov")));
             Lekari.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa, "Stefan", "Markovic", "1234567899082", "stefan.markovic@gmail.com", new AdresaStanovanja("Adresa", "3"), new Korisnik("stefan.markovic", "stefan.markovic")));
             Lekari.Add(new Lekar("L5", false, Specijalizacija.Kardiolog, "Milan", "Djenic", "1234567899082", "milan.djenic@gmail.com", new AdresaStanovanja("Narodjih Heroja ", "32"), new Korisnik("milan.markovic", "milan.markovic")));
+            //Lekari.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa, "Pera", "Peric", "2711999105018", "dajanazlokapa@gmail.com", new AdresaStanovanja("Ljubice Ravasi", "2A"), new Korisnik("pera.peric", "pera.peric")));
           //  Pacijenti.Add(new Pacijent("P1", "Dajana", "Zlokapa", "2711999105018", "dajana.zlokapa@gmail.com", new AdresaStanovanja("Adresa", "4"), new Korisnik("dajana.zlokapa", "dajana.zlokapa")));
 
             Lozinka.PasswordChar = '*';
@@ -51,7 +52,7 @@ namespace ZdravoKorporacija
            
            //TerminServis.inicijalizuj(); //Inicijalizacija lekara
           //TerminServis.inicijalizujSlobodneTermine();
-           TerminRepozitorijum.UcitajSlobodneTermine();
+          TerminRepozitorijum.UcitajSlobodneTermine();
             AnketaServis.inicijalizujPitanja();
             AnketaServis.inicijalizujPitanjaOBolnici();
 

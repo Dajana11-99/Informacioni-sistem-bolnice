@@ -12,9 +12,6 @@ namespace ZdravoKorporacija.Model
         dva,
         tri,
         cetiri,
-        pet,
-        da,
-        ne
-    
+        pet
    }
 }

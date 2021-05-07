@@ -31,9 +31,7 @@ namespace ZdravoKorporacija.Repozitorijum
                 fileStream.Close();
                 return TerminServis.zakazaniTermini;
             }
-
         }
-
         public static void UpisiZakazaneTermine()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
@@ -42,8 +40,6 @@ namespace ZdravoKorporacija.Repozitorijum
             tw.Close();
 
         }
-
-
         public static List<Termin> UcitajSlobodneTermine()
         {
             if (!File.Exists(slobodniTerminiFajl) || File.ReadAllText(slobodniTerminiFajl).Trim().Equals(""))
@@ -59,9 +55,7 @@ namespace ZdravoKorporacija.Repozitorijum
                 return TerminServis.slobodniTermini;
 
             }
-
         }
-
         public static void UpisiSlobodneTermine()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));

@@ -13,6 +13,7 @@ termina i anketa o bolnici na svaka 3 meseca-URAĐENO
 2.)Lekar može da pregleda lekove-URAĐENO
 3.)Lekar može da zakaže pregled ili operaciju kod nekog lekara specijaliste-URAĐENO
 4.)Dijagram sekvence za zakazivanje termina sa izdavanjem uputa-URAĐENO
+5.)Dopunjen class diagram dodata klasa žalba
 
 -Upravnik
 1.)Zakazivanje renoviranja sale-URAĐENO
@@ -47,9 +48,9 @@ Pregleda Stefan Markovic
 ----------------------------------------------------------------------------------
 Komentar:
 Na dijagramu kod koleginice Mirjane bih dodao da omogući da se ponovo podnese
-izveštaj.Na par mesta nisu definisani ulazni i izlazni parametri.
+izveštaj nakon provere količine.Na par mesta nisu definisani ulazni i izlazni parametri.
 ------------------------------------------------------------------------------------
-Dajana Zlokapa-SequenceDiagram
+Dajana Zlokapa-SequenceDiagram za AntiTrol
 Pregleda: Mirjana Jovanov
 ----------------------------------------------------------------------------------
 Komentar:
@@ -57,7 +58,7 @@ Sekvencijalni dijagram je kompleksan, ali u isto vreme jasan. Upotrebljeno je i
 primenjeno dovoljno novih informacija koje smo naucili na lekciji o
 sekvencijalnim dijagramima.
 ---------------------------------------------------------------------------------
-Stefan Marković
+Stefan Marković-SequenceDiagram Zakazivanje sa izdavanjem uputa
 Pregleda: Mirjana Jovanov
 ----------------------------------------------------------------------------------
 Komentar:

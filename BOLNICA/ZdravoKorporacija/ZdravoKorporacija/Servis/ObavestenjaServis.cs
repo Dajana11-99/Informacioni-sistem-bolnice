@@ -31,7 +31,7 @@ namespace ZdravoKorporacija.Servis
             }
         }
 
-        public static String generisiIdObavestenja()
+        /*public static String generisiIdObavestenja()
         {
             int brojac = SvaObavestenja().Count;
             bool postoji;
@@ -50,7 +50,7 @@ namespace ZdravoKorporacija.Servis
             } while (postoji);
 
             return "O" + brojac.ToString();
-        }
+        }*/
 
 
         public static Obavestenja PretraziPoId(String idObavestenja)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="OceniBolnicu" Height="550" Width="587">
+        Title="OceniBolnicu" Height="600" Width="587" WindowStartupLocation="CenterScreen">
     <StackPanel Background="#77c9b5">
         <Label FontSize="20" Margin="6,0,9.8,0" >Ocenite od 1-5 sledeća polja:</Label>
         <StackPanel Orientation="Horizontal">
@@ -16,7 +16,7 @@
             <Label FontSize="14" Margin="10 0">5-Odlično</Label>
         </StackPanel>
 
-
+        <Separator Background="Black"></Separator>
         <Grid Margin="10"  x:Name="grid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="451*"></ColumnDefinition>
@@ -112,7 +112,9 @@
         </Grid>
 
         <Label Margin="6,10,9.8,10" FontSize="14">Mesto za dodatne komentare, preporuke,kritike i sugestije:</Label>
-        <TextBox Margin="10 0" Height="130" x:Name="dodatniKomentar" ></TextBox>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10 0"> 
+            <TextBox Margin="0 0" Height="130" x:Name="dodatniKomentar" ></TextBox>
+        </Border>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>

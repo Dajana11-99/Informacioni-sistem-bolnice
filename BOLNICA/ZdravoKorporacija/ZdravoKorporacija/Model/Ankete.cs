@@ -1,8 +1,3 @@
-/***********************************************************************
- * Module:  Ankete.cs
- * Author:  dajan
- * Purpose: Definition of the Class Model.Ankete
- ***********************************************************************/
 
 using System;
 using System.Collections.Generic;
