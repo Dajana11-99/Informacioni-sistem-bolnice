@@ -46,7 +46,7 @@ namespace ZdravoKorporacija
             Lozinka.MaxLength = 15;
 
             SalaRepozitorijum.UcitajSale();
-           //lekarRepozitorijum.ucitajLekare();
+           lekarRepozitorijum.ucitajLekare();
             //Dajana
             TerminRepozitorijum.UcitajZakazaneTermine();
            
@@ -55,7 +55,7 @@ namespace ZdravoKorporacija
           TerminRepozitorijum.UcitajSlobodneTermine();
             AnketaServis.inicijalizujPitanja();
             AnketaServis.inicijalizujPitanjaOBolnici();
-            lekarRepozitorijum.Inicijalizuj();
+           //LekarRepozitorijum.Inicijalizuj();
 
 
 

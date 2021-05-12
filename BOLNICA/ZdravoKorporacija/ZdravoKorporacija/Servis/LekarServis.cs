@@ -35,9 +35,9 @@ namespace ZdravoKorporacija.Servis
             return lekarRepozitorijum.PretraziPoSpecijalizaciji();
         }
 
-        public void Inicijalizuj() 
+        /*public void Inicijalizuj() 
         {
             lekarRepozitorijum.Inicijalizuj();
-        }
+        }*/
     }
 }

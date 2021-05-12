@@ -1,2 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfLekar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfLekar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Lekar>
+    <korisnik>
+      <KorisnickoIme>pera.peric</KorisnickoIme>
+      <Sifra>pera.peric</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Pera</Ime>
+    <Prezime>Peric</Prezime>
+    <Jmbg>2711999105018</Jmbg>
+    <Email>dajanazlokapa@gmail.com</Email>
+    <CeloIme>Pera Peric</CeloIme>
+    <adresaStanovanja>
+      <Broj>2A</Broj>
+      <Ulica>Ljubice Ravasi</Ulica>
+    </adresaStanovanja>
+    <termin />
+    <zahtevUpravniku />
+    <Zauzet>false</Zauzet>
+    <idZaposlenog>L1</idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
+  </Lekar>
+  <Lekar>
+    <korisnik>
+      <KorisnickoIme>stefan.markovic</KorisnickoIme>
+      <Sifra>stefan.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Stefan</Ime>
+    <Prezime>Markovic</Prezime>
+    <Jmbg>3008997181967</Jmbg>
+    <Email>stefan.markovic@gmail.com</Email>
+    <CeloIme>Stefan Markovic</CeloIme>
+    <adresaStanovanja>
+      <Broj> 43</Broj>
+      <Ulica>Laze Lazarevica</Ulica>
+    </adresaStanovanja>
+    <termin />
+    <zahtevUpravniku />
+    <Zauzet>false</Zauzet>
+    <idZaposlenog>L2</idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
+  </Lekar>
+  <Lekar>
+    <korisnik>
+      <KorisnickoIme>nikola.markovic</KorisnickoIme>
+      <Sifra>nikola.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Nikola</Ime>
+    <Prezime>Nikolic</Prezime>
+    <Jmbg>2401965194820</Jmbg>
+    <Email>nikola.nikolic@gmail.com</Email>
+    <CeloIme>Nikola Nikolic</CeloIme>
+    <adresaStanovanja>
+      <Broj> 23</Broj>
+      <Ulica>Patrijarha Pavla</Ulica>
+    </adresaStanovanja>
+    <termin />
+    <zahtevUpravniku />
+    <Zauzet>false</Zauzet>
+    <idZaposlenog>L3</idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
+  </Lekar>
+  <Lekar>
+    <korisnik>
+      <KorisnickoIme>marko.markovic</KorisnickoIme>
+      <Sifra>marko.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Marko</Ime>
+    <Prezime>Markovic</Prezime>
+    <Jmbg>65395728557</Jmbg>
+    <Email>marko.markovic@gmail.com</Email>
+    <CeloIme>Marko Markovic</CeloIme>
+    <adresaStanovanja>
+      <Broj> 12</Broj>
+      <Ulica>Mihajla Pupina</Ulica>
+    </adresaStanovanja>
+    <termin />
+    <zahtevUpravniku />
+    <Zauzet>false</Zauzet>
+    <idZaposlenog>L4</idZaposlenog>
+    <Specijalizacija>Ostapraksa</Specijalizacija>
+  </Lekar>
+  <Lekar>
+    <korisnik>
+      <KorisnickoIme>milan.markovic</KorisnickoIme>
+      <Sifra>milan.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Milan</Ime>
+    <Prezime>Djenic</Prezime>
+    <Jmbg>5686323676</Jmbg>
+    <Email>milan.djenic@gmail.com</Email>
+    <CeloIme>Milan Djenic</CeloIme>
+    <adresaStanovanja>
+      <Broj>32</Broj>
+      <Ulica>Narodnih heroja</Ulica>
+    </adresaStanovanja>
+    <termin />
+    <zahtevUpravniku />
+    <Zauzet>false</Zauzet>
+    <idZaposlenog>L5</idZaposlenog>
+    <Specijalizacija>Kardiolog</Specijalizacija>
+  </Lekar>
+  <Lekar>
+    <korisnik>
+      <KorisnickoIme>petar.markovic</KorisnickoIme>
+      <Sifra>petar.markovic</Sifra>
+      <Uloga>Lekar</Uloga>
+      <Nalog>Obican</Nalog>
+    </korisnik>
+    <Ime>Petar</Ime>
+    <Prezime>Petrovic</Prezime>
+    <Jmbg>6583892377523</Jmbg>
+    <Email>petar.petrovic@gmail.com</Email>
+    <CeloIme>Petar Petrovic</CeloIme>
+    <adresaStanovanja>
+      <Broj>8</Broj>
+      <Ulica>Ustanicka</Ulica>
+    </adresaStanovanja>
+    <termin />
+    <zahtevUpravniku />
+    <Zauzet>false</Zauzet>
+    <idZaposlenog>l6</idZaposlenog>
+    <Specijalizacija>Stomatolog</Specijalizacija>
+  </Lekar>
+</ArrayOfLekar>

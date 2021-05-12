@@ -33,9 +33,6 @@ namespace ZdravoKorporacija.Kontroler
         {
             return lekarServis.PretraziPoSpecijalizaciji();
         }
-        public void Inicijalizuj()
-        {
-            lekarServis.Inicijalizuj();
-        }
+       
     }
 }

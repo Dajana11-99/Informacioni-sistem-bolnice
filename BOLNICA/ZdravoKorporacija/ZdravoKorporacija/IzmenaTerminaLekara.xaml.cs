@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.ViewModel;
 
@@ -24,12 +25,15 @@ namespace ZdravoKorporacija
         public List<Lekar> Lekari { get; set; }
         public String idTermina = null;
         public LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
+        public LekarKontroler lekarKontroler = new LekarKontroler();
         public TerminKontroler terminKontroler = new TerminKontroler();
         public IzmenaTerminaLekara(Termin termin)
         {
             InitializeComponent();
-            PrikazLekaraUCombo();
+           
             idTermina = termin.IdTermina;
+            Lekari = lekarKontroler.PretraziPoSpecijalizaciji();
+            DataContext = Lekari;
             popuniTermin(termin);
         }
         private void popuniTermin(Termin termin)
@@ -58,7 +62,7 @@ namespace ZdravoKorporacija
         {
             Lekar lekar = lekarRepozitorijum.PretraziPoImenuIPrezimenu(cmbLekar.Text);
             TerminDTO termin = new TerminDTO(idTermina, (DateTime)datePickerZakazivanjeTermina.SelectedDate,
-                 cmbZakazivanjeTerminaVreme.Text, lekar, txtPredvidjenoVremeTermina.Text, brojSale.Text, cmbVrstaTermina.Text);
+              cmbZakazivanjeTerminaVreme.Text, lekar, txtPredvidjenoVremeTermina.Text, brojSale.Text, cmbVrstaTermina.Text);
             return termin;
         }
 
@@ -71,16 +75,6 @@ namespace ZdravoKorporacija
             }
             return 0;
         }
-        public void PrikazLekaraUCombo()
-        {
-            List<Lekar> sviLekari = new List<Lekar>();
-            foreach (Lekar l in sviLekari)
-            {
-                if (!l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
-                    sviLekari.Add(l);
-            }
-            Lekari = sviLekari;
-            DataContext = Lekari;
-        }
+      
     }
 }

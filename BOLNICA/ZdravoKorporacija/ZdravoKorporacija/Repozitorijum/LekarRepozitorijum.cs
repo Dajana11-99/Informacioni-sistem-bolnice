@@ -12,10 +12,10 @@ namespace ZdravoKorporacija.Repozitorijum
 {
     public class LekarRepozitorijum
     {
-        public List<Lekar> sviLekari = new List<Lekar>();
+        public static List<Lekar> sviLekari = new List<Lekar>();
         public  String imeFajla = "lekari.xml";
 
-        public void Inicijalizuj()
+       /* public static void Inicijalizuj()
         {
             sviLekari.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa, "Pera", "Peric", "2711999105018", "dajanazlokapa@gmail.com", new AdresaStanovanja("Ljubice Ravasi", "2A"), new Korisnik("pera.peric", "pera.peric")));
             sviLekari.Add(new Lekar("L2", false, Specijalizacija.Ostapraksa, "Stefan", "Markovic", "3008997181967", "stefan.markovic@gmail.com", new AdresaStanovanja("Laze Lazarevica", " 43"), new Korisnik("stefan.markovic", "stefan.markovic")));
@@ -23,9 +23,10 @@ namespace ZdravoKorporacija.Repozitorijum
             sviLekari.Add(new Lekar("L4", false, Specijalizacija.Ostapraksa, "Marko", "Markovic", "65395728557", "marko.markovic@gmail.com", new AdresaStanovanja("Mihajla Pupina", " 12"), new Korisnik("marko.markovic", "marko.markovic")));
             sviLekari.Add(new Lekar("L5", false, Specijalizacija.Kardiolog, "Milan", "Djenic", "5686323676", "milan.djenic@gmail.com", new AdresaStanovanja("Narodnih heroja", "32"), new Korisnik("milan.markovic", "milan.markovic")));
             sviLekari.Add(new Lekar("l6", false, Specijalizacija.Stomatolog, "Petar", "Petrovic", "6583892377523", "petar.petrovic@gmail.com", new AdresaStanovanja("Ustanicka", "8"), new Korisnik("petar.markovic", "petar.markovic")));
-        }
+        }*/
         public List<Lekar> ucitajLekare()
         {
+          
             if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return sviLekari;
