@@ -116,6 +116,7 @@
     <Compile Include="Kontroler\AnketeKontroler.cs" />
     <Compile Include="Kontroler\DinamickaOpremaKontroler.cs" />
     <Compile Include="Kontroler\DinamickiZahteviKontroler.cs" />
+    <Compile Include="Kontroler\LekarKontroler.cs" />
     <Compile Include="Kontroler\LekKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
@@ -280,6 +281,7 @@
     <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZalbaRepozitorijum.cs" />
     <Compile Include="Servis\AnketaServis.cs" />
+    <Compile Include="Servis\LekarServis.cs" />
     <Compile Include="Servis\LekServis.cs" />
     <Compile Include="Servis\ObavestenjaServis.cs" />
     <Compile Include="Servis\RenoviranjeServis.cs" />
@@ -318,6 +320,7 @@
     <Compile Include="UpravnikPocetna.xaml.cs">
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\TerminDTO.cs" />
     <Compile Include="ZahtevZaSlobodneDaneWindow.xaml.cs">
       <DependentUpon>ZahtevZaSlobodneDaneWindow.xaml</DependentUpon>
     </Compile>

@@ -55,8 +55,8 @@ namespace ZdravoKorporacija
         {
             IzdavanjeRecepataWindow irw = new IzdavanjeRecepataWindow();
             irw.ShowDialog();
-            if (irw.Recept != null)
-                pacijent.karton.recepti.Add(irw.Recept);
+            if (irw.recept != null)
+                pacijent.karton.recepti.Add(irw.recept);
         }
     }
 }

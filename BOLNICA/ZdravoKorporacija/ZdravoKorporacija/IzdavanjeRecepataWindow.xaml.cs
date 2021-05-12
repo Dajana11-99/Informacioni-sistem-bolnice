@@ -24,7 +24,7 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class IzdavanjeRecepataWindow : Window
     {
-        public Recept Recept { get; set; }
+        public Recept recept { get; set; }
         public IzdavanjeRecepataWindow()
         {
             InitializeComponent();
@@ -32,16 +32,15 @@ namespace ZdravoKorporacija
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Recept = new Recept(txtKolicinaLeka.Text, (DateTime)this.datePickerPocetak.SelectedDate, (DateTime)this.datePickerKraj.SelectedDate, double.Parse(txtPeriodUzimanja.Text),new Lek(idLeka.Text,txtNazivLeka.Text),ZdravstevniKartonPacijenta.pacijent.IdPacijenta);
-
-         
-  
+            recept = new Recept(txtKolicinaLeka.Text, (DateTime)this.datePickerPocetak.SelectedDate, 
+                (DateTime)this.datePickerKraj.SelectedDate, double.Parse(txtPeriodUzimanja.Text),
+                new Lek(idLeka.Text,txtNazivLeka.Text), ZdravstevniKartonPacijenta.pacijent.IdPacijenta);
             this.Close();
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
-            Recept = null;
+            recept = null;
             this.Close();
         }
     }

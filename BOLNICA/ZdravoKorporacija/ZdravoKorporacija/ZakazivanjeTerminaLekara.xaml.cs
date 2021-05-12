@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Xml.Serialization;
 using Model;
 using Servis;
+using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
@@ -17,31 +18,13 @@ namespace ZdravoKorporacija
     {
         public List<Pacijent> Pacijenti { get; set; }
         public List<Lekar> Lekari { get; set; }
+        public LekarKontroler lekarKontroler = new LekarKontroler();
 
         public ZakazivanjeTerminaLekara()
         {
             InitializeComponent();
-            bindcombo();
             PreuzmiSvePacijente();
         }
-
-        public void bindcombo()
-        {
-            List<Lekar> pomocna = new List<Lekar>();
-
-            foreach (Lekar l in TerminServis.sviLekari)
-            {
-                if (!l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
-                {
-                    pomocna.Add(l);
-                }
-            }
-
-            Lekari = pomocna;
-            DataContext = Lekari;
-
-        }
-
         private void PreuzmiSvePacijente()
         {
             List<Pacijent> pacijenti = NaloziPacijenataServis.ListaPacijenata;
@@ -53,16 +36,11 @@ namespace ZdravoKorporacija
                 cmbPacijent.Items.Add(cbi);
             }
         }
-
-
-
         private void btnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
         {
-
-
             String id = Guid.NewGuid().ToString();
             string[] pom = cmbLekar.Text.Split(' ');
-            Lekar l = TerminServis.PretragaPoLekaru(pom[0], pom[1]);
+            Lekar l = lekarKontroler.PretragaPoLekaru(pom[0], pom[1]);
 
 
             Pacijent p = NaloziPacijenataServis.PretragaPoId(cmbPacijent.Text);

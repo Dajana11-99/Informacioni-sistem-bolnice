@@ -16,15 +16,10 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for DodajRasporedjivanjeStatickeOpreme.xaml
-    /// </summary>
     public partial class DodajRasporedjivanjeStatickeOpreme : Window
     {
         public List<StatickaOprema> StatickaOprema;
         public List<Sala> Prostorija;
-
-
         public DodajRasporedjivanjeStatickeOpreme()
         {
             InitializeComponent();
@@ -32,13 +27,12 @@ namespace ZdravoKorporacija
             cmbProstorija.ItemsSource = SalaServis.sala;
             cmbProstorijaIz.ItemsSource = SalaServis.sala; 
             var listaSala = new List<Sala>();
-            var kobajagiSala = new Sala();
-            kobajagiSala.Id= "Skladiste staticke opreme";
-            listaSala.Add(kobajagiSala);
+            var pomocnaSala = new Sala();
+            pomocnaSala.Id= "Skladiste staticke opreme";
+            listaSala.Add(pomocnaSala);
             listaSala.AddRange(SalaServis.sala);
             cmbProstorijaIz.ItemsSource = listaSala;
         }
-
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             DateTime? rasporedjenoOd = datePickerRasporedjenoOd.SelectedDate;
@@ -74,7 +68,6 @@ namespace ZdravoKorporacija
                 RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajZahtevIzDrugeSale(zahtev);
             Close();
         }
-
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();

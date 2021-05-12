@@ -62,14 +62,12 @@ namespace ZdravoKorporacija
         }
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            String id = txtId.Text;
-            if (LekPostoji(id))
+            if (LekPostoji(txtId.Text))
                 return;
-            String imeLeka = txtImeLeka.Text;
-            Lek l = new Lek(id, imeLeka);
-            ListaSastojaka(l);
-            NovaListaLekova(l);
-            LekServis.DodajLek(l);
+            Lek lek = new Lek(txtId.Text, txtImeLeka.Text);
+            ListaSastojaka(lek);
+            NovaListaLekova(lek);
+            LekServis.DodajLek(lek);
             LekRepozitorijum.UpisiLekove();
             Close();
         }
@@ -79,9 +77,7 @@ namespace ZdravoKorporacija
             foreach (var item in LekoviZamenaCheckboxItems)
             {
                 if (item.IsChecked)
-                {
                     lekovi.Add(item.Data as Lek);
-                }
             }
             lek.ListaZamenaZaLek = lekovi;
         }
@@ -91,9 +87,7 @@ namespace ZdravoKorporacija
             foreach (var item in SastojciCheckboxItems)
             {
                 if (item.IsChecked)
-                {
                     sastojci.Add(item.Data as Sastojak);
-                }
             }
             lek.ListaSastojaka = sastojci;
         }

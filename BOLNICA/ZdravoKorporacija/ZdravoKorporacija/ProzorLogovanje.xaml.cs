@@ -31,6 +31,7 @@ namespace ZdravoKorporacija
         List<Lekar> Lekari = new List<Lekar>();
         List<Pacijent> Pacijenti = new List<Pacijent>();
         List<Lek> Lekovi = new List<Lek>();
+        LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         public ProzorLogovanje()
         {
             InitializeComponent();
@@ -45,16 +46,16 @@ namespace ZdravoKorporacija
             Lozinka.MaxLength = 15;
 
             SalaRepozitorijum.UcitajSale();
-            LekarRepozitorijum.ucitajLekare();
+           //lekarRepozitorijum.ucitajLekare();
             //Dajana
             TerminRepozitorijum.UcitajZakazaneTermine();
-            LekarRepozitorijum.ucitajLekare();
            
            //TerminServis.inicijalizuj(); //Inicijalizacija lekara
           //TerminServis.inicijalizujSlobodneTermine();
           TerminRepozitorijum.UcitajSlobodneTermine();
             AnketaServis.inicijalizujPitanja();
             AnketaServis.inicijalizujPitanjaOBolnici();
+            lekarRepozitorijum.Inicijalizuj();
 
 
 
@@ -205,7 +206,7 @@ namespace ZdravoKorporacija
 
             SalaRepozitorijum.UpisiSale();
             TerminRepozitorijum.UpisiZakazaneTermine();
-            LekarRepozitorijum.upisiLekare();
+            lekarRepozitorijum.upisiLekare();
             NaloziPacijenataRepozitorijum.UpisiPacijente();
             TerminRepozitorijum.UpisiSlobodneTermine();
             LekRepozitorijum.UpisiLekove();

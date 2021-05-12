@@ -16,23 +16,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for LekarWindow.xaml
-    /// </summary>
+
     public partial class LekarWindow : Window
     {
 
         public static ObservableCollection<Termin> TerminiLekara { get; set; }
+        LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
 
-        public static Lekar Ulogovan = null;
+        public Lekar Ulogovan = null;
+        public LekarKontroler lekarKontroler = new LekarKontroler();
         public LekarWindow(String korisnickoIme)
         {
             InitializeComponent();
-            Ulogovan = TerminServis.PretraziPoKorisnickomImenu(korisnickoIme);
+            Ulogovan = lekarRepozitorijum.PretraziPoKorisnickomImenu(korisnickoIme);
             this.DataContext = this;
             TerminiLekara = new ObservableCollection<Termin>();
             foreach (Termin termin in TerminKontroler.PrikaziSveZakazaneTermine())

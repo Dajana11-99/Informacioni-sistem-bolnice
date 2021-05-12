@@ -18,9 +18,6 @@ using PoslovnaLogika;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for DodajRasporedjivanjeDinamickeOpreme.xaml
-    /// </summary>
     public partial class DodajRasporedjivanjeDinamickeOpreme : Window
     {
         public DodajRasporedjivanjeDinamickeOpreme()
@@ -29,12 +26,8 @@ namespace ZdravoKorporacija
             cmbDinamicka.ItemsSource = RukovanjeDinamickomOpremomServis.dinamickaOprema;
             cmbProstorija.ItemsSource = SalaServis.sala;
         }
-
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            
-
-
             ZahtevZaRasporedjivanjeDinamickeOpreme zahtev = new ZahtevZaRasporedjivanjeDinamickeOpreme();
             zahtev.Id = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.pronadji();
             int kolicina = 0;
@@ -52,7 +45,7 @@ namespace ZdravoKorporacija
                 MessageBox.Show("Uneta kolciina mora biti >= 1");
                 return;
             }
-            zahtev.Kolicina = kolicina; // txtKolicina.Text;
+            zahtev.Kolicina = kolicina;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.DinamickaOpremaId = (string)cmbDinamicka.SelectedValue;
             RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.DodajDinamickuOpremuProstorija(zahtev);

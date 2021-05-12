@@ -16,17 +16,11 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for CheckboxList.xaml
-    /// </summary>
-    /// 
-
     // https://stackoverflow.com/questions/4527286/how-to-implement-a-listbox-of-checkboxes-in-wpf
 
     public class CheckBoxListItem: INotifyPropertyChanged
     {
         private object data;
-
         public object Data
         {
             get { return data; }
@@ -34,8 +28,6 @@ namespace ZdravoKorporacija
                 OnPropertyChanged("Data");
             }
         }
-
-
         private string name;
 
         public string Name
@@ -46,9 +38,6 @@ namespace ZdravoKorporacija
             
             }
         }
-
-
-
         private bool isChecked;
 
         public bool IsChecked
@@ -59,10 +48,7 @@ namespace ZdravoKorporacija
                 OnPropertyChanged("IsChecked");
             }
         }
-
-
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnPropertyChanged(string name)
         {
             if (PropertyChanged != null)
@@ -74,20 +60,13 @@ namespace ZdravoKorporacija
 
     public partial class CheckboxList : UserControl
     {
-
-      
-
         public List<CheckBoxListItem> CheckBoxItems
         {
             get { return (List<CheckBoxListItem>)GetValue(CheckBoxItemsProperty); }
             set { SetValue(CheckBoxItemsProperty, value); }
         }
-
-        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CheckBoxItemsProperty =
             DependencyProperty.Register("CheckBoxItems", typeof(List<CheckBoxListItem>), typeof(CheckboxList), new PropertyMetadata(null));
-
-
         public CheckboxList()
         {
             InitializeComponent();

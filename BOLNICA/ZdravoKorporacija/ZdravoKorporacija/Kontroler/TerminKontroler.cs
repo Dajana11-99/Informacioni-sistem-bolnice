@@ -8,6 +8,7 @@ using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
+using ZdravoKorporacija.ViewModel;
 
 namespace Kontroler
 {
@@ -57,7 +58,12 @@ namespace Kontroler
         {
             return TerminServis.ProveriMogucnostPomeranjaVreme(vreme);
         }
-        public TerminServis terminiServis { get; set; }
+
+        public void IzmenaTermina(TerminDTO terminDTO) 
+        {
+            terminiServis.IzmenaTermina(terminDTO);
+        }
+        public TerminServis terminiServis = new TerminServis();
 
     }
 }

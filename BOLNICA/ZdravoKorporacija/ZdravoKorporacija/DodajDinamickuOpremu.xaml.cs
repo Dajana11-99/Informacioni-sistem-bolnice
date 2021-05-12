@@ -19,16 +19,12 @@ using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for DodajSalu.xaml
-    /// </summary>
     public partial class DodajDinamickuOpremu : Window
     {
         public DodajDinamickuOpremu()
         {
             InitializeComponent();
         }
-
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             String id = txtId.Text;
@@ -42,7 +38,7 @@ namespace ZdravoKorporacija
             }
             catch
             {
-                MessageBox.Show($"Kolicina mora biti coe broj!!");
+                MessageBox.Show($"Kolicina mora biti ceo broj!!");
                 return;
             }
             DinamickaOprema oprema = new DinamickaOprema(id);
@@ -52,7 +48,6 @@ namespace ZdravoKorporacija
             DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             Close();
         }
-
         private static bool PostojiDinamickaOprema(string id)
         {
             DinamickaOprema postojecaDinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(id);
@@ -63,7 +58,6 @@ namespace ZdravoKorporacija
             }
             return false;
         }
-
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();

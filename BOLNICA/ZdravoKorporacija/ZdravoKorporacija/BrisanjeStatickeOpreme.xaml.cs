@@ -19,10 +19,10 @@ namespace ZdravoKorporacija
     public partial class BrisanjeStatickeOpreme : Window
     {
         string statickaOpremaId;
-        public BrisanjeStatickeOpreme(string id)
+        public BrisanjeStatickeOpreme(string idStatickeOpreme)
         {
             InitializeComponent();
-            statickaOpremaId = id;
+            statickaOpremaId = idStatickeOpreme;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

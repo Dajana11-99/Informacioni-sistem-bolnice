@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Kontroler;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
@@ -23,16 +24,18 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         public List<Lekar> Lekari { get; set; }
         public static List<Termin> slobodniDatumi = new List<Termin>();
+        public LekarKontroler lekarKontorler = new LekarKontroler();
         public ZakazivanjeSaPrioritetom()
         {
             InitializeComponent();
-            bindcombo();
+            Lekari = lekarKontorler.PretraziPoSpecijalizaciji();
+            DataContext = Lekari;
         }
 
         private void prikaziDatume_Click(object sender, RoutedEventArgs e)
         {
 
-            Lekar l = TerminServis.PretragaLekaraPoID(((Lekar)lekar.SelectedItem).idZaposlenog);
+            Lekar l = lekarKontorler.PretragaLekaraPoID(((Lekar)lekar.SelectedItem).idZaposlenog);
           /*  if(lekar.SelectedIndex==-1 || prioritet.SelectedIndex==-1 || !this.datumOd.SelectedDate.HasValue || !datumDo.SelectedDate.HasValue)
             {
                 MessageBox.Show("Popunite sva polja!");
@@ -146,8 +149,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                             if (t1.Datum.Equals(t.Datum))
                             {
                                 nasao = true;
-
-                                break;
+                                  break;
                             }
 
                         }
@@ -163,45 +165,14 @@ namespace ZdravoKorporacija.PacijentPrikaz
                     }
                     DatumiKodIzabranogLekara da = new DatumiKodIzabranogLekara();
                     da.Show();
-
-
-
-
-
-
-
-
                 }
             }
             else
             {
                 DatumiKodIzabranogLekara dat = new DatumiKodIzabranogLekara();
                 dat.Show();
-
-
             }
 
-
-
-
-
-
-        }
-
-        public void bindcombo()
-        {
-            List<Lekar> pomocna = new List<Lekar>();
-
-            foreach (Lekar l in TerminServis.sviLekari)
-            {
-                if (l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
-                {
-                    pomocna.Add(l);
-                }
-            }
-
-            Lekari = pomocna;
-            lekar.ItemsSource = Lekari;
         }
     }
 }

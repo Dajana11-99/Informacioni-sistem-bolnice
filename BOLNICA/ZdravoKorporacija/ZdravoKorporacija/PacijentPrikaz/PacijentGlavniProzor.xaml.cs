@@ -18,12 +18,10 @@ using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    /// <summary>
-    /// Interaction logic for PacijentGlavniProzor.xaml
-    /// </summary>
     public partial class PacijentGlavniProzor : Window
     {
         public static Pacijent ulogovan = null;
+        LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         public PacijentGlavniProzor(String id)
         {
             InitializeComponent();
@@ -116,7 +114,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void odjava_Click(object sender, RoutedEventArgs e)
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            LekarRepozitorijum.upisiLekare();
+            lekarRepozitorijum.upisiLekare();
             TerminRepozitorijum.UpisiSlobodneTermine();
             TerminRepozitorijum.UpisiZakazaneTermine();
             ObavestenjaRepozitorijum.Sacuvaj();
@@ -128,7 +126,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            LekarRepozitorijum.upisiLekare();
+            lekarRepozitorijum.upisiLekare();
             TerminRepozitorijum.UpisiSlobodneTermine();
             TerminRepozitorijum.UpisiZakazaneTermine();
             ObavestenjaRepozitorijum.Sacuvaj();

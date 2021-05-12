@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public partial class BrisanjeDinamickeOpreme : Window
     {
         string dinamickaOpremaId;

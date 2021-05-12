@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for AnamnezaWindow.xaml
-    /// </summary>
     public partial class AnamnezaWindow : Window
     {
         public Anamneza Anamneza { get; internal set; }

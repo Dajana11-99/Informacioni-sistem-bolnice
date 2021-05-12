@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -13,36 +14,33 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for IzmenaTerminaLekara.xaml
-    /// </summary>
     public partial class IzmenaTerminaLekara : Window
     {
-
         public List<Lekar> Lekari { get; set; }
-        public String id = null;
-        public IzmenaTerminaLekara(Termin t)
+        public String idTermina = null;
+        public LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
+        public TerminKontroler terminKontroler = new TerminKontroler();
+        public IzmenaTerminaLekara(Termin termin)
         {
             InitializeComponent();
-            bindcombo();
-            id = t.IdTermina;
-
-            cmbLekar.SelectedIndex = konstruisi_combo(t.Lekar.CeloIme);
-            datePickerZakazivanjeTermina.SelectedDate = t.Datum;
-            cmbZakazivanjeTerminaVreme.Text = t.Vreme;
-            cmbPacijent.Text = t.Pacijent.IdPacijenta;
-            txtPredvidjenoVremeTermina.Text = t.TrajanjeTermina.ToString();
-           // cmbHMin.Text = 
-            brojSale.Text= t.Sala.Id;
-            
-            cmbVrstaTermina.Text = t.TipTermina.ToString();
-            
-
-
-
+            PrikazLekaraUCombo();
+            idTermina = termin.IdTermina;
+            popuniTermin(termin);
+        }
+        private void popuniTermin(Termin termin)
+        {
+            cmbLekar.SelectedIndex = konstruisi_combo(termin.Lekar.CeloIme);
+            datePickerZakazivanjeTermina.SelectedDate = termin.Datum;
+            cmbZakazivanjeTerminaVreme.Text = termin.Vreme;
+            cmbPacijent.Text = termin.Pacijent.IdPacijenta;
+            txtPredvidjenoVremeTermina.Text = termin.TrajanjeTermina.ToString();
+            brojSale.Text = termin.Sala.Id;
+            cmbVrstaTermina.Text = termin.TipTermina.ToString();
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
@@ -52,35 +50,36 @@ namespace ZdravoKorporacija
 
         private void btnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
         {
-           
-
-
-            TerminServis.IzmenaTermina(id, (DateTime)this.datePickerZakazivanjeTermina.SelectedDate,cmbZakazivanjeTerminaVreme.Text,cmbLekar.Text,txtPredvidjenoVremeTermina.Text, brojSale.Text, cmbVrstaTermina.Text);
+            terminKontroler.IzmenaTermina(KreirajTerminZaIzmenu());
             this.Close();
         }
 
-        public int konstruisi_combo(String id)
+        public TerminDTO KreirajTerminZaIzmenu()
+        {
+            Lekar lekar = lekarRepozitorijum.PretraziPoImenuIPrezimenu(cmbLekar.Text);
+            TerminDTO termin = new TerminDTO(idTermina, (DateTime)datePickerZakazivanjeTermina.SelectedDate,
+                 cmbZakazivanjeTerminaVreme.Text, lekar, txtPredvidjenoVremeTermina.Text, brojSale.Text, cmbVrstaTermina.Text);
+            return termin;
+        }
+
+        public int konstruisi_combo(String imeIPrezimeLekara)
         {
             for (int i = 0; i < Lekari.Count; i++)
             {
-                if (Lekari[i].CeloIme.Equals(id))
+                if (Lekari[i].CeloIme.Equals(imeIPrezimeLekara))
                     return i;
             }
             return 0;
-
         }
-        public void bindcombo()
+        public void PrikazLekaraUCombo()
         {
-            List<Lekar> pomocna = new List<Lekar>();
-
-            foreach (Lekar l in TerminServis.sviLekari)
+            List<Lekar> sviLekari = new List<Lekar>();
+            foreach (Lekar l in sviLekari)
             {
                 if (!l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
-                {
-                    pomocna.Add(l);
-                }
+                    sviLekari.Add(l);
             }
-            Lekari = pomocna;
+            Lekari = sviLekari;
             DataContext = Lekari;
         }
     }

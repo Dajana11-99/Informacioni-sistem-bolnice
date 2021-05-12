@@ -6,6 +6,7 @@
 
 using System;
 using System.ComponentModel;
+using ZdravoKorporacija.ViewModel;
 
 namespace Model
 {
@@ -31,18 +32,12 @@ namespace Model
             set;
 
         }
-
-
         public TipTermina TipTermina
-
         {
             get;
             set;
         }
-
-
         public String IdTermina
-
         {
             get;
             set;
@@ -65,17 +60,13 @@ namespace Model
             get;
             set;
         }
-
         public bool DaLiJeHitno
         {
             get;
             set;
         }
-
         public bool OcenjenTermin { get; set; }
-
         public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent p, Lekar l)
-
         {
             IdTermina = id;
             TipTermina = tip;
@@ -91,7 +82,6 @@ namespace Model
 
         }
         public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent p, Lekar l, bool hitno = false)
-
         {
             IdTermina = id;
             TipTermina = tip;
@@ -104,8 +94,6 @@ namespace Model
             DaLiJeHitno = hitno;
         }
 
-
-
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name) 
         { 
@@ -114,7 +102,6 @@ namespace Model
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-
       public Termin() { }
     }
 }
