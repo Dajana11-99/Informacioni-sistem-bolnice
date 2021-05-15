@@ -9,26 +9,10 @@
     <ListaZamenaZaLek />
   </Lek>
   <Lek>
-    <IdLeka>3</IdLeka>
-    <ImeLeka>Pentraxil</ImeLeka>
-    <KolicinaLeka>120</KolicinaLeka>
-    <SastojciLeka>Sastojci3</SastojciLeka>
-    <ListaSastojaka />
-    <ListaZamenaZaLek />
-  </Lek>
-  <Lek>
     <IdLeka>4</IdLeka>
     <ImeLeka>Palitex</ImeLeka>
     <KolicinaLeka>100</KolicinaLeka>
     <SastojciLeka>Sastojci4</SastojciLeka>
-    <ListaSastojaka />
-    <ListaZamenaZaLek />
-  </Lek>
-  <Lek>
-    <IdLeka>5</IdLeka>
-    <ImeLeka>Bromazepam</ImeLeka>
-    <KolicinaLeka>30</KolicinaLeka>
-    <SastojciLeka>Sastojci5</SastojciLeka>
     <ListaSastojaka />
     <ListaZamenaZaLek />
   </Lek>
@@ -45,6 +29,22 @@
     <ImeLeka>Andol</ImeLeka>
     <KolicinaLeka>250</KolicinaLeka>
     <SastojciLeka>Sastojci2 i sastojci5</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>5</IdLeka>
+    <ImeLeka>Bromazepam</ImeLeka>
+    <KolicinaLeka>30</KolicinaLeka>
+    <SastojciLeka>Sastojci5i878654</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>3</IdLeka>
+    <ImeLeka>Pentraxil</ImeLeka>
+    <KolicinaLeka>120</KolicinaLeka>
+    <SastojciLeka>Sastojci3 i 18</SastojciLeka>
     <ListaSastojaka />
     <ListaZamenaZaLek />
   </Lek>

@@ -11,7 +11,7 @@ namespace ZdravoKorporacija.Servis
     class ZalbaServis
     {
         public static List<Zalba> zalbe = new List<Zalba>();
-        public static Zalba pretraziZalbe(String idZalbe)
+        public static Zalba PretraziZalbe(String idZalbe)
         {
             foreach (Zalba zalba in zalbe)
             {
@@ -22,12 +22,12 @@ namespace ZdravoKorporacija.Servis
             }
             return null;
         }
-        public static List<Zalba> prikaziSveZalbe()
+        public static List<Zalba> PrikaziSveZalbe()
         {
             return zalbe;
         }
 
-        public static Zalba upisiNovuZalbu(Zalba zalba)
+        public static Zalba UpisiNovuZalbu(Zalba zalba)
         {
             return ZalbaRepozitorijum.upisiNovuZalbu(zalba);
         }

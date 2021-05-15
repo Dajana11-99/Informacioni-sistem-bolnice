@@ -32,6 +32,7 @@ namespace ZdravoKorporacija
         List<Pacijent> Pacijenti = new List<Pacijent>();
         List<Lek> Lekovi = new List<Lek>();
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
+        LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
         public ProzorLogovanje()
         {
             InitializeComponent();
@@ -206,7 +207,7 @@ namespace ZdravoKorporacija
 
             SalaRepozitorijum.UpisiSale();
             TerminRepozitorijum.UpisiZakazaneTermine();
-            lekarRepozitorijum.upisiLekare();
+            lekarRepozitorijum.UpisiLekare();
             NaloziPacijenataRepozitorijum.UpisiPacijente();
             TerminRepozitorijum.UpisiSlobodneTermine();
             LekRepozitorijum.UpisiLekove();

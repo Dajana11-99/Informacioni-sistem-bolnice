@@ -24,9 +24,9 @@
         <Label Content="Id leka:"  Grid.Row="1" Grid.Column="0" FontSize="20" />
         <Label Content="Naziv leka:" Grid.Row="2" Grid.Column="0" FontSize="20" />
         <Label Content="Kolicina leka(mg):" Grid.Row="3" Grid.Column="0" FontSize="20" />
-        <Button Content="Potvrdi" Name="btnPotvrdi" Click="btnPotvrdi_Click"  Grid.Row="6" Grid.Column="0" FontSize="20" Margin="10,5,0,5" HorizontalAlignment="Left" Width="240" />
-        <Button Content="Odustani" Name="btnOdustani" Click="btnOdustani_Click"  Grid.Row="6" FontSize="20" Margin="286,5,283.6,5" Grid.ColumnSpan="2"/>
-        <Button Content="Posalji zalbu" Name="btnPosaljiZalbu" Grid.Column="1" Grid.Row="6" Margin="147.2,6,9.6,4" FontSize="20" Click="btnPosaljiZalbu_Click" />
+        <Button Content="Potvrdi" Name="BtnPotvrdi" Click="BtnPotvrdi_Click"  Grid.Row="6" Grid.Column="0" FontSize="20" Margin="10,5,0,5" HorizontalAlignment="Left" Width="240" />
+        <Button Content="Odustani" Name="BtnOdustani" Click="BtnOdustani_Click"  Grid.Row="6" FontSize="20" Margin="286,5,283.6,5" Grid.ColumnSpan="2"/>
+        <Button Content="Posalji zalbu" Name="BtnPosaljiZalbu" Grid.Column="1" Grid.Row="6" Margin="147.2,6,9.6,4" FontSize="20" Click="BtnPosaljiZalbu_Click" />
         <TextBox Name="txtIdLeka" Grid.Row="1" Grid.Column="1" Margin="10 5 20 5" />
         <TextBox Name="txtNazivLeka" Grid.Column="1" Grid.Row="2" Margin="10 5 20 5" />
         <TextBox Name="txtKolicinaLeka" Grid.Column="1" Grid.Row="3" Margin="10 5 20 5"/>

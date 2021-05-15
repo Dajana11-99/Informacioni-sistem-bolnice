@@ -21,7 +21,7 @@
         <Label Content="Naziv leka:" Grid.Column="0" Grid.Row="1" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Name="lblNazivLeka" Grid.Row="1" Grid.Column="1" Margin="20 10 10 10"/>
         <TextBox Name="txtRazlogZalbe" Grid.Column="0" Grid.Row="2" Margin="10 2 10 2" Grid.ColumnSpan="2"/>
-        <Button Name="btnPotvrdi" Click="btnPotvrdi_Click" Content="Potvrdi" Grid.Column="0" Grid.Row="4" Margin="20 10" FontSize="30"/>
-        <Button Name="btnOdustani" Click="btnOdustani_Click" Content="Odustani" Grid.Column="1" Grid.Row="4" Margin="20 10" FontSize="30"/>
+        <Button Name="BtnPotvrdi" Click="BtnPotvrdi_Click" Content="Potvrdi" Grid.Column="0" Grid.Row="4" Margin="20 10" FontSize="30"/>
+        <Button Name="BtnOdustani" Click="BtnOdustani_Click" Content="Odustani" Grid.Column="1" Grid.Row="4" Margin="20 10" FontSize="30"/>
     </Grid>
 </Window>

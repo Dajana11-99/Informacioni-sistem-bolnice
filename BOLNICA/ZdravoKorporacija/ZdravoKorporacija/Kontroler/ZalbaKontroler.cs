@@ -10,19 +10,19 @@ namespace ZdravoKorporacija.Kontroler
 {
     class ZalbaKontroler
     {
-        public static Zalba pretraziZalbe(String idZalbe)
+        public static Zalba PretraziZalbe(String idZalbe)
         {
-            return ZalbaServis.pretraziZalbe(idZalbe);
+            return ZalbaServis.PretraziZalbe(idZalbe);
         }
 
-        public static List<Zalba> prikaziSveZalbe()
+        public static List<Zalba> PrikaziSveZalbe()
         {
-            return ZalbaServis.prikaziSveZalbe();
+            return ZalbaServis.PrikaziSveZalbe();
         }
 
-        public static Zalba upisiNovuZalbu(Zalba zalba)
+        public static Zalba UpisiNovuZalbu(Zalba zalba)
         {
-            return ZalbaServis.upisiNovuZalbu(zalba);
+            return ZalbaServis.UpisiNovuZalbu(zalba);
         }
     }
 }

@@ -23,19 +23,12 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class MainWindow : Window
     {
-      
-
         public MainWindow()
         {
             InitializeComponent();
-            ProzorLogovanje log = new ProzorLogovanje();
-            log.Show();
+            ProzorLogovanje logInProzor = new ProzorLogovanje();
+            logInProzor.Show();
             this.Close();
-            
-
-
         }
-
-       
     }
 }

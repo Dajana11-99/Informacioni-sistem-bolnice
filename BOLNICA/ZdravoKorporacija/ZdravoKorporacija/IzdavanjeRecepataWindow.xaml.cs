@@ -30,7 +30,7 @@ namespace ZdravoKorporacija
             InitializeComponent();
         }
 
-        private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
+        private void BtnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             recept = new Recept(txtKolicinaLeka.Text, (DateTime)this.datePickerPocetak.SelectedDate, 
                 (DateTime)this.datePickerKraj.SelectedDate, double.Parse(txtPeriodUzimanja.Text),
@@ -38,7 +38,7 @@ namespace ZdravoKorporacija
             this.Close();
         }
 
-        private void btnOdustani_Click(object sender, RoutedEventArgs e)
+        private void BtnOdustani_Click(object sender, RoutedEventArgs e)
         {
             recept = null;
             this.Close();

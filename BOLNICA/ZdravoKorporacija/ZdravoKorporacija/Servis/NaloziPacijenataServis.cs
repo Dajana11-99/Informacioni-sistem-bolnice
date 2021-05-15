@@ -84,7 +84,7 @@ namespace Servis
             return false;
         }
 
-      public static Pacijent pretraziPoKorisnickom(String korisnicko)
+      public static Pacijent PretraziPoKorisnickom(String korisnicko)
         {
             foreach(Pacijent pacijent in ListaPacijenata)
             {

@@ -23,19 +23,16 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             Anamneza = NaloziPacijenataServis.pronadjiKarton(brojKartona).Anamneza;
-
             txtSImptomi.Text = Anamneza.Simptomi;
             txtIzvestaj.Text = Anamneza.IzvestajLekara;
         }
-
-        private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
+        private void BtnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             Anamneza = new Anamneza(txtSImptomi.Text, txtIzvestaj.Text);
             this.Close();
 
         }
-
-        private void btnOdustani_Click(object sender, RoutedEventArgs e)
+        private void BtnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

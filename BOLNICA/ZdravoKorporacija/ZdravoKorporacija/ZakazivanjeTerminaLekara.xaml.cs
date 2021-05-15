@@ -41,13 +41,9 @@ namespace ZdravoKorporacija
             String id = Guid.NewGuid().ToString();
             string[] pom = cmbLekar.Text.Split(' ');
             Lekar l = lekarKontroler.PretragaPoLekaru(pom[0], pom[1]);
-
-
             Pacijent p = NaloziPacijenataServis.PretragaPoId(cmbPacijent.Text);
             String idSale = brojSale.Text;
             String vr = cmbZakazivanjeTerminaVreme.Text;
-
-
             TipTermina tipP;
             String tip = cmbVrstaTermina.Text;
             if (tip.Equals(TipTermina.Pregled))
@@ -59,8 +55,6 @@ namespace ZdravoKorporacija
                 tipP = TipTermina.Operacija;
             }
 
-          
-           
             Sala s = null;
             if (tipP.Equals(TipTermina.Pregled))
             {
@@ -69,11 +63,6 @@ namespace ZdravoKorporacija
             {
                 s = new Sala(TipSale.Operaciona, brojSale.Text);
             }
-           
-
-           
-
-          
 
             String hmin = cmbHMin.Text;
             String vreme = txtPredvidjenoVremeTermina.Text;
@@ -92,20 +81,10 @@ namespace ZdravoKorporacija
 
             TerminServis.ZakaziTermin(t);
             this.Close();
-
-
-
-
-
-
-
         }
-
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-
     }
 }

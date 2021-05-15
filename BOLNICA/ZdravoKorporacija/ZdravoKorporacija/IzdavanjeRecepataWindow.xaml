@@ -29,8 +29,8 @@
         <Label Content="Period uzimanja:" Grid.Row="5" Grid.Column="0" FontSize="20" />
         <Label Content="id leka" Grid.Row="6" Grid.Column="0" FontSize="20"></Label>
         <TextBox x:Name="idLeka"  Grid.Row="6" Grid.Column="1" Margin="10 5 20 5" ></TextBox>
-        <Button Content="Potvrdi" Name="btnPotvrdi" Click="btnPotvrdi_Click" Grid.Row="7" Grid.Column="0" FontSize="20" Margin="10 5 20 5" />
-        <Button Content="Odustani" Name="btnOdustani" Click="btnOdustani_Click" Grid.Row="7" Grid.Column="1" FontSize="20" Margin="10 5 20 5"/>
+        <Button Content="Potvrdi" Name="BtnPotvrdi" Click="BtnPotvrdi_Click" Grid.Row="7" Grid.Column="0" FontSize="20" Margin="10 5 20 5" />
+        <Button Content="Odustani" Name="BtnOdustani" Click="BtnOdustani_Click" Grid.Row="7" Grid.Column="1" FontSize="20" Margin="10 5 20 5"/>
         <TextBox Name="txtNazivLeka" Grid.Column="1" Grid.Row="1" Margin="10 5 20 5" />
         <DatePicker Name="datePickerPocetak" Grid.Column="1" Grid.Row="2" Margin="10 5 20 5" />
         <DatePicker Name="datePickerKraj" Grid.Column="1" Grid.Row="3" Margin="10 5 20 5" />

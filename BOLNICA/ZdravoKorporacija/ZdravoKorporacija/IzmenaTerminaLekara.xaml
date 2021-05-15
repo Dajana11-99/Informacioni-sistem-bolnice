@@ -31,8 +31,8 @@
 
 
         <TextBox Name="txtPredvidjenoVremeTermina" HorizontalAlignment="Left" Background="Transparent" Height="37" Margin="119.8,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Grid.Column="1"/>
-        <Button Content="Potvrdi" Background="Transparent" Click="btnPotvrdiZakazivanjeTermina_Click"  Name="btnPotvrdiZakazivanjeTermina" HorizontalAlignment="Left" Height="46" Margin="70,494,0,0" VerticalAlignment="Top" Width="216" FontSize="18" FontWeight="Bold"/>
-        <Button Content="Odustani" Name="btnOdustani" Background="Transparent" HorizontalAlignment="Left" Height="46" Margin="154.8,494,0,0" VerticalAlignment="Top" Width="216" Click="btnOdustani_Click"  FontSize="18" FontWeight="Bold" Grid.Column="1"/>
+        <Button Content="Potvrdi" Background="Transparent" Click="BtnPotvrdiZakazivanjeTermina_Click"  Name="BtnPotvrdiZakazivanjeTermina" HorizontalAlignment="Left" Height="46" Margin="70,494,0,0" VerticalAlignment="Top" Width="216" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Odustani" Name="BtnOdustani" Background="Transparent" HorizontalAlignment="Left" Height="46" Margin="154.8,494,0,0" VerticalAlignment="Top" Width="216" Click="BtnOdustani_Click"  FontSize="18" FontWeight="Bold" Grid.Column="1"/>
         <Label Content=" operacione sale:" Name="lblBrojOperacioeSale" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="72,342,0,0" VerticalAlignment="Top" Width="339" FontSize="16" Grid.ColumnSpan="2" Height="32"/>
         <TextBox HorizontalAlignment="Left" Name="brojSale" Height="36" Margin="119.8,342,0,0" VerticalAlignment="Top" Width="296" Grid.Column="1">
 

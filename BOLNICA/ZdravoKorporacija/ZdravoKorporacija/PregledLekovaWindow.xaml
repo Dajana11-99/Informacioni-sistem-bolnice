@@ -18,7 +18,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Pregled lekova" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="298,10,0,0" Height="45" Width="219"/>
-        <Button Content="Pregled informacija" Name="btnPregledInfo" Click="btnPregledInfo_Click" HorizontalAlignment="Left" Height="54" Margin="84,342,0,0" VerticalAlignment="Top" Width="186"/>
-        <Button Content="Vrati se" Name="btnVratiSe" Click="btnVratiSe_Click" HorizontalAlignment="Left" Height="54" Margin="526,342,0,0" VerticalAlignment="Top" Width="182"/>
+        <Button Content="Pregled informacija" Name="BtnPregledInfo" Click="BtnPregledInfo_Click" HorizontalAlignment="Left" Height="54" Margin="84,342,0,0" VerticalAlignment="Top" Width="186"/>
+        <Button Content="Vrati se" Name="BtnVratiSe" Click="BtnVratiSe_Click" HorizontalAlignment="Left" Height="54" Margin="526,342,0,0" VerticalAlignment="Top" Width="182"/>
     </Grid>
 </Window>

@@ -21,7 +21,7 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class ZdravstevniKartonPacijenta : Window
     {
-      public static  Pacijent pacijent=null;
+         public static  Pacijent pacijent=null;
         public ZdravstevniKartonPacijenta(String idPacijenta)
         {
             InitializeComponent();
@@ -40,23 +40,19 @@ namespace ZdravoKorporacija
             txtPol.Text = karton.Pol.ToString();
             txtBrTel.Text = karton.Telefon;
             txtBracniStatus.Text = karton.BracniStatus.ToString();
-
         }
-
-        private void btnAnamneza_Click(object sender, RoutedEventArgs e)
+        private void BtnAnamneza_Click(object sender, RoutedEventArgs e)
         {
             AnamnezaWindow anamnezaWindow = new AnamnezaWindow(pacijent.karton.BrojKartona);
             anamnezaWindow.ShowDialog();
-
             pacijent.karton.Anamneza = anamnezaWindow.Anamneza;
         }
-
-        private void btnIzdavanjeRecepta_Click(object sender, RoutedEventArgs e)
+        private void BtnIzdavanjeRecepta_Click(object sender, RoutedEventArgs e)
         {
-            IzdavanjeRecepataWindow irw = new IzdavanjeRecepataWindow();
-            irw.ShowDialog();
-            if (irw.recept != null)
-                pacijent.karton.recepti.Add(irw.recept);
+            IzdavanjeRecepataWindow izdavanjeReceptaProzor = new IzdavanjeRecepataWindow();
+            izdavanjeReceptaProzor.ShowDialog();
+            if (izdavanjeReceptaProzor.recept != null)
+                pacijent.karton.recepti.Add(izdavanjeReceptaProzor.recept);
         }
     }
 }

@@ -25,8 +25,7 @@ namespace ZdravoKorporacija.Repozitorijum
             sviLekari.Add(new Lekar("l6", false, Specijalizacija.Stomatolog, "Petar", "Petrovic", "6583892377523", "petar.petrovic@gmail.com", new AdresaStanovanja("Ustanicka", "8"), new Korisnik("petar.markovic", "petar.markovic")));
         }*/
         public List<Lekar> ucitajLekare()
-        {
-          
+        { 
             if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return sviLekari;
@@ -40,13 +39,12 @@ namespace ZdravoKorporacija.Repozitorijum
                 return sviLekari;
             }
         }
-
-        public void upisiLekare()
+        public void UpisiLekare()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
-            TextWriter tw = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(tw, sviLekari);
-            tw.Close();
+            TextWriter textWriter = new StreamWriter(imeFajla);
+            xmlSerializer.Serialize(textWriter, sviLekari);
+            textWriter.Close();
         }
         public Lekar PretragaLekaraPoID(String idLekara)
         {
@@ -88,16 +86,14 @@ namespace ZdravoKorporacija.Repozitorijum
         }
         public List<Lekar> PretraziPoSpecijalizaciji()
         {
-            List<Lekar> pomocna = new List<Lekar>();
+            List<Lekar> listaSvihLekara = new List<Lekar>();
 
             foreach (Lekar l in sviLekari)
             {
                 if (l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
-                {
-                    pomocna.Add(l);
-                }
+                    listaSvihLekara.Add(l);
             }
-            return pomocna;
+            return listaSvihLekara;
         }
     }
 }

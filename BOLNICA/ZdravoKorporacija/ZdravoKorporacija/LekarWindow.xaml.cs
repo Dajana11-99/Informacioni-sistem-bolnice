@@ -24,10 +24,9 @@ namespace ZdravoKorporacija
 
     public partial class LekarWindow : Window
     {
-
         public static ObservableCollection<Termin> TerminiLekara { get; set; }
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
-
+        LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
         public Lekar Ulogovan = null;
         public LekarKontroler lekarKontroler = new LekarKontroler();
         public LekarWindow(String korisnickoIme)
@@ -36,31 +35,34 @@ namespace ZdravoKorporacija
             Ulogovan = lekarRepozitorijum.PretraziPoKorisnickomImenu(korisnickoIme);
             this.DataContext = this;
             TerminiLekara = new ObservableCollection<Termin>();
+            PrikaziTermineUlogovanogLekara();
+        }
+        private void PrikaziTermineUlogovanogLekara()
+        {
             foreach (Termin termin in TerminKontroler.PrikaziSveZakazaneTermine())
             {
-                if(termin.Lekar.CeloIme.Equals(Ulogovan.CeloIme))
-                     TerminiLekara.Add(termin);
+                if (termin.Lekar.CeloIme.Equals(Ulogovan.CeloIme))
+                    TerminiLekara.Add(termin);
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ZakazivanjeTerminaLekara zakazi = new ZakazivanjeTerminaLekara();
-            zakazi.Show();
+            ZakazivanjeTerminaLekara zakaziTermin = new ZakazivanjeTerminaLekara();
+            zakaziTermin.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (TerminiLekaraa.SelectedIndex != -1)
             {
-
-
-                IzmenaTerminaLekara izmena = new IzmenaTerminaLekara(((Termin)TerminiLekaraa.SelectedItem));
-                izmena.Show();
+                IzmenaTerminaLekara izmenaTermina = new IzmenaTerminaLekara(((Termin)TerminiLekaraa.SelectedItem));
+                izmenaTermina.Show();
             }
             else
             {
-                System.Windows.MessageBox.Show("Morate selektovati termin!", "Izmena termina lekara", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Warning);
+                System.Windows.MessageBox.Show("Morate selektovati termin!", "Izmena termina lekara", MessageBoxButton.OK,
+                    (MessageBoxImage)MessageBoxIcon.Warning);
             }
         }
 
@@ -68,8 +70,8 @@ namespace ZdravoKorporacija
         {
             if (TerminiLekaraa.SelectedIndex != -1)
             {
-                OtkazivanjeTerminaLekara otkazii = new OtkazivanjeTerminaLekara(((Termin)TerminiLekaraa.SelectedItem).IdTermina);
-                otkazii.Show();
+                OtkazivanjeTerminaLekara otkaziTermin = new OtkazivanjeTerminaLekara(((Termin)TerminiLekaraa.SelectedItem).IdTermina);
+                otkaziTermin.Show();
             }
         }
 
@@ -78,23 +80,23 @@ namespace ZdravoKorporacija
             this.Close();
         }
 
-        private void btnZahtevUpravniku_Click(object sender, RoutedEventArgs e)
+        private void BtnZahtevUpravniku_Click(object sender, RoutedEventArgs e)
         {
-            ZahtevZaSlobodneDaneWindow zahtev = new ZahtevZaSlobodneDaneWindow();
-
-            zahtev.Show();
+            ZahtevZaSlobodneDaneWindow zahtevZaSlobodneDane = new ZahtevZaSlobodneDaneWindow();
+            zahtevZaSlobodneDane.Show();
         }
 
-        private void btnPregledKartona_Click(object sender, RoutedEventArgs e)
+        private void BtnPregledKartona_Click(object sender, RoutedEventArgs e)
         {
             if (TerminiLekaraa.SelectedIndex == -1)
             {
-                System.Windows.MessageBox.Show("Morate selektovati termin!", "Nedostatak informacija", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Warning);
+                System.Windows.MessageBox.Show("Morate selektovati termin!", "Nedostatak informacija", MessageBoxButton.OK,
+                    (MessageBoxImage)MessageBoxIcon.Warning);
                 return;
             }
-            Termin t = (Termin)TerminiLekaraa.SelectedItem;
-            ZdravstevniKartonPacijenta zkp = new ZdravstevniKartonPacijenta(t.Pacijent.IdPacijenta);
-            zkp.Show();
+            Termin termin = (Termin)TerminiLekaraa.SelectedItem;
+            ZdravstevniKartonPacijenta zdravstvniKarton = new ZdravstevniKartonPacijenta(termin.Pacijent.IdPacijenta);
+            zdravstvniKarton.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -104,16 +106,16 @@ namespace ZdravoKorporacija
             LekoviRepozitorijum.upisiLekove();
         }
 
-        private void btnPregledLekova_Click(object sender, RoutedEventArgs e)
+        private void BtnPregledLekova_Click(object sender, RoutedEventArgs e)
         {
-            PregledLekovaWindow p = new PregledLekovaWindow();
-            p.Show();
+            PregledLekovaWindow pregledLekovaProzor = new PregledLekovaWindow();
+            pregledLekovaProzor.Show();
         }
 
-        private void btnOdjaviSe_Click(object sender, RoutedEventArgs e)
+        private void BtnOdjaviSe_Click(object sender, RoutedEventArgs e)
         {
-            ProzorLogovanje prikaz = new ProzorLogovanje();
-            prikaz.Show();
+            ProzorLogovanje prikazLogina = new ProzorLogovanje();
+            prikazLogina.Show();
             this.Close();
         }
     }

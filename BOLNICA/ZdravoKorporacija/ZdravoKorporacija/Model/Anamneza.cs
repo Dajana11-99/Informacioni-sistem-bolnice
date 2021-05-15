@@ -12,8 +12,6 @@ namespace Model
     {
         public String Simptomi { get; set; }
         public String IzvestajLekara { get; set; }
-
-
         public Anamneza()
         {
             Simptomi = "";
@@ -24,6 +22,5 @@ namespace Model
             Simptomi = simptomi == null ? "" : simptomi;
             IzvestajLekara = izvestajLekara == null ? "" : izvestajLekara;
         }
-
     }
 }

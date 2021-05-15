@@ -12,9 +12,9 @@ namespace Kontroler
 {
    public class NaloziPacijenataKontroler
    {
-        public static Pacijent pretraziPoKorisnickom(String korisnicko)
+        public static Pacijent PretraziPoKorisnickom(String korisnickoIme)
         {
-            return NaloziPacijenataServis.pretraziPoKorisnickom(korisnicko);
+            return NaloziPacijenataServis.PretraziPoKorisnickom(korisnickoIme);
         }
    }
 }

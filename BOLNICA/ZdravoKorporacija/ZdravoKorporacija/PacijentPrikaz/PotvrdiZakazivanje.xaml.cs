@@ -41,7 +41,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void potvrdiZakazivanje_Click(object sender, RoutedEventArgs e)
         {
             Termin t = TerminKontroler.PretraziSlobodneTerminePoId(Termin.IdTermina);
-            t.Pacijent = NaloziPacijenataKontroler.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
+            t.Pacijent = NaloziPacijenataKontroler.PretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
             TerminKontroler.ZakaziPregled(t);
             this.Close();
         }

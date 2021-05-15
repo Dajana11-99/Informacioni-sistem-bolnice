@@ -29,9 +29,9 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             this.DataContext = this;
-            lekovi = new ObservableCollection<Lek>(LekKontroler.prikaziSveLekove());
+            lekovi = new ObservableCollection<Lek>(LekKontroler.PrikaziSveLekove());
         }
-        private void btnPregledInfo_Click(object sender, RoutedEventArgs e)
+        private void BtnPregledInfo_Click(object sender, RoutedEventArgs e)
         {
             if (dgPregledLekova.SelectedIndex == -1)
             {
@@ -43,15 +43,14 @@ namespace ZdravoKorporacija
             InformacijeLekaWindow informacijeLeka = new InformacijeLekaWindow(lek.IdLeka);
             informacijeLeka.ShowDialog();
             RefreshDataGrid();
-
         }
 
         private void RefreshDataGrid()
         {
             dgPregledLekova.ItemsSource = null;
-            dgPregledLekova.ItemsSource = new ObservableCollection<Lek>(LekKontroler.prikaziSveLekove());
+            dgPregledLekova.ItemsSource = new ObservableCollection<Lek>(LekKontroler.PrikaziSveLekove());
         }
-        private void btnVratiSe_Click(object sender, RoutedEventArgs e)
+        private void BtnVratiSe_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

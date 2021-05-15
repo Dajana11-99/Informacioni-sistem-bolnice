@@ -34,11 +34,11 @@ namespace ZdravoKorporacija
             idTermina = termin.IdTermina;
             Lekari = lekarKontroler.PretraziPoSpecijalizaciji();
             DataContext = Lekari;
-            popuniTermin(termin);
+            PopuniTermin(termin);
         }
-        private void popuniTermin(Termin termin)
+        private void PopuniTermin(Termin termin)
         {
-            cmbLekar.SelectedIndex = konstruisi_combo(termin.Lekar.CeloIme);
+            cmbLekar.SelectedIndex = Konstruisi_comboBox(termin.Lekar.CeloIme);
             datePickerZakazivanjeTermina.SelectedDate = termin.Datum;
             cmbZakazivanjeTerminaVreme.Text = termin.Vreme;
             cmbPacijent.Text = termin.Pacijent.IdPacijenta;
@@ -47,12 +47,12 @@ namespace ZdravoKorporacija
             cmbVrstaTermina.Text = termin.TipTermina.ToString();
         }
 
-        private void btnOdustani_Click(object sender, RoutedEventArgs e)
+        private void BtnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void btnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
+        private void BtnPotvrdiZakazivanjeTermina_Click(object sender, RoutedEventArgs e)
         {
             terminKontroler.IzmenaTermina(KreirajTerminZaIzmenu());
             this.Close();
@@ -66,7 +66,7 @@ namespace ZdravoKorporacija
             return termin;
         }
 
-        public int konstruisi_combo(String imeIPrezimeLekara)
+        public int Konstruisi_comboBox(String imeIPrezimeLekara)
         {
             for (int i = 0; i < Lekari.Count; i++)
             {
@@ -75,6 +75,5 @@ namespace ZdravoKorporacija
             }
             return 0;
         }
-      
     }
 }

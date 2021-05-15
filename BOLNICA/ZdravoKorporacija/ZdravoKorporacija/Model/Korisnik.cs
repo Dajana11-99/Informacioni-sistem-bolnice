@@ -16,7 +16,6 @@ namespace Model
       public String Sifra;
       public Uloga Uloga;
       public TipNaloga Nalog;
-
         public Korisnik(string korisnickoIme, string sifra)
         {
             KorisnickoIme = korisnickoIme;

@@ -20,8 +20,8 @@
         <TextBox Name="txtBrojKartona" HorizontalAlignment="Left" Height="36" Margin="407,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
         <TextBox Name="txtImeRoditelja" HorizontalAlignment="Left" Height="36" Margin="407,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
         <TextBox Name="txtBrTel" HorizontalAlignment="Left" Height="36" Margin="407,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
-        <Button Content="Anamneza" Name="btnAnamneza" Click="btnAnamneza_Click" HorizontalAlignment="Left" Height="41" Margin="121,487,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button Content="Izdavanje recepta" Click="btnIzdavanjeRecepta_Click" Name="btnIzdavanjeRecepta" HorizontalAlignment="Left" Height="41" Margin="476,487,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Content="Anamneza" Name="BtnAnamneza" Click="BtnAnamneza_Click" HorizontalAlignment="Left" Height="41" Margin="121,487,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Content="Izdavanje recepta" Click="BtnIzdavanjeRecepta_Click" Name="BtnIzdavanjeRecepta" HorizontalAlignment="Left" Height="41" Margin="476,487,0,0" VerticalAlignment="Top" Width="200"/>
         <TextBox Name="txtDatumRodjenja" HorizontalAlignment="Left" Height="36" Margin="407,236,0,0" VerticalAlignment="Top" Width="219"/>
         <TextBox Name="txtPol" HorizontalAlignment="Left" Height="36" Margin="407,277,0,0" VerticalAlignment="Top" Width="219"/>
         <TextBox Name="txtPacijent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="407,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>

@@ -20,20 +20,16 @@ namespace Model
         public List<Sastojak> ListaSastojaka { get; set; }
         public List<Lek> ListaZamenaZaLek { get; set; }
 
-
         public Lek() { }
-
         public Lek(String id,String ime)
         {
             IdLeka = id;
             ImeLeka = ime;
         }
-
         public static explicit operator Lek(int v)
         {
             throw new NotImplementedException();
         }
-
         public Lek(String id, String ime, String kolicina, String sastojci)
         {
             IdLeka = id;

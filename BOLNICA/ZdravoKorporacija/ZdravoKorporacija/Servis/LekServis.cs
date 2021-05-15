@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Model;
 using ZdravoKorporacija;
+using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Repozitorijum;
 
 
@@ -11,9 +12,11 @@ namespace Servis
 {
     class LekServis
     {
+        LekKontroler lekKontroler = new LekKontroler();
         public static List<Lek> lek = new List<Lek>();
         public static ObservableCollection<Lek> observableLek = new ObservableCollection<Lek>();
         public static List<Sastojak> listaSvihSastojaka = new List<Sastojak>
+        
         {
             new Sastojak{Id="1", Ime="Voda"},
             new Sastojak{Id="2", Ime="Ibrufen"},
@@ -111,11 +114,11 @@ namespace Servis
             LekRepozitorijum.UpisiLekove();
             return nadjena;
         }
-        public static Lek pretraziSveLekove(String id)
+        public static Lek PretraziSveLekove(String id)
         {
             return LekoviRepozitorijum.PronadjiLek(id);
         }
-        public static List<Lek> prikaziSveLekove()
+        public static List<Lek> PrikaziSveLekove()
         {
             return lekovii;
         }

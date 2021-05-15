@@ -114,7 +114,7 @@ namespace Servis
             Termin stariTermin = PretragaZakazanihTerminaPoId(RasporedTermina.TerminZaPomeranje.IdTermina);
             stariTermin.Pacijent = null;
             Termin noviTermin = PretraziSlobodneTerminePoId(idTermina);
-            noviTermin.Pacijent = NaloziPacijenataServis.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
+            noviTermin.Pacijent = NaloziPacijenataServis.PretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
             ProveriMalicioznostPacijenta(noviTermin.Pacijent);
             BrisanjeTabelarnogPrikaza(stariTermin, noviTermin);
         }
@@ -151,7 +151,7 @@ namespace Servis
         {
             Termin termin = PretragaZakazanihTerminaPoId(idTermina);
             BrisanjePrikazaPosleOtkazivanja(termin);
-            ProveriMalicioznostPacijenta(NaloziPacijenataServis.pretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme));
+            ProveriMalicioznostPacijenta(NaloziPacijenataServis.PretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme));
            
         }
 

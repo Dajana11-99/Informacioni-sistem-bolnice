@@ -26,7 +26,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             ObavestenjaRepozitorijum.Ucitaj();
-            ulogovan = NaloziPacijenataKontroler.pretraziPoKorisnickom(id);
+            ulogovan = NaloziPacijenataKontroler.PretraziPoKorisnickom(id);
             imePacijenta.Content = ulogovan.Ime+" "+ulogovan.Prezime;
             foreach(Recept rec in ulogovan.karton.recepti)
             {
@@ -114,7 +114,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void odjava_Click(object sender, RoutedEventArgs e)
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            lekarRepozitorijum.upisiLekare();
+            lekarRepozitorijum.UpisiLekare();
             TerminRepozitorijum.UpisiSlobodneTermine();
             TerminRepozitorijum.UpisiZakazaneTermine();
             ObavestenjaRepozitorijum.Sacuvaj();
@@ -126,7 +126,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            lekarRepozitorijum.upisiLekare();
+            lekarRepozitorijum.UpisiLekare();
             TerminRepozitorijum.UpisiSlobodneTermine();
             TerminRepozitorijum.UpisiZakazaneTermine();
             ObavestenjaRepozitorijum.Sacuvaj();

@@ -28,7 +28,7 @@ namespace ZdravoKorporacija
         public InformacijeLekaWindow(string idLeka)
         {
             InitializeComponent();
-            lek = Kontroler.LekKontroler.pretraziLekove(idLeka);
+            lek = Kontroler.LekKontroler.PretraziLekove(idLeka);
             PopuniInfomacijeOLeku();
         }
 
@@ -40,21 +40,21 @@ namespace ZdravoKorporacija
             txtSastojci.Text = lek.SastojciLeka;
         }
 
-        private void btnPosaljiZalbu_Click(object sender, RoutedEventArgs e)
+        private void BtnPosaljiZalbu_Click(object sender, RoutedEventArgs e)
         {
             ZalbaWindow zalba = new ZalbaWindow(lek.IdLeka);
             zalba.ShowDialog();
 
         }
 
-        private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
+        private void BtnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             Lek izmenjenLek = new Lek(lek.IdLeka, txtNazivLeka.Text, txtKolicinaLeka.Text, txtSastojci.Text);
             LekKontroler.IzmeniLek(izmenjenLek);
             this.Close();
         }
 
-        private void btnOdustani_Click(object sender, RoutedEventArgs e)
+        private void BtnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

@@ -30,8 +30,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Name="btnPotvrdi" Click="btnPotvrdi_Click" Grid.Column="0" Content="Potvrdi" Margin="20 5"/>
-            <Button Name="btnOdustani" Click="btnOdustani_Click" Grid.Column="1" Content="Odustani" Margin="20 5"/>
+            <Button Name="BtnPotvrdi" Click="BtnPotvrdi_Click" Grid.Column="0" Content="Potvrdi" Margin="20 5"/>
+            <Button Name="BtnOdustani" Click="BtnOdustani_Click" Grid.Column="1" Content="Odustani" Margin="20 5"/>
         </Grid>
     </Grid>
 </Window>
