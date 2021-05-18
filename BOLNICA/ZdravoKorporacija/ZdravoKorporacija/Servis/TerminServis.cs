@@ -97,11 +97,20 @@ namespace Servis
         {
             return zakazaniTermini;
         }
-        public static void ZakaziTermin(Termin termin)
+        public static bool ZakaziTermin(Termin termin)
         {
+            if (NijeDostupnaSala(termin))
+                return false;
             zakazaniTermini.Add(termin);
+            return true;
             //LekarWindow.TerminiLekara.Add(termin);
         }
+
+        private static bool NijeDostupnaSala(Termin termin)
+        {
+            return !SalaServis.DaLiJeSalaSlobodna(termin.Sala, termin.Datum);
+        }
+
         public static void OtkaziTermin(String idTermina)
         {
             Termin termin = PretragaZakazanihTerminaPoId(idTermina);

@@ -45,5 +45,6 @@ namespace Model
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+ 
     }
 }

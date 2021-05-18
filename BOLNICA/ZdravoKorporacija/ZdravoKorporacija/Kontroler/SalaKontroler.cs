@@ -10,5 +10,6 @@ namespace Kontroler
 {
    public class SalaKontroler
    {
+
    }
 }

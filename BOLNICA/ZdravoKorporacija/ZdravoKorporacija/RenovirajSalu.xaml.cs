@@ -20,30 +20,81 @@ namespace ZdravoKorporacija
     public partial class RenovirajSalu : Window
     {
         Sala salaZaIzmenu;
+        List<string> opcijaRazdvajanje = new List<string>()
+        {
+            "Razdvajanje na dve nove sobe",
+            "Spajanje sa drugom sobom u novu sobu",
+            "Renoviranje bez razdvajanja/spajanja"
+        };
+
+ 
         public RenovirajSalu(Sala sala)
         {
             InitializeComponent();
+            cboxTipRenoviranja.ItemsSource = opcijaRazdvajanje;
+            cboxTipRenoviranja.SelectedIndex = 2;
             salaZaIzmenu = sala;
+            cboxIzborSaleZaSpajanje.ItemsSource = SalaServis.sala;
             lblNaslov.Content = $"Renoviranje {sala.TipSale} id {sala.Id}";
+            DaLiPostojiRenoviranje();
         }
+
+        private void DaLiPostojiRenoviranje()
+        {
+            if (salaZaIzmenu.Renoviranje != null)
+            {
+                MessageBox.Show("Sala je pod renoviranjem, nije moguce dodati novo renoviranje dok se trenutno rensoviranje ne zavrsi ili izbrise");
+                Close();
+            }
+        }
+
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
+        {
+            Renoviranje renoviranje = GetRenoviranje();
+            if (renoviranje == null)
+            {
+                return;
+            }
+            salaZaIzmenu.Renoviranje = renoviranje;
+            SalaServis.Izmena(salaZaIzmenu);
+        }
+
+        private Renoviranje GetRenoviranje()
         {
             Renoviranje renoviranje = new Renoviranje();
             DateTime? RenoviranjeOd = datePickerPocetakRenoviranja.SelectedDate;
             if (!DatumUnet(RenoviranjeOd))
-                return;
+                return null;
             DateTime? RenoviranjeDo = datePickerKrajRenoviranja.SelectedDate;
             if (!DatumUnet(RenoviranjeDo))
-                return;
-            if (salaZaIzmenu.Renoviranja == null)
-            {
-                salaZaIzmenu.Renoviranja = new List<Renoviranje>();
-            }
+                return null;
             renoviranje.RenoviranjeOd = RenoviranjeOd.Value;
             renoviranje.RenoviranjeDo = RenoviranjeDo.Value;
-            salaZaIzmenu.Renoviranja.Add(renoviranje);
-            SalaServis.Izmena(salaZaIzmenu);
+            DodajSpajanje(renoviranje);
+            DodajRazdvajanje(renoviranje);
+            return renoviranje;
         }
+
+        private void DodajRazdvajanje(Renoviranje renoviranje)
+        {
+            if ((string)cboxTipRenoviranja.SelectedItem != opcijaRazdvajanje[0])
+                return;
+
+            renoviranje.Razdvajanje = true;
+            renoviranje.NazivPrveNoveSale = txtNazivPrveSale.Text;
+            renoviranje.NazivDrugeNoveSale = txtNazivDrugeSale.Text;
+        }
+
+        private void DodajSpajanje(Renoviranje renoviranje)
+        {
+            if ((string)cboxTipRenoviranja.SelectedItem != opcijaRazdvajanje[1])
+                return;
+
+            renoviranje.Spajanje = true;
+            renoviranje.SalaZaSpajanje = (Sala)cboxIzborSaleZaSpajanje.SelectedItem;
+            renoviranje.NazivNovoSpojeneSale = txtNazivNoveSale.Text;
+        }
+
         private static bool DatumUnet(DateTime? renoviranje)
         {
             if (!renoviranje.HasValue)
@@ -56,6 +107,43 @@ namespace ZdravoKorporacija
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void onTipRenoviranjaChange(object sender, SelectionChangedEventArgs e)
+        {
+            int spajanje = 1;
+            int razdvajanje = 0;
+            if ((string)cboxTipRenoviranja.SelectedItem == opcijaRazdvajanje[spajanje])
+                PrikaziSpajanje();
+            else if ((string)cboxTipRenoviranja.SelectedItem == opcijaRazdvajanje[razdvajanje])
+                PrikaziRazdvajanje();
+            else
+                SakrijSpajanjeRazdvajanja();
+
+        }
+
+        private void SakrijSpajanjeRazdvajanja()
+        {
+            txtNazivDrugeSale.Visibility = Visibility.Hidden;
+            txtNazivPrveSale.Visibility = Visibility.Hidden;
+            txtNazivNoveSale.Visibility = Visibility.Hidden;
+            cboxIzborSaleZaSpajanje.Visibility = Visibility.Hidden;
+        }
+
+        private void PrikaziSpajanje()
+        {
+            txtNazivDrugeSale.Visibility = Visibility.Hidden;
+            txtNazivPrveSale.Visibility = Visibility.Hidden;
+            txtNazivNoveSale.Visibility = Visibility.Visible;
+            cboxIzborSaleZaSpajanje.Visibility = Visibility.Visible;
+        }
+
+        private void PrikaziRazdvajanje()
+        {
+            txtNazivDrugeSale.Visibility = Visibility.Visible;
+            txtNazivPrveSale.Visibility = Visibility.Visible;
+            txtNazivNoveSale.Visibility = Visibility.Hidden;
+            cboxIzborSaleZaSpajanje.Visibility = Visibility.Hidden;
         }
     }
 }

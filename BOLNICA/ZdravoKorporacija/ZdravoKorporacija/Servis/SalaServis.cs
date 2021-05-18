@@ -54,18 +54,12 @@ namespace Servis
         }
         public static bool DaLiJeSalaSlobodna(Sala sala, DateTime termin)
         {
-            if(sala.Renoviranja == null || sala.Renoviranja.Count == 0)
+            if(sala.Renoviranje == null)
             {
-                return false;
-            } 
-            foreach(Renoviranje renoviranje in sala.Renoviranja)
-            {
-                if (renoviranje.RenoviranjeOd >= termin && renoviranje.RenoviranjeDo <= termin)
-                {
-                    return false;
-                }
+                return true;
             }
-            return true;
+            Renoviranje renoviranje = sala.Renoviranje;
+            return !(renoviranje.RenoviranjeOd >= termin && renoviranje.RenoviranjeDo <= termin);
         }
       public static bool Izmena(Sala salaZaIzmenu)
         {
@@ -85,30 +79,34 @@ namespace Servis
                     s.Zauzeta = salaZaIzmenu.Zauzeta;
                     s.RasporedjenaDinamickaOprema = salaZaIzmenu.RasporedjenaDinamickaOprema;
                     s.RasporedjenaStatickaOprema = salaZaIzmenu.RasporedjenaStatickaOprema;
-                    s.Renoviranja = salaZaIzmenu.Renoviranja;
+                    s.Renoviranje = salaZaIzmenu.Renoviranje;
                 }
             }
         }
 
         public static bool BrisanjeSala(String id)
         {
+            List<Sala> filtrirane = FiltrirajPoId(id);
+            int stariCount = sala.Count;
+            sala = filtrirane;
+            OsveziKolekciju();
+            SalaRepozitorijum.UpisiSale();
+            return sala.Count < stariCount;
+        }
+
+        private static List<Sala> FiltrirajPoId(string id)
+        {
             List<Sala> saleBezIzbrisane = new List<Sala>();
-            bool nadjena = false;
             foreach (Sala s in sala)
             {
                 if (s.Id.Equals(id))
-                {
-                    nadjena = true;
-                } else
-                {
-                    saleBezIzbrisane.Add(s);
-                }
+                    continue;
+
+                saleBezIzbrisane.Add(s);
             }
-            sala = saleBezIzbrisane;
-            OsveziKolekciju();
-            SalaRepozitorijum.UpisiSale();
-            return nadjena;
+            return saleBezIzbrisane;
         }
+
         public  static Sala PretraziPoId(String id)
         {
             foreach(Sala s in sala)
@@ -150,6 +148,42 @@ namespace Servis
             }
             return broj.ToString();
         }
+
+        public static void RenovirajSalu(Sala sala)
+        {
+            if (sala.Renoviranje.Spajanje)
+                RenoviranjeSpajanje(sala);
+            else if (sala.Renoviranje.Razdvajanje)
+                RenoviranjeRazdvajanje(sala);
+            else
+                RegularnoRenoviranje(sala); 
+        }
+
+        private static void RegularnoRenoviranje(Sala sala)
+        {
+            Izmena(sala);
+        }
+
+        private static void RenoviranjeRazdvajanje(Sala sala)
+        {
+            Sala prva = new Sala() { Id = sala.Renoviranje.NazivPrveNoveSale, kvadratura = (sala.kvadratura / 2), sprat = sala.sprat, TipSale = sala.TipSale, Zauzeta = sala.Zauzeta, RasporedjenaStatickaOprema=sala.RasporedjenaStatickaOprema, RasporedjenaDinamickaOprema=sala.RasporedjenaDinamickaOprema };
+            Sala druga = new Sala() { Id = sala.Renoviranje.NazivDrugeNoveSale, kvadratura = (sala.kvadratura / 2), sprat = sala.sprat, TipSale = sala.TipSale, Zauzeta = sala.Zauzeta};
+            BrisanjeSala(sala.Id);
+            DodajSalu(prva);
+            DodajSalu(druga);
+        }
+
+        private static void RenoviranjeSpajanje(Sala sala)
+        {
+            List<RasporedjenaStatickaOprema> statickaOprema = sala.RasporedjenaStatickaOprema.Union(sala.Renoviranje.SalaZaSpajanje.RasporedjenaStatickaOprema).ToList();
+            List<RasporedjenaDinamickaOprema> dinamickaOprema = sala.RasporedjenaDinamickaOprema.Union(sala.Renoviranje.SalaZaSpajanje.RasporedjenaDinamickaOprema).ToList();
+            Sala nova = new Sala() { Id = sala.Renoviranje.NazivPrveNoveSale, kvadratura = (sala.kvadratura + sala.Renoviranje.SalaZaSpajanje.kvadratura), sprat = sala.sprat, TipSale = sala.TipSale, Zauzeta = sala.Zauzeta, RasporedjenaStatickaOprema = statickaOprema, RasporedjenaDinamickaOprema = dinamickaOprema };
+            BrisanjeSala(sala.Id);
+            BrisanjeSala(sala.Renoviranje.SalaZaSpajanje.Id);
+            DodajSalu(nova);
+        }
+
         public ZdravoKorporacija.Repozitorijum.SalaRepozitorijum salaRepozitorijum;
+
     }
 }

@@ -22,7 +22,7 @@ namespace Model
         public List<RasporedjenaStatickaOprema> RasporedjenaStatickaOprema { get; set; }
         public List<RasporedjenaDinamickaOprema> RasporedjenaDinamickaOprema { get; set; }
 
-        public List<Renoviranje> Renoviranja { get; set; }
+        public Renoviranje Renoviranje { get; set; }
 
 
 

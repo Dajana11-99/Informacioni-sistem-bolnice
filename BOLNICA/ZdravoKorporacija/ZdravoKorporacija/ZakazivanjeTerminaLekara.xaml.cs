@@ -79,7 +79,13 @@ namespace ZdravoKorporacija
             bool hitno = (bool)checkBoxHitno.IsChecked;
             Termin t = new Termin(id, tipP, vr, predvidjenoVreme, (DateTime)datePickerZakazivanjeTermina.SelectedDate, s, p, l, hitno);
 
-            TerminServis.ZakaziTermin(t);
+            bool uspesno = TerminServis.ZakaziTermin(t);
+            if (!uspesno)
+            {
+                MessageBox.Show("Neuspesno zakzivanje, sala se tada renovira");
+                return;
+            }
+
             this.Close();
         }
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

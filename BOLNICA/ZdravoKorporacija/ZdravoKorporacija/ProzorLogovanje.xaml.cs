@@ -64,7 +64,7 @@ namespace ZdravoKorporacija
             //LekServis.inicijalizujLekove();
             LekoviRepozitorijum.ucitajLekove();
             ZalbaRepozitorijum.ucitajZalbe();
-
+            ZalbaServis.inicijalizuj();
 
 
             //SalaServis.inicijalizuj();

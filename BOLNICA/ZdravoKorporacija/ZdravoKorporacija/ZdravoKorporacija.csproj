@@ -268,6 +268,9 @@
     <Compile Include="PrikazLekova.xaml.cs">
       <DependentUpon>PrikazLekova.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PrikazZalbi.xaml.cs">
+      <DependentUpon>PrikazZalbi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProzorLogovanje.xaml.cs">
       <DependentUpon>ProzorLogovanje.xaml</DependentUpon>
     </Compile>
@@ -320,6 +323,7 @@
     <Compile Include="UpravnikPocetna.xaml.cs">
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util\DeepCopy.cs" />
     <Compile Include="ViewModel\TerminDTO.cs" />
     <Compile Include="ZahtevZaSlobodneDaneWindow.xaml.cs">
       <DependentUpon>ZahtevZaSlobodneDaneWindow.xaml</DependentUpon>
@@ -570,6 +574,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazStatickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazZalbi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

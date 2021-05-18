@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,20 @@ namespace ZdravoKorporacija.Servis
 {
     class ZalbaServis
     {
+        public static ObservableCollection<Zalba> zalbeObservable = new ObservableCollection<Zalba>();
         public static List<Zalba> zalbe = new List<Zalba>();
+
+        public static void inicijalizuj()
+        {
+            zalbe = ZalbaRepozitorijum.ucitajZalbe();
+            OsveziKolekciju();
+        }
+        public static void OsveziKolekciju()
+        {
+            zalbeObservable.Clear();
+            foreach (Zalba zalba in zalbe)
+                zalbeObservable.Add(zalba);
+        }
         public static Zalba PretraziZalbe(String idZalbe)
         {
             foreach (Zalba zalba in zalbe)
@@ -30,6 +44,25 @@ namespace ZdravoKorporacija.Servis
         public static Zalba UpisiNovuZalbu(Zalba zalba)
         {
             return ZalbaRepozitorijum.upisiNovuZalbu(zalba);
+        }
+        public static bool Izmena(Zalba zalbaZaIzmenu)
+        {
+            IzmenaZalbe(zalbaZaIzmenu);
+            ZalbaRepozitorijum.upisiZalbe();
+            OsveziKolekciju();
+            return true;
+        }
+        private static void IzmenaZalbe(Zalba zalbaZaIzmenu)
+        {
+            foreach (Zalba z in zalbeObservable)
+            {
+                if (z.IdZalbe.Equals(zalbaZaIzmenu.IdZalbe))
+                {
+                    z.TextZalbe = zalbaZaIzmenu.TextZalbe;
+                    z.IdLeka = zalbaZaIzmenu.IdLeka;
+                    z.resena = zalbaZaIzmenu.resena;
+                }
+            }
         }
     }
 }

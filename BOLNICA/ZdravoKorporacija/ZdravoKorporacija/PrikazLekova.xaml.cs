@@ -75,5 +75,16 @@ namespace ZdravoKorporacija
                 brisanjeLeka.Show();
             } 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnPrikazZalbi_Click(object sender, RoutedEventArgs e)
+        {
+            PrikazZalbi prikazZalbi = new PrikazZalbi();
+            prikazZalbi.Show();
+        }
     }
 }

@@ -102,4 +102,30 @@
       </Lek>
     </ListaZamenaZaLek>
   </Lek>
+  <Lek>
+    <IdLeka>2</IdLeka>
+    <ImeLeka>lekzaproveru</ImeLeka>
+    <ListaSastojaka>
+      <Sastojak>
+        <Id>1</Id>
+        <Ime>Voda</Ime>
+      </Sastojak>
+      <Sastojak>
+        <Id>2</Id>
+        <Ime>Ibrufen</Ime>
+      </Sastojak>
+      <Sastojak>
+        <Id>3</Id>
+        <Ime>Lavanda</Ime>
+      </Sastojak>
+    </ListaSastojaka>
+    <ListaZamenaZaLek>
+      <Lek>
+        <IdLeka>sfdf</IdLeka>
+        <ImeLeka>penicilin</ImeLeka>
+        <ListaSastojaka />
+        <ListaZamenaZaLek />
+      </Lek>
+    </ListaZamenaZaLek>
+  </Lek>
 </ArrayOfLek>
