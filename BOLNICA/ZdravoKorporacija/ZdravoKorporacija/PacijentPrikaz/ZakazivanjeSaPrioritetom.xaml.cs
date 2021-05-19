@@ -25,6 +25,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public List<Lekar> Lekari { get; set; }
         public static List<Termin> slobodniDatumi = new List<Termin>();
         public LekarKontroler lekarKontorler = new LekarKontroler();
+        TerminKontroler terminKontroler = new TerminKontroler();
         public ZakazivanjeSaPrioritetom()
         {
             InitializeComponent();
@@ -67,7 +68,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             bool nasao = false;
             slobodniDatumi.Clear();
 
-            pomocna = TerminKontroler.NadjiDatumUIntervalu(pocetak, kraj);
+            pomocna = terminKontroler.NadjiDatumUIntervalu(pocetak, kraj);
             foreach(Termin t in TerminKontroler.NadjiSlobodneTermineLekara(l.idZaposlenog,pomocna))
             {
                 nasao = false;
@@ -97,7 +98,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
                 if (prioritet.SelectedIndex == 0)
                 {
-                    pomocna = TerminKontroler.NadjiDatumUIntervalu(pocetak, kraj);
+                    pomocna = terminKontroler.NadjiDatumUIntervalu(pocetak, kraj);
                     foreach (Termin t1 in pomocna)
                     {
                         nasao = false;
@@ -140,7 +141,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                     }
 
 
-                    pomocna = TerminKontroler.NadjiDatumUIntervalu(noviPocetak, noviKraj);
+                    pomocna = terminKontroler.NadjiDatumUIntervalu(noviPocetak, noviKraj);
                     foreach (Termin t in TerminKontroler.NadjiSlobodneTermineLekara(l.idZaposlenog,pomocna))
                     {
                         nasao = false;

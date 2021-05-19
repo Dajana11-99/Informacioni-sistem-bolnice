@@ -8,6 +8,7 @@ using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
+using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.ViewModel;
 
 namespace Kontroler
@@ -18,41 +19,49 @@ namespace Kontroler
         {
             return TerminServis.ProveriMogucnostPomeranjaDatum(dat);
         }
-        public static List<Termin> NadjiVremeTermina(Termin izabraniTermin)
+        public  List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
-            return TerminServis.NadjiVremeTermina(izabraniTermin);
+            return terminiServis.NadjiVremeTermina(izabraniTermin);
         }
         public static List<Termin> NadjiSlobodneTermineLekara(String idZaposlenog, List<Termin> datumiUIntervalu)
         {
             return TerminServis.NadjiSlobodneTermineLekara(idZaposlenog, datumiUIntervalu);
         }
-        public static List<Termin> NadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
+       public  List<Termin> NadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
         {
-            return TerminServis.NadjiDatumUIntervalu(pocetak, kraj);
+            return terminiServis.NadjiDatumUIntervalu(pocetak, kraj);
         }
-        public static List<Termin> PrikaziSveZakazaneTermine()
+        public  List<Termin> PrikaziSveZakazaneTermine()
         {
-            return TerminServis.PrikaziSveZakazaneTermine();
+            return terminiServis.PrikaziSveZakazaneTermine();
         }
-        public static Termin PretraziSlobodneTerminePoId(String IdTermina)
+        public  Termin PretraziSlobodneTerminePoId(String IdTermina)
         {
-            return TerminServis.PretraziSlobodneTerminePoId(IdTermina);
+            return terminiServis.PretraziSlobodneTerminePoId(IdTermina);
         }
-        public static void ZakaziPregled(Termin t)
+        public bool ZakaziTermin(Termin termin)
         {
-            TerminServis.ZakaziPregled(t);
+            return terminiServis.ZakaziTermin(termin);
         }
-        public static void PomeriPregled(String idTermina)
+        public void OtkaziTermin(String idTermina)
         {
-            TerminServis.PomeriPregled(idTermina);
+            terminiServis.OtkaziTermin(idTermina);
         }
-        public static void OtkaziPregled(String idTermina)
+        public  void ZakaziPregled(Termin t)
         {
-            TerminServis.OtkaziPregled(idTermina);
+            terminiServis.ZakaziPregled(t);
         }
-        public static Termin PretragaZakazanihTerminaPoId(String izabran)
+        public  void PomeriPregled(String idTermina)
         {
-            return TerminServis.PretragaZakazanihTerminaPoId(izabran);
+            terminiServis.PomeriPregled(idTermina);
+        }
+        public  void OtkaziPregled(String idTermina)
+        {
+            terminiServis.OtkaziPregled(idTermina);
+        }
+        public  Termin PretragaZakazanihTerminaPoId(String izabran)
+        {
+            return terminiServis.PretragaZakazanihTerminaPoId(izabran);
         }
         public static bool ProveriMogucnostPomeranjaVreme(String vreme)
         {

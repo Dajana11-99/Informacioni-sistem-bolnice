@@ -26,11 +26,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class OceniBolnicu : Window
     {
        
+        PitanjeKontroler pitanjeKontroler = new PitanjeKontroler();
+        AnketeRepozitorijum anketeRepozitorijum = new AnketeRepozitorijum();
         public OceniBolnicu()
         {
             InitializeComponent();
-           
-          
         }
 
         private void VratiSe_Click(object sender, RoutedEventArgs e)
@@ -40,37 +40,37 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void PosaljiAnketu_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < AnketaServis.pitanjaOBolnici.Count; i++)
+            for (int i = 0; i < pitanjeKontroler.DobaviSvaPitanjaOBolnici().Count; i++)
             {
                 
                     int indexCombo = i + 1;
                     postaviOcenuZaPitanje(((ComboBox)this.FindName("pitanje" + indexCombo)).SelectedIndex, i);
                 
             }
-            AnketeKontroler.DodajAnketu(new Ankete(dodatniKomentar.Text, AnketaServis.pitanjaOBolnici, null, PacijentGlavniProzor.ulogovan,DateTime.Now.Date));
-            AnketeRepozitorijum.UpisiAnkete();
+            anketeRepozitorijum.DodajAnketu(new Ankete(dodatniKomentar.Text, pitanjeKontroler.DobaviSvaPitanjaOBolnici(), null, PacijentGlavniProzor.ulogovan,DateTime.Now.Date));
+         
             this.Close();
         }
-
+      
         private void postaviOcenuZaPitanje(int indexCombo, int indexPitanje)
         {
             switch(indexCombo)
             {
 
                 case 0:
-                    AnketaServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaAnkete.jedan;
+                    pitanjeKontroler.DobaviSvaPitanjaOBolnici()[indexPitanje].Ocena = OcenaAnkete.jedan;
                     break;
                 case 1:
-                    AnketaServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaAnkete.dva;
+                    pitanjeKontroler.DobaviSvaPitanjaOBolnici()[indexPitanje].Ocena = OcenaAnkete.dva;
                     break;
                 case 2:
-                    AnketaServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaAnkete.tri;
+                    pitanjeKontroler.DobaviSvaPitanjaOBolnici()[indexPitanje].Ocena = OcenaAnkete.tri;
                     break;
                 case 3:
-                    AnketaServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaAnkete.cetiri;
+                    pitanjeKontroler.DobaviSvaPitanjaOBolnici()[indexPitanje].Ocena = OcenaAnkete.cetiri;
                     break;
                 case 4:
-                    AnketaServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaAnkete.pet;
+                    pitanjeKontroler.DobaviSvaPitanjaOBolnici()[indexPitanje].Ocena = OcenaAnkete.pet;
                     break;
             }
 

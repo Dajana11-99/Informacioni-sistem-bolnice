@@ -27,6 +27,7 @@ namespace ZdravoKorporacija
         public static ObservableCollection<Termin> TerminiLekara { get; set; }
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
+        TerminKontroler terminKontroler = new TerminKontroler();
         public Lekar Ulogovan = null;
         public LekarKontroler lekarKontroler = new LekarKontroler();
         public LekarWindow(String korisnickoIme)
@@ -39,7 +40,7 @@ namespace ZdravoKorporacija
         }
         private void PrikaziTermineUlogovanogLekara()
         {
-            foreach (Termin termin in TerminKontroler.PrikaziSveZakazaneTermine())
+            foreach (Termin termin in terminKontroler.PrikaziSveZakazaneTermine())
             {
                 if (termin.Lekar.CeloIme.Equals(Ulogovan.CeloIme))
                     TerminiLekara.Add(termin);
@@ -102,7 +103,7 @@ namespace ZdravoKorporacija
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            TerminRepozitorijum.UpisiZakazaneTermine();
+           // TerminRepozitorijum.UpisiZakazaneTermine();
             LekoviRepozitorijum.upisiLekove();
         }
 

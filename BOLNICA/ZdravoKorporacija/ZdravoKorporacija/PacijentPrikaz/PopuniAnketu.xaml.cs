@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +25,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
     {
        
         public static Termin izabraniZaAnketu;
+     
+            AnketeKontroler anketeKontroler = new AnketeKontroler();
         public PopuniAnketu(Termin izabraniTermin)
         {
             InitializeComponent();
@@ -37,23 +40,21 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void PosaljiAnketu_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < AnketaServis.pitanjaOPregledu.Count; i++)
+            for (int i = 0; i < pitanjeKontroler.DobaviSvaPitanjaOPregledu().Count; i++)
             {
                     int indexCombo = i + 1;
                     postaviOcenuZaPitanje(((ComboBox)grid.FindName("pitanje" + indexCombo)).SelectedIndex, i);
             }
             izabraniZaAnketu.OcenjenTermin = true;
-
-            AnketeKontroler.DodajAnketu(new Ankete(dodatniKomentar.Text, AnketaServis.pitanjaOPregledu, izabraniZaAnketu, PacijentGlavniProzor.ulogovan)); 
+            
+            anketeKontroler.DodajAnketu(new Ankete(dodatniKomentar.Text, pitanjeKontroler.DobaviSvaPitanjaOPregledu(), izabraniZaAnketu, PacijentGlavniProzor.ulogovan)); 
 
             OsveziPrikazAnketa();
             this.Close();
         }
-
-        private static void OsveziPrikazAnketa()
-        { 
-            AnketeRepozitorijum.UpisiAnkete();
-
+      
+        private  void OsveziPrikazAnketa()
+        {
             PrikazAnketa.Ankete.Remove(izabraniZaAnketu);
 
         }
@@ -65,22 +66,23 @@ namespace ZdravoKorporacija.PacijentPrikaz
             {
 
                 case 0:
-                    AnketaServis.pitanjaOPregledu[indexPitanje].Ocena = OcenaAnkete.jedan;
+                    pitanjeKontroler.DobaviSvaPitanjaOPregledu()[indexPitanje].Ocena = OcenaAnkete.jedan;
                     break;
                 case 1:
-                    AnketaServis.pitanjaOPregledu[indexPitanje].Ocena = OcenaAnkete.dva;
+                    pitanjeKontroler.DobaviSvaPitanjaOPregledu()[indexPitanje].Ocena = OcenaAnkete.dva;
                     break;
                 case 2:
-                    AnketaServis.pitanjaOPregledu[indexPitanje].Ocena = OcenaAnkete.tri;
+                    pitanjeKontroler.DobaviSvaPitanjaOPregledu()[indexPitanje].Ocena = OcenaAnkete.tri;
                     break;
                 case 3:
-                    AnketaServis.pitanjaOPregledu[indexPitanje].Ocena = OcenaAnkete.cetiri;
+                    pitanjeKontroler.DobaviSvaPitanjaOPregledu()[indexPitanje].Ocena = OcenaAnkete.cetiri;
                     break;
                 case 4:
-                    AnketaServis.pitanjaOPregledu[indexPitanje].Ocena = OcenaAnkete.pet;
+                    pitanjeKontroler.DobaviSvaPitanjaOPregledu()[indexPitanje].Ocena = OcenaAnkete.pet;
                     break;
             }
 
         }
+        PitanjeKontroler pitanjeKontroler = new PitanjeKontroler();
     }
 }

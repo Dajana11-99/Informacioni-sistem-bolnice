@@ -21,10 +21,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class PotvrdiPomeranje : Window
     {
         public Termin Termin = null;
+        TerminKontroler terminKontroler = new TerminKontroler();
         public PotvrdiPomeranje(Termin izabrani)
         {
             InitializeComponent();
-            Termin= TerminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
+            Termin= terminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
             PodesavanjePrikaza(Termin);
         }
 
@@ -39,7 +40,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void potvrdiIzmenu_Click(object sender, RoutedEventArgs e)
         {
-            TerminKontroler.PomeriPregled(Termin.IdTermina);
+            terminKontroler.PomeriPregled(Termin.IdTermina);
             if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
                 MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
             this.Close();

@@ -23,10 +23,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class PotvrdiZakazivanje : Window
     {
         public Termin Termin = null;
+        TerminKontroler terminKontroler = new TerminKontroler();
         public PotvrdiZakazivanje(Termin izabrani)
         {
             InitializeComponent();
-            Termin t = TerminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
+            Termin t = terminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
             PodesavanjePrikaza(t);
         }
 
@@ -40,9 +41,9 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void potvrdiZakazivanje_Click(object sender, RoutedEventArgs e)
         {
-            Termin t = TerminKontroler.PretraziSlobodneTerminePoId(Termin.IdTermina);
+            Termin t = terminKontroler.PretraziSlobodneTerminePoId(Termin.IdTermina);
             t.Pacijent = NaloziPacijenataKontroler.PretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
-            TerminKontroler.ZakaziPregled(t);
+            terminKontroler.ZakaziPregled(t);
             this.Close();
         }
 

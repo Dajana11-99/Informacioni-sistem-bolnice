@@ -1,4 +1,5 @@
 ﻿
+using Kontroler;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace ZdravoKorporacija
     {
 
         String id = null;
+        TerminKontroler terminKontroler = new TerminKontroler();
         
 
         public OtkazivanjeTerminaLekara(string idTermina)
@@ -39,7 +41,7 @@ namespace ZdravoKorporacija
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            TerminServis.OtkaziTermin(id);
+            terminKontroler.OtkaziTermin(id);
             this.Close();
         }
     }

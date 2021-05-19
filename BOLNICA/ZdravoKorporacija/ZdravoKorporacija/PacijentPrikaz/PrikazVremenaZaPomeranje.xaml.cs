@@ -22,12 +22,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
     {
 
         public static ObservableCollection<Termin> VremenaTerminaPomeranje { get; set; }
+        TerminKontroler terminKontroler = new TerminKontroler();
         public PrikazVremenaZaPomeranje(Termin termin)
         {
             InitializeComponent();
             VremenaTerminaPomeranje = new ObservableCollection<Termin>();
 
-            foreach (Termin t in TerminKontroler.NadjiVremeTermina(termin))
+            foreach (Termin t in terminKontroler.NadjiVremeTermina(termin))
             {
                 VremenaTerminaPomeranje.Add(t);
             }

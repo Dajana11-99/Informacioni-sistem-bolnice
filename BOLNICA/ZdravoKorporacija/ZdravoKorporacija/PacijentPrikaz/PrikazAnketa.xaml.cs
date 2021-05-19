@@ -26,12 +26,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class PrikazAnketa : UserControl
     {
         public static ObservableCollection<Termin> Ankete { get; set; }
+        TerminKontroler terminKontroler = new TerminKontroler();
         public PrikazAnketa()
         {
             InitializeComponent();
             this.DataContext = this;
             Ankete = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminKontroler.PrikaziSveZakazaneTermine())
+            foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
             {
                 if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                 {
@@ -56,7 +57,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
-            if (!AnketeKontroler.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovan))
+            if (!anketeKontroler.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovan))
             {
                 MessageBox.Show("Već ste ocenili bolnicu!");
                 return;
@@ -66,5 +67,6 @@ namespace ZdravoKorporacija.PacijentPrikaz
             oceni.Show();
 
         }
+        AnketeKontroler anketeKontroler = new AnketeKontroler();
     }
 }

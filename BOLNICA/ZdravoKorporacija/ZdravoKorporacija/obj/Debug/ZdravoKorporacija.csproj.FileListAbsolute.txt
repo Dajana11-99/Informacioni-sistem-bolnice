@@ -734,3 +734,25 @@ C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazZalbi.g.cs
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazZalbi.baml
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csprojAssemblyReference.cache
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazZalbi.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PrikazZalbi.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\grpc_csharp_ext.x86.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\grpc_csharp_ext.x64.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\libgrpc_csharp_ext.x64.so
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\libgrpc_csharp_ext.x64.dylib
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.Api.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Buffers.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Memory.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.pdb
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.Api.pdb
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.Api.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Buffers.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Memory.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija_Content.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CopyComplete

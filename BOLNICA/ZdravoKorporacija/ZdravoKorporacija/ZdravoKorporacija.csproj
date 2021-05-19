@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +37,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.2.37.1\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.Api.2.37.1\lib\net45\Grpc.Core.Api.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -121,6 +142,7 @@
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
     <Compile Include="Kontroler\OpremaProstorijaKontroler.cs" />
+    <Compile Include="Kontroler\PitanjeKontroler.cs" />
     <Compile Include="Kontroler\SalaKontroler.cs" />
     <Compile Include="Kontroler\StatickaOpremaKontroler.cs" />
     <Compile Include="Kontroler\StatickiZahteviKontroler.cs" />
@@ -281,12 +303,14 @@
     <Compile Include="Repozitorijum\LekoviRepozitorijum.cs" />
     <Compile Include="Repozitorijum\LekRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\PitanjeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZalbaRepozitorijum.cs" />
     <Compile Include="Servis\AnketaServis.cs" />
     <Compile Include="Servis\LekarServis.cs" />
     <Compile Include="Servis\LekServis.cs" />
     <Compile Include="Servis\ObavestenjaServis.cs" />
+    <Compile Include="Servis\PitanjeServis.cs" />
     <Compile Include="Servis\RenoviranjeServis.cs" />
     <Compile Include="Servis\RukovanjeDinamickomOpremomServis.cs" />
     <Compile Include="Servis\RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.cs" />
@@ -671,4 +695,11 @@
     <Resource Include="sastojci.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets'))" />
+  </Target>
 </Project>

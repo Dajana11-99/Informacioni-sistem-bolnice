@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Serialization;
+using Kontroler;
 using Model;
 using Servis;
 using ZdravoKorporacija.Kontroler;
@@ -19,6 +20,7 @@ namespace ZdravoKorporacija
         public List<Pacijent> Pacijenti { get; set; }
         public List<Lekar> Lekari { get; set; }
         public LekarKontroler lekarKontroler = new LekarKontroler();
+        TerminKontroler terminKontroler = new TerminKontroler();
 
         public ZakazivanjeTerminaLekara()
         {
@@ -79,7 +81,7 @@ namespace ZdravoKorporacija
             bool hitno = (bool)checkBoxHitno.IsChecked;
             Termin t = new Termin(id, tipP, vr, predvidjenoVreme, (DateTime)datePickerZakazivanjeTermina.SelectedDate, s, p, l, hitno);
 
-            bool uspesno = TerminServis.ZakaziTermin(t);
+            bool uspesno = terminKontroler.ZakaziTermin(t);
             if (!uspesno)
             {
                 MessageBox.Show("Neuspesno zakzivanje, sala se tada renovira");

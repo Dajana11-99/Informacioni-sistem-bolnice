@@ -22,6 +22,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
     {
         public static Pacijent ulogovan = null;
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
+        TerminKontroler terminKontroler = new TerminKontroler();
+        TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
         public PacijentGlavniProzor(String id)
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 }
 
             }
+            //MessageBox.Show(terminRepozitorijum.PretraziSlobodneTerminePoId("2").IdTermina);
             
         }
 
@@ -114,9 +117,6 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void odjava_Click(object sender, RoutedEventArgs e)
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            lekarRepozitorijum.UpisiLekare();
-            TerminRepozitorijum.UpisiSlobodneTermine();
-            TerminRepozitorijum.UpisiZakazaneTermine();
             ObavestenjaRepozitorijum.Sacuvaj();
             ProzorLogovanje log = new ProzorLogovanje();
             log.Show();
@@ -126,9 +126,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            lekarRepozitorijum.UpisiLekare();
-            TerminRepozitorijum.UpisiSlobodneTermine();
-            TerminRepozitorijum.UpisiZakazaneTermine();
+            //terminRepozitorijum.UpisiSlobodneTermine(terminRepozitorijum.inicijalizujSlobodneTermine());
             ObavestenjaRepozitorijum.Sacuvaj();
             NaloziPacijenataRepozitorijum.UpisiPacijente();
 

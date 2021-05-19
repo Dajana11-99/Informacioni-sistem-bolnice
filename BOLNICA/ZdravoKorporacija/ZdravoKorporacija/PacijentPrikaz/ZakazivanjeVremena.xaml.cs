@@ -26,11 +26,12 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class ZakazivanjeVremena : Window
     {
         public static ObservableCollection<Termin> VremenaTermina { get; set; }
+        TerminKontroler terminKontroler = new TerminKontroler();
         public ZakazivanjeVremena(Termin izabraniTermin)
         {
             InitializeComponent();
             VremenaTermina = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminKontroler.NadjiVremeTermina(izabraniTermin))
+            foreach (Termin t in terminKontroler.NadjiVremeTermina(izabraniTermin))
             {
                
                     VremenaTermina.Add(t);

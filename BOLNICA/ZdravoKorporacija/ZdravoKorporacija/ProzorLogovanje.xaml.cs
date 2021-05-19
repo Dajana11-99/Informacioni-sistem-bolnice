@@ -33,6 +33,7 @@ namespace ZdravoKorporacija
         List<Lek> Lekovi = new List<Lek>();
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
+      
         public ProzorLogovanje()
         {
             InitializeComponent();
@@ -47,18 +48,7 @@ namespace ZdravoKorporacija
             Lozinka.MaxLength = 15;
 
             SalaRepozitorijum.UcitajSale();
-           lekarRepozitorijum.ucitajLekare();
-            //Dajana
-            TerminRepozitorijum.UcitajZakazaneTermine();
-           
-           //TerminServis.inicijalizuj(); //Inicijalizacija lekara
-          //TerminServis.inicijalizujSlobodneTermine();
-          TerminRepozitorijum.UcitajSlobodneTermine();
-            AnketaServis.inicijalizujPitanja();
-            AnketaServis.inicijalizujPitanjaOBolnici();
-           //LekarRepozitorijum.Inicijalizuj();
-
-
+          
 
             //////----------------------
             //LekServis.inicijalizujLekove();
@@ -84,16 +74,12 @@ namespace ZdravoKorporacija
            //NaloziPacijenataServis.inic();
 
             NaloziPacijenataRepozitorijum.UcitajPacijente();
+  
 
-           // ObavestenjaRepozitorijum.Ucitaj();
-           AnketeRepozitorijum.UcitajAnkete();
-
-
-
-
+          
             
         }
-
+        AnketeRepozitorijum anketeRepozitorijum = new AnketeRepozitorijum();
         private void potvrdi_Click(object sender, RoutedEventArgs e)
         {
 
@@ -204,12 +190,8 @@ namespace ZdravoKorporacija
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
             SalaRepozitorijum.UpisiSale();
-            TerminRepozitorijum.UpisiZakazaneTermine();
-            lekarRepozitorijum.UpisiLekare();
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            TerminRepozitorijum.UpisiSlobodneTermine();
             LekRepozitorijum.UpisiLekove();
             LekoviRepozitorijum.upisiLekove();  
         }

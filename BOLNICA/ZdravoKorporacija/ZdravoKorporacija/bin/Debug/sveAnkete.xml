@@ -1,3 +1,514 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfAnkete xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ankete>
+    <DodatniKomentar>xsxsd</DodatniKomentar>
+    <pitanja>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Higijena ordinacije/sobe za preglede</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Ljubaznost osoblja</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Ljubaznost lekara</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Strucnost lekara</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Zadovoljstvo pruženom zdravstvenom uslugom</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Usluge se obavljaju u skladu sa rasporedom termina</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Da li biste preporučili prijateljima ovog lekara</Tekst>
+      </Pitanje>
+    </pitanja>
+    <termin>
+      <Vreme>16:30</Vreme>
+      <TrajanjeTermina>30</TrajanjeTermina>
+      <Datum>2021-05-08T00:00:00</Datum>
+      <TipTermina>Pregled</TipTermina>
+      <IdTermina>2</IdTermina>
+      <Sala>
+        <TipSale>Pregled</TipSale>
+        <Id>a3</Id>
+        <Zauzeta>true</Zauzeta>
+        <sprat>4</sprat>
+        <kvadratura>0</kvadratura>
+        <RasporedjenaStatickaOprema />
+        <RasporedjenaDinamickaOprema />
+      </Sala>
+      <Lekar>
+        <korisnik>
+          <KorisnickoIme>pera.peric</KorisnickoIme>
+          <Sifra>pera.peric</Sifra>
+          <Uloga>Lekar</Uloga>
+          <Nalog>Obican</Nalog>
+        </korisnik>
+        <Ime>Pera</Ime>
+        <Prezime>Peric</Prezime>
+        <Jmbg>2711999105018</Jmbg>
+        <Email>dajanazlokapa@gmail.com</Email>
+        <CeloIme>Pera Peric</CeloIme>
+        <adresaStanovanja>
+          <Broj>2A</Broj>
+          <Ulica>Ljubice Ravasi</Ulica>
+        </adresaStanovanja>
+        <termin />
+        <zahtevUpravniku />
+        <Zauzet>false</Zauzet>
+        <idZaposlenog>L1</idZaposlenog>
+        <Specijalizacija>Ostapraksa</Specijalizacija>
+      </Lekar>
+      <Pacijent>
+        <korisnik>
+          <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+          <Sifra>dajana.zlokapa</Sifra>
+          <Uloga>Lekar</Uloga>
+          <Nalog>Obican</Nalog>
+        </korisnik>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <Jmbg>2711999105018</Jmbg>
+        <Email>dajana.zlokapa@gmail.com</Email>
+        <adresaStanovanja>
+          <Broj>4</Broj>
+          <Ulica>Adresa</Ulica>
+        </adresaStanovanja>
+        <termin />
+        <karton>
+          <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+          <Ime>Dajana</Ime>
+          <Prezime>Zlokapa</Prezime>
+          <ImeRoditelja>Sinisa</ImeRoditelja>
+          <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+          <Pol>Zenski</Pol>
+          <Telefon>064 87956163</Telefon>
+          <BrojKartona>123</BrojKartona>
+          <BracniStatus>Neudata</BracniStatus>
+          <Anamneza>
+            <Simptomi>Bol u grlu.</Simptomi>
+            <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
+          </Anamneza>
+          <recepti>
+            <Recept>
+              <Lek1>
+                <ImeLeka>Paracetamol</ImeLeka>
+                <IdLeka>123</IdLeka>
+                <ListaSastojaka />
+                <ListaZamenaZaLek />
+              </Lek1>
+              <KolicinaTerapije>1</KolicinaTerapije>
+              <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
+              <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+              <obavestiMe>NE</obavestiMe>
+              <idPacijenta>P1</idPacijenta>
+            </Recept>
+            <Recept>
+              <Lek1>
+                <ImeLeka>Septolete</ImeLeka>
+                <IdLeka>12345</IdLeka>
+                <ListaSastojaka />
+                <ListaZamenaZaLek />
+              </Lek1>
+              <KolicinaTerapije>1</KolicinaTerapije>
+              <PocetakTerapije>2021-05-07T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-05-14T00:00:00</KrajTerapije>
+              <PeroidUzimanjaUSatima>6</PeroidUzimanjaUSatima>
+              <obavestiMe>NE</obavestiMe>
+              <idPacijenta>P1</idPacijenta>
+            </Recept>
+          </recepti>
+        </karton>
+        <Maliciozan>false</Maliciozan>
+        <Zloupotrebio>0</Zloupotrebio>
+        <IdPacijenta>P1</IdPacijenta>
+      </Pacijent>
+      <DaLiJeHitno>false</DaLiJeHitno>
+      <OcenjenTermin>true</OcenjenTermin>
+    </termin>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <karton>
+        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <ImeRoditelja>Sinisa</ImeRoditelja>
+        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+        <Pol>Zenski</Pol>
+        <Telefon>064 87956163</Telefon>
+        <BrojKartona>123</BrojKartona>
+        <BracniStatus>Neudata</BracniStatus>
+        <Anamneza>
+          <Simptomi>Bol u grlu.</Simptomi>
+          <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
+        </Anamneza>
+        <recepti>
+          <Recept>
+            <Lek1>
+              <ImeLeka>Paracetamol</ImeLeka>
+              <IdLeka>123</IdLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+          <Recept>
+            <Lek1>
+              <ImeLeka>Septolete</ImeLeka>
+              <IdLeka>12345</IdLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-07T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-14T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>6</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+        </recepti>
+      </karton>
+      <Maliciozan>false</Maliciozan>
+      <Zloupotrebio>0</Zloupotrebio>
+      <IdPacijenta>P1</IdPacijenta>
+    </Pacijent>
+    <ocenioBolnicu>0001-01-01T00:00:00</ocenioBolnicu>
+  </Ankete>
+  <Ankete>
+    <DodatniKomentar>asasas</DodatniKomentar>
+    <pitanja>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Izgled bolnice</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Higijena bolnice</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Pristupačna lokacija</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Obezbeđen parking</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Aplikacija bolnice</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Celokupna ocena osoblja</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Celokupna ocena bolnice</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Da li biste prijateljima preporučili kliniku Zdravo</Tekst>
+      </Pitanje>
+    </pitanja>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <karton>
+        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <ImeRoditelja>Sinisa</ImeRoditelja>
+        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+        <Pol>Zenski</Pol>
+        <Telefon>064 87956163</Telefon>
+        <BrojKartona>123</BrojKartona>
+        <BracniStatus>Neudata</BracniStatus>
+        <Anamneza>
+          <Simptomi>Bol u grlu.</Simptomi>
+          <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
+        </Anamneza>
+        <recepti>
+          <Recept>
+            <Lek1>
+              <ImeLeka>Paracetamol</ImeLeka>
+              <IdLeka>123</IdLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+          <Recept>
+            <Lek1>
+              <ImeLeka>Septolete</ImeLeka>
+              <IdLeka>12345</IdLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-07T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-14T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>6</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+        </recepti>
+      </karton>
+      <Maliciozan>false</Maliciozan>
+      <Zloupotrebio>0</Zloupotrebio>
+      <IdPacijenta>P1</IdPacijenta>
+    </Pacijent>
+    <ocenioBolnicu>2021-05-19T00:00:00+02:00</ocenioBolnicu>
+  </Ankete>
+  <Ankete>
+    <DodatniKomentar>dsdsds</DodatniKomentar>
+    <pitanja>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Higijena ordinacije/sobe za preglede</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Ljubaznost osoblja</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Ljubaznost lekara</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Strucnost lekara</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Zadovoljstvo pruženom zdravstvenom uslugom</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Usluge se obavljaju u skladu sa rasporedom termina</Tekst>
+      </Pitanje>
+      <Pitanje>
+        <Ocena>pet</Ocena>
+        <Tekst>Da li biste preporučili prijateljima ovog lekara</Tekst>
+      </Pitanje>
+    </pitanja>
+    <termin>
+      <Vreme>16:30</Vreme>
+      <TrajanjeTermina>30</TrajanjeTermina>
+      <Datum>2021-04-28T00:00:00</Datum>
+      <TipTermina>Pregled</TipTermina>
+      <IdTermina>4</IdTermina>
+      <Sala>
+        <TipSale>Pregled</TipSale>
+        <Id>a3</Id>
+        <Zauzeta>true</Zauzeta>
+        <sprat>4</sprat>
+        <kvadratura>0</kvadratura>
+        <RasporedjenaStatickaOprema />
+        <RasporedjenaDinamickaOprema />
+      </Sala>
+      <Lekar>
+        <korisnik>
+          <KorisnickoIme>pera.peric</KorisnickoIme>
+          <Sifra>pera.peric</Sifra>
+          <Uloga>Lekar</Uloga>
+          <Nalog>Obican</Nalog>
+        </korisnik>
+        <Ime>Pera</Ime>
+        <Prezime>Peric</Prezime>
+        <Jmbg>2711999105018</Jmbg>
+        <Email>dajanazlokapa@gmail.com</Email>
+        <CeloIme>Pera Peric</CeloIme>
+        <adresaStanovanja>
+          <Broj>2A</Broj>
+          <Ulica>Ljubice Ravasi</Ulica>
+        </adresaStanovanja>
+        <termin />
+        <zahtevUpravniku />
+        <Zauzet>false</Zauzet>
+        <idZaposlenog>L1</idZaposlenog>
+        <Specijalizacija>Ostapraksa</Specijalizacija>
+      </Lekar>
+      <Pacijent>
+        <korisnik>
+          <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+          <Sifra>dajana.zlokapa</Sifra>
+          <Uloga>Lekar</Uloga>
+          <Nalog>Obican</Nalog>
+        </korisnik>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <Jmbg>2711999105018</Jmbg>
+        <Email>dajana.zlokapa@gmail.com</Email>
+        <adresaStanovanja>
+          <Broj>4</Broj>
+          <Ulica>Adresa</Ulica>
+        </adresaStanovanja>
+        <termin />
+        <karton>
+          <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+          <Ime>Dajana</Ime>
+          <Prezime>Zlokapa</Prezime>
+          <ImeRoditelja>Sinisa</ImeRoditelja>
+          <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+          <Pol>Zenski</Pol>
+          <Telefon>064 87956163</Telefon>
+          <BrojKartona>123</BrojKartona>
+          <BracniStatus>Neudata</BracniStatus>
+          <Anamneza>
+            <Simptomi>Bol u grlu.</Simptomi>
+            <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
+          </Anamneza>
+          <recepti>
+            <Recept>
+              <Lek1>
+                <ImeLeka>Paracetamol</ImeLeka>
+                <IdLeka>123</IdLeka>
+                <ListaSastojaka />
+                <ListaZamenaZaLek />
+              </Lek1>
+              <KolicinaTerapije>1</KolicinaTerapije>
+              <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
+              <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+              <obavestiMe>NE</obavestiMe>
+              <idPacijenta>P1</idPacijenta>
+            </Recept>
+            <Recept>
+              <Lek1>
+                <ImeLeka>Septolete</ImeLeka>
+                <IdLeka>12345</IdLeka>
+                <ListaSastojaka />
+                <ListaZamenaZaLek />
+              </Lek1>
+              <KolicinaTerapije>1</KolicinaTerapije>
+              <PocetakTerapije>2021-05-07T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-05-14T00:00:00</KrajTerapije>
+              <PeroidUzimanjaUSatima>6</PeroidUzimanjaUSatima>
+              <obavestiMe>NE</obavestiMe>
+              <idPacijenta>P1</idPacijenta>
+            </Recept>
+          </recepti>
+        </karton>
+        <Maliciozan>false</Maliciozan>
+        <Zloupotrebio>0</Zloupotrebio>
+        <IdPacijenta>P1</IdPacijenta>
+      </Pacijent>
+      <DaLiJeHitno>false</DaLiJeHitno>
+      <OcenjenTermin>true</OcenjenTermin>
+    </termin>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Broj>4</Broj>
+        <Ulica>Adresa</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <karton>
+        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+        <Ime>Dajana</Ime>
+        <Prezime>Zlokapa</Prezime>
+        <ImeRoditelja>Sinisa</ImeRoditelja>
+        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+        <Pol>Zenski</Pol>
+        <Telefon>064 87956163</Telefon>
+        <BrojKartona>123</BrojKartona>
+        <BracniStatus>Neudata</BracniStatus>
+        <Anamneza>
+          <Simptomi>Bol u grlu.</Simptomi>
+          <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
+        </Anamneza>
+        <recepti>
+          <Recept>
+            <Lek1>
+              <ImeLeka>Paracetamol</ImeLeka>
+              <IdLeka>123</IdLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+          <Recept>
+            <Lek1>
+              <ImeLeka>Septolete</ImeLeka>
+              <IdLeka>12345</IdLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-07T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-14T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>6</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+        </recepti>
+      </karton>
+      <Maliciozan>false</Maliciozan>
+      <Zloupotrebio>0</Zloupotrebio>
+      <IdPacijenta>P1</IdPacijenta>
+    </Pacijent>
+    <ocenioBolnicu>0001-01-01T00:00:00</ocenioBolnicu>
+  </Ankete>
 </ArrayOfAnkete>

@@ -20,12 +20,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class IstorijaPregleda : Window
     {
         public static ObservableCollection<Termin> TerminiPacijenta { get; set; }
+        TerminKontroler terminKontroler = new TerminKontroler();
         public IstorijaPregleda()
         {
             InitializeComponent();
             this.DataContext = this;
             TerminiPacijenta = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminKontroler.PrikaziSveZakazaneTermine())
+            foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
             {
                 if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                 {

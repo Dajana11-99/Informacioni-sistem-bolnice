@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPitanje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Izgled bolnice</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Higijena bolnice</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Pristupačna lokacija</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Obezbeđen parking</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Aplikacija bolnice</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Celokupna ocena osoblja</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Celokupna ocena bolnice</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Da li biste prijateljima preporučili kliniku Zdravo</Tekst>
+  </Pitanje>
+</ArrayOfPitanje>

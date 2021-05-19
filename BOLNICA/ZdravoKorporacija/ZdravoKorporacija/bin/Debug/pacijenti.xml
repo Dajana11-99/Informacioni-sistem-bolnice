@@ -134,7 +134,7 @@
       </recepti>
     </karton>
     <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>2</Zloupotrebio>
+    <Zloupotrebio>0</Zloupotrebio>
     <IdPacijenta>P1</IdPacijenta>
   </Pacijent>
 </ArrayOfPacijent>

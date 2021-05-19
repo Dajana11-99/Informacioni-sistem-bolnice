@@ -25,6 +25,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
     {
         public static List<Termin> datumiZaIzmenu = new List<Termin>();
         public static Termin Termin = null;
+        TerminKontroler terminKontroler = new TerminKontroler();
         public IzmenaTermina(Termin termin)
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             
             if (dostupanDatum)
             {
-                bool dostupnoVreme = TerminKontroler.ProveriMogucnostPomeranjaVreme(TerminServis.PretragaZakazanihTerminaPoId(Termin.IdTermina).Vreme);
+                bool dostupnoVreme = TerminKontroler.ProveriMogucnostPomeranjaVreme(terminKontroler.PretragaZakazanihTerminaPoId(Termin.IdTermina).Vreme);
              
                 if (!dostupnoVreme)
                 {
@@ -56,10 +57,10 @@ namespace ZdravoKorporacija.PacijentPrikaz
                 }
             }
 
-            Termin termin = TerminKontroler.PretragaZakazanihTerminaPoId(Termin.IdTermina);
+            Termin termin = terminKontroler.PretragaZakazanihTerminaPoId(Termin.IdTermina);
             List<Termin> datumiIntervala = new List<Termin>();
             datumiZaIzmenu.Clear();
-            datumiIntervala = TerminKontroler.NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
+            datumiIntervala = terminKontroler.NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
            UkloniDupleDatume(TerminKontroler.NadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog, datumiIntervala));
             
             if (datumiZaIzmenu.Count == 0)
