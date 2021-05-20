@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.Servis;
@@ -28,24 +30,25 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class Terapija : UserControl
     {
         public static Timer timer;
-        public static ObservableCollection<Recept> ReceptiPropisani { get; set; }
+        public  ObservableCollection<Recept> ReceptiPropisani { get; set; }
+        ObavestenjaKontroler obavestenjeKontroler = new ObavestenjaKontroler();
+        TerminKontroler terminKontroler = new TerminKontroler();
         public Terapija()
         {
             InitializeComponent();
             this.DataContext = this;
             
             ReceptiPropisani = new ObservableCollection<Recept>();
-            
-            foreach (Recept r in PacijentGlavniProzor.ulogovan.karton.recepti)
-            {
-                
-                ReceptiPropisani.Add(r);
-            }
-            
+
+             foreach (Recept r in PacijentGlavniProzor.ulogovan.karton.recepti)
+              {
+                  ReceptiPropisani.Add(r);
+              }
+                    
 
         }
 
-        public static void schedule_Timer()
+        public  void schedule_Timer()
         {
             if (DateTime.Compare(DateTime.Now.Date, r.KrajTerapije.Date) == 0)
                 kraj();
@@ -62,10 +65,10 @@ namespace ZdravoKorporacija.PacijentPrikaz
            "\nKoličina u sledećoj dozi: " + r.KolicinaTerapije + ".";
         }
 
-        public static void timer_Elapsed(object sender, ElapsedEventArgs e)
+        public  void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             Obavestenja o = new Obavestenja(Guid.NewGuid().ToString(), "Terapija", Sadrzaj(), DateTime.Now, PacijentGlavniProzor.ulogovan.IdPacijenta);
-            ObavestenjaServis.DodajObavestenjePacijentu(o);
+               obavestenjeKontroler.DodajObavestenjePacijentu(o);
             timer.Stop();
             schedule_Timer();
         }

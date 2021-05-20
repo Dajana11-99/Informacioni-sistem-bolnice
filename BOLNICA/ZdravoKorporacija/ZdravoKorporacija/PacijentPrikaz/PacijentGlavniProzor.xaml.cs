@@ -27,15 +27,17 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public PacijentGlavniProzor(String id)
         {
             InitializeComponent();
-            ObavestenjaRepozitorijum.Ucitaj();
+         
+            NaloziPacijenataRepozitorijum.UcitajPacijente();
             ulogovan = NaloziPacijenataKontroler.PretraziPoKorisnickom(id);
             imePacijenta.Content = ulogovan.Ime+" "+ulogovan.Prezime;
-            foreach(Recept rec in ulogovan.karton.recepti)
+            Terapija terapija = new Terapija();
+            foreach (Recept rec in ulogovan.karton.recepti)
             {
                 if (rec.obavestiMe.Equals("DA"))
                 {
                     Terapija.r = rec;
-                    Terapija.schedule_Timer();
+                    terapija.schedule_Timer();
                 }
 
             }
@@ -117,7 +119,6 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void odjava_Click(object sender, RoutedEventArgs e)
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-            ObavestenjaRepozitorijum.Sacuvaj();
             ProzorLogovanje log = new ProzorLogovanje();
             log.Show();
             this.Close();
@@ -127,7 +128,6 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //terminRepozitorijum.UpisiSlobodneTermine(terminRepozitorijum.inicijalizujSlobodneTermine());
-            ObavestenjaRepozitorijum.Sacuvaj();
             NaloziPacijenataRepozitorijum.UpisiPacijente();
 
 

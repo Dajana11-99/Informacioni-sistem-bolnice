@@ -13,6 +13,10 @@ namespace Servis
 { 
     public class TerminServis
     {
+        public List<Termin> DobaviSveZakazaneTermine()
+        {
+            return terminRepozitorijum.DobaviZakazaneTermine();
+        }
         public  List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
             List<Termin> vremeDatumaSlobodnogTermina = new List<Termin>();

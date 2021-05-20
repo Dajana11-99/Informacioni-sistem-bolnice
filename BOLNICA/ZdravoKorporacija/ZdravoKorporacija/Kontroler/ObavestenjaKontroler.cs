@@ -10,11 +10,23 @@ namespace ZdravoKorporacija.Kontroler
 {
    public class ObavestenjaKontroler
     {
-        public static List<Obavestenja> svaObavestenja()
+        ObavestenjaServis obavestenjaServis = new ObavestenjaServis();
+        public void DodajObavestenjePacijentu(Obavestenja obavestenje)
         {
-            return ObavestenjaServis.SvaObavestenja();
+            obavestenjaServis.DodajObavestenjePacijentu(obavestenje);
         }
-
+        public Obavestenja PretraziPoId(String idObavestenja)
+        {
+            return obavestenjaServis.PretraziPoId(idObavestenja);
+        }
+        public List<Obavestenja> DobaviSvaObavestenja()
+        {
+            return obavestenjaServis.DobaviSvaObavestenja();
+        }
+        public List<Obavestenja> PretraziObavestenjaPoPacijentu(String idPacijenta)
+        {
+            return obavestenjaServis.PretraziObavestenjaPoPacijentu(idPacijenta);
+        }
 
 
     }

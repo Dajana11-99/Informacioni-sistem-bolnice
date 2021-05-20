@@ -15,6 +15,10 @@ namespace Kontroler
 {
    public class TerminKontroler
    {
+        public List<Termin> DobaviSveZakazaneTermine()
+        {
+            return terminiServis.DobaviSveZakazaneTermine();
+        }
         public static bool ProveriMogucnostPomeranjaDatum(DateTime dat)
         {
             return TerminServis.ProveriMogucnostPomeranjaDatum(dat);

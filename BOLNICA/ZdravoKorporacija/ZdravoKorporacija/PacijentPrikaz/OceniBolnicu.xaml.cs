@@ -28,6 +28,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
        
         PitanjeKontroler pitanjeKontroler = new PitanjeKontroler();
         AnketeRepozitorijum anketeRepozitorijum = new AnketeRepozitorijum();
+     
         public OceniBolnicu()
         {
             InitializeComponent();

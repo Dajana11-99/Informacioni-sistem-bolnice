@@ -22,11 +22,12 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class PrikazObavestenja : Window
     {
         public static ObservableCollection<Obavestenja> obavestenjaPacijenta { get; set; }
+        ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
         public PrikazObavestenja()
         {
             InitializeComponent();
             obavestenjaPacijenta = new ObservableCollection<Obavestenja>();
-            List<Obavestenja> datumi = ObavestenjaKontroler.svaObavestenja().OrderByDescending(user => user.Datum).ToList();
+            List<Obavestenja> datumi = obavestenjaKontroler.DobaviSvaObavestenja().OrderByDescending(user => user.Datum).ToList();
             PodesavanjePrikaza(datumi);
             obavestenjaPacijentaLista.ItemsSource = obavestenjaPacijenta;
         }

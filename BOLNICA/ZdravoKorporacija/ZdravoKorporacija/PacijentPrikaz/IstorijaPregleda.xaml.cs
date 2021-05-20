@@ -21,6 +21,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
     {
         public static ObservableCollection<Termin> TerminiPacijenta { get; set; }
         TerminKontroler terminKontroler = new TerminKontroler();
+        
         public IstorijaPregleda()
         {
             InitializeComponent();
