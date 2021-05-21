@@ -15,7 +15,8 @@ namespace ZdravoKorporacija.Repozitorijum
    public class AnketeRepozitorijum
     {
         public String sveAnketeFajl = "sveAnkete.xml";
-        
+        TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
+
         private  List<Ankete> DobaviSveAnkete()
         {
             List<Ankete> popunjeneAnkete = new List<Ankete>();
@@ -60,6 +61,6 @@ namespace ZdravoKorporacija.Repozitorijum
             if(anketa.termin!=null)
                 terminRepozitorijum.RefresujZakazaneTermine(anketa.termin);
         }
-        TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
+      
     }
 }

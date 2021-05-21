@@ -10,7 +10,7 @@ using ZdravoKorporacija.ViewModel;
 
 namespace Model
 {
-    public class Termin : INotifyPropertyChanged
+    public class Termin 
 
     {
         public String Vreme
@@ -94,14 +94,6 @@ namespace Model
             DaLiJeHitno = hitno;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name) 
-        { 
-            if(PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
       public Termin() { }
     }
 }

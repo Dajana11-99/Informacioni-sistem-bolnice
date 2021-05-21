@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
@@ -28,24 +29,16 @@ namespace ZdravoKorporacija.PacijentPrikaz
     {
 
         public static Termin TerminZaPomeranje = null;
-        public static ObservableCollection<Termin> TerminiPacijenta { get; set; }
-        TerminKontroler terminKontroler = new TerminKontroler();
+        //public static ObservableCollection<Termin> TerminiPacijenta { get; set; }
+        //TerminKontroler terminKontroler = new TerminKontroler();
+        private RasporedTerminaViewModel rasporedTerminaViewModel;
         public RasporedTermina()
         {
-            
+            rasporedTerminaViewModel = new RasporedTerminaViewModel(PacijentGlavniProzor.ulogovan.IdPacijenta);
             InitializeComponent();
+            this.DataContext = rasporedTerminaViewModel;
 
-            this.DataContext = this;
-            TerminiPacijenta = new ObservableCollection<Termin>();
-            foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
-            {
-                if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
-                {
-                    if(DateTime.Compare(t.Datum.Date,DateTime.Now.Date)>=0)
-                        TerminiPacijenta.Add(t);
-                }
-                 
-            }
+
         }
 
         private void izmenaTermina_Click(object sender, RoutedEventArgs e)
@@ -65,8 +58,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
             IzmenaTermina izmeni = new IzmenaTermina(TerminZaPomeranje);
             izmeni.Show();
         }
-
-        private void OtkazivanjeTermina_Click(object sender, RoutedEventArgs e)
+      
+        private void OtkazivanjeTermina_Click_1(object sender, RoutedEventArgs e)
 
         {
 
@@ -83,12 +76,20 @@ namespace ZdravoKorporacija.PacijentPrikaz
                
                 return;
             }
-            OtkazivanjeTermina otk = new OtkazivanjeTermina(((Termin)TerminiPacijentaa.SelectedItem).IdTermina);
-            otk.Show();
+            //OtkazivanjeTermina otk = new OtkazivanjeTermina(((Termin)TerminiPacijentaa.SelectedItem).IdTermina);
+           // otk.Show();
         }
         private void Izvestaj_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void OtkazivanjeTermina_Click(object sender, RoutedEventArgs e)
+        { 
+            OtkazivanjeTermina otk = new OtkazivanjeTermina((TerminViewModel)TerminiPacijentaa.SelectedItem);
+
+            otk.Show();
+          
         }
     }
 }

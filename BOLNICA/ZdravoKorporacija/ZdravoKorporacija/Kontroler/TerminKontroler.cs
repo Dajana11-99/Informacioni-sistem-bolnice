@@ -61,6 +61,7 @@ namespace Kontroler
         }
         public  void OtkaziPregled(String idTermina)
         {
+
             terminiServis.OtkaziPregled(idTermina);
         }
         public  Termin PretragaZakazanihTerminaPoId(String izabran)
@@ -71,7 +72,21 @@ namespace Kontroler
         {
             return TerminServis.ProveriMogucnostPomeranjaVreme(vreme);
         }
-
+        public List<TerminViewModel> DobaviZakazaneTerminePacijenta(String idPacijenta)
+        {
+            List<TerminViewModel> sviZakazaniTerminiPacijenta = new List<TerminViewModel>();
+          foreach(Termin termin in terminiServis.DobaviZakazaneTerminePacijenta(idPacijenta))
+            {
+                sviZakazaniTerminiPacijenta.Add(KonvertujObjekatUDTO(termin));
+            }
+            return sviZakazaniTerminiPacijenta;
+        }
+        private TerminViewModel KonvertujObjekatUDTO(Termin termin)
+        {
+            TerminDTO terminDTO = new TerminDTO(termin.IdTermina, termin.Datum, termin.Vreme,termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id, termin.TipTermina.ToString());
+            TerminViewModel terminViewModel = new TerminViewModel(terminDTO);
+            return terminViewModel;
+        }
         public void IzmenaTermina(TerminDTO terminDTO) 
         {
             terminiServis.IzmenaTermina(terminDTO);

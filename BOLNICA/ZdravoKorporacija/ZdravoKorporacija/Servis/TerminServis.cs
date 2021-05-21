@@ -94,19 +94,19 @@ namespace Servis
           
         private void ValidacijaTermina(TerminDTO terminDTO, Termin termin)
         {
-            if (!termin.Lekar.idZaposlenog.Equals(terminDTO.GetLekar()))
-                termin.Lekar = lekarRepozitorijum.PretragaLekaraPoID(terminDTO.GetLekar());
-            if (!termin.Datum.Equals(terminDTO.GetDatum()))
-                termin.Datum = terminDTO.GetDatum();
-            if (!termin.Vreme.Equals(terminDTO.GetVreme()))
-                termin.Vreme = terminDTO.GetVreme();
-            if (!termin.TrajanjeTermina.Equals(terminDTO.GetPredvidjenoVreme()))
-                termin.TrajanjeTermina = double.Parse(terminDTO.GetPredvidjenoVreme());
-            if (!termin.Sala.Id.Equals(terminDTO.GetBrOperacioneSale()))
-                termin.Sala.Id = terminDTO.GetBrOperacioneSale();
-            if (!termin.TipTermina.Equals(terminDTO.GetTipTermin()))
+            if (!termin.Lekar.idZaposlenog.Equals(terminDTO.Lekar))
+                termin.Lekar = lekarRepozitorijum.PretragaLekaraPoID(terminDTO.Lekar.idZaposlenog);
+            if (!termin.Datum.Equals(terminDTO.Datum))
+                termin.Datum = terminDTO.Datum;
+            if (!termin.Vreme.Equals(terminDTO.Vreme))
+                termin.Vreme = terminDTO.Vreme;
+            if (!termin.TrajanjeTermina.Equals(terminDTO.PredvidjenoVreme))
+                termin.TrajanjeTermina = double.Parse(terminDTO.PredvidjenoVreme);
+            if (!termin.Sala.Id.Equals(terminDTO.NazivSale))
+                termin.Sala.Id = terminDTO.NazivSale;
+            if (!termin.TipTermina.Equals(terminDTO.TipTermina))
             {
-                if (terminDTO.GetTipTermin().Equals(TipTermina.Operacija))
+                if (terminDTO.TipTermina.Equals(TipTermina.Operacija))
                 {
                     termin.TipTermina = TipTermina.Operacija;
                 }
@@ -119,7 +119,17 @@ namespace Servis
 
         public  List<Termin> PrikaziSveZakazaneTermine()
         {
-           return terminRepozitorijum.PrikaziSveZakazaneTermine();
+            return terminRepozitorijum.DobaviZakazaneTermine();
+        }
+        public List<Termin> DobaviZakazaneTerminePacijenta(String idPacijenta)
+        {
+            List<Termin> terminiPacijenta = new List<Termin>();
+            foreach (Termin t in terminRepozitorijum.DobaviSveZakazaneTerminePacijenta(idPacijenta))
+            {
+                    if (DateTime.Compare(t.Datum.Date, DateTime.Now.Date) >= 0)
+                        terminiPacijenta.Add(t);
+            }
+            return terminiPacijenta;
         }
         public  Termin PretraziSlobodneTerminePoId(String IdTermina)
         {
@@ -136,16 +146,17 @@ namespace Servis
         public  void PomeriPregled(String idTermina)
         {
             terminRepozitorijum.PomeriPregled(idTermina);
+           
         }
         public  void OtkaziPregled(String idTermina)
         {
             terminRepozitorijum.OtkaziPregled(idTermina);
+          
         }
         public   Termin PretragaZakazanihTerminaPoId(String izabran)
         {
             return terminRepozitorijum.PretraziZakazanePoId(izabran);
         }
-
         public void OtkaziTermin(String idTermina)
         {
             terminRepozitorijum.OtkaziTermin(idTermina);

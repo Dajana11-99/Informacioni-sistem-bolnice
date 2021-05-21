@@ -48,16 +48,15 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void karton_Click(object sender, RoutedEventArgs e)
         {
 
-            UserControl usc = null;
             MainPanel.Children.Clear();
-
-            usc = new ZdravstevniKarton();
-            MainPanel.Children.Add(usc);
+            MainPanel.Children.Add(new ZdravstevniKarton());
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
 
+            MainPanel.Children.Clear();
+            MainPanel.Children.Add(new PocetnaStrana());
         }
 
         private void LicniPodaci_Click(object sender, RoutedEventArgs e)

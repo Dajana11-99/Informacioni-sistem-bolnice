@@ -14,17 +14,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
     public partial class OtkazivanjeTermina : Window
     {
-        String izabraniIdTermina = null;
-        TerminKontroler terminKontroler = new TerminKontroler();
-        public OtkazivanjeTermina(String idTermina)
+        
+     
+        public OtkazivanjeTermina(TerminViewModel termin)
         {
+            RasporedTerminaViewModel terminViewModel = new RasporedTerminaViewModel(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme,termin);
+            
+         
             InitializeComponent();
-            izabraniIdTermina = idTermina;
+            this.DataContext = terminViewModel;
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,24 +37,30 @@ namespace ZdravoKorporacija.PacijentPrikaz
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+       private void OtkaziTermin_Click(object sender, RoutedEventArgs e)
         {
-            Termin termin = terminKontroler.PretragaZakazanihTerminaPoId(izabraniIdTermina);
-
-            if (DateTime.Compare(DateTime.Now.Date, termin.Datum.Date) == 0)
-            {
-                MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
-                return;
-            }
-
-            terminKontroler.OtkaziPregled(izabraniIdTermina);
-            if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
-            {
-                MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
-
-                return;
-            }
             this.Close();
+
         }
+
+        /* private void Button_Click_1(object sender, RoutedEventArgs e)
+         {
+             Termin termin = terminKontroler.PretragaZakazanihTerminaPoId(izabraniIdTermina);
+
+             if (DateTime.Compare(DateTime.Now.Date, termin.Datum.Date) == 0)
+             {
+                 MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
+                 return;
+             }
+
+             terminKontroler.OtkaziPregled(izabraniIdTermina);
+             if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
+             {
+                 MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
+
+                 return;
+             }
+             this.Close();
+         }*/
     }
 }
