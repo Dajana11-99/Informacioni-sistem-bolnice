@@ -23,16 +23,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             DataContext = PacijentGlavniProzor.ulogovan;
-            PodesavanjeParametara(PacijentGlavniProzor.ulogovan);
 
         }
-
-        private void PodesavanjeParametara(Pacijent pacijent)
-        {
-            ImePrezime.Content = pacijent.Prezime + "(" + pacijent.karton.ImeRoditelja + ")" + pacijent.Ime;
-            adresa.Content = pacijent.adresaStanovanja.Ulica + "" + pacijent.adresaStanovanja.Broj;
-        }
-
         private void IstorijaPregleda_Click(object sender, RoutedEventArgs e)
         {
             IstorijaPregleda istorija = new IstorijaPregleda();

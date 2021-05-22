@@ -1,5 +1,6 @@
 ﻿using Kontroler;
 using Model;
+using NPOI.Util;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -18,19 +19,22 @@ using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    public partial class OtkazivanjeTermina : Window
+    public partial class OtkazivanjeTermina : Window, ICloseable
     {
-        
-     
         public OtkazivanjeTermina(TerminViewModel termin)
         {
-            RasporedTerminaViewModel terminViewModel = new RasporedTerminaViewModel(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
+            RasporedTerminaViewModel terminViewModel = new RasporedTerminaViewModel(termin);
             InitializeComponent();
             this.DataContext = terminViewModel;
            
         }
 
         private void OdustaniTermin_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

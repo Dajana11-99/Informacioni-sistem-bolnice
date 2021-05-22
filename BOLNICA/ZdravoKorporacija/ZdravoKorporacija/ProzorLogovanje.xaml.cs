@@ -21,12 +21,9 @@ using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija
 {
-    /// <summary>
-    /// Interaction logic for ProzorLogovanje.xaml
-    /// </summary>
     public partial class ProzorLogovanje : Window
     {
-        List<Sekretara> Sekretari = new List<Sekretara>();
+  
         List<Upravnik> Upravnici = new List<Upravnik>();
         List<Lekar> Lekari = new List<Lekar>();
         List<Pacijent> Pacijenti = new List<Pacijent>();
@@ -37,12 +34,11 @@ namespace ZdravoKorporacija
         public ProzorLogovanje()
         {
             InitializeComponent();
-            Sekretari.Add(new Sekretara("S1", "Filip", "Nikolic", "1234567891012", "filip.nikolic@gmail.com", new AdresaStanovanja("Adresa", "1"), new Korisnik("filip.nikolic", "filip.nikolic")));
+           
             Upravnici.Add(new Upravnik("U1", "Mirjana", "Jovanov", "1234567891082", "mirjana.jovanov@gmail.com", new AdresaStanovanja("Adresa", "2"), new Korisnik("mirjana.jovanov", "mirjana.jovanov")));
             Lekari.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa, "Stefan", "Markovic", "1234567899082", "stefan.markovic@gmail.com", new AdresaStanovanja("Adresa", "3"), new Korisnik("stefan.markovic", "stefan.markovic")));
             Lekari.Add(new Lekar("L5", false, Specijalizacija.Kardiolog, "Milan", "Djenic", "1234567899082", "milan.djenic@gmail.com", new AdresaStanovanja("Narodjih Heroja ", "32"), new Korisnik("milan.markovic", "milan.markovic")));
-            //Lekari.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa, "Pera", "Peric", "2711999105018", "dajanazlokapa@gmail.com", new AdresaStanovanja("Ljubice Ravasi", "2A"), new Korisnik("pera.peric", "pera.peric")));
-          //  Pacijenti.Add(new Pacijent("P1", "Dajana", "Zlokapa", "2711999105018", "dajana.zlokapa@gmail.com", new AdresaStanovanja("Adresa", "4"), new Korisnik("dajana.zlokapa", "dajana.zlokapa")));
+        
 
             Lozinka.PasswordChar = '*';
             Lozinka.MaxLength = 15;
@@ -107,24 +103,6 @@ namespace ZdravoKorporacija
                     {
                         UpravnikPocetna up = new UpravnikPocetna();
                         up.Show();
-                        this.Close();
-                        nasao = true;
-                    }
-                    else
-                    {
-                        System.Windows.Forms.MessageBox.Show("Neipravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-            }
-            foreach (Sekretara u in Sekretari)
-            {
-                if (u.korisnik.KorisnickoIme.Equals(korisnickoIme.Text))
-                {
-                    if (u.korisnik.Sifra.Equals(Lozinka.Password))
-                    {
-                        PrikazPacijenata pp = new PrikazPacijenata();
-                        pp.Show();
                         this.Close();
                         nasao = true;
                     }

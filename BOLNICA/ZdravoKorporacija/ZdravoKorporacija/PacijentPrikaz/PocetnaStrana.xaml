@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" ></RowDefinition>
-            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
             <RowDefinition Height="55" ></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -23,9 +23,9 @@
             <Label FontSize="13" >pregled kod željenog lekara opšte prakse, pristupiti informacijama o budućim pregledima,</Label>
             <Label FontSize="13">terapiji ili zdravstvenom kartonu.</Label>
         </StackPanel>
-        <Label Grid.Column="0" Grid.Row="1" Margin="10"  FontSize="20" FontWeight="DemiBold">Kontaktirajte nas</Label>
+        <Label Grid.Column="0" Grid.Row="1" Margin="10 0 0 0"  FontSize="18" FontWeight="DemiBold">Kontaktirajte nas</Label>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-            <Image   Margin="10" Height="30" HorizontalAlignment="Left" Source="/PacijentPrikaz/SlikePacijent/2021-05-21 (3).png" RenderTransformOrigin="0.5,0.5" Width="21" >
+            <Image   Margin="10,-2,0,18.2" HorizontalAlignment="Left" Source="/PacijentPrikaz/SlikePacijent/2021-05-21 (3).png" RenderTransformOrigin="0.5,0.5" Width="19" >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -36,17 +36,17 @@
                 </Image.RenderTransform>
 
             </Image>
-            <Label Margin="10" FontSize="15">021/911-911</Label>
+            <Label Margin="10 0 0 0" FontSize="15">021/911-911</Label>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
-            <Image HorizontalAlignment="Left" Height="20"  Source="/PacijentPrikaz/SlikePacijent/2021-05-21 (4).png" />
-            <Label FontSize="10" Margin="15">ZdravoKorporacija@gmail.com</Label>
+            <Image HorizontalAlignment="Left" Height="18" Margin="0 0 0 25"  Source="/PacijentPrikaz/SlikePacijent/2021-05-21 (4).png" />
+            <Label   FontSize="10" Margin="0,0,0,19.8">ZdravoKorporacija@gmail.com</Label>
 
         </StackPanel>
-        <Label FontSize="18" FontWeight="DemiBold" Margin="10" Grid.Column="0" Grid.Row="2">Lokacija</Label>
+        <Label FontSize="18" FontWeight="DemiBold" Margin="10 0 0 0" Grid.Column="0" Grid.Row="2">Lokacija</Label>
         <StackPanel  Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
-            <Image Height="35" Margin="10"   HorizontalAlignment="Left" Source="/PacijentPrikaz/SlikePacijent/2021-05-21 (6).png" />
-            <Label Margin="10" >Nova 32, Novi Sad</Label>
+            <Image Height="30" Margin="10 0 0 25"   HorizontalAlignment="Left" Source="/PacijentPrikaz/SlikePacijent/2021-05-21 (6).png" />
+            <Label Margin="10 0 0 0" >Nova 32, Novi Sad</Label>
         </StackPanel>
 
 

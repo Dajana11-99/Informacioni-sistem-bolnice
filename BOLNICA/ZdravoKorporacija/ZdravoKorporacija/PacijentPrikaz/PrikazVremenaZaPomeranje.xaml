@@ -9,7 +9,7 @@
     <StackPanel >
         <Label HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="15" >Izaberite datum</Label>
         <Label Name="NaslovTabele"></Label>
-        <ListBox x:Name="slobodnaVremena" SelectionMode="Single" Height="236" Margin="45 10,45,0"   >
+        <ListBox x:Name="slobodnaVremena" SelectionMode="Single" Height="220" Margin="45,10,45.4,0" SelectedItem="{Binding Path=SelektovaniTermin}"  >
 
             <ListBox.ItemTemplate  >
                 <DataTemplate>
@@ -43,16 +43,16 @@
 
 
         </ListBox>
-
+        <Label FontSize="13" Margin="45 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button x:Name="vratiSe" Grid.Column="0" Click="vratiSe_Click"  Margin="45 10 10 10" >Vrati se</Button>
-            <Button x:Name="nastavi" Grid.Column="1" Click="nastavi_Click" Margin="10 10 45 10" >Nastavi</Button>
-            
-            
+            <Button x:Name="vratiSe" Grid.Column="0" Command="{Binding Path=VratiSeKomanda}"   Margin="45 10 10 10" >Vrati se</Button>
+            <Button x:Name="nastavi" Grid.Column="1" Command="{Binding Path=NastaviKomanda}" Margin="10 10 45 10" >Nastavi</Button>
+
+
         </Grid>
 
 

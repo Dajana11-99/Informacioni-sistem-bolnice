@@ -50,16 +50,32 @@
                     <Label Grid.Column="0" Grid.Row="3">Telefon:</Label>
                     <Label Grid.Column="0" Grid.Row="4">Pol:</Label>
                     <Label Grid.Column="0" Grid.Row="5">Bračni status:</Label>
-                    <Label Grid.Column="0" Grid.Row="6">Zaposlenje</Label>
+                    <Label Grid.Column="0" Grid.Row="6" >Zaposlenje</Label>
 
-                    <Label Grid.Column="1" Grid.Row="0" x:Name="ImePrezime" FontWeight="DemiBold">
-                    </Label>
+                    <TextBlock Grid.Column="1" Grid.Row="0" x:Name="ImePrezime" FontWeight="DemiBold" Margin="5 5 0 0">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0}({1}){2}">
+                                <Binding Path="Prezime" />
+                                <Binding Path="karton.ImeRoditelja" />
+                                <Binding Path="Ime" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
                     <Label Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" x:Name="DatumRodjenja" Content="{Binding Path=karton.DatumRodjenja, UpdateSourceTrigger=PropertyChanged}"></Label>
-                    <Label Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" x:Name="adresa" ></Label>
+                    <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" x:Name="adresa" Margin="5 5" >
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="adresaStanovanja.Ulica" />
+                                <Binding Path="adresaStanovanja.Broj" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                     
+
+                    </TextBlock>
                     <Label Grid.Column="1" Grid.Row="3" FontWeight="DemiBold" x:Name="telefon" Content="{ Binding  Path=karton.Telefon, UpdateSourceTrigger=PropertyChanged}"></Label>
                     <Label Grid.Column="1" Grid.Row="4" FontWeight="DemiBold" x:Name="pol" Content="{Binding Path=karton.Pol, UpdateSourceTrigger=PropertyChanged}"></Label>
                     <Label Grid.Column="1" Grid.Row="5" FontWeight="DemiBold" x:Name="bracniStatus" Content="{Binding Path=karton.BracniStatus, UpdateSourceTrigger=PropertyChanged}"></Label>
-                    <Label Grid.Column="1" Grid.Row="6" FontWeight="DemiBold" x:Name="zaposlenje"></Label>
+                    <Label Grid.Column="1" Grid.Row="6" FontWeight="DemiBold" x:Name="zaposlenje" Content="Marteks"></Label>
 
                 </Grid>
             </GroupBox>

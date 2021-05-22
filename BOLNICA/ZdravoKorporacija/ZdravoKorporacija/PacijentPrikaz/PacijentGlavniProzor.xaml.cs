@@ -21,7 +21,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class PacijentGlavniProzor : Window
     {
         private static Grid GlavniSadrzaj;
-        public static Pacijent ulogovan = null;
+        public static  Pacijent ulogovan = null;
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         TerminKontroler terminKontroler = new TerminKontroler();
         TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();

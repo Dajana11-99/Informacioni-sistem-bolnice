@@ -17,9 +17,11 @@ namespace ZdravoKorporacija.ViewModel
 
         public PotvrdiPomeranjeViewModel(TerminViewModel stariTermin, TerminViewModel noviTermin)
         {
+            
             this.stariTermin = stariTermin;
             this.noviTermin = noviTermin;
             pomeriTerminKomanda = new RelayCommand(PomeriPregled);
+            vratiSe = new RelayCommand(VratiSeNazad);
         }
 
         private RelayCommand pomeriTerminKomanda;
@@ -27,6 +29,18 @@ namespace ZdravoKorporacija.ViewModel
         public RelayCommand PomeriTerminKomanda
         {
             get { return pomeriTerminKomanda; }
+        }
+
+        private RelayCommand vratiSe;
+
+        public RelayCommand VratiSe
+        {
+            get { return vratiSe; }
+        }
+        public void VratiSeNazad()
+        {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazVremenaZaPomeranje(stariTermin,noviTermin));
         }
 
         public TerminViewModel NoviTermin

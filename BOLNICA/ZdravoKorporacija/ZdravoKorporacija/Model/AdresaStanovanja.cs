@@ -20,7 +20,7 @@ namespace Model
             }
         }
         public String Ulica { get; set; }
-        public String Broj;
+        public String Broj { get; set; }
 
         public Mesto[] mesto;
 

@@ -12,14 +12,12 @@
     <Jmbg>1234567891234</Jmbg>
     <Email>jova@gmail.com</Email>
     <adresaStanovanja>
-      <Broj>23</Broj>
       <Ulica>Koste Pavlovica</Ulica>
+      <Broj>23</Broj>
     </adresaStanovanja>
     <termin />
     <karton>
       <OdeljenjeNaPrijemu>O1</OdeljenjeNaPrijemu>
-      <Ime>Jova</Ime>
-      <Prezime>Jovic</Prezime>
       <ImeRoditelja>Milan</ImeRoditelja>
       <DatumRodjenja>1996-10-03T00:00:00</DatumRodjenja>
       <Pol>Muski</Pol>
@@ -31,6 +29,8 @@
         <IzvestajLekara />
       </Anamneza>
       <recepti />
+      <Prezime>Jovic</Prezime>
+      <Ime>Jova</Ime>
     </karton>
     <Maliciozan>false</Maliciozan>
     <Zloupotrebio>0</Zloupotrebio>
@@ -48,14 +48,12 @@
     <Jmbg>4321432143215</Jmbg>
     <Email>pera@gmail.com</Email>
     <adresaStanovanja>
-      <Broj>24</Broj>
       <Ulica>Veselina Maslese</Ulica>
+      <Broj>24</Broj>
     </adresaStanovanja>
     <termin />
     <karton>
       <OdeljenjeNaPrijemu>O2</OdeljenjeNaPrijemu>
-      <Ime>Pera</Ime>
-      <Prezime>Peric</Prezime>
       <ImeRoditelja>Kosta</ImeRoditelja>
       <DatumRodjenja>2000-07-12T00:00:00</DatumRodjenja>
       <Pol>Muski</Pol>
@@ -67,6 +65,8 @@
         <IzvestajLekara />
       </Anamneza>
       <recepti />
+      <Prezime>Peric</Prezime>
+      <Ime>Pera</Ime>
     </karton>
     <Maliciozan>false</Maliciozan>
     <Zloupotrebio>0</Zloupotrebio>
@@ -84,14 +84,12 @@
     <Jmbg>2711999105018</Jmbg>
     <Email>dajana.zlokapa@gmail.com</Email>
     <adresaStanovanja>
-      <Broj>4</Broj>
       <Ulica>Adresa</Ulica>
+      <Broj>4</Broj>
     </adresaStanovanja>
     <termin />
     <karton>
       <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
-      <Ime>Dajana</Ime>
-      <Prezime>Zlokapa</Prezime>
       <ImeRoditelja>Sinisa</ImeRoditelja>
       <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
       <Pol>Zenski</Pol>
@@ -146,6 +144,8 @@
           <idPacijenta>P1</idPacijenta>
         </Recept>
       </recepti>
+      <Prezime>Zlokapa</Prezime>
+      <Ime>Dajana</Ime>
     </karton>
     <Maliciozan>false</Maliciozan>
     <Zloupotrebio>1</Zloupotrebio>

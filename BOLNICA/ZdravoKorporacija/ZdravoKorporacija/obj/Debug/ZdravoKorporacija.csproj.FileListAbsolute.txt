@@ -758,3 +758,15 @@ C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CopyComplete
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PocetnaStrana.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PocetnaStrana.baml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OOXML.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OOXML.xml
+C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OpenXml4Net.xml

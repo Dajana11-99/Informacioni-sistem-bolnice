@@ -21,7 +21,7 @@ namespace ZdravoKorporacija.Repozitorijum
     {
         public  String zakazaniTerminiFajl = "zakazaniTermini.xml";
         public  String slobodniTerminiFajl = "slobodniTermini.xml";
-        public  int MAXBR_PROMENA = 5;
+    
       /* public  List<Termin> inicijalizujSlobodneTermine()
           {
             List<Termin> slobodniTermini = new List<Termin>();
@@ -204,14 +204,9 @@ namespace ZdravoKorporacija.Repozitorijum
             ObrisiSlobodanTermin(noviTermin);
             ObrisiZakazanTermin(stariTermin);
         }
-        public  void OtkaziPregled(String idTermina)
-        {
-            Termin termin = PretraziZakazanePoId(idTermina);
-            BrisanjePrikazaPosleOtkazivanja(termin);
-         //   ProveriMalicioznostPacijenta(PacijentGlavniProzor.ulogovan);
-        }
+        
 
-        private  void BrisanjePrikazaPosleOtkazivanja(Termin termin)
+        public  void OtkazivanjePregleda(Termin termin)
         {
             ObrisiZakazanTermin(termin);
             termin.Pacijent = null;

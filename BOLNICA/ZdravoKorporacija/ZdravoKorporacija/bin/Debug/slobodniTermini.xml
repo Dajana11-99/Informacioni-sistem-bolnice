@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
     <Vreme>16:30</Vreme>
@@ -241,18 +241,37 @@
     <OcenjenTermin>false</OcenjenTermin>
   </Termin>
   <Termin>
-    <Vreme>16:30</Vreme>
+    <Vreme>19:00</Vreme>
     <TrajanjeTermina>30</TrajanjeTermina>
-    <Datum>2021-06-12T00:00:00</Datum>
+    <Datum>2021-06-11T00:00:00</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>7</IdTermina>
+    <IdTermina>6</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
-      <Id>a3</Id>
-      <Zauzeta>true</Zauzeta>
-      <sprat>4</sprat>
+      <Id>A1</Id>
+      <Zauzeta>false</Zauzeta>
+      <sprat>3</sprat>
       <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
+      <RasporedjenaStatickaOprema>
+        <RasporedjenaStatickaOprema>
+          <Kolicina>100</Kolicina>
+          <statickaOprema>
+            <Id>2</Id>
+            <kolicina>33</kolicina>
+            <naziv>stolica</naziv>
+          </statickaOprema>
+          <RasporedjenaOd>2021-04-13T00:00:00</RasporedjenaOd>
+        </RasporedjenaStatickaOprema>
+        <RasporedjenaStatickaOprema>
+          <Kolicina>10</Kolicina>
+          <statickaOprema>
+            <Id>4</Id>
+            <kolicina>90</kolicina>
+            <naziv>spric</naziv>
+          </statickaOprema>
+          <RasporedjenaOd>2021-04-29T00:00:00</RasporedjenaOd>
+        </RasporedjenaStatickaOprema>
+      </RasporedjenaStatickaOprema>
       <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
@@ -275,6 +294,126 @@
       <zahtevUpravniku />
       <Zauzet>false</Zauzet>
       <idZaposlenog>L2</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+    </Lekar>
+    <DaLiJeHitno>false</DaLiJeHitno>
+    <OcenjenTermin>false</OcenjenTermin>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <TrajanjeTermina>30</TrajanjeTermina>
+    <Datum>2021-06-08T00:00:00</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>2</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>true</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <idZaposlenog>L1</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+    </Lekar>
+    <DaLiJeHitno>false</DaLiJeHitno>
+    <OcenjenTermin>true</OcenjenTermin>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <TrajanjeTermina>30</TrajanjeTermina>
+    <Datum>2021-06-09T00:00:00</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>4</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>true</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <idZaposlenog>L1</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+    </Lekar>
+    <DaLiJeHitno>false</DaLiJeHitno>
+    <OcenjenTermin>true</OcenjenTermin>
+  </Termin>
+  <Termin>
+    <Vreme>16:30</Vreme>
+    <TrajanjeTermina>30</TrajanjeTermina>
+    <Datum>2021-06-10T00:00:00</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>5</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>true</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Broj>2A</Broj>
+        <Ulica>Ljubice Ravasi</Ulica>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <idZaposlenog>L1</idZaposlenog>
       <Specijalizacija>Ostapraksa</Specijalizacija>
     </Lekar>
     <DaLiJeHitno>false</DaLiJeHitno>

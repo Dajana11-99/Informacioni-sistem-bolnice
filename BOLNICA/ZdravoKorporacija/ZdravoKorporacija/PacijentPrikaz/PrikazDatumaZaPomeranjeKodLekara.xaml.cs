@@ -23,17 +23,17 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class PrikazDatumaZaPomeranjeKodLekara :UserControl
     {
         private PrikazDatumaViewModel prikazDatumaViewModel;
-        private TerminViewModel termin;
+       
         public PrikazDatumaZaPomeranjeKodLekara(TerminViewModel terminZaPomernje)
         {
-            termin = terminZaPomernje;
             prikazDatumaViewModel = new PrikazDatumaViewModel(terminZaPomernje);
             InitializeComponent();
             this.slobodniDatumi.ItemsSource = prikazDatumaViewModel.SlobodniDatumi;
+            this.DataContext = prikazDatumaViewModel;
            
         }
 
-        private void vratiSe_Click(object sender, RoutedEventArgs e)
+       /* private void vratiSe_Click(object sender, RoutedEventArgs e)
         {
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(termin));
@@ -52,5 +52,6 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
 
         }
+       */
     }
 }

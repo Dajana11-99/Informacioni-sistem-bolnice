@@ -59,7 +59,7 @@ namespace Servis
             sviSlobodniDatumi=NadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog, NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2)));
             return ObrisiDatumeIzProslosti(sviSlobodniDatumi);
         }
-        public  List<Termin> SortirajTerminePoDatumu(List<Termin> nesortiraniDatumi)
+        private  List<Termin> SortirajTerminePoDatumu(List<Termin> nesortiraniDatumi)
         {
             return nesortiraniDatumi.OrderBy(user => user.Datum).ToList();
         }
@@ -121,6 +121,7 @@ namespace Servis
           
         private void ValidacijaTermina(TerminDTO terminDTO, Termin termin)
         {
+          
             if (!termin.Lekar.idZaposlenog.Equals(terminDTO.Lekar))
                 termin.Lekar = lekarRepozitorijum.PretragaLekaraPoID(terminDTO.Lekar.idZaposlenog);
             if (!termin.Datum.Equals(terminDTO.Datum))
@@ -166,9 +167,9 @@ namespace Servis
         {
             return terminRepozitorijum.ZakaziTermin(termin);
         }
-        public  void ZakaziPregled(Termin t)
+        public  void ZakaziPregled(Termin termin)
         {
-            terminRepozitorijum.ZakaziPregled(t);
+            terminRepozitorijum.ZakaziPregled(termin);
         }
         public  void PomeriPregled(Termin stariTermin, Termin noviTermin)
         {
@@ -188,12 +189,13 @@ namespace Servis
             NaloziPacijenataRepozitorijum.UpisiPacijente();
             if (pacijent.Zloupotrebio > MAX_BRPROMENA)
                 pacijent.Maliciozan = true;
-
         }
-        public  void OtkaziPregled(String idTermina)
+        public  void OtkaziPregled(Termin termin)
         {
-            terminRepozitorijum.OtkaziPregled(idTermina);
-          
+            Console.WriteLine(termin.Pacijent.Prezime + "ggggggggggggggggggggggg");
+            ProveriMalicioznostPacijenta(termin.Pacijent);
+            terminRepozitorijum.OtkazivanjePregleda(termin);
+            
         }
         public   Termin PretragaZakazanihTerminaPoId(String izabran)
         {
@@ -203,7 +205,7 @@ namespace Servis
         {
             terminRepozitorijum.OtkaziTermin(idTermina);
         }
-        public TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
-        public LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
+        private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
+        private LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
     }
 }

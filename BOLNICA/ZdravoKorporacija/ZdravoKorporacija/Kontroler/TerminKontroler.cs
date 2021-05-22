@@ -59,10 +59,10 @@ namespace Kontroler
             Termin noviTermin = PretraziSlobodneTerminePoId(noviTerminDTO.IdTermina);
             terminiServis.PomeriPregled(stariTermin,noviTermin);
         }
-        public  void OtkaziPregled(String idTermina)
+        public  void OtkaziPregled(TerminDTO terminDto)
         {
-
-            terminiServis.OtkaziPregled(idTermina);
+            Termin termin = PretragaZakazanihTerminaPoId(terminDto.IdTermina);
+            terminiServis.OtkaziPregled(termin);
         }
         public  Termin PretragaZakazanihTerminaPoId(String izabran)
         {

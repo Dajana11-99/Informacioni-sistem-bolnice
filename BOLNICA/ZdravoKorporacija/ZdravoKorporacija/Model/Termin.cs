@@ -11,89 +11,99 @@ using ZdravoKorporacija.ViewModel;
 namespace Model
 {
     public class Termin 
-
     {
+        private String vreme;
+        private double trajanjeTermina;
+        private DateTime datum;
+        private TipTermina tipTermina;
+        private String idTermina;
+        private Sala sala;
+        private Lekar lekar;
+        private Pacijent pacijent;
+        private bool daLiJeHitno;
+        private bool ocenjenTermin;
+
         public String Vreme
         {
-            get;
-            set;
+            get { return vreme; }
+            set{ vreme = value; }
         }
-
         public double TrajanjeTermina
         {
-            get;
-            set;
+            get { return trajanjeTermina; }
+            set { trajanjeTermina = value; }
         }
-
         public DateTime Datum
         {
-
-            get;
-            set;
-
+            get { return datum; }
+            set { datum = value; }
         }
         public TipTermina TipTermina
         {
-            get;
-            set;
+            get { return tipTermina; }
+            set { tipTermina = value; }
         }
         public String IdTermina
         {
-            get;
-            set;
+            get { return idTermina; }
+            set { idTermina = value; }
         }
-
-
         public Sala Sala
         {
-            get;
-            set;
+            get { return sala; }
+            set { sala = value; }
         }
+
         public Lekar Lekar
         {
-            get;
-            set;
+            get { return lekar; }
+            set { lekar = value; }
         }
 
         public Pacijent Pacijent
         {
-            get;
-            set;
+            get { return pacijent; }
+            set { pacijent = value; }
+        }
+        public bool OcenjenTermin
+        {
+            get { return ocenjenTermin; }
+            set { ocenjenTermin = value; }
         }
         public bool DaLiJeHitno
         {
-            get;
-            set;
+            get { return daLiJeHitno; }
+            set { daLiJeHitno = value; }
         }
-        public bool OcenjenTermin { get; set; }
-        public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent p, Lekar l)
+
+
+
+        public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent pacijent, Lekar lekar)
         {
-            IdTermina = id;
-            TipTermina = tip;
-            Vreme = vreme;
-            TrajanjeTermina = trajanje;
-            Datum = datum;
-            Sala = sala;
-            Pacijent = p;
-            Lekar = l;
-            OcenjenTermin = false;
-
-
-
+            idTermina = id;
+            tipTermina = tip;
+            vreme = vreme;
+            trajanjeTermina = trajanje;
+            datum = datum;
+            sala = sala;
+            pacijent = pacijent;
+            lekar = lekar;
+            ocenjenTermin = false;
         }
-        public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent p, Lekar l, bool hitno = false)
+        public Termin(String id, TipTermina tip, String vreme, double trajanje, DateTime datum, Sala sala, Pacijent pacijent, Lekar lekar, bool hitno = false)
         {
-            IdTermina = id;
-            TipTermina = tip;
-            Vreme = vreme;
-            TrajanjeTermina = trajanje;
-            Datum = datum;
-            Sala = sala;
-            Pacijent = p;
-            Lekar = l;
-            DaLiJeHitno = hitno;
+            idTermina = id;
+            tipTermina = tip;
+            vreme = vreme;
+            trajanjeTermina = trajanje;
+            datum = datum;
+            sala = sala;
+            pacijent = pacijent;
+            lekar = lekar;
+            daLiJeHitno = hitno;
         }
 
       public Termin() { }
+
     }
 }

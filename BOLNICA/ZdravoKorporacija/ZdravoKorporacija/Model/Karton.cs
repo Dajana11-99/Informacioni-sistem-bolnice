@@ -14,18 +14,17 @@ namespace Model
     {
         public String NazivZdravstveneUstanove { get; set; }
         public String OdeljenjeNaPrijemu { get; set; }
-        public String Ime { get; set; }
-        public String Prezime { get; set; }
         public String ImeRoditelja { get; set; }
         public DateTime DatumRodjenja { get; set; }
         public Pol Pol { get; set; }
         public String Telefon { get; set; }
         public String BrojKartona { get; set; }
         public BracniStatusE BracniStatus { get; set; }
-        public Pacijent pacijent { get; set; }
         public Anamneza Anamneza { get; set; }
         public AdresaStanovanja adresaStanovanja { get; set; }
         public List<Recept> recepti { get; set; }
+        public String Prezime{get;set;}
+        public String Ime{get;set;}
         public Karton()
         {
             Anamneza = new Anamneza();
