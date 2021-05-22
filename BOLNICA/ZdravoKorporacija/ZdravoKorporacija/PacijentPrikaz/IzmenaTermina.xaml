@@ -1,11 +1,11 @@
-﻿<Window x:Class="ZdravoKorporacija.PacijentPrikaz.IzmenaTermina"
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.IzmenaTermina"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="IzmenaTermina" Height="360" Width="582" WindowStartupLocation="CenterScreen">
+        d:DesignHeight="360" d:DesignWidth="582" >
 
     <Grid>
         
@@ -26,20 +26,20 @@
         <Label HorizontalAlignment="Left"  FontSize="25" Margin="50 0 0 0" Grid.Row="0" Grid.Column="0">Izmena termina</Label>
         <Label FontSize="20"  Margin="50 10 0 0"  Grid.Row="1" Grid.Column="0" Content="Lekar" />
 
-        <TextBox x:Name="lekar"  IsReadOnly="True" Grid.Column="1" Grid.Row="1"  Margin="0 0 20 10"  Height="30"/>
+        <TextBox  Text="{Binding Path=TerminZaPomeranje.TerminDTO.Lekar.CeloIme}"  x:Name="lekar"  IsReadOnly="True" Grid.Column="1" Grid.Row="1"  Margin="0 0 20 10"  Height="30" />
         <Label FontSize="20"  Margin="50 10 0 0" Grid.Column="0" Grid.Row="2">Datum</Label>
-        <TextBox x:Name="datum" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Height="30" Margin="0 0 20 10"/>
+        <TextBox Text="{Binding Path=TerminZaPomeranje.TerminDTO.Datum , StringFormat={}{0:MM/dd/yyyy}}" x:Name="datum" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Height="30" Margin="0 0 20 10"/>
         <Label FontSize="20" Margin="50 10 0 0" Grid.Row="3" Grid.Column="0" >Vreme</Label>
-        <TextBox x:Name="vreme" Grid.Row="3" Grid.Column="1" IsReadOnly="True" Height="30" Margin="0 0 20 10" />
+        <TextBox Text="{Binding Path=TerminZaPomeranje.TerminDTO.Vreme}" x:Name="vreme" Grid.Row="3" Grid.Column="1" IsReadOnly="True" Height="30" Margin="0 0 20 10" />
 
 
 
 
       
-            <Button  x:Name="prikaziDatume"  Click="prikaziDatume_Click"  Grid.Column="2" Grid.Row="4" Margin="0 0 20 10" Height="30" >
+            <Button  x:Name="prikaziDatume"  Command="{Binding Path=PrikaziDatumeKomanda}" Grid.Column="2" Grid.Row="4" Margin="0 0 20 10" Height="30" >
                 Prikaži datume
             </Button>
-        <Button x:Name="VratiSe" Click="VratiSe_Click" Grid.Column="0" Grid.Row="4"  Margin=" 50 10 30 20"  Height="30"> Vrati se</Button>
+        <Button  Command="{Binding Path=VratiSeKomanda}"  x:Name="VratiSe" Grid.Column="0" Grid.Row="4"  Margin=" 50 10 30 20"  Height="30"> Vrati se</Button>
  
     </Grid>
-</Window>
+</UserControl>

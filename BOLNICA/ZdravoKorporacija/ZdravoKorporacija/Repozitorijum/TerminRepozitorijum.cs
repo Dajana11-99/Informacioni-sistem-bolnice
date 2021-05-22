@@ -80,7 +80,7 @@ namespace ZdravoKorporacija.Repozitorijum
             XmlNode root = doc.DocumentElement;
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
             XmlNode node = root.SelectSingleNode("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']", nsmgr);
-            Termin termin = ConvertujCvorUObjekat(node);
+            Termin termin = KonvertujCvorUObjekat(node);
             return termin;
         }
 
@@ -89,7 +89,7 @@ namespace ZdravoKorporacija.Repozitorijum
             List<Termin> objektiTermina = new List<Termin>();
             foreach (XmlNode node in cvoroviTermina)
             {
-                objektiTermina.Add(ConvertujCvorUObjekat(node));
+                objektiTermina.Add(KonvertujCvorUObjekat(node));
             }
             return objektiTermina;
         }
@@ -136,7 +136,7 @@ namespace ZdravoKorporacija.Repozitorijum
             xmlSerializer.Serialize(tw, termini);
             tw.Close();
         }
-        private  Termin ConvertujCvorUObjekat(XmlNode node)
+        private  Termin KonvertujCvorUObjekat(XmlNode node)
         {
             MemoryStream stm = new MemoryStream();
             StreamWriter stw = new StreamWriter(stm);
@@ -158,11 +158,11 @@ namespace ZdravoKorporacija.Repozitorijum
         public  Termin PretraziSlobodneTerminePoId(String idTermina)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(slobodniTerminiFajl);
+            doc.Load("slobodniTermini.xml");
             XmlNode root = doc.DocumentElement;
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
             XmlNode node = root.SelectSingleNode("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']", nsmgr);
-            Termin termin = ConvertujCvorUObjekat(node);
+            Termin termin = KonvertujCvorUObjekat(node);
             return termin;
         }
 
@@ -197,17 +197,7 @@ namespace ZdravoKorporacija.Repozitorijum
             LekarWindow.TerminiLekara.Remove(termin);
         }
 
-        public  void PomeriPregled(String idTermina)
-        {
-            Termin stariTermin = PretraziZakazanePoId(RasporedTermina.TerminZaPomeranje.IdTermina);
-            stariTermin.Pacijent = null;
-            Termin noviTermin = PretraziSlobodneTerminePoId(idTermina);
-            noviTermin.Pacijent = NaloziPacijenataServis.PretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
-            ProveriMalicioznostPacijenta(PacijentGlavniProzor.ulogovan);
-            ZameniTermine(stariTermin, noviTermin);
-        }
-
-        private  void ZameniTermine(Termin stariTermin, Termin noviTermin)
+        public  void ZameniTermine(Termin stariTermin, Termin noviTermin)
         {
             SacuvajSlobodanTermin(stariTermin);
             SacuvajZakazanTermin(noviTermin);
@@ -218,17 +208,9 @@ namespace ZdravoKorporacija.Repozitorijum
         {
             Termin termin = PretraziZakazanePoId(idTermina);
             BrisanjePrikazaPosleOtkazivanja(termin);
-            ProveriMalicioznostPacijenta(PacijentGlavniProzor.ulogovan);
+         //   ProveriMalicioznostPacijenta(PacijentGlavniProzor.ulogovan);
         }
-        public void ProveriMalicioznostPacijenta(Pacijent pacijent)
-        {
-            int broj = pacijent.Zloupotrebio + 1;
-            pacijent.Zloupotrebio = broj;
-            NaloziPacijenataRepozitorijum.UpisiPacijente();
-            if (pacijent.Zloupotrebio > MAXBR_PROMENA)
-                pacijent.Maliciozan = true;
 
-        }
         private  void BrisanjePrikazaPosleOtkazivanja(Termin termin)
         {
             ObrisiZakazanTermin(termin);

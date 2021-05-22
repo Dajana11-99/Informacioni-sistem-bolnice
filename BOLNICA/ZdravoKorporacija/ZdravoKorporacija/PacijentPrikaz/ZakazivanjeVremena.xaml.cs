@@ -31,12 +31,12 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             InitializeComponent();
             VremenaTermina = new ObservableCollection<Termin>();
-            foreach (Termin t in terminKontroler.NadjiVremeTermina(izabraniTermin))
+            /*foreach (Termin t in terminKontroler.NadjiVremeTermina(izabraniTermin))
             {
                
                     VremenaTermina.Add(t);
             }
-            slobodnaVremenaLista.ItemsSource = VremenaTermina;
+            slobodnaVremenaLista.ItemsSource = VremenaTermina;*/
         }
 
         private void vratiSe_Click(object sender, RoutedEventArgs e)

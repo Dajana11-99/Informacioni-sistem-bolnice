@@ -20,6 +20,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 {
     public partial class PacijentGlavniProzor : Window
     {
+        private static Grid GlavniSadrzaj;
         public static Pacijent ulogovan = null;
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         TerminKontroler terminKontroler = new TerminKontroler();
@@ -27,7 +28,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public PacijentGlavniProzor(String id)
         {
             InitializeComponent();
-         
+            GlavniSadrzaj = this.MainPanel;
             NaloziPacijenataRepozitorijum.UcitajPacijente();
             ulogovan = NaloziPacijenataKontroler.PretraziPoKorisnickom(id);
             imePacijenta.Content = ulogovan.Ime+" "+ulogovan.Prezime;
@@ -45,6 +46,10 @@ namespace ZdravoKorporacija.PacijentPrikaz
             
         }
 
+        public static Grid GetGlavniSadrzaj()
+        {
+            return GlavniSadrzaj;
+        }
         private void karton_Click(object sender, RoutedEventArgs e)
         {
 

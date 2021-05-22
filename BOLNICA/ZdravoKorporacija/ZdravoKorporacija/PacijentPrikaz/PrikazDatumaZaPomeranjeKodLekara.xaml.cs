@@ -13,47 +13,44 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
     /// <summary>
     /// Interaction logic for PrikazDatumaZaPomeranjeKodLekara.xaml
     /// </summary>
-    public partial class PrikazDatumaZaPomeranjeKodLekara : Window
+    public partial class PrikazDatumaZaPomeranjeKodLekara :UserControl
     {
-        public static ObservableCollection<Termin> SlobodniDatumiPomeranjeLekar { get; set; }
-        public PrikazDatumaZaPomeranjeKodLekara()
+        private PrikazDatumaViewModel prikazDatumaViewModel;
+        private TerminViewModel termin;
+        public PrikazDatumaZaPomeranjeKodLekara(TerminViewModel terminZaPomernje)
         {
+            termin = terminZaPomernje;
+            prikazDatumaViewModel = new PrikazDatumaViewModel(terminZaPomernje);
             InitializeComponent();
-            SlobodniDatumiPomeranjeLekar = new ObservableCollection<Termin>();
-
-            foreach (Termin t in IzmenaTermina.datumiZaIzmenu)
-            {
-                SlobodniDatumiPomeranjeLekar.Add(t);
-            }
-
-            slobodniDatumiPomLista.ItemsSource = SlobodniDatumiPomeranjeLekar;
+            this.slobodniDatumi.ItemsSource = prikazDatumaViewModel.SlobodniDatumi;
+           
         }
 
         private void vratiSe_Click(object sender, RoutedEventArgs e)
         {
-            IzmenaTermina prikaz = new IzmenaTermina(IzmenaTermina.Termin);
-            prikaz.Show();
-            this.Close();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(termin));
         }
 
         private void nastavi_Click(object sender, RoutedEventArgs e)
         {
-            if (slobodniDatumiPomLista.SelectedIndex == -1)
+            if (slobodniDatumi.SelectedIndex == -1)
             {
                 MessageBox.Show("Izaberite datum!");
                 return;
             }
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazVremenaZaPomeranje(termin,(TerminViewModel)slobodniDatumi.SelectedItem));
 
-             PrikazVremenaZaPomeranje pr = new PrikazVremenaZaPomeranje((Termin)slobodniDatumiPomLista.SelectedItem);
-            pr.Show();
-            this.Close();
-           
+
+
         }
     }
 }

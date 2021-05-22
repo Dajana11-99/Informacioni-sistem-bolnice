@@ -352,6 +352,9 @@
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util\DeepCopy.cs" />
+    <Compile Include="ViewModel\PotvrdiPomeranjeViewModel.cs" />
+    <Compile Include="ViewModel\PrikazDatumaViewModel.cs" />
+    <Compile Include="ViewModel\PrikazVremenaViewModel.cs" />
     <Compile Include="ViewModel\RasporedTerminaViewModel.cs" />
     <Compile Include="DTO\TerminDTO.cs" />
     <Compile Include="ViewModel\TerminViewModel.cs" />

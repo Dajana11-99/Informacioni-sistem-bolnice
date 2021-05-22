@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using ZdravoKorporacija.Komande;
+using ZdravoKorporacija.PacijentPrikaz;
 
 namespace ZdravoKorporacija.ViewModel
 {
@@ -16,26 +17,35 @@ namespace ZdravoKorporacija.ViewModel
 
         private ObservableCollection<TerminViewModel> zakazaniTerminiPacijenta;
         private TerminKontroler terminKontroler = new TerminKontroler();
-        private TerminViewModel terminViewModel;
-        public RasporedTerminaViewModel(String idPacijenta,TerminViewModel terminViewModel)
-        {
-            this.terminViewModel = terminViewModel;
-            otkaziPregledKomanda = new RelayCommand(OtkaziPregled);
-        }
+        private TerminViewModel selektovaniTermin;
+        private string poruka;
+    
         public RasporedTerminaViewModel(String idPacijenta)
         {
-          
             UcitajUKolekciju(idPacijenta);
-
+            otkaziPregledKomanda = new RelayCommand(OtkaziPregled);
+            pomeriPregledKomanda = new RelayCommand(PomeriPregled);
+        
         }
-        public ObservableCollection<TerminViewModel> UcitajUKolekciju(String idPacijenta)
+       
+
+        public void UcitajUKolekciju(String idPacijenta)
         {
             ZakazaniTerminiPacijenta = new ObservableCollection<TerminViewModel>();
             foreach (TerminViewModel termin in terminKontroler.DobaviZakazaneTerminePacijenta(idPacijenta))
             {
                 this.ZakazaniTerminiPacijenta.Add(termin);
             }
-            return ZakazaniTerminiPacijenta;
+          
+        }
+        public TerminViewModel SelektovaniTermin
+        {
+            get { return selektovaniTermin; }
+            set
+            {
+                selektovaniTermin = value;
+                OnPropertyChanged();
+            }
         }
         public ObservableCollection<TerminViewModel> ZakazaniTerminiPacijenta
         {
@@ -56,9 +66,40 @@ namespace ZdravoKorporacija.ViewModel
 
         public void OtkaziPregled()
         {
-            
-            terminKontroler.OtkaziPregled(terminViewModel.TerminDTO.IdTermina);
+            if (SelektovaniTermin != null)
+            {
+                OtkazivanjeTermina otk = new OtkazivanjeTermina(SelektovaniTermin);
+                otk.Show();
+            }else
+            {
+                Poruka = "*Morate izabrati termin da biste ga mogli otkazati!";
+            }
         }
+        public string Poruka
+        {
+            get { return poruka; }
+            set { poruka = value; OnPropertyChanged("Poruka"); }
+        }
+        private RelayCommand pomeriPregledKomanda;
+        public RelayCommand PomeriPregledKomanda
+        {
+            get { return pomeriPregledKomanda; }
+        }
+
+  
+
       
+        public void PomeriPregled()
+        {
+            if (selektovaniTermin != null)
+            {
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(selektovaniTermin));
+            }else
+            {
+                Poruka = "*Morate izabrati termin da biste pomerili pregled!";
+            }
+        }
+
     }
 }

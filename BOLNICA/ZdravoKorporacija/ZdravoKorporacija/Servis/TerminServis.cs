@@ -13,6 +13,7 @@ namespace Servis
 { 
     public class TerminServis
     {
+        private int MAX_BRPROMENA=5;
         public List<Termin> DobaviSveZakazaneTermine()
         {
             return terminRepozitorijum.DobaviZakazaneTermine();
@@ -26,10 +27,10 @@ namespace Servis
                     izabraniTermin.Lekar.korisnik.KorisnickoIme.Equals(termin.Lekar.korisnik.KorisnickoIme))
                     vremeDatumaSlobodnogTermina.Add(termin);
             }
-            return UkloniDupleDatume(vremeDatumaSlobodnogTermina);
+            return SortirajTerminePoPocetnomVremenu(UkloniDupleDatume(vremeDatumaSlobodnogTermina));
         }
       
-        public static List<Termin> NadjiSlobodneTermineLekara(String idLekara, List<Termin> datumiUIntervalu)
+        public  List<Termin> NadjiSlobodneTermineLekara(String idLekara, List<Termin> datumiUIntervalu)
         {
             List<Termin> slobodniTerminiKodLekara = new List<Termin>();
             foreach (Termin termin in datumiUIntervalu)
@@ -37,7 +38,7 @@ namespace Servis
                 if (termin.Lekar.idZaposlenog.Equals(idLekara))
                     slobodniTerminiKodLekara.Add(termin);
             }
-            return slobodniTerminiKodLekara;
+            return UkloniDupleDatume(slobodniTerminiKodLekara);
         }
     
         public  List<Termin> NadjiDatumUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
@@ -51,31 +52,57 @@ namespace Servis
             }
             return SortirajTerminePoDatumu(slobodniDatumi);
         }
-        public static List<Termin> SortirajTerminePoDatumu(List<Termin> nesortiraniDatumi)
+
+        public List<Termin> DobaviSveSlobodneDatumeZaPomeranje(Termin termin)
+        {
+            List<Termin> sviSlobodniDatumi = new List<Termin>();
+            sviSlobodniDatumi=NadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog, NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2)));
+            return ObrisiDatumeIzProslosti(sviSlobodniDatumi);
+        }
+        public  List<Termin> SortirajTerminePoDatumu(List<Termin> nesortiraniDatumi)
         {
             return nesortiraniDatumi.OrderBy(user => user.Datum).ToList();
         }
-        private static List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
+        private  List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
         {
             List<Termin> jedinstveniTermini = new List<Termin>();
             foreach (Termin termin in dupliTermini.DistinctBy(t => t.Datum))
                 jedinstveniTermini.Add(termin);
-            return SortirajTerminePoPocetnomVremenu(jedinstveniTermini);
+            return jedinstveniTermini;
         }
 
-        private static List<Termin> SortirajTerminePoPocetnomVremenu(List<Termin> nesortiraniTermini)
+        private  List<Termin> SortirajTerminePoPocetnomVremenu(List<Termin> nesortiraniTermini)
         {
             return nesortiraniTermini.OrderBy(user => DateTime.ParseExact(user.Vreme, "HH:mm", null)).ToList();
         }
 
-        public static bool ProveriMogucnostPomeranjaDatum(DateTime datumPregleda)
+        public  bool ProveriMogucnostPomeranjaDatum(DateTime datumPregleda)
         {
             if (DateTime.Compare(DateTime.Now.AddDays(1).Date, datumPregleda.Date) == 0)
                 return true;
             return false;
         }
 
-        public static bool ProveriMogucnostPomeranjaVreme(String vreme)
+        private List<Termin> ObrisiDatumeIzProslosti(List<Termin> sviSlobodniTermini)
+        {
+            List<Termin> terminiUBuducnosti = new List<Termin>();
+            foreach(Termin termin in sviSlobodniTermini)
+            {
+                if(DateTime.Compare(termin.Datum.Date, DateTime.Now.Date) > 0)
+                {
+                    terminiUBuducnosti.Add(termin);
+                }else if(DateTime.Compare(termin.Datum.Date, DateTime.Now.AddDays(1).Date) == 0)
+                {
+                    if (ProveriMogucnostPomeranjaVreme(termin.Vreme))
+                    {
+                        terminiUBuducnosti.Add(termin);
+                    }
+                }
+            }
+
+            return terminiUBuducnosti;
+        }
+        public  bool ProveriMogucnostPomeranjaVreme(String vreme)
         {
             DateTime vremePregleda = DateTime.ParseExact(vreme, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
             if (vremePregleda.Hour < DateTime.Now.Hour)
@@ -143,10 +170,25 @@ namespace Servis
         {
             terminRepozitorijum.ZakaziPregled(t);
         }
-        public  void PomeriPregled(String idTermina)
+        public  void PomeriPregled(Termin stariTermin, Termin noviTermin)
         {
-            terminRepozitorijum.PomeriPregled(idTermina);
-           
+            noviTermin.Pacijent = stariTermin.Pacijent;
+            stariTermin.Pacijent = null;
+            ZameniTermine(stariTermin, noviTermin);
+            ProveriMalicioznostPacijenta(noviTermin.Pacijent);
+        }
+        private void ZameniTermine(Termin stariTermin, Termin noviTermin)
+        {
+            terminRepozitorijum.ZameniTermine(stariTermin, noviTermin);
+        }
+        public void ProveriMalicioznostPacijenta(Pacijent pacijent)
+        {
+            int broj = pacijent.Zloupotrebio + 1;
+            pacijent.Zloupotrebio = broj;
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
+            if (pacijent.Zloupotrebio > MAX_BRPROMENA)
+                pacijent.Maliciozan = true;
+
         }
         public  void OtkaziPregled(String idTermina)
         {

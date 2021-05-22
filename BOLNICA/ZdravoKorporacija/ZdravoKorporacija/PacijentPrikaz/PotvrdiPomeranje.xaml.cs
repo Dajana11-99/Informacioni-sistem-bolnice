@@ -14,49 +14,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
 
-    public partial class PotvrdiPomeranje : Window
+    public partial class PotvrdiPomeranje : UserControl
     {
         public Termin Termin = null;
         TerminKontroler terminKontroler = new TerminKontroler();
-        public PotvrdiPomeranje(Termin izabrani)
+        PotvrdiPomeranjeViewModel potvrdiPomeranje;
+        public PotvrdiPomeranje(TerminViewModel stariTermin, TerminViewModel noviTermin)
         {
+            
             InitializeComponent();
-            Termin= terminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
-            PodesavanjePrikaza(Termin);
-        }
-
-        private void PodesavanjePrikaza(Termin termin)
-        {
-            lekar.Text = termin.Lekar.CeloIme;
-            datum.Text = termin.Datum.ToString("MM/dd/yyyy");
-            vreme.Text = termin.Vreme;
-            Termin = termin;
-        }
-
-
-        private void potvrdiIzmenu_Click(object sender, RoutedEventArgs e)
-        {
-            terminKontroler.PomeriPregled(Termin.IdTermina);
-            if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
-                MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
-            this.Close();
-
-
-
-        }
-
-        
-
-     
-        private void VratiSe_Click(object sender, RoutedEventArgs e)
-        {
-            PrikazVremenaZaPomeranje prikaz = new PrikazVremenaZaPomeranje(Termin);
-            prikaz.Show();
-            this.Close();
+            potvrdiPomeranje = new PotvrdiPomeranjeViewModel(stariTermin, noviTermin);
+            this.DataContext = potvrdiPomeranje;
         }
     }
 }

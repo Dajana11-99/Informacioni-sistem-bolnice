@@ -19,17 +19,15 @@ namespace Kontroler
         {
             return terminiServis.DobaviSveZakazaneTermine();
         }
-        public static bool ProveriMogucnostPomeranjaDatum(DateTime dat)
+        public  List<TerminViewModel> NadjiVremeTermina(TerminDTO izabraniTermin)
         {
-            return TerminServis.ProveriMogucnostPomeranjaDatum(dat);
-        }
-        public  List<Termin> NadjiVremeTermina(Termin izabraniTermin)
-        {
-            return terminiServis.NadjiVremeTermina(izabraniTermin);
-        }
-        public static List<Termin> NadjiSlobodneTermineLekara(String idZaposlenog, List<Termin> datumiUIntervalu)
-        {
-            return TerminServis.NadjiSlobodneTermineLekara(idZaposlenog, datumiUIntervalu);
+            List<TerminViewModel> sviSlobodniTermini = new List<TerminViewModel>();
+            Termin termin = PretraziSlobodneTerminePoId(izabraniTermin.IdTermina);
+            foreach(Termin slobodanTermin in terminiServis.NadjiVremeTermina(termin))
+            {
+                sviSlobodniTermini.Add(KonvertujDTOUViewModel(slobodanTermin));
+            }
+            return sviSlobodniTermini;
         }
        public  List<Termin> NadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
         {
@@ -55,9 +53,11 @@ namespace Kontroler
         {
             terminiServis.ZakaziPregled(t);
         }
-        public  void PomeriPregled(String idTermina)
+        public  void PomeriPregled(TerminDTO stariTerminDTO, TerminDTO noviTerminDTO)
         {
-            terminiServis.PomeriPregled(idTermina);
+            Termin stariTermin = PretragaZakazanihTerminaPoId(stariTerminDTO.IdTermina);
+            Termin noviTermin = PretraziSlobodneTerminePoId(noviTerminDTO.IdTermina);
+            terminiServis.PomeriPregled(stariTermin,noviTermin);
         }
         public  void OtkaziPregled(String idTermina)
         {
@@ -68,20 +68,29 @@ namespace Kontroler
         {
             return terminiServis.PretragaZakazanihTerminaPoId(izabran);
         }
-        public static bool ProveriMogucnostPomeranjaVreme(String vreme)
+        public List<TerminViewModel> DobaviSveSlobodneDatumeZaPomeranje(TerminDTO termin)
         {
-            return TerminServis.ProveriMogucnostPomeranjaVreme(vreme);
+            List<TerminViewModel> slobodniTerminiZaPomeranje = new List<TerminViewModel>();
+            Termin terminZaPomeranje = PretragaZakazanihTerminaPoId(termin.IdTermina);
+           
+            foreach(Termin slobodniTermin in terminiServis.DobaviSveSlobodneDatumeZaPomeranje(terminZaPomeranje))
+            {
+                slobodniTerminiZaPomeranje.Add(KonvertujDTOUViewModel(slobodniTermin));
+            }
+            return slobodniTerminiZaPomeranje;
+            
         }
+
         public List<TerminViewModel> DobaviZakazaneTerminePacijenta(String idPacijenta)
         {
             List<TerminViewModel> sviZakazaniTerminiPacijenta = new List<TerminViewModel>();
           foreach(Termin termin in terminiServis.DobaviZakazaneTerminePacijenta(idPacijenta))
             {
-                sviZakazaniTerminiPacijenta.Add(KonvertujObjekatUDTO(termin));
+                sviZakazaniTerminiPacijenta.Add(KonvertujDTOUViewModel(termin));
             }
             return sviZakazaniTerminiPacijenta;
         }
-        private TerminViewModel KonvertujObjekatUDTO(Termin termin)
+        private TerminViewModel KonvertujDTOUViewModel(Termin termin)
         {
             TerminDTO terminDTO = new TerminDTO(termin.IdTermina, termin.Datum, termin.Vreme,termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id, termin.TipTermina.ToString());
             TerminViewModel terminViewModel = new TerminViewModel(terminDTO);

@@ -15,45 +15,47 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    public partial class PrikazVremenaZaPomeranje : Window
+    public partial class PrikazVremenaZaPomeranje : UserControl
     {
 
-        public static ObservableCollection<Termin> VremenaTerminaPomeranje { get; set; }
+        
         TerminKontroler terminKontroler = new TerminKontroler();
-        public PrikazVremenaZaPomeranje(Termin termin)
+        private PrikazVremenaViewModel prikazVremenaViewModel;
+        private TerminViewModel noviTermin;
+        private TerminViewModel stariTermin;
+        public PrikazVremenaZaPomeranje(TerminViewModel stariTermin,TerminViewModel noviTermin)
         {
+            this.noviTermin = noviTermin;
+            this.stariTermin = stariTermin;
+            prikazVremenaViewModel = new PrikazVremenaViewModel(noviTermin);
             InitializeComponent();
-            VremenaTerminaPomeranje = new ObservableCollection<Termin>();
-
-            foreach (Termin t in terminKontroler.NadjiVremeTermina(termin))
-            {
-                VremenaTerminaPomeranje.Add(t);
-            }
-
-            slobodnaVremenaLista.ItemsSource = VremenaTerminaPomeranje;
+            this.slobodnaVremena.ItemsSource = prikazVremenaViewModel.SlobodniTermini;
         }
 
         private void vratiSe_Click(object sender, RoutedEventArgs e)
         {
-            PrikazDatumaZaPomeranjeKodLekara prikaz = new PrikazDatumaZaPomeranjeKodLekara();
-            prikaz.Show();
-            this.Close();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazDatumaZaPomeranjeKodLekara(noviTermin));
         }
 
         private void nastavi_Click(object sender, RoutedEventArgs e)
         {
-            if (slobodnaVremenaLista.SelectedIndex == -1)
+            if (slobodnaVremena.SelectedIndex == -1)
             {
                 MessageBox.Show("Izaberite termin!");
                 return;
             }
-            PotvrdiPomeranje pz = new PotvrdiPomeranje(((Termin)slobodnaVremenaLista.SelectedItem));
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PotvrdiPomeranje(stariTermin, (TerminViewModel)slobodnaVremena.SelectedItem));
 
-            pz.Show();
-            this.Close();
+           
+
+       
+       
         
         }
     }
