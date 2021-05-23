@@ -33,7 +33,6 @@ C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeZahteva.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentNoviNalog.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodIzabranogLekara.g.cs
-C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodSvihLekara.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzmenaTermina.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OceniBolnicu.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OtkazivanjeTermina.g.cs
@@ -101,7 +100,6 @@ C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeZahteva.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentNoviNalog.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodIzabranogLekara.baml
-C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodSvihLekara.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzmenaTermina.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OceniBolnicu.baml
 C:\Users\dajan\OneDrive\Desktop\SIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OtkazivanjeTermina.baml

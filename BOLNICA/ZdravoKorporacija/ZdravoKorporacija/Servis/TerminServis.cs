@@ -30,12 +30,12 @@ namespace Servis
             return SortirajTerminePoPocetnomVremenu(UkloniDupleDatume(vremeDatumaSlobodnogTermina));
         }
       
-        public  List<Termin> NadjiSlobodneTermineLekara(String idLekara, List<Termin> datumiUIntervalu)
+        public  List<Termin> NadjiSlobodneTermineLekara(String lekar, List<Termin> datumiUIntervalu)
         {
             List<Termin> slobodniTerminiKodLekara = new List<Termin>();
             foreach (Termin termin in datumiUIntervalu)
             {
-                if (termin.Lekar.idZaposlenog.Equals(idLekara))
+                if (termin.Lekar.CeloIme.Equals(lekar))
                     slobodniTerminiKodLekara.Add(termin);
             }
             return UkloniDupleDatume(slobodniTerminiKodLekara);
@@ -51,6 +51,16 @@ namespace Servis
                     slobodniDatumi.Add(termin);
             }
             return SortirajTerminePoDatumu(slobodniDatumi);
+        }
+
+        public List<Termin> DobaviSlobodneTermineZaZakazivanje(List<DateTime>interval, String lekar)
+        {
+            List<Termin> terminiUIntervalu = new List<Termin>();
+            List<Termin> terminiKodIzabranogLekara = new List<Termin>();
+            terminiUIntervalu = NadjiDatumUIntervalu(interval[0], interval[1]);
+            terminiKodIzabranogLekara = NadjiSlobodneTermineLekara(lekar, terminiUIntervalu);
+            return terminiKodIzabranogLekara;
+
         }
 
         public List<Termin> DobaviSveSlobodneDatumeZaPomeranje(Termin termin)
@@ -167,8 +177,9 @@ namespace Servis
         {
             return terminRepozitorijum.ZakaziTermin(termin);
         }
-        public  void ZakaziPregled(Termin termin)
+        public  void ZakaziPregled(Termin termin,String korisnickoImePacijenta)
         {
+            termin.Pacijent = NaloziPacijenataServis.PretraziPoKorisnickom(korisnickoImePacijenta);
             terminRepozitorijum.ZakaziPregled(termin);
         }
         public  void PomeriPregled(Termin stariTermin, Termin noviTermin)
@@ -192,10 +203,8 @@ namespace Servis
         }
         public  void OtkaziPregled(Termin termin)
         {
-            Console.WriteLine(termin.Pacijent.Prezime + "ggggggggggggggggggggggg");
             ProveriMalicioznostPacijenta(termin.Pacijent);
             terminRepozitorijum.OtkazivanjePregleda(termin);
-            
         }
         public   Termin PretragaZakazanihTerminaPoId(String izabran)
         {

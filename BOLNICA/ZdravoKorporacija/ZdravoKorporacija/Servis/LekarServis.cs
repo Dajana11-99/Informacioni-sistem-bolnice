@@ -30,9 +30,9 @@ namespace ZdravoKorporacija.Servis
             return lekarRepozitorijum.PretraziPoImenuIPrezimenu(imeIPrezime);
         }
 
-        public List<Lekar> PretraziPoSpecijalizaciji()
+        public List<Lekar> DobaviLekareOpstePrakse()
         {
-            return lekarRepozitorijum.PretraziPoSpecijalizaciji();
+            return lekarRepozitorijum.DobaviLekareOpstePrakse();
         }
     }
 }

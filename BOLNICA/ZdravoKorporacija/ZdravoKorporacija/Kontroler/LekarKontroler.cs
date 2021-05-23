@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZdravoKorporacija.DTO;
 using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.Kontroler
@@ -29,9 +30,15 @@ namespace ZdravoKorporacija.Kontroler
         {
             return lekarServis.PretraziPoImenuIPrezimenu(imeIPrezime);
         }
-        public List<Lekar> PretraziPoSpecijalizaciji()
+        public List<LekarDTO> DobaviLekareOpstePrakse()
         {
-            return lekarServis.PretraziPoSpecijalizaciji();
+            List<LekarDTO> lekariOpstePrakse = new List<LekarDTO>();
+            foreach(Lekar lekar in lekarServis.DobaviLekareOpstePrakse())
+            {
+                lekariOpstePrakse.Add(new LekarDTO(lekar.CeloIme, lekar.idZaposlenog, lekar.Specijalizacija));
+            }
+            return lekariOpstePrakse;
+           
         }
         
     }

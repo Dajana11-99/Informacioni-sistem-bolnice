@@ -400,4 +400,74 @@ Količina u sledećoj dozi: 1.</Tekst>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>P1</IdPrimaoca>
   </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>d408a4a4-a012-4721-829f-e6b2c5861a75</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Aerius.
+Isteklo je 3h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-23T10:24:24.8374104+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>27d3da64-3aa0-48a4-ab10-8df62c3f6caf</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Aerius.
+Isteklo je 3h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-23T10:24:27.9271575+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>448d6199-ef0f-4474-b9fd-87d269b1d115</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Aerius.
+Isteklo je 3h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-23T10:24:30.94549+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>82d1f066-8062-4c3d-9789-23ca2ba7c96a</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Aerius.
+Isteklo je 3h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-23T10:24:33.9592008+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>71fb4d73-3e84-437b-ad68-422f4806fe52</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Aerius.
+Isteklo je 3h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-23T10:24:36.9747301+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>5c7a5603-64b7-44d7-b36c-1dccbd157302</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Aerius.
+Isteklo je 3h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-23T10:24:39.9884132+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>18640163-97b8-4059-a67e-9f484950be27</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Lek: Aerius.
+Isteklo je 3h od poslednje doze.
+Količina u sledećoj dozi: 1.</Tekst>
+    <Datum>2021-05-23T10:24:43.0046673+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
 </ArrayOfObavestenja>

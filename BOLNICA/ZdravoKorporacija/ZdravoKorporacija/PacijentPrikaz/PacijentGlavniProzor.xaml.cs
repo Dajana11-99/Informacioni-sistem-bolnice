@@ -71,12 +71,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void zakazi_Click(object sender, RoutedEventArgs e)
         {
-
-            UserControl usc = null;
             MainPanel.Children.Clear();
-
-            usc = new ZakazivanjeSaPrioritetom();
-            MainPanel.Children.Add(usc);
+            MainPanel.Children.Add(new ZakazivanjeSaPrioritetom(ulogovan.korisnik.KorisnickoIme));
         }
 
         private void raspored_Click(object sender, RoutedEventArgs e)

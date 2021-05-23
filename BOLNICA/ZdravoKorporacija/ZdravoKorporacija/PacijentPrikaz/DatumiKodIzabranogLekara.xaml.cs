@@ -13,41 +13,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.DTO;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    /// <summary>
-    /// Interaction logic for DatumiKodIzabranogLekara.xaml
-    /// </summary>
-    public partial class DatumiKodIzabranogLekara : Window
+    public partial class DatumiKodIzabranogLekara : UserControl
     {
-        public static ObservableCollection<Termin> slobodniDatumiKodIzabranog { get; set; }
-        public DatumiKodIzabranogLekara()
+        private DatumiKoIzabranogLekaraViewModel datumi;
+        public DatumiKodIzabranogLekara(ZakazivanjeDTO podaci)
         {
+            datumi = new DatumiKoIzabranogLekaraViewModel(podaci);
             InitializeComponent();
-            slobodniDatumiKodIzabranog = new ObservableCollection<Termin>();
-            foreach (Termin t in ZakazivanjeSaPrioritetom.slobodniDatumi)
-                slobodniDatumiKodIzabranog.Add(t);
-
-            slobodniDatumiLista.ItemsSource = slobodniDatumiKodIzabranog;
+            this.slobodniDatumiLista.SelectedItem = datumi.SlobodniKodIzabranog;
+            this.DataContext = datumi;
         }
 
-        private void vratiSe_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void nastavi_Click(object sender, RoutedEventArgs e)
-        {
-            if (slobodniDatumiLista.SelectedIndex == -1)
-            {
-                MessageBox.Show("Izaberite datum");
-                return;
-            }
-
-            ZakazivanjeVremena zakazi = new ZakazivanjeVremena(((Termin)slobodniDatumiLista.SelectedItem));
-            zakazi.Show();
-            this.Close();
-        }
+     
     }
 }

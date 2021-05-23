@@ -7,46 +7,58 @@
              mc:Ignorable="d" 
              d:DesignHeight="360" d:DesignWidth="582">
 
-    <Grid Margin="60,50,60.4,62" >
+    <Grid Margin="60,50,60.4,55" >
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
             <RowDefinition Height="0*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.RowSpan="2" Margin="35,-27,56,-62" Width="371" Height="337" VerticalAlignment="Top">
-            <Label HorizontalAlignment="Left"  FontSize="18">Zakazi pregled</Label>
+            <Label HorizontalAlignment="Left"  FontSize="18" Margin="-6 0 0 0" FontWeight="DemiBold">Zakazi pregled</Label>
             <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
                 <Label FontSize="15" Margin="-6,0,-0.4,0">Lekar</Label>
 
-                <ComboBox Name="lekar"  ItemsSource="{Binding}" DisplayMemberPath="CeloIme" SelectedValuePath="CeloIme" Margin="90,0,-0.4,0" Width="213"/>
+                <ComboBox Name="lekar" ItemsSource="{Binding Path=SviLekari}" DisplayMemberPath="CeloIme" SelectedValuePath="CeloIme" Margin="90,0,-0.4,0" Width="213" SelectedItem="{Binding Path=Podaci.IzabraniLekar}"/>
 
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                 <Label Margin="-16,0,58,0" Width="77"  FontSize="15">
 
                     Datum od
                 </Label>
-                <DatePicker  Name="datumOd" Width="213" ></DatePicker>
-            </StackPanel>
+                <TextBox  Name="datumOd" Width="213" Text="{Binding Path=Podaci.DatumOd,UpdateSourceTrigger=PropertyChanged,  StringFormat={}{0:MM/dd/yyyy}}">
+                   
+                </TextBox>
+
+            </StackPanel >
+
+            <Label  Margin="128,0,0,0">*Unesite datum u formatu 03/31/2021</Label>
+
             <StackPanel Orientation="Horizontal" Margin="0">
                 <Label HorizontalAlignment="Right" Margin="-6,0,58,0"  Content="Datum do" Width="76" FontSize="15"  />
-                <DatePicker x:Name="datumDo" Width="213"/>
+                <TextBox x:Name="datumDo" Width="213"  Text="{Binding Path=Podaci.DatumDo,StringFormat={}{0:MM/dd/yyyy}}"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="10">
+            <Label  Margin="128,0,0.2,0">*Unesite datum u formatu 03/31/2021</Label>
+            <StackPanel Orientation="Horizontal" Margin="10" >
                 <Label Margin="-16,0,-0.2,0" FontSize="15">Prioritet</Label>
-                <ComboBox Name="prioritet" Margin="72 5 00 20" Width="213"  Height="25">
+                <ComboBox Name="prioritet" Margin="72 0 00 0" Width="213"  Height="30" SelectedIndex="{Binding Path=Podaci.Prioritet}">
                     <ComboBoxItem>Vreme</ComboBoxItem>
                     <ComboBoxItem>Lekar</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Height="21" Margin="0,0,4.6,0" Width="204">
-                <Button  Width="150"  x:Name="prikaziDatume" Click="prikaziDatume_Click"  Margin="0,0,20,-0.2">Prikaži datume</Button>
+            <Label Margin="130 0 0 0" FontSize="12" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Label FontSize="9" >*Pritisnite dugme da biste dobili termine
+                </Label>
+
+                <Button  Width="150"  x:Name="prikaziDatume" Command="{Binding Path=PrikaziDatume}"  Margin="0,0,55,0" >Prikaži datume</Button>
 
             </StackPanel>
 
 
         </StackPanel>
     </Grid>
+
 
 </UserControl>

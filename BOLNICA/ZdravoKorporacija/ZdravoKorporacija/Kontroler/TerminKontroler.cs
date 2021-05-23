@@ -29,9 +29,25 @@ namespace Kontroler
             }
             return sviSlobodniTermini;
         }
-       public  List<Termin> NadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
+        public List<TerminDTO> NadjiVremeZakazivanjeTermina(TerminDTO izabraniTermin)
         {
-            return terminiServis.NadjiDatumUIntervalu(pocetak, kraj);
+            List<TerminDTO> terminiDatuma = new List<TerminDTO>();
+            Termin terminZaPrikaz = PretraziSlobodneTerminePoId(izabraniTermin.IdTermina);
+            foreach(Termin termin in terminiServis.NadjiVremeTermina(terminZaPrikaz))
+            {
+                terminiDatuma.Add(new TerminDTO(termin.IdTermina, termin.Datum, termin.Vreme, termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id,termin.TipTermina.ToString()));
+            }
+            return terminiDatuma;
+        }
+        public  List<TerminDTO> NadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
+        {
+            List<TerminDTO> slobodniTerminiUIntervalu = new List<TerminDTO>();
+            foreach(Termin termin in terminiServis.NadjiDatumUIntervalu(pocetak, kraj))
+            {
+                slobodniTerminiUIntervalu.Add(new TerminDTO(termin.IdTermina, termin.Datum,termin.Vreme, termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id, termin.TipTermina.ToString()));
+            }
+            return slobodniTerminiUIntervalu;
+            
         }
         public  List<Termin> PrikaziSveZakazaneTermine()
         {
@@ -49,9 +65,10 @@ namespace Kontroler
         {
             terminiServis.OtkaziTermin(idTermina);
         }
-        public  void ZakaziPregled(Termin t)
+        public  void ZakaziPregled(TerminDTO terminZaZakazivanje,String korisnickoImePacijenta)
         {
-            terminiServis.ZakaziPregled(t);
+            Termin termin = PretraziSlobodneTerminePoId(terminZaZakazivanje.IdTermina);
+            terminiServis.ZakaziPregled(termin,korisnickoImePacijenta);
         }
         public  void PomeriPregled(TerminDTO stariTerminDTO, TerminDTO noviTerminDTO)
         {
@@ -80,8 +97,17 @@ namespace Kontroler
             return slobodniTerminiZaPomeranje;
             
         }
+        public List<TerminDTO> DobaviSlobodneTermineZaZakazivanje(List<DateTime> interval, String idLekara)
+        {
+            List<TerminDTO> slobodniTerminiZaZakazivanje = new List<TerminDTO>();
+           foreach(Termin termin in terminiServis.DobaviSlobodneTermineZaZakazivanje(interval, idLekara))
+            {
+                slobodniTerminiZaZakazivanje.Add(new TerminDTO(termin.IdTermina, termin.Datum, termin.Vreme, termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id, termin.TipTermina.ToString()));
+            }
+            return slobodniTerminiZaZakazivanje;
 
-        public List<TerminViewModel> DobaviZakazaneTerminePacijenta(String idPacijenta)
+        }
+      public List<TerminViewModel> DobaviZakazaneTerminePacijenta(String idPacijenta)
         {
             List<TerminViewModel> sviZakazaniTerminiPacijenta = new List<TerminViewModel>();
           foreach(Termin termin in terminiServis.DobaviZakazaneTerminePacijenta(idPacijenta))
@@ -95,6 +121,10 @@ namespace Kontroler
             TerminDTO terminDTO = new TerminDTO(termin.IdTermina, termin.Datum, termin.Vreme,termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id, termin.TipTermina.ToString());
             TerminViewModel terminViewModel = new TerminViewModel(terminDTO);
             return terminViewModel;
+        }
+        public bool ProveriMogucnostPomeranjeVreme(String vreme)
+        {
+           return terminiServis.ProveriMogucnostPomeranjaVreme(vreme);
         }
         public void IzmenaTermina(TerminDTO terminDTO) 
         {

@@ -14,44 +14,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
     /// <summary>
     /// Interaction logic for PotvrdiZakazivanje.xaml
     /// </summary>
-    public partial class PotvrdiZakazivanje : Window
+    public partial class PotvrdiZakazivanje : UserControl
     {
-        public Termin Termin = null;
-        TerminKontroler terminKontroler = new TerminKontroler();
-        public PotvrdiZakazivanje(Termin izabrani)
+        private PotvrdiZakazivanjeViewModel potvrdiZakazivanje;
+        public PotvrdiZakazivanje(TerminDTO izabranTermin,ZakazivanjeDTO podaciZaPrikaz)
         {
+            potvrdiZakazivanje = new PotvrdiZakazivanjeViewModel(izabranTermin,podaciZaPrikaz);
             InitializeComponent();
-            Termin t = terminKontroler.PretraziSlobodneTerminePoId(izabrani.IdTermina);
-            PodesavanjePrikaza(t);
+            this.DataContext = potvrdiZakazivanje;
+          
         }
 
-        private void PodesavanjePrikaza(Termin t)
-        {
-            lekar.Text = t.Lekar.CeloIme;
-            datum.Text = t.Datum.ToString("MM/dd/yyyy");
-            vreme.Text = t.Vreme;
-            Termin = t;
-        }
-
-        private void potvrdiZakazivanje_Click(object sender, RoutedEventArgs e)
-        {
-            Termin t = terminKontroler.PretraziSlobodneTerminePoId(Termin.IdTermina);
-            t.Pacijent = NaloziPacijenataKontroler.PretraziPoKorisnickom(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme);
-            terminKontroler.ZakaziPregled(t);
-            this.Close();
-        }
-
-        private void VratiSe_Click(object sender, RoutedEventArgs e)
-        {
-            ZakazivanjeVremena prikaz = new ZakazivanjeVremena(Termin);
-            prikaz.Show();
-            this.Close();
-        }
     }
 }

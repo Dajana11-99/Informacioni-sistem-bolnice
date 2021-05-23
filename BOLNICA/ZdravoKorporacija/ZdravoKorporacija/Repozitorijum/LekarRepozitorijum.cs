@@ -68,7 +68,7 @@ namespace ZdravoKorporacija.Repozitorijum
             }
             return null;
         }
-        public List<Lekar> PretraziPoSpecijalizaciji()
+        public List<Lekar> DobaviLekareOpstePrakse()
         {
             List<Lekar> listaSvihLekara = new List<Lekar>();
 

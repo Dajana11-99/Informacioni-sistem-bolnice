@@ -16,6 +16,7 @@ namespace ZdravoKorporacija.ViewModel
         private String predvidjenoVreme;
         private String BrOperacioneSale;
         private String tipTermina;
+     
         public TerminDTO(string idTermin, DateTime datum, string vreme, Lekar lekar, string predvidjenoVreme, string brOperacioneSale, String tipTermina)
         {
             this.idTermin = idTermin;

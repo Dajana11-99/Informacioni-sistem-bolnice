@@ -85,18 +85,42 @@ namespace ZdravoKorporacija.ViewModel
 
         public void Potvrdi()
         {
-            terminKontroler.OtkaziPregled(SelektovaniTermin.TerminDTO); 
+                terminKontroler.OtkaziPregled(SelektovaniTermin.TerminDTO);
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina());
+          
 
+
+        }
+        private bool Validacija()
+        {
+            if (DateTime.Compare(SelektovaniTermin.TerminDTO.Datum.Date, DateTime.Now.Date) > 0)
+            {
+                return false;
+            }
+            else if (DateTime.Compare(SelektovaniTermin.TerminDTO.Datum.Date, DateTime.Now.AddDays(1).Date) == 0)
+            {
+                if (!terminKontroler.ProveriMogucnostPomeranjeVreme(SelektovaniTermin.TerminDTO.Vreme))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         public void OtkaziPregled()
         {
-            if (SelektovaniTermin != null)
+            if (Validacija())
             {
-                OtkazivanjeTermina otkazivanje = new OtkazivanjeTermina(SelektovaniTermin);
-                otkazivanje.Show();
-            }else
-            {
-                Poruka = "*Morate izabrati termin da biste ga mogli otkazati!";
+                if (SelektovaniTermin != null)
+                {
+                    OtkazivanjeTermina otkazivanje = new OtkazivanjeTermina(SelektovaniTermin);
+                    otkazivanje.Show();
+                }
+                else
+                {
+                    Poruka = "*Morate izabrati termin da biste ga mogli otkazati!";
+                }
+                Poruka = "*Ne mozete otkazati termin koji je za manje od 24h!";
             }
         }
         public string Poruka
@@ -115,13 +139,18 @@ namespace ZdravoKorporacija.ViewModel
       
         public void PomeriPregled()
         {
-            if (selektovaniTermin != null)
+            if (Validacija())
             {
-                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(selektovaniTermin));
-            }else
-            {
-                Poruka = "*Morate izabrati termin da biste pomerili pregled!";
+                if (selektovaniTermin != null)
+                {
+                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(selektovaniTermin));
+                }
+                else
+                {
+                    Poruka = "*Morate izabrati termin da biste pomerili pregled!";
+                }
+                Poruka= "*Ne mozete otkazati termin koji je za manje od 24h!";
             }
         }
 
