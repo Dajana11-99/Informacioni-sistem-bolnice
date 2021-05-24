@@ -13,6 +13,9 @@ namespace ZdravoKorporacija.DTO
         private String tekst;
         private DateTime datum;
         private String idPrimaoca;
+        private DateTime datumOd;
+        private DateTime datumDo;
+        private int naKolikoSati;
 
         public String IdObavestenja
         {
@@ -39,6 +42,21 @@ namespace ZdravoKorporacija.DTO
             get { return idPrimaoca; }
             set { idPrimaoca = value; }
         }
+        public int NaKolikoSati
+        {
+            get { return naKolikoSati; }
+            set { naKolikoSati = value; }
+        }
+        public DateTime DatumOd
+        {
+            get { return datumOd; }
+            set { datumOd = value; }
+        }
+        public DateTime DatumDo
+        {
+            get { return datumDo; }
+            set { datumDo = value; }
+        }
         public ObavestenjeDTO(string idObavestenja, string naslov, string tekst, DateTime datum, string idPrimaoca)
         {
             this.idObavestenja = idObavestenja;
@@ -48,6 +66,19 @@ namespace ZdravoKorporacija.DTO
             this.idPrimaoca = idPrimaoca;
         }
 
+        public ObavestenjeDTO(string idObavestenja, string naslov, string tekst, string idPrimaoca, DateTime datumOd, DateTime datumDo, int vreme)
+        {
+            this.idObavestenja = idObavestenja;
+            this.naslov = naslov;
+            this.tekst = tekst;
+            this.idPrimaoca = idPrimaoca;
+            this.datumOd = datumOd;
+            this.datumDo = datumDo;
+            this.naKolikoSati = vreme;
+        }
 
+        public ObavestenjeDTO()
+        {
+        }
     }
 }

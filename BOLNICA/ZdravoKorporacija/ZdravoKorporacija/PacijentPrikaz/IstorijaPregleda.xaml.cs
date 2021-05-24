@@ -14,31 +14,25 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 { 
-    public partial class IstorijaPregleda : Window
+    public partial class IstorijaPregleda : UserControl
     {
-        public static ObservableCollection<Termin> TerminiPacijenta { get; set; }
-        TerminKontroler terminKontroler = new TerminKontroler();
         
-        public IstorijaPregleda()
+        TerminKontroler terminKontroler = new TerminKontroler();
+        private IstorijaPregledaViewModel istorijaPregledaViewModel;
+        public IstorijaPregleda(String korisnickoIme)
         {
+            istorijaPregledaViewModel = new IstorijaPregledaViewModel(korisnickoIme);
             InitializeComponent();
-            this.DataContext = this;
-            TerminiPacijenta = new ObservableCollection<Termin>();
-            foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
-            {
-               /* if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
-                {
-                    if (DateTime.Compare(t.Datum.Date, DateTime.Now.Date) < 0)
-                        TerminiPacijenta.Add(t);
-                }*/
-
-            }
+            this.DataContext = istorijaPregledaViewModel;
+         
+            
         }
 
-        private void IzvestajSaPregleda_Click(object sender, RoutedEventArgs e)
+     /*   private void IzvestajSaPregleda_Click(object sender, RoutedEventArgs e)
         {
             if(TerminiPacijentaa.SelectedIndex== -1)
             {
@@ -54,6 +48,6 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void VratiSe_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
+        }*/
     }
 }

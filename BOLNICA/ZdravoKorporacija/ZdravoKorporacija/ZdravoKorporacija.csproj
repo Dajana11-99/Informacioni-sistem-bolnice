@@ -134,6 +134,7 @@
     <Compile Include="DodajZahtevWindow.xaml.cs">
       <DependentUpon>DodajZahtevWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BeleskaDTO.cs" />
     <Compile Include="DTO\LekarDTO.cs" />
     <Compile Include="DTO\ObavestenjeDTO.cs" />
     <Compile Include="DTO\PacijentDTO.cs" />
@@ -159,6 +160,7 @@
     </Compile>
     <Compile Include="Komande\RelayCommand.cs" />
     <Compile Include="Kontroler\AnketeKontroler.cs" />
+    <Compile Include="Kontroler\BeleskaKontroler.cs" />
     <Compile Include="Kontroler\DinamickaOpremaKontroler.cs" />
     <Compile Include="Kontroler\DinamickiZahteviKontroler.cs" />
     <Compile Include="Kontroler\LekarKontroler.cs" />
@@ -197,6 +199,7 @@
     <Compile Include="Model\AdresaStanovanja.cs" />
     <Compile Include="Model\Anamneza.cs" />
     <Compile Include="Model\Ankete.cs" />
+    <Compile Include="Model\Beleska.cs" />
     <Compile Include="Model\BracniStatusE.cs" />
     <Compile Include="Model\DinamickaOprema.cs" />
     <Compile Include="Model\Drzava.cs" />
@@ -269,6 +272,9 @@
     <Compile Include="PacijentPrikaz\PocetnaStrana.xaml.cs">
       <DependentUpon>PocetnaStrana.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PacijentPrikaz\Podsetnik.xaml.cs">
+      <DependentUpon>Podsetnik.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PacijentPrikaz\PopuniAnketu.xaml.cs">
       <DependentUpon>PopuniAnketu.xaml</DependentUpon>
     </Compile>
@@ -280,6 +286,9 @@
     </Compile>
     <Compile Include="PacijentPrikaz\PrikazAnketa.xaml.cs">
       <DependentUpon>PrikazAnketa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PrikazBeleske.xaml.cs">
+      <DependentUpon>PrikazBeleske.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\PrikazDatumaZaPomeranjeKodLekara.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjeKodLekara.xaml</DependentUpon>
@@ -324,6 +333,7 @@
       <DependentUpon>RenovirajSalu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repozitorijum\AnketeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\BeleskaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\LekoviRepozitorijum.cs" />
     <Compile Include="Repozitorijum\LekRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
@@ -331,6 +341,7 @@
     <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZalbaRepozitorijum.cs" />
     <Compile Include="Servis\AnketaServis.cs" />
+    <Compile Include="Servis\BeleskaServis.cs" />
     <Compile Include="Servis\LekarServis.cs" />
     <Compile Include="Servis\LekServis.cs" />
     <Compile Include="Servis\ObavestenjaServis.cs" />
@@ -372,8 +383,11 @@
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util\DeepCopy.cs" />
+    <Compile Include="ViewModel\BeleskaViewModel.cs" />
     <Compile Include="ViewModel\DatumiKoIzabranogLekaraViewModel.cs" />
+    <Compile Include="ViewModel\IstorijaPregledaViewModel.cs" />
     <Compile Include="ViewModel\ObavestenjaViewModel.cs" />
+    <Compile Include="ViewModel\PodsetnikViewModel.cs" />
     <Compile Include="ViewModel\PotvrdiPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PotvrdiZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\PrikazDatumaViewModel.cs" />
@@ -382,6 +396,7 @@
     <Compile Include="DTO\TerminDTO.cs" />
     <Compile Include="ViewModel\TerapijaViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="ViewModel\ViseInformacijaViewModel.cs" />
     <Compile Include="ViewModel\VremenaZaZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\ZakazivanjeSaPrioritetomViewModel.cs" />
     <Compile Include="ViewModel\ZdravstveniKartonViewModel.cs" />
@@ -561,6 +576,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentPrikaz\Podsetnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentPrikaz\PopuniAnketu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -574,6 +593,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PacijentPrikaz\PrikazAnketa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PrikazBeleske.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

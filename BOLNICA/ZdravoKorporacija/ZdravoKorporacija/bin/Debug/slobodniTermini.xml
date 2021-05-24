@@ -1,45 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Termin>
-    <Vreme>16:30</Vreme>
-    <TrajanjeTermina>30</TrajanjeTermina>
-    <Datum>2021-04-29T00:00:00</Datum>
-    <TipTermina>Pregled</TipTermina>
-    <IdTermina>3</IdTermina>
-    <Sala>
-      <TipSale>Pregled</TipSale>
-      <Id>a3</Id>
-      <Zauzeta>true</Zauzeta>
-      <sprat>4</sprat>
-      <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
-      <RasporedjenaDinamickaOprema />
-    </Sala>
-    <Lekar>
-      <korisnik>
-        <KorisnickoIme>pera.peric</KorisnickoIme>
-        <Sifra>pera.peric</Sifra>
-        <Uloga>Lekar</Uloga>
-        <Nalog>Obican</Nalog>
-      </korisnik>
-      <Ime>Pera</Ime>
-      <Prezime>Peric</Prezime>
-      <Jmbg>2711999105018</Jmbg>
-      <Email>dajanazlokapa@gmail.com</Email>
-      <CeloIme>Pera Peric</CeloIme>
-      <adresaStanovanja>
-        <Ulica>Ljubice Ravasi</Ulica>
-        <Broj>2A</Broj>
-      </adresaStanovanja>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <idZaposlenog>L1</idZaposlenog>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
-    </Lekar>
-    <OcenjenTermin>false</OcenjenTermin>
-    <DaLiJeHitno>false</DaLiJeHitno>
-  </Termin>
   <Termin>
     <Vreme>14:30</Vreme>
     <TrajanjeTermina>30</TrajanjeTermina>

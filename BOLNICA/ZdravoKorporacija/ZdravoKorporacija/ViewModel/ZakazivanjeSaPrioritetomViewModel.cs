@@ -102,7 +102,7 @@ namespace ZdravoKorporacija.ViewModel
                 Poruka = "*Popunite sva polja!";
                 return false;
             }
-            else if (DateTime.Compare(Podaci.DatumOd.Date, DateTime.Now.Date) <= 0)
+           else if (DateTime.Compare(Podaci.DatumOd.Date, DateTime.Now.Date) <= 0)
             {
                 Poruka = "*Izaberite datum u budućnosti!";
                 return false;

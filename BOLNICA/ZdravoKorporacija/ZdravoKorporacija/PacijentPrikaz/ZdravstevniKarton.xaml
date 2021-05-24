@@ -100,7 +100,7 @@
 
             </GroupBox>
         </StackPanel>
-        <Button Margin="114,10,298.4,0" Name="IstorijaPregleda">Istorija pregleda</Button>
+        <Button Margin="114,10,298.4,0" Name="IstorijaPregleda" Command="{Binding Path=PrikaziIstorijuPregleda}">Istorija pregleda</Button>
         <Label FontSize="9" Margin="114,0,0.4,0">*Pritisnite dugme da biste
  videli</Label>
         <Label FontSize="9" Margin="130,0,0.4,0">istoriju Vaših pregleda</Label>

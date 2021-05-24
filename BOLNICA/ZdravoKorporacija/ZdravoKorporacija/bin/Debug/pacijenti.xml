@@ -25,6 +25,7 @@
       <BrojKartona>15624</BrojKartona>
       <BracniStatus>Neozenjen</BracniStatus>
       <Anamneza>
+        <idPacijenta>P1</idPacijenta>
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
@@ -61,6 +62,7 @@
       <BrojKartona>12345</BrojKartona>
       <BracniStatus>Udovac</BracniStatus>
       <Anamneza>
+        <idPacijenta>P1</idPacijenta>
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
@@ -97,6 +99,7 @@
       <BrojKartona>123</BrojKartona>
       <BracniStatus>Neudata</BracniStatus>
       <Anamneza>
+        <idPacijenta>P1</idPacijenta>
         <Simptomi>Bol u grlu.</Simptomi>
         <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
       </Anamneza>

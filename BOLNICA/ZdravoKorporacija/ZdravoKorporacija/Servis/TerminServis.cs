@@ -155,10 +155,21 @@ namespace Servis
                 }
             }
         }
-
-        public  List<Termin> PrikaziSveZakazaneTermine()
+        public List<Termin> PrikaziSveZakazaneTermine()
         {
             return terminRepozitorijum.DobaviZakazaneTermine();
+        }
+
+        public  List<Termin> DobaviSveObavljeneTermine(String idPacijenta)
+        {
+            List<Termin> terminiPacijenta = new List<Termin>();
+            foreach (Termin t in terminRepozitorijum.DobaviSveZakazaneTerminePacijenta(idPacijenta))
+            {
+                if (DateTime.Compare(t.Datum.Date, DateTime.Now.Date) < 0)
+                    terminiPacijenta.Add(t);
+            }
+            return terminiPacijenta;
+            
         }
         public List<Termin> DobaviZakazaneTerminePacijenta(String idPacijenta)
         {

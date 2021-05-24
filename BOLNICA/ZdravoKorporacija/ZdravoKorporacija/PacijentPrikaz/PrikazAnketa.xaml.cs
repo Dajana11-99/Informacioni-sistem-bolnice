@@ -32,15 +32,15 @@ namespace ZdravoKorporacija.PacijentPrikaz
             InitializeComponent();
             this.DataContext = this;
             Ankete = new ObservableCollection<Termin>();
-            foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
+           /* foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
             {
               /*  if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                 {
                     if(DateTime.Compare(t.Datum.Date,DateTime.Now.Date)<0 && !t.OcenjenTermin)
                        Ankete.Add(t);
-                }*/
+                }
                   
-            }
+            }*/
         }
 
         private void PopuniAnketu_Click(object sender, RoutedEventArgs e)

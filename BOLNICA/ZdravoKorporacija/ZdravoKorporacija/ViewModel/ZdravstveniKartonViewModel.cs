@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZdravoKorporacija.DTO;
+using ZdravoKorporacija.Komande;
+using ZdravoKorporacija.PacijentPrikaz;
 
 namespace ZdravoKorporacija.ViewModel
 {
@@ -18,10 +20,10 @@ namespace ZdravoKorporacija.ViewModel
         public ZdravstveniKartonViewModel(String korisnickoIme)
         {
             PronadjiPacijenta(korisnickoIme);
+            prikaziIstorijuPregleda = new RelayCommand(Prikazi);
         }
         private void PronadjiPacijenta(String korisnickoIme )
         {
-
             Pacijent = new PacijentDTO(korisnickoIme,naloziPacijenataKontroler.PretraziPoKorisnickom(korisnickoIme).Jmbg, naloziPacijenataKontroler.PretraziPoKorisnickom(korisnickoIme).adresaStanovanja.Ulica, naloziPacijenataKontroler.PretraziPoKorisnickom(korisnickoIme).adresaStanovanja.Broj);
             Karton = new Karton();
             Karton = naloziPacijenataKontroler.DobaviKartonPacijenta(korisnickoIme);
@@ -44,6 +46,20 @@ namespace ZdravoKorporacija.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        private RelayCommand prikaziIstorijuPregleda;
+
+        public RelayCommand PrikaziIstorijuPregleda
+        {
+            get { return prikaziIstorijuPregleda; }
+        }
+
+        private void Prikazi()
+        {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IstorijaPregleda(pacijent.KorisnickoIme));
+        }
+
 
 
     }

@@ -40,10 +40,6 @@ namespace Kontroler
             return slobodniTerminiUIntervalu;
             
         }
-        public  List<Termin> PrikaziSveZakazaneTermine()
-        {
-            return terminiServis.PrikaziSveZakazaneTermine();
-        }
         public  Termin PretraziSlobodneTerminePoId(String IdTermina)
         {
             return terminiServis.PretraziSlobodneTerminePoId(IdTermina);
@@ -99,7 +95,21 @@ namespace Kontroler
             return slobodniTerminiZaZakazivanje;
 
         }
-      public List<TerminDTO> DobaviZakazaneTerminePacijenta(String idPacijenta)
+        public List<TerminDTO> DobaviSveObavljeneTermine(String idPacijenta)
+        {
+            List<TerminDTO> sviZakazaniTerminiPacijenta = new List<TerminDTO>();
+            foreach (Termin termin in terminiServis.DobaviSveObavljeneTermine(idPacijenta))
+            {
+                sviZakazaniTerminiPacijenta.Add(new TerminDTO(termin.IdTermina, termin.Datum, termin.Vreme, termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id, termin.TipTermina.ToString(), termin.Pacijent.IdPacijenta));
+            }
+            return sviZakazaniTerminiPacijenta;
+
+        }
+        public List<Termin> PrikaziSveZakazaneTermine()
+        {
+            return terminiServis.PrikaziSveZakazaneTermine();
+        }
+        public List<TerminDTO> DobaviZakazaneTerminePacijenta(String idPacijenta)
         {
             List<TerminDTO> sviZakazaniTerminiPacijenta = new List<TerminDTO>();
           foreach(Termin termin in terminiServis.DobaviZakazaneTerminePacijenta(idPacijenta))

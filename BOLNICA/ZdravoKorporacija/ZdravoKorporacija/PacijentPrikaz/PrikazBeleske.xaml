@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.PrikazBeleske"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="582">
+    <StackPanel Margin="20">
+        <Label FontSize="15">Kreiraj belesku</Label>
+        <TextBox Height="230" Text="{Binding Path=TekstBeleske}"></TextBox>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="{Binding Path=Poruka}" FontWeight="DemiBold"></Label>
+            <Button Grid.Column="0" Margin="0 0 10 0" Command="{Binding Path=VratiSeKomanda}">Vrati se</Button>
+            <Button Grid.Column="1"  Margin="0 0 10 0" Command="{Binding Path=SacuvajBeleskuKomanda}">Sacuvaj belesku</Button>
+            <Button Grid.Column="2" Command="{Binding Path=KreirajPodsetnikKomanda}" >Kreiraj podsetnik</Button>
+        </Grid>
+        
+    </StackPanel>
+</UserControl>

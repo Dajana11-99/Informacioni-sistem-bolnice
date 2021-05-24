@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZdravoKorporacija.DTO;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Repozitorijum;
 
@@ -33,6 +34,14 @@ namespace ZdravoKorporacija.Servis
             return nesortiranaObavestenja.OrderByDescending(user => user.Datum).ToList();
         }
 
+        public void KreirajPodsetnik(ObavestenjeDTO obavestenja)
+        {
+            int brojDana = (int)(obavestenja.DatumDo - obavestenja.DatumOd).TotalDays;
+            for (int i= 0; i < brojDana; i++)
+            {
+                DateTime datumObavestenja = obavestenja.DatumOd.AddDays(i);
+            }
+        }
      
     }
 }
