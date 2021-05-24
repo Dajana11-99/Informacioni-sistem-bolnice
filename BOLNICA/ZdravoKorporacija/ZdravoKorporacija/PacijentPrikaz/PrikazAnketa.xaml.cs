@@ -34,11 +34,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
             Ankete = new ObservableCollection<Termin>();
             foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
             {
-                if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
+              /*  if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                 {
                     if(DateTime.Compare(t.Datum.Date,DateTime.Now.Date)<0 && !t.OcenjenTermin)
                        Ankete.Add(t);
-                }
+                }*/
                   
             }
         }
@@ -57,11 +57,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
-            if (!anketeKontroler.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovan))
+           /* if (!anketeKontroler.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovan))
             {
                 MessageBox.Show("Već ste ocenili bolnicu!");
                 return;
-            }
+            }*/
           
             OceniBolnicu oceni = new OceniBolnicu();
             oceni.Show();

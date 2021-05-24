@@ -13,12 +13,13 @@ namespace ZdravoKorporacija.ViewModel
    
     public class PrikazDatumaViewModel:ViewModel
     {
-        private ObservableCollection<TerminViewModel> slobodniDatumi;
+        private ObservableCollection<TerminDTO> slobodniDatumi;
         private TerminKontroler terminKontroler = new TerminKontroler();
-        private TerminViewModel terminZaPomeranje;
-        private TerminViewModel selektovaniTermin;
+        private TerminDTO terminZaPomeranje;
+        private TerminDTO selektovaniTermin;
         private String poruka;
-        public ObservableCollection<TerminViewModel> SlobodniDatumi
+       
+        public ObservableCollection<TerminDTO> SlobodniDatumi
         {
             get { return slobodniDatumi; }
             set
@@ -28,7 +29,7 @@ namespace ZdravoKorporacija.ViewModel
             }
         }
 
-        public TerminViewModel SelektovaniTermin
+        public TerminDTO SelektovaniTermin
         {
             get { return selektovaniTermin; }
             set
@@ -47,9 +48,10 @@ namespace ZdravoKorporacija.ViewModel
                 OnPropertyChanged();
             }
         }
-        public PrikazDatumaViewModel(TerminViewModel terminZaPomeranje)
+        public PrikazDatumaViewModel(TerminDTO terminZaPomeranje)
         {
             this.terminZaPomeranje = terminZaPomeranje;
+      
             UcitajUKolekciju();
             vratiSeKomanda = new RelayCommand(VratiSe);
             prikaziDatumeKomanda = new RelayCommand(PrikaziDatume);
@@ -57,17 +59,23 @@ namespace ZdravoKorporacija.ViewModel
             prikaziTermineKomanda = new RelayCommand(PrikaziTermine);
         }
 
-        public TerminViewModel TerminZaPomeranje
+        public TerminDTO TerminZaPomeranje
         {
             get { return terminZaPomeranje; }
         }
         private void UcitajUKolekciju()
         {
-            SlobodniDatumi = new ObservableCollection<TerminViewModel>();
-            foreach (TerminViewModel termin in terminKontroler.DobaviSveSlobodneDatumeZaPomeranje(terminZaPomeranje.TerminDTO))
-            {
+            
+            SlobodniDatumi = new ObservableCollection<TerminDTO>();
+            foreach (TerminDTO termin in terminKontroler.DobaviSveSlobodneDatumeZaPomeranje(terminZaPomeranje))
+            { 
                 this.SlobodniDatumi.Add(termin);
             }
+            if (SlobodniDatumi.Count == 0)
+            {
+                Poruka = "*Nema slobodnih datuma za pomeranje! Vrati se nazad.";
+            }
+            
         }
 
         private RelayCommand prikaziDatumeKomanda;
@@ -111,14 +119,14 @@ namespace ZdravoKorporacija.ViewModel
 
        public void VratiSeNazad()
         {
-            Console.WriteLine("USAOOOOOOOOOOOOOOO");
+      
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(TerminZaPomeranje));
         }
         public void VratiSe()
         {
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina());
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina(TerminZaPomeranje.IdPacijenta));
         }
 
         public void PrikaziDatume()

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Model;
 using ZdravoKorporacija;
-
+using ZdravoKorporacija.Repozitorijum;
 
 namespace Servis
 
@@ -24,7 +24,7 @@ namespace Servis
                 ListaPacijenata.Add(new Pacijent(i.ToString()));
         }
 
-        public static Pacijent PretragaPoId(String Id)
+        public  Pacijent PretragaPoId(String Id)
         {
             foreach (Pacijent P in ListaPacijenata)
             {
@@ -60,14 +60,14 @@ namespace Servis
             ListaPacijenata.Add(p3);
         }
 
-        public static bool IzmeniPostojeciNalog(string iDPacijent)
+        public static void IzmeniPostojeciNalog(string iDPacijent)
         {
-            Pacijent P = PretragaPoId(iDPacijent);
+          //  Pacijent P = PretragaPoId(iDPacijent);
 
-            int id = PrikazPacijenata.ListaPacijenataXMAL.IndexOf(P);
-            PrikazPacijenata.ListaPacijenataXMAL.RemoveAt(id);
-            PrikazPacijenata.ListaPacijenataXMAL.Insert(id, P);
-            return false;
+            //int id = PrikazPacijenata.ListaPacijenataXMAL.IndexOf(P);
+           // PrikazPacijenata.ListaPacijenataXMAL.RemoveAt(id);
+           // PrikazPacijenata.ListaPacijenataXMAL.Insert(id, P);
+            //return false;
         }
 
         public static bool ObriseNalog(Pacijent Pac)
@@ -84,7 +84,7 @@ namespace Servis
             return false;
         }
 
-      public static Pacijent PretraziPoKorisnickom(String korisnicko)
+      public  Pacijent PretraziPoKorisnickom(String korisnicko)
         {
             foreach(Pacijent pacijent in ListaPacijenata)
             {
@@ -112,6 +112,30 @@ namespace Servis
                     return pacijent.karton;
             }
             return null;
+        }
+        public  Karton DobaviKartonPacijenta(String korisnickoIme)
+        {
+            foreach (Pacijent pacijent in ListaPacijenata)
+            {
+                if (pacijent.korisnik.KorisnickoIme.Equals(korisnickoIme))
+                    return pacijent.karton;
+            }
+            return null;
+        }
+
+        public void IzmeniPacijenta(Recept receptZaIzmenu)
+        {
+
+            Pacijent pacijent = PretragaPoId(receptZaIzmenu.idPacijenta);
+            foreach(Recept recept in pacijent.karton.recepti)
+            {
+                if (recept.Lek1.ImeLeka.Equals(receptZaIzmenu.Lek1.ImeLeka))
+                {
+                    recept.obavestiMe =receptZaIzmenu.obavestiMe;
+                }
+            }
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
+           
         }
     }
 }

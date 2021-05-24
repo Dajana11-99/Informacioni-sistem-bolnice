@@ -22,7 +22,7 @@
 
 
 
-                            <TextBlock   Text="{Binding Path=TerminDTO.Vreme}"/>
+                            <TextBlock   Text="{Binding Path=Vreme}"/>
 
 
 

@@ -22,12 +22,12 @@
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="181" HorizontalAlignment="Left" Width="544">
                 <DataGrid.Columns>
                  
-                    <DataGridTextColumn Header="Tip termina" Binding="{Binding Path=TerminDTO.TipTermina}" />
-                    <DataGridTextColumn Header="Lekar" Binding="{Binding Path=TerminDTO.Lekar.CeloIme}"/>
-                    <DataGridTextColumn Header="Datum" Binding="{Binding Path=TerminDTO.Datum , StringFormat={}{0:MM/dd/yyyy}}"/>
-                    <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Path=TerminDTO.Vreme}"/>
-                    <DataGridTextColumn Header="Trajanje termina" Binding="{Binding Path=TerminDTO.PredvidjenoVreme}"/>
-                    <DataGridTextColumn Header="Sala" Binding="{Binding Path=TerminDTO.NazivSale}"/>
+                    <DataGridTextColumn Header="Tip termina" Binding="{Binding Path=TipTermina}" />
+                    <DataGridTextColumn Header="Lekar" Binding="{Binding Path=Lekar.CeloIme}"/>
+                    <DataGridTextColumn Header="Datum" Binding="{Binding Path=Datum , StringFormat={}{0:MM/dd/yyyy}}"/>
+                    <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Path=Vreme}"/>
+                    <DataGridTextColumn Header="Trajanje termina" Binding="{Binding Path=PredvidjenoVreme}"/>
+                    <DataGridTextColumn Header="Sala" Binding="{Binding Path=NazivSale}"/>
 
                 </DataGrid.Columns>
             </DataGrid>

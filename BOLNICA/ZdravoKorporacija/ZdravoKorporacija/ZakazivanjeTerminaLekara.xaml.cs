@@ -21,6 +21,7 @@ namespace ZdravoKorporacija
         public List<Lekar> Lekari { get; set; }
         public LekarKontroler lekarKontroler = new LekarKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
 
         public ZakazivanjeTerminaLekara()
         {
@@ -43,7 +44,7 @@ namespace ZdravoKorporacija
             String id = Guid.NewGuid().ToString();
             string[] pom = cmbLekar.Text.Split(' ');
             Lekar l = lekarKontroler.PretragaPoLekaru(pom[0], pom[1]);
-            Pacijent p = NaloziPacijenataServis.PretragaPoId(cmbPacijent.Text);
+            Pacijent p = naloziPacijenataKontroler.PretragaPoId(cmbPacijent.Text);
             String idSale = brojSale.Text;
             String vr = cmbZakazivanjeTerminaVreme.Text;
             TipTermina tipP;

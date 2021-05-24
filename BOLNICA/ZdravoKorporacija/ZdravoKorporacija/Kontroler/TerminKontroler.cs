@@ -19,17 +19,8 @@ namespace Kontroler
         {
             return terminiServis.DobaviSveZakazaneTermine();
         }
-        public  List<TerminViewModel> NadjiVremeTermina(TerminDTO izabraniTermin)
-        {
-            List<TerminViewModel> sviSlobodniTermini = new List<TerminViewModel>();
-            Termin termin = PretraziSlobodneTerminePoId(izabraniTermin.IdTermina);
-            foreach(Termin slobodanTermin in terminiServis.NadjiVremeTermina(termin))
-            {
-                sviSlobodniTermini.Add(KonvertujDTOUViewModel(slobodanTermin));
-            }
-            return sviSlobodniTermini;
-        }
-        public List<TerminDTO> NadjiVremeZakazivanjeTermina(TerminDTO izabraniTermin)
+     
+        public List<TerminDTO> NadjiVremeTermina(TerminDTO izabraniTermin)
         {
             List<TerminDTO> terminiDatuma = new List<TerminDTO>();
             Termin terminZaPrikaz = PretraziSlobodneTerminePoId(izabraniTermin.IdTermina);
@@ -67,8 +58,9 @@ namespace Kontroler
         }
         public  void ZakaziPregled(TerminDTO terminZaZakazivanje,String korisnickoImePacijenta)
         {
+            
             Termin termin = PretraziSlobodneTerminePoId(terminZaZakazivanje.IdTermina);
-            terminiServis.ZakaziPregled(termin,korisnickoImePacijenta);
+            terminiServis.ZakaziPregled(termin, korisnickoImePacijenta);
         }
         public  void PomeriPregled(TerminDTO stariTerminDTO, TerminDTO noviTerminDTO)
         {
@@ -85,14 +77,14 @@ namespace Kontroler
         {
             return terminiServis.PretragaZakazanihTerminaPoId(izabran);
         }
-        public List<TerminViewModel> DobaviSveSlobodneDatumeZaPomeranje(TerminDTO termin)
+        public List<TerminDTO> DobaviSveSlobodneDatumeZaPomeranje(TerminDTO termin)
         {
-            List<TerminViewModel> slobodniTerminiZaPomeranje = new List<TerminViewModel>();
+            List<TerminDTO> slobodniTerminiZaPomeranje = new List<TerminDTO>();
             Termin terminZaPomeranje = PretragaZakazanihTerminaPoId(termin.IdTermina);
-           
+          
             foreach(Termin slobodniTermin in terminiServis.DobaviSveSlobodneDatumeZaPomeranje(terminZaPomeranje))
             {
-                slobodniTerminiZaPomeranje.Add(KonvertujDTOUViewModel(slobodniTermin));
+                slobodniTerminiZaPomeranje.Add(new TerminDTO(slobodniTermin.IdTermina, slobodniTermin.Datum, slobodniTermin.Vreme, termin.Lekar, slobodniTermin.TrajanjeTermina.ToString(), slobodniTermin.Sala.Id, slobodniTermin.TipTermina.ToString()));
             }
             return slobodniTerminiZaPomeranje;
             
@@ -107,21 +99,16 @@ namespace Kontroler
             return slobodniTerminiZaZakazivanje;
 
         }
-      public List<TerminViewModel> DobaviZakazaneTerminePacijenta(String idPacijenta)
+      public List<TerminDTO> DobaviZakazaneTerminePacijenta(String idPacijenta)
         {
-            List<TerminViewModel> sviZakazaniTerminiPacijenta = new List<TerminViewModel>();
+            List<TerminDTO> sviZakazaniTerminiPacijenta = new List<TerminDTO>();
           foreach(Termin termin in terminiServis.DobaviZakazaneTerminePacijenta(idPacijenta))
             {
-                sviZakazaniTerminiPacijenta.Add(KonvertujDTOUViewModel(termin));
+                sviZakazaniTerminiPacijenta.Add(new TerminDTO(termin.IdTermina, termin.Datum, termin.Vreme, termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id, termin.TipTermina.ToString(),termin.Pacijent.IdPacijenta));
             }
             return sviZakazaniTerminiPacijenta;
         }
-        private TerminViewModel KonvertujDTOUViewModel(Termin termin)
-        {
-            TerminDTO terminDTO = new TerminDTO(termin.IdTermina, termin.Datum, termin.Vreme,termin.Lekar, termin.TrajanjeTermina.ToString(), termin.Sala.Id, termin.TipTermina.ToString());
-            TerminViewModel terminViewModel = new TerminViewModel(terminDTO);
-            return terminViewModel;
-        }
+      
         public bool ProveriMogucnostPomeranjeVreme(String vreme)
         {
            return terminiServis.ProveriMogucnostPomeranjaVreme(vreme);

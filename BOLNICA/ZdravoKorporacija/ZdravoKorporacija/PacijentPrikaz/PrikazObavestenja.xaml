@@ -8,7 +8,7 @@
         Title="PrikazObavestenja" Height="360" Width="587" WindowStartupLocation="CenterScreen">
     <StackPanel>
 
-        <ListBox x:Name="obavestenjaPacijentaLista" SelectionMode="Single" Height="245" Margin="41,0,54.8,0"  >
+        <ListBox x:Name="obavestenjaPacijenta" ItemsSource="{Binding Path=SvaObavestenjaPacijenta}" SelectionMode="Single" Height="245" Margin="41,0,54.8,0"  >
 
             <ListBox.ItemTemplate >
                 <DataTemplate>
@@ -16,7 +16,7 @@
 
 
                     <WrapPanel Background="#77c9b5" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Grid  Margin="10"  Width="400" Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Grid  Margin="10"  Width="400"  HorizontalAlignment="Center" VerticalAlignment="Center" >
 
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>

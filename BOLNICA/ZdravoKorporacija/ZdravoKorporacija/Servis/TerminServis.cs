@@ -14,6 +14,7 @@ namespace Servis
     public class TerminServis
     {
         private int MAX_BRPROMENA=5;
+        private NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         public List<Termin> DobaviSveZakazaneTermine()
         {
             return terminRepozitorijum.DobaviZakazaneTermine();
@@ -66,7 +67,7 @@ namespace Servis
         public List<Termin> DobaviSveSlobodneDatumeZaPomeranje(Termin termin)
         {
             List<Termin> sviSlobodniDatumi = new List<Termin>();
-            sviSlobodniDatumi=NadjiSlobodneTermineLekara(termin.Lekar.idZaposlenog, NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2)));
+            sviSlobodniDatumi=NadjiSlobodneTermineLekara(termin.Lekar.CeloIme, NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2)));
             return ObrisiDatumeIzProslosti(sviSlobodniDatumi);
         }
         private  List<Termin> SortirajTerminePoDatumu(List<Termin> nesortiraniDatumi)
@@ -179,7 +180,8 @@ namespace Servis
         }
         public  void ZakaziPregled(Termin termin,String korisnickoImePacijenta)
         {
-            termin.Pacijent = NaloziPacijenataServis.PretraziPoKorisnickom(korisnickoImePacijenta);
+            Console.WriteLine("PACIJENT" + korisnickoImePacijenta);
+            termin.Pacijent = naloziPacijenataServis.PretraziPoKorisnickom(korisnickoImePacijenta);
             terminRepozitorijum.ZakaziPregled(termin);
         }
         public  void PomeriPregled(Termin stariTermin, Termin noviTermin)

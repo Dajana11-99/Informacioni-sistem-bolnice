@@ -135,6 +135,9 @@
       <DependentUpon>DodajZahtevWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DTO\LekarDTO.cs" />
+    <Compile Include="DTO\ObavestenjeDTO.cs" />
+    <Compile Include="DTO\PacijentDTO.cs" />
+    <Compile Include="DTO\ReceptDTO.cs" />
     <Compile Include="DTO\ZakazivanjeDTO.cs" />
     <Compile Include="InformacijeLekaWindow.xaml.cs">
       <DependentUpon>InformacijeLekaWindow.xaml</DependentUpon>
@@ -369,18 +372,19 @@
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util\DeepCopy.cs" />
-    <Compile Include="Validacija\ValidacijaPrilikomZakazivanja.cs" />
     <Compile Include="ViewModel\DatumiKoIzabranogLekaraViewModel.cs" />
+    <Compile Include="ViewModel\ObavestenjaViewModel.cs" />
     <Compile Include="ViewModel\PotvrdiPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PotvrdiZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\PrikazDatumaViewModel.cs" />
     <Compile Include="ViewModel\PrikazVremenaViewModel.cs" />
     <Compile Include="ViewModel\RasporedTerminaViewModel.cs" />
     <Compile Include="DTO\TerminDTO.cs" />
-    <Compile Include="ViewModel\TerminViewModel.cs" />
+    <Compile Include="ViewModel\TerapijaViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="ViewModel\VremenaZaZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\ZakazivanjeSaPrioritetomViewModel.cs" />
+    <Compile Include="ViewModel\ZdravstveniKartonViewModel.cs" />
     <Compile Include="ZahtevZaSlobodneDaneWindow.xaml.cs">
       <DependentUpon>ZahtevZaSlobodneDaneWindow.xaml</DependentUpon>
     </Compile>

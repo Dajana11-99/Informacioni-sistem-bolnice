@@ -12,13 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
-
 using Servis;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Data;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Servis;
 using ZdravoKorporacija.Util;

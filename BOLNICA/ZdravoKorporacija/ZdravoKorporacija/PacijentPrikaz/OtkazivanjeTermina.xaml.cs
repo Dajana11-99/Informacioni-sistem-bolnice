@@ -21,7 +21,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 {
     public partial class OtkazivanjeTermina : Window, ICloseable
     {
-        public OtkazivanjeTermina(TerminViewModel termin)
+        public OtkazivanjeTermina(TerminDTO termin)
         {
             RasporedTerminaViewModel terminViewModel = new RasporedTerminaViewModel(termin);
             InitializeComponent();

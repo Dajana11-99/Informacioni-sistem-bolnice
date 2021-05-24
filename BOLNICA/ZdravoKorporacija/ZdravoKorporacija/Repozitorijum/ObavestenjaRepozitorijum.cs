@@ -68,7 +68,7 @@ namespace ZdravoKorporacija.Repozitorijum
             doc.Load(imeFajla);
             XmlNode root = doc.DocumentElement;
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
-            XmlNodeList nodes = root.SelectNodes("//ArrayOfObavestenja/Obavestenje[IdPrimaoca='" + idPacijenta + "']", nsmgr);
+            XmlNodeList nodes = root.SelectNodes("//ArrayOfObavestenja/Obavestenja[IdPrimaoca='" + idPacijenta + "']", nsmgr);
             return KonvertujSveCvoroveUObjekte(nodes);
         }
         private List<Obavestenja> KonvertujSveCvoroveUObjekte(XmlNodeList obavestenja)
@@ -76,6 +76,7 @@ namespace ZdravoKorporacija.Repozitorijum
             List<Obavestenja> obavestenjaPacijenta = new List<Obavestenja>();
             foreach (XmlNode node in obavestenja)
             {
+               
                 obavestenjaPacijenta.Add(ConvertujCvorUObjekat(node));
             }
             return obavestenjaPacijenta;

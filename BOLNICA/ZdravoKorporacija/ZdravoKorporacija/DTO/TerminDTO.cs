@@ -16,54 +16,78 @@ namespace ZdravoKorporacija.ViewModel
         private String predvidjenoVreme;
         private String BrOperacioneSale;
         private String tipTermina;
-     
-        public TerminDTO(string idTermin, DateTime datum, string vreme, Lekar lekar, string predvidjenoVreme, string brOperacioneSale, String tipTermina)
+        private String idPacijenta;
+
+        public TerminDTO(string idTermin, DateTime datum, string vreme, Lekar lekar, string predvidjenoVreme, string brOperacioneSale, string tipTermina, string idPacijenta) : this(idTermin)
         {
-            this.idTermin = idTermin;
             this.datum = datum;
             this.vreme = vreme;
             this.lekar = lekar;
             this.predvidjenoVreme = predvidjenoVreme;
-            this.BrOperacioneSale = brOperacioneSale;
+            BrOperacioneSale = brOperacioneSale;
+            this.tipTermina = tipTermina;
+            this.idPacijenta = idPacijenta;
+        }
+
+        public TerminDTO(string idTermin, DateTime datum, string vreme, Lekar lekar, string predvidjenoVreme, string brOperacioneSale, string tipTermina) : this(idTermin)
+        {
+            this.datum = datum;
+            this.vreme = vreme;
+            this.lekar = lekar;
+            this.predvidjenoVreme = predvidjenoVreme;
+            BrOperacioneSale = brOperacioneSale;
             this.tipTermina = tipTermina;
         }
+
         public String IdTermina
         {
             get { return idTermin; }
-            set { idTermin = value; OnPropertyChanged("Id"); }
+            set { idTermin = value; }
         }
         public DateTime Datum
         {
             get { return datum; }
-            set { datum = value; OnPropertyChanged("Datum"); }
+            set { datum = value; }
         }
         public String Vreme
         {
             get { return vreme; }
-            set { vreme = value; OnPropertyChanged("Vreme"); }
+            set { vreme = value; }
+        }
+        public String IdPacijenta
+        {
+            get { return idPacijenta; }
+            set { idPacijenta = value; }
         }
 
         public Lekar Lekar
         {
             get { return lekar; }
-            set { lekar = value; OnPropertyChanged("Lekar"); }
+            set { lekar = value; }
         }
 
         public String PredvidjenoVreme
         {
             get { return predvidjenoVreme; }
-            set { predvidjenoVreme = value; OnPropertyChanged("PredvidjenoVreme"); }
+            set { predvidjenoVreme = value; }
         }
 
         public String NazivSale
         {
             get { return BrOperacioneSale; }
-            set { BrOperacioneSale = value; OnPropertyChanged("NazivSale"); }
+            set { BrOperacioneSale = value; }
         }
         public String TipTermina
         {
             get { return tipTermina; }
-            set { tipTermina = value; OnPropertyChanged("TipTermina"); }
+            set { tipTermina = value; }
         }
+
+
+        public TerminDTO(string idTermin)
+        {
+            this.idTermin = idTermin;
+        }
+
     }
 }

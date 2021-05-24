@@ -24,7 +24,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
     {
         private PrikazDatumaViewModel prikazDatumaViewModel;
        
-        public PrikazDatumaZaPomeranjeKodLekara(TerminViewModel terminZaPomernje)
+        public PrikazDatumaZaPomeranjeKodLekara(TerminDTO terminZaPomernje)
         {
             prikazDatumaViewModel = new PrikazDatumaViewModel(terminZaPomernje);
             InitializeComponent();
@@ -33,25 +33,5 @@ namespace ZdravoKorporacija.PacijentPrikaz
            
         }
 
-       /* private void vratiSe_Click(object sender, RoutedEventArgs e)
-        {
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(termin));
-        }
-
-        private void nastavi_Click(object sender, RoutedEventArgs e)
-        {
-            if (slobodniDatumi.SelectedIndex == -1)
-            {
-                MessageBox.Show("Izaberite datum!");
-                return;
-            }
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazVremenaZaPomeranje(termin,(TerminViewModel)slobodniDatumi.SelectedItem));
-
-
-
-        }
-       */
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.DTO;
 using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija.PacijentPrikaz
@@ -21,29 +22,21 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class PacijentGlavniProzor : Window
     {
         private static Grid GlavniSadrzaj;
-        public static  Pacijent ulogovan = null;
+     
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         TerminKontroler terminKontroler = new TerminKontroler();
         TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
-        public PacijentGlavniProzor(String id)
+        private PacijentDTO ulogovaniPacijent;
+        public PacijentGlavniProzor(String pacijent)
         {
+           
             InitializeComponent();
+            ulogovaniPacijent = new PacijentDTO(pacijent);
             GlavniSadrzaj = this.MainPanel;
             NaloziPacijenataRepozitorijum.UcitajPacijente();
-            ulogovan = NaloziPacijenataKontroler.PretraziPoKorisnickom(id);
-            imePacijenta.Content = ulogovan.Ime+" "+ulogovan.Prezime;
-            Terapija terapija = new Terapija();
-            foreach (Recept rec in ulogovan.karton.recepti)
-            {
-                if (rec.obavestiMe.Equals("DA"))
-                {
-                    Terapija.r = rec;
-                    terapija.schedule_Timer();
-                }
-
-            }
-            //MessageBox.Show(terminRepozitorijum.PretraziSlobodneTerminePoId("2").IdTermina);
-            
+            imePacijenta.Content = ulogovaniPacijent.KorisnickoIme;
+            ;
+     
         }
 
         public static Grid GetGlavniSadrzaj()
@@ -52,14 +45,13 @@ namespace ZdravoKorporacija.PacijentPrikaz
         }
         private void karton_Click(object sender, RoutedEventArgs e)
         {
-
+           
             MainPanel.Children.Clear();
-            MainPanel.Children.Add(new ZdravstevniKarton());
+            MainPanel.Children.Add(new ZdravstevniKarton(ulogovaniPacijent.KorisnickoIme));
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
-
             MainPanel.Children.Clear();
             MainPanel.Children.Add(new PocetnaStrana());
         }
@@ -72,28 +64,22 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void zakazi_Click(object sender, RoutedEventArgs e)
         {
             MainPanel.Children.Clear();
-            MainPanel.Children.Add(new ZakazivanjeSaPrioritetom(ulogovan.korisnik.KorisnickoIme));
+            MainPanel.Children.Add(new ZakazivanjeSaPrioritetom(ulogovaniPacijent.KorisnickoIme));
         }
 
         private void raspored_Click(object sender, RoutedEventArgs e)
         {
-            UserControl usc = null;
+         
             MainPanel.Children.Clear();
-
-            usc = new RasporedTermina();
-            MainPanel.Children.Add(usc);
+            MainPanel.Children.Add(new RasporedTermina(ulogovaniPacijent.KorisnickoIme));
         }
 
         private void terapija_Click(object sender, RoutedEventArgs e)
         {
-            UserControl usc = null;
+           
             MainPanel.Children.Clear();
-
-            usc = new Terapija();
-            MainPanel.Children.Add(usc);
-
+            MainPanel.Children.Add(new Terapija(ulogovaniPacijent.KorisnickoIme));
         }
-
         private void ankete_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
@@ -106,7 +92,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void obavestenja_Click(object sender, RoutedEventArgs e)
         {
-            PrikazObavestenja ob = new PrikazObavestenja();
+            PrikazObavestenja ob = new PrikazObavestenja(ulogovaniPacijent.KorisnickoIme);
             ob.Show();
 
         }

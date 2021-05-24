@@ -26,7 +26,11 @@ namespace ZdravoKorporacija.Servis
         }
         public List<Obavestenja> PretraziObavestenjaPoPacijentu(String idPacijenta)
         {
-            return obavestenjaRepozitorijum.PretraziObavestenjaPoPacijentu(idPacijenta);
+            return SortirajPoDatumu(obavestenjaRepozitorijum.PretraziObavestenjaPoPacijentu(idPacijenta));
+        }
+        private List<Obavestenja> SortirajPoDatumu(List<Obavestenja> nesortiranaObavestenja)
+        {
+            return nesortiranaObavestenja.OrderByDescending(user => user.Datum).ToList();
         }
 
      

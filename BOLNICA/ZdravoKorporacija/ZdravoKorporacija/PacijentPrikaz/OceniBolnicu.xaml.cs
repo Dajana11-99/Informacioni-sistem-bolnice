@@ -48,7 +48,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
                     postaviOcenuZaPitanje(((ComboBox)this.FindName("pitanje" + indexCombo)).SelectedIndex, i);
                 
             }
-            anketeRepozitorijum.DodajAnketu(new Ankete(dodatniKomentar.Text, pitanjeKontroler.DobaviSvaPitanjaOBolnici(), null, PacijentGlavniProzor.ulogovan,DateTime.Now.Date));
+           // anketeRepozitorijum.DodajAnketu(new Ankete(dodatniKomentar.Text, pitanjeKontroler.DobaviSvaPitanjaOBolnici(), null, PacijentGlavniProzor.ulogovan,DateTime.Now.Date));
          
             this.Close();
         }

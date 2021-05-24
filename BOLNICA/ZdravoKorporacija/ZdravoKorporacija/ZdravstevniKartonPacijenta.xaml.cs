@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija
 {
@@ -22,10 +24,11 @@ namespace ZdravoKorporacija
     public partial class ZdravstevniKartonPacijenta : Window
     {
          public static  Pacijent pacijent=null;
+        private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         public ZdravstevniKartonPacijenta(String idPacijenta)
         {
             InitializeComponent();
-            pacijent = NaloziPacijenataServis.PretragaPoId(idPacijenta);
+            pacijent = naloziPacijenataKontroler.PretragaPoId(idPacijenta);
             PopuniPodatkeOPacijentu();
         }
 

@@ -54,8 +54,8 @@ namespace ZdravoKorporacija.ViewModel
         private void Potvrdi()
         {
             terminKontroler.ZakaziPregled(IzabraniTermin,podaciZaPrikaz.KorisnickoImePacijenta);
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina());
+           PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina(podaciZaPrikaz.KorisnickoImePacijenta));
         }
 
     }

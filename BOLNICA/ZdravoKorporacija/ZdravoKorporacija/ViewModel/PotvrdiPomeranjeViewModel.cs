@@ -11,11 +11,12 @@ namespace ZdravoKorporacija.ViewModel
 {
     public class PotvrdiPomeranjeViewModel
     {
-        private TerminViewModel stariTermin;
-        private TerminViewModel noviTermin;
+        private TerminDTO stariTermin;
+        private TerminDTO noviTermin;
         private TerminKontroler terminKontroler = new TerminKontroler();
+        private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
 
-        public PotvrdiPomeranjeViewModel(TerminViewModel stariTermin, TerminViewModel noviTermin)
+        public PotvrdiPomeranjeViewModel(TerminDTO stariTermin, TerminDTO noviTermin)
         {
             
             this.stariTermin = stariTermin;
@@ -43,17 +44,17 @@ namespace ZdravoKorporacija.ViewModel
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazVremenaZaPomeranje(stariTermin,noviTermin));
         }
 
-        public TerminViewModel NoviTermin
+        public TerminDTO NoviTermin
         {
             get { return noviTermin; }
         }
 
         public void PomeriPregled()
         {
-            Console.WriteLine("USAOOOOOOOOOOO");
-            terminKontroler.PomeriPregled(stariTermin.TerminDTO, noviTermin.TerminDTO);
+            String korisnickoImePacijenta =naloziPacijenataKontroler.PretragaPoId(stariTermin.IdPacijenta).korisnik.KorisnickoIme;
+            terminKontroler.PomeriPregled(stariTermin, noviTermin);
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina());
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina(korisnickoImePacijenta));
         }
 
     }

@@ -29,7 +29,7 @@ namespace ZdravoKorporacija.ViewModel
         private void UcitajUKolekciju(TerminDTO izabraniTermin)
         {
             SlobodniTermini = new ObservableCollection<TerminDTO>();
-            foreach(TerminDTO termin in terminKontroler.NadjiVremeZakazivanjeTermina(izabraniTermin))
+            foreach(TerminDTO termin in terminKontroler.NadjiVremeTermina(izabraniTermin))
             {
                 SlobodniTermini.Add(termin);
             }

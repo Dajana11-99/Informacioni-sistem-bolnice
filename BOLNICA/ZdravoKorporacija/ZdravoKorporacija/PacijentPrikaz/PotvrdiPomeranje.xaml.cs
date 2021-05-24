@@ -24,7 +24,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         public Termin Termin = null;
         TerminKontroler terminKontroler = new TerminKontroler();
         PotvrdiPomeranjeViewModel potvrdiPomeranje;
-        public PotvrdiPomeranje(TerminViewModel stariTermin, TerminViewModel noviTermin)
+        public PotvrdiPomeranje(TerminDTO stariTermin, TerminDTO noviTermin)
         {
             
             InitializeComponent();

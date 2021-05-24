@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.DTO;
 using ZdravoKorporacija.PacijentPrikaz;
 using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.Servis;
@@ -30,7 +31,7 @@ namespace ZdravoKorporacija
         List<Lek> Lekovi = new List<Lek>();
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
-      
+        private PacijentDTO ulogovaniPacijent=new PacijentDTO();
         public ProzorLogovanje()
         {
             InitializeComponent();
@@ -42,9 +43,10 @@ namespace ZdravoKorporacija
 
             Lozinka.PasswordChar = '*';
             Lozinka.MaxLength = 15;
+            
 
             SalaRepozitorijum.UcitajSale();
-          
+            ulogovaniPacijent.KorisnickoIme = korisnickoIme.Text;
 
             //////----------------------
             //LekServis.inicijalizujLekove();
@@ -139,7 +141,8 @@ namespace ZdravoKorporacija
                     {
                         if (u.Maliciozan == false)
                         {
-                            PacijentGlavniProzor pg = new PacijentGlavniProzor(korisnickoIme.Text);
+                            
+                            PacijentGlavniProzor pg = new PacijentGlavniProzor(u.korisnik.KorisnickoIme);
                             pg.Show();
                             this.Close();
                             nasao = true;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZdravoKorporacija.DTO;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Servis;
 
@@ -11,9 +12,10 @@ namespace ZdravoKorporacija.Kontroler
    public class ObavestenjaKontroler
     {
         ObavestenjaServis obavestenjaServis = new ObavestenjaServis();
-        public void DodajObavestenjePacijentu(Obavestenja obavestenje)
+        public void DodajObavestenjePacijentu(ObavestenjeDTO obavestenjeDto)
         {
-            obavestenjaServis.DodajObavestenjePacijentu(obavestenje);
+            Obavestenja obavestenja = new Obavestenja(obavestenjeDto.IdObavestenja, obavestenjeDto.Naslov, obavestenjeDto.Tekst, obavestenjeDto.Datum, obavestenjeDto.IdPrimaoca);
+            obavestenjaServis.DodajObavestenjePacijentu(obavestenja);
         }
         public Obavestenja PretraziPoId(String idObavestenja)
         {
@@ -23,9 +25,15 @@ namespace ZdravoKorporacija.Kontroler
         {
             return obavestenjaServis.DobaviSvaObavestenja();
         }
-        public List<Obavestenja> PretraziObavestenjaPoPacijentu(String idPacijenta)
+        public List<ObavestenjeDTO> PretraziObavestenjaPoPacijentu(String idPacijenta)
         {
-            return obavestenjaServis.PretraziObavestenjaPoPacijentu(idPacijenta);
+            List<ObavestenjeDTO> obavestenjaPacijenta = new List<ObavestenjeDTO>();
+            foreach(Obavestenja obavestenje in obavestenjaServis.PretraziObavestenjaPoPacijentu(idPacijenta))
+            {
+                obavestenjaPacijenta.Add(new ObavestenjeDTO(obavestenje.IdObavestenja, obavestenje.Naslov,obavestenje.Tekst, obavestenje.Datum, obavestenje.IdPrimaoca));
+            }
+            return obavestenjaPacijenta;
+           
         }
 
 

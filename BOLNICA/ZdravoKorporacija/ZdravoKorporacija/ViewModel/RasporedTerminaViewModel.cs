@@ -17,24 +17,25 @@ namespace ZdravoKorporacija.ViewModel
     {
       
 
-        private ObservableCollection<TerminViewModel> zakazaniTerminiPacijenta;
+        private ObservableCollection<TerminDTO> zakazaniTerminiPacijenta;
         private TerminKontroler terminKontroler = new TerminKontroler();
-        private TerminViewModel selektovaniTermin;
+        private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        private TerminDTO selektovaniTermin;
         private string poruka;
+        private String idPacijenta;
+       
       
 
         public RasporedTerminaViewModel(String idPacijenta)
         {
+           
             UcitajUKolekciju(idPacijenta);
+            this.idPacijenta = idPacijenta;
             otkaziPregledKomanda = new RelayCommand(OtkaziPregled);
-
             pomeriPregledKomanda = new RelayCommand(PomeriPregled);
-          
-          
-        
         }
        
-        public RasporedTerminaViewModel(TerminViewModel izabraniTermin)
+        public RasporedTerminaViewModel(TerminDTO izabraniTermin)
         {
             selektovaniTermin = izabraniTermin;
             this.potvrdiOtkazivanje = new RelayCommand(Potvrdi);
@@ -43,14 +44,14 @@ namespace ZdravoKorporacija.ViewModel
 
         public void UcitajUKolekciju(String idPacijenta)
         {
-            ZakazaniTerminiPacijenta = new ObservableCollection<TerminViewModel>();
-            foreach (TerminViewModel termin in terminKontroler.DobaviZakazaneTerminePacijenta(idPacijenta))
+            ZakazaniTerminiPacijenta = new ObservableCollection<TerminDTO>();
+            foreach (TerminDTO termin in terminKontroler.DobaviZakazaneTerminePacijenta(idPacijenta))
             {
                 this.ZakazaniTerminiPacijenta.Add(termin);
             }
           
         }
-        public TerminViewModel SelektovaniTermin
+        public TerminDTO SelektovaniTermin
         {
             get { return selektovaniTermin; }
             set
@@ -59,7 +60,7 @@ namespace ZdravoKorporacija.ViewModel
                 OnPropertyChanged();
             }
         }
-        public ObservableCollection<TerminViewModel> ZakazaniTerminiPacijenta
+        public ObservableCollection<TerminDTO> ZakazaniTerminiPacijenta
         {
             get { return zakazaniTerminiPacijenta; }
             set
@@ -85,22 +86,22 @@ namespace ZdravoKorporacija.ViewModel
 
         public void Potvrdi()
         {
-                terminKontroler.OtkaziPregled(SelektovaniTermin.TerminDTO);
-                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina());
+            
+           terminKontroler.OtkaziPregled(SelektovaniTermin);
+           String korisnickoIme= naloziPacijenataKontroler.PretragaPoId(SelektovaniTermin.IdPacijenta).korisnik.KorisnickoIme;
+           PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+           PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new RasporedTermina(korisnickoIme));
           
-
-
         }
         private bool Validacija()
         {
-            if (DateTime.Compare(SelektovaniTermin.TerminDTO.Datum.Date, DateTime.Now.Date) > 0)
+            if (DateTime.Compare(SelektovaniTermin.Datum.Date, DateTime.Now.Date) < 0)
             {
                 return false;
             }
-            else if (DateTime.Compare(SelektovaniTermin.TerminDTO.Datum.Date, DateTime.Now.AddDays(1).Date) == 0)
+            else if (DateTime.Compare(SelektovaniTermin.Datum.Date, DateTime.Now.AddDays(1).Date) == 0)
             {
-                if (!terminKontroler.ProveriMogucnostPomeranjeVreme(SelektovaniTermin.TerminDTO.Vreme))
+                if (!terminKontroler.ProveriMogucnostPomeranjeVreme(SelektovaniTermin.Vreme))
                 {
                     return false;
                 }
@@ -109,18 +110,21 @@ namespace ZdravoKorporacija.ViewModel
         }
         public void OtkaziPregled()
         {
-            if (Validacija())
+            if (SelektovaniTermin != null)
             {
-                if (SelektovaniTermin != null)
+                if (Validacija())
                 {
                     OtkazivanjeTermina otkazivanje = new OtkazivanjeTermina(SelektovaniTermin);
                     otkazivanje.Show();
                 }
                 else
                 {
-                    Poruka = "*Morate izabrati termin da biste ga mogli otkazati!";
+                    Poruka = "*Ne mozete otkazati termin koji je za manje od 24h!";
                 }
-                Poruka = "*Ne mozete otkazati termin koji je za manje od 24h!";
+
+            }else
+            {
+                Poruka = "*Morate izabrati termin!";
             }
         }
         public string Poruka
@@ -139,18 +143,22 @@ namespace ZdravoKorporacija.ViewModel
       
         public void PomeriPregled()
         {
-            if (Validacija())
+            if (selektovaniTermin != null)
             {
-                if (selektovaniTermin != null)
+                if (Validacija())
                 {
                     PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
                     PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(selektovaniTermin));
                 }
                 else
                 {
-                    Poruka = "*Morate izabrati termin da biste pomerili pregled!";
+                    Poruka = "*Ne mozete pomeriti termin koji je za manje od 24h!";
+                  
                 }
-                Poruka= "*Ne mozete otkazati termin koji je za manje od 24h!";
+                
+            }else
+            {
+                Poruka = "*Morate izabrati termin da biste pomerili pregled!";
             }
         }
 

@@ -12,14 +12,14 @@ namespace ZdravoKorporacija.ViewModel
 {
     public class PrikazVremenaViewModel : ViewModel
     {
-        private ObservableCollection<TerminViewModel> slobodniTermini;
+        private ObservableCollection<TerminDTO> slobodniTermini;
         private TerminKontroler terminKontroler = new TerminKontroler();
-        private TerminViewModel stariTermin;
-        private TerminViewModel noviTermin;
-        private TerminViewModel selektovaniTermin;
+        private TerminDTO stariTermin;
+        private TerminDTO noviTermin;
+        private TerminDTO selektovaniTermin;
         private String poruka;
 
-        public ObservableCollection<TerminViewModel> SlobodniTermini
+        public ObservableCollection<TerminDTO> SlobodniTermini
         {
             get { return slobodniTermini; }
             set
@@ -29,7 +29,7 @@ namespace ZdravoKorporacija.ViewModel
             }
         }
 
-        public PrikazVremenaViewModel(TerminViewModel stariTermin, TerminViewModel noviTermin )
+        public PrikazVremenaViewModel(TerminDTO stariTermin, TerminDTO noviTermin )
         {
             this.stariTermin = stariTermin;
             this.noviTermin = noviTermin;
@@ -38,10 +38,10 @@ namespace ZdravoKorporacija.ViewModel
             vratiSeKomanda = new RelayCommand(VratiSe);
         }
 
-        private void UcitajUKolekciju(TerminViewModel izabraniTermin)
+        private void UcitajUKolekciju(TerminDTO izabraniTermin)
         {
-            SlobodniTermini = new ObservableCollection<TerminViewModel>();
-            foreach (TerminViewModel termin in terminKontroler.NadjiVremeTermina(izabraniTermin.TerminDTO))
+            SlobodniTermini = new ObservableCollection<TerminDTO>();
+            foreach (TerminDTO termin in terminKontroler.NadjiVremeTermina(izabraniTermin))
             {
                 SlobodniTermini.Add(termin);
             }
@@ -62,7 +62,7 @@ namespace ZdravoKorporacija.ViewModel
             get { return vratiSeKomanda; }
         }
 
-        public TerminViewModel SelektovaniTermin
+        public TerminDTO SelektovaniTermin
         {
             get { return selektovaniTermin; }
             set

@@ -29,11 +29,11 @@ namespace ZdravoKorporacija.PacijentPrikaz
             TerminiPacijenta = new ObservableCollection<Termin>();
             foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
             {
-                if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
+               /* if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                 {
                     if (DateTime.Compare(t.Datum.Date, DateTime.Now.Date) < 0)
                         TerminiPacijenta.Add(t);
-                }
+                }*/
 
             }
         }

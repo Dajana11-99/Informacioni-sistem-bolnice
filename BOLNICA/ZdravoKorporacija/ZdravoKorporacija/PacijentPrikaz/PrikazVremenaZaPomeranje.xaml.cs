@@ -25,7 +25,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         
         TerminKontroler terminKontroler = new TerminKontroler();
         private PrikazVremenaViewModel prikazVremenaViewModel;
-        public PrikazVremenaZaPomeranje(TerminViewModel stariTermin,TerminViewModel noviTermin)
+        public PrikazVremenaZaPomeranje(TerminDTO stariTermin,TerminDTO noviTermin)
         {
             prikazVremenaViewModel = new PrikazVremenaViewModel(stariTermin, noviTermin);
             InitializeComponent();

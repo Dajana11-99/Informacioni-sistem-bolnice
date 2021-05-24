@@ -47,7 +47,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
             }
             izabraniZaAnketu.OcenjenTermin = true;
             
-            anketeKontroler.DodajAnketu(new Ankete(dodatniKomentar.Text, pitanjeKontroler.DobaviSvaPitanjaOPregledu(), izabraniZaAnketu, PacijentGlavniProzor.ulogovan)); 
+           // anketeKontroler.DodajAnketu(new Ankete(dodatniKomentar.Text, pitanjeKontroler.DobaviSvaPitanjaOPregledu(), izabraniZaAnketu, PacijentGlavniProzor.ulogovan)); 
 
             OsveziPrikazAnketa();
             this.Close();

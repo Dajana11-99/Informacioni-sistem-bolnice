@@ -14,7 +14,7 @@
                 <DataTemplate>
                     <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel  Margin="10"  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                            <TextBlock   Text="{Binding Path=TerminDTO.Datum ,  StringFormat={}{0:MM/dd/yyyy}}"/>
+                            <TextBlock   Text="{Binding Path=Datum ,  StringFormat={}{0:MM/dd/yyyy}}"/>
                         </StackPanel>
                     </WrapPanel>
                 </DataTemplate>

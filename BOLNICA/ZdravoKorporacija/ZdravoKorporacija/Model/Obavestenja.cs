@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ZdravoKorporacija.Model
 {
-    public class Obavestenja:INotifyPropertyChanged {
+    public class Obavestenja {
         public String IdObavestenja { get; set; }
         public String Naslov { get; set; }
         public String Tekst { get; set; }

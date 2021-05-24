@@ -23,9 +23,12 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class RasporedTermina : UserControl
     {
         private RasporedTerminaViewModel rasporedTerminaViewModel;
-        public RasporedTermina()
+        private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        public RasporedTermina(String pacijent)
         {
-            rasporedTerminaViewModel = new RasporedTerminaViewModel(PacijentGlavniProzor.ulogovan.IdPacijenta);
+
+            String idPacijenta = naloziPacijenataKontroler.PretraziPoKorisnickom(pacijent).IdPacijenta;
+            rasporedTerminaViewModel = new RasporedTerminaViewModel(idPacijenta);
             InitializeComponent();
             this.DataContext = rasporedTerminaViewModel;
         }
