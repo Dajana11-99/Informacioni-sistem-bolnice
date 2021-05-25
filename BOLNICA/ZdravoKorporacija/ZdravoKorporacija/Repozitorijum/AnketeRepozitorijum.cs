@@ -50,7 +50,7 @@ namespace ZdravoKorporacija.Repozitorijum
             List<Ankete> anketePacijenta = new List<Ankete>();
             foreach (Ankete anketa in DobaviSveAnkete())
             {
-                if (anketa.Pacijent.IdPacijenta.Equals(pacijent.IdPacijenta) && anketa.termin == null)
+                if (anketa.Pacijent.IdPacijenta.Equals(pacijent.IdPacijenta) && anketa.Termin == null)
                     anketePacijenta.Add(anketa);
             }
             return anketePacijenta;
@@ -58,8 +58,8 @@ namespace ZdravoKorporacija.Repozitorijum
         public  void DodajAnketu(Ankete anketa)
         {
             SacuvajAnkete(anketa);
-            if(anketa.termin!=null)
-                terminRepozitorijum.RefresujZakazaneTermine(anketa.termin);
+            if(anketa.Termin!=null)
+                terminRepozitorijum.RefresujZakazaneTermine(anketa.Termin);
         }
       
     }

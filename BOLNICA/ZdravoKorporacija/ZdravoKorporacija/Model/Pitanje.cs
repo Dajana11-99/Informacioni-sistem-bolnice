@@ -11,16 +11,18 @@ namespace Model
 {
    public class Pitanje
    {
-     public OcenaAnkete Ocena { get; set; }
-        public String Tekst { get; set; }
-       
+        private OcenaAnkete ocena;
+        private String tekst;
 
-        public Pitanje() { }
-        public Pitanje(OcenaAnkete ocena, string tekst)
+        public String Tekst
         {
-            Ocena = ocena;
-            Tekst = tekst;
-           
+            get { return tekst; }
+            set { tekst = value; }
+        }
+        public OcenaAnkete Ocena
+        {
+            get { return ocena; }
+            set { ocena = value; }
         }
     }
 }

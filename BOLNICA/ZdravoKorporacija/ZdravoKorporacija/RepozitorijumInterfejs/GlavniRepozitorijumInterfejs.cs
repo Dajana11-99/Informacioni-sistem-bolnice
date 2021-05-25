@@ -11,16 +11,11 @@ namespace ZdravoKorporacija.Interfejs
     {
         
             List<T> DobaviSve();
-
             T PretraziPoId(String obrazacPretrage);
-          List<T> PretraziPoIdObjekta(String obrazacPretrage);
-
-        T KonvertujCvorUObjekat(XmlNode cvor);
-
+            List<T> PretraziPoIdObjekta(String obrazacPretrage);
+            T KonvertujCvorUObjekat(XmlNode cvor);
             List<T> KonvertujSveCvoroveUObjekte(XmlNodeList cvorovi);
-
             void Obrisi(String obrazacZaBrisanje);
-
             void Dodaj(T objekatZaDodavanje);
         
     }

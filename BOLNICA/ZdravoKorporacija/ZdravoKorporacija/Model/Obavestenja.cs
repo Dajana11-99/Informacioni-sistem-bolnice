@@ -8,34 +8,48 @@ using System.Threading.Tasks;
 namespace ZdravoKorporacija.Model
 {
     public class Obavestenja {
-        public String IdObavestenja { get; set; }
-        public String Naslov { get; set; }
-        public String Tekst { get; set; }
-        public DateTime Datum { get; set; }
-        public bool JeProcitano { get; set; }
-
-        public String IdPrimaoca { get; set; }
-
+        private String idObavestenja { get; set; }
+        private String naslov;
+        private String tekst;
+        private DateTime datum;
+        public String idPrimaoca;
+        public String IdObavestenja
+        {
+            get { return idObavestenja; }
+            set { idObavestenja = value; }
+        }
+        public DateTime Datum
+        {
+            get { return datum; }
+            set { datum = value; }
+        }
+        public String Naslov
+        {
+            get { return naslov; }
+            set { naslov = value; }
+        }
+        public String Tekst
+        {
+            get { return tekst; }
+            set { tekst = value; }
+        }
+        public String IdPrimaoca
+        {
+            get { return idPrimaoca; }
+            set { idPrimaoca = value; }
+        }
         public Obavestenja(string idObavestenja, string naslov, string tekst, DateTime datum, string idPrimaoca)
         {
             IdObavestenja = idObavestenja;
             Naslov = naslov;
             Tekst = tekst;
             Datum = datum;
-            JeProcitano = false;
             IdPrimaoca = idPrimaoca;
         }
 
         public Obavestenja() { }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
+    
     }
 }
 
