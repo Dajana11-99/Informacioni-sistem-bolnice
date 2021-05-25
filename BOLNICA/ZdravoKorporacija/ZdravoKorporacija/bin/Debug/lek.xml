@@ -25,14 +25,6 @@
     <ListaZamenaZaLek />
   </Lek>
   <Lek>
-    <IdLeka>2</IdLeka>
-    <ImeLeka>Andol</ImeLeka>
-    <KolicinaLeka>250</KolicinaLeka>
-    <SastojciLeka>Sastojci2 i sastojci5</SastojciLeka>
-    <ListaSastojaka />
-    <ListaZamenaZaLek />
-  </Lek>
-  <Lek>
     <IdLeka>5</IdLeka>
     <ImeLeka>Bromazepam</ImeLeka>
     <KolicinaLeka>30</KolicinaLeka>
@@ -45,6 +37,14 @@
     <ImeLeka>Pentraxil</ImeLeka>
     <KolicinaLeka>120</KolicinaLeka>
     <SastojciLeka>Sastojci3 i 18</SastojciLeka>
+    <ListaSastojaka />
+    <ListaZamenaZaLek />
+  </Lek>
+  <Lek>
+    <IdLeka>2</IdLeka>
+    <ImeLeka>Andol</ImeLeka>
+    <KolicinaLeka>250</KolicinaLeka>
+    <SastojciLeka>Sastojci2 i sastojci66</SastojciLeka>
     <ListaSastojaka />
     <ListaZamenaZaLek />
   </Lek>

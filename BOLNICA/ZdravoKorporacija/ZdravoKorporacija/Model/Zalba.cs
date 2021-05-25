@@ -13,6 +13,8 @@ namespace ZdravoKorporacija.Model
         public String IdLeka { get; set; }
         public bool resena { get; set; }
 
+        public String lekZaZamenu { get; set; }
+
         public Zalba() { }
 
         public Zalba(String id, String idLeka, String text, bool resena)
@@ -27,6 +29,13 @@ namespace ZdravoKorporacija.Model
         {
             TextZalbe = text;
             IdLeka = idLeka;
+        }
+
+        public Zalba(String idLeka, String text, String lekZaZamenu)
+        {
+            TextZalbe = text;
+            IdLeka = idLeka;
+            this.lekZaZamenu = lekZaZamenu;
         }
     }
 }
