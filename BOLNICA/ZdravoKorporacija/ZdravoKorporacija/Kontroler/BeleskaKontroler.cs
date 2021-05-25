@@ -13,16 +13,14 @@ namespace ZdravoKorporacija.Kontroler
    public class BeleskaKontroler
     {
         private BeleskaServis beleskaServis = new BeleskaServis();
-        private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-        public Beleska PretraziBeleskuPoId(String idBeleske)
+      
+        public String PronadjiTekstBeleske(String idPacijenta)
         {
-            return beleskaServis.PretraziBeleskuPoId(idBeleske);
+            return beleskaServis.PronadjiTekstBeleske(idPacijenta);
         }
-        public void SacuvajBelesku(BeleskaDTO beleskaDTO)
+        public void SacuvajBelesku(BeleskaDTO beleska)
         {
-            Beleska beleska = new Beleska(beleskaDTO.TekstBeleske, beleskaDTO.DatumBeleske, beleskaDTO.IdBeleske, naloziPacijenataKontroler.PretragaPoId(beleskaDTO.IdPacijenta).karton.Anamneza);
             beleskaServis.SacuvajBelesku(beleska);
-
         }
     }
 }

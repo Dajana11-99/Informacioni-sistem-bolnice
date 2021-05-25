@@ -28,6 +28,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
         {
             
             InitializeComponent();
+            Console.WriteLine("PACIJENTTTTTTTTTTTTTTTTTTT"+stariTermin.IdPacijenta);
             potvrdiPomeranje = new PotvrdiPomeranjeViewModel(stariTermin, noviTermin);
             this.DataContext = potvrdiPomeranje;
         }

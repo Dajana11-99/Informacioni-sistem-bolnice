@@ -21,11 +21,11 @@ namespace ZdravoKorporacija.ViewModel
         
         public BeleskaViewModel(TerminDTO izabraniTermin)
         {
-
+            
             this.izabraniTermin = izabraniTermin;
-            TekstBeleske = beleskaKontroler.PretraziBeleskuPoId(izabraniTermin.IdPacijenta).TekstBeleske;
             vratiSeKomanda = new RelayCommand(VratiSe);
             sacuvajBeleskuKomanda = new RelayCommand(Sacuvaj);
+            TekstBeleske = beleskaKontroler.PronadjiTekstBeleske(izabraniTermin.IdPacijenta);
             kreirajPodsetnikKomanda = new RelayCommand(Kreiraj);
         }
         public BeleskaDTO Beleska

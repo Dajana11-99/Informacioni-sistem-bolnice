@@ -2,17 +2,7 @@
 <ArrayOfBeleska xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Beleska>
     <TekstBeleske>Nesto</TekstBeleske>
-    <DatumBeleske>2021-05-24T21:25:08.666615+02:00</DatumBeleske>
-    <IdBeleske>00000000-0000-0000-0000-000000000000</IdBeleske>
-    <Anamneza>
-      <idPacijenta>P1</idPacijenta>
-      <Simptomi>Bol u grlu.</Simptomi>
-      <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
-    </Anamneza>
-  </Beleska>
-  <Beleska>
-    <TekstBeleske>Nesto novo</TekstBeleske>
-    <DatumBeleske>2021-05-24T21:40:09.8824652+02:00</DatumBeleske>
+    <DatumBeleske>2021-05-25T16:44:07.1091393+02:00</DatumBeleske>
     <IdBeleske>00000000-0000-0000-0000-000000000000</IdBeleske>
     <Anamneza>
       <idPacijenta>P1</idPacijenta>

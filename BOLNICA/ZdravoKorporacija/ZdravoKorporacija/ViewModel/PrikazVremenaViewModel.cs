@@ -17,6 +17,7 @@ namespace ZdravoKorporacija.ViewModel
         private TerminDTO stariTermin;
         private TerminDTO noviTermin;
         private TerminDTO selektovaniTermin;
+        private String idPacijenta;
         private String poruka;
 
         public ObservableCollection<TerminDTO> SlobodniTermini
@@ -31,6 +32,7 @@ namespace ZdravoKorporacija.ViewModel
 
         public PrikazVremenaViewModel(TerminDTO stariTermin, TerminDTO noviTermin )
         {
+          
             this.stariTermin = stariTermin;
             this.noviTermin = noviTermin;
             UcitajUKolekciju(noviTermin);

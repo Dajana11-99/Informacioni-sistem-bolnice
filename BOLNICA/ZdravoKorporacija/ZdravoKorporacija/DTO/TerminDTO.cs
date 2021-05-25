@@ -89,5 +89,8 @@ namespace ZdravoKorporacija.ViewModel
             this.idTermin = idTermin;
         }
 
+        public TerminDTO()
+        {
+        }
     }
 }

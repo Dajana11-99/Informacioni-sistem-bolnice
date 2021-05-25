@@ -62,7 +62,7 @@
       <BrojKartona>12345</BrojKartona>
       <BracniStatus>Udovac</BracniStatus>
       <Anamneza>
-        <idPacijenta>P1</idPacijenta>
+        <idPacijenta>P11</idPacijenta>
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>

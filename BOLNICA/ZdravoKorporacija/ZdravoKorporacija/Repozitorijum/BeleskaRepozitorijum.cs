@@ -12,7 +12,7 @@ namespace ZdravoKorporacija.Repozitorijum
 {
   public  class BeleskaRepozitorijum
     {
-        private String nazivFajla = "beleska.txt";
+        private String nazivFajla = "beleska.xml";
         public List<Beleska> DobaviSveBeleske()
         {
             List<Beleska> sveBeleske = new List<Beleska>();

@@ -25,13 +25,13 @@
             <Label Grid.Row="1" Grid.Column="0">Tekst obavestenja</Label>
             <Label Grid.Row="2" Grid.Column="0">Datum od</Label>
             <Label Grid.Row="3" Grid.Column="0">Datum do</Label>
-            <Label Grid.Row="4" Grid.Column="0">Vreme</Label>
+            <Label Grid.Row="4" Grid.Column="0">Na koliko sati</Label>
             <Button Grid.Column="0" Grid.Row="5" Margin="10" Command="{Binding Path=VratiSeKomanda}">Vrati se</Button>
             <Button Grid.Column="1" Grid.Row="5"  Margin="10" Command="{Binding Path=SacuvajObavestenjeKomanda}">Sacuvaj</Button>
             <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Obavestenje.Naslov}"></TextBox>
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Obavestenje.Tekst}"></TextBox>
-            <DatePicker Grid.Row="2" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumOd}" ></DatePicker>
-            <DatePicker Grid.Row="3" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumDo}"></DatePicker>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumOd}" ></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumDo}"></TextBox>
             <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=Obavestenje.NaKolikoSati}"></TextBox>
         </Grid>
         

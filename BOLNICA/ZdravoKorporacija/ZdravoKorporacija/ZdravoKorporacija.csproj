@@ -196,6 +196,9 @@
     <Compile Include="LekarWindow.xaml.cs">
       <DependentUpon>LekarWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Maper\BeleskaMaper.cs" />
+    <Compile Include="Maper\ObavestenjeMaper.cs" />
+    <Compile Include="Maper\TerminMaper.cs" />
     <Compile Include="Model\AdresaStanovanja.cs" />
     <Compile Include="Model\Anamneza.cs" />
     <Compile Include="Model\Ankete.cs" />

@@ -5,6 +5,7 @@ using System.Linq;
 using Model;
 using MoreLinq;
 using ZdravoKorporacija;
+using ZdravoKorporacija.Maper;
 using ZdravoKorporacija.PacijentPrikaz;
 using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.ViewModel;
@@ -15,26 +16,26 @@ namespace Servis
     {
         private int MAX_BRPROMENA=5;
         private NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
-        public List<Termin> DobaviSveZakazaneTermine()
+        private TerminMaper terminMaper = new TerminMaper();
+        private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
+        private LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
+
+        public  List<TerminDTO> NadjiVremeTermina(TerminDTO izabraniTermin)
         {
-            return terminRepozitorijum.DobaviZakazaneTermine();
-        }
-        public  List<Termin> NadjiVremeTermina(Termin izabraniTermin)
-        {
-            List<Termin> vremeDatumaSlobodnogTermina = new List<Termin>();
+            List<TerminDTO> vremeDatumaSlobodnogTermina = new List<TerminDTO>();
             foreach (Termin termin in terminRepozitorijum.DobaviSlobodneTermine())
             {
                 if (termin.Datum.Equals(izabraniTermin.Datum) && 
                     izabraniTermin.Lekar.korisnik.KorisnickoIme.Equals(termin.Lekar.korisnik.KorisnickoIme))
-                    vremeDatumaSlobodnogTermina.Add(termin);
+                    vremeDatumaSlobodnogTermina.Add(terminMaper.SlobodanTerminModelUDto(termin));
             }
             return SortirajTerminePoPocetnomVremenu(UkloniDupleDatume(vremeDatumaSlobodnogTermina));
         }
       
-        public  List<Termin> NadjiSlobodneTermineLekara(String lekar, List<Termin> datumiUIntervalu)
+        public  List<TerminDTO> NadjiSlobodneTermineLekara(String lekar, List<TerminDTO> datumiUIntervalu)
         {
-            List<Termin> slobodniTerminiKodLekara = new List<Termin>();
-            foreach (Termin termin in datumiUIntervalu)
+            List<TerminDTO> slobodniTerminiKodLekara = new List<TerminDTO>();
+            foreach (TerminDTO termin in datumiUIntervalu)
             {
                 if (termin.Lekar.CeloIme.Equals(lekar))
                     slobodniTerminiKodLekara.Add(termin);
@@ -42,47 +43,46 @@ namespace Servis
             return UkloniDupleDatume(slobodniTerminiKodLekara);
         }
     
-        public  List<Termin> NadjiDatumUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
+        public  List<TerminDTO> NadjiDatumUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
         {
-            List<Termin> slobodniDatumi = new List<Termin>();
+            List<TerminDTO> slobodniDatumi = new List<TerminDTO>();
             foreach (Termin termin in terminRepozitorijum.DobaviSlobodneTermine())
             {
                 if (DateTime.Compare(termin.Datum, pocetakIntervala) >= 0
                     && DateTime.Compare(termin.Datum, krajIntervala) <= 0)
-                    slobodniDatumi.Add(termin);
+                    slobodniDatumi.Add(terminMaper.SlobodanTerminModelUDto(termin));
             }
             return SortirajTerminePoDatumu(slobodniDatumi);
         }
 
-        public List<Termin> DobaviSlobodneTermineZaZakazivanje(List<DateTime>interval, String lekar)
+        public List<TerminDTO> DobaviSlobodneTermineZaZakazivanje(List<DateTime>interval, String lekar)
         {
-            List<Termin> terminiUIntervalu = new List<Termin>();
-            List<Termin> terminiKodIzabranogLekara = new List<Termin>();
-            terminiUIntervalu = NadjiDatumUIntervalu(interval[0], interval[1]);
-            terminiKodIzabranogLekara = NadjiSlobodneTermineLekara(lekar, terminiUIntervalu);
+            List<TerminDTO> terminiKodIzabranogLekara = new List<TerminDTO>();
+            List<TerminDTO> datumiUIntervalu = NadjiDatumUIntervalu(interval[0], interval[1]);
+            terminiKodIzabranogLekara = NadjiSlobodneTermineLekara(lekar,datumiUIntervalu);
             return terminiKodIzabranogLekara;
-
         }
-
-        public List<Termin> DobaviSveSlobodneDatumeZaPomeranje(Termin termin)
+        public List<TerminDTO> DobaviSveSlobodneDatumeZaPomeranje(TerminDTO termin)
         {
-            List<Termin> sviSlobodniDatumi = new List<Termin>();
-            sviSlobodniDatumi=NadjiSlobodneTermineLekara(termin.Lekar.CeloIme, NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2)));
-            return ObrisiDatumeIzProslosti(sviSlobodniDatumi);
+            List<TerminDTO> sviSlobodniDatumi = new List<TerminDTO>();
+            List<TerminDTO> datumiUIntervalu = NadjiDatumUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
+            sviSlobodniDatumi =NadjiSlobodneTermineLekara(termin.Lekar.CeloIme,datumiUIntervalu);
+             ObrisiDatumeIzProslosti(sviSlobodniDatumi);
+            return sviSlobodniDatumi;
         }
-        private  List<Termin> SortirajTerminePoDatumu(List<Termin> nesortiraniDatumi)
+        private  List<TerminDTO> SortirajTerminePoDatumu(List<TerminDTO> nesortiraniDatumi)
         {
             return nesortiraniDatumi.OrderBy(user => user.Datum).ToList();
         }
-        private  List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
+        private  List<TerminDTO> UkloniDupleDatume(List<TerminDTO> dupliTermini)
         {
-            List<Termin> jedinstveniTermini = new List<Termin>();
-            foreach (Termin termin in dupliTermini.DistinctBy(t => t.Datum))
+            List<TerminDTO> jedinstveniTermini = new List<TerminDTO>();
+            foreach (TerminDTO termin in dupliTermini.DistinctBy(t => t.Datum))
                 jedinstveniTermini.Add(termin);
             return jedinstveniTermini;
         }
 
-        private  List<Termin> SortirajTerminePoPocetnomVremenu(List<Termin> nesortiraniTermini)
+        private  List<TerminDTO> SortirajTerminePoPocetnomVremenu(List<TerminDTO> nesortiraniTermini)
         {
             return nesortiraniTermini.OrderBy(user => DateTime.ParseExact(user.Vreme, "HH:mm", null)).ToList();
         }
@@ -94,24 +94,79 @@ namespace Servis
             return false;
         }
 
-        private List<Termin> ObrisiDatumeIzProslosti(List<Termin> sviSlobodniTermini)
+        private List<TerminDTO> ObrisiDatumeIzProslosti(List<TerminDTO> sviSlobodniTermini)
         {
-            List<Termin> terminiUBuducnosti = new List<Termin>();
-            foreach(Termin termin in sviSlobodniTermini)
+            List<TerminDTO> terminiUBuducnosti = new List<TerminDTO>();
+            foreach(TerminDTO termin in sviSlobodniTermini)
             {
-                if(DateTime.Compare(termin.Datum.Date, DateTime.Now.Date) > 0)
-                {
+                if (NasaoDatumUProslosti(termin))
                     terminiUBuducnosti.Add(termin);
-                }else if(DateTime.Compare(termin.Datum.Date, DateTime.Now.AddDays(1).Date) == 0)
-                {
-                    if (ProveriMogucnostPomeranjaVreme(termin.Vreme))
-                    {
-                        terminiUBuducnosti.Add(termin);
-                    }
-                }
             }
 
             return terminiUBuducnosti;
+        }
+
+        private bool NasaoDatumUProslosti(TerminDTO termin)
+        {
+            if (DateTime.Compare(termin.Datum.Date, DateTime.Now.Date) > 0)
+            {
+                return true;
+            }
+            else if (DateTime.Compare(termin.Datum.Date, DateTime.Now.AddDays(1).Date) == 0)
+            {
+                if (ProveriMogucnostPomeranjaVreme(termin.Vreme))
+                    return true;       
+            }
+            return false;
+        }
+
+        public List<TerminDTO> DobaviSveObavljeneTermine(String idPacijenta)
+        {
+            List<TerminDTO> terminiPacijenta = new List<TerminDTO>();
+            foreach (Termin termin in terminRepozitorijum.DobaviSveZakazaneTerminePacijenta(idPacijenta))
+            {
+                if (DateTime.Compare(termin.Datum.Date, DateTime.Now.Date) < 0)
+                    terminiPacijenta.Add(terminMaper.ZakazaniTerminModelUDto(termin));
+            }
+            return terminiPacijenta;
+
+        }
+        public List<TerminDTO> DobaviZakazaneTerminePacijenta(String idPacijenta)
+        {
+            List<TerminDTO> terminiPacijenta = new List<TerminDTO>();
+            foreach (Termin termin in terminRepozitorijum.DobaviSveZakazaneTerminePacijenta(idPacijenta))
+            {
+                if (DateTime.Compare(termin.Datum.Date, DateTime.Now.Date) >= 0)
+                    terminiPacijenta.Add(terminMaper.ZakazaniTerminModelUDto(termin));
+            }
+            return terminiPacijenta;
+        }
+        public void PomeriPregled(TerminDTO stariTermin, TerminDTO noviTermin)
+        {
+            Termin zakazanTermin = terminRepozitorijum.PretraziZakazanePoId(stariTermin.IdTermina);
+            Termin slobodanTermin = terminRepozitorijum.PretraziSlobodneTerminePoId(noviTermin.IdTermina);
+            slobodanTermin.Pacijent = zakazanTermin.Pacijent;
+            zakazanTermin.Pacijent = null;
+            ZameniTermine(zakazanTermin, slobodanTermin);
+            ProveriMalicioznostPacijenta(slobodanTermin.Pacijent);
+        }
+        private void ZameniTermine(Termin stariTermin, Termin noviTermin)
+        {
+            terminRepozitorijum.ZameniTermine(stariTermin, noviTermin);
+        }
+        public void ProveriMalicioznostPacijenta(Pacijent pacijent)
+        {
+            int broj = pacijent.Zloupotrebio + 1;
+            pacijent.Zloupotrebio = broj;
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
+            if (pacijent.Zloupotrebio > MAX_BRPROMENA)
+                pacijent.Maliciozan = true;
+        }
+        public void OtkaziPregled(TerminDTO termin)
+        {
+            Termin terminZaBrisanje = terminRepozitorijum.PretraziZakazanePoId(termin.IdTermina);
+            ProveriMalicioznostPacijenta(terminZaBrisanje.Pacijent);
+            terminRepozitorijum.OtkazivanjePregleda(terminZaBrisanje);
         }
         public  bool ProveriMogucnostPomeranjaVreme(String vreme)
         {
@@ -124,15 +179,48 @@ namespace Servis
                 return false;
             return true;
         }
+        public  TerminDTO PretraziSlobodneTerminePoId(String idTermina)
+        {
+            Termin termin= terminRepozitorijum.PretraziSlobodneTerminePoId(idTermina);
+            return terminMaper.SlobodanTerminModelUDto(termin);
+        }
+        public TerminDTO PretragaZakazanihTerminaPoId(String idTermina)
+        {
+            Termin termin = terminRepozitorijum.PretraziZakazanePoId(idTermina);
+            return terminMaper.ZakazaniTerminModelUDto(termin);
+        }
+        public  void ZakaziPregled(TerminDTO izabraniTermin,String korisnickoImePacijenta)
+        {
+            Termin termin = terminRepozitorijum.PretraziSlobodneTerminePoId(izabraniTermin.IdTermina);
+            termin.Pacijent = naloziPacijenataServis.PretraziPoKorisnickom(korisnickoImePacijenta);
+            terminRepozitorijum.ZakaziPregled(termin);
+        }
+        public bool ZakaziTermin(Termin termin)
+        {
+            return terminRepozitorijum.ZakaziTermin(termin);
+        }
+        public void OtkaziTermin(String idTermina)
+        {
+            terminRepozitorijum.OtkaziTermin(idTermina);
+        }
+        public List<Termin> PrikaziSveZakazaneTermine()
+        {
+            return terminRepozitorijum.DobaviZakazaneTermine();
+        }
+
+        public List<Termin> DobaviSveZakazaneTermine()
+        {
+            return terminRepozitorijum.DobaviZakazaneTermine();
+        }
 
         public void IzmenaTermina(TerminDTO terminDTO)
         {
             ValidacijaTermina(terminDTO, terminRepozitorijum.IzmenaTermina(terminDTO));
         }
-          
+
         private void ValidacijaTermina(TerminDTO terminDTO, Termin termin)
         {
-          
+
             if (!termin.Lekar.idZaposlenog.Equals(terminDTO.Lekar))
                 termin.Lekar = lekarRepozitorijum.PretragaLekaraPoID(terminDTO.Lekar.idZaposlenog);
             if (!termin.Datum.Equals(terminDTO.Datum))
@@ -155,79 +243,6 @@ namespace Servis
                 }
             }
         }
-        public List<Termin> PrikaziSveZakazaneTermine()
-        {
-            return terminRepozitorijum.DobaviZakazaneTermine();
-        }
 
-        public  List<Termin> DobaviSveObavljeneTermine(String idPacijenta)
-        {
-            List<Termin> terminiPacijenta = new List<Termin>();
-            foreach (Termin t in terminRepozitorijum.DobaviSveZakazaneTerminePacijenta(idPacijenta))
-            {
-                if (DateTime.Compare(t.Datum.Date, DateTime.Now.Date) < 0)
-                    terminiPacijenta.Add(t);
-            }
-            return terminiPacijenta;
-            
-        }
-        public List<Termin> DobaviZakazaneTerminePacijenta(String idPacijenta)
-        {
-            List<Termin> terminiPacijenta = new List<Termin>();
-            foreach (Termin t in terminRepozitorijum.DobaviSveZakazaneTerminePacijenta(idPacijenta))
-            {
-                    if (DateTime.Compare(t.Datum.Date, DateTime.Now.Date) >= 0)
-                        terminiPacijenta.Add(t);
-            }
-            return terminiPacijenta;
-        }
-        public  Termin PretraziSlobodneTerminePoId(String IdTermina)
-        {
-            return terminRepozitorijum.PretraziSlobodneTerminePoId(IdTermina);
-        }
-        public bool ZakaziTermin(Termin termin)
-        {
-            return terminRepozitorijum.ZakaziTermin(termin);
-        }
-        public  void ZakaziPregled(Termin termin,String korisnickoImePacijenta)
-        {
-            Console.WriteLine("PACIJENT" + korisnickoImePacijenta);
-            termin.Pacijent = naloziPacijenataServis.PretraziPoKorisnickom(korisnickoImePacijenta);
-            terminRepozitorijum.ZakaziPregled(termin);
-        }
-        public  void PomeriPregled(Termin stariTermin, Termin noviTermin)
-        {
-            noviTermin.Pacijent = stariTermin.Pacijent;
-            stariTermin.Pacijent = null;
-            ZameniTermine(stariTermin, noviTermin);
-            ProveriMalicioznostPacijenta(noviTermin.Pacijent);
-        }
-        private void ZameniTermine(Termin stariTermin, Termin noviTermin)
-        {
-            terminRepozitorijum.ZameniTermine(stariTermin, noviTermin);
-        }
-        public void ProveriMalicioznostPacijenta(Pacijent pacijent)
-        {
-            int broj = pacijent.Zloupotrebio + 1;
-            pacijent.Zloupotrebio = broj;
-            NaloziPacijenataRepozitorijum.UpisiPacijente();
-            if (pacijent.Zloupotrebio > MAX_BRPROMENA)
-                pacijent.Maliciozan = true;
-        }
-        public  void OtkaziPregled(Termin termin)
-        {
-            ProveriMalicioznostPacijenta(termin.Pacijent);
-            terminRepozitorijum.OtkazivanjePregleda(termin);
-        }
-        public   Termin PretragaZakazanihTerminaPoId(String izabran)
-        {
-            return terminRepozitorijum.PretraziZakazanePoId(izabran);
-        }
-        public void OtkaziTermin(String idTermina)
-        {
-            terminRepozitorijum.OtkaziTermin(idTermina);
-        }
-        private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
-        private LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
     }
 }
