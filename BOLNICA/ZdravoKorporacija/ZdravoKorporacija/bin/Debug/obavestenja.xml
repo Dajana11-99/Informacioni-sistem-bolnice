@@ -2320,4 +2320,36 @@ Količina u sledećoj dozi: 1.</Tekst>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>P1</IdPrimaoca>
   </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>920e4528-6c1b-479c-b0db-008213d73f81</IdObavestenja>
+    <Naslov>hhh</Naslov>
+    <Tekst>nov</Tekst>
+    <Datum>2021-05-25T17:41:16.527251+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>e490e5f1-e767-45e7-a9e4-69eecd5c63f9</IdObavestenja>
+    <Naslov>hhh</Naslov>
+    <Tekst>nov</Tekst>
+    <Datum>2021-05-25T17:41:19.5265479+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>39c89a42-194f-4f41-abe7-ae75180c3aa3</IdObavestenja>
+    <Naslov>hhh</Naslov>
+    <Tekst>nov</Tekst>
+    <Datum>2021-05-25T17:41:19.6294873+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>b59c80a6-9dba-4171-82c5-d03be674f224</IdObavestenja>
+    <Naslov>hhh</Naslov>
+    <Tekst>nov</Tekst>
+    <Datum>2021-05-25T17:41:22.5349816+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>P1</IdPrimaoca>
+  </Obavestenja>
 </ArrayOfObavestenja>

@@ -12,6 +12,7 @@ using System.Xml.Serialization;
 using System.Xml.XPath;
 using Model;
 using Servis;
+using ZdravoKorporacija.Interfejs;
 using ZdravoKorporacija.PacijentPrikaz;
 using ZdravoKorporacija.ViewModel;
 
@@ -22,24 +23,6 @@ namespace ZdravoKorporacija.Repozitorijum
         public  String zakazaniTerminiFajl = "zakazaniTermini.xml";
         public  String slobodniTerminiFajl = "slobodniTermini.xml";
     
-      /* public  List<Termin> inicijalizujSlobodneTermine()
-          {
-            List<Termin> slobodniTermini = new List<Termin>();
-            LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
-            slobodniTermini.Add(new Termin("2", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 8), SalaServis.PretraziPoId("a3"), null,   lekarRepozitorijum.PretragaLekaraPoID("L1")));
-             slobodniTermini.Add(new Termin("3", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 4, 29), SalaServis.PretraziPoId("a3"), null, lekarRepozitorijum.PretragaLekaraPoID("L1")));
-             slobodniTermini.Add(new Termin("4", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 4, 28), SalaServis.PretraziPoId("a3"), null, lekarRepozitorijum.PretragaLekaraPoID("L1")));
-             slobodniTermini.Add(new Termin("5", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 5, 9), SalaServis.PretraziPoId("a3"), null,  lekarRepozitorijum.PretragaLekaraPoID("L1")));
-             slobodniTermini.Add(new Termin("6", TipTermina.Pregled, "19:00", 30, new DateTime(2021, 6, 11), SalaServis.PretraziPoId("A1"), null, lekarRepozitorijum.PretragaLekaraPoID("L2")));
-             slobodniTermini.Add(new Termin("7", TipTermina.Pregled, "16:30", 30, new DateTime(2021, 6, 12), SalaServis.PretraziPoId("a3"), null, lekarRepozitorijum.PretragaLekaraPoID("L2")));
-             slobodniTermini.Add(new Termin("8", TipTermina.Pregled, "14:30", 30, new DateTime(2021, 5, 13), SalaServis.PretraziPoId("a3"), null, lekarRepozitorijum.PretragaLekaraPoID("L2")));
-             slobodniTermini.Add(new Termin("9", TipTermina.Pregled, "15:30", 30, new DateTime(2021, 5, 13), SalaServis.PretraziPoId("a3"), null, lekarRepozitorijum.PretragaLekaraPoID("L5")));
-              slobodniTermini.Add(new Termin("10", TipTermina.Pregled, "15:30", 30, new DateTime(2021, 5, 15), SalaServis.PretraziPoId("a3"),null,lekarRepozitorijum.PretragaLekaraPoID("L5")));
-             slobodniTermini.Add(new Termin("11", TipTermina.Pregled, "15:30", 30, new DateTime(2021, 5, 16), SalaServis.PretraziPoId("a3"), null,lekarRepozitorijum.PretragaLekaraPoID("L5")));
-              slobodniTermini.Add(new Termin("12", TipTermina.Pregled, "15:30", 30, new DateTime(2021, 5, 10), SalaServis.PretraziPoId("a3"),null,lekarRepozitorijum.PretragaLekaraPoID("L5")));
-            return slobodniTermini;
-        }*/
-
         public  List<Termin> DobaviZakazaneTermine()
         {
             List<Termin> sviZakazaniTermini = new List<Termin>();

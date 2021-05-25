@@ -143,6 +143,9 @@
     <Compile Include="InformacijeLekaWindow.xaml.cs">
       <DependentUpon>InformacijeLekaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interfejs\GlavniRepozitorijumInterfejs.cs" />
+    <Compile Include="Interfejs\ObavestenjeRepozitorijumInterfejs.cs" />
+    <Compile Include="Interfejs\TerminRepozitorijumInterfejs.cs" />
     <Compile Include="IzbrisiPacijenta.xaml.cs">
       <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
     </Compile>
@@ -337,6 +340,7 @@
     </Compile>
     <Compile Include="Repozitorijum\AnketeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\BeleskaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\LekoviRepozitorijum.cs" />
     <Compile Include="Repozitorijum\LekRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />

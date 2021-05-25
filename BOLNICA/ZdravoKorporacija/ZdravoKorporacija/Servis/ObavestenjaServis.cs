@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZdravoKorporacija.DTO;
+using ZdravoKorporacija.Interfejs;
 using ZdravoKorporacija.Maper;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Repozitorijum;
@@ -13,18 +14,18 @@ namespace ZdravoKorporacija.Servis
    public class ObavestenjaServis
     {
 
-        private ObavestenjaRepozitorijum obavestenjaRepozitorijum = new ObavestenjaRepozitorijum();
+        private ObavestenjeRepozitorijumInterfejs obavestenjaRepozitorijum = new ObavestenjaRepozitorijum();
         private ObavestenjeMaper obavestenjeMaper = new ObavestenjeMaper();
         public  void DodajObavestenjePacijentu(ObavestenjeDTO obavestenje)
         {
-            obavestenjaRepozitorijum.SacuvajObavestenje(obavestenjeMaper.ObavestenjeDtoUModel(obavestenje));
+            obavestenjaRepozitorijum.Dodaj(obavestenjeMaper.ObavestenjeDtoUModel(obavestenje));
         }
         public List<ObavestenjeDTO> PretraziObavestenjaPoPacijentu(String idPacijenta)
         {
+            string upit = "//ArrayOfObavestenja/Obavestenja[IdPrimaoca='" + idPacijenta + "']";
             List<ObavestenjeDTO> obavestenjaPacijenta = new List<ObavestenjeDTO>();
-            foreach(Obavestenja obavestenje in obavestenjaRepozitorijum.PretraziObavestenjaPoPacijentu(idPacijenta))
+            foreach(Obavestenja obavestenje in obavestenjaRepozitorijum.PretraziPoIdObjekta(upit))
             {
-            
                 obavestenjaPacijenta.Add(obavestenjeMaper.ObavestenjeModelUDto(obavestenje));
             }
            return SortirajPoDatumu(obavestenjaPacijenta);
