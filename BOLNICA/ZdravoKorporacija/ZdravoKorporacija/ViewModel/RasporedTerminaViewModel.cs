@@ -15,20 +15,14 @@ namespace ZdravoKorporacija.ViewModel
 {
    public class RasporedTerminaViewModel:ViewModel
     {
-      
-
         private ObservableCollection<TerminDTO> zakazaniTerminiPacijenta;
         private TerminKontroler terminKontroler = new TerminKontroler();
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         private TerminDTO selektovaniTermin;
         private string poruka;
         private String idPacijenta;
-       
-      
-
         public RasporedTerminaViewModel(String idPacijenta)
         {
-           
             UcitajUKolekciju(idPacijenta);
             this.idPacijenta = idPacijenta;
             otkaziPregledKomanda = new RelayCommand(OtkaziPregled);
@@ -114,8 +108,14 @@ namespace ZdravoKorporacija.ViewModel
             {
                 if (Validacija())
                 {
-                    OtkazivanjeTermina otkazivanje = new OtkazivanjeTermina(SelektovaniTermin);
-                    otkazivanje.Show();
+                    if (!naloziPacijenataKontroler.DaLiJeNalogBlokiran(idPacijenta))
+                    {
+                        OtkazivanjeTermina otkazivanje = new OtkazivanjeTermina(SelektovaniTermin);
+                        otkazivanje.Show();
+                    }else
+                    {
+                        Poruka = "*Vas nalog je blokiran";
+                    }
                 }
                 else
                 {
@@ -147,8 +147,14 @@ namespace ZdravoKorporacija.ViewModel
             {
                 if (Validacija())
                 {
-                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(selektovaniTermin));
+                    if (!naloziPacijenataKontroler.DaLiJeNalogBlokiran(idPacijenta))
+                    {
+                        PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+                        PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzmenaTermina(selektovaniTermin));
+                    }else
+                    {
+                        Poruka = "*Vas nalog je blokiran";
+                    }
                 }
                 else
                 {

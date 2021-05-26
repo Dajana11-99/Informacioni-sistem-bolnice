@@ -113,13 +113,13 @@
         <Prezime>Zlokapa</Prezime>
         <Ime>Dajana</Ime>
       </karton>
-      <Maliciozan>false</Maliciozan>
-      <Zloupotrebio>1</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
+      <Zloupotrebio>1</Zloupotrebio>
+      <Maliciozan>false</Maliciozan>
     </Pacijent>
     <OcenjenTermin>false</OcenjenTermin>
     <DaLiJeHitno>false</DaLiJeHitno>
-  </Termin>l
+  </Termin>
   <Termin>
     <Vreme>16:30</Vreme>
     <TrajanjeTermina>30</TrajanjeTermina>
@@ -233,9 +233,9 @@
         <Prezime>Zlokapa</Prezime>
         <Ime>Dajana</Ime>
       </karton>
-      <Maliciozan>false</Maliciozan>
-      <Zloupotrebio>1</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
+      <Zloupotrebio>6</Zloupotrebio>
+      <Maliciozan>true</Maliciozan>
     </Pacijent>
     <OcenjenTermin>false</OcenjenTermin>
     <DaLiJeHitno>false</DaLiJeHitno>

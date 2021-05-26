@@ -31,8 +31,11 @@ namespace Kontroler
         }
         public Karton DobaviKartonPacijenta(String korisnickoIme)
         {
-
             return naloziPacijenataServis.DobaviKartonPacijenta(korisnickoIme);
+        }
+        public bool DaLiJeNalogBlokiran(String idPacijenta)
+        {
+            return naloziPacijenataServis.DaLiJeNalogBlokiran(idPacijenta);
         }
 
     }

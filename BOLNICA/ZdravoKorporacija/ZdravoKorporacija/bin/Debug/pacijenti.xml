@@ -33,9 +33,9 @@
       <Prezime>Jovic</Prezime>
       <Ime>Jova</Ime>
     </karton>
-    <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>0</Zloupotrebio>
     <IdPacijenta>1</IdPacijenta>
+    <Zloupotrebio>0</Zloupotrebio>
+    <Maliciozan>false</Maliciozan>
   </Pacijent>
   <Pacijent>
     <korisnik>
@@ -70,9 +70,9 @@
       <Prezime>Peric</Prezime>
       <Ime>Pera</Ime>
     </karton>
-    <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>0</Zloupotrebio>
     <IdPacijenta>2</IdPacijenta>
+    <Zloupotrebio>0</Zloupotrebio>
+    <Maliciozan>false</Maliciozan>
   </Pacijent>
   <Pacijent>
     <korisnik>
@@ -150,8 +150,8 @@
       <Prezime>Zlokapa</Prezime>
       <Ime>Dajana</Ime>
     </karton>
-    <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>1</Zloupotrebio>
     <IdPacijenta>P1</IdPacijenta>
+    <Zloupotrebio>0</Zloupotrebio>
+    <Maliciozan>true</Maliciozan>
   </Pacijent>
 </ArrayOfPacijent>

@@ -203,9 +203,9 @@
   <Termin>
     <Vreme>16:30</Vreme>
     <TrajanjeTermina>30</TrajanjeTermina>
-    <Datum>2021-06-08T00:00:00</Datum>
+    <Datum>2021-06-09T00:00:00</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>2</IdTermina>
+    <IdTermina>4</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
       <Id>a3</Id>
@@ -243,9 +243,9 @@
   <Termin>
     <Vreme>16:30</Vreme>
     <TrajanjeTermina>30</TrajanjeTermina>
-    <Datum>2021-06-09T00:00:00</Datum>
+    <Datum>2021-06-08T00:00:00</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>4</IdTermina>
+    <IdTermina>2</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
       <Id>a3</Id>

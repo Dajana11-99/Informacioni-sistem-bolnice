@@ -17,6 +17,7 @@ namespace Servis
     public class NaloziPacijenataServis
     {
         public static List<Pacijent> ListaPacijenata = new List<Pacijent>();
+        private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
 
         public static void TestMethod()
         {
@@ -102,7 +103,7 @@ namespace Servis
             return null;
         }
 
-        public ZdravoKorporacija.Repozitorijum.NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum;
+        private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
 
         public static Karton pronadjiKarton(String brojKartona) 
         {
@@ -121,6 +122,22 @@ namespace Servis
                     return pacijent.karton;
             }
             return null;
+        }
+        public void ProveriMalicioznostPacijenta(Termin termin)
+        {
+            int broj = termin.Pacijent.Zloupotrebio + 1;
+            termin.Pacijent.Zloupotrebio = broj;
+            if (termin.Pacijent.Zloupotrebio >5)
+                termin.Pacijent.Maliciozan = true;
+            naloziPacijenataRepozitorijum.UpisiPacijente(termin.Pacijent);
+            terminRepozitorijum.RefresujSveZakazaneTermine(termin);
+        }
+        public bool DaLiJeNalogBlokiran(String idPacijenta)
+        {
+            if (PretragaPoId(idPacijenta).Maliciozan)
+                return true;
+
+            return false;
         }
 
         public void IzmeniPacijenta(Recept receptZaIzmenu)

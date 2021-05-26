@@ -28,13 +28,42 @@ namespace ZdravoKorporacija.Repozitorijum
                 return NaloziPacijenataServis.ListaPacijenata;
             }
         }
-
+        public Pacijent PretragaPoId(String Id)
+        {
+            foreach (Pacijent P in NaloziPacijenataServis.ListaPacijenata)
+            {
+                if (P.IdPacijenta.Equals(Id))
+                {
+                    return P;
+                }
+            }
+            return null;
+        }
         public static void UpisiPacijente()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pacijent>));
             TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, NaloziPacijenataServis.ListaPacijenata);
             tw.Close();
+        }
+
+        public void UpisiPacijente(Pacijent pacijent)
+        {
+          
+            foreach(Pacijent p in NaloziPacijenataServis.ListaPacijenata)
+            {
+                if (p.IdPacijenta.Equals(pacijent.IdPacijenta))
+                {
+                    p.Maliciozan = pacijent.Maliciozan;
+                    p.Zloupotrebio = pacijent.Zloupotrebio;
+                }
+              
+            }
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pacijent>));
+            TextWriter tw = new StreamWriter(imeFajla);
+            xmlSerializer.Serialize(tw, NaloziPacijenataServis.ListaPacijenata);
+            tw.Close();
+           
         }
 
     }

@@ -14,7 +14,7 @@ namespace Servis
 { 
     public class TerminServis
     {
-        private int MAX_BRPROMENA=5;
+       
         private NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         private TerminMaper terminMaper = new TerminMaper();
         private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
@@ -148,24 +148,17 @@ namespace Servis
             slobodanTermin.Pacijent = zakazanTermin.Pacijent;
             zakazanTermin.Pacijent = null;
             ZameniTermine(zakazanTermin, slobodanTermin);
-            ProveriMalicioznostPacijenta(slobodanTermin.Pacijent);
+            naloziPacijenataServis.ProveriMalicioznostPacijenta(slobodanTermin);
         }
         private void ZameniTermine(Termin stariTermin, Termin noviTermin)
         {
             terminRepozitorijum.ZameniTermine(stariTermin, noviTermin);
         }
-        public void ProveriMalicioznostPacijenta(Pacijent pacijent)
-        {
-            int broj = pacijent.Zloupotrebio + 1;
-            pacijent.Zloupotrebio = broj;
-            NaloziPacijenataRepozitorijum.UpisiPacijente();
-            if (pacijent.Zloupotrebio > MAX_BRPROMENA)
-                pacijent.Maliciozan = true;
-        }
+      
         public void OtkaziPregled(TerminDTO termin)
         {
             Termin terminZaBrisanje = terminRepozitorijum.PretraziZakazanePoId(termin.IdTermina);
-            ProveriMalicioznostPacijenta(terminZaBrisanje.Pacijent);
+            naloziPacijenataServis.ProveriMalicioznostPacijenta(terminZaBrisanje);
             terminRepozitorijum.OtkazivanjePregleda(terminZaBrisanje);
         }
         public  bool ProveriMogucnostPomeranjaVreme(String vreme)
