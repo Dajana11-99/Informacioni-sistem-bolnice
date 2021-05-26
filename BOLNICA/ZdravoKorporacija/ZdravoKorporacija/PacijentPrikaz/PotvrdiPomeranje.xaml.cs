@@ -21,14 +21,10 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
     public partial class PotvrdiPomeranje : UserControl
     {
-        public Termin Termin = null;
-        TerminKontroler terminKontroler = new TerminKontroler();
         PotvrdiPomeranjeViewModel potvrdiPomeranje;
         public PotvrdiPomeranje(TerminDTO stariTermin, TerminDTO noviTermin)
         {
-            
             InitializeComponent();
-            Console.WriteLine("PACIJENTTTTTTTTTTTTTTTTTTT"+stariTermin.IdPacijenta);
             potvrdiPomeranje = new PotvrdiPomeranjeViewModel(stariTermin, noviTermin);
             this.DataContext = potvrdiPomeranje;
         }

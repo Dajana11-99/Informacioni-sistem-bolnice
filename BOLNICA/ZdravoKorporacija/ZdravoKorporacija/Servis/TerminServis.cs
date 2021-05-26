@@ -31,17 +31,6 @@ namespace Servis
             }
             return SortirajTerminePoPocetnomVremenu(UkloniDupleDatume(vremeDatumaSlobodnogTermina));
         }
-      
-        public  List<TerminDTO> NadjiSlobodneTermineLekara(String lekar, List<TerminDTO> datumiUIntervalu)
-        {
-            List<TerminDTO> slobodniTerminiKodLekara = new List<TerminDTO>();
-            foreach (TerminDTO termin in datumiUIntervalu)
-            {
-                if (termin.Lekar.CeloIme.Equals(lekar))
-                    slobodniTerminiKodLekara.Add(termin);
-            }
-            return UkloniDupleDatume(slobodniTerminiKodLekara);
-        }
     
         public  List<TerminDTO> NadjiDatumUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
         {
@@ -161,17 +150,6 @@ namespace Servis
             naloziPacijenataServis.ProveriMalicioznostPacijenta(terminZaBrisanje);
             terminRepozitorijum.OtkazivanjePregleda(terminZaBrisanje);
         }
-        public  bool ProveriMogucnostPomeranjaVreme(String vreme)
-        {
-            DateTime vremePregleda = DateTime.ParseExact(vreme, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-            if (vremePregleda.Hour < DateTime.Now.Hour)
-                return false;
-            else if (vremePregleda.Hour == DateTime.Now.Hour && DateTime.Now.Minute == vremePregleda.Minute)
-                return false;
-            else if (vremePregleda.Hour == DateTime.Now.Hour && DateTime.Now.Minute > vremePregleda.Minute)
-                return false;
-            return true;
-        }
         public  TerminDTO PretraziSlobodneTerminePoId(String idTermina)
         {
             Termin termin= terminRepozitorijum.PretraziSlobodneTerminePoId(idTermina);
@@ -187,6 +165,16 @@ namespace Servis
             Termin termin = terminRepozitorijum.PretraziSlobodneTerminePoId(izabraniTermin.IdTermina);
             termin.Pacijent = naloziPacijenataServis.PretraziPoKorisnickom(korisnickoImePacijenta);
             terminRepozitorijum.ZakaziPregled(termin);
+        }
+        public List<TerminDTO> NadjiSlobodneTermineLekara(String lekar, List<TerminDTO> datumiUIntervalu)
+        {
+            List<TerminDTO> slobodniTerminiKodLekara = new List<TerminDTO>();
+            foreach (TerminDTO termin in datumiUIntervalu)
+            {
+                if (termin.Lekar.CeloIme.Equals(lekar))
+                    slobodniTerminiKodLekara.Add(termin);
+            }
+            return UkloniDupleDatume(slobodniTerminiKodLekara);
         }
         public bool ZakaziTermin(Termin termin)
         {
@@ -236,6 +224,16 @@ namespace Servis
                 }
             }
         }
-
+        public bool ProveriMogucnostPomeranjaVreme(String vreme)
+        {
+            DateTime vremePregleda = DateTime.ParseExact(vreme, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+            if (vremePregleda.Hour < DateTime.Now.Hour)
+                return false;
+            else if (vremePregleda.Hour == DateTime.Now.Hour && DateTime.Now.Minute == vremePregleda.Minute)
+                return false;
+            else if (vremePregleda.Hour == DateTime.Now.Hour && DateTime.Now.Minute > vremePregleda.Minute)
+                return false;
+            return true;
+        }
     }
 }

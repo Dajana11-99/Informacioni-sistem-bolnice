@@ -148,22 +148,15 @@ namespace ZdravoKorporacija.Repozitorijum
             Termin termin = KonvertujCvorUObjekat(node);
             return termin;
         }
-
-        public void RefresujZakazaneTermine(Termin termin)
+        public List<Termin> DobaviSveZakazaneTerminePacijenta(String idPacijenta)
         {
-            ObrisiZakazanTermin(termin);
-            SacuvajZakazanTermin(termin);
-        }
-
-        public void RefresujSveZakazaneTermine(Termin termin)
-        {
-            foreach(Termin izmenjenTermin in DobaviSveZakazaneTerminePacijenta(termin.Pacijent.IdPacijenta))
+            List<Termin> sviTerminiPacijenta = new List<Termin>();
+            foreach (Termin termin in DobaviZakazaneTermine())
             {
-                izmenjenTermin.Pacijent.Maliciozan = termin.Pacijent.Maliciozan;
-                izmenjenTermin.Pacijent.Zloupotrebio = termin.Pacijent.Zloupotrebio;
-                RefresujZakazaneTermine(izmenjenTermin);
+                if (termin.Pacijent.IdPacijenta.Equals(idPacijenta))
+                    sviTerminiPacijenta.Add(termin);
             }
-           
+            return sviTerminiPacijenta;
         }
         public  void ZakaziPregled(Termin termin)
         {
@@ -214,18 +207,22 @@ namespace ZdravoKorporacija.Repozitorijum
             LekarWindow.TerminiLekara.Insert(ind, termin);
             return termin;
         }
-        public List<Termin> DobaviSveZakazaneTerminePacijenta(String idPacijenta)
+        public void RefresujZakazaneTermine(Termin termin)
         {
-            List<Termin> sviTerminiPacijenta = new List<Termin>();
-            foreach (Termin termin in DobaviZakazaneTermine())
-            {
-                if (termin.Pacijent.IdPacijenta.Equals(idPacijenta))
-                    sviTerminiPacijenta.Add(termin);
-            }
-            return sviTerminiPacijenta;
+            ObrisiZakazanTermin(termin);
+            SacuvajZakazanTermin(termin);
         }
 
+        public void RefresujSveZakazaneTermine(Termin termin)
+        {
+            foreach (Termin izmenjenTermin in DobaviSveZakazaneTerminePacijenta(termin.Pacijent.IdPacijenta))
+            {
+                izmenjenTermin.Pacijent.Maliciozan = termin.Pacijent.Maliciozan;
+                izmenjenTermin.Pacijent.Zloupotrebio = termin.Pacijent.Zloupotrebio;
+                RefresujZakazaneTermine(izmenjenTermin);
+            }
 
+        }
 
 
 
