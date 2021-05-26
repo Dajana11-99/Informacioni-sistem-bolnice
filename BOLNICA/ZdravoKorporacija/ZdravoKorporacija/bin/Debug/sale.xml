@@ -27,24 +27,22 @@
       </RasporedjenaStatickaOprema>
     </RasporedjenaStatickaOprema>
     <RasporedjenaDinamickaOprema />
-    <Renoviranja>
-      <Renoviranje>
-        <RenoviranjeOd>2021-05-05T00:00:00</RenoviranjeOd>
-        <RenoviranjeDo>2021-05-08T00:00:00</RenoviranjeDo>
-      </Renoviranje>
-      <Renoviranje>
-        <RenoviranjeOd>2021-05-05T00:00:00</RenoviranjeOd>
-        <RenoviranjeDo>2021-05-08T00:00:00</RenoviranjeDo>
-      </Renoviranje>
-      <Renoviranje>
-        <RenoviranjeOd>2021-05-05T00:00:00</RenoviranjeOd>
-        <RenoviranjeDo>2021-05-08T00:00:00</RenoviranjeDo>
-      </Renoviranje>
-      <Renoviranje>
-        <RenoviranjeOd>2021-05-05T00:00:00</RenoviranjeOd>
-        <RenoviranjeDo>2021-05-07T00:00:00</RenoviranjeDo>
-      </Renoviranje>
-    </Renoviranja>
+    <Renoviranje>
+      <RenoviranjeOd>2021-05-28T00:00:00</RenoviranjeOd>
+      <RenoviranjeDo>2021-05-29T00:00:00</RenoviranjeDo>
+      <Spajanje>true</Spajanje>
+      <NazivNovoSpojeneSale>Naziv nove sale</NazivNovoSpojeneSale>
+      <SalaZaSpajanje>
+        <TipSale>Pregled</TipSale>
+        <Id>a3</Id>
+        <Zauzeta>true</Zauzeta>
+        <sprat>4</sprat>
+        <kvadratura>0</kvadratura>
+        <RasporedjenaStatickaOprema />
+        <RasporedjenaDinamickaOprema />
+      </SalaZaSpajanje>
+      <Razdvajanje>false</Razdvajanje>
+    </Renoviranje>
   </Sala>
   <Sala>
     <TipSale>Operaciona</TipSale>
@@ -81,7 +79,14 @@
         </dinamickaOprema>
       </RasporedjenaDinamickaOprema>
     </RasporedjenaDinamickaOprema>
-    <Renoviranja />
+    <Renoviranje>
+      <RenoviranjeOd>2021-05-28T00:00:00</RenoviranjeOd>
+      <RenoviranjeDo>2021-05-29T00:00:00</RenoviranjeDo>
+      <Spajanje>false</Spajanje>
+      <Razdvajanje>true</Razdvajanje>
+      <NazivPrveNoveSale>Naziv prve nove sale</NazivPrveNoveSale>
+      <NazivDrugeNoveSale>Naziv prve nove sale</NazivDrugeNoveSale>
+    </Renoviranje>
   </Sala>
   <Sala>
     <TipSale>Pregled</TipSale>
@@ -91,23 +96,22 @@
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema />
     <RasporedjenaDinamickaOprema />
-    <Renoviranja>
-      <Renoviranje>
-        <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-        <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-      </Renoviranje>
-      <Renoviranje>
-        <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-        <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-      </Renoviranje>
-      <Renoviranje>
-        <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-        <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-      </Renoviranje>
-      <Renoviranje>
-        <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-        <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-      </Renoviranje>
-    </Renoviranja>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>a5</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>3</sprat>
+    <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
+    <Renoviranje>
+      <RenoviranjeOd>2021-05-28T00:00:00</RenoviranjeOd>
+      <RenoviranjeDo>2021-05-29T00:00:00</RenoviranjeDo>
+      <Spajanje>false</Spajanje>
+      <Razdvajanje>true</Razdvajanje>
+      <NazivPrveNoveSale>a7</NazivPrveNoveSale>
+      <NazivDrugeNoveSale>a8</NazivDrugeNoveSale>
+    </Renoviranje>
   </Sala>
 </ArrayOfSala>
