@@ -102,14 +102,16 @@
       <BracniStatus>Neudata</BracniStatus>
       <Anamneza>
         <idPacijenta>P1</idPacijenta>
-        <Simptomi />
-        <IzvestajLekara />
+        <Simptomi>Bol u grlu</Simptomi>
+        <IzvestajLekara>Pacijent boluje od zapaljena grla piti puno caja</IzvestajLekara>
       </Anamneza>
       <recepti>
         <Recept>
           <Lek1>
             <IdLeka>222</IdLeka>
             <ImeLeka>"Brufen",</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
           </Lek1>
           <KolicinaTerapije>2134</KolicinaTerapije>
           <PocetakTerapije>2021-05-27T00:00:00</PocetakTerapije>
