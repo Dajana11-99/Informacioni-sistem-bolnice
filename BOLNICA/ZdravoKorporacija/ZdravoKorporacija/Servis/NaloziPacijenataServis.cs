@@ -47,13 +47,13 @@ namespace Servis
 
         public static void inic()
         {
-            Karton k1 = new Karton("O1", "Jova", "Jovic", "Milan", new DateTime(1996, 10, 3), Pol.Muski, "555-222", "15624", BracniStatusE.Neozenjen, new Anamneza());
+            Karton k1 = new Karton("O1", "Jova", "Jovic", "Milan", new DateTime(1996, 10, 3), Pol.Muski, "555-222", "15624", BracniStatusE.Neozenjen, new Anamneza(),"Brufen");
             Pacijent p1 = new Pacijent("1", "Jova", "Jovic", "1234567891234", "jova@gmail.com", new AdresaStanovanja("Koste Pavlovica", "23"),new Korisnik("jova.jovic","jova.jovic"));
             p1.karton = k1; 
-            Karton k2 = new Karton("O2", "Pera", "Peric", "Kosta", new DateTime(2000, 07, 12), Pol.Muski, "064 3575975", "12345", BracniStatusE.Udovac, new Anamneza());
+            Karton k2 = new Karton("O2", "Pera", "Peric", "Kosta", new DateTime(2000, 07, 12), Pol.Muski, "064 3575975", "12345", BracniStatusE.Udovac, new Anamneza(),"Brufen");
             Pacijent p2 = new Pacijent("2", "Pera", "Peric", "4321432143215", "pera@gmail.com", new AdresaStanovanja("Veselina Maslese", "24"),new Korisnik("pera.peric","pera.peric"));
             p2.karton = k2;
-            Karton k3 = new Karton("03", "Dajana", "Zlokapa","Sinisa", new DateTime(1999,11,11),Pol.Zenski,"064 87956163","123",BracniStatusE.Neudata,new Anamneza());
+            Karton k3 = new Karton("03", "Dajana", "Zlokapa","Sinisa", new DateTime(1999,11,11),Pol.Zenski,"064 87956163","123",BracniStatusE.Neudata,new Anamneza(),"Brufen");
             Pacijent p3 = new Pacijent("P1", "Dajana", "Zlokapa", "2711999105018", "dajana.zlokapa@gmail.com", new AdresaStanovanja("Adresa", "4"), new Korisnik("dajana.zlokapa", "dajana.zlokapa"));
             p3.karton = k3;
             ListaPacijenata.Add(p1);
@@ -130,7 +130,6 @@ namespace Servis
             if (termin.Pacijent.Zloupotrebio >5)
                 termin.Pacijent.Maliciozan = true;
             naloziPacijenataRepozitorijum.UpisiPacijente(termin.Pacijent);
-            terminRepozitorijum.RefresujSveZakazaneTermine(termin);
         }
         public bool DaLiJeNalogBlokiran(String idPacijenta)
         {

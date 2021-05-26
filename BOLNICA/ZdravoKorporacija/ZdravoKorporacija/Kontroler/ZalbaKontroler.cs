@@ -8,7 +8,7 @@ using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.Kontroler
 {
-    class ZalbaKontroler
+    public class ZalbaKontroler
     {
         public static Zalba PretraziZalbe(String idZalbe)
         {

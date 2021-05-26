@@ -9,7 +9,7 @@ using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija.Servis
 {
-    class ZalbaServis
+    public class ZalbaServis
     {
         public static ObservableCollection<Zalba> zalbeObservable = new ObservableCollection<Zalba>();
         public static List<Zalba> zalbe = new List<Zalba>();
@@ -30,9 +30,7 @@ namespace ZdravoKorporacija.Servis
             foreach (Zalba zalba in zalbe)
             {
                 if (zalba.IdZalbe.Equals(idZalbe))
-                {
-                    return zalba;
-                }
+                    return zalba;     
             }
             return null;
         }
@@ -54,13 +52,13 @@ namespace ZdravoKorporacija.Servis
         }
         private static void IzmenaZalbe(Zalba zalbaZaIzmenu)
         {
-            foreach (Zalba z in zalbeObservable)
+            foreach (Zalba zalba in zalbeObservable)
             {
-                if (z.IdZalbe.Equals(zalbaZaIzmenu.IdZalbe))
+                if (zalba.IdZalbe.Equals(zalbaZaIzmenu.IdZalbe))
                 {
-                    z.TextZalbe = zalbaZaIzmenu.TextZalbe;
-                    z.IdLeka = zalbaZaIzmenu.IdLeka;
-                    z.resena = zalbaZaIzmenu.resena;
+                    zalba.TextZalbe = zalbaZaIzmenu.TextZalbe;
+                    zalba.IdLeka = zalbaZaIzmenu.IdLeka;
+                    zalba.resena = zalbaZaIzmenu.resena;
                 }
             }
         }

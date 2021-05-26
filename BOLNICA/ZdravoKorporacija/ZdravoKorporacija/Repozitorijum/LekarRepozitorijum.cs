@@ -72,10 +72,10 @@ namespace ZdravoKorporacija.Repozitorijum
         {
             List<Lekar> listaSvihLekara = new List<Lekar>();
 
-            foreach (Lekar l in DobaviSveLekare())
+            foreach (Lekar lekar in DobaviSveLekare())
             {
-                if (l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
-                    listaSvihLekara.Add(l);
+                if (lekar.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
+                    listaSvihLekara.Add(lekar);
             }
             return listaSvihLekara;
         }

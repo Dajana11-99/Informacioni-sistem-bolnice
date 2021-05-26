@@ -1,46 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <Vreme>14:30</Vreme>
-    <TrajanjeTermina>30</TrajanjeTermina>
-    <Datum>2021-05-13T00:00:00</Datum>
-    <TipTermina>Pregled</TipTermina>
-    <IdTermina>8</IdTermina>
-    <Sala>
-      <TipSale>Pregled</TipSale>
-      <Id>a3</Id>
-      <Zauzeta>true</Zauzeta>
-      <sprat>4</sprat>
-      <kvadratura>0</kvadratura>
-      <RasporedjenaStatickaOprema />
-      <RasporedjenaDinamickaOprema />
-    </Sala>
-    <Lekar>
-      <korisnik>
-        <KorisnickoIme>stefan.markovic</KorisnickoIme>
-        <Sifra>stefan.markovic</Sifra>
-        <Uloga>Lekar</Uloga>
-        <Nalog>Obican</Nalog>
-      </korisnik>
-      <Ime>Stefan</Ime>
-      <Prezime>Markovic</Prezime>
-      <Jmbg>3008997181967</Jmbg>
-      <Email>stefan.markovic@gmail.com</Email>
-      <CeloIme>Stefan Markovic</CeloIme>
-      <adresaStanovanja>
-        <Ulica>Laze Lazarevica</Ulica>
-        <Broj> 43</Broj>
-      </adresaStanovanja>
-      <termin />
-      <zahtevUpravniku />
-      <Zauzet>false</Zauzet>
-      <idZaposlenog>L2</idZaposlenog>
-      <Specijalizacija>Ostapraksa</Specijalizacija>
-    </Lekar>
-    <OcenjenTermin>false</OcenjenTermin>
-    <DaLiJeHitno>false</DaLiJeHitno>
-  </Termin>
-  <Termin>
     <Vreme>15:30</Vreme>
     <TrajanjeTermina>30</TrajanjeTermina>
     <Datum>2021-05-13T00:00:00</Datum>

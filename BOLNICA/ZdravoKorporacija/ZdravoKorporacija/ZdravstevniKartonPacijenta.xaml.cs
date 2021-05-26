@@ -23,7 +23,7 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class ZdravstevniKartonPacijenta : Window
     {
-         public static  Pacijent pacijent=null;
+        public static Pacijent pacijent = null;
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         public ZdravstevniKartonPacijenta(String idPacijenta)
         {
@@ -52,10 +52,12 @@ namespace ZdravoKorporacija
         }
         private void BtnIzdavanjeRecepta_Click(object sender, RoutedEventArgs e)
         {
-            IzdavanjeRecepataWindow izdavanjeReceptaProzor = new IzdavanjeRecepataWindow();
+            IzdavanjeRecepataWindow izdavanjeReceptaProzor = new IzdavanjeRecepataWindow(pacijent);
             izdavanjeReceptaProzor.ShowDialog();
             if (izdavanjeReceptaProzor.recept != null)
+            {
                 pacijent.karton.recepti.Add(izdavanjeReceptaProzor.recept);
+            }
         }
     }
 }

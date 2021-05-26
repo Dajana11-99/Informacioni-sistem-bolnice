@@ -103,7 +103,6 @@ namespace ZdravoKorporacija
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             NaloziPacijenataRepozitorijum.UpisiPacijente();
-           // TerminRepozitorijum.UpisiZakazaneTermine();
             LekoviRepozitorijum.upisiLekove();
         }
 

@@ -212,19 +212,5 @@ namespace ZdravoKorporacija.Repozitorijum
             ObrisiZakazanTermin(termin);
             SacuvajZakazanTermin(termin);
         }
-
-        public void RefresujSveZakazaneTermine(Termin termin)
-        {
-            foreach (Termin izmenjenTermin in DobaviSveZakazaneTerminePacijenta(termin.Pacijent.IdPacijenta))
-            {
-                izmenjenTermin.Pacijent.Maliciozan = termin.Pacijent.Maliciozan;
-                izmenjenTermin.Pacijent.Zloupotrebio = termin.Pacijent.Zloupotrebio;
-                RefresujZakazaneTermine(izmenjenTermin);
-            }
-
-        }
-
-
-
     }
 }

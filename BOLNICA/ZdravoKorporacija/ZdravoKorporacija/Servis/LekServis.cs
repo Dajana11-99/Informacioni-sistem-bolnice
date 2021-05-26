@@ -10,7 +10,7 @@ using ZdravoKorporacija.Repozitorijum;
 
 namespace Servis
 {
-    class LekServis
+    public class LekServis
     {
         LekKontroler lekKontroler = new LekKontroler();
         public static List<Lek> lek = new List<Lek>();
@@ -95,13 +95,13 @@ namespace Servis
             OsveziKolekciju();
             return true;
         }
-        public static bool BrisanjeLeka(String id)
+        public static bool BrisanjeLeka(String idLeka)
         {
             List<Lek> lekoviBezIzbrisanog = new List<Lek>();
             bool nadjena = false;
             foreach (Lek l in lek)
             {
-                if (l.IdLeka.Equals(id))
+                if (l.IdLeka.Equals(idLeka))
                 {
                     nadjena = true;
                 } else
@@ -114,9 +114,9 @@ namespace Servis
             LekRepozitorijum.UpisiLekove();
             return nadjena;
         }
-        public static Lek PretraziSveLekove(String id)
+        public static Lek PretraziSveLekove(String idLeka)
         {
-            return LekoviRepozitorijum.PronadjiLek(id);
+            return LekoviRepozitorijum.PronadjiLek(idLeka);
         }
         public static List<Lek> PrikaziSveLekove()
         {
