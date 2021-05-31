@@ -12,14 +12,12 @@
     <Jmbg>1234567891234</Jmbg>
     <Email>jova@gmail.com</Email>
     <adresaStanovanja>
-      <Broj>23</Broj>
       <Ulica>Koste Pavlovica</Ulica>
+      <Broj>23</Broj>
     </adresaStanovanja>
     <termin />
     <karton>
       <OdeljenjeNaPrijemu>O1</OdeljenjeNaPrijemu>
-      <Ime>Jova</Ime>
-      <Prezime>Jovic</Prezime>
       <ImeRoditelja>Milan</ImeRoditelja>
       <DatumRodjenja>1996-10-03T00:00:00</DatumRodjenja>
       <Pol>Muski</Pol>
@@ -27,14 +25,18 @@
       <BrojKartona>15624</BrojKartona>
       <BracniStatus>Neozenjen</BracniStatus>
       <Anamneza>
+        <idPacijenta>P1</idPacijenta>
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
       <recepti />
+      <Prezime>Jovic</Prezime>
+      <Ime>Jova</Ime>
+      <alergican>Brufen</alergican>
     </karton>
-    <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>0</Zloupotrebio>
     <IdPacijenta>1</IdPacijenta>
+    <Zloupotrebio>0</Zloupotrebio>
+    <Maliciozan>false</Maliciozan>
   </Pacijent>
   <Pacijent>
     <korisnik>
@@ -48,14 +50,12 @@
     <Jmbg>4321432143215</Jmbg>
     <Email>pera@gmail.com</Email>
     <adresaStanovanja>
-      <Broj>24</Broj>
       <Ulica>Veselina Maslese</Ulica>
+      <Broj>24</Broj>
     </adresaStanovanja>
     <termin />
     <karton>
       <OdeljenjeNaPrijemu>O2</OdeljenjeNaPrijemu>
-      <Ime>Pera</Ime>
-      <Prezime>Peric</Prezime>
       <ImeRoditelja>Kosta</ImeRoditelja>
       <DatumRodjenja>2000-07-12T00:00:00</DatumRodjenja>
       <Pol>Muski</Pol>
@@ -63,14 +63,18 @@
       <BrojKartona>12345</BrojKartona>
       <BracniStatus>Udovac</BracniStatus>
       <Anamneza>
+        <idPacijenta>P1</idPacijenta>
         <Simptomi />
         <IzvestajLekara />
       </Anamneza>
       <recepti />
+      <Prezime>Peric</Prezime>
+      <Ime>Pera</Ime>
+      <alergican>Brufen</alergican>
     </karton>
-    <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>0</Zloupotrebio>
     <IdPacijenta>2</IdPacijenta>
+    <Zloupotrebio>0</Zloupotrebio>
+    <Maliciozan>false</Maliciozan>
   </Pacijent>
   <Pacijent>
     <korisnik>
@@ -84,14 +88,12 @@
     <Jmbg>2711999105018</Jmbg>
     <Email>dajana.zlokapa@gmail.com</Email>
     <adresaStanovanja>
-      <Broj>4</Broj>
       <Ulica>Adresa</Ulica>
+      <Broj>4</Broj>
     </adresaStanovanja>
     <termin />
     <karton>
       <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
-      <Ime>Dajana</Ime>
-      <Prezime>Zlokapa</Prezime>
       <ImeRoditelja>Sinisa</ImeRoditelja>
       <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
       <Pol>Zenski</Pol>
@@ -99,42 +101,32 @@
       <BrojKartona>123</BrojKartona>
       <BracniStatus>Neudata</BracniStatus>
       <Anamneza>
-        <Simptomi>Bol u grlu.</Simptomi>
-        <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
+        <idPacijenta>P1</idPacijenta>
+        <Simptomi>Bol u grlu</Simptomi>
+        <IzvestajLekara>Pacijent boluje od zapaljena grla piti puno caja</IzvestajLekara>
       </Anamneza>
       <recepti>
         <Recept>
           <Lek1>
-            <IdLeka>123</IdLeka>
-            <ImeLeka>Paracetamol</ImeLeka>
+            <IdLeka>222</IdLeka>
+            <ImeLeka>"Brufen",</ImeLeka>
             <ListaSastojaka />
             <ListaZamenaZaLek />
           </Lek1>
-          <KolicinaTerapije>1</KolicinaTerapije>
-          <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
-          <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
-          <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
-          <obavestiMe>NE</obavestiMe>
-          <idPacijenta>P1</idPacijenta>
-        </Recept>
-        <Recept>
-          <Lek1>
-            <IdLeka>12345</IdLeka>
-            <ImeLeka>Septolete</ImeLeka>
-            <ListaSastojaka />
-            <ListaZamenaZaLek />
-          </Lek1>
-          <KolicinaTerapije>1</KolicinaTerapije>
-          <PocetakTerapije>2021-05-07T00:00:00</PocetakTerapije>
-          <KrajTerapije>2021-05-14T00:00:00</KrajTerapije>
-          <PeroidUzimanjaUSatima>6</PeroidUzimanjaUSatima>
+          <KolicinaTerapije>2134</KolicinaTerapije>
+          <PocetakTerapije>2021-05-27T00:00:00</PocetakTerapije>
+          <KrajTerapije>2021-05-29T00:00:00</KrajTerapije>
+          <PeroidUzimanjaUSatima>234</PeroidUzimanjaUSatima>
           <obavestiMe>NE</obavestiMe>
           <idPacijenta>P1</idPacijenta>
         </Recept>
       </recepti>
+      <Prezime>Zlokapa</Prezime>
+      <Ime>Dajana</Ime>
+      <alergican>Brufen</alergican>
     </karton>
-    <Maliciozan>false</Maliciozan>
-    <Zloupotrebio>2</Zloupotrebio>
     <IdPacijenta>P1</IdPacijenta>
+    <Zloupotrebio>0</Zloupotrebio>
+    <Maliciozan>false</Maliciozan>
   </Pacijent>
 </ArrayOfPacijent>

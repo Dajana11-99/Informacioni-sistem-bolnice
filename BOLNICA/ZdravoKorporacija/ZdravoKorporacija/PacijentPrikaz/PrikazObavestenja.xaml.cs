@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -15,34 +16,23 @@ using System.Windows.Shapes;
 using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Servis;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
   
     public partial class PrikazObavestenja : Window
     {
-        public static ObservableCollection<Obavestenja> obavestenjaPacijenta { get; set; }
-        public PrikazObavestenja()
+        
+        private ObavestenjaViewModel obavestenjaViewModel;
+        public PrikazObavestenja(String pacijent)
         {
+            obavestenjaViewModel = new ObavestenjaViewModel(pacijent);
             InitializeComponent();
-            obavestenjaPacijenta = new ObservableCollection<Obavestenja>();
-            List<Obavestenja> datumi = ObavestenjaKontroler.svaObavestenja().OrderByDescending(user => user.Datum).ToList();
-            PodesavanjePrikaza(datumi);
-            obavestenjaPacijentaLista.ItemsSource = obavestenjaPacijenta;
+            this.obavestenjaPacijenta.ItemsSource = obavestenjaViewModel.SvaObavestenjaPacijenta;
+            this.DataContext = obavestenjaViewModel;
+            
         }
-
-        private static void PodesavanjePrikaza(List<Obavestenja> datumi)
-        {
-            foreach (Obavestenja o in datumi)
-            {
-                if (o.IdPrimaoca.Equals(PacijentGlavniProzor.ulogovan.IdPacijenta))
-                {
-                    if (DateTime.Compare(o.Datum.Date, DateTime.Now.Date) <= 0)
-                        obavestenjaPacijenta.Add(o);
-                }
-            }
-        }
-
         private void VratiSe_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -12,20 +12,11 @@ namespace ZdravoKorporacija.Repozitorijum
 {
     public class LekarRepozitorijum
     {
-        public static List<Lekar> sviLekari = new List<Lekar>();
+       
         public  String imeFajla = "lekari.xml";
-
-       /* public static void Inicijalizuj()
+        public List<Lekar> DobaviSveLekare()
         {
-            sviLekari.Add(new Lekar("L1", false, Specijalizacija.Ostapraksa, "Pera", "Peric", "2711999105018", "dajanazlokapa@gmail.com", new AdresaStanovanja("Ljubice Ravasi", "2A"), new Korisnik("pera.peric", "pera.peric")));
-            sviLekari.Add(new Lekar("L2", false, Specijalizacija.Ostapraksa, "Stefan", "Markovic", "3008997181967", "stefan.markovic@gmail.com", new AdresaStanovanja("Laze Lazarevica", " 43"), new Korisnik("stefan.markovic", "stefan.markovic")));
-            sviLekari.Add(new Lekar("L3", false, Specijalizacija.Ostapraksa, "Nikola", "Nikolic", "2401965194820", "nikola.nikolic@gmail.com", new AdresaStanovanja("Patrijarha Pavla", " 23"), new Korisnik("nikola.markovic", "nikola.markovic")));
-            sviLekari.Add(new Lekar("L4", false, Specijalizacija.Ostapraksa, "Marko", "Markovic", "65395728557", "marko.markovic@gmail.com", new AdresaStanovanja("Mihajla Pupina", " 12"), new Korisnik("marko.markovic", "marko.markovic")));
-            sviLekari.Add(new Lekar("L5", false, Specijalizacija.Kardiolog, "Milan", "Djenic", "5686323676", "milan.djenic@gmail.com", new AdresaStanovanja("Narodnih heroja", "32"), new Korisnik("milan.markovic", "milan.markovic")));
-            sviLekari.Add(new Lekar("l6", false, Specijalizacija.Stomatolog, "Petar", "Petrovic", "6583892377523", "petar.petrovic@gmail.com", new AdresaStanovanja("Ustanicka", "8"), new Korisnik("petar.markovic", "petar.markovic")));
-        }*/
-        public List<Lekar> ucitajLekare()
-        { 
+            List<Lekar> sviLekari = new List<Lekar>();
             if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return sviLekari;
@@ -39,16 +30,9 @@ namespace ZdravoKorporacija.Repozitorijum
                 return sviLekari;
             }
         }
-        public void UpisiLekare()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
-            TextWriter textWriter = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(textWriter, sviLekari);
-            textWriter.Close();
-        }
         public Lekar PretragaLekaraPoID(String idLekara)
         {
-            foreach (Lekar lekar in sviLekari)
+            foreach (Lekar lekar in DobaviSveLekare())
             {
                 if (lekar.idZaposlenog.Equals(idLekara))
                     return lekar;
@@ -57,7 +41,7 @@ namespace ZdravoKorporacija.Repozitorijum
         }
         public Lekar PretragaPoLekaru(String imeLekara, String prezimeLekara)
         {
-            foreach (Lekar lekar in sviLekari)
+            foreach (Lekar lekar in DobaviSveLekare())
             {
                 if (lekar.Ime.Equals(imeLekara) && lekar.Prezime.Equals(prezimeLekara))
                     return lekar;
@@ -67,7 +51,7 @@ namespace ZdravoKorporacija.Repozitorijum
 
         public Lekar PretraziPoKorisnickomImenu(String korisnickoIme)
         {
-            foreach (Lekar lekar in sviLekari)
+            foreach (Lekar lekar in DobaviSveLekare())
             {
                 if (lekar.korisnik.KorisnickoIme.Equals(korisnickoIme))
                     return lekar;
@@ -77,21 +61,21 @@ namespace ZdravoKorporacija.Repozitorijum
 
         public Lekar PretraziPoImenuIPrezimenu(String imeIPrezime) 
         {
-            foreach(Lekar lekar in sviLekari)
+            foreach(Lekar lekar in DobaviSveLekare())
             {
                 if (lekar.CeloIme.Equals(imeIPrezime)) 
                     return lekar;
             }
             return null;
         }
-        public List<Lekar> PretraziPoSpecijalizaciji()
+        public List<Lekar> DobaviLekareOpstePrakse()
         {
             List<Lekar> listaSvihLekara = new List<Lekar>();
 
-            foreach (Lekar l in sviLekari)
+            foreach (Lekar lekar in DobaviSveLekare())
             {
-                if (l.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
-                    listaSvihLekara.Add(l);
+                if (lekar.Specijalizacija.Equals(Specijalizacija.Ostapraksa))
+                    listaSvihLekara.Add(lekar);
             }
             return listaSvihLekara;
         }

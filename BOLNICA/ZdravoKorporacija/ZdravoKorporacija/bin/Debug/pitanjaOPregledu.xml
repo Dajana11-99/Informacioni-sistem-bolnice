@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPitanje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Higijena ordinacije/sobe za preglede</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Ljubaznost osoblja</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Ljubaznost lekara</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Strucnost lekara</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Zadovoljstvo pruženom zdravstvenom uslugom</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Usluge se obavljaju u skladu sa rasporedom termina</Tekst>
+  </Pitanje>
+  <Pitanje>
+    <Ocena>pet</Ocena>
+    <Tekst>Da li biste preporučili prijateljima ovog lekara</Tekst>
+  </Pitanje>
+</ArrayOfPitanje>

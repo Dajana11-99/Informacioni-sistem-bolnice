@@ -6,21 +6,45 @@ namespace Model
 {
    public class Ankete
    {
-      public String DodatniKomentar { get; set; }
-      public List<Pitanje> pitanja { get; set; }
-      public Termin termin { get; set; }
-      
-      public Pacijent Pacijent { get;set; }
-      public DateTime ocenioBolnicu { get; set; }
+        private String dodatniKomentar;
+        private List<Pitanje> pitanja;
+        private Termin termin;
 
+        private Pacijent pacijent;
+        public DateTime ocenioBolnicu;
+
+        public String DodatniKomenta
+        {
+            get { return dodatniKomentar; }
+            set { dodatniKomentar = value; }
+        }
+        public List<Pitanje> Pitanja
+        {
+            get { return pitanja; }
+            set { pitanja = value; }
+        }
+        public Termin Termin
+        {
+            get { return termin; }
+            set { termin = value; }
+        }
+        public Pacijent Pacijent
+        {
+            get { return pacijent; }
+            set { pacijent = value; }
+        }
+
+        public DateTime OcenioBolnicu
+        {
+            get { return ocenioBolnicu; }
+            set { ocenioBolnicu = value; }
+        }
         public Ankete(string dodatniKomentar, List<Pitanje> pitanja, Termin termin,Pacijent pacijent)
         {
-            DodatniKomentar = dodatniKomentar;
+            this.dodatniKomentar = dodatniKomentar;
             this.pitanja = pitanja;
             this.termin = termin;
-            this.Pacijent = pacijent;
-         
-          
+            this.pacijent = pacijent;
         }
 
         public Ankete(string dodatniKomentar, List<Pitanje> pitanja, Termin termin, Pacijent pacijent, DateTime ocenioBolnicu) : this(dodatniKomentar, pitanja, termin, pacijent)

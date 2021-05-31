@@ -4,20 +4,31 @@
     <IdZalbe>a6ea8f3f-3e20-41b7-a814-5271b7598443</IdZalbe>
     <TextZalbe>istkao rok trjana</TextZalbe>
     <IdLeka>6</IdLeka>
+    <resena>false</resena>
   </Zalba>
   <Zalba>
     <IdZalbe>76cc7325-5a77-42df-9afa-c41343908b97</IdZalbe>
     <TextZalbe>istekao rok</TextZalbe>
     <IdLeka>2</IdLeka>
+    <resena>false</resena>
   </Zalba>
   <Zalba>
     <IdZalbe>35e050f2-5325-4336-b3eb-51171bcf6c17</IdZalbe>
     <TextZalbe>sddfgjhkll;hgjfh</TextZalbe>
     <IdLeka>2</IdLeka>
+    <resena>false</resena>
   </Zalba>
   <Zalba>
     <IdZalbe>aa0be9ca-6644-43a6-8a39-a221d3f7846c</IdZalbe>
     <TextZalbe>Ne valja!</TextZalbe>
     <IdLeka>3</IdLeka>
+    <resena>false</resena>
+  </Zalba>
+  <Zalba>
+    <IdZalbe>c41cfa71-a9ef-4394-818a-f9e049102f35</IdZalbe>
+    <TextZalbe>Istekao rok trajanja</TextZalbe>
+    <IdLeka>2</IdLeka>
+    <resena>false</resena>
+    <lekZaZamenu>"Pentraxil"</lekZaZamenu>
   </Zalba>
 </ArrayOfZalba>

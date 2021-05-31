@@ -1,5 +1,6 @@
 ﻿using Kontroler;
 using Model;
+using NPOI.Util;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -14,41 +15,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    public partial class OtkazivanjeTermina : Window
+    public partial class OtkazivanjeTermina : Window, ICloseable
     {
-        String izabraniIdTermina = null;
-        public OtkazivanjeTermina(String idTermina)
+        public OtkazivanjeTermina(TerminDTO termin)
         {
+            RasporedTerminaViewModel terminViewModel = new RasporedTerminaViewModel(termin);
             InitializeComponent();
-            izabraniIdTermina = idTermina;
+            this.DataContext = terminViewModel;
+           
+        }
+
+        private void OdustaniTermin_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Termin termin = TerminKontroler.PretragaZakazanihTerminaPoId(izabraniIdTermina);
-
-            if (DateTime.Compare(DateTime.Now.Date, termin.Datum.Date) == 0)
-            {
-                MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
-                return;
-            }
        
-            TerminKontroler.OtkaziPregled(izabraniIdTermina);
-            if (PacijentGlavniProzor.ulogovan.Maliciozan == true)
-            {
-                MessageBox.Show("Ovo je vas poslednji otkazan termin. Nalog je blokiran!");
-
-                return;
-            }
-            this.Close();
         }
     }
 }

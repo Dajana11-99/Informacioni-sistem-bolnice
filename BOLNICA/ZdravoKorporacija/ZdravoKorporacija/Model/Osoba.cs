@@ -54,7 +54,9 @@ namespace Model
         public String Jmbg { get; set; }
         public String Email { get; set; }
         public String CeloIme { get; set; }
+
         public AdresaStanovanja adresaStanovanja { get; set; }
+     
 
     }
 }

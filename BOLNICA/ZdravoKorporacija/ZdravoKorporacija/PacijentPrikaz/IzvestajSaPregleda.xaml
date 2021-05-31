@@ -1,40 +1,42 @@
-﻿<Window x:Class="ZdravoKorporacija.PacijentPrikaz.IzvestajSaPregleda"
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.IzvestajSaPregleda"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="IzvestajSaPregleda" Height="650" Width="582"  WindowStartupLocation="CenterScreen" Background="#77c9b5">
-    <StackPanel>
-        <Label HorizontalAlignment="Center" FontSize="25" FontWeight="DemiBold">Izveštaj sa pregleda</Label>
-        <Label FontSize="20" FontWeight="DemiBold" Margin="10,0,0,0">Dijagnoza:</Label>
-        <Border Margin="15,10,15,10" BorderBrush="Black" BorderThickness="2">
-        <TextBlock  x:Name="Dijagnoza" Height="54" Background="White" >
-           </TextBlock>
-        </Border>
+        Height="360" Width="582"  >
+    <ScrollViewer>
+        <StackPanel Height="650">
+            <Label HorizontalAlignment="Center" FontSize="25" FontWeight="DemiBold">Izveštaj sa pregleda</Label>
+            <Label FontSize="20" FontWeight="DemiBold" Margin="10,0,0,0">Dijagnoza:</Label>
+            <Border Margin="15,10,15,10" BorderBrush="Black" BorderThickness="2">
+                <TextBlock  x:Name="Dijagnoza" Height="54" Background="White" Text="{Binding Path=Dijagnoza}" >
+                </TextBlock>
+            </Border>
 
 
-        <Label FontSize="20" FontWeight="DemiBold" Margin="10,0,0,0"> Anamneza</Label>
-        <Border BorderBrush="Black" BorderThickness="2" Margin="15 10 15 10">
-        <TextBlock Background="White" x:Name="Anamneza" Height="100" Margin="0 0 0 0"></TextBlock>
-        </Border>
-        <Label FontSize="20" FontWeight="DemiBold" Margin="10,0,0,0">Terapija</Label>
-        <Border Margin="15 10 15 10" BorderBrush="Black" BorderThickness="2">
-        <TextBlock  x:Name="Terapija" Height="75" Background="White"></TextBlock>
-        </Border>
-        <Label FontSize="20" FontWeight="DemiBold" Margin="10 0 0 0">Kontrola</Label>
-        <Border Margin="15 10 15 10" BorderBrush="Black" BorderThickness="2"> 
-        <TextBlock  x:Name="Kontrola" Height="38"  Background="White" ></TextBlock>
-        </Border>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="VratiSe" Margin="15 10 20 10" Height="30" Click="VratiSe_Click">Vrati se</Button>
-            <Button x:Name="NapraviBelesku" Margin="20 10 15 10" Height="30" Grid.Column="1" Click="NapraviBelesku_Click">Napravi Belešku</Button>
-        </Grid>
-      
-    </StackPanel>
-</Window>
+            <Label FontSize="20" FontWeight="DemiBold" Margin="10,0,0,0">Anamneza</Label>
+            <Border BorderBrush="Black" BorderThickness="2" Margin="15 10 15 10">
+                <TextBlock Background="White" x:Name="Anamneza" Height="100" Margin="0 0 0 0" Text="{Binding Path=Anamneza}"></TextBlock>
+            </Border>
+            <Label FontSize="20" FontWeight="DemiBold" Margin="10,0,0,0">Terapija</Label>
+            <Border Margin="15 10 15 10" BorderBrush="Black" BorderThickness="2">
+                <TextBlock  x:Name="Terapija" Height="75" Background="White" Text="{Binding Path=Terapija}"></TextBlock>
+            </Border>
+            <Label FontSize="20" FontWeight="DemiBold" Margin="10 0 0 0">Kontrola</Label>
+            <Border Margin="15 10 15 10" BorderBrush="Black" BorderThickness="2">
+                <TextBlock  x:Name="Kontrola" Height="38"  Background="White" Text="{Binding Path=Kontrola}" ></TextBlock>
+            </Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="VratiSe" Margin="15 10 20 10" Height="30" Command="{Binding Path=VratiSeKomanda}">Vrati se</Button>
+                <Button x:Name="NapraviBelesku" Margin="20 10 15 10" Height="30" Grid.Column="1" Command="{Binding Path=KreirajBelesku}">Napravi Belešku</Button>
+            </Grid>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

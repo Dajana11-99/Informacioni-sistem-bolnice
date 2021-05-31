@@ -4,39 +4,22 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
+using ZdravoKorporacija.Interfejs;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.Repozitorijum
 {
-    class ObavestenjaRepozitorijum
+   public class ObavestenjaRepozitorijum:GlavniRepozitorijum<Obavestenja>,ObavestenjeRepozitorijumInterfejs
     {
 
-        public static String imeFajla = "obavestenja.xml";
-
-        public static List<Obavestenja> Ucitaj()
+        public ObavestenjaRepozitorijum()
         {
-            if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
-            {
-                return new List<Obavestenja>();
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla);
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenja>));
-                ObavestenjaServis.svaObavestenja = (List<Obavestenja>)serializer.Deserialize(fileStream);
-                fileStream.Close();
-                return ObavestenjaServis.svaObavestenja;
-            }
+             imeFajla = "obavestenja.xml";
         }
 
-        public static void Sacuvaj()
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenja>));
-            TextWriter fileStream = new StreamWriter(imeFajla);
-            serializer.Serialize(fileStream, ObavestenjaServis.svaObavestenja);
-            fileStream.Close();
-        }
+       
     }
 }

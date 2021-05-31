@@ -38,5 +38,16 @@ namespace Model
             obavestiMe = "NE";
         }
 
+
+        public Recept(String kolicinaTerapije, DateTime pocetakTerapije, DateTime krajTarapije, double periodUzimanja, Lek lek, String pac,String obavestiMe)
+        {
+            KolicinaTerapije = kolicinaTerapije;
+            PocetakTerapije = pocetakTerapije;
+            KrajTerapije = krajTarapije;
+            PeroidUzimanjaUSatima = periodUzimanja;
+            this.Lek1 = lek;
+            idPacijenta = pac;
+            this.obavestiMe = obavestiMe;
+        }
     }
 }

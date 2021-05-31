@@ -14,29 +14,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
     public partial class ZdravstevniKarton : UserControl
     {
-        public ZdravstevniKarton()
+        private ZdravstveniKartonViewModel zdravstevniKartonViewModel;
+        public ZdravstevniKarton(String pacijent)
         {
+            zdravstevniKartonViewModel = new ZdravstveniKartonViewModel(pacijent);
             InitializeComponent();
-            DataContext = PacijentGlavniProzor.ulogovan;
-            PodesavanjeParametara(PacijentGlavniProzor.ulogovan);
+            this.DataContext = zdravstevniKartonViewModel;
+           
 
         }
-
-        private void PodesavanjeParametara(Pacijent pacijent)
-        {
-            ImePrezime.Content = pacijent.Prezime + "(" + pacijent.karton.ImeRoditelja + ")" + pacijent.Ime;
-            adresa.Content = pacijent.adresaStanovanja.Ulica + "" + pacijent.adresaStanovanja.Broj;
-        }
-
-        private void IstorijaPregleda_Click(object sender, RoutedEventArgs e)
+       /* private void IstorijaPregleda_Click(object sender, RoutedEventArgs e)
         {
             IstorijaPregleda istorija = new IstorijaPregleda();
             istorija.Show();
-        }
+        }*/
     }
 }

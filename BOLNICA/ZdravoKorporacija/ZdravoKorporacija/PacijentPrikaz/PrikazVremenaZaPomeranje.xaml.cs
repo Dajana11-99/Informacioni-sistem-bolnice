@@ -15,45 +15,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
-    public partial class PrikazVremenaZaPomeranje : Window
+    public partial class PrikazVremenaZaPomeranje : UserControl
     {
 
-        public static ObservableCollection<Termin> VremenaTerminaPomeranje { get; set; }
-        public PrikazVremenaZaPomeranje(Termin termin)
-        {
-            InitializeComponent();
-            VremenaTerminaPomeranje = new ObservableCollection<Termin>();
-
-            foreach (Termin t in TerminKontroler.NadjiVremeTermina(termin))
-            {
-                VremenaTerminaPomeranje.Add(t);
-            }
-
-            slobodnaVremenaLista.ItemsSource = VremenaTerminaPomeranje;
-        }
-
-        private void vratiSe_Click(object sender, RoutedEventArgs e)
-        {
-            PrikazDatumaZaPomeranjeKodLekara prikaz = new PrikazDatumaZaPomeranjeKodLekara();
-            prikaz.Show();
-            this.Close();
-        }
-
-        private void nastavi_Click(object sender, RoutedEventArgs e)
-        {
-            if (slobodnaVremenaLista.SelectedIndex == -1)
-            {
-                MessageBox.Show("Izaberite termin!");
-                return;
-            }
-            PotvrdiPomeranje pz = new PotvrdiPomeranje(((Termin)slobodnaVremenaLista.SelectedItem));
-
-            pz.Show();
-            this.Close();
         
+        TerminKontroler terminKontroler = new TerminKontroler();
+        private PrikazVremenaViewModel prikazVremenaViewModel;
+        public PrikazVremenaZaPomeranje(TerminDTO stariTermin,TerminDTO noviTermin)
+        {
+            prikazVremenaViewModel = new PrikazVremenaViewModel(stariTermin, noviTermin);
+            InitializeComponent();
+            this.slobodnaVremena.ItemsSource = prikazVremenaViewModel.SlobodniTermini;
+            this.DataContext = prikazVremenaViewModel;
         }
     }
 }

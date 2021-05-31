@@ -13,7 +13,7 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class IzmeniRasporedjivanjeStatickeOpreme : Window
     {
-        private ZahtevZaRasporedjivanjeStatickeOpreme selectedItem;
+       // private ZahtevZaRasporedjivanjeStatickeOpreme selectedItem;
 
         public List<StatickaOprema> StatickaOprema;
         public List<Sala> Prostorija;

@@ -8,62 +8,81 @@ using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
+using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.ViewModel;
 
 namespace Kontroler
 {
    public class TerminKontroler
    {
-        public static bool ProveriMogucnostPomeranjaDatum(DateTime dat)
+        private TerminServis terminiServis = new TerminServis();
+        public List<TerminDTO> NadjiVremeTermina(TerminDTO izabraniTermin)
         {
-            return TerminServis.ProveriMogucnostPomeranjaDatum(dat);
+            return terminiServis.NadjiVremeTermina(izabraniTermin);
         }
-        public static List<Termin> NadjiVremeTermina(Termin izabraniTermin)
+        public TerminDTO PretragaZakazanihTerminaPoId(String izabran)
         {
-            return TerminServis.NadjiVremeTermina(izabraniTermin);
+            return terminiServis.PretragaZakazanihTerminaPoId(izabran);
         }
-        public static List<Termin> NadjiSlobodneTermineLekara(String idZaposlenog, List<Termin> datumiUIntervalu)
+        public  List<TerminDTO> NadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
         {
-            return TerminServis.NadjiSlobodneTermineLekara(idZaposlenog, datumiUIntervalu);
+            return terminiServis.NadjiDatumUIntervalu(pocetak, kraj);
         }
-        public static List<Termin> NadjiDatumUIntervalu(DateTime pocetak, DateTime kraj)
+        public  void ZakaziPregled(TerminDTO terminZaZakazivanje,String korisnickoImePacijenta)
         {
-            return TerminServis.NadjiDatumUIntervalu(pocetak, kraj);
+            terminiServis.ZakaziPregled(terminZaZakazivanje, korisnickoImePacijenta);
         }
-        public static List<Termin> PrikaziSveZakazaneTermine()
+        public  void PomeriPregled(TerminDTO stariTermin, TerminDTO noviTermin)
         {
-            return TerminServis.PrikaziSveZakazaneTermine();
+            terminiServis.PomeriPregled(stariTermin, noviTermin);
         }
-        public static Termin PretraziSlobodneTerminePoId(String IdTermina)
+        public  void OtkaziPregled(TerminDTO termin)
         {
-            return TerminServis.PretraziSlobodneTerminePoId(IdTermina);
+            terminiServis.OtkaziPregled(termin);
         }
-        public static void ZakaziPregled(Termin t)
+        public List<TerminDTO> DobaviSveSlobodneDatumeZaPomeranje(TerminDTO termin)
         {
-            TerminServis.ZakaziPregled(t);
+            return terminiServis.DobaviSveSlobodneDatumeZaPomeranje(termin);   
         }
-        public static void PomeriPregled(String idTermina)
+        public List<TerminDTO> DobaviSlobodneTermineZaZakazivanje(List<DateTime> interval, String idLekara)
         {
-            TerminServis.PomeriPregled(idTermina);
+            return terminiServis.DobaviSlobodneTermineZaZakazivanje(interval, idLekara);
         }
-        public static void OtkaziPregled(String idTermina)
+        public List<TerminDTO> DobaviSveObavljeneTermine(String idPacijenta)
         {
-            TerminServis.OtkaziPregled(idTermina);
+            return terminiServis.DobaviSveObavljeneTermine(idPacijenta);
         }
-        public static Termin PretragaZakazanihTerminaPoId(String izabran)
+        public List<TerminDTO> DobaviZakazaneTerminePacijenta(String idPacijenta)
         {
-            return TerminServis.PretragaZakazanihTerminaPoId(izabran);
+            return terminiServis.DobaviZakazaneTerminePacijenta(idPacijenta);
         }
-        public static bool ProveriMogucnostPomeranjaVreme(String vreme)
+        public TerminDTO PretraziSlobodneTerminePoId(String IdTermina)
         {
-            return TerminServis.ProveriMogucnostPomeranjaVreme(vreme);
+            return terminiServis.PretraziSlobodneTerminePoId(IdTermina);
         }
-
+        public List<Termin> PrikaziSveZakazaneTermine()
+        {
+            return terminiServis.PrikaziSveZakazaneTermine();
+        }
+        public bool ProveriMogucnostPomeranjeVreme(String vreme)
+        {
+           return terminiServis.ProveriMogucnostPomeranjaVreme(vreme);
+        }
         public void IzmenaTermina(TerminDTO terminDTO) 
         {
             terminiServis.IzmenaTermina(terminDTO);
         }
-        public TerminServis terminiServis = new TerminServis();
-
+        public bool ZakaziTermin(Termin termin)
+        {
+            return terminiServis.ZakaziTermin(termin);
+        }
+        public List<Termin> DobaviSveZakazaneTermine()
+        {
+            return terminiServis.DobaviSveZakazaneTermine();
+        }
+        public void OtkaziTermin(String idTermina)
+        {
+            terminiServis.OtkaziTermin(idTermina);
+        }
     }
 }

@@ -9,15 +9,13 @@
     </korisnik>
     <Ime>Pera</Ime>
     <Prezime>Peric</Prezime>
-    <Jmbg>2711999105018</Jmbg>
-    <Email>dajanazlokapa@gmail.com</Email>
+    <Jmbg>3008997181967</Jmbg>
+    <Email>pera.peric@gmail.com</Email>
     <CeloIme>Pera Peric</CeloIme>
     <adresaStanovanja>
-      <Broj>2A</Broj>
-      <Ulica>Ljubice Ravasi</Ulica>
+      <Broj> 43</Broj>
+      <Ulica>Laze Lazarevica</Ulica>
     </adresaStanovanja>
-    <termin />
-    <zahtevUpravniku />
     <Zauzet>false</Zauzet>
     <idZaposlenog>L1</idZaposlenog>
     <Specijalizacija>Ostapraksa</Specijalizacija>
@@ -38,8 +36,6 @@
       <Broj> 43</Broj>
       <Ulica>Laze Lazarevica</Ulica>
     </adresaStanovanja>
-    <termin />
-    <zahtevUpravniku />
     <Zauzet>false</Zauzet>
     <idZaposlenog>L2</idZaposlenog>
     <Specijalizacija>Ostapraksa</Specijalizacija>
@@ -60,8 +56,6 @@
       <Broj> 23</Broj>
       <Ulica>Patrijarha Pavla</Ulica>
     </adresaStanovanja>
-    <termin />
-    <zahtevUpravniku />
     <Zauzet>false</Zauzet>
     <idZaposlenog>L3</idZaposlenog>
     <Specijalizacija>Ostapraksa</Specijalizacija>
@@ -82,8 +76,6 @@
       <Broj> 12</Broj>
       <Ulica>Mihajla Pupina</Ulica>
     </adresaStanovanja>
-    <termin />
-    <zahtevUpravniku />
     <Zauzet>false</Zauzet>
     <idZaposlenog>L4</idZaposlenog>
     <Specijalizacija>Ostapraksa</Specijalizacija>
@@ -104,8 +96,6 @@
       <Broj>32</Broj>
       <Ulica>Narodnih heroja</Ulica>
     </adresaStanovanja>
-    <termin />
-    <zahtevUpravniku />
     <Zauzet>false</Zauzet>
     <idZaposlenog>L5</idZaposlenog>
     <Specijalizacija>Kardiolog</Specijalizacija>
@@ -126,8 +116,6 @@
       <Broj>8</Broj>
       <Ulica>Ustanicka</Ulica>
     </adresaStanovanja>
-    <termin />
-    <zahtevUpravniku />
     <Zauzet>false</Zauzet>
     <idZaposlenog>l6</idZaposlenog>
     <Specijalizacija>Stomatolog</Specijalizacija>

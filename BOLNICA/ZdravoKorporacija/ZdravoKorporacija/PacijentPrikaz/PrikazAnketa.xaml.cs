@@ -26,20 +26,21 @@ namespace ZdravoKorporacija.PacijentPrikaz
     public partial class PrikazAnketa : UserControl
     {
         public static ObservableCollection<Termin> Ankete { get; set; }
+        TerminKontroler terminKontroler = new TerminKontroler();
         public PrikazAnketa()
         {
             InitializeComponent();
             this.DataContext = this;
             Ankete = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminKontroler.PrikaziSveZakazaneTermine())
+           /* foreach (Termin t in terminKontroler.PrikaziSveZakazaneTermine())
             {
-                if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
+              /*  if (t.Pacijent.korisnik.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovan.korisnik.KorisnickoIme))
                 {
                     if(DateTime.Compare(t.Datum.Date,DateTime.Now.Date)<0 && !t.OcenjenTermin)
                        Ankete.Add(t);
                 }
                   
-            }
+            }*/
         }
 
         private void PopuniAnketu_Click(object sender, RoutedEventArgs e)
@@ -56,15 +57,16 @@ namespace ZdravoKorporacija.PacijentPrikaz
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
-            if (!AnketeKontroler.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovan))
+           /* if (!anketeKontroler.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovan))
             {
                 MessageBox.Show("Već ste ocenili bolnicu!");
                 return;
-            }
+            }*/
           
             OceniBolnicu oceni = new OceniBolnicu();
             oceni.Show();
 
         }
+        AnketeKontroler anketeKontroler = new AnketeKontroler();
     }
 }

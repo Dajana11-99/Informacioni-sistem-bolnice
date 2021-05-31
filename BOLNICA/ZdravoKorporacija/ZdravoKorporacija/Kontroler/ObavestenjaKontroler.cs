@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZdravoKorporacija.DTO;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Servis;
 
@@ -10,11 +11,16 @@ namespace ZdravoKorporacija.Kontroler
 {
    public class ObavestenjaKontroler
     {
-        public static List<Obavestenja> svaObavestenja()
+        ObavestenjaServis obavestenjaServis = new ObavestenjaServis();
+        public void DodajObavestenjePacijentu(ObavestenjeDTO obavestenje)
         {
-            return ObavestenjaServis.SvaObavestenja();
+            obavestenjaServis.DodajObavestenjePacijentu(obavestenje);
         }
+        public List<ObavestenjeDTO> PretraziObavestenjaPoPacijentu(String idPacijenta)
+        {
+            return obavestenjaServis.PretraziObavestenjaPoPacijentu(idPacijenta);
 
+        }
 
 
     }

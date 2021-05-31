@@ -18,6 +18,7 @@ using Model;
 using System.ComponentModel;
 using Servis;
 using ZdravoKorporacija.Repozitorijum;
+using Kontroler;
 
 namespace ZdravoKorporacija
 {
@@ -27,6 +28,7 @@ namespace ZdravoKorporacija
     public partial class PrikazPacijenata : Window
     {
         public static ObservableCollection<Pacijent> ListaPacijenataXMAL { get; set; }
+        private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
 
 
         public PrikazPacijenata()
@@ -119,7 +121,7 @@ namespace ZdravoKorporacija
                 MessageBox.Show("NE MOZETE ODBLOKIRATI PACIJENTA KOJI NIJ BLOKIRAN");
                 return;
             }
-            Pacijent p = NaloziPacijenataServis.PretragaPoId(((Pacijent)PacijenitXName.SelectedItem).IdPacijenta);
+            Pacijent p = naloziPacijenataKontroler.PretragaPoId(((Pacijent)PacijenitXName.SelectedItem).IdPacijenta);
             p.Maliciozan = false;
             p.Zloupotrebio = 0;
             NaloziPacijenataRepozitorijum.UpisiPacijente();

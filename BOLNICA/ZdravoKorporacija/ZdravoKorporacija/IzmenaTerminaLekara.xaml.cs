@@ -32,7 +32,8 @@ namespace ZdravoKorporacija
             InitializeComponent();
            
             idTermina = termin.IdTermina;
-            Lekari = lekarKontroler.PretraziPoSpecijalizaciji();
+          //  Lekari = lekarKontroler.DobaviLekareOpstePrakse();
+       
             DataContext = Lekari;
             PopuniTermin(termin);
         }

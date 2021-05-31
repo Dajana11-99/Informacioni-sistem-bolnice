@@ -11,17 +11,18 @@ using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.Repozitorijum
 {
-    class LekoviRepozitorijum
+    public class LekoviRepozitorijum
     {
+        public static String imeFajla = "lek.xml";
         public static List<Lek> ucitajLekove()
         {
-            if (!File.Exists("lek.xml") || File.ReadAllText("lek.xml").Trim().Equals(""))
+            if (!File.Exists(imeFajla) || File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return LekServis.lekovii;
             }
             else
             {
-                FileStream fileStream = File.OpenRead("lek.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lek>));
                 LekServis.lekovii = (List<Lek>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -32,7 +33,7 @@ namespace ZdravoKorporacija.Repozitorijum
         public static void upisiLekove()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lek>));
-            TextWriter tw = new StreamWriter("lek.xml");
+            TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, LekServis.lekovii);
             tw.Close();
         }
@@ -46,11 +47,11 @@ namespace ZdravoKorporacija.Repozitorijum
             return lek;
         }
 
-        public static Lek PronadjiLek(String id)
+        public static Lek PronadjiLek(String idLeka)
         {
             foreach (Lek lek in ucitajLekove())
             {
-                if (lek.IdLeka.Equals(id))
+                if (lek.IdLeka.Equals(idLeka))
                     return lek;
             }
             return null;

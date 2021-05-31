@@ -10,22 +10,18 @@ namespace ZdravoKorporacija.Kontroler
 {
     public class AnketeKontroler
     {
-        public static List<Pitanje> DobaviSvaPitanjaOPregledu()
+        public  List<Pitanje> DobaviSvaPitanjaOPregledu()
         {
-            return AnketaServis.DobaviSvaPitanjaOPregledu();
+            return anketeServis.DobaviSvaPitanjaOPregledu();
         }
-        public static List<Ankete> DobaviSveAnkete()
+        public  bool DostupnaAnketaOBolnici(Pacijent pacijent)
         {
-            return AnketaServis.DobaviSveAnkete();
+            return anketeServis.DostupnaAnketaOBolnici(pacijent);
         }
-        public static bool DostupnaAnketaOBolnici(Pacijent pacijent)
+        public  void DodajAnketu(Ankete anketa)
         {
-            return AnketaServis.DostupnaAnketaOBolnici(pacijent);
+             anketeServis.DodajAnketu(anketa);
         }
-        public static void DodajAnketu(Ankete anketa)
-        {
-             AnketaServis.DodajAnketu(anketa);
-        }
-        public AnketaServis anketeServis { get; set; }
+         AnketaServis anketeServis = new AnketaServis();
     }
 }

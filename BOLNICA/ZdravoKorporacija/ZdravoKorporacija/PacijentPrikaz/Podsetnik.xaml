@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.Podsetnik"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="582">
+    <StackPanel Margin="70 50">
+        <Label FontSize="20">Kreiraj podsetnik</Label>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0">Naslov obavestenja</Label>
+            <Label Grid.Row="1" Grid.Column="0">Tekst obavestenja</Label>
+            <Label Grid.Row="2" Grid.Column="0">Datum od</Label>
+            <Label Grid.Row="3" Grid.Column="0">Datum do</Label>
+            <Label Grid.Row="4" Grid.Column="0">Na koliko sati</Label>
+            <Button Grid.Column="0" Grid.Row="5" Margin="10" Command="{Binding Path=VratiSeKomanda}">Vrati se</Button>
+            <Button Grid.Column="1" Grid.Row="5"  Margin="10" Command="{Binding Path=SacuvajObavestenjeKomanda}">Sacuvaj</Button>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Obavestenje.Naslov}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Obavestenje.Tekst}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumOd, StringFormat={}{0:MM/dd/yyyy}}" ></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumDo, StringFormat={}{0:MM/dd/yyyy}}"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=Obavestenje.NaKolikoSati}"></TextBox>
+        </Grid>
+        
+        
+        
+    </StackPanel>
+   
+</UserControl>

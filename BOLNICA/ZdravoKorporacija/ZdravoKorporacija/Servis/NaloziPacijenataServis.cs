@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Model;
 using ZdravoKorporacija;
-
+using ZdravoKorporacija.Repozitorijum;
 
 namespace Servis
 
@@ -17,6 +17,7 @@ namespace Servis
     public class NaloziPacijenataServis
     {
         public static List<Pacijent> ListaPacijenata = new List<Pacijent>();
+        private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
 
         public static void TestMethod()
         {
@@ -24,7 +25,7 @@ namespace Servis
                 ListaPacijenata.Add(new Pacijent(i.ToString()));
         }
 
-        public static Pacijent PretragaPoId(String Id)
+        public  Pacijent PretragaPoId(String Id)
         {
             foreach (Pacijent P in ListaPacijenata)
             {
@@ -46,13 +47,13 @@ namespace Servis
 
         public static void inic()
         {
-            Karton k1 = new Karton("O1", "Jova", "Jovic", "Milan", new DateTime(1996, 10, 3), Pol.Muski, "555-222", "15624", BracniStatusE.Neozenjen, new Anamneza());
+            Karton k1 = new Karton("O1", "Jova", "Jovic", "Milan", new DateTime(1996, 10, 3), Pol.Muski, "555-222", "15624", BracniStatusE.Neozenjen, new Anamneza(),"Brufen");
             Pacijent p1 = new Pacijent("1", "Jova", "Jovic", "1234567891234", "jova@gmail.com", new AdresaStanovanja("Koste Pavlovica", "23"),new Korisnik("jova.jovic","jova.jovic"));
             p1.karton = k1; 
-            Karton k2 = new Karton("O2", "Pera", "Peric", "Kosta", new DateTime(2000, 07, 12), Pol.Muski, "064 3575975", "12345", BracniStatusE.Udovac, new Anamneza());
+            Karton k2 = new Karton("O2", "Pera", "Peric", "Kosta", new DateTime(2000, 07, 12), Pol.Muski, "064 3575975", "12345", BracniStatusE.Udovac, new Anamneza(),"Brufen");
             Pacijent p2 = new Pacijent("2", "Pera", "Peric", "4321432143215", "pera@gmail.com", new AdresaStanovanja("Veselina Maslese", "24"),new Korisnik("pera.peric","pera.peric"));
             p2.karton = k2;
-            Karton k3 = new Karton("03", "Dajana", "Zlokapa","Sinisa", new DateTime(1999,11,11),Pol.Zenski,"064 87956163","123",BracniStatusE.Neudata,new Anamneza());
+            Karton k3 = new Karton("03", "Dajana", "Zlokapa","Sinisa", new DateTime(1999,11,11),Pol.Zenski,"064 87956163","123",BracniStatusE.Neudata,new Anamneza(),"Brufen");
             Pacijent p3 = new Pacijent("P1", "Dajana", "Zlokapa", "2711999105018", "dajana.zlokapa@gmail.com", new AdresaStanovanja("Adresa", "4"), new Korisnik("dajana.zlokapa", "dajana.zlokapa"));
             p3.karton = k3;
             ListaPacijenata.Add(p1);
@@ -60,14 +61,14 @@ namespace Servis
             ListaPacijenata.Add(p3);
         }
 
-        public static bool IzmeniPostojeciNalog(string iDPacijent)
+        public static void IzmeniPostojeciNalog(string iDPacijent)
         {
-            Pacijent P = PretragaPoId(iDPacijent);
+          //  Pacijent P = PretragaPoId(iDPacijent);
 
-            int id = PrikazPacijenata.ListaPacijenataXMAL.IndexOf(P);
-            PrikazPacijenata.ListaPacijenataXMAL.RemoveAt(id);
-            PrikazPacijenata.ListaPacijenataXMAL.Insert(id, P);
-            return false;
+            //int id = PrikazPacijenata.ListaPacijenataXMAL.IndexOf(P);
+           // PrikazPacijenata.ListaPacijenataXMAL.RemoveAt(id);
+           // PrikazPacijenata.ListaPacijenataXMAL.Insert(id, P);
+            //return false;
         }
 
         public static bool ObriseNalog(Pacijent Pac)
@@ -84,7 +85,7 @@ namespace Servis
             return false;
         }
 
-      public static Pacijent PretraziPoKorisnickom(String korisnicko)
+      public  Pacijent PretraziPoKorisnickom(String korisnicko)
         {
             foreach(Pacijent pacijent in ListaPacijenata)
             {
@@ -102,7 +103,7 @@ namespace Servis
             return null;
         }
 
-        public ZdravoKorporacija.Repozitorijum.NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum;
+        private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
 
         public static Karton pronadjiKarton(String brojKartona) 
         {
@@ -112,6 +113,45 @@ namespace Servis
                     return pacijent.karton;
             }
             return null;
+        }
+        public  Karton DobaviKartonPacijenta(String korisnickoIme)
+        {
+            foreach (Pacijent pacijent in ListaPacijenata)
+            {
+                if (pacijent.korisnik.KorisnickoIme.Equals(korisnickoIme))
+                    return pacijent.karton;
+            }
+            return null;
+        }
+        public void ProveriMalicioznostPacijenta(Termin termin)
+        {
+            int broj = termin.Pacijent.Zloupotrebio + 1;
+            termin.Pacijent.Zloupotrebio = broj;
+            if (termin.Pacijent.Zloupotrebio >5)
+                termin.Pacijent.Maliciozan = true;
+            naloziPacijenataRepozitorijum.UpisiPacijente(termin.Pacijent);
+        }
+        public bool DaLiJeNalogBlokiran(String idPacijenta)
+        {
+            if (PretragaPoId(idPacijenta).Maliciozan)
+                return true;
+
+            return false;
+        }
+
+        public void IzmeniPacijenta(Recept receptZaIzmenu)
+        {
+
+            Pacijent pacijent = PretragaPoId(receptZaIzmenu.idPacijenta);
+            foreach(Recept recept in pacijent.karton.recepti)
+            {
+                if (recept.Lek1.ImeLeka.Equals(receptZaIzmenu.Lek1.ImeLeka))
+                {
+                    recept.obavestiMe =receptZaIzmenu.obavestiMe;
+                }
+            }
+            NaloziPacijenataRepozitorijum.UpisiPacijente();
+           
         }
     }
 }

@@ -16,10 +16,21 @@ namespace Model
         public Karton karton { get; set; }
         public System.Collections.ArrayList termin;
 
-        public bool Maliciozan { get; set; }
-        public int Zloupotrebio { get; set; }
+        private bool maliciozan;
+        private int zloupotrebio;
         public String IdPacijenta { get; set; }
         public String Anamneza { get; set; }
+
+        public int Zloupotrebio
+        {
+            get { return zloupotrebio; }
+            set { zloupotrebio = value; }
+        }
+        public bool Maliciozan
+        {
+            get { return maliciozan; }
+            set { maliciozan = value; }
+        }
 
         public Pacijent(String idPacijenta)
         {
@@ -32,15 +43,15 @@ namespace Model
         public Pacijent(string id, string ime, string prezime, string jmbg, string email, AdresaStanovanja adresaStanovanja) : base(ime, prezime, jmbg, email, adresaStanovanja)
         {
             IdPacijenta = id;
-            Maliciozan = false;
-            Zloupotrebio = 0;
+            maliciozan = false;
+            zloupotrebio = 0;
         }
 
         public Pacijent(string id, string ime, string prezime, string jmbg, string email, AdresaStanovanja adresaStanovanja,Korisnik korisnik) : base(ime, prezime, jmbg, email, adresaStanovanja,korisnik)
         {
             IdPacijenta = id;
-            Maliciozan = false;
-            Zloupotrebio = 0;
+            maliciozan = false;
+            zloupotrebio = 0;
         }
        
       

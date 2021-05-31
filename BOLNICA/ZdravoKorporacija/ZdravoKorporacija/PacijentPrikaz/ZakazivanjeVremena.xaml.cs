@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.PacijentPrikaz
 {
@@ -23,33 +24,16 @@ namespace ZdravoKorporacija.PacijentPrikaz
     /// Interaction logic for ZakazivanjeVremena.xaml
     /// </summary>
     /// 
-    public partial class ZakazivanjeVremena : Window
+    public partial class ZakazivanjeVremena : UserControl
     {
-        public static ObservableCollection<Termin> VremenaTermina { get; set; }
-        public ZakazivanjeVremena(Termin izabraniTermin)
+        private VremenaZaZakazivanjeViewModel vremena;
+        public ZakazivanjeVremena(TerminDTO izabraniTermin,ZakazivanjeDTO podaciZaPrikaz)
         {
+            vremena = new VremenaZaZakazivanjeViewModel(izabraniTermin,podaciZaPrikaz);
             InitializeComponent();
-            VremenaTermina = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminKontroler.NadjiVremeTermina(izabraniTermin))
-            {
-               
-                    VremenaTermina.Add(t);
-            }
-            slobodnaVremenaLista.ItemsSource = VremenaTermina;
+            this.slobodnaVremena.ItemsSource = vremena.SlobodniTermini;
+            this.DataContext = vremena;
         }
 
-        private void vratiSe_Click(object sender, RoutedEventArgs e)
-        {
-            DatumiKodIzabranogLekara da = new DatumiKodIzabranogLekara();
-            da.Show();
-            this.Close();
-        }
-
-        private void nastavi_Click(object sender, RoutedEventArgs e)
-        {
-            PotvrdiZakazivanje potvrdi = new PotvrdiZakazivanje((Termin)slobodnaVremenaLista.SelectedItem);
-            potvrdi.Show();
-            this.Close();
-        }
     }
 }

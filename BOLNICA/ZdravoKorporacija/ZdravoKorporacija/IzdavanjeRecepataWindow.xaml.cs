@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Kontroler;
+using Model;
 using Servis;
 using System;
 using System.Collections.Generic;
@@ -25,17 +26,27 @@ namespace ZdravoKorporacija
     public partial class IzdavanjeRecepataWindow : Window
     {
         public Recept recept { get; set; }
-        public IzdavanjeRecepataWindow()
+        private Pacijent pacijent;
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        public IzdavanjeRecepataWindow(Pacijent pacijent)
         {
             InitializeComponent();
+            this.pacijent = naloziPacijenataKontroler.PretragaPoId(pacijent.IdPacijenta);
         }
 
         private void BtnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            recept = new Recept(txtKolicinaLeka.Text, (DateTime)this.datePickerPocetak.SelectedDate, 
-                (DateTime)this.datePickerKraj.SelectedDate, double.Parse(txtPeriodUzimanja.Text),
-                new Lek(idLeka.Text,txtNazivLeka.Text), ZdravstevniKartonPacijenta.pacijent.IdPacijenta);
-            this.Close();
+             if (pacijent.karton.alergican.Equals(txtNazivLeka.Text))
+            {
+                MessageBox.Show("Pacijent je alergican, promenite lek");
+            }
+             else
+            {
+                recept = new Recept(txtKolicinaLeka.Text, (DateTime)this.datePickerPocetak.SelectedDate,
+                    (DateTime)this.datePickerKraj.SelectedDate, double.Parse(txtPeriodUzimanja.Text),
+                    new Lek(idLeka.Text, txtNazivLeka.Text), ZdravstevniKartonPacijenta.pacijent.IdPacijenta);
+                this.Close();
+           }
         }
 
         private void BtnOdustani_Click(object sender, RoutedEventArgs e)

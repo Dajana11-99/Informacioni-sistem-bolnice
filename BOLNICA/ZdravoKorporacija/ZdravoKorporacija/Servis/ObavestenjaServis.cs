@@ -3,73 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZdravoKorporacija.DTO;
+using ZdravoKorporacija.Interfejs;
+using ZdravoKorporacija.Maper;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Repozitorijum;
 
 namespace ZdravoKorporacija.Servis
 {
-    class ObavestenjaServis
+   public class ObavestenjaServis
     {
 
-        public static List<Obavestenja> svaObavestenja = new List<Obavestenja>();
-
-       
-
-        public static Obavestenja DodajObavestenjePacijentu(Obavestenja o)
+        private ObavestenjeRepozitorijumInterfejs obavestenjaRepozitorijum = new ObavestenjaRepozitorijum();
+        private ObavestenjeMaper obavestenjeMaper = new ObavestenjeMaper();
+        public  void DodajObavestenjePacijentu(ObavestenjeDTO obavestenje)
         {
-            svaObavestenja.Add(o);
-
-            ObavestenjaRepozitorijum.Sacuvaj();
-
-            if (svaObavestenja.Contains(o))
-            {
-                return o;
-            }
-            else
-            {
-                return null;
-            }
+            obavestenjaRepozitorijum.Dodaj(obavestenjeMaper.ObavestenjeDtoUModel(obavestenje));
         }
-
-        /*public static String generisiIdObavestenja()
+        public List<ObavestenjeDTO> PretraziObavestenjaPoPacijentu(String idPacijenta)
         {
-            int brojac = SvaObavestenja().Count;
-            bool postoji;
-            do
+            string upit = "//ArrayOfObavestenja/Obavestenja[IdPrimaoca='" + idPacijenta + "']";
+            List<ObavestenjeDTO> obavestenjaPacijenta = new List<ObavestenjeDTO>();
+            foreach(Obavestenja obavestenje in obavestenjaRepozitorijum.PretraziPoIdObjekta(upit))
             {
-                postoji = false;
-                foreach (Obavestenja o in SvaObavestenja())
-                {
-                    if (o.IdObavestenja.Equals("O" + brojac.ToString()))
-                    {
-                        postoji = true;
-                        brojac++;
-                        break;
-                    }
-                }
-            } while (postoji);
-
-            return "O" + brojac.ToString();
-        }*/
-
-
-        public static Obavestenja PretraziPoId(String idObavestenja)
-        {
-            foreach (Obavestenja o in svaObavestenja)
-            {
-                if (o.IdObavestenja.Equals(idObavestenja))
-                {
-                    return o;
-                }
+                obavestenjaPacijenta.Add(obavestenjeMaper.ObavestenjeModelUDto(obavestenje));
             }
-            return null;
+           return SortirajPoDatumu(obavestenjaPacijenta);
         }
-
-        public static List<Obavestenja> SvaObavestenja()
+        private List<ObavestenjeDTO> SortirajPoDatumu(List<ObavestenjeDTO> nesortiranaObavestenja)
         {
-            return svaObavestenja;
+            return nesortiranaObavestenja.OrderByDescending(user => user.Datum).ToList();
         }
-
-        public Repozitorijum.ObavestenjaRepozitorijum obavestenjaRepozitorijum;
+     
     }
 }

@@ -17,21 +17,22 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2" Margin="0,0,0.2,0.6" Grid.RowSpan="2">
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Raspored termina</Label>
-            <DataGrid x:Name="TerminiPacijentaa" ItemsSource="{Binding TerminiPacijenta}" IsReadOnly="true"
-                  SelectionMode="Single"  Margin="15,5,0,20" 
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="195" HorizontalAlignment="Left" Width="544">
+            <DataGrid x:Name="TerminiPacijentaa" ItemsSource="{Binding Path=ZakazaniTerminiPacijenta, Mode=TwoWay}" IsReadOnly="true" SelectedItem="{Binding Path=SelektovaniTermin}"
+                  SelectionMode="Single"  Margin="15,5,0,0" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="181" HorizontalAlignment="Left" Width="544">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}"/>
-                    <DataGridTextColumn Header="Tip termina" Binding="{Binding TipTermina}" />
-                    <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.CeloIme}"/>
-                    <DataGridTextColumn Header="Datum" Binding="{Binding Datum , StringFormat={}{0:MM/dd/yyyy}}"/>
-                    <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Vreme}"/>
-                    <DataGridTextColumn Header="Trajanje termina" Binding="{Binding TrajanjeTermina}"/>
-                    <DataGridTextColumn Header="Sala" Binding="{Binding Sala.Id}"/>
+                 
+                    <DataGridTextColumn Header="Tip termina" Binding="{Binding Path=TipTermina}" />
+                    <DataGridTextColumn Header="Lekar" Binding="{Binding Path=Lekar.CeloIme}"/>
+                    <DataGridTextColumn Header="Datum" Binding="{Binding Path=Datum , StringFormat={}{0:MM/dd/yyyy}}"/>
+                    <DataGridTextColumn Header="Pocetak termina" Binding="{Binding Path=Vreme}"/>
+                    <DataGridTextColumn Header="Trajanje termina" Binding="{Binding Path=PredvidjenoVreme}"/>
+                    <DataGridTextColumn Header="Sala" Binding="{Binding Path=NazivSale}"/>
 
                 </DataGrid.Columns>
             </DataGrid>
-            <Grid Height="39" >
+            <Label FontSize="13" Margin="10 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
+            <Grid Height="39"  Margin="0 10 0 0">
                 <Grid.ColumnDefinitions>
 
                     <ColumnDefinition/>
@@ -39,9 +40,9 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button Margin="20,0,15,5"  Grid.Column="0"  Content="Izmena termina"     x:Name="izmenaTermina"   Click="izmenaTermina_Click"/>
-                <Button Margin="19.8,0,10.4,5"  Grid.Column="1" Content="Otkazivanje termina"  x:Name="OtkazivanjeTermina"  Click="OtkazivanjeTermina_Click"/>
-                <Button Margin="20,0,26.2,5" Grid.Column="2" Content="Izveštaj o terminima"  x:Name="Izvestaj" Click="Izvestaj_Click"  />
+                <Button Margin="20,0,15,5"  Grid.Column="0"  Content="Izmena termina"  x:Name="izmenaTermina" Command="{Binding Path=PomeriPregledKomanda}"/>
+                <Button Margin="19.8,0,10.4,5"  Grid.Column="1" Content="Otkazivanje termina"  x:Name="OtkazivanjeTermina" Command="{Binding Path=OtkaziPregledKomanda}" />
+                <Button Margin="20,0,26.2,5" Grid.Column="2" Content="Izveštaj o terminima"  x:Name="Izvestaj"   />
             </Grid>
 
 

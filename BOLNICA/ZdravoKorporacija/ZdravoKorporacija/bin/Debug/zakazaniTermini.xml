@@ -3,9 +3,9 @@
   <Termin>
     <Vreme>16:30</Vreme>
     <TrajanjeTermina>30</TrajanjeTermina>
-    <Datum>2021-04-28T00:00:00</Datum>
+    <Datum>2021-04-29T00:00:00</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>4</IdTermina>
+    <IdTermina>3</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
       <Id>a3</Id>
@@ -14,24 +14,6 @@
       <kvadratura>0</kvadratura>
       <RasporedjenaStatickaOprema />
       <RasporedjenaDinamickaOprema />
-      <Renoviranja>
-        <Renoviranje>
-          <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-          <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-        </Renoviranje>
-        <Renoviranje>
-          <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-          <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-        </Renoviranje>
-        <Renoviranje>
-          <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-          <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-        </Renoviranje>
-        <Renoviranje>
-          <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-          <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-        </Renoviranje>
-      </Renoviranja>
     </Sala>
     <Lekar>
       <korisnik>
@@ -46,8 +28,8 @@
       <Email>dajanazlokapa@gmail.com</Email>
       <CeloIme>Pera Peric</CeloIme>
       <adresaStanovanja>
-        <Broj>2A</Broj>
         <Ulica>Ljubice Ravasi</Ulica>
+        <Broj>2A</Broj>
       </adresaStanovanja>
       <termin />
       <zahtevUpravniku />
@@ -67,14 +49,12 @@
       <Jmbg>2711999105018</Jmbg>
       <Email>dajana.zlokapa@gmail.com</Email>
       <adresaStanovanja>
-        <Broj>4</Broj>
         <Ulica>Adresa</Ulica>
+        <Broj>4</Broj>
       </adresaStanovanja>
       <termin />
       <karton>
         <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
-        <Ime>Dajana</Ime>
-        <Prezime>Zlokapa</Prezime>
         <ImeRoditelja>Sinisa</ImeRoditelja>
         <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
         <Pol>Zenski</Pol>
@@ -82,6 +62,7 @@
         <BrojKartona>123</BrojKartona>
         <BracniStatus>Neudata</BracniStatus>
         <Anamneza>
+          <idPacijenta>P1</idPacijenta>
           <Simptomi>Bol u grlu.</Simptomi>
           <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
         </Anamneza>
@@ -114,21 +95,37 @@
             <obavestiMe>NE</obavestiMe>
             <idPacijenta>P1</idPacijenta>
           </Recept>
+          <Recept>
+            <Lek1>
+              <IdLeka>12345</IdLeka>
+              <ImeLeka>Aerius</ImeLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-20T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-21T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>3</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
         </recepti>
+        <Prezime>Zlokapa</Prezime>
+        <Ime>Dajana</Ime>
       </karton>
-      <Maliciozan>false</Maliciozan>
-      <Zloupotrebio>1</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
+      <Zloupotrebio>0</Zloupotrebio>
+      <Maliciozan>false</Maliciozan>
     </Pacijent>
-    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
+    <DaLiJeHitno>false</DaLiJeHitno>
   </Termin>
   <Termin>
     <Vreme>16:30</Vreme>
     <TrajanjeTermina>30</TrajanjeTermina>
-    <Datum>2021-05-13T00:00:00</Datum>
+    <Datum>2021-06-10T00:00:00</Datum>
     <TipTermina>Pregled</TipTermina>
-    <IdTermina>7</IdTermina>
+    <IdTermina>5</IdTermina>
     <Sala>
       <TipSale>Pregled</TipSale>
       <Id>a3</Id>
@@ -137,24 +134,126 @@
       <kvadratura>0</kvadratura>
       <RasporedjenaStatickaOprema />
       <RasporedjenaDinamickaOprema />
-      <Renoviranja>
-        <Renoviranje>
-          <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-          <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-        </Renoviranje>
-        <Renoviranje>
-          <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-          <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-        </Renoviranje>
-        <Renoviranje>
-          <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-          <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-        </Renoviranje>
-        <Renoviranje>
-          <RenoviranjeOd>2021-05-06T00:00:00</RenoviranjeOd>
-          <RenoviranjeDo>2021-05-12T00:00:00</RenoviranjeDo>
-        </Renoviranje>
-      </Renoviranja>
+    </Sala>
+    <Lekar>
+      <korisnik>
+        <KorisnickoIme>pera.peric</KorisnickoIme>
+        <Sifra>pera.peric</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Pera</Ime>
+      <Prezime>Peric</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajanazlokapa@gmail.com</Email>
+      <CeloIme>Pera Peric</CeloIme>
+      <adresaStanovanja>
+        <Ulica>Ljubice Ravasi</Ulica>
+        <Broj>2A</Broj>
+      </adresaStanovanja>
+      <termin />
+      <zahtevUpravniku />
+      <Zauzet>false</Zauzet>
+      <idZaposlenog>L1</idZaposlenog>
+      <Specijalizacija>Ostapraksa</Specijalizacija>
+    </Lekar>
+    <Pacijent>
+      <korisnik>
+        <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+        <Sifra>dajana.zlokapa</Sifra>
+        <Uloga>Lekar</Uloga>
+        <Nalog>Obican</Nalog>
+      </korisnik>
+      <Ime>Dajana</Ime>
+      <Prezime>Zlokapa</Prezime>
+      <Jmbg>2711999105018</Jmbg>
+      <Email>dajana.zlokapa@gmail.com</Email>
+      <adresaStanovanja>
+        <Ulica>Adresa</Ulica>
+        <Broj>4</Broj>
+      </adresaStanovanja>
+      <termin />
+      <karton>
+        <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
+        <ImeRoditelja>Sinisa</ImeRoditelja>
+        <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
+        <Pol>Zenski</Pol>
+        <Telefon>064 87956163</Telefon>
+        <BrojKartona>123</BrojKartona>
+        <BracniStatus>Neudata</BracniStatus>
+        <Anamneza>
+          <idPacijenta>P1</idPacijenta>
+          <Simptomi>Bol u grlu.</Simptomi>
+          <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
+        </Anamneza>
+        <recepti>
+          <Recept>
+            <Lek1>
+              <IdLeka>123</IdLeka>
+              <ImeLeka>Paracetamol</ImeLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-05T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-07T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+          <Recept>
+            <Lek1>
+              <IdLeka>12345</IdLeka>
+              <ImeLeka>Septolete</ImeLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-07T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-14T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>6</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+          <Recept>
+            <Lek1>
+              <IdLeka>12345</IdLeka>
+              <ImeLeka>Aerius</ImeLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-20T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-21T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>3</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
+        </recepti>
+        <Prezime>Zlokapa</Prezime>
+        <Ime>Dajana</Ime>
+      </karton>
+      <IdPacijenta>P1</IdPacijenta>
+      <Zloupotrebio>0</Zloupotrebio>
+      <Maliciozan>false</Maliciozan>
+    </Pacijent>
+    <OcenjenTermin>false</OcenjenTermin>
+    <DaLiJeHitno>false</DaLiJeHitno>
+  </Termin>
+  <Termin>
+    <Vreme>14:30</Vreme>
+    <TrajanjeTermina>30</TrajanjeTermina>
+    <Datum>2021-05-27T00:00:00</Datum>
+    <TipTermina>Pregled</TipTermina>
+    <IdTermina>8</IdTermina>
+    <Sala>
+      <TipSale>Pregled</TipSale>
+      <Id>a3</Id>
+      <Zauzeta>true</Zauzeta>
+      <sprat>4</sprat>
+      <kvadratura>0</kvadratura>
+      <RasporedjenaStatickaOprema />
+      <RasporedjenaDinamickaOprema />
     </Sala>
     <Lekar>
       <korisnik>
@@ -169,8 +268,8 @@
       <Email>stefan.markovic@gmail.com</Email>
       <CeloIme>Stefan Markovic</CeloIme>
       <adresaStanovanja>
-        <Broj> 43</Broj>
         <Ulica>Laze Lazarevica</Ulica>
+        <Broj> 43</Broj>
       </adresaStanovanja>
       <termin />
       <zahtevUpravniku />
@@ -190,14 +289,12 @@
       <Jmbg>2711999105018</Jmbg>
       <Email>dajana.zlokapa@gmail.com</Email>
       <adresaStanovanja>
-        <Broj>4</Broj>
         <Ulica>Adresa</Ulica>
+        <Broj>4</Broj>
       </adresaStanovanja>
       <termin />
       <karton>
         <OdeljenjeNaPrijemu>03</OdeljenjeNaPrijemu>
-        <Ime>Dajana</Ime>
-        <Prezime>Zlokapa</Prezime>
         <ImeRoditelja>Sinisa</ImeRoditelja>
         <DatumRodjenja>1999-11-11T00:00:00</DatumRodjenja>
         <Pol>Zenski</Pol>
@@ -205,6 +302,7 @@
         <BrojKartona>123</BrojKartona>
         <BracniStatus>Neudata</BracniStatus>
         <Anamneza>
+          <idPacijenta>P1</idPacijenta>
           <Simptomi>Bol u grlu.</Simptomi>
           <IzvestajLekara>Pacijent boluje od zapaljenja grla.Potrebno je da pije puno caja</IzvestajLekara>
         </Anamneza>
@@ -237,13 +335,29 @@
             <obavestiMe>NE</obavestiMe>
             <idPacijenta>P1</idPacijenta>
           </Recept>
+          <Recept>
+            <Lek1>
+              <IdLeka>12345</IdLeka>
+              <ImeLeka>Aerius</ImeLeka>
+              <ListaSastojaka />
+              <ListaZamenaZaLek />
+            </Lek1>
+            <KolicinaTerapije>1</KolicinaTerapije>
+            <PocetakTerapije>2021-05-20T00:00:00</PocetakTerapije>
+            <KrajTerapije>2021-05-21T00:00:00</KrajTerapije>
+            <PeroidUzimanjaUSatima>3</PeroidUzimanjaUSatima>
+            <obavestiMe>NE</obavestiMe>
+            <idPacijenta>P1</idPacijenta>
+          </Recept>
         </recepti>
+        <Prezime>Zlokapa</Prezime>
+        <Ime>Dajana</Ime>
       </karton>
-      <Maliciozan>false</Maliciozan>
-      <Zloupotrebio>2</Zloupotrebio>
       <IdPacijenta>P1</IdPacijenta>
+      <Zloupotrebio>0</Zloupotrebio>
+      <Maliciozan>false</Maliciozan>
     </Pacijent>
-    <DaLiJeHitno>false</DaLiJeHitno>
     <OcenjenTermin>false</OcenjenTermin>
+    <DaLiJeHitno>false</DaLiJeHitno>
   </Termin>
 </ArrayOfTermin>

@@ -9,7 +9,7 @@ using ZdravoKorporacija.Servis;
 
 namespace ZdravoKorporacija.Kontroler
 {
-    class LekKontroler
+    public class LekKontroler
     {
         public static Lek PretraziLekove(String idLeka)
         {

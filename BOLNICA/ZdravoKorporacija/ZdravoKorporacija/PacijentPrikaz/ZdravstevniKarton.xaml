@@ -19,8 +19,8 @@
             </Grid.ColumnDefinitions>
             <Label  Margin="0.4,10,83,0" FontWeight="DemiBold"  Grid.Column="3" Grid.ColumnSpan="2">Broj kartona:</Label>
             <Label  Margin="20,10,5.2,0" FontWeight="DemiBold" >JMBG:</Label>
-            <Label x:Name="Jmbg"  Margin="83,10,2,0" FontWeight="DemiBold" Grid.ColumnSpan="2" Content="{Binding Path=Jmbg, UpdateSourceTrigger=PropertyChanged}"/>
-            <Label Grid.Column="4" Margin="0.2,10,0,0" FontWeight="DemiBold" Content="{Binding Path=karton.BrojKartona, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label x:Name="Jmbg"  Margin="83,10,2,0" FontWeight="DemiBold" Grid.ColumnSpan="2" Content="{Binding Path=Pacijent.Jmbg, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="4" Margin="0.2,10,0,0" FontWeight="DemiBold" Content="{Binding Path=Karton.BrojKartona, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Label>
         </Grid>
 
 
@@ -50,16 +50,32 @@
                     <Label Grid.Column="0" Grid.Row="3">Telefon:</Label>
                     <Label Grid.Column="0" Grid.Row="4">Pol:</Label>
                     <Label Grid.Column="0" Grid.Row="5">Bračni status:</Label>
-                    <Label Grid.Column="0" Grid.Row="6">Zaposlenje</Label>
+                    <Label Grid.Column="0" Grid.Row="6" >Zaposlenje</Label>
 
-                    <Label Grid.Column="1" Grid.Row="0" x:Name="ImePrezime" FontWeight="DemiBold">
-                    </Label>
-                    <Label Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" x:Name="DatumRodjenja" Content="{Binding Path=karton.DatumRodjenja, UpdateSourceTrigger=PropertyChanged}"></Label>
-                    <Label Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" x:Name="adresa" ></Label>
-                    <Label Grid.Column="1" Grid.Row="3" FontWeight="DemiBold" x:Name="telefon" Content="{ Binding  Path=karton.Telefon, UpdateSourceTrigger=PropertyChanged}"></Label>
-                    <Label Grid.Column="1" Grid.Row="4" FontWeight="DemiBold" x:Name="pol" Content="{Binding Path=karton.Pol, UpdateSourceTrigger=PropertyChanged}"></Label>
-                    <Label Grid.Column="1" Grid.Row="5" FontWeight="DemiBold" x:Name="bracniStatus" Content="{Binding Path=karton.BracniStatus, UpdateSourceTrigger=PropertyChanged}"></Label>
-                    <Label Grid.Column="1" Grid.Row="6" FontWeight="DemiBold" x:Name="zaposlenje"></Label>
+                    <TextBlock Grid.Column="1" Grid.Row="0" x:Name="ImePrezime" FontWeight="DemiBold" Margin="5 5 0 0">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0}({1}){2}">
+                                <Binding Path="Karton.Prezime" />
+                                <Binding Path="Karton.ImeRoditelja" />
+                                <Binding Path="Karton.Ime" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <Label Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" x:Name="DatumRodjenja" Content="{Binding Path=Karton.DatumRodjenja, UpdateSourceTrigger=PropertyChanged}"></Label>
+                    <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" x:Name="adresa" Margin="5 5" >
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="Pacijent.NazivMesta" />
+                                <Binding Path="Pacijent.Broj" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                     
+
+                    </TextBlock>
+                    <Label Grid.Column="1" Grid.Row="3" FontWeight="DemiBold" x:Name="telefon" Content="{ Binding  Path=Karton.Telefon, UpdateSourceTrigger=PropertyChanged}"></Label>
+                    <Label Grid.Column="1" Grid.Row="4" FontWeight="DemiBold" x:Name="pol" Content="{Binding Path=Karton.Pol, UpdateSourceTrigger=PropertyChanged}"></Label>
+                    <Label Grid.Column="1" Grid.Row="5" FontWeight="DemiBold" x:Name="bracniStatus" Content="{Binding Path=Karton.BracniStatus, UpdateSourceTrigger=PropertyChanged}"></Label>
+                    <Label Grid.Column="1" Grid.Row="6" FontWeight="DemiBold" x:Name="zaposlenje" Content="Marteks"></Label>
 
                 </Grid>
             </GroupBox>
@@ -84,7 +100,7 @@
 
             </GroupBox>
         </StackPanel>
-        <Button Margin="114,10,298.4,0" Name="IstorijaPregleda" Click="IstorijaPregleda_Click">Istorija pregleda</Button>
+        <Button Margin="114,10,298.4,0" Name="IstorijaPregleda" Command="{Binding Path=PrikaziIstorijuPregleda}">Istorija pregleda</Button>
         <Label FontSize="9" Margin="114,0,0.4,0">*Pritisnite dugme da biste
  videli</Label>
         <Label FontSize="9" Margin="130,0,0.4,0">istoriju Vaših pregleda</Label>

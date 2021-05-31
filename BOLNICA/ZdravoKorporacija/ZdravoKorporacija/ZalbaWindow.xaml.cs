@@ -43,7 +43,7 @@ namespace ZdravoKorporacija
         }
         private void BtnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Zalba zalba = new Zalba(idLeka, txtRazlogZalbe.Text);
+            Zalba zalba = new Zalba(idLeka, txtRazlogZalbe.Text, lekZaZamenu: cmbLekZaZamenu.Text);
             ZalbaKontroler.UpisiNovuZalbu(zalba);
             this.Close();
         }

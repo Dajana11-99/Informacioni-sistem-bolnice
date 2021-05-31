@@ -68,25 +68,7 @@ namespace Model
             return drzava;
         }
 
-        /// <pdGenerated>default parent setter</pdGenerated>
-        /// <param>newDrzava</param>
-        public void SetDrzava(Drzava newDrzava)
-        {
-            if (this.drzava != newDrzava)
-            {
-                if (this.drzava != null)
-                {
-                    Drzava oldDrzava = this.drzava;
-                    this.drzava = null;
-                    oldDrzava.RemoveMesto(this);
-                }
-                if (newDrzava != null)
-                {
-                    this.drzava = newDrzava;
-                    this.drzava.AddMesto(this);
-                }
-            }
-        }
+   
 
     }
 }
