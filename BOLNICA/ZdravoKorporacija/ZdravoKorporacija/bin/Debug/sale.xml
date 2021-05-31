@@ -114,4 +114,53 @@
       <NazivDrugeNoveSale>a8</NazivDrugeNoveSale>
     </Renoviranje>
   </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>17</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>4</sprat>
+    <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
+    <Renoviranje>
+      <RenoviranjeOd>2021-05-12T00:00:00</RenoviranjeOd>
+      <RenoviranjeDo>2021-05-20T00:00:00</RenoviranjeDo>
+      <Spajanje>false</Spajanje>
+      <Razdvajanje>true</Razdvajanje>
+      <NazivPrveNoveSale>1</NazivPrveNoveSale>
+      <NazivDrugeNoveSale>2</NazivDrugeNoveSale>
+    </Renoviranje>
+  </Sala>
+  <Sala>
+    <TipSale>Pregled</TipSale>
+    <Id>184</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>4</sprat>
+    <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
+    <Renoviranje>
+      <RenoviranjeOd>2021-05-27T00:00:00</RenoviranjeOd>
+      <RenoviranjeDo>2021-05-28T00:00:00</RenoviranjeDo>
+      <Spajanje>false</Spajanje>
+      <Razdvajanje>true</Razdvajanje>
+      <NazivPrveNoveSale>1</NazivPrveNoveSale>
+      <NazivDrugeNoveSale>84</NazivDrugeNoveSale>
+    </Renoviranje>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>119</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>3</sprat>
+    <kvadratura>0</kvadratura>
+    <Renoviranje>
+      <RenoviranjeOd>2021-05-28T00:00:00</RenoviranjeOd>
+      <RenoviranjeDo>2021-05-31T00:00:00</RenoviranjeDo>
+      <Spajanje>false</Spajanje>
+      <Razdvajanje>true</Razdvajanje>
+      <NazivPrveNoveSale>11</NazivPrveNoveSale>
+      <NazivDrugeNoveSale>9</NazivDrugeNoveSale>
+    </Renoviranje>
+  </Sala>
 </ArrayOfSala>
