@@ -617,7 +617,6 @@ C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeZahteva.g.cs
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentNoviNalog.g.cs
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodIzabranogLekara.g.cs
-C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodSvihLekara.g.cs
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IstorijaPregleda.g.cs
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzmenaTermina.g.cs
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzvestajSaPregleda.g.cs
@@ -688,7 +687,6 @@ C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoK
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\OtkazivanjeZahteva.baml
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentNoviNalog.baml
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodIzabranogLekara.baml
-C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\DatumiKodSvihLekara.baml
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IstorijaPregleda.baml
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzmenaTermina.baml
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzvestajSaPregleda.baml
@@ -1144,3 +1142,41 @@ C:\Users\Markoviccc\OneDrive\Desktop\s3ms\Informacioni-sistem-bolnice\BOLNICA\Zd
 C:\Users\Markoviccc\OneDrive\Desktop\s3ms\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.GenerateResource.cache
 C:\Users\Markoviccc\OneDrive\Desktop\s3ms\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
 C:\Users\Markoviccc\OneDrive\Desktop\s3ms\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CopyComplete
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\grpc_csharp_ext.x86.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\grpc_csharp_ext.x64.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\libgrpc_csharp_ext.x64.so
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\libgrpc_csharp_ext.x64.dylib
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.Api.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OOXML.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Buffers.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Memory.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.pdb
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.Api.pdb
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\Grpc.Core.Api.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OOXML.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\NPOI.OpenXml4Net.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Buffers.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Memory.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PocetnaStrana.g.cs
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\Podsetnik.g.cs
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PrikazBeleske.g.cs
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija_Content.g.cs
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PocetnaStrana.baml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\Podsetnik.baml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PrikazBeleske.baml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CopyComplete

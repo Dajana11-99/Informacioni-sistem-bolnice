@@ -56,7 +56,7 @@ namespace ZdravoKorporacija
                 return;
             }
             salaZaIzmenu.Renoviranje = renoviranje;
-            SalaServis.Izmena(salaZaIzmenu);
+            SalaServis.RenovirajSalu(salaZaIzmenu);
         }
 
         private Renoviranje GetRenoviranje()

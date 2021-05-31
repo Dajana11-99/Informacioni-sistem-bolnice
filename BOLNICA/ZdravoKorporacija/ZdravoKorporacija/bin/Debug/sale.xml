@@ -154,6 +154,8 @@
     <Zauzeta>false</Zauzeta>
     <sprat>3</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
     <Renoviranje>
       <RenoviranjeOd>2021-05-28T00:00:00</RenoviranjeOd>
       <RenoviranjeDo>2021-05-31T00:00:00</RenoviranjeDo>
@@ -162,5 +164,124 @@
       <NazivPrveNoveSale>11</NazivPrveNoveSale>
       <NazivDrugeNoveSale>9</NazivDrugeNoveSale>
     </Renoviranje>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>555</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat />
+    <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
+    <Renoviranje>
+      <RenoviranjeOd>2021-06-02T00:00:00</RenoviranjeOd>
+      <RenoviranjeDo>2021-06-03T00:00:00</RenoviranjeDo>
+      <Spajanje>true</Spajanje>
+      <NazivNovoSpojeneSale>Naziv nove sale</NazivNovoSpojeneSale>
+      <SalaZaSpajanje>
+        <TipSale>Pregled</TipSale>
+        <Id>A1</Id>
+        <Zauzeta>false</Zauzeta>
+        <sprat>3</sprat>
+        <kvadratura>0</kvadratura>
+        <RasporedjenaStatickaOprema>
+          <RasporedjenaStatickaOprema>
+            <Kolicina>100</Kolicina>
+            <statickaOprema>
+              <Id>2</Id>
+              <kolicina>33</kolicina>
+              <naziv>stolica</naziv>
+            </statickaOprema>
+            <RasporedjenaOd>2021-04-13T00:00:00</RasporedjenaOd>
+          </RasporedjenaStatickaOprema>
+          <RasporedjenaStatickaOprema>
+            <Kolicina>10</Kolicina>
+            <statickaOprema>
+              <Id>4</Id>
+              <kolicina>90</kolicina>
+              <naziv>spric</naziv>
+            </statickaOprema>
+            <RasporedjenaOd>2021-04-29T00:00:00</RasporedjenaOd>
+          </RasporedjenaStatickaOprema>
+        </RasporedjenaStatickaOprema>
+        <RasporedjenaDinamickaOprema />
+        <Renoviranje>
+          <RenoviranjeOd>2021-05-28T00:00:00</RenoviranjeOd>
+          <RenoviranjeDo>2021-05-29T00:00:00</RenoviranjeDo>
+          <Spajanje>true</Spajanje>
+          <NazivNovoSpojeneSale>Naziv nove sale</NazivNovoSpojeneSale>
+          <SalaZaSpajanje>
+            <TipSale>Pregled</TipSale>
+            <Id>a3</Id>
+            <Zauzeta>true</Zauzeta>
+            <sprat>4</sprat>
+            <kvadratura>0</kvadratura>
+            <RasporedjenaStatickaOprema />
+            <RasporedjenaDinamickaOprema />
+          </SalaZaSpajanje>
+          <Razdvajanje>false</Razdvajanje>
+        </Renoviranje>
+      </SalaZaSpajanje>
+      <Razdvajanje>false</Razdvajanje>
+    </Renoviranje>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>56</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>5</sprat>
+    <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
+    <Renoviranje>
+      <RenoviranjeOd>2021-06-02T00:00:00</RenoviranjeOd>
+      <RenoviranjeDo>2021-06-05T00:00:00</RenoviranjeDo>
+      <Spajanje>false</Spajanje>
+      <Razdvajanje>true</Razdvajanje>
+      <NazivPrveNoveSale>4</NazivPrveNoveSale>
+      <NazivDrugeNoveSale>6</NazivDrugeNoveSale>
+    </Renoviranje>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>2</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>23</sprat>
+    <kvadratura>0</kvadratura>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>56</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>23</sprat>
+    <kvadratura>0</kvadratura>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>2</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>23</sprat>
+    <kvadratura>0</kvadratura>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>56</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>23</sprat>
+    <kvadratura>0</kvadratura>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>45</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>23</sprat>
+    <kvadratura>0</kvadratura>
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Id>56</Id>
+    <Zauzeta>false</Zauzeta>
+    <sprat>23</sprat>
+    <kvadratura>0</kvadratura>
   </Sala>
 </ArrayOfSala>
