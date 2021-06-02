@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.PocetnaPomoc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+             mc:Ignorable="d" 
+                  Height="360" Width="582">
+    <StackPanel Margin="20" >
+        <Label HorizontalAlignment="Center" FontSize="25" FontWeight="DemiBold">Pomoć</Label>
+        <StackPanel Margin="30">
+
+            <Label>Na levoj strani ekrana nalazi se meni pomoću koga možete izabrati neku od usluga</Label>
+            <Label>koje Vam nudi ova aplikacija.U gornjem desnom uglu ekrana postoje
+            </Label>
+            <Label>opcije obaveštenja,pomoći i odjave sa sistema. Koristite strelice na tastaturi za navigaciju</Label>
+            <Label>po aplikaciji i pritiskom na dugme ENTER vršite izbor funkcionalnosti.</Label>
+            <Label>Ukoliko želite saznati kako koristiti ovu aplikaciju.</Label>
+            <Label>pogledajte naredni prozor klikom na dugme DALJE.</Label>
+        </StackPanel>
+        <Button Height="25" Width="150" Command="{Binding Path=PomocJedan}">Dalje</Button>
+    </StackPanel>
+</UserControl>

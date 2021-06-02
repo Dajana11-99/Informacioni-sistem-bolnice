@@ -26,8 +26,7 @@ namespace ZdravoKorporacija.ViewModel
         {
             Podaci = new ZakazivanjeDTO();
             Podaci.KorisnickoImePacijenta = pacijent;
-           Podaci.DatumOd = DateTime.Now.Date.AddDays(1);
-           Podaci.DatumDo = DateTime.Now.Date.AddDays(3);
+       
             UcitajUKolekciju();
             prikaziDatume = new RelayCommand(Prikazi);
         }

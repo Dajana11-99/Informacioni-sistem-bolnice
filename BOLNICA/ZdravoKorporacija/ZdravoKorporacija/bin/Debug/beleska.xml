@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfBeleska xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Beleska>
+    <TekstBeleske>Nova beleska</TekstBeleske>
+    <DatumBeleske>2021-06-02T11:25:46.488531+02:00</DatumBeleske>
+    <IdBeleske>00000000-0000-0000-0000-000000000000</IdBeleske>
+    <Anamneza>
+      <idPacijenta>P1</idPacijenta>
+      <Simptomi>Bol u grlu</Simptomi>
+      <IzvestajLekara>Pacijent boluje od zapaljena grla piti puno caja</IzvestajLekara>
+    </Anamneza>
+  </Beleska>
 </ArrayOfBeleska>

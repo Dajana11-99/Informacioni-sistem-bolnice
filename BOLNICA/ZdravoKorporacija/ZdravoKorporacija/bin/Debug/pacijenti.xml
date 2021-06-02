@@ -120,13 +120,27 @@
           <obavestiMe>NE</obavestiMe>
           <idPacijenta>P1</idPacijenta>
         </Recept>
+        <Recept>
+          <Lek1>
+            <IdLeka>123456</IdLeka>
+            <ImeLeka>Paracetamol</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek1>
+          <KolicinaTerapije>1</KolicinaTerapije>
+          <PocetakTerapije>2021-06-02T00:00:00</PocetakTerapije>
+          <KrajTerapije>2021-06-08T00:00:00</KrajTerapije>
+          <PeroidUzimanjaUSatima>5</PeroidUzimanjaUSatima>
+          <obavestiMe>NE</obavestiMe>
+          <idPacijenta>P1</idPacijenta>
+        </Recept>
       </recepti>
       <Prezime>Zlokapa</Prezime>
       <Ime>Dajana</Ime>
       <alergican>Brufen</alergican>
     </karton>
     <IdPacijenta>P1</IdPacijenta>
-    <Zloupotrebio>0</Zloupotrebio>
+    <Zloupotrebio>1</Zloupotrebio>
     <Maliciozan>false</Maliciozan>
   </Pacijent>
 </ArrayOfPacijent>

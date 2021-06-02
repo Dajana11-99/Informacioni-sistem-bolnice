@@ -95,10 +95,13 @@ namespace ZdravoKorporacija.ViewModel
        
         private void schedule_Timer()
         {
-              double tickTime = (double)(DateTime.Now.AddSeconds(SelektovaniLek.PeriodUzimanjaTerapije) - DateTime.Now).TotalMilliseconds;
-            timer = new Timer(tickTime);
-            timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
-            timer.Start();
+            if (DateTime.Compare(SelektovaniLek.PocetakTerapije.Date, DateTime.Now.Date) == 0)
+            {
+                double tickTime = (double)(DateTime.Now.AddSeconds(SelektovaniLek.PeriodUzimanjaTerapije) - DateTime.Now).TotalMilliseconds;
+                timer = new Timer(tickTime);
+                timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
+                timer.Start();
+            }
 
         }
         private  String Sadrzaj()
@@ -132,7 +135,6 @@ namespace ZdravoKorporacija.ViewModel
             SelektovaniLek.ObavestiMe = "NE";
             naloziPacijenataKontroler.IzmeniPacijenta(SelektovaniLek);
             CollectionViewSource.GetDefaultView(ReceptiPacijenta).Refresh();
-            timer.Stop();
             Poruka = "*Uspešno ste isključili obaveštenja o terapiji!";
         }
 

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.PomocSest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="582">
+    <StackPanel>
+        <Label FontSize="25" FontWeight="DemiBold" Margin="0 0 0 20" HorizontalAlignment="Center">Pomoć</Label>
+        <StackPanel Margin="50">
+            <Label>
+                Ukoliko želite da pogledate istoriju pregleda sa izveštajem od lekara pritisnite dugme</Label>
+            <Label>ISTORIJA PREGLEDA.Pritisnite dugme IZVEŠTAJ PREGLEDA.Otvara se prozor sa detaljnim</Label>
+            <Label>informacijama o pregledu.Kada ste završli pritisnite dugme VRATI SE.</Label>
+        </StackPanel>
+        <Grid Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Width="150" Command="{Binding Path=VratiSeNaPomocPet}" >Vrati se</Button>
+            <Button Grid.Column="1" Width="150" Command="{Binding Path=Kraj}">Kraj</Button>
+        </Grid>
+    </StackPanel>
+</UserControl>

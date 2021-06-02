@@ -33,8 +33,8 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="VratiSe" Margin="15 10 20 10" Height="30" Command="{Binding Path=VratiSeKomanda}">Vrati se</Button>
-                <Button x:Name="NapraviBelesku" Margin="20 10 15 10" Height="30" Grid.Column="1" Command="{Binding Path=KreirajBelesku}">Napravi Belešku</Button>
+                <Button x:Name="VratiSe" Margin="15 10 20 10"  Command="{Binding Path=VratiSeKomanda}" Height="25">Vrati se</Button>
+                <Button x:Name="NapraviBelesku" Margin="20 10 15 10" Height="25" Grid.Column="1" Command="{Binding Path=KreirajBelesku}">Napravi Belešku</Button>
             </Grid>
 
         </StackPanel>

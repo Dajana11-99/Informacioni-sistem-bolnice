@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.PomocCetri"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+             mc:Ignorable="d" 
+              d:DesignHeight="360" d:DesignWidth="582">
+    <StackPanel>
+        <Label FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Center">Pomoć</Label>
+        <StackPanel>
+            <Label FontSize="12">-Otkazivanje termina</Label>
+            <Label  FontSize="10">Pomerajte se strelicama na tastaturi i izaberite termin za otkazivanje u tabeli. Pritisnite dugme OTKAŽI.Otvara se prozor za</Label>
+            <Label FontSize="10">potvrdu otkazivanjaPOTVRDITE ili ODUSTANITE Pritisnite 
+dugme UKLJUČI OBAVEŠTENJE.Dobijate prozor sa potvrdom o uključenju.</Label>
+            <Label FontSize="10">Ukoliko želite da isključite obaveštenja izaberite željeni lek pa pritisnite dugme ISKLJUČI OBAVEŠTENJE.Dobijate prozor sa potvrdom</Label>
+            <Label FontSize="12">-Izmena termina</Label>
+            <Label FontSize="10">Pomerajte se strelicama na tastaturi i izaberite termin za izmenu u tabeli.Možete izemiti termin sličan način kao zakazivanje.</Label>
+            <Label FontSize="10">Birate Lekara i prioritet.Ukoliko je dan kada želite da  pomerite vaš termin 24h pre. Otvara se prozor sa mogućim datumima</Label>
+            <Label FontSize="10">za izmenu u intervalu 48h zakazanog pregleda izmena nije moguća.Odaberite datum koji Vam odgovara.</Label>
+            <Label FontSize="10">Pritisnite dugme NASTAVI.Otvara se prozor sa dostupnim terminima za taj datum.Odaberite termin.Pritisnite dugme NASTAVI.</Label>
+            <Label FontSize="10">Otvara se prozor sa svim podacima koje ste izabrali. Potvrdite izmenu pritiskom na dugme IZMENI.</Label>
+            <Label FontSize="12">-Izveštaj o pregledu/operaciji</Label>
+            <Label FontSize="10">Klikom na dugme izveštaj termina imate mogućnost unosa perioda u kom želite da vidite izvestaj o pregledima/operacijama.</Label>
+        </StackPanel>
+        <Grid Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Width="150" Command="{Binding Path=VratiSeNaPomocTri}"  >Vrati se</Button>
+            <Button Grid.Column="1" Width="150" Command="{Binding Path=PomocPet}">Nastavi</Button>
+        </Grid>
+    </StackPanel>
+</UserControl>

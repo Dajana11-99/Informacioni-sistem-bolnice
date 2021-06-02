@@ -9,8 +9,8 @@ namespace ZdravoKorporacija.ViewModel
 {
    public class ZakazivanjeDTO:ViewModel
     {
-        private DateTime datumOd;
-        private DateTime datumDo;
+        private DateTime datumOd = DateTime.Now.AddDays(1);
+        private DateTime datumDo = DateTime.Now.AddDays(3);
         private int prioritet;
         private String korisnickoImePacijenta;
         private LekarDTO izabraniLekar;

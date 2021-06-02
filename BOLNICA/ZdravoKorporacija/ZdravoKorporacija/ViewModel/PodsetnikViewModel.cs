@@ -21,6 +21,9 @@ namespace ZdravoKorporacija.ViewModel
         public PodsetnikViewModel(TerminDTO izabraniTermin)
         {
             Obavestenje = new ObavestenjeDTO();
+            obavestenje.DatumOd = DateTime.Now.Date;
+            obavestenje.DatumDo = DateTime.Now.AddDays(1);
+            obavestenje.NaKolikoSati = 1;
             this.izabraniTermin = izabraniTermin;
             vratiSeKomanda = new RelayCommand(VratiSe);
             sacuvajObavestenjeKomanda = new RelayCommand(Sacuvaj);
@@ -74,10 +77,7 @@ namespace ZdravoKorporacija.ViewModel
         {
             ObavestenjeDTO obavestenje = new ObavestenjeDTO(Guid.NewGuid().ToString(), Obavestenje.Naslov,Obavestenje.Tekst, DateTime.Now,izabraniTermin.IdPacijenta);
             obavestenjaKontroler.DodajObavestenjePacijentu(obavestenje);
-            if (DateTime.Compare(Obavestenje.DatumOd, Obavestenje.DatumDo) == 0)
-            {
-                timer.Stop();
-            }
+            timer.Stop();
             schedule_Timer();
         }
 
