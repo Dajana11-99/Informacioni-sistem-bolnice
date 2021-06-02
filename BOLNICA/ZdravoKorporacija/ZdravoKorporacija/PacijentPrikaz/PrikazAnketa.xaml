@@ -19,7 +19,7 @@
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Pregled dostupnih anketa</Label>
             <DataGrid x:Name="TerminiPacijentaa" ItemsSource="{Binding Ankete}" IsReadOnly="true"
                   SelectionMode="Single"  Margin="15,5,0,20" 
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="195" HorizontalAlignment="Left" Width="544">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="224" HorizontalAlignment="Left" Width="562">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}"/>
                     <DataGridTextColumn Header="Tip termina" Binding="{Binding TipTermina}" />
@@ -36,13 +36,13 @@
 
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                 
+
                 </Grid.ColumnDefinitions>
 
-               
-                <Button Margin="19.4,0,27.2,5"  Grid.Column="1" Content="Popuni anketu"  x:Name="PopuniAnketu"  Click="PopuniAnketu_Click"/>
-                <Button Margin="19.4,0,27.2,5"  Grid.Column="0" Content="Ocenite bolnicu"  x:Name="OceniBolnicu"  Click="OceniBolnicu_Click"/>
-              
+
+                <Button Margin="10.4,5,22.2,9" Height="25"  Grid.Column="1" Content="Popuni anketu"  x:Name="PopuniAnketu"  Click="PopuniAnketu_Click"/>
+                <Button Margin="25,5,9.6,9" Height="25"  Grid.Column="0" Content="Ocenite bolnicu"  x:Name="OceniBolnicu"  Click="OceniBolnicu_Click"/>
+
             </Grid>
 
 

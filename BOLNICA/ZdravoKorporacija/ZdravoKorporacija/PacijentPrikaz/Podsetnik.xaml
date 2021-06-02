@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
              mc:Ignorable="d" 
              d:DesignHeight="360" d:DesignWidth="582">
-    <StackPanel Margin="70 50">
+    <StackPanel Margin="50 50">
         <Label FontSize="20">Kreiraj podsetnik</Label>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -26,13 +26,13 @@
             <Label Grid.Row="2" Grid.Column="0">Datum od</Label>
             <Label Grid.Row="3" Grid.Column="0">Datum do</Label>
             <Label Grid.Row="4" Grid.Column="0">Na koliko sati</Label>
-            <Button Grid.Column="0" Grid.Row="5" Margin="10" Command="{Binding Path=VratiSeKomanda}">Vrati se</Button>
-            <Button Grid.Column="1" Grid.Row="5"  Margin="10" Command="{Binding Path=SacuvajObavestenjeKomanda}">Sacuvaj</Button>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Obavestenje.Naslov}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Obavestenje.Tekst}"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumOd, StringFormat={}{0:MM/dd/yyyy}}" ></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumDo, StringFormat={}{0:MM/dd/yyyy}}"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=Obavestenje.NaKolikoSati}"></TextBox>
+            <Button Grid.Column="0" Grid.Row="5" Margin="5 5 0 0" Height="25"  Command="{Binding Path=VratiSeKomanda}">Vrati se</Button>
+            <Button Grid.Column="1" Grid.Row="5"  Margin="5 5 0 0" Height="25"   Command="{Binding Path=SacuvajObavestenjeKomanda}">Sacuvaj</Button>
+            <TextBox Margin="5 0 0 0" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Obavestenje.Naslov}"></TextBox>
+            <TextBox Margin="5 5 0 0" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Obavestenje.Tekst}"></TextBox>
+            <TextBox  Margin="5 5 0 0" Grid.Row="2" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumOd, StringFormat={}{0:MM/dd/yyyy}}" ></TextBox>
+            <TextBox  Margin="5 5 0 0" Grid.Row="3" Grid.Column="1" Text="{Binding Path=Obavestenje.DatumDo, StringFormat={}{0:MM/dd/yyyy}}"></TextBox>
+            <TextBox  Margin="5 5 0 0" Grid.Row="4" Grid.Column="1" Text="{Binding Path=Obavestenje.NaKolikoSati}"></TextBox>
         </Grid>
         
         

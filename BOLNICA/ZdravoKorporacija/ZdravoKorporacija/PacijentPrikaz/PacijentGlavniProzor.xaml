@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
         mc:Ignorable="d"
-        Title="PacijentGlavniProzor" Height="450" Width="800" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Title="PacijentGlavniProzor" Height="470" Width="815" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <StackPanel  >
         <Grid Background="#77c9b5" Margin="0,0,-0.4,0">
 
@@ -52,8 +52,9 @@
                 Odjavi se
             </Button>
 
+        
 
-
+           
 
         </Grid>
 
@@ -61,14 +62,16 @@
             <Grid Background="#77c9b5" Width="207" Margin="0,0,0,0.2">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="10*"></RowDefinition>
-                    <RowDefinition Height="10*"></RowDefinition>
-                    <RowDefinition Height="10*"></RowDefinition>
-                    <RowDefinition Height="10*"></RowDefinition>
-                    <RowDefinition Height="10*"></RowDefinition>
-                    <RowDefinition Height="10*"></RowDefinition>
-                    <RowDefinition Height="10*"></RowDefinition>
-                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                   
+                
                 </Grid.RowDefinitions>
 
 
@@ -121,6 +124,11 @@
                     Ankete
 
 
+                </Button>
+
+                <Button FontSize="20" Grid.Row="7" Background="#77c9b5" Click="Button_Click"
+                        >
+                   Kalendar 
                 </Button>
 
             </Grid>

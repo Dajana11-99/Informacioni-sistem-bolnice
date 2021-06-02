@@ -126,7 +126,7 @@
       <alergican>Brufen</alergican>
     </karton>
     <IdPacijenta>P1</IdPacijenta>
-    <Zloupotrebio>0</Zloupotrebio>
+    <Zloupotrebio>1</Zloupotrebio>
     <Maliciozan>false</Maliciozan>
   </Pacijent>
 </ArrayOfPacijent>

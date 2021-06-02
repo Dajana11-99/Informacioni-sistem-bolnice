@@ -49,6 +49,9 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="MyCalendar.Calendar">
+      <HintPath>..\..\..\..\..\..\..\Documents\Downloads\CalendarExample2\MojKalendar\Jarloo.Calendar\bin\Debug\MyCalendar.Calendar.dll</HintPath>
+    </Reference>
     <Reference Include="NPOI, Version=2.5.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.2.5.3\lib\net45\NPOI.dll</HintPath>
     </Reference>
@@ -142,6 +145,30 @@
     <Compile Include="DTO\ZakazivanjeDTO.cs" />
     <Compile Include="InformacijeLekaWindow.xaml.cs">
       <DependentUpon>InformacijeLekaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\Kalendar.xaml.cs">
+      <DependentUpon>Kalendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PocetnaPomoc.xaml.cs">
+      <DependentUpon>PocetnaPomoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PomocCetri.xaml.cs">
+      <DependentUpon>PomocCetri.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PomocDva.xaml.cs">
+      <DependentUpon>PomocDva.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PomocJedan.xaml.cs">
+      <DependentUpon>PomocJedan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PomocPet.xaml.cs">
+      <DependentUpon>PomocPet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PomocSest.xaml.cs">
+      <DependentUpon>PomocSest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\PomocTri.xaml.cs">
+      <DependentUpon>PomocTri.xaml</DependentUpon>
     </Compile>
     <Compile Include="RepozitorijumInterfejs\GlavniRepozitorijumInterfejs.cs" />
     <Compile Include="RepozitorijumInterfejs\ObavestenjeRepozitorijumInterfejs.cs" />
@@ -393,8 +420,10 @@
     <Compile Include="ViewModel\BeleskaViewModel.cs" />
     <Compile Include="ViewModel\DatumiKoIzabranogLekaraViewModel.cs" />
     <Compile Include="ViewModel\IstorijaPregledaViewModel.cs" />
+    <Compile Include="ViewModel\KalendarViewModel.cs" />
     <Compile Include="ViewModel\ObavestenjaViewModel.cs" />
     <Compile Include="ViewModel\PodsetnikViewModel.cs" />
+    <Compile Include="ViewModel\PomocViewModel.cs" />
     <Compile Include="ViewModel\PotvrdiPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PotvrdiZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\PrikazDatumaViewModel.cs" />
@@ -567,6 +596,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentPrikaz\Kalendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentPrikaz\OceniBolnicu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -579,11 +612,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentPrikaz\PocetnaPomoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentPrikaz\PocetnaStrana.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PacijentPrikaz\Podsetnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PomocCetri.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PomocDva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PomocJedan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PomocPet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PomocSest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\PomocTri.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

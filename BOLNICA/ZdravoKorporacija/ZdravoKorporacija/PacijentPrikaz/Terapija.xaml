@@ -19,26 +19,26 @@
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Raspored terapije</Label>
             <DataGrid x:Name="ReceptiPropisanii" ItemsSource="{Binding Path=ReceptiPacijenta}" SelectedItem="{Binding Path=SelektovaniLek}" 
                   SelectionMode="Single"  Margin="15,0,0,0" 
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="195" HorizontalAlignment="Left" Width="544">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="232" HorizontalAlignment="Left" Width="562">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naziv Leka" Binding="{Binding Path=NazivLeka}"/>
                     <DataGridTextColumn Header="Kolicina" Binding="{Binding Path=KolicinaTerapije}" />
                     <DataGridTextColumn Header="Vreme" Binding="{Binding Path=PeriodUzimanjaTerapije}"/>
                     <DataGridTextColumn Header="Obavesti me" Binding="{Binding Path=ObavestiMe}" />
-                   
+
 
                 </DataGrid.Columns>
             </DataGrid>
             <Label FontSize="13" Margin="15 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
-            <Grid Height="40" Margin="0,0,28.2,0" >
+            <Grid Height="40" Margin="0,0,0,0" >
                 <Grid.ColumnDefinitions>
 
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Margin="23,0,10,0" Command="{Binding Path=UkljuciObavestenjaKomanda}">Ukljuci obavestenja</Button>
-                <Button  Grid.Column="2"  Command="{Binding Path=IskljuciObavestenjaKomanda}" Margin="10,0,23,0" Grid.Row="1">Iskljuci obavestenja</Button>
-               
+                <Button Margin="23,0,10,0" Width="250" Height="23" Command="{Binding Path=UkljuciObavestenjaKomanda}">Ukljuci obavestenja</Button>
+                <Button  Grid.Column="1"  Width="260" Command="{Binding Path=IskljuciObavestenjaKomanda}"  Height="25"    HorizontalAlignment="Left" Margin="10.4,8,0,7">Iskljuci obavestenja</Button>
+
             </Grid>
 
 

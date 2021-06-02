@@ -9,7 +9,7 @@
     <StackPanel >
         <Label HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="15" >Izaberite datum</Label>
         <Label Name="NaslovTabele"></Label>
-        <ListBox x:Name="slobodniDatumiLista" ItemsSource="{Binding Path=SlobodniKodIzabranog}" SelectedItem="{Binding Path=SelektovaniTermin}" SelectionMode="Single" Height="203" Margin="45,10,45.4,0"   >
+        <ListBox x:Name="slobodniDatumiLista" ItemsSource="{Binding Path=SlobodniKodIzabranog}" SelectedItem="{Binding Path=SelektovaniTermin}" SelectionMode="Single" Height="203" Margin="45,10,45,10"   >
 
             <ListBox.ItemTemplate  >
                 <DataTemplate>

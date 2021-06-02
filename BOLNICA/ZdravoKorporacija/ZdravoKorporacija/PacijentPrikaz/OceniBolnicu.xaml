@@ -121,8 +121,8 @@
                 </ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Height="30" FontSize="13" Margin="10 10" x:Name="VratiSe" Click="VratiSe_Click" Grid.Column="0">Vrati se</Button>
-            <Button Height="30" FontSize="13" Margin="10 10" x:Name="PosaljiAnketu" Click="PosaljiAnketu_Click" Grid.Column="1">Pošalji anketu</Button>
+            <Button Height="25" FontSize="13" Margin="10 10" x:Name="VratiSe" Click="VratiSe_Click" Grid.Column="0">Vrati se</Button>
+            <Button Height="25" FontSize="13" Margin="10 10" x:Name="PosaljiAnketu" Click="PosaljiAnketu_Click" Grid.Column="1">Pošalji anketu</Button>
         </Grid>
 
     </StackPanel>

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="ZdravoKorporacija.PacijentPrikaz.PomocPet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoKorporacija.PacijentPrikaz"
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="582">
+    <StackPanel>
+        <Label FontSize="25" FontWeight="DemiBold" HorizontalAlignment="Center">Pomoć</Label>
+        <StackPanel Margin="30" Height="200">
+            <Label>Na ovom prozoru dostupne su Vam ankete za obavljene usluge u klinici Zdravo.</Label>
+            <Label>Pomerajte se strelicama na tastaturi i izaberite anketu za željeni pregled.
+Pritisnite dugme</Label>
+            <Label>POPUNI ANKETU.
+Otvara se prozor sa pitanjima.Kliknite na kvačicu i ocenite usluge klinike.</Label>
+            <Label>Ukoliko imate dodatne komentare napišite ih u prazno polje.
+Kada završite popunjavanje</Label>
+            <Label>pritisnite dugme  ZAVRŠI ANKETU.
+Ako želite da odustanete pritisnite dugme ODUSTANI.</Label>
+        </StackPanel>
+        <Grid Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Width="150" Command="{Binding Path=VratiSeNaPomocCetri}">Vrati se</Button>
+            <Button Grid.Column="1" Width="150" Command="{Binding Path=PomocSest }">Nastavi</Button>
+        </Grid>
+    </StackPanel>
+</UserControl>

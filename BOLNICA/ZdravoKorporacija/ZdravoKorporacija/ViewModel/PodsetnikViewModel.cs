@@ -74,10 +74,7 @@ namespace ZdravoKorporacija.ViewModel
         {
             ObavestenjeDTO obavestenje = new ObavestenjeDTO(Guid.NewGuid().ToString(), Obavestenje.Naslov,Obavestenje.Tekst, DateTime.Now,izabraniTermin.IdPacijenta);
             obavestenjaKontroler.DodajObavestenjePacijentu(obavestenje);
-            if (DateTime.Compare(Obavestenje.DatumOd, Obavestenje.DatumDo) == 0)
-            {
-                timer.Stop();
-            }
+            timer.Stop();
             schedule_Timer();
         }
 

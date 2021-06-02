@@ -100,6 +100,8 @@ namespace ZdravoKorporacija.PacijentPrikaz
         private void pomoc_Click(object sender, RoutedEventArgs e)
         {
 
+            MainPanel.Children.Clear();
+            MainPanel.Children.Add(new PocetnaPomoc());
         }
 
         private void odjava_Click(object sender, RoutedEventArgs e)
@@ -117,6 +119,12 @@ namespace ZdravoKorporacija.PacijentPrikaz
             NaloziPacijenataRepozitorijum.UpisiPacijente();
 
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            MainPanel.Children.Add(new Kalendar(ulogovaniPacijent.KorisnickoIme));
         }
     }
     }
