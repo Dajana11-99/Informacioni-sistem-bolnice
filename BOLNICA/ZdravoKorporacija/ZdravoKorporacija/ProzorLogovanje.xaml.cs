@@ -57,8 +57,6 @@ namespace ZdravoKorporacija
 
             //SalaServis.inicijalizuj();
 
-
-            SalaServis.inicijalizuj();
             LekServis.inicijalizuj();
             RukovanjeStatickomOpremomServis.inicijalizuj();
             RukovanjeDinamickomOpremomServis.inicijalizuj();

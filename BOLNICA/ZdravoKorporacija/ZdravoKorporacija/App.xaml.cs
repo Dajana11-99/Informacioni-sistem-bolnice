@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -13,5 +15,15 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            Startup startup = new Startup();
+            startup.RegistrujKontrolere();
+            startup.RegistrujRepozitorijuma();
+            startup.RegistrujServise();
+            startup.InicijalizujKomponente();
+           
+        }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfSala xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Sala>
-    <TipSale>Pregled</TipSale>
+    <TipSale>Operaciona</TipSale>
     <Id>A1</Id>
     <Zauzeta>false</Zauzeta>
     <sprat>3</sprat>
@@ -92,7 +92,7 @@
     <TipSale>Pregled</TipSale>
     <Id>a3</Id>
     <Zauzeta>true</Zauzeta>
-    <sprat>4</sprat>
+    <sprat>6</sprat>
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema />
     <RasporedjenaDinamickaOprema />
@@ -248,6 +248,8 @@
     <Zauzeta>false</Zauzeta>
     <sprat>23</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
   </Sala>
   <Sala>
     <TipSale>Operaciona</TipSale>
@@ -255,6 +257,8 @@
     <Zauzeta>false</Zauzeta>
     <sprat>23</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
   </Sala>
   <Sala>
     <TipSale>Operaciona</TipSale>
@@ -262,6 +266,8 @@
     <Zauzeta>false</Zauzeta>
     <sprat>23</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
   </Sala>
   <Sala>
     <TipSale>Operaciona</TipSale>
@@ -269,6 +275,8 @@
     <Zauzeta>false</Zauzeta>
     <sprat>23</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
   </Sala>
   <Sala>
     <TipSale>Operaciona</TipSale>
@@ -276,6 +284,8 @@
     <Zauzeta>false</Zauzeta>
     <sprat>23</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
   </Sala>
   <Sala>
     <TipSale>Operaciona</TipSale>
@@ -283,5 +293,7 @@
     <Zauzeta>false</Zauzeta>
     <sprat>23</sprat>
     <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
   </Sala>
 </ArrayOfSala>

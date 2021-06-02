@@ -14,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -23,6 +25,7 @@ namespace ZdravoKorporacija
     public partial class IzmeniSalu : Window
     {
         Sala salaZaIzmenu;
+        SalaServisInterfejs salaServis;
         public IzmeniSalu(Sala sala)
         {
             InitializeComponent();
@@ -30,6 +33,7 @@ namespace ZdravoKorporacija
             txtSprat.Text = "" + sala.sprat;
             cmbTipSale.Text = sala.TipSale.ToString();
             chkboxZauzeta.IsChecked = sala.Zauzeta;
+            salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
         }
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
@@ -40,7 +44,7 @@ namespace ZdravoKorporacija
             salaZaIzmenu.sprat = sprat;
             salaZaIzmenu.Zauzeta = chkboxZauzeta.IsChecked.Value;
             salaZaIzmenu.TipSale = tipS;
-            SalaServis.Izmena(salaZaIzmenu);
+            salaServis.Izmena(salaZaIzmenu);
             Close();
         }
         private static TipSale TipSale(string tipSale)

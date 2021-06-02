@@ -10,7 +10,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Model;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace Servis
 {
@@ -18,11 +20,13 @@ namespace Servis
     {
         public static List<ZahtevZaRasporedjivanjeStatickeOpreme> ZahtevZaRasporedjivanjeStatickeOpreme = new List<ZahtevZaRasporedjivanjeStatickeOpreme>();
         public static ObservableCollection<ZahtevZaRasporedjivanjeStatickeOpreme> observableZahtevZaRasporedjivanjeStatickeOpreme = new ObservableCollection<ZahtevZaRasporedjivanjeStatickeOpreme>();
+        static SalaServisInterfejs salaServis;
         public static void Inicijalizuj()
         {
             ZahtevZaRasporedjivanjeStatickeOpreme = SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UcitajZahtevZaRasporedjivanjeStatickeOpreme();
             IzvrsiZahteve();
             OsveziKolekciju();
+            salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
         }
         public static bool DodajZahtevIzDrugeSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
@@ -36,7 +40,7 @@ namespace Servis
         public static bool AzuriranjeZahtevSala(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, Sala sala)
         {
             RasporedjenaStatickaOpremaSale(zahtev, sala.RasporedjenaStatickaOprema).Kolicina -= zahtev.Kolicina;
-            SalaServis.Izmena(sala);
+            salaServis.Izmena(sala);
             AzuriranjeZahteva(zahtev);
             IzvrsiZahteve();
             OsveziKolekciju();

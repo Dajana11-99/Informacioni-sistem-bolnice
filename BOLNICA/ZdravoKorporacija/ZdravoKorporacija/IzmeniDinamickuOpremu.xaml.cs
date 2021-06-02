@@ -51,7 +51,6 @@ namespace ZdravoKorporacija
 
             dinamickaOpremaZaIzmenu.naziv = naziv;
             dinamickaOpremaZaIzmenu.kolicina = kolicina;
-
             RukovanjeDinamickomOpremomServis.IzmeniDinamickuOpremu(dinamickaOpremaZaIzmenu);
             Close();
 

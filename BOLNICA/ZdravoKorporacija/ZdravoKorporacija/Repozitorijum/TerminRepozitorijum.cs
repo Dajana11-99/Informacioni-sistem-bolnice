@@ -12,8 +12,10 @@ using System.Xml.Serialization;
 using System.Xml.XPath;
 using Model;
 using Servis;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Interfejs;
 using ZdravoKorporacija.PacijentPrikaz;
+using ZdravoKorporacija.ServisInterfejs;
 using ZdravoKorporacija.ViewModel;
 
 namespace ZdravoKorporacija.Repozitorijum
@@ -172,7 +174,8 @@ namespace ZdravoKorporacija.Repozitorijum
         }
         private static bool NijeDostupnaSala(Termin termin)
         {
-            return !SalaServis.DaLiJeSalaSlobodna(termin.Sala, termin.Datum);
+            SalaServisInterfejs salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
+            return !salaServis.DaLiJeSalaSlobodna(termin.Sala, termin.Datum);
         }
 
         public  void OtkaziTermin(String idTermina)

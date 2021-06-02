@@ -14,12 +14,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
     public partial class RenovirajSalu : Window
     {
         Sala salaZaIzmenu;
+        SalaServisInterfejs salaServis;
         List<string> opcijaRazdvajanje = new List<string>()
         {
             "Razdvajanje na dve nove sobe",
@@ -37,6 +40,7 @@ namespace ZdravoKorporacija
             cboxIzborSaleZaSpajanje.ItemsSource = SalaServis.sala;
             lblNaslov.Content = $"Renoviranje {sala.TipSale} id {sala.Id}";
             DaLiPostojiRenoviranje();
+            salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
         }
 
         private void DaLiPostojiRenoviranje()
@@ -56,7 +60,7 @@ namespace ZdravoKorporacija
                 return;
             }
             salaZaIzmenu.Renoviranje = renoviranje;
-            SalaServis.RenovirajSalu(salaZaIzmenu);
+            salaServis.RenovirajSalu(salaZaIzmenu);
         }
 
         private Renoviranje GetRenoviranje()

@@ -140,6 +140,7 @@
     <Compile Include="DTO\PacijentDTO.cs" />
     <Compile Include="DTO\ReceptDTO.cs" />
     <Compile Include="DTO\ZakazivanjeDTO.cs" />
+    <Compile Include="GrafZavisnosti\Injektor.cs" />
     <Compile Include="InformacijeLekaWindow.xaml.cs">
       <DependentUpon>InformacijeLekaWindow.xaml</DependentUpon>
     </Compile>
@@ -347,6 +348,8 @@
     <Compile Include="Repozitorijum\PitanjeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZalbaRepozitorijum.cs" />
+    <Compile Include="ServisInterfejs\GlavniServisInterfejs.cs" />
+    <Compile Include="ServisInterfejs\SalaServisInterfejs.cs" />
     <Compile Include="Servis\AnketaServis.cs" />
     <Compile Include="Servis\BeleskaServis.cs" />
     <Compile Include="Servis\LekarServis.cs" />
@@ -386,6 +389,7 @@
       <DependentUpon>RasporedjivanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
     <Compile Include="Servis\ZalbaServis.cs" />
+    <Compile Include="GrafZavisnosti\Startup.cs" />
     <Compile Include="UpravnikPocetna.xaml.cs">
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
     </Compile>
@@ -775,7 +779,9 @@
   <ItemGroup>
     <Resource Include="PacijentPrikaz\SlikePacijent\2021-05-21 %2810%29.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="KontrolerInterfejs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

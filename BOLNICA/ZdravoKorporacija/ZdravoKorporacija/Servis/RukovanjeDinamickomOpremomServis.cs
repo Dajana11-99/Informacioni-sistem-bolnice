@@ -37,7 +37,7 @@ namespace Servis
                 return true;
             }
         }
-        public static List<DinamickaOprema> PrikaziDinamickuOpremu()
+        public List<DinamickaOprema> PrikaziDinamickuOpremu()
         {
             return dinamickaOprema;
         }

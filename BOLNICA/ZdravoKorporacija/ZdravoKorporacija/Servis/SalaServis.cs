@@ -11,12 +11,13 @@ using System.Linq;
 using Model;
 using ZdravoKorporacija;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace Servis
 {
-   public class SalaServis
+   public class SalaServis: SalaServisInterfejs
    {
-       public static void inicijalizuj() 
+       public void inicijalizuj() 
         {
             sala = SalaRepozitorijum.UcitajSale();
             OsveziKolekciju();
@@ -52,7 +53,7 @@ namespace Servis
         {
             return sala;
         }
-        public static bool DaLiJeSalaSlobodna(Sala sala, DateTime termin)
+        public bool DaLiJeSalaSlobodna(Sala sala, DateTime termin)
         {
             if(sala.Renoviranje == null)
             {
@@ -61,14 +62,14 @@ namespace Servis
             Renoviranje renoviranje = sala.Renoviranje;
             return !(renoviranje.RenoviranjeOd >= termin && renoviranje.RenoviranjeDo <= termin);
         }
-      public static bool Izmena(Sala salaZaIzmenu)
+      public bool Izmena(Sala salaZaIzmenu)
         {
             IzmenaSale(salaZaIzmenu);
             SalaRepozitorijum.UpisiSale();
             OsveziKolekciju();
             return true;
         }
-        private static void IzmenaSale(Sala salaZaIzmenu)
+        private void IzmenaSale(Sala salaZaIzmenu)
         {
             foreach (Sala s in sala)
             {
@@ -149,7 +150,7 @@ namespace Servis
             return broj.ToString();
         }
 
-        public static void RenovirajSalu(Sala sala)
+        public void RenovirajSalu(Sala sala)
         {
             if (sala.Renoviranje.Spajanje)
                 RenoviranjeSpajanje(sala);
@@ -159,7 +160,7 @@ namespace Servis
                 RegularnoRenoviranje(sala); 
         }
 
-        private static void RegularnoRenoviranje(Sala sala)
+        private  void RegularnoRenoviranje(Sala sala)
         {
             Izmena(sala);
         }
