@@ -19,7 +19,7 @@
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Pregled dostupnih anketa</Label>
             <DataGrid x:Name="TerminiPacijentaa" ItemsSource="{Binding Ankete}" IsReadOnly="true"
                   SelectionMode="Single"  Margin="15,5,0,20" 
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="224" HorizontalAlignment="Left" Width="562">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="211" HorizontalAlignment="Left" Width="562">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}"/>
                     <DataGridTextColumn Header="Tip termina" Binding="{Binding TipTermina}" />

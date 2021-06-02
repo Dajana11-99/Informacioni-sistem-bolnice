@@ -836,7 +836,9 @@
   <ItemGroup>
     <Resource Include="PacijentPrikaz\SlikePacijent\2021-05-21 %2810%29.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="PacijentPrikaz\SlikePacijent\Logo.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

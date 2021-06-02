@@ -19,7 +19,7 @@
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 0">Isporija pregleda</Label>
             <DataGrid x:Name="TerminiPacijentaa" ItemsSource="{Binding Path=SviZakazaniTerminiPacijenta}" SelectedItem="{Binding Path=SelektovaniTermin}" IsReadOnly="true"
                   SelectionMode="Single"  Margin="15,5,0,10" 
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="218" HorizontalAlignment="Left" Width="544">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="201" HorizontalAlignment="Left" Width="544">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID Termina" Binding="{Binding Path= IdTermina}"/>
                     <DataGridTextColumn Header="Tip termina" Binding="{Binding Path=TipTermina}" />

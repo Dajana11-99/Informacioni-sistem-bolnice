@@ -35,8 +35,9 @@ namespace ZdravoKorporacija.PacijentPrikaz
             GlavniSadrzaj = this.MainPanel;
             NaloziPacijenataRepozitorijum.UcitajPacijente();
             imePacijenta.Content = ulogovaniPacijent.KorisnickoIme;
-            ;
-     
+            MainPanel.Children.Clear();
+            MainPanel.Children.Add(new PocetnaStrana());
+
         }
 
         public static Grid GetGlavniSadrzaj()
@@ -82,11 +83,9 @@ namespace ZdravoKorporacija.PacijentPrikaz
         }
         private void ankete_Click(object sender, RoutedEventArgs e)
         {
-            UserControl usc = null;
+         
             MainPanel.Children.Clear();
-
-            usc = new PrikazAnketa();
-            MainPanel.Children.Add(usc);
+            MainPanel.Children.Add(new PrikazAnketa());
 
         }
 

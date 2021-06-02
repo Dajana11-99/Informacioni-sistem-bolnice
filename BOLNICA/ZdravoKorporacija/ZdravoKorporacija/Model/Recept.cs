@@ -48,6 +48,7 @@ namespace Model
             this.Lek1 = lek;
             idPacijenta = pac;
             this.obavestiMe = obavestiMe;
+            obavestiMe = "NE";
         }
     }
 }

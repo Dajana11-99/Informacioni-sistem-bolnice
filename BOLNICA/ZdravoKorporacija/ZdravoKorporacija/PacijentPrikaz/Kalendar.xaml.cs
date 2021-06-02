@@ -1,5 +1,6 @@
 ﻿using Kontroler;
 using Model;
+using MyCalendar.Calendar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,29 +25,30 @@ namespace ZdravoKorporacija.PacijentPrikaz
     {
       
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-        private List<DateTime> daniTerapije = new List<DateTime>();
-        List<String> imeLeka = new List<string>();
+     
+        private Dictionary<DateTime, String> daniTerapije = new Dictionary<DateTime,String>();
+    
         public Kalendar(String id)
         {
             InitializeComponent();
             ucitaj(id);
-            foreach (DateTime dani in daniTerapije)
+            var terapija = daniTerapije.Keys.ToList();
+            foreach(var pom in daniTerapije)
             {
-                foreach(String st in imeLeka)
-                Calendar.Days[dani.Day].Notes = st;
+                Calendar.Days[pom.Key.Day].Notes = pom.Value;
+             
             }
-         
 
         }
 
         public void ucitaj(String idPacijenta) {
             foreach (Recept recept in naloziPacijenataKontroler.PretraziPoKorisnickom(idPacijenta).karton.recepti)
             {
+
                 int razlika = (int)(recept.KrajTerapije - recept.PocetakTerapije).TotalDays;
                 for (int i = 0; i <= razlika; i++)
                 {
-                    daniTerapije.Add(recept.PocetakTerapije.AddDays(i));
-                    imeLeka.Add(recept.Lek1.ImeLeka);
+                    daniTerapije.Add(recept.PocetakTerapije.AddDays(i),recept.Lek1.ImeLeka);
                 }
             } 
         } 

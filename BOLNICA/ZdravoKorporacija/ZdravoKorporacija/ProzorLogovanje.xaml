@@ -6,13 +6,30 @@
         xmlns:local="clr-namespace:ZdravoKorporacija"
         mc:Ignorable="d"
         Title="ProzorLogovanje" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <StackPanel Margin="100">
+    <Window.Background>
+      
+        <ImageBrush ImageSource="/PacijentPrikaz/SlikePacijent/Logo.jpg" />
 
-        <Label  >Korisnicko ime</Label>
-        <TextBox x:Name="korisnickoIme"></TextBox>
-        <Label  >Lozinka</Label>
-        <PasswordBox x:Name="Lozinka"></PasswordBox>
-        <Button x:Name="potvrdi" Click="potvrdi_Click">Potvrdi</Button>
 
-    </StackPanel>
+    </Window.Background>
+    <Grid Margin="20">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Margin="50.2,110,9.6,50">
+            <Label  Grid.Row="0"  HorizontalAlignment="Left"  FontSize="23" Margin="0 0 0 0">Korisnicko ime:</Label>
+            <TextBox x:Name="korisnickoIme" Height="30" Margin="5 0 10 10"></TextBox>
+            <Label  Grid.Row="2"  FontSize="23"  Margin="0 0 0 0">Lozinka:</Label>
+            <PasswordBox x:Name="Lozinka" Height="30" Margin="5 0 10 0"></PasswordBox>
+            <Button x:Name="potvrdi" Click="potvrdi_Click"  Height="29" Margin="5,20,9.8,0" Background="#ff32afb4">
+                <Run Foreground="#ff125672" FontWeight="DemiBold" FontSize="15">
+                    PRIJAVI SE
+                </Run>
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
 </Window>

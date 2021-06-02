@@ -19,7 +19,7 @@
             <Label HorizontalAlignment="Center" FontSize="20 " Margin="00 10 00 00">Raspored terapije</Label>
             <DataGrid x:Name="ReceptiPropisanii" ItemsSource="{Binding Path=ReceptiPacijenta}" SelectedItem="{Binding Path=SelektovaniLek}" 
                   SelectionMode="Single"  Margin="15,0,0,0" 
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="232" HorizontalAlignment="Left" Width="562">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Height="216" HorizontalAlignment="Left" Width="562">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naziv Leka" Binding="{Binding Path=NazivLeka}"/>
                     <DataGridTextColumn Header="Kolicina" Binding="{Binding Path=KolicinaTerapije}" />
