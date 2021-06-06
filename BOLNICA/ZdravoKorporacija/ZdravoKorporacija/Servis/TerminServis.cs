@@ -235,5 +235,49 @@ namespace Servis
                 return false;
             return true;
         }
+
+
+        public List<TerminDTO> DobaviTermineZaIzvestaj(List<DateTime> interval, String id)
+        {
+            List<TerminDTO> terminiZaIzvestaj = new List<TerminDTO>();
+
+            foreach (Termin termin in terminRepozitorijum.DobaviSveZakazaneTerminePacijenta(id))
+            {
+                if (TerminPripadaIntervalu(interval, termin.Datum))
+                    terminiZaIzvestaj.Add(terminMaper.ZakazaniTerminModelUDto(termin));
+            }
+            return terminiZaIzvestaj.OrderBy(user => user.Datum).ToList();
+
+        }
+
+        private bool TerminPripadaIntervalu(List<DateTime> vremenskiInterval, DateTime datumZaPoredjenje)
+        {
+            return datumZaPoredjenje >= vremenskiInterval[0] && datumZaPoredjenje <= vremenskiInterval[1];
+        }
+
+
+        public int DobaviBrojPregledaIzvestaj(List<DateTime> interval, String idPacijenta)
+        {
+            int brojPregleda = 0;
+            foreach (TerminDTO termin in DobaviTermineZaIzvestaj(interval, idPacijenta))
+            {
+                if (termin.TipTermina.ToString().Equals(TipTermina.Pregled.ToString()))
+                {
+
+                    brojPregleda++;
+                }
+            }
+            return brojPregleda;
+        }
+        public int DobaviBrojOperacijaIzvestaj(List<DateTime> interval, String idPacijenta)
+        {
+            int brojOperacija = 0;
+            foreach (TerminDTO termin in DobaviTermineZaIzvestaj(interval, idPacijenta))
+            {
+                if (termin.TipTermina.ToString().Equals(TipTermina.Operacija.ToString()))
+                    brojOperacija++;
+            }
+            return brojOperacija;
+        }
     }
 }

@@ -42,7 +42,7 @@
 
                 <Button Margin="20,0,15,5"  Grid.Column="0" Height="25"  Content="Izmena termina"  x:Name="izmenaTermina" Command="{Binding Path=PomeriPregledKomanda}"/>
                 <Button Margin="19.8,0,10.4,5"  Grid.Column="1" Height="25" Content="Otkazivanje termina"  x:Name="OtkazivanjeTermina" Command="{Binding Path=OtkaziPregledKomanda}" />
-                <Button Margin="20,0,26.2,5" Grid.Column="2" Height="25" Content="Izveštaj o terminima"  x:Name="Izvestaj"   />
+                <Button Command="{Binding Path=IzvestajKomanda}" Margin="20,0,26.2,5" Grid.Column="2" Height="25" Content="Izveštaj o terminima"  x:Name="Izvestaj"   />
             </Grid>
 
 

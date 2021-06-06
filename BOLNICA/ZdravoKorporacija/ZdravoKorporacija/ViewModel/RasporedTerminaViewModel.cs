@@ -26,6 +26,7 @@ namespace ZdravoKorporacija.ViewModel
             UcitajUKolekciju(idPacijenta);
             this.idPacijenta = idPacijenta;
             otkaziPregledKomanda = new RelayCommand(OtkaziPregled);
+            izvestajKomanda = new RelayCommand(Izvestaj);
             pomeriPregledKomanda = new RelayCommand(PomeriPregled);
         }
        
@@ -166,8 +167,20 @@ namespace ZdravoKorporacija.ViewModel
             {
                 Poruka = "*Morate izabrati termin da biste pomerili pregled!";
             }
+
+        }
+        private RelayCommand izvestajKomanda;
+        public RelayCommand IzvestajKomanda
+        {
+            get { return izvestajKomanda; }
         }
 
-       
+        private void Izvestaj()
+        {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzvestajOPregledima(idPacijenta));
+        }
+
+
     }
 }

@@ -40,6 +40,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="DynamicPDF.NETFramework40, Version=11.12.0.43946, Culture=neutral, PublicKeyToken=09b5ce0d5c0a9d8b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ceTe.DynamicPDF.CoreSuite.NET.11.12.0\lib\net40\DynamicPDF.NETFramework40.dll</HintPath>
+    </Reference>
     <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
       <HintPath>..\packages\Grpc.Core.2.37.1\lib\net45\Grpc.Core.dll</HintPath>
     </Reference>
@@ -147,6 +150,10 @@
     <Compile Include="GrafZavisnosti\Startup.cs" />
     <Compile Include="InformacijeLekaWindow.xaml.cs">
       <DependentUpon>InformacijeLekaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Izvestaj\IzvestajOTerminima.cs" />
+    <Compile Include="PacijentPrikaz\IzvestajOPregledima.xaml.cs">
+      <DependentUpon>IzvestajOPregledima.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\Kalendar.xaml.cs">
       <DependentUpon>Kalendar.xaml</DependentUpon>
@@ -424,6 +431,7 @@
     <Compile Include="ViewModel\BeleskaViewModel.cs" />
     <Compile Include="ViewModel\DatumiKoIzabranogLekaraViewModel.cs" />
     <Compile Include="ViewModel\IstorijaPregledaViewModel.cs" />
+    <Compile Include="ViewModel\IzvestajViewModel.cs" />
     <Compile Include="ViewModel\KalendarViewModel.cs" />
     <Compile Include="ViewModel\ObavestenjaViewModel.cs" />
     <Compile Include="ViewModel\PodsetnikViewModel.cs" />
@@ -593,6 +601,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PacijentPrikaz\IzmenaTermina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\IzvestajOPregledima.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

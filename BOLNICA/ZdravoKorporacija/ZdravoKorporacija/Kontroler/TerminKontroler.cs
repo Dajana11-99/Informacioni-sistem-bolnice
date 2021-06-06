@@ -84,5 +84,19 @@ namespace Kontroler
         {
             terminiServis.OtkaziTermin(idTermina);
         }
+
+        public List<TerminDTO> DobaviTermineZaIzvestaj(List<DateTime> interval, String id)
+        {
+            return terminiServis.DobaviTermineZaIzvestaj(interval, id);
+        }
+
+        public int DobaviBrojPregledaIzvestaj(List<DateTime> interval, String idPacijenta)
+        {
+            return terminiServis.DobaviBrojPregledaIzvestaj(interval, idPacijenta);
+        }
+        public int DobaviBrojOperacijaIzvestaj(List<DateTime> interval, String idPacijenta)
+        {
+            return terminiServis.DobaviBrojOperacijaIzvestaj(interval, idPacijenta);
+        }
     }
 }
