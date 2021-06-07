@@ -11,50 +11,53 @@
 
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="52*">
+                <ColumnDefinition Width="106*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="120*">
+                <ColumnDefinition Width="244*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="27*">
+                <ColumnDefinition Width="26*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="66*">
+                <ColumnDefinition Width="153*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="66*">
+                <ColumnDefinition Width="121*">
 
                 </ColumnDefinition>
-                <ColumnDefinition Width="66*">
+                <ColumnDefinition Width="132*">
 
                 </ColumnDefinition>
-
+                <ColumnDefinition Width="30*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Image Source="/PacijentPrikaz/SlikePacijent/2021-04-19 (3).png" Margin="17,5,17,5.2" />
+            <Image Source="/PacijentPrikaz/SlikePacijent/2021-04-19 (3).png" Margin="17,5,17.6,5.2" />
 
 
 
-            <Label Grid.Column="1" FontSize="20" Margin="0,0,2,0.2">Zdravo korporacija</Label>
-            <Label Grid.Column="1" VerticalContentAlignment="Bottom" FontSize="15" Margin="0,0,2,0.2">Pacijent-</Label>
-            <Label x:Name="imePacijenta" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,3,0.2" Width="162" Height="27"/>
-            <Button FontSize="20" Grid.Column="3" Background="#77c9b5" Name="obavestenja" Click="obavestenja_Click"  Grid.ColumnSpan="2" Margin="0.4,0,131.6,50.2" >
+            <Label FontSize="20" Margin="0.4,0,2.6,0.2" Grid.Column="1">Zdravo korporacija</Label>
+            <Label VerticalContentAlignment="Bottom" FontSize="15" Margin="0.4,0,2.6,0.2" Grid.Column="1">Pacijent-</Label>
+            <Label x:Name="imePacijenta" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,3.6,0.2" Width="162" Height="27"/>
+            <Button FontSize="20" Grid.Column="3" Background="#77c9b5" Name="obavestenja" Click="obavestenja_Click" Margin="1,0,0.8,50.2" >
                 Obaveštenja
 
             </Button>
 
-            <Button FontSize="20" Grid.Column="4" Background="#77c9b5" Name="pomoc" Grid.ColumnSpan="2" Margin="0.4,0,131.6,50.2" Click="pomoc_Click">
+            <Button FontSize="20" Grid.Column="4" Background="#77c9b5" Name="pomoc" Margin="1.2,0,2.6,50.2" Click="pomoc_Click">
                 Pomoc
             </Button>
 
-            <Button FontSize="20" Grid.Column="5" Background="#77c9b5" Name="odjava" Margin="0.4,0,-0.4,50.2" Click="odjava_Click">
+            <Button FontSize="20" Grid.Column="5" Background="#77c9b5" Name="odjava" Margin="0,0,10.2,50" Click="odjava_Click">
                 Odjavi se
             </Button>
 
-        
+            <Button Grid.Column="5" Background="#77c9b5" Grid.Row="0" Grid.ColumnSpan="2" Name="OceniAplikaciju" Margin="121,0,-0.2,50" Click="OceniAplikaciju_Click">
+                <Image Source="/PacijentPrikaz/SlikePacijent/2021-06-02 (7).png" />
 
-           
+            </Button>
+
+
 
         </Grid>
 
@@ -70,8 +73,8 @@
                     <RowDefinition Height="9*"></RowDefinition>
                     <RowDefinition Height="9*"></RowDefinition>
                     <RowDefinition Height="9*"></RowDefinition>
-                   
-                
+
+
                 </Grid.RowDefinitions>
 
 
@@ -128,7 +131,7 @@
 
                 <Button FontSize="20" Grid.Row="7" Background="#77c9b5" Click="Button_Click"
                         >
-                   Kalendar 
+                    Kalendar
                 </Button>
 
             </Grid>

@@ -31,16 +31,6 @@ namespace ZdravoKorporacija.Repozitorijum
         {
             return PretraziPoId("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']");
         }
-        public List<Termin> DobaviSveZakazaneTerminePacijenta(String idPacijenta)
-        {
-            List<Termin> sviTerminiPacijenta = new List<Termin>();
-            foreach (Termin termin in DobaviSve())
-            {
-                if (termin.Pacijent.IdPacijenta.Equals(idPacijenta))
-                    sviTerminiPacijenta.Add(termin);
-            }
-            return sviTerminiPacijenta;
-        }
         public void ObrisiZakazanTermin(String terminZaBrisanje)
         {
        
@@ -53,7 +43,16 @@ namespace ZdravoKorporacija.Repozitorijum
             Dodaj(termin);
         }
 
-
+        public List<Termin> DobaviSveZakazaneTerminePacijenta(String idPacijenta)
+        {
+            List<Termin> sviTerminiPacijenta = new List<Termin>();
+            foreach (Termin termin in DobaviSve())
+            {
+                if (termin.Pacijent.IdPacijenta.Equals(idPacijenta))
+                    sviTerminiPacijenta.Add(termin);
+            }
+            return sviTerminiPacijenta;
+        }
 
 
 

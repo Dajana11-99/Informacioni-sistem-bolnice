@@ -125,6 +125,12 @@ namespace ZdravoKorporacija.PacijentPrikaz
             MainPanel.Children.Clear();
             MainPanel.Children.Add(new Kalendar(ulogovaniPacijent.KorisnickoIme));
         }
+
+        private void OceniAplikaciju_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            MainPanel.Children.Add(new OceniAplikaciju(ulogovaniPacijent.KorisnickoIme));
+        }
     }
     }
 

@@ -1817,3 +1817,5 @@ C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNIC
 C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.GenerateResource.cache
 C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CoreCompileInputs.cache
 C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CopyComplete
+C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OceniAplikaciju.g.cs
+C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OceniAplikaciju.baml

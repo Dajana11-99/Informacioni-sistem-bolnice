@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOcenaAplikacije xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OcenaAplikacije>
+    <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+    <Ocena>5</Ocena>
+    <Datum>2021-06-07T18:13:32.6863545+02:00</Datum>
+    <Komentar>Sve oke</Komentar>
+  </OcenaAplikacije>
+  <OcenaAplikacije>
+    <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+    <Ocena>3</Ocena>
+    <Datum>2021-06-07T18:16:37.2352085+02:00</Datum>
+    <Komentar>Dobro jee</Komentar>
+  </OcenaAplikacije>
+  <OcenaAplikacije>
+    <KorisnickoIme>dajana.zlokapa</KorisnickoIme>
+    <Ocena>1</Ocena>
+    <Datum>2021-06-07T18:20:28.1900866+02:00</Datum>
+    <Komentar>SVe ok</Komentar>
+  </OcenaAplikacije>
+</ArrayOfOcenaAplikacije>

@@ -19,7 +19,7 @@ namespace Model
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-        public Korisnik korisnik;
+        public Korisnik korisnik { get; set; }
 
         public Osoba(string ime, string prezime, string jmbg, string email,AdresaStanovanja adresaStanovanja)
         {

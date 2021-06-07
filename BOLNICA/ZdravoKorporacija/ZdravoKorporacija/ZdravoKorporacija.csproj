@@ -143,6 +143,7 @@
     <Compile Include="DTO\BeleskaDTO.cs" />
     <Compile Include="DTO\LekarDTO.cs" />
     <Compile Include="DTO\ObavestenjeDTO.cs" />
+    <Compile Include="DTO\OcenaAplikacijeDTO.cs" />
     <Compile Include="DTO\PacijentDTO.cs" />
     <Compile Include="DTO\ReceptDTO.cs" />
     <Compile Include="DTO\ZakazivanjeDTO.cs" />
@@ -153,11 +154,17 @@
     </Compile>
     <Compile Include="IRepozitorijum\IObavestenjeRepozitorijum.cs" />
     <Compile Include="Izvestaj\IzvestajOTerminima.cs" />
+    <Compile Include="Kontroler\AplikacijaKontroler.cs" />
+    <Compile Include="Maper\OcenaAplikacijeMaper.cs" />
+    <Compile Include="Model\OcenaAplikacije.cs" />
     <Compile Include="PacijentPrikaz\IzvestajOPregledima.xaml.cs">
       <DependentUpon>IzvestajOPregledima.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\Kalendar.xaml.cs">
       <DependentUpon>Kalendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentPrikaz\OceniAplikaciju.xaml.cs">
+      <DependentUpon>OceniAplikaciju.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentPrikaz\PocetnaPomoc.xaml.cs">
       <DependentUpon>PocetnaPomoc.xaml</DependentUpon>
@@ -377,6 +384,7 @@
       <DependentUpon>RenovirajSalu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repozitorijum\AnketeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\AplikacijaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\BeleskaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\LekoviRepozitorijum.cs" />
@@ -389,6 +397,7 @@
     <Compile Include="ServisInterfejs\GlavniServisInterfejs.cs" />
     <Compile Include="ServisInterfejs\SalaServisInterfejs.cs" />
     <Compile Include="Servis\AnketaServis.cs" />
+    <Compile Include="Servis\AplikacijaServis.cs" />
     <Compile Include="Servis\BeleskaServis.cs" />
     <Compile Include="Servis\LekarServis.cs" />
     <Compile Include="Servis\LekServis.cs" />
@@ -438,6 +447,7 @@
     <Compile Include="ViewModel\IzvestajViewModel.cs" />
     <Compile Include="ViewModel\KalendarViewModel.cs" />
     <Compile Include="ViewModel\ObavestenjaViewModel.cs" />
+    <Compile Include="ViewModel\OcenaAplikacijeViewModel.cs" />
     <Compile Include="ViewModel\PodsetnikViewModel.cs" />
     <Compile Include="ViewModel\PomocViewModel.cs" />
     <Compile Include="ViewModel\PotvrdiPomeranjeViewModel.cs" />
@@ -617,6 +627,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PacijentPrikaz\Kalendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentPrikaz\OceniAplikaciju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -861,6 +875,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="KontrolerInterfejs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PacijentPrikaz\SlikePacijent\2021-06-02 %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PacijentPrikaz\SlikePacijent\2021-06-07 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PacijentPrikaz\SlikePacijent\2021-06-07 %283%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.37.1\build\net45\Grpc.Core.targets')" />
