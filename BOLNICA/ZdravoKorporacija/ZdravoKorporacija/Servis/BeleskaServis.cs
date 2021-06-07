@@ -24,7 +24,7 @@ namespace ZdravoKorporacija.Servis
         }
         public void SacuvajBelesku(BeleskaDTO beleska)
         {
-            beleskaRepozitorijum.SacuvajBelesku(beleskaMaper.BeleskaDtoUModel(beleska));
+            beleskaRepozitorijum.Dodaj(beleskaMaper.BeleskaDtoUModel(beleska));
         }
     }
 }

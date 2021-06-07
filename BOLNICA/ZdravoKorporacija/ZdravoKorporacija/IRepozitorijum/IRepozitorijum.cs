@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace ZdravoKorporacija.Interfejs
 {
-   public interface GlavniRepozitorijumInterfejs<T>
+   public interface IRepozitorijum<T>
     {
         
             List<T> DobaviSve();

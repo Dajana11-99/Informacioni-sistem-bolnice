@@ -151,6 +151,7 @@
     <Compile Include="InformacijeLekaWindow.xaml.cs">
       <DependentUpon>InformacijeLekaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IRepozitorijum\IObavestenjeRepozitorijum.cs" />
     <Compile Include="Izvestaj\IzvestajOTerminima.cs" />
     <Compile Include="PacijentPrikaz\IzvestajOPregledima.xaml.cs">
       <DependentUpon>IzvestajOPregledima.xaml</DependentUpon>
@@ -179,9 +180,10 @@
     <Compile Include="PacijentPrikaz\PomocTri.xaml.cs">
       <DependentUpon>PomocTri.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RepozitorijumInterfejs\GlavniRepozitorijumInterfejs.cs" />
-    <Compile Include="RepozitorijumInterfejs\ObavestenjeRepozitorijumInterfejs.cs" />
-    <Compile Include="RepozitorijumInterfejs\TerminRepozitorijumInterfejs.cs" />
+    <Compile Include="IRepozitorijum\IBeleskaRepozitorijum.cs" />
+    <Compile Include="IRepozitorijum\IRepozitorijum.cs" />
+    <Compile Include="IRepozitorijum\ISlobodniTerminiRepozitorijum.cs" />
+    <Compile Include="IRepozitorijum\IZakazaniTerminiRepozitorijum.cs" />
     <Compile Include="IzbrisiPacijenta.xaml.cs">
       <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
     </Compile>
@@ -382,6 +384,7 @@
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\PitanjeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\SlobodniTerminiRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZalbaRepozitorijum.cs" />
     <Compile Include="ServisInterfejs\GlavniServisInterfejs.cs" />
     <Compile Include="ServisInterfejs\SalaServisInterfejs.cs" />
@@ -415,7 +418,7 @@
     <Compile Include="Repozitorijum\ZahtevZaRasporedjivanjeDinamickeOpreme.cs" />
     <Compile Include="Repozitorijum\SkladisteZahtevZaRasporedjivanjeStatickeOpreme.cs" />
     <Compile Include="Repozitorijum\StatickeOpremeRepozitorijum.cs" />
-    <Compile Include="Repozitorijum\TerminRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\ZakazaniTerminiRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZahtevRepozitorijum.cs" />
     <Compile Include="RasporedjivanjeDinamickeOpreme.xaml.cs">
       <DependentUpon>RasporedjivanjeDinamickeOpreme.xaml</DependentUpon>
@@ -423,6 +426,7 @@
     <Compile Include="RasporedjivanjeStatickeOpreme.xaml.cs">
       <DependentUpon>RasporedjivanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="Servis\ZalbaServis.cs" />
     <Compile Include="UpravnikPocetna.xaml.cs">
       <DependentUpon>UpravnikPocetna.xaml</DependentUpon>
@@ -787,7 +791,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Servis\SalaServis.cs" />
-    <Compile Include="Servis\TerminServis.cs" />
+    <Compile Include="Servis\ZakazaniTerminiServis.cs" />
     <Compile Include="Servis\ZahtevServis.cs" />
     <Compile Include="Servis\NaloziPacijenataServis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

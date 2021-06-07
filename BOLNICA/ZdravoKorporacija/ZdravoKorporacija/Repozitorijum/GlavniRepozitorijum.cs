@@ -10,7 +10,7 @@ using ZdravoKorporacija.Interfejs;
 
 namespace ZdravoKorporacija.Repozitorijum
 {
-    public class GlavniRepozitorijum<T> : GlavniRepozitorijumInterfejs<T>
+    public class GlavniRepozitorijum<T> : IRepozitorijum<T>
     {
         protected String imeFajla { get; set; }
 

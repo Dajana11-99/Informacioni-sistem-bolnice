@@ -1,4 +1,5 @@
 ﻿using Model;
+using Servis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,21 +13,21 @@ namespace ZdravoKorporacija.Servis
     public class AnketaServis
     {
         PitanjeRepozitorijum pitanjeRepozitorijum = new PitanjeRepozitorijum();
+        ZakazaniTerminiServis zakazaniTerminiServis = new ZakazaniTerminiServis();
+        public AnketeRepozitorijum anketeRepozitorijum = new AnketeRepozitorijum();
         public  List<Pitanje> DobaviSvaPitanjaOPregledu()
         {
             return pitanjeRepozitorijum.DobaviSvaPitanjaOPregledu();
         }
-
-
         public  List<Pitanje> DobaviSvaPitanjaOBolnici()
         {
             return pitanjeRepozitorijum.DobaviSvaPitanjaOBolnici();
         }
         public void DodajAnketu(Ankete anketa)
         {
-            anketeRepozitorijum.DodajAnketu(anketa);
-            
-
+                anketeRepozitorijum.Dodaj(anketa);
+                if (anketa.Termin != null)
+                    zakazaniTerminiServis.RefresujZakazaneTermine(anketa.Termin);
         }
         public  bool DostupnaAnketaOBolnici(Pacijent pacijent)
         {
@@ -39,7 +40,7 @@ namespace ZdravoKorporacija.Servis
 
         public  DateTime NadjiDatumPoslednjeAnketeOBolnici(Pacijent pacijent)
         {
-            List<Ankete> anketePacijenta = anketeRepozitorijum.NadjiPoslednjuAnketuOBolnici(pacijent);
+            List<Ankete> anketePacijenta = NadjiPoslednjuAnketuOBolnici(pacijent);
             if (anketePacijenta.Count == 0)
                 return DateTime.Now.Date.AddMonths(-3);
 
@@ -51,6 +52,15 @@ namespace ZdravoKorporacija.Servis
             return nesortiraniDatumi.OrderByDescending(user => user.ocenioBolnicu).ToList();
         }
 
-        public AnketeRepozitorijum anketeRepozitorijum = new AnketeRepozitorijum();
+         private List<Ankete> NadjiPoslednjuAnketuOBolnici(Pacijent pacijent)
+        {
+            List<Ankete> anketePacijenta = new List<Ankete>();
+            foreach (Ankete anketa in anketeRepozitorijum.DobaviSve())
+            {
+                if (anketa.Pacijent.IdPacijenta.Equals(pacijent.IdPacijenta) && anketa.Termin == null)
+                    anketePacijenta.Add(anketa);
+            }
+            return anketePacijenta;
+        }
     }
 }

@@ -522,4 +522,26 @@ Količina u sledećoj dozi: 2134.</Tekst>
     <Tekst>nestoo</Tekst>
     <IdPrimaoca>P1</IdPrimaoca>
   </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>ad48344e-413f-4ca9-add4-745d4d4e47c2</IdObavestenja>
+    <Datum>2021-06-07T15:15:30.8902924+02:00</Datum>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+kod lekara Pera Peric
+08/06/2021 u 16:30h. 
+Novi pregled je zakazan kod
+lekara Pera Peric
+08/06/2021 u 16:30 h.</Tekst>
+  </Obavestenja>
+  <Obavestenja>
+    <IdObavestenja>95ea03a5-8a5f-4109-907b-013cf69a566e</IdObavestenja>
+    <Datum>2021-06-07T15:22:17.2759109+02:00</Datum>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+kod lekara Pera Peric
+08/06/2021 u 16:30h. 
+Novi pregled je zakazan kod
+lekara Pera Peric
+10/06/2021 u 16:30 h.</Tekst>
+  </Obavestenja>
 </ArrayOfObavestenja>

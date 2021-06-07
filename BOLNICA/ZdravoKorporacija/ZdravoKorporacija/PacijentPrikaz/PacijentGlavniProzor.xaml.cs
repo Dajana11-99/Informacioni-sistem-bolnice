@@ -25,7 +25,7 @@ namespace ZdravoKorporacija.PacijentPrikaz
      
         LekarRepozitorijum lekarRepozitorijum = new LekarRepozitorijum();
         TerminKontroler terminKontroler = new TerminKontroler();
-        TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
+        ZakazaniTerminiRepozitorijum terminRepozitorijum = new ZakazaniTerminiRepozitorijum();
         private PacijentDTO ulogovaniPacijent;
         public PacijentGlavniProzor(String pacijent)
         {

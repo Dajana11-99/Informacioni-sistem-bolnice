@@ -17,7 +17,7 @@ namespace Servis
     public class NaloziPacijenataServis
     {
         public static List<Pacijent> ListaPacijenata = new List<Pacijent>();
-        private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
+        private ZakazaniTerminiRepozitorijum terminRepozitorijum = new ZakazaniTerminiRepozitorijum();
 
         public static void TestMethod()
         {
