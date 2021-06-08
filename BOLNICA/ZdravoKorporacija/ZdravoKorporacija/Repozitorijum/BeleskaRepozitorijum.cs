@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 using ZdravoKorporacija.Model;
+using ZdravoKorporacija.RepozitorijumInterfejs;
 
 namespace ZdravoKorporacija.Repozitorijum
 {
-  public  class BeleskaRepozitorijum : GlavniRepozitorijum<Beleska>
+  public  class BeleskaRepozitorijum : GlavniRepozitorijum<Beleska>, IBeleskaRepozitorijum
     {
        public BeleskaRepozitorijum()
         {

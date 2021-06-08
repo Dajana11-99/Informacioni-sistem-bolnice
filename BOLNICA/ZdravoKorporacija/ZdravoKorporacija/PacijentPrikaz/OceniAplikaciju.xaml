@@ -7,43 +7,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="360" d:DesignWidth="582">
     <StackPanel>
+        <Image Height="70" Source="/PacijentPrikaz/SlikePacijent/2021-06-07 (3).png"    />
+        <Label  FontSize="30" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="-30" >Ocenite rad aplikacije</Label>
 
-        <Label  FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center">Ocenite rad aplikacije</Label>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Label Margin="5,30,0,10" Grid.Row="0"  Grid.Column="0" FontSize="18" HorizontalAlignment="Left" Width="227">Vaša ocena za aplikaciju je:</Label>
-            <ComboBox SelectedIndex="{Binding Path=OcenaAplikacije.Ocena}" Grid.Row="1" Grid.Column="0" Height="25" Width="330" HorizontalAlignment="Left" Margin="10,0.4,0,42.6" Grid.RowSpan="2">
-                <ComboBoxItem>
-                    1
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    2
-                </ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem>5</ComboBoxItem>
-            </ComboBox>
-            <Label Grid.Row="2" Grid.Column="0" Margin="5,10,0.4,0" FontSize="18">Dodatni komentar,sugestija ili kritika:</Label>
-            <TextBox Text="{Binding Path=OcenaAplikacije.Komentar}" Grid.Row="3" Grid.Column="0" Margin="10,0.4,10,0" Height="70">
+        <Label Margin="20" HorizontalAlignment="Center"  Grid.Row="0"  Grid.Column="0" FontSize="18" Width="227">Vaša ocena za aplikaciju je:</Label>
+        <ComboBox HorizontalAlignment="Center" SelectedIndex="{Binding Path=OcenaAplikacije.Ocena}" Grid.Row="1" Grid.Column="0" Height="25" Width="302"  Grid.RowSpan="2" Margin="140,0,140.4,0">
+            <ComboBoxItem>
+                1
+            </ComboBoxItem>
+            <ComboBoxItem>
+                2
+            </ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+        </ComboBox>
+        <Label HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0"  FontSize="18">Dodatni komentar,sugestija ili kritika:</Label>
+        <TextBox HorizontalAlignment="Center" Text="{Binding Path=OcenaAplikacije.Komentar}" Grid.Row="3" Grid.Column="0" Height="70"  Width="306" Margin="136,0,140.4,0">
 
-            </TextBox>
-            <Label Content="{Binding Path=Poruka}" Grid.Row="4" Grid.Column="0" FontSize="15" Foreground="Green" Margin="10 0 0 0"></Label>
-            <Button Command="{Binding Path=SacuvajOcenu}" Grid.Column="0" Grid.Row="5" Margin="10 10 10 0" Height="25">Sacuvaj ocenu</Button>
-            <Image Grid.RowSpan="4" Source="/PacijentPrikaz/SlikePacijent/2021-06-07 (3).png" Grid.ColumnSpan="2" Margin="350,0,0.4,56" />
+        </TextBox>
+        <Label Content="{Binding Path=Poruka}" Grid.Row="4" Grid.Column="0" FontSize="15" Foreground="Green" Margin="10 0 0 0"></Label>
+        <Button Command="{Binding Path=SacuvajOcenu}" Grid.Column="0" Grid.Row="5" Margin="136,10,140.4,0" Height="25">Sacuvaj ocenu</Button>
 
 
-        </Grid>
 
     </StackPanel>
 </UserControl>
