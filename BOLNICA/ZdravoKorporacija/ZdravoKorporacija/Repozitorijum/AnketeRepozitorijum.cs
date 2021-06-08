@@ -16,9 +16,6 @@ namespace ZdravoKorporacija.Repozitorijum
 {
    public class AnketeRepozitorijum: GlavniRepozitorijum<Ankete>
     {
-       
-        ZakazaniTerminiServis zakazaniTerminiServis = new ZakazaniTerminiServis();
-
         public AnketeRepozitorijum()
         {
             imeFajla = "sveAnkete.xml";
