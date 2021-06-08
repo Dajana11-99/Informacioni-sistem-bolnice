@@ -13,7 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -22,17 +24,18 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class DodajStatickuOpremu : Window
     {
+        RukovanjeStatickomOpremomServisInterfejs rukovanjeStatickomOpremomServis;
         public DodajStatickuOpremu()
         {
             InitializeComponent();
-
+            rukovanjeStatickomOpremomServis = Injektor.Instance.Get<RukovanjeStatickomOpremomServisInterfejs>(typeof(RukovanjeStatickomOpremomServisInterfejs));
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             
             String id = txtId.Text;
-            StatickaOprema postojecaStatickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(id);
+            StatickaOprema postojecaStatickaOprema = rukovanjeStatickomOpremomServis.PretraziPoId(id);
             if (postojecaStatickaOprema != null)
             {
                 MessageBox.Show($"Postoji vec oprema sa ID-em:{id}");
@@ -57,7 +60,7 @@ namespace ZdravoKorporacija
             StatickaOprema so = new StatickaOprema(id);
             so.naziv = naziv;
             so.kolicina = kolicina;
-            RukovanjeStatickomOpremomServis.DodajStatickuOpremu(so);
+            rukovanjeStatickomOpremomServis.DodajStatickuOpremu(so);
             StatickeOpremeRepozitorijum.UpisiStatickuOpremu();
             Close();
 

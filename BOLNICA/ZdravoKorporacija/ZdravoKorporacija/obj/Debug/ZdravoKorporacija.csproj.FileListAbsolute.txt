@@ -1384,7 +1384,6 @@ C:\Users\dajan\OneDrive\Desktop\SIIIIIIIIIIIIIIIIIIIIIMS\Informacioni-sistem-bol
 C:\Users\dajan\OneDrive\Desktop\SIIIIIIIIIIIIIIIIIIIIIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PomocPet.baml
 C:\Users\dajan\OneDrive\Desktop\SIIIIIIIIIIIIIIIIIIIIIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PomocSest.baml
 C:\Users\dajan\OneDrive\Desktop\SIIIIIIIIIIIIIIIIIIIIIMS\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PomocTri.baml
-C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\MyCalendar.Calendar.pdb
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\Kalendar.baml
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\Kalendar.g.cs
 C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\PocetnaPomoc.g.cs
@@ -1819,3 +1818,9 @@ C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNIC
 C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\ZdravoKorporacija.csproj.CopyComplete
 C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OceniAplikaciju.g.cs
 C:\Users\dajan\OneDrive\Desktop\SIMS TRENUTNI\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OceniAplikaciju.baml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzvestajOPregledima.g.cs
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OceniAplikaciju.g.cs
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\DynamicPDF.NETFramework40.dll
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\bin\Debug\DynamicPDF.NETFramework40.xml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\IzvestajOPregledima.baml
+C:\Users\User\Desktop\New folder(15)\Informacioni-sistem-bolnice\BOLNICA\ZdravoKorporacija\ZdravoKorporacija\obj\Debug\PacijentPrikaz\OceniAplikaciju.baml

@@ -14,7 +14,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -23,9 +25,11 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class DodajSalu : Window
     {
+        SalaServisInterfejs salaServis;
         public DodajSalu()
         {
             InitializeComponent();
+            SalaServisInterfejs salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
 
         }
 
@@ -33,7 +37,7 @@ namespace ZdravoKorporacija
         {
             TipSale tipS;
             String id = txtId.Text;
-            Sala postojecaSala = SalaServis.PretraziPoId(id);
+            Sala postojecaSala = salaServis.PretraziPoId(id);
             if (postojecaSala != null)
             {
                 MessageBox.Show($"Postoji vec sala sa ID-em:{id}");
@@ -56,7 +60,7 @@ namespace ZdravoKorporacija
             Sala s = new Sala(tipS, id);
             s.sprat = sprat;
 
-            SalaServis.DodajSalu(s);
+            salaServis.DodajSalu(s);
             SalaRepozitorijum.UpisiSale();
             Close();
 

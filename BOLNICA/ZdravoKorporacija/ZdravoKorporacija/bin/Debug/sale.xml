@@ -2,50 +2,6 @@
 <ArrayOfSala xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Sala>
     <TipSale>Operaciona</TipSale>
-    <Id>A1</Id>
-    <Zauzeta>false</Zauzeta>
-    <sprat>3</sprat>
-    <kvadratura>0</kvadratura>
-    <RasporedjenaStatickaOprema>
-      <RasporedjenaStatickaOprema>
-        <Kolicina>100</Kolicina>
-        <statickaOprema>
-          <Id>2</Id>
-          <kolicina>33</kolicina>
-          <naziv>stolica</naziv>
-        </statickaOprema>
-        <RasporedjenaOd>2021-04-13T00:00:00</RasporedjenaOd>
-      </RasporedjenaStatickaOprema>
-      <RasporedjenaStatickaOprema>
-        <Kolicina>10</Kolicina>
-        <statickaOprema>
-          <Id>4</Id>
-          <kolicina>90</kolicina>
-          <naziv>spric</naziv>
-        </statickaOprema>
-        <RasporedjenaOd>2021-04-29T00:00:00</RasporedjenaOd>
-      </RasporedjenaStatickaOprema>
-    </RasporedjenaStatickaOprema>
-    <RasporedjenaDinamickaOprema />
-    <Renoviranje>
-      <RenoviranjeOd>2021-05-28T00:00:00</RenoviranjeOd>
-      <RenoviranjeDo>2021-05-29T00:00:00</RenoviranjeDo>
-      <Spajanje>true</Spajanje>
-      <NazivNovoSpojeneSale>Naziv nove sale</NazivNovoSpojeneSale>
-      <SalaZaSpajanje>
-        <TipSale>Pregled</TipSale>
-        <Id>a3</Id>
-        <Zauzeta>true</Zauzeta>
-        <sprat>4</sprat>
-        <kvadratura>0</kvadratura>
-        <RasporedjenaStatickaOprema />
-        <RasporedjenaDinamickaOprema />
-      </SalaZaSpajanje>
-      <Razdvajanje>false</Razdvajanje>
-    </Renoviranje>
-  </Sala>
-  <Sala>
-    <TipSale>Operaciona</TipSale>
     <Id>A2</Id>
     <Zauzeta>true</Zauzeta>
     <sprat>4</sprat>
@@ -280,7 +236,7 @@
   </Sala>
   <Sala>
     <TipSale>Operaciona</TipSale>
-    <Id>45</Id>
+    <Id>56</Id>
     <Zauzeta>false</Zauzeta>
     <sprat>23</sprat>
     <kvadratura>0</kvadratura>
@@ -289,11 +245,38 @@
   </Sala>
   <Sala>
     <TipSale>Operaciona</TipSale>
-    <Id>56</Id>
+    <Id>17</Id>
     <Zauzeta>false</Zauzeta>
     <sprat>23</sprat>
     <kvadratura>0</kvadratura>
     <RasporedjenaStatickaOprema />
+    <RasporedjenaDinamickaOprema />
+  </Sala>
+  <Sala>
+    <TipSale>Operaciona</TipSale>
+    <Zauzeta>false</Zauzeta>
+    <sprat>23</sprat>
+    <kvadratura>0</kvadratura>
+    <RasporedjenaStatickaOprema>
+      <RasporedjenaStatickaOprema>
+        <Kolicina>100</Kolicina>
+        <statickaOprema>
+          <Id>2</Id>
+          <kolicina>33</kolicina>
+          <naziv>stolica</naziv>
+        </statickaOprema>
+        <RasporedjenaOd>2021-04-13T00:00:00</RasporedjenaOd>
+      </RasporedjenaStatickaOprema>
+      <RasporedjenaStatickaOprema>
+        <Kolicina>10</Kolicina>
+        <statickaOprema>
+          <Id>4</Id>
+          <kolicina>90</kolicina>
+          <naziv>spric</naziv>
+        </statickaOprema>
+        <RasporedjenaOd>2021-04-29T00:00:00</RasporedjenaOd>
+      </RasporedjenaStatickaOprema>
+    </RasporedjenaStatickaOprema>
     <RasporedjenaDinamickaOprema />
   </Sala>
 </ArrayOfSala>

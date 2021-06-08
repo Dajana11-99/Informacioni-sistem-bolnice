@@ -47,7 +47,7 @@ namespace ZdravoKorporacija
             salaServis.Izmena(salaZaIzmenu);
             Close();
         }
-        private static TipSale TipSale(string tipSale)
+        private TipSale TipSale(string tipSale)
         {
             TipSale tipS;
             if (tipSale.Equals(global::Model.TipSale.Pregled.ToString()))

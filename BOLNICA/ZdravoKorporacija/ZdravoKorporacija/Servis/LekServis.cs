@@ -6,11 +6,11 @@ using Model;
 using ZdravoKorporacija;
 using ZdravoKorporacija.Kontroler;
 using ZdravoKorporacija.Repozitorijum;
-
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace Servis
 {
-    public class LekServis
+    public class LekServis : LekServisInterfejs
     {
         LekKontroler lekKontroler = new LekKontroler();
         public static List<Lek> lek = new List<Lek>();
@@ -23,7 +23,7 @@ namespace Servis
             new Sastojak{Id="3", Ime="Lavanda"}
         };
         public static List<Lek> lekovii = new List<Lek>();
-        public static void inicijalizujLekove()
+        public void inicijalizujLekove()
         {
             lekovii.Add(new Lek("1", "Brufen", "20", "Sastojci1"));
             lekovii.Add(new Lek("2", "Andol", "250", "Sastojci2"));
@@ -32,18 +32,18 @@ namespace Servis
             lekovii.Add(new Lek("5", "Bromazepam", "30", "Sastojci5"));
             lekovii.Add(new Lek("6", "Febricet", "300", "Sastojci6"));
         }
-        public static void inicijalizuj()
+        public void inicijalizuj()
         {
             lek = LekRepozitorijum.UcitajLekove();
             OsveziKolekciju();
         }
-        private static void OsveziKolekciju()
+        private void OsveziKolekciju()
         {
             observableLek.Clear();
             foreach (Lek lek in lek)
                 observableLek.Add(lek);
         }
-        public static bool DodajLek(Lek unetiLek)
+        public bool DodajLek(Lek unetiLek)
         {
             if (lek.Contains(unetiLek))
             {
@@ -57,7 +57,7 @@ namespace Servis
                 return true;
             }
         }
-        public static Lek PretraziPoId(String id)
+        public Lek PretraziPoId(String id)
         {
             foreach (Lek l in lek)
             {
@@ -68,11 +68,11 @@ namespace Servis
             }
             return null;
         }
-        public static List<Lek> PrikaziLekove()
+        public List<Lek> PrikaziLekove()
         {
             return lek;
         }
-        public static List<string> PrikaziImenaSastojaka() 
+        public List<string> PrikaziImenaSastojaka() 
         {
             List<string> imenaSastojaka = new List<string>();
             foreach (Sastojak sastojak in listaSvihSastojaka)
@@ -81,7 +81,7 @@ namespace Servis
             }
             return imenaSastojaka;
         }
-        public static bool Izmena(Lek lekZaIzmenu)
+        public  bool Izmena(Lek lekZaIzmenu)
         {
             foreach (Lek l in lek)
             {
@@ -95,7 +95,7 @@ namespace Servis
             OsveziKolekciju();
             return true;
         }
-        public static bool BrisanjeLeka(String idLeka)
+        public bool BrisanjeLeka(String idLeka)
         {
             List<Lek> lekoviBezIzbrisanog = new List<Lek>();
             bool nadjena = false;
@@ -114,15 +114,15 @@ namespace Servis
             LekRepozitorijum.UpisiLekove();
             return nadjena;
         }
-        public static Lek PretraziSveLekove(String idLeka)
+        public Lek PretraziSveLekove(String idLeka)
         {
             return LekoviRepozitorijum.PronadjiLek(idLeka);
         }
-        public static List<Lek> PrikaziSveLekove()
+        public List<Lek> PrikaziSveLekove()
         {
             return lekovii;
         }
-        public static Lek IzmeniSelektovaniLek(Lek lek)
+        public Lek IzmeniSelektovaniLek(Lek lek)
         {
             return LekoviRepozitorijum.IzmeniLek(lek);
         }

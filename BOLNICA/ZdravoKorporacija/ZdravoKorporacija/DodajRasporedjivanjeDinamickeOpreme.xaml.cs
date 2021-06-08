@@ -15,21 +15,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PoslovnaLogika;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
     public partial class DodajRasporedjivanjeDinamickeOpreme : Window
     {
+        RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis;
+
         public DodajRasporedjivanjeDinamickeOpreme()
         {
             InitializeComponent();
             cmbDinamicka.ItemsSource = RukovanjeDinamickomOpremomServis.dinamickaOprema;
             cmbProstorija.ItemsSource = SalaServis.sala;
+            rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis = Injektor.Instance.Get<RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs>(typeof(RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs));
         }
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             ZahtevZaRasporedjivanjeDinamickeOpreme zahtev = new ZahtevZaRasporedjivanjeDinamickeOpreme();
-            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.pronadji();
+            zahtev.Id = rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.pronadji();
             int kolicina = 0;
             try
             {
@@ -48,7 +53,7 @@ namespace ZdravoKorporacija
             zahtev.Kolicina = kolicina;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.DinamickaOpremaId = (string)cmbDinamicka.SelectedValue;
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.DodajDinamickuOpremuProstorija(zahtev);
+            rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.DodajDinamickuOpremuProstorija(zahtev);
             Close();
         }
 

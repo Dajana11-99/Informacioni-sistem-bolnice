@@ -15,10 +15,11 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class App : Application
     {
+        Startup startup;
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            Startup startup = new Startup();
+            startup = new Startup();
             startup.RegistrujKontrolere();
             startup.RegistrujRepozitorijuma();
             startup.RegistrujServise();

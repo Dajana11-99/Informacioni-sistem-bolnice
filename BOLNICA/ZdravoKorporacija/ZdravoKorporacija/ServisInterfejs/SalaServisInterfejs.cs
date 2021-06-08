@@ -13,5 +13,10 @@ namespace ZdravoKorporacija.ServisInterfejs
         bool DaLiJeSalaSlobodna(Sala sala, DateTime termin);
         bool Izmena(Sala salaZaIzmenu);
         void RenovirajSalu(Sala sala);
+        bool BrisanjeSala(String id);
+        Sala PretraziPoId(String id);
+        void OsveziKolekciju();
+        bool DodajSalu(Sala unetaSala);
+        String pronadji();
     }
 }

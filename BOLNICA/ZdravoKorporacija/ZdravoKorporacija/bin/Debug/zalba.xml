@@ -28,7 +28,7 @@
     <IdZalbe>c41cfa71-a9ef-4394-818a-f9e049102f35</IdZalbe>
     <TextZalbe>Istekao rok trajanja</TextZalbe>
     <IdLeka>2</IdLeka>
-    <resena>false</resena>
+    <resena>true</resena>
     <lekZaZamenu>"Pentraxil"</lekZaZamenu>
   </Zalba>
 </ArrayOfZalba>

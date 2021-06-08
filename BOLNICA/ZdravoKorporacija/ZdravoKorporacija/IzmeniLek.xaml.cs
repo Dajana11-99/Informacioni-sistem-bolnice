@@ -15,12 +15,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
     public partial class IzmeniLek : Window
     {
+        LekServisInterfejs lekServis;
         Lek lekZaIzmenu;
         public static List<CheckBoxListItem> SastojciCheckboxItems { get; set; }
         public static List<CheckBoxListItem> LekoviZamenaCheckboxItems { get; set; }
@@ -30,6 +33,7 @@ namespace ZdravoKorporacija
         {
             InitializeComponent();
             DataContext = this;
+            lekServis = Injektor.Instance.Get<LekServisInterfejs>(typeof(LekServisInterfejs));
             lekZaIzmenu = lek;
             txtImeLeka.Text = "" + lek.ImeLeka;
             SastojciCheckboxItems = new List<CheckBoxListItem>();
@@ -42,7 +46,7 @@ namespace ZdravoKorporacija
 
         private void ListaLekovaZamena(Lek lek)
         {
-            foreach (Lek sviLekovi in LekServis.PrikaziLekove())
+            foreach (Lek sviLekovi in lekServis.PrikaziLekove())
             {
                 if (sviLekovi.IdLeka == lekZaIzmenu.IdLeka)
                 {
@@ -76,7 +80,7 @@ namespace ZdravoKorporacija
             NovaListaSastojakaZamena(lekZaIzmenu);
             NovaListaLekovaZamena(lekZaIzmenu);
             lekZaIzmenu.ImeLeka = imeLeka;
-            LekServis.Izmena(lekZaIzmenu);
+            lekServis.Izmena(lekZaIzmenu);
             LekRepozitorijum.UpisiLekove();
             Close();
         }

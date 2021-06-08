@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZdravoKorporacija.Model
 {
+    [Serializable]
     public class Zalba
     {
         public String IdZalbe { get; set; }

@@ -13,16 +13,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
     public partial class BrisanjeDinamickeOpreme : Window
     {
         string dinamickaOpremaId;
+        RukovanjeDinamickomOpremomServisInterfejs rukovanjeDinamickomOpremomServis;
         public BrisanjeDinamickeOpreme(string id)
         {
             InitializeComponent();
             dinamickaOpremaId = id;
+            rukovanjeDinamickomOpremomServis = Injektor.Instance.Get<RukovanjeDinamickomOpremomServisInterfejs>(typeof(RukovanjeDinamickomOpremomServisInterfejs));
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -30,7 +34,7 @@ namespace ZdravoKorporacija
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeDinamickomOpremomServis.ObrisiDinamickuOpremu(dinamickaOpremaId);
+            rukovanjeDinamickomOpremomServis.ObrisiDinamickuOpremu(dinamickaOpremaId);
             this.Close();
         }
     }

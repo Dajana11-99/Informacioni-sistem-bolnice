@@ -13,16 +13,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
     public partial class BrisanjeStatickeOpreme : Window
     {
         string statickaOpremaId;
+        RukovanjeStatickomOpremomServisInterfejs rukovanjeStatickomOpremomServis;
         public BrisanjeStatickeOpreme(string idStatickeOpreme)
         {
             InitializeComponent();
             statickaOpremaId = idStatickeOpreme;
+            rukovanjeStatickomOpremomServis = Injektor.Instance.Get<RukovanjeStatickomOpremomServisInterfejs>(typeof(RukovanjeStatickomOpremomServisInterfejs));
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -30,7 +34,7 @@ namespace ZdravoKorporacija
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeStatickomOpremomServis.ObrisiStatickuOpremu(statickaOpremaId);
+            rukovanjeStatickomOpremomServis.ObrisiStatickuOpremu(statickaOpremaId);
             this.Close();
         }
     }

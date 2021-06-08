@@ -53,16 +53,6 @@ namespace ZdravoKorporacija.Repozitorijum
             }
             return sviTerminiPacijenta;
         }
-
-
-
-
-
-
-
-
-
-
         public  bool ZakaziTermin(Termin termin)
         {
             if (NijeDostupnaSala(termin))

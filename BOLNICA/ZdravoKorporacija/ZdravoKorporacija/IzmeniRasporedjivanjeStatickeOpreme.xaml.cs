@@ -4,7 +4,8 @@ using Servis;
 using System;
 using System.Collections.Generic;
 using System.Windows;
-
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -17,6 +18,7 @@ namespace ZdravoKorporacija
 
         public List<StatickaOprema> StatickaOprema;
         public List<Sala> Prostorija;
+        RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis;
 
         public IzmeniRasporedjivanjeStatickeOpreme(ZahtevZaRasporedjivanjeStatickeOpreme selectedItem)
         {
@@ -24,6 +26,7 @@ namespace ZdravoKorporacija
             cmbStatickaOprema.ItemsSource = RukovanjeStatickomOpremomServis.statickaOprema;
             cmbProstorija.ItemsSource = SalaServis.sala;
             cmbProstorijaIz.ItemsSource = SalaServis.sala;
+            rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis = Injektor.Instance.Get<RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs>(typeof(RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs));
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
@@ -37,13 +40,13 @@ namespace ZdravoKorporacija
 
 
             ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
-            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.pronadji();
+            zahtev.Id = rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.pronadji();
             zahtev.Kolicina = 4; // txtKolicina.Text;
             zahtev.RasporedjenoOd = rasporedjenoOd.Value;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.IzProstorijaId = (string)cmbProstorijaIz.SelectedValue;
             zahtev.StatickeOpremaId = (string)cmbStatickaOprema.SelectedValue;
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuIzSkladista(zahtev);
+            rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuIzSkladista(zahtev);
 
         }
 

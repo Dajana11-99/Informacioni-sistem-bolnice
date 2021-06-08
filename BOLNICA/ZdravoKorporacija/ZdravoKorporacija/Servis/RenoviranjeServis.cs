@@ -12,13 +12,13 @@ namespace Servis
     {
         public static List<Renoviranje> renoviranje = new List<Renoviranje>();
         public static ObservableCollection<Renoviranje> observableRenoviranje = new ObservableCollection<Renoviranje>();
-        public static void inicijalizuj()
+        public void inicijalizuj()
         {
             renoviranje = RenoviranjeRepozitorijum.UcitajRenoviranja();
             OsveziKolekciju();
         }
 
-        public static void OsveziKolekciju()
+        public  void OsveziKolekciju()
         {
             observableRenoviranje.Clear();
             foreach (Renoviranje r in renoviranje)

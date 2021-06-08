@@ -15,7 +15,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -24,6 +26,7 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class DodajLek : Window
     {
+        LekServisInterfejs lekServis;
         public static List<CheckBoxListItem> SastojciCheckboxItems { get; set; }
         public static List<CheckBoxListItem> LekoviZamenaCheckboxItems { get; set; }
         // https://stackoverflow.com/questions/4527286/how-to-implement-a-listbox-of-checkboxes-in-wpf
@@ -32,6 +35,7 @@ namespace ZdravoKorporacija
         public DodajLek()
         {
             InitializeComponent();
+            lekServis = Injektor.Instance.Get<LekServisInterfejs>(typeof(LekServisInterfejs));
             DataContext = this;
             SastojciCheckboxItems = new List<CheckBoxListItem>();
             LekoviZamenaCheckboxItems = new List<CheckBoxListItem>();
@@ -40,9 +44,9 @@ namespace ZdravoKorporacija
             cboxlistSastojci.CheckBoxItems = SastojciCheckboxItems;
             cboxlistLekovi.CheckBoxItems = LekoviZamenaCheckboxItems;
         }
-        private static void ListaLekovaChechBoxItems()
+        private void ListaLekovaChechBoxItems()
         {
-            foreach (Lek lek in LekServis.PrikaziLekove())
+            foreach (Lek lek in lekServis.PrikaziLekove())
             {
                 CheckBoxListItem item = new CheckBoxListItem();
                 item.Data = lek;
@@ -50,7 +54,7 @@ namespace ZdravoKorporacija
                 LekoviZamenaCheckboxItems.Add(item);
             }
         }
-        private static void ListaSastojakaChechBoxItems()
+        private void ListaSastojakaChechBoxItems()
         {
             foreach (Sastojak sastojak in LekServis.listaSvihSastojaka)
             {
@@ -67,11 +71,11 @@ namespace ZdravoKorporacija
             Lek lek = new Lek(txtId.Text, txtImeLeka.Text);
             ListaSastojaka(lek);
             NovaListaLekova(lek);
-            LekServis.DodajLek(lek);
+            lekServis.DodajLek(lek);
             LekRepozitorijum.UpisiLekove();
             Close();
         }
-        private static void NovaListaLekova(Lek lek)
+        private void NovaListaLekova(Lek lek)
         {
             List<Lek> lekovi = new List<Lek>();
             foreach (var item in LekoviZamenaCheckboxItems)
@@ -81,7 +85,7 @@ namespace ZdravoKorporacija
             }
             lek.ListaZamenaZaLek = lekovi;
         }
-        public static void ListaSastojaka(Lek lek)
+        public void ListaSastojaka(Lek lek)
         {
             List<Sastojak> sastojci = new List<Sastojak>();
             foreach (var item in SastojciCheckboxItems)
@@ -91,9 +95,9 @@ namespace ZdravoKorporacija
             }
             lek.ListaSastojaka = sastojci;
         }
-        public static bool LekPostoji(string id)
+        public  bool LekPostoji(string id)
         {
-            Lek postojeciLek = LekServis.PretraziPoId(id);
+            Lek postojeciLek = lekServis.PretraziPoId(id);
             if (postojeciLek != null)
             {
                 MessageBox.Show($"Postoji vec lek sa ID-em:{id}");

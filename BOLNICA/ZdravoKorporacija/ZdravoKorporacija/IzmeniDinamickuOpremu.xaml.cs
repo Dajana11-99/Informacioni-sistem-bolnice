@@ -14,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -23,13 +25,14 @@ namespace ZdravoKorporacija
     public partial class IzmeniDinamickuOpremu : Window
     {
         DinamickaOprema dinamickaOpremaZaIzmenu;
+        RukovanjeDinamickomOpremomServisInterfejs rukovanjeDinamickomOpremomServis;
         public IzmeniDinamickuOpremu(DinamickaOprema dinamicka)
         {
             InitializeComponent();
             dinamickaOpremaZaIzmenu = dinamicka;
             txtNaziv.Text = "" + dinamicka.naziv;
             txtKolicina.Text = "" + dinamicka.kolicina;
-
+            rukovanjeDinamickomOpremomServis = Injektor.Instance.Get<RukovanjeDinamickomOpremomServisInterfejs>(typeof(RukovanjeDinamickomOpremomServisInterfejs));
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
@@ -51,7 +54,7 @@ namespace ZdravoKorporacija
 
             dinamickaOpremaZaIzmenu.naziv = naziv;
             dinamickaOpremaZaIzmenu.kolicina = kolicina;
-            RukovanjeDinamickomOpremomServis.IzmeniDinamickuOpremu(dinamickaOpremaZaIzmenu);
+            rukovanjeDinamickomOpremomServis.IzmeniDinamickuOpremu(dinamickaOpremaZaIzmenu);
             Close();
 
         }

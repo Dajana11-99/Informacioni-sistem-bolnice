@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Model;
 using ZdravoKorporacija;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.ServisInterfejs;
 
@@ -17,7 +18,7 @@ namespace Servis
 {
    public class SalaServis: SalaServisInterfejs
    {
-       public void inicijalizuj() 
+        public void inicijalizuj() 
         {
             sala = SalaRepozitorijum.UcitajSale();
             OsveziKolekciju();
@@ -35,7 +36,7 @@ namespace Servis
             }
             return sala;
         }
-        public static bool DodajSalu(Model.Sala unetaSala)
+        public bool DodajSalu(Model.Sala unetaSala)
         {
             if (sala.Contains(unetaSala))
             {
@@ -45,11 +46,12 @@ namespace Servis
             {
                 sala.Add(unetaSala);
                 SalaRepozitorijum.UpisiSale();
-                OsveziKolekciju();
+                SalaServisInterfejs salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
+                salaServis.OsveziKolekciju();
                 return true;
             }
         }
-        public static List<Sala> PrikaziSale()
+        public List<Sala> PrikaziSale()
         {
             return sala;
         }
@@ -62,7 +64,7 @@ namespace Servis
             Renoviranje renoviranje = sala.Renoviranje;
             return !(renoviranje.RenoviranjeOd >= termin && renoviranje.RenoviranjeDo <= termin);
         }
-      public bool Izmena(Sala salaZaIzmenu)
+        public bool Izmena(Sala salaZaIzmenu)
         {
             IzmenaSale(salaZaIzmenu);
             SalaRepozitorijum.UpisiSale();
@@ -85,7 +87,7 @@ namespace Servis
             }
         }
 
-        public static bool BrisanjeSala(String id)
+        public bool BrisanjeSala(String id)
         {
             List<Sala> filtrirane = FiltrirajPoId(id);
             int stariCount = sala.Count;
@@ -95,7 +97,7 @@ namespace Servis
             return sala.Count < stariCount;
         }
 
-        private static List<Sala> FiltrirajPoId(string id)
+        private List<Sala> FiltrirajPoId(string id)
         {
             List<Sala> saleBezIzbrisane = new List<Sala>();
             foreach (Sala s in sala)
@@ -108,7 +110,7 @@ namespace Servis
             return saleBezIzbrisane;
         }
 
-        public  static Sala PretraziPoId(String id)
+        public  Sala PretraziPoId(String id)
         {
             foreach(Sala s in sala)
             {
@@ -119,15 +121,15 @@ namespace Servis
             }
             return null;
         }
-        public  static List<Sala> sala = new List<Sala>();
+        public static List<Sala> sala = new List<Sala>();
         public static ObservableCollection<Sala> observableSala = new ObservableCollection<Sala>();  
-        public static void OsveziKolekciju()
+        public void OsveziKolekciju()
         {
             observableSala.Clear();
             foreach (Sala sala in sala)
                 observableSala.Add(sala);
         }
-        public static String pronadji()
+        public String pronadji()
         {
 
             bool postoji = false;
@@ -169,19 +171,29 @@ namespace Servis
         {
             Sala prva = new Sala() { Id = sala.Renoviranje.NazivPrveNoveSale, kvadratura = (sala.kvadratura / 2), sprat = sala.sprat, TipSale = sala.TipSale, Zauzeta = sala.Zauzeta, RasporedjenaStatickaOprema=sala.RasporedjenaStatickaOprema, RasporedjenaDinamickaOprema=sala.RasporedjenaDinamickaOprema };
             Sala druga = new Sala() { Id = sala.Renoviranje.NazivDrugeNoveSale, kvadratura = (sala.kvadratura / 2), sprat = sala.sprat, TipSale = sala.TipSale, Zauzeta = sala.Zauzeta};
-            BrisanjeSala(sala.Id);
-            DodajSalu(prva);
-            DodajSalu(druga);
+            SalaServisInterfejs salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
+            salaServis.BrisanjeSala(sala.Id);
+            salaServis.DodajSalu(prva);
+            salaServis.DodajSalu(druga);
         }
 
-        private static void RenoviranjeSpajanje(Sala sala)
+        private  void RenoviranjeSpajanje(Sala sala)
         {
+            if(sala.RasporedjenaStatickaOprema is null)
+            {
+                sala.RasporedjenaStatickaOprema = new List<RasporedjenaStatickaOprema>();
+            }
+            if (sala.RasporedjenaDinamickaOprema is null)
+            {
+                sala.RasporedjenaDinamickaOprema = new List<RasporedjenaDinamickaOprema>();
+            }
             List<RasporedjenaStatickaOprema> statickaOprema = sala.RasporedjenaStatickaOprema.Union(sala.Renoviranje.SalaZaSpajanje.RasporedjenaStatickaOprema).ToList();
             List<RasporedjenaDinamickaOprema> dinamickaOprema = sala.RasporedjenaDinamickaOprema.Union(sala.Renoviranje.SalaZaSpajanje.RasporedjenaDinamickaOprema).ToList();
             Sala nova = new Sala() { Id = sala.Renoviranje.NazivPrveNoveSale, kvadratura = (sala.kvadratura + sala.Renoviranje.SalaZaSpajanje.kvadratura), sprat = sala.sprat, TipSale = sala.TipSale, Zauzeta = sala.Zauzeta, RasporedjenaStatickaOprema = statickaOprema, RasporedjenaDinamickaOprema = dinamickaOprema };
-            BrisanjeSala(sala.Id);
-            BrisanjeSala(sala.Renoviranje.SalaZaSpajanje.Id);
-            DodajSalu(nova);
+            SalaServisInterfejs salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
+            salaServis.BrisanjeSala(sala.Id);
+            salaServis.BrisanjeSala(sala.Renoviranje.SalaZaSpajanje.Id);
+            salaServis.DodajSalu(nova);
         }
 
         public ZdravoKorporacija.Repozitorijum.SalaRepozitorijum salaRepozitorijum;

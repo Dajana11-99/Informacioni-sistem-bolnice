@@ -14,16 +14,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
     public partial class DodajDinamickuOpremu : Window
     {
+        RukovanjeDinamickomOpremomServisInterfejs rukovanjeDinamickomOpremomServis;
         public DodajDinamickuOpremu()
         {
             InitializeComponent();
+            rukovanjeDinamickomOpremomServis = Injektor.Instance.Get<RukovanjeDinamickomOpremomServisInterfejs>(typeof(RukovanjeDinamickomOpremomServisInterfejs));
         }
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
@@ -44,13 +47,13 @@ namespace ZdravoKorporacija
             DinamickaOprema oprema = new DinamickaOprema(id);
             oprema.naziv = naziv;
             oprema.kolicina = kolicina;
-            RukovanjeDinamickomOpremomServis.DodajDinamickuOpremu(oprema);
+            rukovanjeDinamickomOpremomServis.DodajDinamickuOpremu(oprema);
             DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             Close();
         }
-        private static bool PostojiDinamickaOprema(string id)
+        private bool PostojiDinamickaOprema(string id)
         {
-            DinamickaOprema postojecaDinamickaOprema = RukovanjeDinamickomOpremomServis.PretraziPoId(id);
+            DinamickaOprema postojecaDinamickaOprema = rukovanjeDinamickomOpremomServis.PretraziPoId(id);
             if (postojecaDinamickaOprema != null)
             {
                 MessageBox.Show($"Postoji vec oprema sa ID-em:{id}");

@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PoslovnaLogika;
+using ZdravoKorporacija.ServisInterfejs;
+using ZdravoKorporacija.GrafZavisnosti;
 
 namespace ZdravoKorporacija
 {
@@ -23,11 +25,13 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class IzmeniRasporedjivanjeDinamickeOpreme : Window
     {
+        RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis;
         public IzmeniRasporedjivanjeDinamickeOpreme()
         {
             InitializeComponent();
             cmbDinamicka.ItemsSource = RukovanjeDinamickomOpremomServis.dinamickaOprema;
             cmbProstorija.ItemsSource = SalaServis.sala;
+            rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis = Injektor.Instance.Get<RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs>(typeof(RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs));
         }
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
@@ -38,11 +42,11 @@ namespace ZdravoKorporacija
             if (!DatumUnet(rasporedjenoDo))
                 return;
             ZahtevZaRasporedjivanjeDinamickeOpreme zahtev = new ZahtevZaRasporedjivanjeDinamickeOpreme();
-            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.pronadji();
+            zahtev.Id = rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.pronadji();
             zahtev.Kolicina = 4; // txtKolicina.Text;
             zahtev.ProstorijaId = (string)cmbProstorija.SelectedValue;
             zahtev.DinamickaOpremaId = (string)cmbDinamicka.SelectedValue;
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.DodajDinamickuOpremuProstorija(zahtev);
+            rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.DodajDinamickuOpremuProstorija(zahtev);
         }
         private static bool DatumUnet(DateTime? rasporedjeno)
         {

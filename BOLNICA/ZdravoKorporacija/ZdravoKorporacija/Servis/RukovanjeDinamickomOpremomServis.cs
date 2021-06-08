@@ -11,19 +11,20 @@ using System.Linq;
 using Model;
 
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace Servis
 {
-    public class RukovanjeDinamickomOpremomServis
+    public class RukovanjeDinamickomOpremomServis : RukovanjeDinamickomOpremomServisInterfejs
     {
         public static List<DinamickaOprema> dinamickaOprema = new List<DinamickaOprema>();
         public static ObservableCollection<DinamickaOprema> observableDinamickaOprema = new ObservableCollection<DinamickaOprema>();
-        public static void inicijalizuj()
+        public void inicijalizuj()
         {
             dinamickaOprema = DinamickeOpremeRepozitorijum.UcitajDinamickuOpremu();
             OsveziKolekciju();
         }
-        public static bool DodajDinamickuOpremu(DinamickaOprema unetaDinamickaOprema)
+        public bool DodajDinamickuOpremu(DinamickaOprema unetaDinamickaOprema)
         {
             if (dinamickaOprema.Contains(unetaDinamickaOprema))
             {
@@ -41,7 +42,7 @@ namespace Servis
         {
             return dinamickaOprema;
         }
-        public static bool IzmeniDinamickuOpremu(DinamickaOprema dinamickaOpremaZaIzmenu)
+        public bool IzmeniDinamickuOpremu(DinamickaOprema dinamickaOpremaZaIzmenu)
         {
             foreach (DinamickaOprema oprema in dinamickaOprema)
             {
@@ -56,7 +57,7 @@ namespace Servis
             OsveziKolekciju();
             return true;
         }
-        public static bool ObrisiDinamickuOpremu(String id)
+        public bool ObrisiDinamickuOpremu(String id)
         {
             List<DinamickaOprema> dinamickaOpremaBezIzbrisane = new List<DinamickaOprema>();
             bool nadjena = false;
@@ -76,7 +77,7 @@ namespace Servis
             DinamickeOpremeRepozitorijum.UpisiDinamickuOpremu();
             return nadjena;
         }
-        public static DinamickaOprema PretraziPoId(String id)
+        public DinamickaOprema PretraziPoId(String id)
         {
             foreach (DinamickaOprema oprema in dinamickaOprema)
             {
@@ -87,7 +88,7 @@ namespace Servis
             }
             return null;
         }
-        public static void OsveziKolekciju()
+        public void OsveziKolekciju()
         {
             observableDinamickaOprema.Clear();
             foreach (DinamickaOprema oprema in dinamickaOprema)

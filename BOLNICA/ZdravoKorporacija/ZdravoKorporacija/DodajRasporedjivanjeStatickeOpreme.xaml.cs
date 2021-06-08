@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -20,6 +22,7 @@ namespace ZdravoKorporacija
     {
         public List<StatickaOprema> StatickaOprema;
         public List<Sala> Prostorija;
+        RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis;
         public DodajRasporedjivanjeStatickeOpreme()
         {
             InitializeComponent();
@@ -30,6 +33,7 @@ namespace ZdravoKorporacija
             var pomocnaSala = new Sala();
             pomocnaSala.Id= "Skladiste staticke opreme";
             listaSala.Add(pomocnaSala);
+            rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis = Injektor.Instance.Get<RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs>(typeof(RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs));
             listaSala.AddRange(SalaServis.sala);
             cmbProstorijaIz.ItemsSource = listaSala;
         }
@@ -42,7 +46,7 @@ namespace ZdravoKorporacija
                 return;
             }
             ZahtevZaRasporedjivanjeStatickeOpreme zahtev = new ZahtevZaRasporedjivanjeStatickeOpreme();
-            zahtev.Id = RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.pronadji();
+            zahtev.Id = rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.pronadji();
             int kolicina = 0;
             try
             {
@@ -63,9 +67,9 @@ namespace ZdravoKorporacija
             zahtev.IzProstorijaId = (string)cmbProstorijaIz.SelectedValue;
             zahtev.StatickeOpremaId = (string)cmbStatickaOprema.SelectedValue;
             if (zahtev.IzProstorijaId == "Skladiste staticke opreme")
-                RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuIzSkladista(zahtev);
+                rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajStatickuOpremuIzSkladista(zahtev);
             else
-                RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajZahtevIzDrugeSale(zahtev);
+                rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.DodajZahtevIzDrugeSale(zahtev);
             Close();
         }
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

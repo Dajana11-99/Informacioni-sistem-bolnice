@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Servis;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija.Kontroler
 {
@@ -13,17 +15,20 @@ namespace ZdravoKorporacija.Kontroler
     {
         public static Lek PretraziLekove(String idLeka)
         {
-            return LekServis.PretraziSveLekove(idLeka);
+            LekServisInterfejs lekServis = Injektor.Instance.Get<LekServisInterfejs>(typeof(LekServisInterfejs));
+            return lekServis.PretraziSveLekove(idLeka);
         }
 
         public static List<Lek> PrikaziSveLekove()
         {
-            return LekServis.PrikaziSveLekove();
+            LekServisInterfejs lekServis = Injektor.Instance.Get<LekServisInterfejs>(typeof(LekServisInterfejs));
+            return lekServis.PrikaziSveLekove();
         }
 
         public static Lek IzmeniLek(Lek lek)
         {
-            return LekServis.IzmeniSelektovaniLek(lek);
+            LekServisInterfejs lekServis = Injektor.Instance.Get<LekServisInterfejs>(typeof(LekServisInterfejs));
+            return lekServis.IzmeniSelektovaniLek(lek);
         }
     }
 }

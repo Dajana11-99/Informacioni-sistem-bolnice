@@ -9,20 +9,22 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Model;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.Repozitorijum;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace Servis
 {
-    public class RukovanjeStatickomOpremomServis
+    public class RukovanjeStatickomOpremomServis : RukovanjeStatickomOpremomServisInterfejs
     {
         public static List<StatickaOprema> statickaOprema = new List<StatickaOprema>();
         public static ObservableCollection<StatickaOprema> observableStatickaOprema = new ObservableCollection<StatickaOprema>();
-        public static void inicijalizuj()
+        public void inicijalizuj()
         {
             statickaOprema = StatickeOpremeRepozitorijum.UcitajStatickuOpremu();
             OsveziKolekciju();
         }
-        public static bool DodajStatickuOpremu(Model.StatickaOprema unetaStatickaOprema)
+        public bool DodajStatickuOpremu(Model.StatickaOprema unetaStatickaOprema)
         {
             if (statickaOprema.Contains(unetaStatickaOprema))
             {
@@ -36,11 +38,11 @@ namespace Servis
                 return true;
             }
         }
-        public static List<StatickaOprema> PrikaziStatickuOpremu()
+        public List<StatickaOprema> PrikaziStatickuOpremu()
         {
             return statickaOprema;
         }
-        public static bool IzmeniStatickuOpremu(StatickaOprema statickaOpremaZaIzmenu)
+        public bool IzmeniStatickuOpremu(StatickaOprema statickaOpremaZaIzmenu)
         {
             foreach (StatickaOprema s in statickaOprema)
             {
@@ -54,7 +56,7 @@ namespace Servis
             OsveziKolekciju();
             return true;
         }
-        public static bool ObrisiStatickuOpremu(String id)
+        public bool ObrisiStatickuOpremu(String id)
         {
             List<StatickaOprema> statickaOpremaBezIzbrisane = new List<StatickaOprema>();
             bool nadjena = false;
@@ -74,7 +76,7 @@ namespace Servis
             StatickeOpremeRepozitorijum.UpisiStatickuOpremu();
             return nadjena;
         }
-        public static StatickaOprema PretraziPoId(String id)
+        public StatickaOprema PretraziPoId(String id)
         {
             foreach (StatickaOprema s in statickaOprema)
             {

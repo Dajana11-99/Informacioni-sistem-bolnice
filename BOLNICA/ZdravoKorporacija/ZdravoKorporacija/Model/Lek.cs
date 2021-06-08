@@ -10,6 +10,7 @@ using System.ComponentModel;
 
 namespace Model
 {
+    [Serializable]
     public class Lek : INotifyPropertyChanged
     {
         public String IdLeka { get; set; }
@@ -28,7 +29,7 @@ namespace Model
         }
         public static explicit operator Lek(int v)
         {
-            throw new NotImplementedException();
+            return null;
         }
         public Lek(String id, String ime, String kolicina, String sastojci)
         {
@@ -37,6 +38,8 @@ namespace Model
             KolicinaLeka = kolicina;
             SastojciLeka = sastojci;
         }
+
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
         {

@@ -14,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -23,12 +25,14 @@ namespace ZdravoKorporacija
     public partial class IzmeniStatickuOpremu : Window
     {
         StatickaOprema statickaOpremaZaIzmenu;
+        RukovanjeStatickomOpremomServisInterfejs rukovanjeStatickomOpremomServis;
         public IzmeniStatickuOpremu(StatickaOprema staticka)
         {
             InitializeComponent();
             statickaOpremaZaIzmenu = staticka;
             txtNaziv.Text = "" + staticka.naziv;
             txtKolicina.Text = "" + staticka.kolicina;
+            rukovanjeStatickomOpremomServis = Injektor.Instance.Get<RukovanjeStatickomOpremomServisInterfejs>(typeof(RukovanjeStatickomOpremomServisInterfejs));
         }
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
@@ -45,7 +49,7 @@ namespace ZdravoKorporacija
             }
             statickaOpremaZaIzmenu.naziv = naziv;
             statickaOpremaZaIzmenu.kolicina = kolicina;
-            RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOpremaZaIzmenu);
+            rukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(statickaOpremaZaIzmenu);
             Close();
         }
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

@@ -157,6 +157,7 @@
     <Compile Include="Kontroler\AplikacijaKontroler.cs" />
     <Compile Include="Maper\OcenaAplikacijeMaper.cs" />
     <Compile Include="Model\OcenaAplikacije.cs" />
+    <Compile Include="Model\Sala1.cs" />
     <Compile Include="PacijentPrikaz\IzvestajOPregledima.xaml.cs">
       <DependentUpon>IzvestajOPregledima.xaml</DependentUpon>
     </Compile>
@@ -395,6 +396,11 @@
     <Compile Include="Repozitorijum\SlobodniTerminiRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZalbaRepozitorijum.cs" />
     <Compile Include="ServisInterfejs\GlavniServisInterfejs.cs" />
+    <Compile Include="ServisInterfejs\LekServisInterfejs.cs" />
+    <Compile Include="ServisInterfejs\RukovanjeDinamickomOpremomServisInterfejs.cs" />
+    <Compile Include="ServisInterfejs\RukovanjeStatickomOpremomServisInterfejs.cs" />
+    <Compile Include="ServisInterfejs\RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs.cs" />
+    <Compile Include="ServisInterfejs\RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs.cs" />
     <Compile Include="ServisInterfejs\SalaServisInterfejs.cs" />
     <Compile Include="Servis\AnketaServis.cs" />
     <Compile Include="Servis\AplikacijaServis.cs" />

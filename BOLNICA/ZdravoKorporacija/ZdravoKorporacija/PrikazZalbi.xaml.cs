@@ -17,6 +17,8 @@ using System.Collections.ObjectModel;
 using ZdravoKorporacija.Model;
 using ZdravoKorporacija.Servis;
 using ZdravoKorporacija.Util;
+using ZdravoKorporacija.ServisInterfejs;
+using ZdravoKorporacija.GrafZavisnosti;
 
 namespace ZdravoKorporacija
 {
@@ -25,6 +27,7 @@ namespace ZdravoKorporacija
     /// </summary>
     public partial class PrikazZalbi : Window
     {
+        LekServisInterfejs lekServis;
         public static ObservableCollection<Zalba> zalbeObservable { get; set; }
         public static List<Zalba> zalbe = new List<Zalba>();
         private Lek lekZaIzmenu;
@@ -36,6 +39,7 @@ namespace ZdravoKorporacija
             DataContext = this;
             zalbeObservable = ZalbaServis.zalbeObservable;
             zalbe = ZalbaServis.PrikaziSveZalbe();
+            lekServis = Injektor.Instance.Get<LekServisInterfejs>(typeof(LekServisInterfejs));
         }
 
         private void BtnVratiSe_Click(object sender, RoutedEventArgs e)
@@ -49,7 +53,7 @@ namespace ZdravoKorporacija
             if (SpisakZalbi.SelectedIndex == -1)
                 return;
             zalbaZaResavanje = (Zalba)SpisakZalbi.SelectedItem;
-            lekZaIzmenu = LekServis.PretraziPoId(((Zalba)SpisakZalbi.SelectedItem).IdLeka);
+            lekZaIzmenu = lekServis.PretraziPoId(((Zalba)SpisakZalbi.SelectedItem).IdLeka);
             if (lekZaIzmenu is null)
             {
                 MessageBox.Show($"Lek sa sifrom {lekZaIzmenu.IdLeka} nije vise dostupan");
@@ -77,7 +81,7 @@ namespace ZdravoKorporacija
 
         private bool JeIzmenjeno()
         {
-            lekZaIzmenu = LekServis.PretraziPoId(((Zalba)SpisakZalbi.SelectedItem).IdLeka);
+            lekZaIzmenu = lekServis.PretraziPoId(((Zalba)SpisakZalbi.SelectedItem).IdLeka);
             return ImeIzmenjeno(lekZaIzmenu, lekPredKorekciju) || KolicinaIzmenjena(lekZaIzmenu, lekPredKorekciju)
                 || ListaSastojakaIzmenjena(lekZaIzmenu, lekPredKorekciju) || ListaZamenaIzmenjena(lekZaIzmenu, lekPredKorekciju);
         }

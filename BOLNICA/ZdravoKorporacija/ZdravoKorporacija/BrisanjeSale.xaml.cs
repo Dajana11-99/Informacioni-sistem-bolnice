@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZdravoKorporacija.GrafZavisnosti;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -30,7 +32,8 @@ namespace ZdravoKorporacija
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeStatickomOpremomServis.ObrisiStatickuOpremu(statickaOpremaId);
+            RukovanjeStatickomOpremomServisInterfejs rukovanjeStatickomOpremomServis = Injektor.Instance.Get<RukovanjeStatickomOpremomServisInterfejs>(typeof(RukovanjeStatickomOpremomServisInterfejs));
+            rukovanjeStatickomOpremomServis.ObrisiStatickuOpremu(statickaOpremaId);
             this.Close();
         }
     }

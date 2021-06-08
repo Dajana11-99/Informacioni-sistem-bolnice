@@ -16,28 +16,32 @@ using ZdravoKorporacija.ServisInterfejs;
 
 namespace Servis
 {
-    public class RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis
+    public class RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis : RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs
     {
         public static List<ZahtevZaRasporedjivanjeStatickeOpreme> ZahtevZaRasporedjivanjeStatickeOpreme = new List<ZahtevZaRasporedjivanjeStatickeOpreme>();
         public static ObservableCollection<ZahtevZaRasporedjivanjeStatickeOpreme> observableZahtevZaRasporedjivanjeStatickeOpreme = new ObservableCollection<ZahtevZaRasporedjivanjeStatickeOpreme>();
         static SalaServisInterfejs salaServis;
-        public static void Inicijalizuj()
+        RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis;
+        RukovanjeStatickomOpremomServisInterfejs rukovanjeStatickomOpremomServis;
+        public void Inicijalizuj()
         {
             ZahtevZaRasporedjivanjeStatickeOpreme = SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UcitajZahtevZaRasporedjivanjeStatickeOpreme();
             IzvrsiZahteve();
             OsveziKolekciju();
             salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
+            rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis = Injektor.Instance.Get<RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs>(typeof(RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs));
+            rukovanjeStatickomOpremomServis = Injektor.Instance.Get<RukovanjeStatickomOpremomServisInterfejs>(typeof(RukovanjeStatickomOpremomServisInterfejs));
         }
-        public static bool DodajZahtevIzDrugeSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public bool DodajZahtevIzDrugeSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
-            Sala sala = SalaServis.PretraziPoId(zahtev.IzProstorijaId);
+            Sala sala = salaServis.PretraziPoId(zahtev.IzProstorijaId);
             if (!RasporedjenaStatickaOpremaPosoji(zahtev))
                 return false;
             if (!SalaPosedujeDovoljnuKolicinuStatickeOpreme(zahtev, sala.RasporedjenaStatickaOprema))
                 return false;
             return AzuriranjeZahtevSala(zahtev, sala);
         }
-        public static bool AzuriranjeZahtevSala(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, Sala sala)
+        public bool AzuriranjeZahtevSala(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, Sala sala)
         {
             RasporedjenaStatickaOpremaSale(zahtev, sala.RasporedjenaStatickaOprema).Kolicina -= zahtev.Kolicina;
             salaServis.Izmena(sala);
@@ -46,7 +50,7 @@ namespace Servis
             OsveziKolekciju();
             return true;
         }
-        public static bool SalaPosedujeDovoljnuKolicinuStatickeOpreme(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, List<RasporedjenaStatickaOprema> rasporedjenaStatickaOprema)
+        public bool SalaPosedujeDovoljnuKolicinuStatickeOpreme(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, List<RasporedjenaStatickaOprema> rasporedjenaStatickaOprema)
         {
             if (RasporedjenaStatickaOpremaSale(zahtev, rasporedjenaStatickaOprema).Kolicina < zahtev.Kolicina)
             {
@@ -55,9 +59,9 @@ namespace Servis
             }
             return true;
         }
-        public static bool RasporedjenaStatickaOpremaPosoji(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public bool RasporedjenaStatickaOpremaPosoji(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
-            Sala sala = SalaServis.PretraziPoId(zahtev.IzProstorijaId);
+            Sala sala = salaServis.PretraziPoId(zahtev.IzProstorijaId);
             List<RasporedjenaStatickaOprema> rasporedjena = sala.RasporedjenaStatickaOprema;
             if (rasporedjena == null || RasporedjenaStatickaOpremaSale(zahtev, rasporedjena) == null)
             {
@@ -66,7 +70,7 @@ namespace Servis
             }
             return true;
         }
-        public static RasporedjenaStatickaOprema RasporedjenaStatickaOpremaSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, List<RasporedjenaStatickaOprema> rasporedjena)
+        public RasporedjenaStatickaOprema RasporedjenaStatickaOpremaSale(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, List<RasporedjenaStatickaOprema> rasporedjena)
         {
             RasporedjenaStatickaOprema opremaSalaZahtev = null;
             foreach (var raspodela in rasporedjena)
@@ -78,7 +82,7 @@ namespace Servis
             }
             return opremaSalaZahtev;
         }
-        public static bool DodajStatickuOpremuIzSkladista(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public bool DodajStatickuOpremuIzSkladista(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
             if (!SkladistePosedujeDovoljnuKolicinuStatickeOpreme(zahtev))
                 return false;
@@ -88,23 +92,23 @@ namespace Servis
             OsveziKolekciju();
             return true;
         }      
-        public static void AzuriranjeZahteva(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public  void AzuriranjeZahteva(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
             ZahtevZaRasporedjivanjeStatickeOpreme.Add(zahtev);
             SkladisteZahtevZaRasporedjivanjeStatickeOpreme.UpisiZahtevZaRasporedjivanjeStatickeOpreme();
         }
 
-        public static void AzuriranjeStatickeOpremeSkladista(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public  void AzuriranjeStatickeOpremeSkladista(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
-            StatickaOprema oprema = RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
+            StatickaOprema oprema = rukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
             oprema.kolicina -= zahtev.Kolicina;
-            RukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(oprema);
+            rukovanjeStatickomOpremomServis.IzmeniStatickuOpremu(oprema);
         }
 
-        public static bool SkladistePosedujeDovoljnuKolicinuStatickeOpreme(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public bool SkladistePosedujeDovoljnuKolicinuStatickeOpreme(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
-            if (RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId).kolicina < zahtev.Kolicina
-               || RukovanjeStatickomOpremomServis.PrikaziStatickuOpremu() == null)
+            if (rukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId).kolicina < zahtev.Kolicina
+               || rukovanjeStatickomOpremomServis.PrikaziStatickuOpremu() == null)
             {
                 MessageBox.Show($"Uneto rasporedjivanje nije ok, Nema dovoljno kolicine opreme");
                 return false;
@@ -112,11 +116,11 @@ namespace Servis
             return true;
         }
 
-        public static List<ZahtevZaRasporedjivanjeStatickeOpreme> PrikaziStatickuOpremu()
+        public List<ZahtevZaRasporedjivanjeStatickeOpreme> PrikaziStatickuOpremu()
         {
             return ZahtevZaRasporedjivanjeStatickeOpreme;
         }        
-        public static bool ObrisiZahtevZaRasporedjivanjeStatickeOpreme(String id)
+        public bool ObrisiZahtevZaRasporedjivanjeStatickeOpreme(String id)
         {
             List<ZahtevZaRasporedjivanjeStatickeOpreme> statickaOpremaBezIzbrisane = new List<ZahtevZaRasporedjivanjeStatickeOpreme>();
             bool nadjena = false;
@@ -138,7 +142,7 @@ namespace Servis
             return nadjena;
         }
 
-        public static ZahtevZaRasporedjivanjeStatickeOpreme PretraziPoId(string id)
+        public ZahtevZaRasporedjivanjeStatickeOpreme PretraziPoId(string id)
         {
             foreach (ZahtevZaRasporedjivanjeStatickeOpreme s in ZahtevZaRasporedjivanjeStatickeOpreme)
             {
@@ -155,7 +159,7 @@ namespace Servis
             foreach (ZahtevZaRasporedjivanjeStatickeOpreme so in ZahtevZaRasporedjivanjeStatickeOpreme)
                 observableZahtevZaRasporedjivanjeStatickeOpreme.Add(so);
         }
-        public static void IzvrsiZahteve()
+        public  void IzvrsiZahteve()
         {
             foreach (ZahtevZaRasporedjivanjeStatickeOpreme zahtev in ZahtevZaRasporedjivanjeStatickeOpreme)
             {
@@ -170,9 +174,9 @@ namespace Servis
             }
         }
 
-        public static Sala SalaPosedujeStatickuOprepu(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
+        public Sala SalaPosedujeStatickuOprepu(ZahtevZaRasporedjivanjeStatickeOpreme zahtev)
         {
-            var sala = SalaServis.PretraziPoId(zahtev.ProstorijaId);
+            var sala = salaServis.PretraziPoId(zahtev.ProstorijaId);
             if (sala.RasporedjenaStatickaOprema == null)
             {
                 sala.RasporedjenaStatickaOprema = new List<RasporedjenaStatickaOprema>();
@@ -181,9 +185,9 @@ namespace Servis
             return sala;
         }
 
-        public static void DodavanjeStatickeOpremeSali(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, Sala sala)
+        public  void DodavanjeStatickeOpremeSali(ZahtevZaRasporedjivanjeStatickeOpreme zahtev, Sala sala)
         {
-            var rasporedjenaOprema = RasporedjenaStatickaOpremaSale(zahtev, sala.RasporedjenaStatickaOprema);
+            var rasporedjenaOprema = rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.RasporedjenaStatickaOpremaSale(zahtev, sala.RasporedjenaStatickaOprema);
             if (rasporedjenaOprema != null)
             {
                 rasporedjenaOprema.Kolicina += zahtev.Kolicina;
@@ -193,12 +197,12 @@ namespace Servis
                 rasporedjenaOprema = new RasporedjenaStatickaOprema();
                 rasporedjenaOprema.Kolicina = zahtev.Kolicina;
                 rasporedjenaOprema.RasporedjenaOd = zahtev.RasporedjenoOd;
-                rasporedjenaOprema.statickaOprema = RukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
+                rasporedjenaOprema.statickaOprema = rukovanjeStatickomOpremomServis.PretraziPoId(zahtev.StatickeOpremaId);
                 sala.RasporedjenaStatickaOprema.Add(rasporedjenaOprema);
             }
         }
 
-        public static String pronadji()
+        public  String pronadji()
         {
 
             bool postoji = false;

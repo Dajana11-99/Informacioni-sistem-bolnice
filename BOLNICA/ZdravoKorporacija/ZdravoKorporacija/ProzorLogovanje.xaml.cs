@@ -16,9 +16,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ZdravoKorporacija.DTO;
+using ZdravoKorporacija.GrafZavisnosti;
 using ZdravoKorporacija.PacijentPrikaz;
 using ZdravoKorporacija.Repozitorijum;
 using ZdravoKorporacija.Servis;
+using ZdravoKorporacija.ServisInterfejs;
 
 namespace ZdravoKorporacija
 {
@@ -56,12 +58,16 @@ namespace ZdravoKorporacija
 
 
             //SalaServis.inicijalizuj();
-
-            LekServis.inicijalizuj();
-            RukovanjeStatickomOpremomServis.inicijalizuj();
-            RukovanjeDinamickomOpremomServis.inicijalizuj();
-            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.Inicijalizuj();
-            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.Inicijalizuj();
+            LekServisInterfejs lekServis = Injektor.Instance.Get<LekServisInterfejs>(typeof(LekServisInterfejs));
+            lekServis.inicijalizuj();
+            RukovanjeStatickomOpremomServisInterfejs rukovanjeStatickomOpremomServis = Injektor.Instance.Get<RukovanjeStatickomOpremomServisInterfejs>(typeof(RukovanjeStatickomOpremomServisInterfejs));
+            rukovanjeStatickomOpremomServis.inicijalizuj();
+            RukovanjeDinamickomOpremomServisInterfejs rukovanjeDinamickomOpremomServis = Injektor.Instance.Get<RukovanjeDinamickomOpremomServisInterfejs>(typeof(RukovanjeDinamickomOpremomServisInterfejs));
+            rukovanjeDinamickomOpremomServis.inicijalizuj();
+            RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis =  Injektor.Instance.Get<RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs>(typeof(RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServisInterfejs));
+            rukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.Inicijalizuj();
+            RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis =  Injektor.Instance.Get<RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs>(typeof(RukovanjeZahtevZaRasporedjivanjeStatickeOpremeServisInterfejs));
+            rukovanjeZahtevZaRasporedjivanjeStatickeOpremeServis.Inicijalizuj();
             //NaloziPacijenataServis.inic();
              
             //RukovanjeZahtevZaRasporedjivanjeDinamickeOpremeServis.IzvrsiZahteveZaDanas();

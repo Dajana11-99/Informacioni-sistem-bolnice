@@ -126,6 +126,84 @@
         <ListaSastojaka />
         <ListaZamenaZaLek />
       </Lek>
+      <Lek>
+        <IdLeka>5</IdLeka>
+        <ImeLeka>brufen</ImeLeka>
+        <ListaSastojaka>
+          <Sastojak>
+            <Id>1</Id>
+            <Ime>Voda</Ime>
+          </Sastojak>
+        </ListaSastojaka>
+        <ListaZamenaZaLek>
+          <Lek>
+            <IdLeka>sfdf</IdLeka>
+            <ImeLeka>penicilin</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek>
+        </ListaZamenaZaLek>
+      </Lek>
+      <Lek>
+        <IdLeka>1</IdLeka>
+        <ImeLeka>antiseptic</ImeLeka>
+        <ListaSastojaka>
+          <Sastojak>
+            <Id>2</Id>
+            <Ime>Ibrufen</Ime>
+          </Sastojak>
+        </ListaSastojaka>
+        <ListaZamenaZaLek>
+          <Lek>
+            <IdLeka>sfdf</IdLeka>
+            <ImeLeka>penicilin</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek>
+          <Lek>
+            <IdLeka>3</IdLeka>
+            <ImeLeka>andol</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek>
+        </ListaZamenaZaLek>
+      </Lek>
+    </ListaZamenaZaLek>
+  </Lek>
+  <Lek>
+    <IdLeka>24</IdLeka>
+    <ImeLeka>rr</ImeLeka>
+    <ListaSastojaka>
+      <Sastojak>
+        <Id>1</Id>
+        <Ime>Voda</Ime>
+      </Sastojak>
+    </ListaSastojaka>
+    <ListaZamenaZaLek>
+      <Lek>
+        <IdLeka>1</IdLeka>
+        <ImeLeka>antiseptic</ImeLeka>
+        <ListaSastojaka>
+          <Sastojak>
+            <Id>2</Id>
+            <Ime>Ibrufen</Ime>
+          </Sastojak>
+        </ListaSastojaka>
+        <ListaZamenaZaLek>
+          <Lek>
+            <IdLeka>sfdf</IdLeka>
+            <ImeLeka>penicilin</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek>
+          <Lek>
+            <IdLeka>3</IdLeka>
+            <ImeLeka>andol</ImeLeka>
+            <ListaSastojaka />
+            <ListaZamenaZaLek />
+          </Lek>
+        </ListaZamenaZaLek>
+      </Lek>
     </ListaZamenaZaLek>
   </Lek>
 </ArrayOfLek>
