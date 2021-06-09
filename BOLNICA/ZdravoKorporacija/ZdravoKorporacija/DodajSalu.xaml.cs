@@ -29,7 +29,7 @@ namespace ZdravoKorporacija
         public DodajSalu()
         {
             InitializeComponent();
-            SalaServisInterfejs salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
+            salaServis = Injektor.Instance.Get<SalaServisInterfejs>(typeof(SalaServisInterfejs));
 
         }
 

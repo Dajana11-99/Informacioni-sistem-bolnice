@@ -11,11 +11,6 @@
     <naziv>krevet</naziv>
   </StatickaOprema>
   <StatickaOprema>
-    <Id>2</Id>
-    <kolicina>80</kolicina>
-    <naziv>stolica</naziv>
-  </StatickaOprema>
-  <StatickaOprema>
     <Id>4</Id>
     <kolicina>90</kolicina>
     <naziv>spric</naziv>

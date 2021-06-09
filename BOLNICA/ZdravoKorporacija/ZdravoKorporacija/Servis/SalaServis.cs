@@ -102,6 +102,8 @@ namespace Servis
             List<Sala> saleBezIzbrisane = new List<Sala>();
             foreach (Sala s in sala)
             {
+                if (s.Id == null)
+                    continue;
                 if (s.Id.Equals(id))
                     continue;
 
@@ -114,6 +116,8 @@ namespace Servis
         {
             foreach(Sala s in sala)
             {
+                if (s.Id == null) 
+                    continue;
                 if (s.Id.Equals(id))
                 {
                     return s;
